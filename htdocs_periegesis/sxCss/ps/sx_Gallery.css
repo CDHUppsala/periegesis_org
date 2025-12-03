@@ -1,0 +1,390 @@
+* {
+	box-sizing: border-box;
+}
+
+header,
+footer,
+nav,
+main,
+section,
+article,
+aside,
+figure,
+figcaption,
+dialog,
+menu,
+summary,
+details {
+	display: block
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: var(--body-fonts);
+	font-size: 18px;
+	color: var(--grey);
+	line-height: 140%;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--heading-fonts);
+	color: #444;
+	margin-bottom: 0.5rem;
+}
+
+h1 {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+
+h3 {
+	font-size: 1.1rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+a {
+	color: var(--basic-color);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--triad-left);
+}
+
+.text {
+	font-size: 1em;
+	text-align: left;
+}
+
+.text_small {
+	font-size: 0.94em;
+}
+
+
+/*
+	===============================================================
+	PAGANATION AND PRIVIOUS-NEXT BUTTONS
+	===============================================================
+*/
+
+.pagination {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 4px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size: 1em;
+	text-align: center;
+}
+
+.pagination li {
+	display: inline-block;
+	padding: 0;
+	margin: 0 5px;
+	list-style: none;
+}
+
+.pagination li span {
+	display: inline-block;
+	color: var(--grey);
+	padding: 4px 20px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+.pagination li:first-child span {
+	border-radius: 7px 0 0 7px;
+}
+
+.pagination li:last-child span {
+	border-radius: 0 7px 7px 0;
+}
+
+.pagination li span:hover {
+	background-color: #ddd;
+}
+
+/*
+	===================================
+	TOP STRUCTURE
+	===================================
+*/
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 54px;
+	overflow: hidden;
+	background-color: var(--basic-color);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 90%);
+	line-height: 100%;
+}
+
+header .row {
+    display: flex;
+    flex-direction: row;
+    /*  center, flex-start, flex-end, space-around, space-between, */
+    justify-content: space-between;
+    /*  center, flex-start (top), flex-end (bottom), stretch, baseline */
+    align-items: center;
+	padding: 0 20px;
+}
+
+header a {
+	color: rgba(255, 255, 255, 0.9);
+	display: inline-block;
+}
+
+header a:hover {
+	color: var(--nav-link-hover);
+}
+
+header .left img {
+	height: 50px;
+	width: auto;
+	opacity: 0.8;
+}
+
+
+
+header .right a {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+
+header .right a::before {
+	content: url('../../imgPG/sx_svg/sx_svg_white/sx_reload.svg');
+}
+
+.sxNavMarker {
+	cursor: pointer;
+	width: 44px;
+	height: 44px;
+	background: transparent;
+	display: inline-block;
+	margin: 0 1rem;
+}
+
+.sxNavInfo {
+	margin-right: 1rem;
+}
+.sxNavMenu {
+	margin-left: 1rem;
+}
+
+.sxNavInfo::before {
+	content: url('../../imgPG/sx_svg/sx_svg_white/sx_info.svg');
+	vertical-align: middle;
+}
+
+.sxNavMenu::before {
+	content: url('../../imgPG/sx_svg/sx_svg_white/sx_menu_squre.svg');
+	vertical-align: middle;
+}
+
+/* 
+	===================================================================
+	MAIN STRUCTURE
+	Obs! if Top and Bottom are  change, change the javascript values in main_Photo.php 
+	======================================================================
+*/
+
+main {
+	position: absolute;
+	top: 54px;
+	left: 0;
+	right: 0;
+	bottom: 90px;
+	overflow: hidden;
+}
+
+/*
+	Main Left
+*/
+
+main .left {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	direction: rtl;
+	background: #fff;
+	z-index: 100;
+}
+
+main .left .dirLeft {
+	padding: 5px 10px 0 5px;
+	text-align: left;
+	direction: ltr;
+}
+
+main .left .text {
+	text-align: left;
+	padding-left: 2rem;
+}
+
+/*
+	Main Middle
+*/
+
+main .middle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	background-color: #fff;
+}
+
+main .middle .text {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+
+#photoBG {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 40px;
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+/*
+	Main Right
+*/
+
+main .right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	right: 0;
+	padding: 5px 10px;
+	text-align: left;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #fff;
+	z-index: 100;
+}
+
+/*
+	===================================================================
+	FOOTER STRUCTURE
+	======================================================================
+*/
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 90px;
+	background: #222;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	border-top: 1px solid #111;
+	text-align: center;
+	vertical-align: top;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+/*
+	Footer Menu
+*/
+
+footer ul {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	right: 0;
+    display: flex;
+    flex-direction: row;
+    /*  center, flex-start, flex-end, space-around, space-between, */
+    justify-content: center;
+    /*  center, flex-start (top), flex-end (bottom), stretch, baseline */
+    align-items: center;
+	margin: 0 auto;
+	padding: 0;
+	opacity: 0.4;
+}
+
+
+footer:hover ul {
+	opacity: 1;
+}
+
+footer ul li img {
+	display: block;
+	height: 64px;
+	width: auto;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	margin: 0 1px;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 940px) {
+	main .middle .text {
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.sxNavMarker {
+		display: none;
+	}
+
+	main .left {
+		right: 80% !important;
+	}
+
+	main .middle {
+		left: 20%;
+		right: 20%;
+	}
+
+	main .right {
+		left: 80% !important;
+	}
+}

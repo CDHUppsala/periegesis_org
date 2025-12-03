@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>CSS Root Colors</title>
+    <link rel="stylesheet" href="src/css_root_colors.css">
+    <script src="../../js/jq/jquery.min.js"></script>
+    <script src="src/tinycolor.js"></script>
+    <script src="src/css_root_colors.js"></script>
+</head>
+
+<body>
+    <div class="ps_flex_header">
+        <div class="color_form">
+            HEX: #<input id="HEX_Color" name="HEX_Color" size="6" type="text" value="">
+            <input id="GetColors" name="GetColors" type="color" value="#152555">
+            <input id="GetHEXColor" name="GetHEXColor" type="button" value="Set HEX Color">
+        </div>
+
+        <div class="color_form">
+            <label>R:<input id="R_Color" name="R_Color" type="number" min="0" max="255"></label>
+            <label>G:<input id="G_Color" name="G_Color" type="number" min="0" max="255"></label>
+            <label>B:<input id="B_Color" name="B_Color" type="number" min="0" max="255"></label>
+            <input id="GetRBGColor" name="GetRBGColor" type="button" value="Set RBG Color">
+        </div>
+
+        <div class="color_form flex_row">
+            <label>Lighten by %:<input id="Scale_Light" name="Scale_Light" type="number" min="0" max="20"></label>
+            <label>Light Steps:<input id="Steps_Light" name="Steps_Light" type="number" min="0" max="6"></label>
+            <label>Darken by %:<input id="Scale_Dark" name="Scale_Dark" type="number" min="0" max="20"></label>
+            <label>Dark Steps:<input id="Steps_Dark" name="Steps_Dark" type="number" min="0" max="5"></label>
+            <input id="SetStepsScales" name="SetStepsScales" type="button" value="Set Steps">
+        </div>
+    </div>
+    <div class="page">
+        <div class="sub_header ps_flex_row ps_flex_between">
+            <div>
+                <b>Color Brightness:</b> <code id="Brightness"></code>
+                <b>Is Light:</b> <code id="IsLight"></code>
+                <b>Is Dark:</b> <code id="IsDark"></code>
+                <b>Luminance:</b> <code id="Luminance"></code>
+            </div>
+            <div class="ps_links">
+                <a target="_blank" href="colors/default.html">RGB Colors</a> |
+                <a target="_blank" href="colors/500_Colours.html">500 Colors</a> |
+                <a target="_blank" href="color_meanings/index.html">Color Meanings</a> |
+                <a target="_blank" href="tiny/index.html">tinycolor palettes</a>
+                <a target="_blank" href="tiny/tinycolor.html">tinycolor codes</a>
+            </div>
+        </div>
+
+        <div class="ps_flex">
+            <div>
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Basic Color</h4>
+                        <div class="ps_flex_row ps_gap">
+                            <div class="ps_flex_column">
+                                <div id="ps-basic">1</div>
+                                <div id="ps-basic_text">2</div>
+                            </div>
+                            <div>Lighten, Darken, Desaturate and Brighten Basic Color: 10 steps by 10%</div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Lighten</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-tints"></div>
+                            <div id="ps-tints_text"></div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Darken</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-shades"></div>
+                            <div id="ps-shades_text"></div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Desaturate</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-tones"></div>
+                            <div id="ps-tones_text"></div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Brighten</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-brighten"></div>
+                            <div id="ps-brighten_text"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Monochrom</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-monochromatic"></div>
+                            <div id="ps-monochromatic_text"></div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Analog</h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-analogous"></div>
+                            <div id="ps-analogous_text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Triad</h4>
+                        <div>
+                            <div class="ps_flex_column">
+                                <div id="ps-triad"></div>
+                                <div id="ps-triad_text"></div>
+                            </div>
+                        </div>
+                        <div class="padding">5 Light and 4 Dark Steps by 10% for every Triad Color</div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4><span>-left</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-triad_1"></div>
+                            <div id="ps-triad_1_text"></div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>-right</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-triad_2"></div>
+                            <div id="ps-triad_2_text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Tetrad</h4>
+                        <div>
+                            <div class="ps_flex_column">
+                                <div id="ps-tetrad"></div>
+                                <div id="ps-tetrad_text"></div>
+                            </div>
+                        </div>
+                        <div class="padding">5 Light and 4 Dark Steps by 10% for every Tetrad Color</div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>-left</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-tetrad_1"></div>
+                            <div id="ps-tetrad_1_text"></div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>complemet</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-tetrad_2"></div>
+                            <div id="ps-tetrad_2_text"></div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>-right</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-tetrad_3"></div>
+                            <div id="ps-tetrad_3_text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Split</h4>
+                        <div>
+                            <div class="ps_flex_column">
+                                <div id="ps-split"></div>
+                                <div id="ps-split_text"></div>
+                            </div>
+                        </div>
+                        <div class="padding">5 Light and 4 Dark Steps by 10% for every Split Color</div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>-left</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-split_1"></div>
+                            <div id="ps-split_1_text"></div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>-right</span></h4>
+                        <div class="ps_flex_column">
+                            <div id="ps-split_2"></div>
+                            <div id="ps-split_2_text"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ps_container">
+                <div class="ps_flex">
+                    <h4>CSS Root Color Variables</h4>
+                    <button id="copy" title="Copy to Clipboard">Copy</button>
+                    <button id="download" title="Download as CSS file">Download</button>
+                </div>
+                <textarea id="root_variables"></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="ps_container">
+            <p><b>Gray Conversion of Basic Color</b> by Average & Weighted Method: 6 light and 3 dark steps by 10%.</p>
+            <div class="ps_flex_row">
+                <h4>Gray</h4>
+                <div class="ps_flex_column">
+                    <div id="ps-gray"></div>
+                    <div id="ps-gray_text"></div>
+                </div>
+                <div class="padding">
+                    Method used for CSS Root Colors:
+                    <input type="radio" class="jq_graymethod" id="average" name="GrayMethod" value="Average" checked> Average
+                    <input type="radio" class="jq_graymethod" id="weighted" name="GrayMethod" value="Weighted"> Weighted,
+                    Set first step by 5%: <input type="checkbox" name="FirstStepGray" value="FiveGray" id="fivegray">
+                </div>
+            </div>
+            <div class="ps_flex_row">
+                <h4><span>Average</span></h4>
+                <div class="ps_flex_column">
+                    <div id="ps-gray_0"></div>
+                    <div id="ps-gray_0_text"></div>
+                </div>
+            </div>
+            <div class="ps_flex_row">
+                <h4><span>Weighted</span></h4>
+                <div class="ps_flex_column">
+                    <div id="ps-gray_1"></div>
+                    <div id="ps-gray_1_text"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="ps_container">
+            <p><b>Tones as Opacities of Gray</b>, increased by 10%, with the basic calor as background example</p>
+            <div class="ps_flex_column">
+                <div id="ps-gray_opacities"></div>
+                <div id="ps-gray_opacities_text"></div>
+            </div>
+        </div>
+
+        <div class="ps_container">
+            <p><b>Tints as Opacities of White</b>, increased by 10%, with the basic calor as background example</p>
+            <div class="ps_flex_column">
+                <div id="ps-white_opacities"></div>
+                <div id="ps-white_opacities_text"></div>
+            </div>
+        </div>
+        <div class="ps_container">
+            <p><b>Shades as Opacities of Black</b>, increased by 10%, with the basic calor as background example</p>
+            <div class="ps_flex_column">
+                <div id="ps-black_opacities"></div>
+                <div id="ps-black_opacities_text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        //var basic_color = "#ff0000";
+
+        var randomcolor = tinycolor.random();
+        var basic_color = randomcolor.toHexString();
+        var scale_light = 10;
+        var steps_light = 5;
+        var scale_dark = 10;
+        var steps_dark = 4;
+        $(function () {
+            var obj_color;
+            $('#Scale_Light').val(scale_light);
+            $('#Steps_Light').val(steps_light);
+            $('#Scale_Dark').val(scale_dark);
+            $('#Steps_Dark').val(steps_dark);
+
+            function call_HEX(call_color) {
+                $('#HEX_Color').val(call_color.substring(1))
+                $('#GetColors').val(call_color)
+                obj_color = tinycolor(call_color);
+                var obj_color_RGB = obj_color.toString('rgb');
+                var arr_rgb = obj_color_RGB.split('(')[1].split(')')[0].split(',');
+                $('#R_Color').val(arr_rgb[0].trim());
+                $('#G_Color').val(arr_rgb[1].trim());
+                $('#B_Color').val(arr_rgb[2].trim());
+
+                $('#Brightness').text(obj_color.getBrightness());
+                $('#IsLight').text(obj_color.isLight());
+                $('#IsDark').text(obj_color.isDark());
+                $('#Luminance').text(obj_color.getLuminance());
+
+                call_Palettes(obj_color);
+            }
+
+            function call_RGB(call_color) {
+                obj_color = tinycolor(call_color);
+                $('#HEX_Color').val(obj_color.toString('hex').substring(1));
+                $('#GetColors').val(obj_color.toString('hex'));
+                obj_color = tinycolor(obj_color.toString('hex'));
+                call_Palettes(obj_color);
+            }
+
+            function call_Palettes(call_color) {
+                if (obj_color.isValid()) {
+                    ps_get_palletes(obj_color);
+                } else {
+                    alert('Set a valid color!');
+                }
+            }
+
+            $("#GetHEXColor").click(function () {
+                basic_color = $('#HEX_Color').val();
+                if (basic_color.indexOf('#') < 0) {
+                    basic_color = "#" + basic_color;
+                }
+                call_HEX(basic_color);
+            });
+            $("#GetRBGColor").click(function () {
+                basic_color = 'rgb(' + $('#R_Color').val() + ', ' + $('#G_Color').val() + ', ' + $('#B_Color').val() + ')';
+                call_RGB(basic_color);
+            });
+
+            $("#SetStepsScales").click(function () {
+                scale_light = $('#Scale_Light').val();
+                steps_light = $('#Steps_Light').val();
+                scale_dark = $('#Scale_Dark').val();
+                steps_dark = $('#Steps_Dark').val();
+                call_HEX(basic_color);
+            });
+
+            call_HEX(basic_color);
+
+            $('#fivebasic').on('change', function () {
+                call_HEX(basic_color);
+            });
+            $('#fivegray').on('change', function () {
+                call_HEX(basic_color);
+            });
+            $('.jq_graymethod').on('click', function () {
+                call_HEX(basic_color);
+            });
+            $('#GetColors').on('change', function () {
+                $('#HEX_Color').val($(this).val());
+                $('#GetHEXColor').click();
+            })
+
+            /**
+             * Copy Textarea
+             */
+            $("#copy").click(function () {
+                if (!navigator.clipboard) {
+                    $("#root_variables").select();
+                    document.execCommand('copy');
+                } else {
+                    var text_to_copy = document.getElementById("root_variables").value;
+                    navigator.clipboard.writeText(text_to_copy).then(
+                        function () {
+                            alert("The text has been copied to your clipboard!");
+                        })
+                        .catch(
+                            function () {
+                                alert("Error, please copy the text manually!");
+                            });
+                }
+            });
+
+
+            /**
+             * Save Textarea
+             */
+            $('#download').click(function () {
+                var b_color = basic_color.replace('#', '');
+
+                /*
+                // You must click on (call the funtion from) an existing <a> link 
+                var container = document.querySelector('textarea');
+                var anchor = document.querySelector('a#save');
+                anchor.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(container.value);
+                anchor.download = 'ps_cs_root_variables_' + b_color + '.css';
+                */
+
+                // Create temporal <a> link - can be called från any click
+                var textcontent = document.getElementById("root_variables").value;
+                var downloadableLink = document.createElement('a');
+                downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
+                downloadableLink.download = "ps_cs_root_variables_" + b_color + ".css";
+                document.body.appendChild(downloadableLink);
+                downloadableLink.click();
+                document.body.removeChild(downloadableLink);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<div class="jq_table_help csv_table_help">
+    <div class="flex_between">
+        <h4>Pagination, Searching and Sorting the Table</h4>
+        <button class="button-grey jq_TableHelpClose">Close</button>
+    </div>
+    <ul>
+        <li><b>Pagination</b> is automatically applied to all tables with more than 200 rows, by 200 rows per page.
+            <ul>
+                <li>You can navigate to the Next or Previous page by clicking on the left or right arrow
+                    or jump to any page by clicking on its number. The open page automatically scrolls back to the first row.</li>
+                <li>If you search or sort the table, pagination is regenerated and starts from the first page and first row.</li>
+            </ul>
+        </li>
+        <li><b>Sorting</b> is Alphabetic for all columns of the table except the first one, the column RowID, where it is numeric.
+            <ul>
+                <li>Alphabetic sorting means that 10 comes before 2 in ascending ordering and 9 before 10 in descending.</li>
+                <li>Click on <b>RowID</b> to return to the initial ordering of the table.</li>
+                <li>Clicking on the same column alternates the sorting order between ascending and descending order.</li>
+                <li>Sorting is applied to the entire table, not only to the currently visible page,
+                    and generates each time a new pagination, with the visible part of the table displaying the first page and scrolling to the first row.</li>
+                <li>However, if you have active searching results, in one or more pages, sorting is applied only to these results and its pages.
+                <li>Sorting also includes invisible text, like the URL and the Title of Links. Columns that include text with both links and without links
+                    are sorted separately from each other, as linked text starts with the HTML element <code>
+                                < a</code>, which comes first in alphabetic order.
+                    However, linked text should be ordered alphabetically, as all links contain in the beginning, before the URL,
+                    the hidden attribute <code>data-title</code> with the first word of the text.</li>
+            </ul>
+        </li>
+        <li><b>Searching</b> is also applied to the entire table, not only to the currently visible page.
+            <ul>
+                <li>Searching also includes non-visible text, so you might get some non-expected results (if you search for HTTP you will get all links).</li>
+                <li>Click on <b>Clear</b> to remove the searching text, restore the initial state of the table and return to the first page.</li>
+                <li>If you have sorted the results of searching, sorting is still active even after cleaning the search.
+                    Click in that case on the column RowID to restore the initial order of the table.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="align_right">
+        <button class="button-grey jq_TableHelpClose">Close</button>
+    </div>
+</div>

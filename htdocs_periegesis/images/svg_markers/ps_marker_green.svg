@@ -1,0 +1,6 @@
+<svg id="ps_marker_green" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        path {stroke: #25a233; stroke-width: 0.75; fill: #2ecc40;}
+    </style>
+    <path d="M6,11 c0 -5.552 4.448 -10 10 -10 s10 4.448 10 10 s-5 12 -9.8 20 q-0.2 0.2 -0.4 0 c-4.8 -8 -9.8 -14.448 -9.8,-20 M16 6.5 a1 1 0 0 0 0 9 a1 1 0 0 0 0 -9z" />
+</svg>

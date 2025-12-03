@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SX Color Creation</title>
+    <script src="../../../../sxScripts/jq/jquery.min.js"></script>
+    <style>
+        html {
+            box-sizing: border-box
+        }
+
+        body {
+            margin-top: 4rem;
+        }
+
+        .color_bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #eeeeee;
+            border: 1px solid #dddddd;
+            padding: 5px 25px;
+        }
+
+        .view_RGB {
+            display: inline-block;
+            height: 2rem;
+            width: 20rem;
+            border: 1px solid #808080;
+            background: #ffffff;
+        }
+
+        .color_bar input[type='text'] {
+            vertical-align: top;
+            height: 1.8rem;
+        }
+
+        .color_bar input[type='radio'] {
+            vertical-align: top;
+            transform: scale(1.5);
+        }
+
+        .color_palettes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .color_palettes div {
+            border-bottom: 1px solid #fff;
+            border-right: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .color_palettes div.rgb_top,
+        .color_palettes div.rgb_left {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #000000;
+        }
+
+        .color_palettes div.rgb_top {
+            height: 1rem !important;
+        }
+
+        .color_palettes div.clear {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color_bar">
+        <div class="select_colors">
+            <input type="radio" name="select_colors" value="6" checked> 6<sup>3</sup> colors
+            <input type="radio" name="select_colors" value="16"> 16<sup>3</sup> colors
+            <input type="radio" name="select_colors" value="33"> 33<sup>3</sup> colors
+            <input type="radio" name="select_colors" value="49"> 49<sup>3</sup> colors (whait for load)
+
+        </div>
+        <div>
+            <span class="view_RGB" id="viewRGB"></span>
+            <input type="text" id="inputRGB" name="inputRGB">
+        </div>
+    </div>
+    <div class="color_palettes" id="jqColorPalettes">
+
+    </div>
+
+    <script language="JavaScript">
+        $(function () {
+
+            var colorOrder = "";
+            colorOrder = "RGB";
+            /*
+            colorOrder = "RBG"
+            colorOrder = "GBR"
+            colorOrder = "GRB"
+            colorOrder = "BRG"
+            colorOrder = "BGR"
+            */
+
+            function get_color_palettes(colorArray, cellsPerRow, imgHeight) {
+                var codes = colorArray;
+                var plus = 2;
+                if (cellsPerRow > 32) {
+                    var plus = 3;
+                }
+                var imgWidth = (100 / (cellsPerRow + plus)) + '%';
+                var ctr = 1;
+                var str = "";
+                var palette = $("#jqColorPalettes");
+
+                palette.html('');
+                for (var r = 0; r < codes.length; ++r) {
+                    palette.append('<div class="clear"></div>');
+                    palette.append('<div class="rgb_top" style="width: ' + imgWidth + '; height:' + imgHeight + ';"></div>');
+                    for (var b = 0; b < codes.length; ++b) {
+                        palette.append('<div class="rgb_top" style="width: ' + imgWidth + '; height:' + imgHeight + ';">' + codes[b] + '</div>');
+                    }
+                    palette.append('<div class="clear"></div>');
+                    for (var g = 0; g < codes.length; ++g) {
+                        for (var b = 0; b < codes.length; ++b) {
+                            if (ctr > (cellsPerRow)) {
+                                palette.append('<div class="clear"></div>');
+                                ctr = 1;
+                            }
+                            if (b == 0) {
+                                palette.append('<div class="rgb_left" style="width: ' + imgWidth + '; height:' + imgHeight + ';">' + codes[r] + codes[g] + '</div>');
+                            }
+
+
+                            var hexCode1 = "#" + codes[r] + codes[g] + codes[b];
+                            var hexCode2 = codes[r] + codes[g] + codes[b];
+
+                            /*
+                            var hexCode1 = "#" + codes[r] + codes[g] + codes[b];
+                            var hexCode2 = codes[r] + codes[g] + codes[b];
+
+                            var hexCode1 = "#" + codes[r] + codes[b] + codes[g];
+                            var hexCode2 = codes[r] + codes[b] + codes[g];
+
+                            var hexCode1 = "#" + codes[g] + codes[b] + codes[r];
+                            var hexCode2 = codes[g] + codes[b] + codes[r];
+
+                            var hexCode1 = "#" + codes[g] + codes[r] + codes[b];
+                            var hexCode2 = codes[g] + codes[r] + codes[b];
+
+                            var hexCode1 = "#" + codes[b] + codes[r] + codes[g];
+                            var hexCode2 = codes[b] + codes[r] + codes[g];
+
+                            var hexCode1 = "#" + codes[b] + codes[g] + codes[r];
+                            var hexCode2 = codes[b] + codes[g] + codes[r];
+                             */
+
+                            palette.append('<div style="width: ' + imgWidth + '; height:' + imgHeight + '; background-color:' + hexCode1 + '" title="' + hexCode1 + '"></div>');
+                            ctr = ctr + 1;
+                            str += "," + hexCode1
+                        }
+                    }
+                }
+
+                palette.append('<div class="clear"></div>');
+                palette.append('<div class="rgb_top" style="width: ' + imgWidth + '; height:' + imgHeight + ';">RGB</div>');
+                for (var r = 0; r < codes.length; ++r) {
+                    palette.append('<div class="rgb_top" style="width: ' + imgWidth + '; height:' + imgHeight + ';">' + codes[r] + '</div>');
+                }
+
+                for (var r = 0; r < codes.length; ++r) {
+                    if (r == 0) {
+                        palette.append('<div class="clear"></div>');
+                        palette.append('<div class="rgb_left" style="width: ' + imgWidth + '; height:' + imgHeight + ';">RGB</div>');
+                    }
+                    var hexCode1 = "#" + codes[r] + codes[r] + codes[r];
+                    var hexCode2 = codes[r] + codes[r] + codes[r];
+                    palette.append('<div style="width: ' + imgWidth + '; height:' + imgHeight + ';  background-color:' + hexCode1 + '" title="' + hexCode1 + '"></div>');
+                }
+            }
+
+            var colorArray, cellsPerRow, imgHeight;
+            colorArray = ['FF', 'CC', '99', '66', '33', '00'];
+            cellsPerRow = 6;
+            imgHeight = '50px';
+
+            get_color_palettes(colorArray, cellsPerRow, imgHeight);
+            sxChangesColorPalettes();
+
+            $('.select_colors input').on('click', function () {
+                if ($(this).val() == 6) {
+                    colorArray = ['FF', 'CC', '99', '66', '33', '00'];
+                    cellsPerRow = 6;
+                    imgHeight = '50px';
+                } else if ($(this).val() == 16) {
+                    colorArray = ['FF', 'EE', 'DD', 'CC', 'BB', 'AA', '99', '88', '77', '66', '55', '44', '33', '22', '11', '00'];
+                    cellsPerRow = 16;
+                    imgHeight = '40px';
+                } else if ($(this).val() == 33) {
+                    colorArray = [
+                        'FF', 'F9', 'F0',
+                        'E9', 'E0', 'D9',
+                        'D0', 'C9', 'C0',
+                        'B9', 'B0', 'A9',
+                        'A0', '99', '90',
+                        '89', '80', '79',
+                        '70', '69', '60',
+                        '59', '50', '49',
+                        '40', '39', '30',
+                        '29', '20', '19',
+                        '10', '09', '00'
+                    ];
+                    cellsPerRow = 33;
+                    imgHeight = '30px';
+                } else if ($(this).val() == 49) {
+                    colorArray = [
+                        'FF',
+                        'FC', 'F6', 'F0',
+                        'EC', 'E6', 'E0',
+                        'DC', 'D6', 'D0',
+                        'CC', 'C6', 'C0',
+                        'BC', 'B6', 'B0',
+                        'AC', 'A6', 'A0',
+                        '9C', '96', '90',
+                        '8C', '86', '80',
+                        '7C', '76', '70',
+                        '6C', '66', '60',
+                        '5C', '56', '50',
+                        '4C', '46', '40',
+                        '3C', '36', '30',
+                        '2C', '26', '20',
+                        '1C', '16', '10',
+                        '0C', '06', '00'
+                    ];
+                    cellsPerRow = 49;
+                    imgHeight = '20px';
+                }
+                get_color_palettes(colorArray, cellsPerRow, imgHeight);
+                sxChangesColorPalettes();
+            })
+        });
+
+        var sxChangesColorPalettes = function () {
+            $('#jqColorPalettes div').on('click', function () {
+                if ($(this).attr('title').length) {
+                    rgbColor = $(this).attr('title');
+                    $('#viewRGB').css('background', rgbColor);
+                    $('#inputRGB').val(rgbColor);
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

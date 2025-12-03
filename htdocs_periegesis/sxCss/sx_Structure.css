@@ -1,0 +1,453 @@
+﻿/*
+576px for portrait phones.
+768px for tablets.
+992px for laptops.
+1200px for large devices.
+
+Piblic Sphere - Stracture/Layout
+================================================================
+Naming convention:
+
+BEM:    [block-name]__[element-name]--[modifier-name]
+PS:     [blockName]_[elementName]__[modifierName]
+        
+    Use allways the Tag Name of elements within Blocks when elements are standard or predictable
+        [formSerach]
+            [formSerach] input
+        [cart]
+            [cart] figure
+            [cart] img
+            [cart] figcaption
+        [cartProduct]
+            [cartProduct] figure
+            [cartProduct] img
+            [cartProduct] figcaption
+================================================================
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+header,
+nav,
+main,
+footer,
+section,
+article,
+aside,
+figure,
+figcaption,
+dialog,
+menu,
+summary,
+details {
+    display: block;
+}
+
+
+html,
+body {
+    font-family: var(--body-fonts);
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 160%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+@media (min-device-width: 1280px) {
+
+    html,
+    body {
+        font-size: 18px;
+    }
+}
+
+@media (min-device-width: 1920px) {
+
+    html,
+    body {
+        font-size: 19px;
+    }
+}
+
+#langFlags {
+    padding: 0.25rem 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 0.2rem;
+    font-size: 0.8rem;
+}
+
+#langFlags img {
+    display: inline-block;
+    width: 1.75rem;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* 
+    If flags are placed within the application list (#sxNavApps (sxNav_Headers.css))
+*/
+#langFlagsInList img {
+    display: inline-block;
+    width: 1.5em;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-right: 0.3em;
+    vertical-align: bottom;
+}
+
+/*
+    =====================================================
+    The Structure for Sites with 1 column - used in Itmes and First Page Presentations, with wide screen 
+    =====================================================
+    .body_wide
+            - a class of the body element which is normally used for Itmes and First Page Presentations
+            - It can be used to changing other default class setting
+            - NEVER use the class .content for Itmes and First Page Presentations
+        .page
+                - Is usually sett to width = 100%, 
+                    as the width of Items and First Page Presentations is defined by the next, section classes
+            .section_block (and)
+            .section_block_first_page 
+                    - All special styles for Items and First Page Presentation are defined in sx_Sections.css
+                    - .section_block is the common class for Items and First Page Presentation
+                    - .section_block_first_page is added to .section_block for special adoptations for the First Page
+            .aside
+                - Ocasionally used under the .section_block (and within .page) for andvertises and other information
+                - Define its width (if Not equal to 100%, as the .page) by using the body class: .body_wide
+
+    =====================================================
+    The Structure for Sites with 2 to 3 columns
+    =====================================================
+    .page
+            - if width is set to 100%, it can contain wide adverises and slider, covering the width of the whole screen
+            - alternatively, it can be used to define the active width of the page cantent (left/right padding in %)
+        .content
+                - Defines the max widt of page (site) content, e.g. {max-width: 1280px; margin: Xrem auto}
+                - .content is a grid used for 1, 2 or 3 colums: 
+            .main
+                - optionally devided into 2 more columns by .grid_equal or .grid_varied
+                - contains mainly .articles
+                - can contain a slider on the top
+                - adds on the bottom
+            .aside
+                - .nav (different navigation menus)
+                - .ads (right-top and right-bottom advertising)
+
+*/
+
+.page {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: var(--page-bg);
+}
+
+/*
+    Used for sections outside the content - big advertises or slider
+*/
+
+.page>section {
+    margin-bottom: 2.5em;
+}
+
+/*
+    .content is used:
+        - For pages with 1 columns, by using the various body IDs (#body_index, #body_articles, etc)
+            -  .main and .aside are then rows
+            - In this case, any wide section can be included above, between and under .main and .aside
+        - For pages with 2 columns, by including  .main and .aside as columns
+            - In this case, any wide section must be included above or bellow thw .content
+        - For pages with 3 or more columns, 
+            by including the grids .grid_equal or .grid_varied within .main
+            .grid_equal and .grid_varied can also be used anywhere
+
+    #body_index as 2 columns
+    .page_______________________________________
+    |.Wide section on Top_______________________
+    |                                           |
+    |___________________________________________|
+    |   .content________________________________
+    |   |   .main_________________________
+    |   |   |   ....                      |
+    |   |   |   .grid_varied/.grid_equal  |
+    |   |   |_____________________________|
+    |   |   .aside________________________
+    |   |   |                             |
+    |   |   |_____________________________|
+    |   |_______________________________________
+    |.Wide section Bottom_______________________
+    |                                           |
+    |__________________________________________ |
+
+
+    #body_index as one column
+    |.Wide section on Top_______________________
+    |                                           |
+    |___________________________________________|
+    | .content__________________________________
+    ||   .main_________________________
+    ||   |   ....                      |
+    ||   |   .grid_varied/.grid_equal  |
+    ||   |_____________________________|
+    |.Wide section on midle_____________________
+    |                                           |
+    |___________________________________________|
+    ||   .aside________________________
+    ||   |                             |
+    ||   |_____________________________|
+    |.Wide section Bottom_______________________
+    |                                           |
+    |__________________________________________ |
+
+
+*/
+
+.content,
+.grid_varied,
+.grid_equal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.content {
+    /* Usually the same max width as the content of #header and #nav_head */
+    max-width: 1280px;
+    padding: 2rem 0 4rem 0;
+    margin: 0 auto;
+}
+
+/* Globals for .main and .aside */
+.main,
+.aside {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/*
+    To get right H2 headers in about the same line as left H1 headers
+    Might be removed in one column pages
+*/
+.content>.aside {
+    padding-top: 1.5rem;
+}
+
+/** CHECK AND REPLACE
+    ============================================
+    Check and Replace all following styles the refer to elements rather than to classes
+*/
+.main>section {
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.main article {
+    padding: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.aside>section {
+    margin-bottom: 2em;
+}
+
+
+
+@media (min-width: 768px) {
+    .grid_equal {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4%;
+    }
+
+    .grid_varied {
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .content {
+        grid-template-columns: 2fr 1fr;
+        column-gap: 6%;
+    }
+
+}
+
+@media (min-width: 1440px) {
+
+    .content {
+        column-gap: 8%;
+    }
+
+}
+
+@media print {
+    section {
+        page-break-inside: avoid;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/*
+    ============================================
+    .body_one_column is used to transform pages 
+    in a site with 2 or 3 columns to 1 column
+    Set .body_one_column within the body element
+    ============================================
+*/
+.body_one_column .content {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/*
+    ============================================
+    For Items and First Page Presentations
+    To use .aside for footer advertises
+    ============================================
+*/
+
+.body_wide .aside {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+/*  
+    =====================================================
+    FOOTER CLASSES
+    =====================================================
+*/
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--footer-bg);
+    background-image: var(--footer-bg-image);
+    color: var(--footer-color);
+    margin: 2rem 0 0 0;
+    padding: 40px 2% 80px 2%;
+}
+
+
+.footer h4 {
+    color: var(--footer-color);
+    margin: 1.25rem 0 0.5rem 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    padding: 0;
+    margin: 0;
+    color: var(--footer-link);
+}
+.footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+
+.footer_top ul {
+    display: inline-block;
+    text-align: left;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+.footer_top a {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.footer_top a::before {
+    content: "\203A ";
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+}
+
+
+
+.footer_top,
+.footer_bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .footer_top,
+    .footer_bottom {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: flex-start;
+    }
+}
+
+.footer_top>div,
+.footer_bottom>div {
+    padding: 30px 0;
+    margin: 0 auto;
+}
+
+
+.footer_top {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer_bottom {
+    border-top: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/*
+    In case the SVG-images to social media are defined as IDs from the file sx_symbols.svg
+*/
+.footer_bottom .social_media svg {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 2em;
+    height: 2em;
+    margin: 0 1rem 0 0;
+    stroke-width: 0;
+    stroke: none;
+}
+
+/*
+    All SVG social media has 20% transparent white color as default - with 100% transparent background.
+    You cannot change the color of SVG in an image but you can change the background color
+    Set a background-color for the img element if the background-color of the footer is white or too light.
+*/
+
+.footer_bottom .social_media img {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: bottom;
+}

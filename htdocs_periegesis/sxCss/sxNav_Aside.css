@@ -1,0 +1,196 @@
+/*
+	============================================
+	ALL Aside Navigation LISTS - eccept Accordion Navigation
+	============================================ 
+*/
+.nav_aside {
+	font-family: var(--aside-nav-fonts);
+	clear: both;
+	margin-bottom: 2rem;
+}
+
+/*
+	Basic stytles - Common to All lists and menus except for Main accordion menus for text classes 
+	- Remove List-Styles - Styles are created by the element <a>
+	- ul.no_margin removes the left margin from <ul>
+	- ul.no.styles removes the styles created by <a>
+	- Usually used in Numbered List with the ID of record as number
+	Do Not use overflow, hidden or auto, for UL od UL UL as
+	- within .nav_aside, overflow is determined by the class .max_hieght
+	- .nav_aside can be include in the class .nav_tabs, which define the overflow
+*/
+
+.nav_aside ul {
+	clear: both;
+	margin: 0 0 0.5rem 0.5rem;
+	padding: 0;
+	list-style: none;
+}
+
+.nav_aside:has(div) ul {
+	margin: 0 0 0.5rem 1.5rem;
+}
+
+.nav_aside ul.no_margin {
+	margin-left: 0;
+}
+
+.nav_aside li {
+	margin: 0;
+	padding: 3px 0;
+}
+
+.nav_aside li a {
+	display: block;
+	position: relative;
+	padding: 0 0 0 1em;
+	line-height: 125%;
+	color: var(--aside-nav-link);
+}
+
+.nav_aside li a:hover {
+	color: var(--aside-nav-link-hover);
+}
+
+.nav_aside li a.open {
+	color: var(--aside-nav-link-open);
+}
+
+/* 	
+	=======================================
+	Start
+	Used in forum, with OL as sublist
+*/
+.nav_aside li h4 {
+	position: relative;
+	border-bottom: 1px solid var(--grey-tint-90);
+	background: var(--grey-tint-100);
+	padding: 0.25rem;
+	padding-left: 3rem;
+}
+
+.nav_aside li h4>span {
+	position: absolute;
+	font-size: 1rem;
+	left: 0.5em;
+	top: 0.25em;
+}
+
+.nav_aside li h4 a {
+	display: inline !important;
+	padding-left: 0;
+}
+
+.nav_aside li h4 a span {
+	font-size: 0.85rem;
+}
+
+.nav_aside li ol {
+	padding-left: 4rem;
+}
+/*	End
+	==========================================
+*/
+
+.nav_aside ul:not(.no_styles)>li>a::before {
+	content: "\25AA";
+	position: absolute;
+	font-size: 0.85rem;
+	left: 0;
+	top: 0;
+}
+
+/* Counteract the left margin of <a>
+*/
+.nav_aside ul.no_styles li {
+	text-indent: -1rem;
+}
+
+.nav_aside ul ul.no_styles li {
+	text-indent: -1rem;
+}
+
+/* Define the height of All lists */
+.nav_aside li a span {
+	color: var(--grey-tint-50);
+}
+
+.nav_aside div {
+	position: relative;
+	font-weight: normal;
+	font-size: 1.1rem;
+	cursor: pointer;
+	background-color: transparent;
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	color: var(--heading-color)
+}
+
+.nav_aside div::before {
+	content: " \25BE";
+	padding-right: 0.5rem;
+}
+
+.nav_aside div.open::before {
+	content: "\25B4";
+}
+
+.nav_aside li div {
+	font-size: 1rem;
+}
+
+.nav_aside li li div {
+	font-size: 0.9rem;
+}
+
+.nav_aside form {
+	background: var(--grey-tint-50);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+	text-align: center;
+	padding: 6px 4px;
+	margin: 2px 0;
+}
+
+
+/*
+	For main navigation menu: a folder image to open archivies of classified texts 
+*/
+.nav_aside a.archive {
+	float: right;
+	width: 1em;
+	height: 1em;
+	padding: 0;
+	margin: 2px 0 0 6px;
+	text-align: right;
+	vertical-align: middle;
+	opacity: 0.65;
+	z-index: 10;
+	background-color: var(--basic-color);
+}
+
+.nav_aside a.archive::before {
+	content: url('../imgPG/sx_svg/svg_icons_black/sx_folder.svg');
+}
+
+.nav_aside a.archive:hover {
+	opacity: 1;
+}
+
+/* 
+	Secondary design: Links to related texts (texts thematically related to an open text)
+	The element fieldset with the class .related_texts is used to wrapp the navigation class .nav_aside:
+	- Within the element articles
+	- AS sole fieldset element  
+*/
+
+
+fieldset.related_texts .nav_aside {
+	margin-bottom: 0;
+}
+
+fieldset.related_texts .nav_aside li {
+	padding-bottom: 12px;
+}
+
+fieldset.related_texts .nav_aside li>a::before {
+	content: "\00BB";
+}

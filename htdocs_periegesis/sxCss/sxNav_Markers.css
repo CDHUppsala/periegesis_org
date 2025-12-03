@@ -1,0 +1,70 @@
+/**
+ 	The Markers and Cloners for Mobile Navigation 
+    - Activated by jQuery in Mobiles and when decresing the screen in desktops
+ 	- Show/Hide Top, Head, Main and Aside Navigation Menus
+*/
+
+.nav_top_apps_Marker,
+.nav_head_menu_Marker,
+.nav_aside_menus_Marker,
+.nav_main_menu_Marker {
+    display: block;
+	position: relative;
+	cursor: pointer;
+	z-index: 2;
+	text-align: center;
+	font-size: 2rem;
+	color: var(--nav-marker-color);
+}
+
+.nav_top_apps_Marker {
+	color: var(--app-marker-color);
+	font-size: 1.8rem;
+}
+
+.nav_top_apps_Marker:hover {
+	color: var(--app-marker-hover);
+}
+
+.nav_aside_menus_Marker:hover,
+.nav_head_menu_Marker:hover,
+.nav_main_menu_Marker:hover {
+	color: var(--nav-marker-hover);
+}
+
+.nav_aside_menus_Cloner,
+.nav_main_menu_Cloner {
+	position: absolute;
+	display: none;
+	top: 100%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0 1.5rem 2rem 1.5rem;
+	background: var(--page-bg);
+	border: 4px solid var(--nav-border);
+	z-index: 2000;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/*
+	To close open mobile menus when resizing the window
+	If they are also closed in respective menu styles
+		(sxNav_Top.css and sxNav_Head.css), you can remove them from here,
+		as a conflict can appear if the screen min-width is different.
+*/
+@media (min-width: 1024px) {
+	.nav_top_apps_Marker,
+    .nav_head_menu_Marker,
+	.nav_main_menu_Marker,
+	.nav_aside_menus_Marker {
+		display: none;
+	}
+
+	.nav_main_menu_Cloner,
+    .nav_aside_menus_Cloner {
+		display: none;
+	}
+}

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sxSVG" id="Digital_Periegesis_Color" viewBox="-490 0 4200 1800" style="background-color: transparent">
+    <title>Public Sphere Font</title>
+    <style>
+        #circle {
+            fill: #d7b2c4;
+            stroke-width: 20;
+            stroke: #013661;
+        }
+
+        #line {
+            stroke-width: 20;
+            stroke: #003d7a;
+        }
+
+        .svg_text {
+            fill: #003d7a;
+        }
+    </style>
+
+    <g class="svg_text" transform="translate(1200,140)">
+        <g transform="translate(0)" glyph-name="360 d">
+            <path d="M 340 20 h-40 v210 a 100 70 0 0 0 -100 -50 h-80 a 100 100 0 0 0 -100 100 l 0 120 a 100 100 0 0 0 100 100 h80 a 100 70 0 0 0 100 -50 v50h40 Z M 300 390 a 70 70 0 0 1 -70 70 h-100 a 70 70 0 0 1 -70 -70 l 0 -100 a 70 70 0 0 1 70 -70 h100 a 70 70 0 0 1 70 70 Z"></path>
+        </g>
+        <g transform="translate(370)" glyph-name="200 i">
+            <path d="M 60 100 h-40 v40h40 Z"></path>
+            <path d="M 60 180 h-40v180 a 140 140 0 0 0 140 140 h20 l-20 -40a 100 100 0 0 1 -100 -100 Z"></path>
+        </g>
+        <g transform="translate(580)" glyph-name="360 g">
+            <path d="M 340 180 h-40 v50 a 100 70 0 0 0 -100 -50 h-80 a 100 100 0 0 0 -100 100 l 0 120 a 100 100 0 0 0 100 100 h80 a 100 70 0 0 0 100 -50 v100 a 70 70 0 0 1 -70 70 h-120 a 50 50 0 0 1 -50 -50 h-40 0 a 90 90 0 0 0 90 90 l 130 0 a 100 100 0 0 0 100 -100 Z M 300 390 a 70 70 0 0 1 -70 70 l -100 0 a 70 70 0 0 1 -70 -70 l 0 -100 a 70 70 0 0 1 70 -70 l 100 0 a 70 70 0 0 1 70 70 Z"></path>
+        </g>
+        <g transform="translate(950)" glyph-name="200 i">
+            <path d="M 60 100 h-40 v40h40 Z"></path>
+            <path d="M 60 180 h-40v180 a 140 140 0 0 0 140 140 h20 l-20 -40a 100 100 0 0 1 -100 -100 Z"></path>
+        </g>
+        <g transform="translate(1160)" glyph-name="270 t">
+            <path d="M 80 180 h-60v40h60 v140 a 140 140 0 0 0 140 140 h30 l-20 -40 h-10 a 100 100 0 0 1 -100 -100 v-140h80 l 20 -40h-100v-100h-40 Z"></path>
+        </g>
+        <g transform="translate(1440)" glyph-name="360 a">
+            <path d="M 110 180 a 90 90 0 0 0 -90 90 h40 a 50 50 0 0 1 50 -50 h120 a 70 70 0 0 1 70 70 v60 a 80 70 0 0 0 -80 -50 h-100 a 100 100 0 0 0 -100 100 a 100 100 0 0 0 100 100 h100 a 80 70 0 0 0 80 -50 v50 h40 v-220 a 100 100 0 0 0 -100 -100 Z M 300 400 a 60 60 0 0 1 -60 60 h-120 a 60 60 0 0 1 -60 -60 l 0 0 a 60 60 0 0 1 60 -60 h120 a 60 60 0 0 1 60 60 Z"></path>
+        </g>
+        <g transform="translate(1810)" glyph-name="200 l">
+            <path d="M 60 20 h-40 v340 a 140 140 0 0 0 140 140 h20 l-20 -40 a 100 100 0 0 1 -100 -100 Z"></path>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,0,0)">
+        <path id="line" d="M245 400 L 990 950 H2680 H990 z"></path>
+        <path id="circle" d="M20 400 a 1 1 0 0 1 450 0 a 1 1 0 0 1 -450 0"></path>
+        <path id="circle" d="M890 950 a 1 1 0 0 1 200 0 a 1 1 0 0 1 -200 0"></path>
+        <path id="circle" d="M2580 950 a 1 1 0 0 1 200 0 a 1 1 0 0 1 -200 0"></path>
+    </g>
+    <g class="svg_text" transform="matrix(1,0,0,1,0,960)">
+        <g transform="translate(0)" glyph-name="360 p">
+            <path d="M 20 180 h40 v50 a 100 70 0 0 1 100 -50 h80 a 100 100 0 0 1 100 100 l 0 120 a 100 100 0 0 1 -100 100 h-80 a 100 70 0 0 1 -100 -50 v210 h-40 0 Z M 60 390 a 70 70 0 0 0 70 70 l 100 0 a 70 70 0 0 0 70 -70 l 0 -100 a 70 70 0 0 0 -70 -70 l -100 0 a 70 70 0 0 0 -70 70 Z"></path>
+        </g>
+        <g transform="translate(370)" glyph-name="360 e">
+            <path d="M 120 180 a 100 100 0 0 0 -100 100 v120 a 100 100 0 0 0 100 100 h 130 a 90 90 0 0 0 90 -90 h-40 a 50 50 0 0 1 -50 50 h-120 a 70 70 0 0 1 -70 -70 v-50 h280 v-60 a 100 100 0 0 0 -100 -100 Z M 60 290 a 70 70 0 0 1 70 -70 h100 a 70 70 0 0 1 70 70 v10 h-240 z"></path>
+        </g>
+        <g transform="translate(740)" glyph-name="200 r">
+            <path d="M 60 180 h-40 v320 h40v-210 a 70 70 0 0 1 70 -70 h30 l20 -40h-20 a 100 70 0 0 0 -100 50 Z"></path>
+        </g>
+        <g transform="translate(950)" glyph-name="200 i">
+            <!--path d="M 60 100 h-40 v40h40 Z"></path-->
+            <path d="M 60 180 h-40v180 a 140 140 0 0 0 140 140 h20 l-20 -40a 100 100 0 0 1 -100 -100 Z"></path>
+        </g>
+        <g transform="translate(1160)" glyph-name="360 e">
+            <path d="M 120 180 a 100 100 0 0 0 -100 100 v120 a 100 100 0 0 0 100 100 h 130 a 90 90 0 0 0 90 -90 h-40 a 50 50 0 0 1 -50 50 h-120 a 70 70 0 0 1 -70 -70 v-50 h280 v-60 a 100 100 0 0 0 -100 -100 Z M 60 290 a 70 70 0 0 1 70 -70 h100 a 70 70 0 0 1 70 70 v10 h-240 z"></path>
+        </g>
+        <g transform="translate(1530)" glyph-name="360 g">
+            <path d="M 340 180 h-40 v50 a 100 70 0 0 0 -100 -50 h-80 a 100 100 0 0 0 -100 100 l 0 120 a 100 100 0 0 0 100 100 h80 a 100 70 0 0 0 100 -50 v100 a 70 70 0 0 1 -70 70 h-120 a 50 50 0 0 1 -50 -50 h-40 0 a 90 90 0 0 0 90 90 l 130 0 a 100 100 0 0 0 100 -100 Z M 300 390 a 70 70 0 0 1 -70 70 l -100 0 a 70 70 0 0 1 -70 -70 l 0 -100 a 70 70 0 0 1 70 -70 l 100 0 a 70 70 0 0 1 70 70 Z"></path>
+        </g>
+        <g transform="translate(1900)" glyph-name="360 e">
+            <path d="M 120 180 a 100 100 0 0 0 -100 100 v120 a 100 100 0 0 0 100 100 h 130 a 90 90 0 0 0 90 -90 h-40 a 50 50 0 0 1 -50 50 h-120 a 70 70 0 0 1 -70 -70 v-50 h280 v-60 a 100 100 0 0 0 -100 -100 Z M 60 290 a 70 70 0 0 1 70 -70 h100 a 70 70 0 0 1 70 70 v10 h-240 z"></path>
+        </g>
+        <g transform="translate(2270)" glyph-name="360 s">
+            <path d="M 110 180 a 90 90 0 0 0 -90 90 a 90 90 0 0 0 90 90 l 130 0 a 50 50 0 0 1 50 50 a 50 50 0 0 1 -50 50 l -130 0 a 50 50 0 0 1 -50 -50 h-40 0 a 90 90 0 0 0 90 90 l 140 0 a 90 90 0 0 0 90 -90 a 90 90 0 0 0 -90 -90 l -130 0 a 50 50 0 0 1 -50 -50 a 50 50 0 0 1 50 -50 l 130 0 a 50 50 0 0 1 50 50 h40 0 a 90 90 0 0 0 -90 -90 Z"></path>
+        </g>
+        <g transform="translate(2640)" glyph-name="200 i">
+            <!--path d="M 60 100 h-40 v40h40 Z"></path-->
+            <path d="M 60 180 h-40v180 a 140 140 0 0 0 140 140 h20 l-20 -40a 100 100 0 0 1 -100 -100 Z"></path>
+        </g>
+        <g transform="translate(2850)" glyph-name="360 s">
+            <path d="M 110 180 a 90 90 0 0 0 -90 90 a 90 90 0 0 0 90 90 l 130 0 a 50 50 0 0 1 50 50 a 50 50 0 0 1 -50 50 l -130 0 a 50 50 0 0 1 -50 -50 h-40 0 a 90 90 0 0 0 90 90 l 140 0 a 90 90 0 0 0 90 -90 a 90 90 0 0 0 -90 -90 l -130 0 a 50 50 0 0 1 -50 -50 a 50 50 0 0 1 50 -50 l 130 0 a 50 50 0 0 1 50 50 h40 0 a 90 90 0 0 0 -90 -90 Z"></path>
+        </g>
+
+    </g>
+</svg>

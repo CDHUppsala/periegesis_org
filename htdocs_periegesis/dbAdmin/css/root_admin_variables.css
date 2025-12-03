@@ -1,0 +1,81 @@
+body {
+    --body-fonts: 'Segoe UI', 'Lucida Grande', Tahoma, Geneva, arial, sans-serif;
+    --body-bg: #ffffff;
+    --body-color: var(--grey);
+    --font-condensed: "Roboto Condensed", Arial, Helvetica, sans-serif;
+
+    --link: var(--complement);
+    --link-hover: var(--basic-color);
+
+    --headers-bg: var(--basic-color);
+
+    --heading-fonts: 'Segoe UI', 'Lucida Grande', Tahoma, Geneva, arial, sans-serif;
+    --heading-color: var(--basic-color);
+    --heading-link: var(--monochrom-2);
+    --heading-link-hover: var(--monochrom-3);
+
+    --table-fonts: Tahoma, Arial, 'Segoe UI', 'Lucida Grande', Tahoma, Geneva, arial, sans-serif;
+    --table-header: var(--basic-color);
+    --table-header-link: var(--tint-100);
+    --table-header-hover: var(--complement-brighten-60);
+    --table-edit-border: rgba(var(--grey_tint_80),0.4);
+    --table-edit-td: var(--grey-tint-100);
+
+    --svg-fill: var(--lighten);
+    --svg-fill-hover: var(--complement);
+
+    /**
+    Not used bellow
+
+    --font-extented: Tinos, Ysabeau, Play;
+
+    --top-fonts: Ysabeau, Play, Jura, arial, helvetica, sans-serif;
+    --top-bg: var(--basic-color);
+    --top-profile-bg: var(--basic-tint-80);
+    --top-color: var(--basic-tint-80);
+    --top-link: var(--tint-70);
+    --top-link-hover: var(--tint-100);
+    --top-border: var(--basic-tint-80);
+    --top-search_bg: var(--basic-color);
+
+    --header-bg: var(--basic-color);
+    --header-bg-image: 'none';
+    --header-border: 'transparent';
+    --headder-text-color: var(--tint-60);
+    --headder-link-color: var(--tint-60);
+    --headder-link-hover: var(--tint-80);
+
+    --nav-fonts: Ysabeau, Play, Jura, arial, helvetica, sans-serif;
+    --nav-bg: var(--basic-color);
+    --nav-bg-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33%, rgba(255, 255, 255, 0) 100%);
+    --nav-color: var(--tint-70);
+    --nav-link: var(--tint-70);
+    --nav-link-hover: var(--tint-100);
+    --nav-border: var(--tint-50);
+
+    --page-bg: #ffffff;
+    --main-section-bg: inherit;
+    --main-article-bg: inherit;
+    --aside-section-bg: inherit;
+
+    --aside-nav-fonts: Ysabeau, Play, Jura, arial, helvetica, sans-serif;
+    --aside-nav-link: var(--monochrom-2);
+    --aside-nav-link-hover: var(--complement-tint-40);
+    --aside-nav-link-open: var(--complement-tint-40);
+
+    --footer-bg: var(--basic-shade-10);
+    --footer-bg-image: linear-gradient(to bottom, var(--tint-10) var(--tint-0));
+    --footer-color: var(--tint-60);
+    --footer-link: var(--tint-60);
+    --footer-link-hover: var(--tint-90);
+
+    --app-marker-color: var(--tint-70);
+    --app-marker-hover: var(--tint-90);
+    --nav-marker-color: var(--tint-70);
+    --nav-marker-hover: var(--tint-90);
+
+    --button-promotion-class_1: "button-gray buton-big button-arrow button-gradient";
+    --button-promotion-class_2: "button-gray buton-big button-gradient";
+    */
+
+}

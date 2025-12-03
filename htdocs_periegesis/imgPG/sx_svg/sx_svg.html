@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>SVG Icons</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sx_svg.css">
+    <style>
+        .dash {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dash div {
+            width: 12em;
+            border: 1px solid #ddd;
+            margin: 2px;
+        }
+
+        .dash div>svg {
+            font-size: 4em;
+            width: 2em;
+            height: 2em;
+            margin: 0.5em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+
+        .dash div span {
+            display: block;
+
+        }
+
+        /* Style for the popup pre tag */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #226699;
+            border: 1px solid black;
+            padding: 10px;
+            max-width: 80%;
+            max-height: 50%;
+            overflow: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+
+        /* Style for the close button */
+        #closePopup {
+            cursor: pointer;
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            color: white;
+        }
+
+        textarea {
+            width: 50svw;
+            height: 40svh;
+            padding: 1rem;
+        }
+    </style>
+
+    <script>
+        function getDivContent(clickedDiv) {
+            // Get the HTML content of the clicked div
+            var content = clickedDiv.innerHTML;
+
+            // Display the content inside the pre tag
+            var pop_up = document.getElementById("popup");
+            var text_area = pop_up.querySelector('textarea');
+            text_area.value += content + '\n\n';
+
+            // Show the popup
+            pop_up.style.display = "block";
+
+            // Add a click event to close the popup
+            document.getElementById("closePopup").onclick = function () {
+                pop_up.style.display = "none";
+            };
+        }
+
+        // Add click event listeners to div elements inside section tags when the page loads
+        window.onload = function () {
+            // Select only divs inside section tags
+            var divElements = document.querySelectorAll("section div");
+
+            // Loop through each div and add the click event listener
+            divElements.forEach(function (div) {
+                div.addEventListener("click", function () {
+                    getDivContent(this);
+                });
+            });
+        }
+    </script>
+</head>
+
+
+<body>
+    <h1>Include Pure SVG Paths</h1>
+    <section class="dash">
+
+        <div><svg id="sx_home" viewBox="0 0 32 32">
+                <path
+                    d="M1 14 a1 1 0 0 0 2 2 l 11-11 q2 -2 4 0 l11 11 a1 1 0 0 0 2-2 l-5 -5 v-8h-3v5 l-4-4 q-3-3 -6 0z m2 4 v14h9.5v-10h7v10h9.5v-14 l-11 -11 q-2-2 -4 0z m13 -6 a1 1 0 0 1 0 5 a1 1 0 0 1 0-5" />
+            </svg></div>
+
+
+        <div><svg id="sx_menu_bold" viewBox="0 0 32 32">
+                <path
+                    d="M 1 2 q 0 -1 1 -1 h 28 q 1 0 1 1 v 6 q 0 1 -1 1 h -28 q -1 0 -1 -1 Z M 1 13 q 0 -1 1 -1 h 28 q 1 0 1 1 v 6 q 0 1 -1 1 h -28 q -1 0 -1 -1 Z M 1 24 q 0 -1 1 -1 h 28 q 1 0 1 1 v 6 q 0 1 -1 1 h -28 q -1 0 -1 -1 Z" />
+            </svg></div>
+
+        <div><svg id="sx_menu_bold_list" viewBox="0 0 32 32">
+                <path
+                    d=" M 1 2 q 0 -1 1 -1 h 6 q 1 0 1 1 v 6 q 0 1 -1 1 h -6 q -1 0 -1 -1 Z M 1 13 q 0 -1 1 -1 h 6 q 1 0 1 1 v 6 q 0 1 -1 1 h -6 q -1 0 -1 -1 Z M 1 24 q 0 -1 1 -1 h 6 q 1 0 1 1 v 6 q 0 1 -1 1 h -6 q -1 0 -1 -1 Z M 12 2 q 0 -1 1 -1 h 17 q 1 0 1 1 v 6 q 0 1 -1 1 h -17 q -1 0 -1 -1 Z M 12 13 q 0 -1 1 -1 h 17 q 1 0 1 1 v 6 q 0 1 -1 1 h -17 q -1 0 -1 -1 Z M 12 24 q 0 -1 1 -1 h 17 q 1 0 1 1 v 6 q 0 1 -1 1 h -17 q -1 0 -1 -1 Z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_menu_main">
+                <path
+                    d="M2 3 q0 -1 1 -1 h26 q1 0 1 1 v3q0 1 -1 1h-26q-1 0 -1-1z M2 14.5 q0 -1 1 -1 h26 q1 0 1 1 v3q0 1 -1 1h-26q-1 0 -1-1z M2 26 q0 -1 1 -1 h26 q1 0 1 1 v3q0 1 -1 1h-26q-1 0 -1-1z">
+                </path>
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_menu_cards">
+                <path
+                    d="M2 3 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M12.5 3 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M24 3 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M2 14 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M12.5 14 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M24 14 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M2 25 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M12.5 25 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M24 25 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z">
+                </path>
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_menu_squre_list">
+                <path
+                    d="M2 3 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M2 14 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M2 25 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M12 3 q0 -1 1 -1 h16 q1 0 1 1 v4q0 1 -1 1h-16q-1 0 -1-1z M12 14 q0 -1 1 -1 h16 q1 0 1 1 v4q0 1 -1 1h-16q-1 0 -1-1z M12 25 q0 -1 1 -1 h16 q1 0 1 1 v4q0 1 -1 1h-16q-1 0 -1-1z">
+                </path>
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_menu_squre">
+                <path
+                    d="M2 3 q0 -1 1 -1 h26 q1 0 1 1 v4q0 1 -1 1h-26q-1 0 -1-1z M2 14 q0 -1 1 -1 h26 q1 0 1 1 v4q0 1 -1 1h-26q-1 0 -1-1z M2 25 q0 -1 1 -1 h26 q1 0 1 1 v4q0 1 -1 1h-26q-1 0 -1-1z">
+                </path>
+            </svg></div>
+
+        <div><svg id="sx_menu_round_list" viewBox="0 0 32 32">
+                <path
+                    d="M4 2 a1 1 0 0 0 0 6a1 1 0 0 0 0 -6M4 13 a1 1 0 0 0 0 6a1 1 0 0 0 0 -6M4 24 a1 1 0 0 0 0 6a1 1 0 0 0 0 -6 M12 2 a1 1 0 0 0 0 6 h15 a1 1 0 0 0 0-6 z M12 13 a1 1 0 0 0 0 6 h15 a1 1 0 0 0 0-6 z M12 24 a1 1 0 0 0 0 6 h15 a1 1 0 0 0 0-6 z" />
+            </svg></div>
+
+        <div><svg id="sx_menu_round" viewBox="0 0 32 32">
+                <path
+                    d="M5 2 a1 1 0 0 0 0 6 h22 a1 1 0 0 0 0-6 z M5 13 a1 1 0 0 0 0 6 h22 a1 1 0 0 0 0-6 z M5 24 a1 1 0 0 0 0 6 h22 a1 1 0 0 0 0-6 z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_menu_calendar">
+                <path
+                    d="M1 8 h30 v-2 q0-2 -2-2 h-5v-2 q0-1 -1-1 h-3 q-1 0 -1 1 v2h-6v-2 q0-1 -1-1 h-3 q-1 0 -1 1 v2h-5 q-2 0 -2 2z M1 10 v19 q0 2 2 2 h26 q2 0 2 -2 v-19z M 4 14 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z M 13 14 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z M 22 14 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z M 4 23 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z M 13 23 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z M 22 23 q 0 -1 1 -1 h 4 q 1 0 1 1 v 4 q 0 1 -1 1 h -4 q -1 0 -1 -1 Z">
+                </path>
+            </svg></div>
+
+        <div><svg id="sx_menu_apps" viewBox="0 0 32 32">
+                <path
+                    d=" M2 0 q-2 0 -2 2 v28 q0 2 2 2 h28 q2 0 2 -2 v-28 q0 -2 -2 -2 h-2 v2 h-4 v-2 h-5 v2 h-4 v-2 h-5 v2 h-4 v-2  z M3 4 h26 q1 0 1 1 v24 q0 1 -1 1 h-26 q-1 0 -1 -1 v-24 q0 -1 1 -1 z M4 7 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M13 7 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M22 7 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M4 15 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M13 15 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M22 15 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M4 23 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M13 23 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z M22 23 q0 -1 1-1h4q1 0 1 1v4q0 1 -1 1h-4q-1 0 -1-1z" />
+            </svg></div>
+
+
+        <div><svg id="sx_star" viewBox="0 0 32 32">
+                <path d="M 16 1 l -3.75 11 -11.25 0 8.75 7 -4 12 10.25 -7.25 10.25 7.25 -4 -12 8.75 -7 -11.25 0 z" />
+            </svg></div>
+
+
+        <div><svg id="sx_folder" viewBox="0 0 32 32">
+                <path d="M2 4q0 -2 2 -2 h8 l 4 4h10q4 0 4 4v16q0 4 -4 4 h-20q-4 0 -4-4z" />
+            </svg></div>
+
+
+        <div><svg id="sx_info_square" viewBox="0 0 32 32">
+                <path
+                    d="M14 1 q-2 0 -2 2 v4 q0 2 2 2 h4 q2 0 2 -2 v-4 q0 -2 -2 -2z M14 12 q-2 0 -2 2 v15 q0 2 2 2 h4 q2 0 2 -2 v-15 q0 -2 -2 -2z">
+                </path>
+            </svg></div>
+
+        <div><svg id="sx_info_circle" viewBox="0 0 32 32">
+                <path
+                    d="M 16 1 a 1 1 0 1 1 0 10 a 1 1 0 1 1 0 -10 Z M14 13 q-2 0 -2 2 v14 q0 2 2 2 h4 q2 0 2 -2 v-14 q0 -2 -2 -2z">
+                </path>
+            </svg></div>
+
+        <div><svg id="sx_info" viewBox="0 0 32 32">
+                <path
+                    d="M 16 1 a 1 1 0 1 1 0 8 a 1 1 0 1 1 0 -8 Z M14 12 q-1 0 -1 1 v17 q0 1 1 1 h4 q1 0 1 -1 v-17 q0 -1 -1 -1z">
+                </path>
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_question_bold">
+                <path
+                    d="M6 11 a10 10 0 0 1 10 -10 a 1 1 0 0 1 0 20 v3 q0 1 -1 1 h-2 q-1 0 -1 -1 v-4 q0 -3 3 -3 h1 a1 1 0 0 0 0 -12 a6 6 0 0 0 -6 6z M13 27 q-1 0 -1 1 v2 q0 1 1 1 h2 q1 0 1 -1 v-2 q0 -1 -1 -1z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_question">
+                <path
+                    d="M6 11 a10 10 0 0 1 10 -10 a 1 1 0 0 1 0 20 v3 q0 1 -1 1 h-2 q-1 0 -1 -1 v-4 q0 -2 2 -2 h2 a1 1 0 0 0 0 -14 a7 7 0 0 0 -7 7 z M13 27 q-1 0 -1 1 v2 q0 1 1 1 h2 q1 0 1 -1 v-2 q0 -1 -1 -1z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_XLS">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M4,4 l 3 8 -3 8 h2 l 2 -6 2 6 h2 l-3 -8 3 -8 h-2 l-2 6 -2 -6Z M13.25 4 v16h5.5 a1 1 0 0 0 0 -2 h-3.5v-14 Z M28 8 q0-4 -4-4 q-4 0 -4 4 q0 3 4 5 q2 1.2 2 3 q0 2 -2 2 q-2 0 -2 -2 h-2 q0 4 4 4 q4 0 4 -4 q0 -3 -4-5 q-2 -1.2 -2-3 q0-2 2 -2 q2 0 2 2z " />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_DOC">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M2.75 4 v16 h2 q7 0 7 -8 q0 -8 -7 -8 Z M5 6 q5 0 5 6 q0 6 -5 6 Z M21.25 9 a4.5 5 0 0 0 -9 0 v6 a4.5 5 0 0 0 9 0Z M14.25 9 a1 1 0 0 1 5 0 v6 a1 1 0 0 1 -5 0 Z M29.25 8 q0 -4 -3.5 -4 q-4 0 -4 8 q0 8 4 8 q3.5 0 3.5 -4 h-2 q0 2 -1.5 2 q-2 0 -2 -6 q0 -6 2 -6 q1.5 0 1.5 2z " />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_HTML">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M2.5,4 v16 h2v-7h4v7h2v-16h-2v7h-4v-7Z M11 4 v2h3v14h2v-14h3v-2 Z M19.5 4 v16 h2 v-12 l 3 6 3 -6 v12h2v-16 h-2 l-3 6 -3-6 Z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_XML">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M3.5,4 l 3 8 -3 8 h2 l 2 -6 2 6 h2 l-3 -8 3 -8 h-2 l-2 6 -2 -6Z M12 4 v16 h2 v-12 l 3 6 3 -6 v12h2v-16 h-2 l-3 6 -3-6 Z M23 4 v16h5.5 a1 1 0 0 0 0 -2 h-3.5v-14 Z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_CSV">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M11 8 q0 -4 -3.5 -4 q-4 0 -4 8 q0 8 4 8 q3.5 0 3.5 -4 h-2 q0 2 -1.5 2 q-2 0 -2 -6 q0 -6 2 -6 q1.5 0 1.5 2z M20 8 q0-4 -4-4 q-4 0 -4 4 q0 3 4 5 q2 1.2 2 3 q0 2 -2 2 q-2 0 -2 -2 h-2 q0 4 4 4 q4 0 4 -4 q0 -3 -4-5 q-2 -1.2 -2-3 q0-2 2 -2 q2 0 2 2z M20.5 4 l 2.75 16 h2.5 l 2.75 -16 h-2 l-2 12 l-2 -12z" />
+            </svg></div>
+        <div><svg viewBox="0 0 32 32" id="sx_JSON">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M6.5 4 h-4v2h2 v10 q0 2 -2  2 v2 h2 q2 0 2 -2z M14.25 7.5 q0-3.5 -3.5-3.5 q-3.5 0 -3.5 3.5 c0 4 5 5 5 9 q0 1.5 -1.5 1.5 q-1.5 0 -1.5 -1.5 h-2 q0 3.5 3.5 3.5 q3.5 0 3.5 -3.5 c0 -4 -5 -6 -5 -9 q0-1.5 1.5 -1.5 q1.5 0 1.5 1.5z M21.75 9 a3.5 5 0 0 0 -7 0 v6 a3.5 5 0 0 0 7 0Z M16.75 9 a1 2 0 0 1 3 0 v6 a1 2 0 0 1 -3 0z M29.5 4 h-2 v10 l-3 -10 h-2 v16 h2 v-10 l 3 10 h2z" />
+            </svg></div>
+
+        <div><svg id="sx_FAQ" viewBox="0 0 32 32">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M3.5,3.5 l 0,16 2,0 0,-8 3,0 a1,1 0 0,0 0,-2 l -3,0 0,-4 4,0 a1,1 0 0,0 0,-2 Z M13.5,3.5 l -4 16 2 0 1.6 -7 2.4 0 1.6 7 2 0 -4 -16 Z M14.3 7 l -0.85 4 1.65 0 Z M23.5 3.5 l -1 0 c-1 0 -3 1 -3 3 l 0 10 c 0 1 1 3 3 3 h3 c 0.5 0 1.5 -0.35 1.5 -0.5 l 1 1 2.5 0 -2.3 -2.3 c 0.25 -0.25 0.25 -0.75 0.3 -1.2 l 0 -10 c 0 -1 -1 -3 -3 -3 Z M23.5 5.5 c-0.75 0 -2 0.25 -2 2 v 8 c 0 0.75 0.75 2 2 2 h1 c 0.25 0 0.5 -0.025 0.9 -0.125 l -2.5 -2.5 h2.5 l 1.1 1.1 l 0 -8.475 c 0 -0.75 -0.75 -2 -2 -2 Z" />
+            </svg></div>
+
+        <div><svg id="sx_PDF" viewBox="0 0 32 32">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24 l-7 7 v-7z M3.5,4 v16h2v-6 h1 a1,1 0 0,0 0,-10 Z M5.5,12 v-6 q4 0 4 3 q0 3 -4 3 Z M12.25 4 v16 h2 q7 0 7 -8 q0 -8 -7 -8 Z M14.25 6 q5 0 5 6 q0 6 -5 6 Z M22 4 v16h2v-8h3 a1 1 0 0 0 0 -2 h-3v-4 h4 a1 1 0 0 0 0 -2 Z" />
+            </svg></div>
+
+        <div><svg id="sx_PDF_archives" viewBox="0 0 32 32">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v19h-28 l-2 -2 z M 5 23 h26 v3 h-23 Z  M 10 28 h21 v 3 h -18 Z M3.5,3 v16h2v-6 h1 a1,1 0 0,0 0,-10 Z M5.5,11 v-6 q4 0 4 3 q0 3 -4 3 Z M12.25 3 v16 h2 q7 0 7 -8 q0 -8 -7 -8 Z M14.25 5 q5 0 5 6 q0 6 -5 6 Z M22 3 v16h2v-8h3 a1 1 0 0 0 0 -2 h-3v-4 h4 a1 1 0 0 0 0 -2 Z" />
+            </svg></div>
+
+        <div><svg id="sx_PDF_center" viewBox="0 0 32 32">
+                <path
+                    d="M2,8 l 0,16 2,0 0,-6 2,0 a1,1 0 0,0 0,-10 Z m2,2 l 2,0 a1,1 0 0,1 0,6 l-2,0 Z m8,-2 l 0,16 2,0 a1,1 0 0,0 0,-16 Z m2,2 a1,1 0 0,1 0,12 Z m9,-2 l 0,16 2,0 0,-8 3,0 a1,1 0 0,0 0,-2 l-3,0 0,-4 4.5,0 a1,1 0 0,0 0,-2 Z" />
+            </svg></div>
+
+
+        <div><svg id="sx_video" viewBox="0 0 32 32">
+                <path
+                    d="M1 2 q0-1 1-1h28q1 0 1 1v20h-9v9h-20q-1 0 -1-1z M31 24h-7v7z M6 4 q-2 0 -2 2 l0 10 q0 2 2 2 l14 0 q2 0 2-2 l0-4 6 6 0 -14 -6 6 0 -4 q0-2 -2-2z" />
+            </svg></div>
+        <div><svg id="sx_video_center" viewBox="0 0 32 32">
+                <path d="M4 8 q-2 0 -2 2 l 0 12 q0 2 2 2 l 18 0 q2 0 2-2 l 0-4 6 6 0 -16 -6 6 0 -4 q0-2 -2-2z" />
+            </svg></div>
+        <div><svg id="sx_video_gallery" viewBox="0 0 32 32">
+                <path
+                    d="M1,2 q0-1 1-1 l 28 0 q1 0 1 1 l 0 19 -27 0 -3-3 Z M6,23h25v3h-22z M11,28h20v3h-17z M6 4 q-2 0 -2 2 l0 10 q0 2 2 2 l14 0 q2 0 2-2 l0-4 6 6 0 -14 -6 6 0 -4 q0-2 -2-2z" />
+            </svg></div>
+
+        <div><svg id="sx_camera" viewBox="0 0 32 32">
+                <path
+                    d="M2,10 q0 -4 4-4 h3l4-4h6l4 4h3q4 0 4 4 v16q0 4 -4 4 h-20q-4 0 -4-4z m14 -6a1 1 0 0 0 0 3a1 1 0 0 0 0 -3 m0 5a1 1 0 0 0 0 18a1 1 0 0 0 0 -18 m0 2a1 1 0 0 1 0 14a1 1 0 0 1 0 -14" />
+            </svg></div>
+        <div><svg id="sx_image" viewBox="0 0 32 32">
+                <path
+                    d="M4,1 a1 1 0 0 1 0 6a1 1 0 0 1 0-6 m-3 17 q0-10 6-2 q4-14 9-2 q14-28 15 4 v4h-9v9h-20 q-1 0 -1-1z m23 6 h7l-7 7z" />
+            </svg></div>
+        <div><svg id="sx_image_gallery" viewBox="0 0 32 32">
+                <path
+                    d="M4,1 a1 1 0 0 1 0 6a1 1 0 0 1 0-6 m-3 17 q0-10 6-2 q4-14 9-2 q14-28 15 4 v3h-27z m5 5h25v3h-22z m5 5h20v3h-17z" />
+            </svg></div>
+
+        <div><svg id="sx_book_open" viewBox="0 0 32 32">
+                <path
+                    d="M2 7v23 q2-2.5 12 0q-6-4 -10 -3v-22q-2 0 -2 2 m4-5v22 q5 0 9.5 6v-22 q-5 -6 -9.5 -6 M30 7 q0 -2 -2-2 v22 q-4-1 -10 3 q10-2.5 12 0 z m-4-5 q-4.5 0 -9.5 6 v22 q4.5-6 9.5-6z" />
+            </svg></div>
+        <div><svg id="sx_books" viewBox="0 0 32 32">
+                <path
+                    d="M2 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z M12 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z M22 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z " />
+            </svg></div>
+        <div><svg id="sx_library" viewBox="0 0 32 32">
+                <path d="M2 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z " />
+                <path d="M12 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z"
+                    transform="rotate(-4.7 14 28)" />
+                <path d="M22 4q0 -2 2 -2 h4q2 0 2 2v24q0 2 -2 2 h-4q-2 0 -2-2z m2 1v2h4v-2z m0 4 v2h4v-2z"
+                    transform="rotate(-9.4 24 28)" />
+            </svg></div>
+
+        <div><svg id="sx_forum" viewBox="0 0 32 32">
+                <path
+                    d="M 0.6 17.4 q 0 -8 8 -8 h 3 q 0 8 8 8 q 0 8 -8 8 l 1 3 l -4 -3 q -8 0 -8 -8 z M 4.5 17.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z M 10 17.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z M 15.5 17.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z M 12.4 8.6 q 0 -8 8 -8 h 3 q 8 0 8 8 q 0 8 -8 8 l 1 3 l -4 -3 q -8 0 -8 -8 z M 16 7.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z M 21.5 7.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z M 27 7.5 a 1 1 0 0 0 0 3 a 1 1 0 0 0 0 -3 z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_download">
+                <path
+                    d="M3 18 q-2 0 -2 2 v9 q0 2 2 2 h26 q2 0 2 -2 v-9 q0-2 -2-2 h-2v7 q0 2 -2 2h-18 q-2 0 -2-2v-7z M14.5 1 v15 h-3 c-1.5 0 -1.5 1 -1 1.5 l 4.5 4.5 q 1 1 2 0 l 4.5 -4.5 c0.5 -0.5 0.5 -1.5 -1 -1.5 h-3 v-15z" />
+            </svg></div>
+
+        <div><svg id="sx_film" viewBox="0 0 32 32">
+                <path
+                    d="M2 2 v4h3v4h-3 v4h3v4h-3 v4h3v4h-3 v4h3v2h22v-2h3 v-4h-3v-4h3 v-4h-3v-4h3 v-4h-3v-4h3 v-4h-3v-2h-22v2z m7 1 h14 v12h-14z m0 14 h14 v12h-14z" />
+            </svg></div>
+
+        <div><svg id="sx_full_screen" viewBox="0 0 32 32">
+                <path
+                    d="M1 1 v12 l4-4 5 5 4-4 -5-5 4-4z M1 31 h12 l-4-4 5-5 -4-4 -5 5 -4-4z M31 31 v-12 l-4 4 -5-5 -4 4 5 5 -4 4z M31 1 h-12 l 4 4 -5 5 4 4 5-5 4 4z" />
+            </svg></div>
+        <div><svg id="sx_gear" viewBox="0 0 32 32">
+                <path
+                    d="M15 5 h2 l 2 -4 5.5 2.25 -1.5 4.25 1.5 1.5 4.25 -1.5 2.25 5.5 -4 2 0 2 4 2 -2.25 5.5 -4.25 -1.5 -1.5 1.5 1.5 4.25 -5.5 2.25 -2 -4 -2 0 -2 4 -5.5 -2.25 1.5 -4.25 -1.5 -1.5 -4.25 1.5 -2.25 -5.5 4 -2 0 -2 -4 -2 2.25 -5.5 4.25 1.5 1.5 -1.5 -1.5 -4.25 5.5 -2.25z m1 3 a1 1 0 0 0 0 16  a1 1 0 0 0 0 -16z m0 3 a1 1 0 0 1 0 10 a1 1 0 0 1 0 -10" />
+            </svg></div>
+        <div><svg id="sx_heart" viewBox="0 0 32 32">
+                <path d="M16 30 l10 -10 c11 -11 0 -22 -10 -14 c-10 -8 -21 3 -10 14 l10 10z" />
+            </svg></div>
+        <div><svg id="sx_heart_tall" viewBox="0 0 32 32">
+                <path d="M16 30 l10 -10 c11 -11 -3 -26 -10 -13 c-7 -13 -21 2 -10 13 l10 10z" />
+            </svg></div>
+
+        <div><svg id="sx_clock" viewBox="0 0 32 32">
+                <path
+                    d="M16 1 a1 1 0 0 0 0 30 a1 1 0 0 0 0 -30 M16 4 a1 1 0 0 1 0 24 a1 1 0 0 1 0 -24 m-1.5 3 v10.5 h8 a1 1 0 0 0 0 -3 h-5 v-8.5 a1 1 0 0 0 -3 0z" />
+            </svg></div>
+
+        <div><svg viewBox="0 0 32 32" id="sx_arrow_right_xl">
+                <path d="M10 3 h-5 l 7 13 l -7 13 h5 l 7 -13 z M20 3 h-5 l 7 13 l -7 13 h5 l 7 -13 z" />
+            </svg></div>
+
+
+        <div><svg id="sx_arrow_down" viewBox="0 0 32 32">
+                <path d="M8 10.5 a1 1 0 0 0 -2 2 l 9 9 q1 1 2 0 l 9 -9 a1 1 0 0 0 -2-2 l-7 7 q-1 1 -2 0 z  " />
+            </svg></div>
+        <div><svg id="sx_arrow_up" viewBox="0 0 32 32">
+                <path d="M6 19.5 a1 1 0 0 0 2 2 l 7-7 q1 -1 2 0 l7 7 a1 1 0 0 0 2-2 l-9 -9 q-1-1 -2 0z" />
+            </svg></div>
+        <div><svg id="sx_arrow_up_l" viewBox="0 0 32 32">
+                <path d="M2 21.5 a1 1 0 0 0 2 2 l 11-11 q1 -1 2 0 l11 11 a1 1 0 0 0 2-2 l-13 -13 q-1-1 -2 0z" />
+            </svg></div>
+        <div><svg id="sx_arrow_down_l" viewBox="0 0 32 32">
+                <path d="M4 8.5 a1 1 0 0 0 -2 2 l 13 13 q1 1 2 0 l13 -13 a1 1 0 0 0 -2-2 l-11 11 q-1 1 -2 0  z  " />
+            </svg></div>
+        <div><svg id="sx_arrow_left" viewBox="0 0 32 32">
+                <path d="M19.5 6 a1 1 0 0 1 2 2 l -7 7 q-1 1 0 2 l 7 7 a1 1 0 0 1 -2 2 l-9 -9 q-1-1 0 -2z" />
+            </svg></div>
+        <div><svg id="sx_arrow_right" viewBox="0 0 32 32">
+                <path d="M12.5 6 a1 1 0 0 0 -2 2 l 7 7 q1 1 0 2 l -7 7 a1 1 0 0 0 2 2 l 9 -9 q1 -1 0 -2 z" />
+            </svg></div>
+        <div><svg id="sx_arrow_left_l" viewBox="0 0 32 32">
+                <path d="M21.5 2 a1 1 0 0 1 2 2 l -11 11 q-1 1 0 2 l 11 11 a1 1 0 0 1 -2 2 l-13 -13 q-1-1 0 -2z" />
+            </svg></div>
+        <div><svg id="sx_arrow_right_l" viewBox="0 0 32 32">
+                <path d="M10.5 2 a1 1 0 0 0 -2 2 l 11 11 q1 1 0 2 l -11 11 a1 1 0 0 0 2 2 l 13 -13 q1 -1 0 -2 z" />
+            </svg></div>
+
+        <hr>
+
+
+        <div><svg id="sx_arrows_down" viewBox="0 0 32 32">
+                <path
+                    d="M8 6.5 a1 1 0 0 0 -2 2 l 9 9 q1 1 2 0 l 9 -9 a1 1 0 0 0 -2-2 l-7 7 q-1 1 -2 0 z m0 8 a1 1 0 0 0 -2 2 l 9 9 q1 1 2 0 l 9 -9 a1 1 0 0 0 -2-2 l-7 7 q-1 1 -2 0 z  " />
+            </svg></div>
+        <div><svg id="sx_arrows_up" viewBox="0 0 32 32">
+                <path
+                    d="M6 15.5 a1 1 0 0 0 2 2 l 7-7 q1 -1 2 0 l7 7 a1 1 0 0 0 2-2 l-9 -9 q-1-1 -2 0z m0 8 a1 1 0 0 0 2 2 l 7-7 q1 -1 2 0 l7 7 a1 1 0 0 0 2-2 l-9 -9 q-1-1 -2 0z" />
+            </svg></div>
+        <div><svg id="sx_arrows_down_l" viewBox="0 0 32 32">
+                <path
+                    d="M4 4.5 a1 1 0 0 0 -2 2 l 13 13 q1 1 2 0 l13 -13 a1 1 0 0 0 -2-2 l-11 11 q-1 1 -2 0  z m0 8 a1 1 0 0 0 -2 2 l 13 13 q1 1 2 0 l13 -13 a1 1 0 0 0 -2-2 l-11 11 q-1 1 -2 0  z  " />
+            </svg></div>
+        <div><svg id="sx_arrows_up_l" viewBox="0 0 32 32">
+                <path
+                    d="M2 17.5 a1 1 0 0 0 2 2 l 11-11 q1 -1 2 0 l11 11 a1 1 0 0 0 2-2 l-13 -13 q-1-1 -2 0z m0 8 a1 1 0 0 0 2 2 l 11-11 q1 -1 2 0 l11 11 a1 1 0 0 0 2-2 l-13 -13 q-1-1 -2 0z" />
+            </svg></div>
+        <div><svg id="sx_arrows_left_l" viewBox="0 0 32 32">
+                <path
+                    d="M17.5 2 a1 1 0 0 1 2 2 l -11 11 q-1 1 0 2 l 11 11 a1 1 0 0 1 -2 2 l-13 -13 q-1-1 0 -2z m8 0 a1 1 0 0 1 2 2 l -11 11 q-1 1 0 2 l 11 11 a1 1 0 0 1 -2 2 l-13 -13 q-1-1 0 -2z" />
+            </svg></div>
+        <div><svg id="sx_arrows_right_l" viewBox="0 0 32 32">
+                <path
+                    d="M6.5 2 a1 1 0 0 0 -2 2 l 11 11 q1 1 0 2 l -11 11 a1 1 0 0 0 2 2 l 13 -13 q1 -1 0 -2z m8 0 a1 1 0 0 0 -2 2 l 11 11 q1 1 0 2 l -11 11 a1 1 0 0 0 2 2 l 13 -13 q1 -1 0 -2 z" />
+            </svg></div>
+        <div><svg id="sx_arrows_left" viewBox="0 0 32 32">
+                <path
+                    d="M15.5 6 a1 1 0 0 1 2 2 l -7 7 q-1 1 0 2 l 7 7 a1 1 0 0 1 -2 2 l-9 -9 q-1-1 0 -2z m8 0 a1 1 0 0 1 2 2 l -7 7 q-1 1 0 2 l 7 7 a1 1 0 0 1 -2 2 l-9 -9 q-1-1 0 -2z" />
+            </svg></div>
+        <div><svg id="sx_arrows_right" viewBox="0 0 32 32">
+                <path
+                    d="M8.5 6 a1 1 0 0 0 -2 2 l 7 7 q1 1 0 2 l -7 7 a1 1 0 0 0 2 2 l 9 -9 q1 -1 0 -2 z m8 0 a1 1 0 0 0 -2 2 l 7 7 q1 1 0 2 l -7 7 a1 1 0 0 0 2 2 l 9 -9 q1 -1 0 -2 z" />
+            </svg></div>
+
+
+        <div><svg id="sx_up_xl" viewBox="0 0 32 32">
+                <path d="M2 23 h28 l-14-14 Z" />
+            </svg></div>
+        <div><svg id="sx_up_l" viewBox="0 0 32 32">
+                <path d="M4 22 h24 l-12-12 Z" />
+            </svg></div>
+        <div><svg id="sx_up" viewBox="0 0 32 32">
+                <path d="M6 21 h20 l-10-10 Z" />
+            </svg></div>
+        <div><svg id="sx_up_s" viewBox="0 0 32 32">
+                <path d="M8 20 h16 l-8-8 Z" />
+            </svg></div>
+        <div><svg id="sx_up_down" viewBox="0 0 32 32">
+                <path d="M6 14 h20 l-10-10 Z m0 4 l 10 10 10 -10z" />
+            </svg></div>
+
+        <div><svg id="sx_down_s" viewBox="0 0 32 32">
+                <path d="M16 20 l 8-8 h-16z" />
+            </svg></div>
+        <div><svg id="sx_down" viewBox="0 0 32 32">
+                <path d="M16 21 l 10-10 h-20z" />
+            </svg></div>
+        <div><svg id="sx_down_l" viewBox="0 0 32 32">
+                <path d="M16 22 l 12-12 h-24z" />
+            </svg></div>
+        <div><svg id="sx_down_xl" viewBox="0 0 32 32">
+                <path d="M16 23 l 14-14 h-28z" />
+            </svg></div>
+
+        <div><svg id="sx_left_s" viewBox="0 0 32 32">
+                <path d="M12 16 l8 -8 0 16 z" />
+            </svg></div>
+        <div><svg id="sx_left" viewBox="0 0 32 32">
+                <path d="M11 16 l10 -10 0 20 z" />
+            </svg></div>
+        <div><svg id="sx_left_l" viewBox="0 0 32 32">
+                <path d="M10 16 l12 -12 0 24 z" />
+            </svg></div>
+        <div><svg id="sx_left_xl" viewBox="0 0 32 32">
+                <path d="M9 16 l14 -14 0 28 z" />
+            </svg></div>
+
+        <div><svg id="sx_left_right" viewBox="0 0 32 32">
+                <path d="M2 16 l12 -12 0 24 z M30 16 l-12 12 v-24 z"></path>
+            </svg></div>
+
+
+        <div><svg id="sx_rigth_xl" viewBox="0 0 32 32">
+                <path d="M9 30 v-28 l14 14z" />
+            </svg></div>
+        <div><svg id="sx_rigth_l" viewBox="0 0 32 32">
+                <path d="M10 28 v-24 l12 12z" />
+            </svg></div>
+        <div><svg id="sx_rigth" viewBox="0 0 32 32">
+                <path d="M11 26 v-20 l 10 10z" />
+            </svg></div>
+        <div><svg id="sx_rigth_s" viewBox="0 0 32 32">
+                <path d="M12 24 v-16 l8 8z" />
+            </svg></div>
+
+        <div><svg id="sx_rect_xl" viewBox="0 0 32 32">
+                <path d="M6 4 q-2 0 -2 2 v20 q0 2 2 2 h20 q2 0 2 -2 v-20 q0-2 -2-2z" />
+            </svg></div>
+        <div><svg id="sx_rect_l" viewBox="0 0 32 32">
+                <path d="M10 8 q-2 0 -2 2 v12 q0 2 2 2 h12 q2 0 2 -2 v-12 q0-2 -2-2z" />
+            </svg></div>
+        <div><svg id="sx_rect" viewBox="0 0 32 32">
+                <path d="M12 10 q-2 0 -2 2 v8 q0 2 2 2 h8 q2 0 2 -2 v-8 q0-2 -2-2z" />
+            </svg></div>
+        <div><svg id="sx_rect_s" viewBox="0 0 32 32">
+                <path d="M14 12 q-2 0 -2 2 v4 q0 2 2 2 h4 q2 0 2 -2 v-4 q0-2 -2-2z" />
+            </svg></div>
+
+
+        <div><svg id="sx_romb_l" viewBox="0 0 32 32">
+                <path d="M8 15 q-1 1 0 2 l7 7 q1 1 2 0 l7-7q1-1 0-2 l-7-7q-1-1 -2 0 Z" />
+            </svg></div>
+        <div><svg id="sx_romb" viewBox="0 0 32 32">
+                <path d="M10 15 q-1 1 0 2 l5 5 q1 1 2 0 l5-5q1-1 0-2 l-5-5q-1-1 -2 0 Z" />
+            </svg></div>
+        <div><svg id="sx_romb_s" viewBox="0 0 32 32">
+                <path d="M12 15 q-1 1 0 2 l3 3 q1 1 2 0 l3-3q1-1 0-2 l-3 -3q-1 -1 -2 0 Z" />
+            </svg></div>
+        <div><svg id="sx_circle_s" viewBox="0 0 32 32">
+                <path d="M16 12 a1 1 0 0 1 0 8 a1 1 0 0 1 0-8" />
+            </svg></div>
+        <div><svg id="sx_circle" viewBox="0 0 32 32">
+                <path d="M16 10 a1 1 0 0 1 0 12 a1 1 0 0 1 0-12" />
+            </svg></div>
+        <div><svg id="sx_circle_l" viewBox="0 0 32 32">
+                <path d="M16 8 a1 1 0 0 1 0 16 a1 1 0 0 1 0-16" />
+            </svg></div>
+
+
+
+        <div><svg id="sx_clear" viewBox="0 0 32 32">
+                <path
+                    d="M5 3 a1 1 0 0 0 -2 2 l11 11 -11 11 a1 1 0 0 0 2 2 l11 -11 11 11 a1 1 0 0 0 2 -2 l-11 -11 11 -11 a1 1 0 0 0 -2-2 l-11 11z" />
+            </svg></div>
+        <div><svg id="sx_clear_small" viewBox="0 0 32 32">
+                <path
+                    d="M8 6 a1 1 0 0 0 -2 2 l8 8 -8 8 a1 1 0 0 0 2 2 l8 -8 8 8 a1 1 0 0 0 2 -2 l-8 -8 8 -8 a1 1 0 0 0 -2-2 l-8 8z" />
+            </svg></div>
+
+        <div><svg id="sx_clear_bold" viewBox="0 0 32 32">
+                <path
+                    d="M2 6 a1 1 0 0 1 4 -4 l10 10 10-10 a1 1 0 0 1 4 4 l-10 10 10 10 a1 1 0 0 1 -4 4 l-10 -10 -10 10 a1 1 0 0 1 -4-4 l10-10z" />
+            </svg></div>
+        <div><svg id="sx_clear_bold_small" viewBox="0 0 32 32">
+                <path
+                    d="M5 9 a1 1 0 0 1 4 -4 l7 7 7-7 a1 1 0 0 1 4 4 l-7 7 7 7 a1 1 0 0 1 -4 4 l-7 -7 -7 7 a1 1 0 0 1 -4-4 l7-7z" />
+            </svg></div>
+        <div><svg id="sx_clear_borders" viewBox="0 0 32 32">
+                <path
+                    d="M2 6 a1 1 0 0 1 4 -4 l10 10 10-10 a1 1 0 0 1 4 4 l-10 10 10 10 a1 1 0 0 1 -4 4 l-10 -10 -10 10 a1 1 0 0 1 -4-4 l10-10z M5 3 a1 1 0 0 0 -2 2 l11 11 -11 11 a1 1 0 0 0 2 2 l11 -11 11 11 a1 1 0 0 0 2 -2 l-11 -11 11 -11 a1 1 0 0 0 -2-2 l-11 11z" />
+            </svg></div>
+        <div><svg id="sx_clear_borders_small" viewBox="0 0 32 32">
+                <path
+                    d="M5 9 a1 1 0 0 1 4 -4 l7 7 7-7 a1 1 0 0 1 4 4 l-7 7 7 7 a1 1 0 0 1 -4 4 l-7 -7 -7 7 a1 1 0 0 1 -4-4 l7-7z M8 6 a1 1 0 0 0 -2 2 l8 8 -8 8 a1 1 0 0 0 2 2 l8 -8 8 8 a1 1 0 0 0 2 -2 l-8 -8 8 -8 a1 1 0 0 0 -2-2 l-8 8z" />
+            </svg></div>
+
+        <div><svg id="sx_plus" viewBox="0 0 32 32">
+                <path d="M8 17 a1 1 0 0 1 0 -2 h7v-7 a1 1 0 0 1 2 0v7h7a1 1 0 0 1 0 2h-7v7a1 1 0 0 1 -2 0v-7h-7z" />
+            </svg></div>
+        <div><svg id="sx_plus_l" viewBox="0 0 32 32">
+                <path d="M5 17 a1 1 0 0 1 0 -2h10v-10a1 1 0 0 1 2 0v10h10a1 1 0 0 1 0 2h-10v10a1 1 0 0 1 -2 0v-10z" />
+            </svg></div>
+        <div><svg id="sx_plus_bold" viewBox="0 0 32 32">
+                <path d="M5 13 a1 1 0 0 0 0 6 h8v8 a1 1 0 0 0 6 0 v-8h8 a1 1 0 0 0 0-6 h-8v-8 a1 1 0 0 0 -6 0 v8z" />
+            </svg></div>
+        <div><svg id="sx_plus_bold_borders" viewBox="0 0 32 32">
+                <path
+                    d="M5 13 a1 1 0 0 0 0 6 h8v8 a1 1 0 0 0 6 0 v-8h8 a1 1 0 0 0 0-6 h-8v-8 a1 1 0 0 0 -6 0 v8z M5 17 a1 1 0 0 1 0 -2h10v-10a1 1 0 0 1 2 0v10h10a1 1 0 0 1 0 2h-10v10a1 1 0 0 1 -2 0v-10z" />
+            </svg></div>
+        <div><svg id="sx_minus" viewBox="0 0 32 32">
+                <path d="M8 17 a0.5 0.5 0 0 1 0 -2 h16 a0.5,0.5 0 0,1 0,2 Z" />
+            </svg></div>
+        <div><svg id="sx_minus_l" viewBox="0 0 32 32">
+                <path d="M5 17 a1 1 0 0 1 0 -2 h22 a1 1 0 0 1 0 2 Z" />
+            </svg></div>
+        <div><svg id="sx_minus_bold" viewBox="0 0 32 32">
+                <path d="M5 13 a1 1 0 0 0 0 6 h22 a1 1 0 0 0 0-6 z" />
+            </svg></div>
+        <div><svg id="sx_minus_bold_borders" viewBox="0 0 32 32">
+                <path d="M5 13 a1 1 0 0 0 0 6 h22 a1 1 0 0 0 0-6 zM5 17 a1 1 0 0 1 0 -2 h22 a1 1 0 0 1 0 2 Z" />
+            </svg></div>
+
+        <div><svg id="sx_link" viewBox="0 0 32 32">
+                <path
+                    d="M17 10a1 1 0 0 0 -2 0 v12 a1 1 0 0 0 2 0z m1 3 v2q4 0 4-4v-8q0-4 -4-4h-4q-4 0 -4 4v8 q0 4 4 4v-2q-2 0 -2-2v-8 q0-2 2-2h4 q2 0 2 2v8 q0 2 -2 2z m0 4 v2q2 0 2 2v8 q0 2 -2 2h-4 q-2 0 -2-2v-8 q0-2 2-2v-2 q-4 0 -4 4v8 q0 4 4 4h4 q4 0 4-4v-8q0-4 -4-4z"
+                    transform="rotate(45 16 16)" />
+            </svg></div>
+        <div><svg id="sx_link-bg" viewBox="0 0 32 32">
+                <path
+                    d="M-8 -8 h48 v48 h-48 z M17 10a1 1 0 0 0 -2 0 v12 a1 1 0 0 0 2 0z m1 3 v2q4 0 4-4v-8q0-4 -4-4h-4q-4 0 -4 4v8 q0 4 4 4v-2q-2 0 -2-2v-8 q0-2 2-2h4 q2 0 2 2v8 q0 2 -2 2z m0 4 v2q2 0 2 2v8 q0 2 -2 2h-4 q-2 0 -2-2v-8 q0-2 2-2v-2 q-4 0 -4 4v8 q0 4 4 4h4 q4 0 4-4v-8q0-4 -4-4z"
+                    transform="rotate(45 16 16)" />
+            </svg></div>
+
+        <div><svg id="sx_link_rings" viewBox="0 0 32 32">
+                <path
+                    d="M18 10a1 1 0 0 0 -4 0 v12 a1 1 0 0 0 4 0z m1 2v3 a8.3 8.3 0 0 0 -3 -16 a8.3 8.3 0 0 0 -3 16v-3 a5.5 5.5 0 0 1 3 -10a5.5 5.5 0 0 1 3 10z m0 5 v3 a5.5 5.5 0 0 1 -3 10a5.5 5.5 0 0 1 -3 -10v-3 a8.3 8.3 0 0 0 3 16a8.3 8.3 0 0 0 3 -16z"
+                    transform="rotate(45 16 16)" />
+            </svg></div>
+        <div><svg id="sx_link_rings-bg" viewBox="0 0 32 32">
+                <path
+                    d="M-8 -8 h48 v48 h-48 z M18 10a1 1 0 0 0 -4 0 v12 a1 1 0 0 0 4 0z m1 2v3 a8.3 8.3 0 0 0 -3 -16 a8.3 8.3 0 0 0 -3 16v-3 a5.5 5.5 0 0 1 3 -10a5.5 5.5 0 0 1 3 10z m0 5 v3 a5.5 5.5 0 0 1 -3 10a5.5 5.5 0 0 1 -3 -10v-3 a8.3 8.3 0 0 0 3 16a8.3 8.3 0 0 0 3 -16z"
+                    transform="rotate(45 16 16)" />
+            </svg></div>
+        <div><svg id="sx_link_verticle" viewBox="0 0 32 32">
+                <path
+                    d="M17 10a1 1 0 0 0 -2 0 v12 a1 1 0 0 0 2 0z m1 3 v2q4 0 4-4v-7q0-4 -4-4h-4q-4 0 -4 4v7 q0 4 4 4v-2q-2 0 -2-2v-7 q0-2 2-2h4 q2 0 2 2v7 q0 2 -2 2z m0 4 v2q2 0 2 2v7 q0 2 -2 2h-4 q-2 0 -2-2v-7 q0-2 2-2v-2 q-4 0 -4 4v7 q0 4 4 4h4 q4 0 4-4v-7q0-4 -4-4z" />
+            </svg></div>
+
+
+        <div><svg id="sx_mail" viewBox="0 0 32 32">
+                <path
+                    d="M 2 8 q 0 -2 2 -2 h 24 q 2 0 2 2 l -12 12 q -2 2 -4 0 Z m 0 2 l 7 7 -7 7z m0 16 l 8 -8 4 4 q 2 2 4 0 l 4 -4 8 8 q 0 2 -2 2 h -24 q -2 0 -2 -2 Z m28 -2 l-7-7 7-7z" />
+            </svg></div>
+        <div><svg id="sx_mail_open" viewBox="0 0 32 32">
+                <path
+                    d="M2 14 q0-1 1-2 l 9-8 q4-4 8 0 l 9 8 q1 1 1 2zm0 2v12q0 2 2 2h24q2 0 2-2v-12h-4q-1 0 -2 1 l-6 6q-2 2 -4 0 l -6-6 q-1-1 -2-1z" />
+            </svg></div>
+        <div><svg id="sx_mail_small" viewBox="0 0 32 32">
+                <path
+                    d="M2 10 q0-2 2-2h24q2 0 2 2 l-12 8 q-2 1.5 -4 0 z m0 2 l 12 8q2 1.5 4 0 l 12 -8 v10q0 2 -2 2h-24 q-2 0 -2-2z" />
+            </svg></div>
+
+        <div><svg id="sx_map" viewBox="0 0 32 32">
+                <path
+                    d="M1 8 q0 -1.5 1 -2 l 6 -3 q2 -1 2 1 v20 q0 1.5 -1 2 l -6 3 q-2 1 -2 -1z M11.5 4 q0 -2 2 -1 l 6 3 q1 0.5 1 2 v20 q0 2 -2 1 l -6 -3 q-1 -0.5 -1 -2z M22 8 q0 -1.5 1 -2 l 6 -3 q2 -1 2 1 v20 q0 1.5 -1 2 l -6 3 q-2 1 -2 -1z" />
+            </svg></div>
+        <div><svg id="sx_map_marker" viewBox="0 0 32 32">
+                <path
+                    d="M4,12 c0,-6.624 5.376,-12 12,-12 s12,5.376 12,12 s-3.5,9.5 -11,19 q-1 1 -2 0 c-7.5,-9.5 -11,-12.376 -11,-19 m12 -5 a1 1 0 0 0 0 10 a1 1 0 0 0 0 -10z" />
+            </svg></div>
+
+        <div><svg id="sx_new_window" viewBox="0 0 32 32">
+                <path
+                    d="M30 9 l-7-7v5 q-8 0 -10 12 q4 -8 10-8 v5 l 7-7z m-14 -1 h-12q-2 0 -2 2v18q0 2 2 2h20q2 0 2-2v-12 l-3 3v7q0 1 -1 1h-16q-1 0 -1-1v-14 q0-1 1-1h6.8q1.2-2 3.2-3z" />
+            </svg></div>
+        <div><svg id="sx_new_window_arrow" viewBox="0 0 32 32">
+                <path
+                    d="M30 4 q0-2 -2-2h-10 q-1.5 0 -1 1 l 4 4 l-9 9 a1 1 0 0 0 4 4 l 9-9 4 4 q1 0.5 1-1z m-13 4 h-13 q-2 0 -2 2v18q0 2 2 2h18 q2 0 2-2v-13 l-3 3v8q0 1 -1 1h-14q-1 0 -1-1v-14 q0-1 1-1h8z" />
+            </svg></div>
+        <div><svg id="sx_new_window_arrow_bold" viewBox="0 0 32 32">
+                <path
+                    d="M30 4 q0-2 -2-2h-10 q-1.5 0 -1 1 l 4 4 l-8 8 a1 1 0 0 0 4 4 l 8-8 4 4 q1 0.5 1-1z m-12 3 h-12 q-4 0 -4 4v15q0 4 4 4h15q4 0 4-4v-12 l-4 4v6q0 2 -2 2h-11q-2 0 -2-2v-11 q0-2 2-2h6z" />
+            </svg></div>
+        <div><svg id="sx_pencil" viewBox="0 0 32 32">
+                <path
+                    d="M27 2 q-2.5 -2.5 -5 0 l -2 2 q-0.5 0.5 0 1 l 7 7 q0.5 0.5 1 0 l 2 -2 q2.5 -2.5 0 -5z m-8.5 4.5 q-0.5 -0.5 -1 0 l-14.5 14.5 -2 8 q0 2 2 2 l 8 -2 14.5 -14.5 q0.5 -0.5 0 -1 z m-1.5 3.5 a1 1 0 0 1 1.5 1.5 l -9 9 a1 1 0 0 1 -1.5 -1.5z m3.5 3.5 a1 1 0 0 1 1.5 1.5 l -9 9 a1 1 0 0 1 -1.5 -1.5z m-13.5 11.5 h3 v2 l -4 1 -2 -2 1 -4 h2z" />
+            </svg></div>
+        <div><svg id="sx_phone" viewBox="0 0 32 32">
+                <path
+                    d="M0 10.5 q-2 0 -2 2 l 0 7 q0 1.25 1 2 q15 8 34 0 q1 -0.5 1 -2 l0 -7 q0 -2 -2 -2 l -5 1 q-1.33 0 -2 2 l-2 6 q-5 2 -14 0 l-2 -6 q-0.66 -2 -2 -2z"
+                    transform="rotate(-45 16 16)" />
+            </svg></div>
+
+        <div><svg id="sx_print" viewBox="0 0 32 32">
+                <path
+                    d="M8 2 h16v8h-16z M2 14 q0 -2 2 -2h24q2 0 2 2 v8q0 2 -2 2h-4v-6h-16v6h-4q-2 0 -2-2z M10 20 h12v10h-12z" />
+            </svg></div>
+
+        <div><svg id="sx_reload" viewBox="0 0 32 32">
+                <path
+                    d="M 4 18 a 12 12 0 1 0 12 -12 v -3 c 0 -1 -1 -1 -2 0 l -4 4 q -1 1 0 2 l 4 4 c 1 1 2 1 2 0 v -3 a 8 8 0 1 1 -8 8 q 0 -1 -1 -1 h -2 q -1 0 -1 1 Z" />
+            </svg></div>
+        <div><svg id="sx_reload_bold" viewBox="0 0 32 32">
+                <path
+                    d="M 2 18 a 14 14 0 1 0 14 -14 v -2.8 c0 -1.5 -1.5 -1.5 -3 0  l -4.8 4.8 q -1 1 0 2 l 4.8 4.8 c 1.5 1.5 3 1.5 3 0 v -2.8 a 8 8 0 1 1 -8 8 q 0 -1 -1 -1 h -4 q -1 0 -1 1 Z" />
+            </svg></div>
+
+        <div><svg id="sx_save" viewBox="0 0 32 32">
+                <path
+                    d="M5 2 q-3 0 -3 3 v22 q0 3 3 3 h22 q3 0 3 -3 v-17 q0-1 -1 -2 l -5 -5 q-1 -1 -2 -1z m1 5 q0 -1 1 -1 h14 q1 0 1 1v6 q0 1 -1 1 h-14 q-1 0 -1 -1z m10 11 a1 1 0 0 1 0 8 a1 1 0 0 1 0 -8z" />
+            </svg></div>
+
+        <div><svg id="sx_search" viewBox="0 0 32 32">
+                <path
+                    d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11" />
+            </svg></div>
+        <div><svg id="sx_search_minus" viewBox="0 0 32 32">
+                <path
+                    d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11 m 1.5 -3.5 v -4 h -14 v 4 Z" />
+            </svg></div>
+        <div><svg id="sx_search_plus" viewBox="0 0 32 32">
+                <path
+                    d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11 m 1.5 -3.5 v -4 h -5 v -5 h -4 v 5 h -5 v 4 h 5 v 5 h 4 v -5 Z" />
+            </svg></div>
+        <div><svg id="sx_search_plus_right" viewBox="0 0 32 32">
+                <path transform="rotate(90 16 16)"
+                    d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11 m 1.5 -3.5 v -4 h -5 v -5 h -4 v 5 h -5 v 4 h 5 v 5 h 4 v -5 Z" />
+            </svg></div>
+        <div><svg id="sx_search_right" viewBox="0 0 32 32">
+                <path transform="rotate(90 16 16)"
+                    d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11" />
+            </svg></div>
+
+
+        <div><svg id="sx_shopping_cart" viewBox="0 0 32 32">
+                <path
+                    d="M3 1 a1 1 0 0 0 0 3h2 l 3 12a1 1 0 0 0 0 8h20a1 1 0 0 0 0 -2h-20a1 1 0 0 1 0 -4 h16a1 1 0 0 0 0-2 l 6 -11q0 -1 -1-1 h-20 l -3-3z M10 25 a1 1 0 0 0 0 6a1 1 0 0 0 0 -6 M24 25 a1 1 0 0 0 0 6a1 1 0 0 0 0 -6" />
+            </svg></div>
+
+        <div><svg id="sx_sort_alpha_asc" viewBox="0 0 32 32">
+                <path
+                    d="M9 2.5 q-1 -1 -2 0 l -4.5 4.5 c-0.5 0.5 -0.5 1.5 1 1.5 h3v15 h-3 c-1.5 0 -1.5 1 -1 1.5 l 4.5 4.5 q 1 1 2 0 l 4.5 -4.5 c0.5 -0.5 0.5 -1.5 -1 -1.5 h-3 v-15 h3 c1.5 0 1.5 -1 1 -1.5z M22.5 2 q-0.5 0 -1 1 l -5 10 c-0.25 0.75 0.25 1 0.5 1 h1.5 q0.5 0 0.75 -0.5 l 1.25 -2.5 h5 l 1.25 2.5 q0.25 0.5 0.75 0.5 h1.5 c0.25 0 0.75 -0.25 0.5 -1 l -5 -10 q-0.5 -1 -1 -1z m-1 7 l 1.5 -3 1.5 3z M18 18 q-1 0 -1 1 v1 q0 1 1 1 h6 l -6.8 6.8 q-0.2 0.2 -0.2 0.4 v0.8 q0 1 1 1 h10 q1 0 1 -1 v-1 q0 -1 -1 -1 h-6 l 6.8 -6.8 q0.2 -0.2 0.2 -0.4 v-0.8 q0 -1 -1 -1z" />
+            </svg></div>
+        <div><svg id="sx_sort_alpha_desc" viewBox="0 0 32 32">
+                <path
+                    d="M9 2.5 q-1 -1 -2 0 l -4.5 4.5 c-0.5 0.5 -0.5 1.5 1 1.5 h3v15 h-3 c-1.5 0 -1.5 1 -1 1.5 l 4.5 4.5 q 1 1 2 0 l 4.5 -4.5 c0.5 -0.5 0.5 -1.5 -1 -1.5 h-3 v-15 h3 c1.5 0 1.5 -1 1 -1.5z M18 2 q-1 0 -1 1 v1 q0 1 1 1 h6 l -6.8 6.8 q-0.2 0.2 -0.2 0.4 v0.8 q0 1 1 1 h10 q1 0 1 -1 v-1 q0 -1 -1 -1 h-6 l 6.8 -6.8 q0.2 -0.2 0.2 -0.4 v-0.8 q0 -1 -1 -1z M22.5 18 q-0.5 0 -1 1 l -5 10 c-0.25 0.75 0.25 1 0.5 1 h1.5 q0.5 0 0.75 -0.5 l 1.25 -2.5 h5 l 1.25 2.5 q0.25 0.5 0.75 0.5 h1.5 c0.25 0 0.75 -0.25 0.5 -1 l -5 -10 q-0.5 -1 -1 -1z m-1 7 l 1.5 -3 1.5 3z" />
+            </svg></div>
+
+        <div><svg id="sx_trash" viewBox="0 0 32 32">
+                <path
+                    d="M3 3 q-1 0 -1 1 v2 q0 1 1 1 h26 q1 0 1 -1 v-2 q0 -1 -1 -1 h-8 q-1 -2 -2 -2 h-6 q-1 0 -2 2z m1 6 q-1 0 -1 1 v18 q0 3 3 3 h20 q3 0 3 -3 v-18 q0 -1 -1 -1z m4 4 a1 1 0 0 1 2 0 v14 a1 1 0 0 1 -2 0z m7 0 a1 1 0 0 1 2 0 v14 a1 1 0 0 1 -2 0z m7 0 a1 1 0 0 1 2 0 v14 a1 1 0 0 1 -2 0z" />
+            </svg></div>
+
+
+
+        <div><svg id="sx_user" viewBox="0 0 32 32">
+                <path d="M 16 1 a 1 1 0 0 1 0 14 a 1 1 0 0 1 0 -14 M 1 31 q 1 -16 8 -16 q 7 7 14 0 q 8 0 8 16 Z" />
+            </svg></div>
+        <div><svg id="sx_user_logout" viewBox="0 0 32 32">
+                <path
+                    d="M 16 1 a 1 1 0 0 1 0 14 a 1 1 0 0 1 0 -14 M 1 31 q 1 -16 8 -16 q 7 7 14 0 q 8 0 8 16 Z m 16 -6 q 0 1 1 1 h 10 q 1 0 1 -1 v -2 q 0 -1 -1 -1 h -10 q -1 0 -1 1 Z" />
+            </svg></div>
+        <div><svg id="sx_user_profile" viewBox="0 0 32 32">
+                <path
+                    d="M 16 1 a 1 1 0 0 1 0 14 a 1 1 0 0 1 0 -14 M 1 31 q 1 -16 8 -16 q 7 7 14 0 q 8 0 8 16 z M24 30 q 1 0 1 -1 v-3 h3 q1 0 1 -1 v-2 q0 -1 -1 -1 h-3v-3 q0 -1 -1 -1 h-2 q-1 0 -1 1 v3h-3 q-1 0 -1 1 v 2 q 0 1 1 1 h3v3 q 0 1 1 1 Z" />
+            </svg></div>
+
+
+        <div><svg id="sx_music" viewBox="0 0 32 32">
+                <path
+                    d=" M 0 5 h 32 v2 h -32  z M 0 11 h 32 v2 h -32  z M 0 17 h 32 v2 h -32  z M 0 23 h 32 v2 h -32  z M 0 29 h 32 v2 h -32  z M 5.5 13 l 9.5 -7.5 l -1 15 a2.5 2.5 0 1 1 -2 -2 l .5 -8 l -5 4 l -1 12 a2.5 2.5 0 1 1 -2 -2 z M 20 10 l 9.5 -7.5 l -1 15 a2.5 2.5 0 1 1 -2 -2 l .5 -8 l -5 4 l -1 12 a2.5 2.5 0 1 1 -2 -2 z" />
+            </svg></div>
+        <div><svg id="sx_music_notes" viewBox="0 0 32 32">
+                <path
+                    d="M 6 12 l 10 -8 -2 16 a3 3 0 1 1 -2 -2 l1 -8 -5 4 -1.5 12 a3 3 0 1 1 -2 -2 z M 20 12 l 10 -8 -2 16 a3 3 0 1 1 -2 -2 l1 -8 -5 4 -1.5 12 a3 3 0 1 1 -2 -2 z" />
+            </svg></div>
+        <div><svg id="sx_surveys" viewBox="0 0 32 32">
+                <path
+                    d="M 1 1 h2 v 28 h 28 v2 h -30 z M 7 5 h 5 v 23 h -5  z M 15 13 h 5 v 15 h -5  z M 23 21 h 5 v 7 h -5  z" />
+            </svg></div>
+
+
+
+
+    </section>
+
+    <div id="popup">
+        <textarea></textarea>
+        <div id="closePopup">Close</div>
+    </div>
+
+</body>
+
+</html>

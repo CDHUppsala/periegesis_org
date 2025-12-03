@@ -1,0 +1,161 @@
+/*
+    Lines: Linear Gradient vertical and horizontal
+*/
+.linear-lg-C2-S1-P1-001 {
+    background-image: linear-gradient(to right, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-002 {
+    background-image: linear-gradient(to left, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-003 {
+    background-image: linear-gradient(to bottom, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-004 {
+    background-image: linear-gradient(to top, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-005 {
+    background-image: linear-gradient(45deg, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-006 {
+    background-image: linear-gradient(315deg, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-007 {
+    background-image: linear-gradient(135deg, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-lg-C2-S1-P1-008 {
+    background-image: linear-gradient(225deg, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+/*
+    Lines: Linear Gradient vertical and horizontal
+*/
+.linear-lg-C2-S2-P2-001 {
+    background-image: linear-gradient(to right, var(--tint-50) 0%, var(--tint-05) 66%),
+    linear-gradient(to left, var(--tint-50) 0%, var(--tint-05) 66%);
+}
+
+.linear-lg-C2-S2-P2-002 {
+    background-image: linear-gradient(to bottom, var(--tint-50) 0%, var(--tint-05) 66%),
+    linear-gradient(to top, var(--tint-50) 0%, var(--tint-05) 66%);
+}
+
+
+.linear-lg-C2-S2-P2-003 {
+    background-image: linear-gradient(45deg, var(--tint-50) 0%, var(--tint-05) 66%),
+    linear-gradient(225deg, var(--tint-50) 0%, var(--tint-05) 66%);
+}
+
+.linear-lg-C2-S2-P2-004 {
+    background-image: linear-gradient(315deg, var(--tint-50) 0%, var(--tint-05) 66%),
+    linear-gradient(135deg, var(--tint-50) 0%, var(--tint-05) 66%);
+}
+
+.linear-lg-C2-S2-P2-006 {
+    background-image: linear-gradient(to top, var(--tint-50) 0%, var(--tint-05) 51%),
+    linear-gradient(to right, var(--tint-50) 0%, var(--tint-05) 51%);
+}
+
+.linear-lg-C2-S2-P2-005 {
+    background-image: linear-gradient(to top, var(--tint-50) 0%, var(--tint-05) 51%),
+    linear-gradient(to left, var(--tint-50) 0%, var(--tint-05) 51%);
+}
+
+.linear-lg-C2-S2-P2-008 {
+    background-image: linear-gradient(to bottom, var(--tint-50) 0%, var(--tint-05) 51%),
+    linear-gradient(to right, var(--tint-50) 0%, var(--tint-05) 51%);
+}
+
+.linear-lg-C2-S2-P2-00 {
+    background-image: linear-gradient(to bottom, var(--tint-50) 0%, var(--tint-05) 51%),
+    linear-gradient(to left, var(--tint-50) 0%, var(--tint-05) 51%);
+}
+
+
+/*
+    Lines: Repeating Linear Gradient Stops 2
+*/
+.linear-rlg-C2-S2X2-P1-001 {
+    background-image: repeating-linear-gradient(to left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+}
+
+.linear-rlg-C2-S2X2-P1-002 {
+    background-image: repeating-linear-gradient(to right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to bottom, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+}
+
+.linear-rlg-C2-S2X2-P1-003 {
+    background-image: repeating-linear-gradient(to bottom left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+}
+
+.linear-rlg-C2-S2X2-P1-004 {
+    background-image: repeating-linear-gradient(to bottom right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+}
+
+.linear-rlg-C2-S2X2-P1-005 {
+    background-image: repeating-linear-gradient(to left, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top, var(--tint-30) 0%, var(--tint-0) 50%);
+}
+
+.linear-rlg-C2-S2X2-P1-006 {
+    background-image: repeating-linear-gradient(to right, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to bottom, var(--tint-30) 0%, var(--tint-0) 50%);
+}
+
+.linear-rlg-C2-S2X2-P1-007 {
+    background-image: repeating-linear-gradient(to bottom left, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top left, var(--tint-30) 0%, var(--tint-0) 50%);
+}
+
+.linear-rlg-C2-S2X2-P1-008 {
+    background-image: repeating-linear-gradient(to bottom right, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top right, var(--tint-30) 0%, var(--tint-0) 50%);
+}
+
+
+/*
+    Lines: Repeating Linear Gradient Stops 5
+*/
+
+.linear-rlg-C2-S5-P1-001 {
+    background-image: repeating-linear-gradient(to left, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P1-002 {
+    background-image: repeating-linear-gradient(to bottom, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P1-003 {
+    background-image: repeating-linear-gradient(225deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P1-004 {
+    background-image: repeating-linear-gradient(135deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P2-001 {
+    background-image:
+        repeating-linear-gradient(to right, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        repeating-linear-gradient(to bottom, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P2-002 {
+    background-image:
+        repeating-linear-gradient(225deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        repeating-linear-gradient(135deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%);
+}
+
+.linear-rlg-C2-S5-P3-001 {
+    background-image:
+        repeating-linear-gradient(to right, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        repeating-linear-gradient(to bottom, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 100%);
+}
+
+.linear-rlg-C2-S5-P3-002 {
+    background-image:
+        repeating-linear-gradient(225deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        repeating-linear-gradient(135deg, var(--tint-0) 0% 20%, var(--tint-20) 20% 40%),
+        radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 100%);
+}

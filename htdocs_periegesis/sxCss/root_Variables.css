@@ -1,0 +1,68 @@
+body {
+    --body-fonts: 'Segoe UI', 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+    --body-bg: #ffffff;
+    --body-color: var(--grey-tint-10);
+    --font-condensed: "Roboto Condensed", Arial, Helvetica, sans-serif;
+
+    --top-fonts: 'Ysabeau Office', 'Segoe UI', arial, helvetica, sans-serif;
+    --top-bg: var(--basic-color);
+    --top-profile-bg: var(--basic-tint-80);
+    --top-color: var(--basic-tint-80);
+    --top-link: var(--tint-70);
+    --top-link-hover: var(--tint-100);
+    --top-border: var(--basic-tint-80);
+    --top-search_bg: var(--basic-color);
+
+    --header-bg: var(--basic-color);
+    --header-bg-image: 'none';
+    --header-border: 'transparent';
+    --header-link-hover: var(--tint-80);
+    --header-text-color: var(--tint-60);
+    --header-link-color: var(--tint-60);
+
+    --nav-fonts: 'Ysabeau Office', 'Segoe UI', arial, helvetica, sans-serif;
+    --nav-bg: var(--basic-color);
+    --nav-bg-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33%, rgba(255, 255, 255, 0) 100%);
+    --nav-color: var(--tint-70);
+    --nav-link: var(--tint-70);
+    --nav-link-hover: var(--tint-100);
+    --nav-border: var(--tint-50);
+
+    --page-bg: #ffffff;
+    --main-section-bg: inherit;
+    --main-article-bg: inherit;
+    --aside-section-bg: inherit;
+
+    --link: var(--monochrom-2);
+    --link-hover: var(--monochrom-3);
+
+    --heading-fonts: 'Ysabeau Office', 'Segoe UI', arial, helvetica, sans-serif;
+    --heading-color: var(--grey-tint-20);
+    --heading-link: var(--monochrom-2);
+    --heading-link-hover: var(--monochrom-3);
+
+    --aside-nav-fonts: 'Ysabeau Office', 'Segoe UI',  arial, helvetica, sans-serif;
+    --aside-nav-link: var(--monochrom-2);
+    --aside-nav-link-hover: var(--complement-tint-40);
+    --aside-nav-link-open: var(--complement-tint-40);
+
+    --footer-bg: var(--basic-shade-10);
+    --footer-bg-image: linear-gradient(to bottom, var(--tint-10) var(--tint-0));
+    --footer-color: var(--tint-60);
+    --footer-link: var(--tint-60);
+    --footer-link-hover: var(--tint-90);
+    --footer-submit-bg: var(--basic-shade-10);
+
+    --table-header-bg-color: var(--basic-color);
+    --table-header-text-color: var(--tint-60);
+
+    --svg-fill: var(--basic-color);
+    --svg-fill-hover: var(--complement);
+
+    --app-marker-color: var(--tint-70);
+    --app-marker-hover: var(--tint-90);
+    --nav-marker-color: var(--tint-70);
+    --nav-marker-hover: var(--tint-90);
+
+    --font-extented: Tinos, 'Segoe UI', Georgia, serif;
+}

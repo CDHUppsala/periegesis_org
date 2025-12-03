@@ -1,0 +1,227 @@
+﻿/*	
+	================================================
+	IMAGE CLASSES
+	================================================ 
+	Use the classes .image_center, .image_left and .image_right 
+	in figures to set the image width
+*/
+figure {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+figcaption {
+	font-size: 0.96em;
+	font-style: italic;
+	line-height: 125%;
+	text-align: left;
+	margin-top: 0.75rem;
+}
+
+.image_center figcaption {
+	text-align: center;
+}
+
+article .image_center figcaption {
+	text-align: left;
+}
+
+td img,
+figure img {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+video {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+audio {
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+}
+
+/*
+	=====================================================
+	The Image styles bellow are primarily used
+	as Classes of the tag element FIGURE
+	===================================================== 
+*/
+
+.image_left {
+	float: left;
+	margin: 0.25rem 1rem 0.5rem 0 !important;
+	padding: 0;
+	width: 34%;
+}
+
+.image_right {
+	float: right;
+	margin: 0.25rem 0 0.5rem 1rem !important;
+	width: 34%;
+}
+
+/* multiple figures within a figure */
+.image_left figure,
+.image_right figure {
+	margin-bottom: 5px;
+}
+
+.image_left figcaption,
+.image_right figcaption {
+	font-size: 0.9rem;
+}
+
+/* Check to remove margin-bottom */
+.image_center {
+	display: block;
+	position: relative;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	padding: 0;
+}
+
+.image_center img,
+.image_left img,
+.image_right img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.img_contain {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: contain;
+	object-position: 50% 0;
+	background-color: transparent;
+}
+
+.img_cover {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+
+article>img,
+article p img {
+	width: 100%;
+	height: auto;
+}
+
+/*
+	Block class for object, embed and iFrame
+	- Define a DIV container with width/height ratio of 16:9
+	- Can be used along or within all the above .image_* classes
+*/
+
+.media_wrapper,
+.video_wrapper {
+	position: relative;
+	/* ratio 16:9 */
+	padding-bottom: 56.25%;
+	height: 0;
+}
+
+.media_wrapper object,
+.media_wrapper embed,
+.media_wrapper iFrame,
+.video_wrapper object,
+.video_wrapper embed,
+.video_wrapper iFrame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ddd;
+}
+
+.loading_message {
+	display: inline-block;
+	padding: 2rem;
+	margin: auto;
+	z-index: -1;
+}
+
+.loading_message img {
+	width: 120px;
+	height: auto;
+	margin: auto;
+}
+
+@media (min-width: 576px) {
+	.image_left {
+		float: left;
+		margin: 0 1rem 0.5rem 0 !important;
+		width: 34%;
+	}
+
+	.image_right {
+		float: right;
+		margin: 0 0 0.5rem 1rem !important;
+		width: 34%;
+	}
+}
+
+@media (min-width: 1200px) {
+	figcaption {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}
+
+/*
+	=====================================================
+	Various image classes
+	=====================================================
+*/
+
+.captcha_input {
+	width: 200px !important;
+}
+
+.refresh_captcha img {
+	width: 60px;
+	height: 60px;
+	background: #0b6fb8;
+	display: inline-block;
+}
+
+.chart_flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border: 1px solid #ddd;
+	margin-bottom: 2rem;
+	padding: 1rem 0;
+}
+
+.chart_container {
+	position: relative;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+	.chart_container {
+		width: 49%;
+		height: 49%;
+		margin-bottom: auto;
+	}
+}

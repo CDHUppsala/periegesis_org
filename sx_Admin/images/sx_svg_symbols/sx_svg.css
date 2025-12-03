@@ -1,0 +1,185 @@
+﻿body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 140%;
+  padding: 0 0 40px 80px;
+}
+
+h2,
+h3 {
+  color: #08e;
+}
+
+h2 {
+  clear: both;
+  margin-top: 2em;
+}
+
+a {
+  color: #e60;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #08e
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul.normal,
+ul.normal li {
+  padding-left: 1em;
+  margin-left: 1em;
+  list-style: linear-gradient(#08e, #fff, #08e);
+}
+ul.normal li:hover {
+  list-style: linear-gradient( #fff, #08e, #fff);
+}
+
+code {
+  font-weight: bold;
+  background: #fe9
+}
+
+pre {
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  background: #eee;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+section {
+  clear: both
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================
+Icons
+========================================== */
+
+.sx_svg_image img {
+  width: 3em;
+  height: 3em;
+  background: #08e;
+}
+
+.sx_svg_image:hover img {
+  background: #e60;
+}
+
+.sx_svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 12px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.sx_svg_medium svg {
+  font-size: 2em
+}
+
+.sx_svg_large svg {
+  font-size: 3em
+}
+
+.sx_svg_socialmedia svg {
+  font-size: 2em
+}
+
+/* Links that change the background-color and the content of the svg-images in pseudo-classes
+*/
+.sx_svg_bg a {
+  position: relative;
+  padding-left: 1.5em;
+  display: block;
+  margin-bottom: 0.4em;
+  font-size: 1.2em;
+}
+
+.sx_svg_bg a::before {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  background-color: #e60;
+  background-image: url('../sx_svg/sx_up_down.svg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.sx_svg_bg a:hover::before {
+  background-color: #08e;
+  background-image: url('../sx_svg/sx_down.svg');
+}
+
+.sx_svg_bg a.selected::before {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  background-color: #e60;
+  background-image: url('../sx_svg/sx_down.svg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.sx_svg_bg a.selected:hover::before {
+  background-color: #08e;
+  background-image: url('../sx_svg/sx_up.svg');
+}
+
+/* Links that change only the color of the svg-image included as symbol
+*/
+.sx_svg_links a {
+  position: relative;
+  padding-left: 1.5em;
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.sx_svg_links a svg {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 1em
+}
+
+.sx_svg_list li {
+  position: relative;
+  padding-left: 4em;
+  margin-bottom: 0.4em;
+}
+
+.sx_svg_list li svg {
+  position: absolute;
+  left: 2em;
+  top: 0.25em;
+  width: 1em;
+  height: 1em;
+  fill: rgba(0, 0, 0, 0.5)
+}

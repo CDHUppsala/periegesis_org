@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="sx_info_circle" viewBox="0 0 32 32" style="fill:rgba(255,255,255,0.8)">
+        <path
+            d="M 16 1 a 1 1 0 1 1 0 10 a 1 1 0 1 1 0 -10 Z M14 13 q-2 0 -2 2 v14 q0 2 2 2 h4 q2 0 2 -2 v-14 q0 -2 -2 -2z">
+        </path>
+    </svg>

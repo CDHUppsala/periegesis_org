@@ -1,0 +1,218 @@
+﻿table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	vertical-align: top;
+	text-align: left;
+    font-size: 1rem;
+	background: #fff;
+}
+
+table,
+th,
+td {
+	border: none
+}
+
+tr {
+	border-bottom: 1px solid #f3f3f3
+}
+
+
+tbody tr:nth-child(odd) {
+	background-color: transparent;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f6f6f6;
+}
+
+table.no_bg,
+table.no_bg tr:nth-child(even) {
+	background-color: transparent;
+}
+
+table.no_borders tr {
+	border: 0
+}
+
+th {
+	background-color: var(--table-header-bg-color);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	color: var(--table-header-text-color);
+	padding: 12px 6px;
+	text-align: left;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+th:last-child {
+	border: 0;
+}
+
+td {
+	vertical-align: top;
+	padding: 6px;
+	border-right: 1px solid #fff;
+	line-height: 140% !important;
+}
+
+td:last-child {
+	border: 0;
+}
+
+td h1,
+td h2,
+td h3,
+td h2,
+td h5 {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+th a {
+	color: rgba(255, 255, 255, 0.75)
+}
+
+th a .sort_color,
+th a:hover {
+	color: rgba(255, 255, 255, 1)
+}
+
+#table_search {
+	border-spacing: 1px;
+	border-collapse: separate;
+	border: 1px solid #fff;
+	background-color: #fff;
+	font-size: 0.8rem;
+}
+
+#table_search td:last-child {
+	white-space: nowrap;
+}
+
+th.no_wrap,
+td.no_wrap {
+	white-space: nowrap;
+}
+
+table.no_padding td {
+	padding: 0
+}
+
+@media (min-width: 768px) {
+	#table_search {
+		border: 2px solid #fff;
+		font-size: 0.9rem;
+	}
+}
+
+.table_print {
+	background: #fff;
+}
+
+.table_print tbody {
+	overflow: hidden;
+}
+
+.table_print tr.head {
+	border-bottom: 1px solid var(--basic-color);
+}
+
+.table_print td span {
+	font-weight: bold;
+}
+
+.table_print th.slide_up::after,
+.table_print th.slide_down::after {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.width_20 {
+	width: 20%
+}
+
+.width_25 {
+	width: 25%
+}
+
+.width_34 {
+	width: 34%
+}
+
+.width_50 {
+	width: 50%
+}
+
+.width_66 {
+	width: 66%
+}
+
+.width_75 {
+	width: 75%
+}
+
+.width_80 {
+	width: 80%
+}
+
+.width_100 {
+	width: 100%
+}
+
+/*
+    Table for CV within texts / articles
+*/
+
+.cv_table_portrate td {
+	width: 50%;
+}
+
+.cv_table_portrate td:first-child {
+	padding: 0;
+}
+
+.cv_table th,
+.cv_table td,
+.cv_table_portrate td {
+	font-size: 0.8rem;
+	transition: all 0.3s;
+	vertical-align: top;
+}
+
+.cv_table th,
+.cv_table td {
+	padding: 6px 2px;
+}
+
+.cv_table h2 {
+	margin-top: 1.4rem;
+}
+
+.cv_table_portrate td img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto 0 0;
+}
+
+
+
+.cv_table_portrate td:last-child p {
+	line-height: 100% !important;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+	.cv_table th,
+	.cv_table td,
+	.cv_table_portrate td {
+		font-size: 1rem;
+		padding: 6px;
+	}
+
+	.cv_table_portrate td img {
+		max-width: 80%;
+	}
+}

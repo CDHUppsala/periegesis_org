@@ -1,0 +1,604 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-au">
+<title>Microsoft Access tips: ADO Programming Code Examples</title>
+<meta name="description" content="VBA code using the ADOX library in Microsoft Access.">
+<META name="keywords" content="ADOX,VBA,Microsoft Access,VB,Access tip,Access,database">
+<META name="Author" content="Allen Browne">
+<META name="copyright" content="&copy; 2006 Allen Browne">
+<base target="_top">
+<LINK rel="stylesheet" type="text/css" href="abdt.css">
+</head>
+<body>
+<h3><a name="Top">Microsoft Access: ADOX Programming Code</a> Examples</h3>
+<p>Provided by Allen Browne, March 2007.&nbsp; Updated July 2009.</p>
+<hr>
+<h1>ADOX Programming Code Examples</h1>
+<p>This page is a reference for developers, demonstrating how to use the ADOX library to programmatically create, delete, modify, and list the objects in Access - the tables, fields, indexes, and relations, queries, and databases - and read or set their properties.</p>
+<p>ADOX is an extension to the <a href="func-ADO.html">ADO</a> library, exposing the <b>catalog</b> of database objects. To use this library, open the code window, choose References on the Tools menu, and check the box beside:<br>
+<font face="Courier New">&nbsp;&nbsp;&nbsp; Microsoft ADO Ext x.x for DDL and Security</font></p>
+<p>In general, the <a href="func-DAO.html">DAO</a> library is better than ADOX. DAO is purpose-designed for Access, and exposes properties the other libraries don't. But there are some things DAO cannot do, such as setting the Seed of an AutoNumber field. The ADOX library is less stable, and more subject to version problems, so if you strike problems with the code in this page, an MDAC update might address the issue for you.</p>
+<p>See the <a href="ser-49.html">field type reference</a> for a comparison of the field types in ADOX compared to the Access interface and other libraries.</p>
+<p>There is no explanation of the code beyond in-line comments, and no error handling in most examples.</p>
+<table style="border-collapse: collapse" border="1" cellpadding="3" width="100%">
+<tr class="TableHeadRow"><td>Index of Functions</td><td>Description</td></tr>
+ <tr><td><a href="#SetSeed">SetSeed()</a></td><td>Set the Seed of an AutoNumber</td></tr>
+ <tr><td><a href="#ShowAllTables">ShowAllTables()</a></td><td>List the tables (and optionally their fields)</td></tr>
+ <tr><td><a href="#ShowPropsADOX">ShowPropsADOX()</a></td><td>Show the columns in a table, and optionally their properties</td></tr>
+ <tr><td><a href="#CreateTableAdox">CreateTableAdox()</a></td><td>Create a table with various field types</td></tr>
+ <tr><td><a href="#ModifyTableAdox">ModifyTableAdox()</a></td><td>Show how to add fields to a table, and delete them</td></tr>
+ <tr><td><a href="#ModifyFieldPropAdox">ModifyFieldPropAdox()</a></td><td>Show how to alter field properties</td></tr>
+ <tr><td><a href="#DeleteTableAdox">DeleteTableAdox()</a></td><td>Delete a table</td></tr>
+ <tr><td><a href="#CreateIndexesAdox">CreateIndexesAdox()</a></td><td>Show how to create indexes</td></tr>
+ <tr><td><a href="#DeleteIndexAdox">DeleteIndexAdox()</a></td><td>Show how to delete indexes</td></tr>
+ <tr><td><a href="#CreateKeyAdox">CreateKeyAdox()</a></td><td>Show how to create relationships</td></tr>
+ <tr><td><a href="#ShowKeyAdox">ShowKeyAdox()</a></td><td>List relationships</td></tr>
+ <tr><td><a href="#DeleteKeyAdox">DeleteKeyAdox()</a></td><td>Delete relationships</td></tr>
+ <tr><td><a href="#CreateViewAdox">CreateViewAdox()</a></td><td>Create a query</td></tr>
+ <tr><td><a href="#CreateProcedureAdox">CreateProcedureAdox()</a></td><td>Create a parameter query or action query</td></tr>
+ <tr><td><a href="#ShowProx">ShowProx()</a></td><td>List the parameter/action queries</td></tr>
+ <tr><td><a href="#ExecuteProcedureAdox">ExecuteProcedureAdox()</a></td><td>Execute a parameter query</td></tr>
+ <tr><td><a href="#DeleteProcedureAdox">DeleteProcedureAdox()</a></td><td>Delete a parameter/action query</td></tr>
+ <tr><td><a href="#CreateDatabaseAdox">CreateDatabaseAdox()</a></td><td>Create a database</td></tr>
+ <tr><td><a href="#DeleteAllAndResetAutoNum">DeleteAllAndResetAutoNum()</a></td><td>Delete all records from the table, and reset the AutoNumber</td></tr>
+ <tr><td><a href="#GetSeedADOX">GetSeedADOX()</a></td><td>Read the Seed of the AutoNumber of a table</td></tr>
+ <tr><td><a href="#ResetSeed">ResetSeed()</a></td><td>Reset the Seed of the AutoNumber.<br>
+	To reset the seed for all tables in a database, see:<br>
+&nbsp;&nbsp;&nbsp; <a href="ser-40.html">Fixing AutoNumbers when Access assigns negatives or duplicates</a></td></tr>
+</table>
+
+<pre>Option Compare Database
+Option Explicit
+
+<a name="SetSeed"></a>Function SetSeed(strTable As String, strAutoNum As String, lngID As Long) As Boolean
+    <span class="CodeComment">'Purpose:   Set the Seed of an AutoNumber using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    
+    Set cat.ActiveConnection = CurrentProject.Connection
+    cat.Tables(strTable).Columns(strAutoNum).Properties(&quot;Seed&quot;) = lngID
+    Set cat = Nothing
+    SetSeed = True
+End Function
+
+<a name="ShowAllTables"></a>Function ShowAllTables(Optional bShowFieldsToo As Boolean)
+    <span class="CodeComment">'Purpose:   List the tables (and optionally their fields) using ADOX.</span>
+    Dim cat As New ADOX.Catalog <span class="CodeComment">'Root object of ADOX.</span>
+    Dim tbl As ADOX.Table       <span class="CodeComment">'Each Table in Tables.</span>
+    Dim col As ADOX.Column      <span class="CodeComment">'Each Column in the Table.</span>
+    
+    <span class="CodeComment">'Point the catalog to the current project's connection.</span>
+    Set cat.ActiveConnection = CurrentProject.Connection
+    
+    <span class="CodeComment">'Loop through the tables.</span>
+    For Each tbl In cat.Tables
+        Debug.Print tbl.Name, tbl.Type
+        If bShowFieldsToo Then
+        <span class="CodeComment">'Loop through the columns of the table.</span>
+        For Each col In tbl.Columns
+            Debug.Print , col.Name, col.Type
+        Next
+        Debug.Print &quot;--------------------------------&quot;
+        <span class="CodeComment">'Stop</span>
+        End If
+    Next
+    
+    <span class="CodeComment">'Clean up</span>
+    Set col = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="ShowPropsADOX"></a>Function ShowPropsADOX(strTable As String, Optional bShowPropertiesToo As Boolean)
+    <span class="CodeComment">'Purpose:   Show the columns in a table, and optionally their properties, using ADOX.</span>
+    Dim cat As New ADOX.Catalog <span class="CodeComment">'Root object of ADOX.</span>
+    Dim tbl As ADOX.Table       <span class="CodeComment">'Each Table in Tables.</span>
+    Dim col As ADOX.Column      <span class="CodeComment">'Each Column in the Table.</span>
+    Dim prp As ADOX.Property
+    
+    <span class="CodeComment">'Point the catalog to the current project's connection.</span>
+    Set cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(strTable)
+    
+    For Each col In tbl.Columns
+        Debug.Print col.Name        <span class="CodeComment">', col.Properties(&quot;Fixed length&quot;), col.Type</span>
+        If bShowPropertiesToo Then
+            For Each prp In col.Properties
+                Debug.Print , prp.Name, prp.Type, prp.Value
+            Next
+            Debug.Print &quot;--------------------------------&quot;
+            <span class="CodeComment">'Stop</span>
+        End If
+    Next
+    
+    <span class="CodeComment">'Clean up</span>
+    Set prp = Nothing
+    Set col = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="CreateTableAdox"></a>Function CreateTableAdox()
+    <span class="CodeComment">'Purpose:   Create a table with various field types, using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    
+    Set cat.ActiveConnection = CurrentProject.Connection
+    <span class="CodeComment">'Initialize the Contractor table.</span>
+    Set tbl = New ADOX.Table
+    tbl.Name = &quot;tblAdoxContractor&quot;
+    
+    <span class="CodeComment">'Append the columns.</span>
+    With tbl.Columns
+        .Append &quot;ContractorID&quot;, adInteger   <span class="CodeComment">'Number (Long Integer)</span>
+        .Append &quot;Surname&quot;, adVarWChar, 30   <span class="CodeComment">'Text (30 max)</span>
+        .Append &quot;FirstName&quot;, adVarWChar, 20 <span class="CodeComment">'Text (20 max)</span>
+        .Append &quot;Inactive&quot;, adBoolean       <span class="CodeComment">'Yes/No</span>
+        .Append &quot;HourlyFee&quot;, adCurrency     <span class="CodeComment">'Currency</span>
+        .Append &quot;PenaltyRate&quot;, adDouble     <span class="CodeComment">'Number (Double)</span>
+        .Append &quot;BirthDate&quot;, adDate         <span class="CodeComment">'Date/Time</span>
+        .Append &quot;Notes&quot;, adLongVarWChar     <span class="CodeComment">'Memo</span>
+        .Append &quot;Web&quot;, adLongVarWChar       <span class="CodeComment">'Memo (for hyperlink)</span>
+        
+        <span class="CodeComment">'Set the field properties.</span>
+        <span class="CodeComment">'AutoNumber</span>
+        With !ContractorID
+            Set .ParentCatalog = cat
+            
+            .Properties(&quot;Autoincrement&quot;) = True     <span class="CodeComment">'AutoNumber.</span>
+            .Properties(&quot;Description&quot;) = &quot;Automatically &quot; &amp; _
+                &quot;generated unique identifier for this record.&quot;
+        End With
+        
+        <span class="CodeComment">'Required field.</span>
+        With !Surname
+            Set .ParentCatalog = cat
+            .Properties(&quot;Nullable&quot;) = False         <span class="CodeComment">'Required.</span>
+            .Properties(&quot;Jet OLEDB:Allow Zero Length&quot;) = False
+        End With
+        
+        <span class="CodeComment">'Set a validation rule.</span>
+        With !BirthDate
+            Set .ParentCatalog = cat
+            .Properties(&quot;Jet OLEDB:Column Validation Rule&quot;) = _
+                &quot;Is Null Or &lt;=Date()&quot;
+            .Properties(&quot;Jet OLEDB:Column Validation Text&quot;) = _
+                &quot;Birth date cannot be future.&quot;
+        End With
+        
+        <span class="CodeComment">'Hyperlink field.</span>
+        With !Web
+            Set .ParentCatalog = cat
+            .Properties(&quot;Jet OLEDB:Hyperlink&quot;) = True <span class="CodeComment">'Hyperlink.</span>
+        End With
+    End With
+    
+    <span class="CodeComment">'Save the new table by appending to catalog.</span>
+    cat.Tables.Append tbl
+    Debug.Print &quot;tblAdoxContractor created.&quot;
+    Set tbl = Nothing
+    
+    <span class="CodeComment">'Initialize the Booking table</span>
+    Set tbl = New ADOX.Table
+    tbl.Name = &quot;tblAdoxBooking&quot;
+    
+    <span class="CodeComment">'Append the columns.</span>
+    With tbl.Columns
+        .Append &quot;BookingID&quot;, adInteger
+        .Append &quot;BookingDate&quot;, adDate
+        .Append &quot;ContractorID&quot;, adInteger
+        .Append &quot;BookingFee&quot;, adCurrency
+        .Append &quot;BookingNote&quot;, adWChar, 255
+        
+        <span class="CodeComment">'Set the field properties.</span>
+        With !BookingID                             <span class="CodeComment">'AutoNumber.</span>
+            .ParentCatalog = cat
+            .Properties(&quot;Autoincrement&quot;) = True
+        End With
+        With !BookingNote                           <span class="CodeComment">'Required.</span>
+            .ParentCatalog = cat
+            .Properties(&quot;Nullable&quot;) = False
+            .Properties(&quot;Jet OLEDB:Allow Zero Length&quot;) = False
+        End With
+    End With
+    
+    <span class="CodeComment">'Save the new table by appending to catalog.</span>
+    cat.Tables.Append tbl
+    Debug.Print &quot;tblAdoxBooking created.&quot;
+    
+    <span class="CodeComment">'Clean up</span>
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="ModifyTableAdox"></a>Function ModifyTableAdox()
+    <span class="CodeComment">'Purpose:   Show how to add fields to a table, and delete them using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    Dim col As New ADOX.Column
+    
+    <span class="CodeComment">'Initialize</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(&quot;tblAdoxContractor&quot;)
+    
+    <span class="CodeComment">'Add a new column</span>
+    With col
+        .Name = &quot;MyDecimal&quot;
+        .Type = adNumeric   <span class="CodeComment">'Decimal type.</span>
+        .Precision = 28     <span class="CodeComment">'28 digits.</span>
+        .NumericScale = 8   <span class="CodeComment">'8 decimal places.</span>
+    End With
+    tbl.Columns.Append col
+    Set col = Nothing
+    Debug.Print &quot;Column added.&quot;
+    
+    <span class="CodeComment">'Delete a column.</span>
+    tbl.Columns.Delete &quot;MyDecimal&quot;
+    Debug.Print &quot;Column deleted.&quot;
+    
+    <span class="CodeComment">'Clean up</span>
+    Set col = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="ModifyFieldPropAdox"></a>Function ModifyFieldPropAdox()
+    <span class="CodeComment">'Purpose:   Show how to alter field properties, using ADOX.</span>
+    <span class="CodeComment">'Note:      You cannot alter the DefinedSize of the field like this.</span>
+    Dim cat As New ADOX.Catalog
+    Dim col As ADOX.Column
+    Dim prp As ADOX.Property
+
+    cat.ActiveConnection = CurrentProject.Connection
+    Set col = cat.Tables(&quot;MyTable&quot;).Columns(&quot;MyField&quot;)
+    <span class="CodeComment">'col.ParentCatalog = cat</span>
+    Set prp = col.Properties(&quot;Nullable&quot;)
+    <span class="CodeComment">'Read the property</span>
+    Debug.Print prp.Name, prp.Value, (prp.Type = adBoolean)
+    <span class="CodeComment">'Change the property</span>
+    prp.Value = Not prp.Value
+    
+    <span class="CodeComment">'Clean up</span>
+    Set prp = Nothing
+    Set col = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="DeleteTableAdox"></a>Function DeleteTableAdox()
+    <span class="CodeComment">'Purpose:   Delete a table using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    
+    cat.ActiveConnection = CurrentProject.Connection
+    cat.Tables.Delete &quot;MyTable&quot;
+    Set cat = Nothing
+End Function
+
+<a name="CreateIndexesAdox"></a>Function CreateIndexesAdox()
+    <span class="CodeComment">'Purpose:   Show how to create indexes using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    Dim ind As ADOX.Index
+    
+    <span class="CodeComment">'Initialize</span>
+    Set cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(&quot;tblAdoxContractor&quot;)
+
+    <span class="CodeComment">'Create a primary key index</span>
+    Set ind = New ADOX.Index
+    ind.Name = &quot;PrimaryKey&quot;
+    ind.PrimaryKey = True
+    ind.Columns.Append &quot;ContractorID&quot;
+    tbl.Indexes.Append ind
+    Set ind = Nothing
+    
+    <span class="CodeComment">'Create an index on one column.</span>
+    Set ind = New ADOX.Index
+    ind.Name = &quot;Inactive&quot;
+    ind.Columns.Append &quot;Inactive&quot;
+    tbl.Indexes.Append ind
+    Set ind = Nothing
+    
+    <span class="CodeComment">'Multi-field index.</span>
+    Set ind = New ADOX.Index
+    ind.Name = &quot;FullName&quot;
+    With ind.Columns
+        .Append &quot;Surname&quot;
+        .Append &quot;FirstName&quot;
+    End With
+    tbl.Indexes.Append ind
+    
+    <span class="CodeComment">'Clean up</span>
+    Set ind = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+    Debug.Print &quot;tblAdoxContractor indexes created.&quot;
+End Function
+
+<a name="DeleteIndexAdox"></a>Function DeleteIndexAdox()
+    <span class="CodeComment">'Purpose:   Show how to delete indexes using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    cat.ActiveConnection = CurrentProject.Connection
+    cat.Tables(&quot;tblAdoxContractor&quot;).Indexes.Delete &quot;Inactive&quot;
+    Set cat = Nothing
+End Function
+
+<a name="CreateKeyAdox"></a>Function CreateKeyAdox()
+    <span class="CodeComment">'Purpose:   Show how to create relationships using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    Dim ky As New ADOX.Key
+    
+    Set cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(&quot;tblAdoxBooking&quot;)
+    
+    <span class="CodeComment">'Create as foreign key to tblAdoxContractor.ContractorID</span>
+    With ky
+        .Type = adKeyForeign
+        .Name = &quot;tblAdoxContractortblAdoxBooking&quot;
+        .RelatedTable = &quot;tblAdoxContractor&quot;
+        .Columns.Append &quot;ContractorID&quot;      <span class="CodeComment">'Just one field.</span>
+        .Columns(&quot;ContractorID&quot;).RelatedColumn = &quot;ContractorID&quot;
+        .DeleteRule = adRISetNull   <span class="CodeComment">'Cascade to Null on delete.</span>
+    End With
+    tbl.Keys.Append ky
+    
+    Set ky = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+    Debug.Print &quot;Key created.&quot;
+End Function
+
+<a name="ShowKeyAdox"></a>Function ShowKeyAdox(strTableName As String)
+    <span class="CodeComment">'Purpose:   List relationships using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    Dim ky As ADOX.Key
+    Dim strRIName As String
+    
+    Set cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(strTableName)
+    
+    For Each ky In tbl.Keys
+        With ky
+            Select Case .DeleteRule
+            Case adRINone
+                strRIName = &quot;No delete rule&quot;
+            Case adRICascade
+                strRIName = &quot;Cascade delete&quot;
+            Case adRISetNull
+                strRIName = &quot;Cascade to null&quot;
+            Case adRISetDefault
+                strRIName = &quot;Cascade to default&quot;
+            Case Else
+                strRIName = &quot;DeleteRule of &quot; &amp; .DeleteRule &amp; &quot; unknown.&quot;
+            End Select
+            Debug.Print &quot;Key: &quot; &amp; .Name &amp; &quot;, to table: &quot; &amp; .RelatedTable &amp; &quot;, with: &quot; &amp; strRIName
+        End With
+    Next
+
+    Set ky = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="DeleteKeyAdox"></a>Function DeleteKeyAdox()
+    <span class="CodeComment">'Purpose:   Delete relationships using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    
+    Set cat.ActiveConnection = CurrentProject.Connection
+    cat.Tables(&quot;tblAdoxBooking&quot;).Keys.Delete &quot;tblAdoxContractortblAdoxBooking&quot;
+    
+    Set cat = Nothing
+    Debug.Print &quot;Key deleted.&quot;
+End Function
+
+<a name="CreateViewAdox"></a>Function CreateViewAdox()
+    <span class="CodeComment">'Purpose:   Create a query using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim cmd As New ADODB.Command
+    Dim strSql As String
+    
+    <span class="CodeComment">'Initialize.</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    
+    <span class="CodeComment">'Assign the SQL statement to Command object's CommandText property.</span>
+    strSql = &quot;SELECT BookingID, BookingDate FROM tblDaoBooking;&quot;
+    cmd.CommandText = strSql
+    
+    <span class="CodeComment">'Append the Command to the Views collectiion of the catalog.</span>
+    cat.Views.Append &quot;qryAdoxBooking&quot;, cmd
+    
+    <span class="CodeComment">'Clean up.</span>
+    Set cmd = Nothing
+    Set cat = Nothing
+    Debug.Print &quot;View created.&quot;
+End Function
+
+<a name="CreateProcedureAdox"></a>Function CreateProcedureAdox()
+    <span class="CodeComment">'Purpose:   Create a parameter query or action query using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim cmd As New ADODB.Command
+    Dim strSql As String
+    
+    <span class="CodeComment">'Initialize.</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    
+    <span class="CodeComment">''Assign the SQL statement to the CommandText property.</span>
+    strSql = &quot;PARAMETERS StartDate DateTime, EndDate DateTime; &quot; &amp; _
+        &quot;DELETE FROM tblAdoxBooking &quot; &amp; _
+        &quot;WHERE BookingDate Between StartDate And EndDate;&quot;
+    cmd.CommandText = strSql
+    
+    <span class="CodeComment">'Append the Command to the Procedures collection of the catalog.</span>
+    cat.Procedures.Append &quot;qryAdoxDeleteBooking&quot;, cmd
+    
+    <span class="CodeComment">'Clean up.</span>
+    Set cmd = Nothing
+    Set cat = Nothing
+    Debug.Print &quot;Procedure created.&quot;
+End Function
+
+<a name="ShowProx"></a>Function ShowProx()
+    <span class="CodeComment">'Purpose:   List the parameter/action queries using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim proc As ADOX.Procedure
+    Dim vw As ADOX.View
+    
+    cat.ActiveConnection = CurrentProject.Connection
+    
+    Debug.Print &quot;Procedures: &quot; &amp; cat.Procedures.Count
+    For Each proc In cat.Procedures
+        Debug.Print proc.Name
+    Next
+    Debug.Print cat.Procedures.Count &amp; &quot; procedure(s)&quot;
+    Debug.Print
+    
+    Debug.Print &quot;Views &quot; &amp; cat.Views.Count
+    For Each vw In cat.Views
+        Debug.Print vw.Name
+    Next
+    
+    Set cat = Nothing
+End Function
+
+<a name="ExecuteProcedureAdox"></a>Function ExecuteProcedureAdox()
+    <span class="CodeComment">'Purpose:   Execute a parameter query using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim cmd As ADODB.Command
+    Dim lngCount As Long
+    
+    <span class="CodeComment">'Initialize.</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    Set cmd = cat.Procedures(&quot;qryAdoxDeleteBooking&quot;).Command
+    
+    <span class="CodeComment">'Supply the parameters</span>
+    cmd.Parameters(&quot;StartDate&quot;) = #1/1/2004#
+    cmd.Parameters(&quot;EndDate&quot;) = #12/31/2004#
+    
+    <span class="CodeComment">'Execute the procedure</span>
+    cmd.Execute lngCount
+    Debug.Print lngCount &amp; &quot; record(s) deleted.&quot;
+    
+    <span class="CodeComment">'Alternative: specify the parameters in a variant array.</span>
+    <span class="CodeComment">'cmd.Execute , Array(#1/1/2004#, #12/31/2004#)</span>
+    
+    <span class="CodeComment">'Clean up.</span>
+    Set cmd = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="DeleteProcedureAdox"></a>Function DeleteProcedureAdox()
+    <span class="CodeComment">'Purpose:   Delete a parameter/action query using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim cmd As ADODB.Command
+    Dim lngCount As Long
+    
+    <span class="CodeComment">'Initialize.</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    cat.Procedures.Delete &quot;qryAdoxDeleteBooking&quot;
+    Set cat = Nothing
+End Function
+
+<a name="CreateDatabaseAdox"></a>Function CreateDatabaseAdox()
+    <span class="CodeComment">'Purpose:   Create a database using ADOX.</span>
+    Dim cat As New ADOX.Catalog
+    Dim strFile As String
+
+    strFile = &quot;C:\SampleADOX.mdb&quot;
+    cat.Create &quot;Provider='Microsoft.Jet.OLEDB.4.0';&quot; &amp; _
+        &quot;Data Source='&quot; &amp; strFile &amp; &quot;'&quot;
+    Set cat = Nothing
+    Debug.Print strFile &amp; &quot; created.&quot;
+End Function
+
+<a name="DeleteAllAndResetAutoNum"></a>Function DeleteAllAndResetAutoNum(strTable As String) As Boolean
+    <span class="CodeComment">'Purpose:   Delete all records from the table, and reset the AutoNumber using ADOX.</span>
+    <span class="CodeComment">'           Also illustrates how to find the AutoNumber field.</span>
+    <span class="CodeComment">'Argument:  Name of the table to reset.</span>
+    <span class="CodeComment">'Return:    True if sucessful.</span>
+    Dim cat As New ADOX.Catalog
+    Dim tbl As ADOX.Table
+    Dim col As ADOX.Column
+    Dim strSql As String
+    
+    <span class="CodeComment">'Delete all records.</span>
+    strSql = &quot;DELETE FROM [&quot; &amp; strTable &amp; &quot;];&quot;
+    CurrentProject.Connection.Execute strSql
+    
+    <span class="CodeComment">'Find and reset the AutoNum field.</span>
+    cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(strTable)
+    For Each col In tbl.Columns
+        If col.Properties(&quot;Autoincrement&quot;) Then
+            col.Properties(&quot;Seed&quot;) = 1
+            DeleteAllAndResetAutoNum = True
+        End If
+    Next
+End Function
+
+<a name="GetSeedADOX"></a>Function GetSeedADOX(strTable As String, Optional ByRef strCol As String) As Long
+    <span class="CodeComment">'Purpose:   Read the Seed of the AutoNumber of a table.</span>
+    <span class="CodeComment">'Arguments: strTable the table to examine.</span>
+    <span class="CodeComment">'           strCol = the name of the field. If omited, the code finds it.</span>
+    <span class="CodeComment">'Return:    The seed value.</span>
+    Dim cat As New ADOX.Catalog <span class="CodeComment">'Root object of ADOX.</span>
+    Dim tbl As ADOX.Table       <span class="CodeComment">'Each Table in Tables.</span>
+    Dim col As ADOX.Column      <span class="CodeComment">'Each Column in the Table.</span>
+    
+    <span class="CodeComment">'Point the catalog to the current project's connection.</span>
+    Set cat.ActiveConnection = CurrentProject.Connection
+    Set tbl = cat.Tables(strTable)
+    
+    <span class="CodeComment">'Loop through the columns to find the AutoNumber.</span>
+    For Each col In tbl.Columns
+        If col.Properties(&quot;Autoincrement&quot;) Then
+            strCol = &quot;[&quot; &amp; col.Name &amp; &quot;]&quot;
+            GetSeedADOX = col.Properties(&quot;Seed&quot;)
+            Exit For    <span class="CodeComment">'There can be only one AutoNum.</span>
+        End If
+    Next
+    
+    <span class="CodeComment">'Clean up</span>
+    Set col = Nothing
+    Set tbl = Nothing
+    Set cat = Nothing
+End Function
+
+<a name="ResetSeed"></a>Function ResetSeed(strTable As String) As String
+    <span class="CodeComment">'Purpose:   Reset the Seed of the AutoNumber, using ADOX.</span>
+    Dim strAutoNum As String    <span class="CodeComment">'Name of the autonumber column.</span>
+    Dim lngSeed As Long         <span class="CodeComment">'Current value of the Seed.</span>
+    Dim lngNext As Long         <span class="CodeComment">'Next unused value.</span>
+    Dim strSql As String
+    Dim strResult As String
+    
+    lngSeed = GetSeedADOX(strTable, strAutoNum)
+    If strAutoNum = vbNullString Then
+        strResult = &quot;AutoNumber not found.&quot;
+    Else
+        lngNext = Nz(DMax(strAutoNum, strTable), 0) + 1
+        If lngSeed = lngNext Then
+            strResult = strAutoNum &amp; &quot; already correctly set to &quot; &amp; lngSeed &amp; &quot;.&quot;
+        Else
+            Debug.Print lngNext, lngSeed
+            strSql = &quot;ALTER TABLE [&quot; &amp; strTable &amp; &quot;] ALTER COLUMN [&quot; &amp; strAutoNum &amp; &quot;] COUNTER(&quot; &amp; lngNext &amp; &quot;, 1);&quot;
+            Debug.Print strSql
+            CurrentProject.Connection.Execute strSql
+            strResult = strAutoNum &amp; &quot; reset from &quot; &amp; lngSeed &amp; &quot; to &quot; &amp; lngNext
+        End If
+    End If
+    ResetSeed = strResult
+End Function
+</pre>
+<hr>
+<hr>
+<table width="100%">
+ <tr>
+  <td width="33%" align=center><a href="index.html">Home</a></td><td width="34%" align=center><a href="tips.html">Index of tips</a></td><td width="33%" align=center><a href="#Top">Top</a></td>
+ </tr>
+</table>
+</body>
+</html>

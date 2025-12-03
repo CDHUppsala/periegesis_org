@@ -1,0 +1,910 @@
+:root {
+
+    --basic-color: #003d7a;
+
+    --basic-tint-10: #195087;
+    --basic-tint-20: #336394;
+    --basic-tint-30: #4c77a1;
+    --basic-tint-40: #668aaf;
+    --basic-tint-50: #7f9ebc;
+    --basic-tint-60: #99b1c9;
+    --basic-tint-70: #b2c4d7;
+    --basic-tint-80: #ccd8e4;
+    --basic-tint-90: #e5ebf1;
+    --basic-tint-100: #f2f5f8;
+
+    --basic-shade-10: #00366d;
+    --basic-shade-20: #003061;
+    --basic-shade-30: #002a55;
+    --basic-shade-40: #002449;
+    --basic-shade-50: #001e3d;
+    --basic-shade-60: #001830;
+    --basic-shade-70: #001224;
+    --basic-shade-80: #000c18;
+    --basic-shade-90: #00060c;
+
+    /*
+    Tones beased Medium Gray: #808080
+    */
+    --basic-tone-10: #0c437a;
+    --basic-tone-20: #194a7b;
+    --basic-tone-30: #26517b;
+    --basic-tone-40: #33577c;
+    --basic-tone-50: #405e7d;
+    --basic-tone-60: #4c657d;
+    --basic-tone-70: #596b7e;
+    --basic-tone-80: #66727e;
+    --basic-tone-90: #73797f;
+
+    /*
+    Tones beased Light Gray: #D3D3D3
+    */
+    --basic-tone--lg-10: #154c82;
+    --basic-tone--lg-20: #2a5b8b;
+    --basic-tone--lg-30: #3f6a94;
+    --basic-tone--lg-40: #54799d;
+    --basic-tone--lg-50: #6988a6;
+    --basic-tone--lg-60: #7e97af;
+    --basic-tone--lg-70: #93a6b8;
+    --basic-tone--lg-80: #a8b5c1;
+    --basic-tone--lg-90: #bdc4ca;
+
+    /*
+    Tones beased Dark Gray: #555555
+    */
+    --basic-tone--dg-10: #083f76;
+    --basic-tone--dg-20: #114172;
+    --basic-tone--dg-30: #19446e;
+    --basic-tone--dg-40: #22466b;
+    --basic-tone--dg-50: #2a4967;
+    --basic-tone--dg-60: #334b63;
+    --basic-tone--dg-70: #3b4d60;
+    --basic-tone--dg-80: #44505c;
+    --basic-tone--dg-90: #4c5258;
+
+    --complement: #7a3d00;
+
+    --complement-tint-10: #875019;
+    --complement-tint-20: #946333;
+    --complement-tint-30: #a1774c;
+    --complement-tint-40: #af8a66;
+    --complement-tint-50: #bc9e7f;
+    --complement-tint-60: #c9b199;
+    --complement-tint-70: #d7c4b2;
+    --complement-tint-80: #e4d8cc;
+    --complement-tint-90: #f1ebe5;
+    --complement-tint-100: #f8f5f2;
+
+    --complement-shade-10: #6d3600;
+    --complement-shade-20: #613000;
+    --complement-shade-30: #552a00;
+    --complement-shade-40: #492400;
+    --complement-shade-50: #3d1e00;
+    --complement-shade-60: #301800;
+    --complement-shade-70: #241200;
+    --complement-shade-80: #180c00;
+    --complement-shade-90: #0c0600;
+
+    --complement-lighten-10: #ad5600;
+    --complement-lighten-20: #e07000;
+    --complement-lighten-30: #ff8914;
+    --complement-lighten-40: #ffa347;
+    --complement-lighten-50: #ffbc7a;
+    --complement-lighten-60: #ffd6ad;
+    --complement-lighten-70: #ffefe0;
+    --complement-lighten-80: #ffffff;
+    --complement-lighten-90: #ffffff;
+
+    --complement-brighten-10: #935619;
+    --complement-brighten-20: #ad7033;
+    --complement-brighten-30: #c6894c;
+    --complement-brighten-40: #e0a366;
+    --complement-brighten-50: #f9bc7f;
+    --complement-brighten-60: #ffd699;
+    --complement-brighten-70: #ffefb2;
+    --complement-brighten-80: #ffffcc;
+    --complement-brighten-90: #ffffe5;
+
+    --lighten-10: #0056ad;
+    --lighten-20: #0070e0;
+    --lighten-30: #1489ff;
+    --lighten-40: #47a3ff;
+    --lighten-50: #7abcff;
+    --lighten-60: #add6ff;
+    --lighten-70: #e0efff;
+    --lighten-80: #ffffff;
+    --lighten-90: #ffffff;
+
+    --brighten-10: #195693;
+    --brighten-20: #3370ad;
+    --brighten-30: #4c89c6;
+    --brighten-40: #66a3e0;
+    --brighten-50: #7fbcf9;
+    --brighten-60: #99d6ff;
+    --brighten-70: #b2efff;
+    --brighten-80: #ccffff;
+    --brighten-90: #e5ffff;
+
+    --darken-10: #002347;
+    --darken-20: #000a14;
+    --darken-30: #000000;
+    --darken-40: #000000;
+    --darken-50: #000000;
+    --darken-60: #000000;
+    --darken-70: #000000;
+    --darken-80: #000000;
+    --darken-90: #000000;
+
+    --saturate-10: #003d7a;
+    --saturate-20: #003d7a;
+    --saturate-30: #003d7a;
+    --saturate-40: #003d7a;
+    --saturate-50: #003d7a;
+    --saturate-60: #003d7a;
+    --saturate-70: #003d7a;
+    --saturate-80: #003d7a;
+    --saturate-90: #003d7a;
+
+    --desaturate-10: #063d74;
+    --desaturate-20: #0c3d6e;
+    --desaturate-30: #123d68;
+    --desaturate-40: #183d62;
+    --desaturate-50: #1e3d5b;
+    --desaturate-60: #253d55;
+    --desaturate-70: #2b3d4f;
+    --desaturate-80: #313d49;
+    --desaturate-90: #373d43;
+
+    --monochrom-1: #0052a4;
+
+    --monochrom-1-tint-20: #3374b6;
+    --monochrom-1-tint-40: #6697c8;
+    --monochrom-1-tint-60: #99b9da;
+    --monochrom-1-tint-80: #ccdcec;
+    --monochrom-1-tint-90: #e5edf5;
+
+    --monochrom-1-shade-20: #004183;
+    --monochrom-1-shade-40: #003162;
+    --monochrom-1-shade-60: #002041;
+    --monochrom-1-shade-80: #001020;
+
+    --monochrom-2: #0067cf;
+
+    --monochrom-2-tint-20: #3385d8;
+    --monochrom-2-tint-40: #66a3e2;
+    --monochrom-2-tint-60: #99c2eb;
+    --monochrom-2-tint-80: #cce0f5;
+    --monochrom-2-tint-90: #e5effa;
+
+    --monochrom-2-shade-20: #0052a5;
+    --monochrom-2-shade-40: #003d7c;
+    --monochrom-2-shade-60: #002952;
+    --monochrom-2-shade-80: #001429;
+
+    --monochrom-3: #007df9;
+
+    --monochrom-3-tint-20: #3397fa;
+    --monochrom-3-tint-40: #66b1fb;
+    --monochrom-3-tint-60: #99cbfc;
+    --monochrom-3-tint-80: #cce5fd;
+    --monochrom-3-tint-90: #e5f2fe;
+
+    --monochrom-3-shade-20: #0064c7;
+    --monochrom-3-shade-40: #004b95;
+    --monochrom-3-shade-60: #003263;
+    --monochrom-3-shade-80: #001931;
+
+    --monochrom-4: #001225;
+
+    --monochrom-4-tint-20: #334150;
+    --monochrom-4-tint-40: #66707c;
+    --monochrom-4-tint-60: #99a0a7;
+    --monochrom-4-tint-80: #cccfd3;
+    --monochrom-4-tint-90: #e5e7e9;
+
+    --monochrom-4-shade-20: #000e1d;
+    --monochrom-4-shade-40: #000a16;
+    --monochrom-4-shade-60: #00070e;
+    --monochrom-4-shade-80: #000307;
+
+    --monochrom-5: #00284f;
+
+    --monochrom-5-tint-20: #335372;
+    --monochrom-5-tint-40: #667e95;
+    --monochrom-5-tint-60: #99a9b8;
+    --monochrom-5-tint-80: #ccd4db;
+    --monochrom-5-tint-90: #e5e9ed;
+
+    --monochrom-5-shade-20: #00203f;
+    --monochrom-5-shade-40: #00182f;
+    --monochrom-5-shade-60: #00101f;
+    --monochrom-5-shade-80: #00080f;
+
+    --analog-1: #006e7a;
+
+    --analog-1-tint-20: #338b94;
+    --analog-1-tint-40: #66a8af;
+    --analog-1-tint-60: #99c5c9;
+    --analog-1-tint-80: #cce2e4;
+    --analog-1-tint-90: #e5f0f1;
+
+    --analog-1-shade-20: #005861;
+    --analog-1-shade-40: #004249;
+    --analog-1-shade-60: #002c30;
+    --analog-1-shade-80: #001618;
+
+    --analog-2: #00557a;
+
+    --analog-2-tint-20: #337794;
+    --analog-2-tint-40: #6699af;
+    --analog-2-tint-60: #99bbc9;
+    --analog-2-tint-80: #ccdde4;
+    --analog-2-tint-90: #e5eef1;
+
+    --analog-2-shade-20: #004461;
+    --analog-2-shade-40: #003349;
+    --analog-2-shade-60: #002230;
+    --analog-2-shade-80: #001118;
+
+    --analog-3: #00257a;
+
+    --analog-3-tint-20: #335094;
+    --analog-3-tint-40: #667caf;
+    --analog-3-tint-60: #99a7c9;
+    --analog-3-tint-80: #ccd3e4;
+    --analog-3-tint-90: #e5e9f1;
+
+    --analog-3-shade-20: #001d61;
+    --analog-3-shade-40: #001649;
+    --analog-3-shade-60: #000e30;
+    --analog-3-shade-80: #000718;
+
+    --analog-4: #000c7a;
+
+    --analog-4-tint-20: #333c94;
+    --analog-4-tint-40: #666daf;
+    --analog-4-tint-60: #999dc9;
+    --analog-4-tint-80: #cccee4;
+    --analog-4-tint-90: #e5e6f1;
+
+    --analog-4-shade-20: #000961;
+    --analog-4-shade-40: #000749;
+    --analog-4-shade-60: #000430;
+    --analog-4-shade-80: #000218;
+
+    --triad-1: #7a003d;
+
+    --triad-1-tint-10: #871950;
+    --triad-1-tint-20: #943363;
+    --triad-1-tint-30: #a14c77;
+    --triad-1-tint-40: #af668a;
+    --triad-1-tint-50: #bc7f9e;
+    --triad-1-tint-60: #c999b1;
+    --triad-1-tint-70: #d7b2c4;
+    --triad-1-tint-80: #e4ccd8;
+    --triad-1-tint-90: #f1e5eb;
+    --triad-1-tint-100: #f8f2f5;
+
+    --triad-1-shade-10: #6d0036;
+    --triad-1-shade-20: #610030;
+    --triad-1-shade-30: #55002a;
+    --triad-1-shade-40: #490024;
+    --triad-1-shade-50: #3d001e;
+    --triad-1-shade-60: #300018;
+    --triad-1-shade-70: #240012;
+    --triad-1-shade-80: #18000c;
+    --triad-1-shade-90: #0c0006;
+
+    --triad-2: #3d7a00;
+
+    --triad-2-tint-10: #508719;
+    --triad-2-tint-20: #639433;
+    --triad-2-tint-30: #77a14c;
+    --triad-2-tint-40: #8aaf66;
+    --triad-2-tint-50: #9ebc7f;
+    --triad-2-tint-60: #b1c999;
+    --triad-2-tint-70: #c4d7b2;
+    --triad-2-tint-80: #d8e4cc;
+    --triad-2-tint-90: #ebf1e5;
+    --triad-2-tint-100: #f5f8f2;
+
+    --triad-2-shade-10: #366d00;
+    --triad-2-shade-20: #306100;
+    --triad-2-shade-30: #2a5500;
+    --triad-2-shade-40: #244900;
+    --triad-2-shade-50: #1e3d00;
+    --triad-2-shade-60: #183000;
+    --triad-2-shade-70: #122400;
+    --triad-2-shade-80: #0c1800;
+    --triad-2-shade-90: #060c00;
+
+    --tetrad-1: #7a007a;
+
+    --tetrad-1-tint-10: #871987;
+    --tetrad-1-tint-20: #943394;
+    --tetrad-1-tint-30: #a14ca1;
+    --tetrad-1-tint-40: #af66af;
+    --tetrad-1-tint-50: #bc7fbc;
+    --tetrad-1-tint-60: #c999c9;
+    --tetrad-1-tint-70: #d7b2d7;
+    --tetrad-1-tint-80: #e4cce4;
+    --tetrad-1-tint-90: #f1e5f1;
+    --tetrad-1-tint-100: #f8f2f8;
+
+    --tetrad-1-shade-10: #6d006d;
+    --tetrad-1-shade-20: #610061;
+    --tetrad-1-shade-30: #550055;
+    --tetrad-1-shade-40: #490049;
+    --tetrad-1-shade-50: #3d003d;
+    --tetrad-1-shade-60: #300030;
+    --tetrad-1-shade-70: #240024;
+    --tetrad-1-shade-80: #180018;
+    --tetrad-1-shade-90: #0c000c;
+
+    --tetrad-2: #007a00;
+
+    --tetrad-2-tint-10: #198719;
+    --tetrad-2-tint-20: #339433;
+    --tetrad-2-tint-30: #4ca14c;
+    --tetrad-2-tint-40: #66af66;
+    --tetrad-2-tint-50: #7fbc7f;
+    --tetrad-2-tint-60: #99c999;
+    --tetrad-2-tint-70: #b2d7b2;
+    --tetrad-2-tint-80: #cce4cc;
+    --tetrad-2-tint-90: #e5f1e5;
+    --tetrad-2-tint-100: #f2f8f2;
+
+    --tetrad-2-shade-10: #006d00;
+    --tetrad-2-shade-20: #006100;
+    --tetrad-2-shade-30: #005500;
+    --tetrad-2-shade-40: #004900;
+    --tetrad-2-shade-50: #003d00;
+    --tetrad-2-shade-60: #003000;
+    --tetrad-2-shade-70: #002400;
+    --tetrad-2-shade-80: #001800;
+    --tetrad-2-shade-90: #000c00;
+
+    --split-1: #55007a;
+
+    --split-1-tint-10: #661987;
+    --split-1-tint-20: #773394;
+    --split-1-tint-30: #884ca1;
+    --split-1-tint-40: #9966af;
+    --split-1-tint-50: #aa7fbc;
+    --split-1-tint-60: #bb99c9;
+    --split-1-tint-70: #ccb2d7;
+    --split-1-tint-80: #ddcce4;
+    --split-1-tint-90: #eee5f1;
+    --split-1-tint-100: #f6f2f8;
+
+    --split-1-shade-10: #4c006d;
+    --split-1-shade-20: #440061;
+    --split-1-shade-30: #3b0055;
+    --split-1-shade-40: #330049;
+    --split-1-shade-50: #2a003d;
+    --split-1-shade-60: #220030;
+    --split-1-shade-70: #190024;
+    --split-1-shade-80: #110018;
+    --split-1-shade-90: #08000c;
+
+    --split-2: #6e7a00;
+
+    --split-2-tint-10: #7c8719;
+    --split-2-tint-20: #8b9433;
+    --split-2-tint-30: #99a14c;
+    --split-2-tint-40: #a8af66;
+    --split-2-tint-50: #b6bc7f;
+    --split-2-tint-60: #c5c999;
+    --split-2-tint-70: #d3d7b2;
+    --split-2-tint-80: #e2e4cc;
+    --split-2-tint-90: #f0f1e5;
+    --split-2-tint-100: #f7f8f2;
+
+    --split-2-shade-10: #636d00;
+    --split-2-shade-20: #586100;
+    --split-2-shade-30: #4d5500;
+    --split-2-shade-40: #424900;
+    --split-2-shade-50: #373d00;
+    --split-2-shade-60: #2c3000;
+    --split-2-shade-70: #212400;
+    --split-2-shade-80: #161800;
+    --split-2-shade-90: #0b0c00;
+
+    --grey: #3d3d3d;
+
+    --grey-tint-10: #505050;
+    --grey-tint-20: #636363;
+    --grey-tint-30: #777777;
+    --grey-tint-40: #8a8a8a;
+    --grey-tint-50: #9e9e9e;
+    --grey-tint-60: #b1b1b1;
+    --grey-tint-70: #c4c4c4;
+    --grey-tint-80: #d8d8d8;
+    --grey-tint-90: #ebebeb;
+    --grey-tint-100: #f5f5f5;
+
+    --grey-shade-10: #363636;
+    --grey-shade-20: #303030;
+    --grey-shade-30: #2a2a2a;
+    --grey-shade-40: #242424;
+    --grey-shade-50: #1e1e1e;
+    --grey-shade-60: #181818;
+    --grey-shade-70: #121212;
+    --grey-shade-80: #0c0c0c;
+    --grey-shade-90: #060606;
+
+    /*
+    Pure Tints, Shades and Tones
+    to be used for any purpose
+    */
+    --tint-0: rgba(255, 255, 255, 0.0);
+    --tint-05: rgba(255, 255, 255, 0.05);
+    --tint-10: rgba(255, 255, 255, 0.1);
+    --tint-20: rgba(255, 255, 255, 0.2);
+    --tint-30: rgba(255, 255, 255, 0.3);
+    --tint-40: rgba(255, 255, 255, 0.4);
+    --tint-50: rgba(255, 255, 255, 0.5);
+    --tint-60: rgba(255, 255, 255, 0.6);
+    --tint-70: rgba(255, 255, 255, 0.7);
+    --tint-80: rgba(255, 255, 255, 0.8);
+    --tint-90: rgba(255, 255, 255, 0.9);
+    --tint-100: rgba(255, 255, 255, 1.0);
+
+    --shade-0: rgba(0, 0, 0, 0.0);
+    --shade-10: rgba(0, 0, 0, 0.1);
+    --shade-20: rgba(0, 0, 0, 0.2);
+    --shade-30: rgba(0, 0, 0, 0.3);
+    --shade-40: rgba(0, 0, 0, 0.4);
+    --shade-50: rgba(0, 0, 0, 0.5);
+    --shade-60: rgba(0, 0, 0, 0.6);
+    --shade-70: rgba(0, 0, 0, 0.7);
+    --shade-80: rgba(0, 0, 0, 0.8);
+    --shade-90: rgba(0, 0, 0, 0.9);
+    --shade-100: rgba(0, 0, 0, 1.0);
+
+    --tone-0: rgba(128, 128, 128, 0.0);
+    --tone-10: rgba(128, 128, 128, 0.1);
+    --tone-20: rgba(128, 128, 128, 0.2);
+    --tone-30: rgba(128, 128, 128, 0.3);
+    --tone-40: rgba(128, 128, 128, 0.4);
+    --tone-50: rgba(128, 128, 128, 0.5);
+    --tone-60: rgba(128, 128, 128, 0.6);
+    --tone-70: rgba(128, 128, 128, 0.7);
+    --tone-80: rgba(128, 128, 128, 0.8);
+    --tone-90: rgba(128, 128, 128, 0.9);
+    --tone-100: rgba(128, 128, 128, 1.0);
+
+
+    /*
+    The last (-) in the above variables
+    is replaced by (_).
+    Convert HEX colors to RGB string values.
+    To be used as variables
+    for background gradients,
+    for example rgba(var(--basic_color), 0.5)
+    */
+
+    --basic_color: 0, 61, 122;
+
+    --basic_tint_10: 25, 80, 135;
+    --basic_tint_20: 51, 99, 148;
+    --basic_tint_30: 76, 119, 161;
+    --basic_tint_40: 102, 138, 175;
+    --basic_tint_50: 127, 158, 188;
+    --basic_tint_60: 153, 177, 201;
+    --basic_tint_70: 178, 196, 215;
+    --basic_tint_80: 204, 216, 228;
+    --basic_tint_90: 229, 235, 241;
+    --basic_tint_100: 242, 245, 248;
+
+    --basic_shade_10: 0, 54, 109;
+    --basic_shade_20: 0, 48, 97;
+    --basic_shade_30: 0, 42, 85;
+    --basic_shade_40: 0, 36, 73;
+    --basic_shade_50: 0, 30, 61;
+    --basic_shade_60: 0, 24, 48;
+    --basic_shade_70: 0, 18, 36;
+    --basic_shade_80: 0, 12, 24;
+    --basic_shade_90: 0, 6, 12;
+
+    --basic_tone_10: 12, 67, 122;
+    --basic_tone_20: 25, 74, 123;
+    --basic_tone_30: 38, 81, 123;
+    --basic_tone_40: 51, 87, 124;
+    --basic_tone_50: 64, 94, 125;
+    --basic_tone_60: 76, 101, 125;
+    --basic_tone_70: 89, 107, 126;
+    --basic_tone_80: 102, 114, 126;
+    --basic_tone_90: 115, 121, 127;
+
+    --basic_tone_-lg-10: 21, 76, 130;
+    --basic_tone_-lg-20: 42, 91, 139;
+    --basic_tone_-lg-30: 63, 106, 148;
+    --basic_tone_-lg-40: 84, 121, 157;
+    --basic_tone_-lg-50: 105, 136, 166;
+    --basic_tone_-lg-60: 126, 151, 175;
+    --basic_tone_-lg-70: 147, 166, 184;
+    --basic_tone_-lg-80: 168, 181, 193;
+    --basic_tone_-lg-90: 189, 196, 202;
+
+    --basic_tone_-dg-10: 8, 63, 118;
+    --basic_tone_-dg-20: 17, 65, 114;
+    --basic_tone_-dg-30: 25, 68, 110;
+    --basic_tone_-dg-40: 34, 70, 107;
+    --basic_tone_-dg-50: 42, 73, 103;
+    --basic_tone_-dg-60: 51, 75, 99;
+    --basic_tone_-dg-70: 59, 77, 96;
+    --basic_tone_-dg-80: 68, 80, 92;
+    --basic_tone_-dg-90: 76, 82, 88;
+
+    --complement_00: 122, 61, 0;
+
+    --complement_tint_10: 135, 80, 25;
+    --complement_tint_20: 148, 99, 51;
+    --complement_tint_30: 161, 119, 76;
+    --complement_tint_40: 175, 138, 102;
+    --complement_tint_50: 188, 158, 127;
+    --complement_tint_60: 201, 177, 153;
+    --complement_tint_70: 215, 196, 178;
+    --complement_tint_80: 228, 216, 204;
+    --complement_tint_90: 241, 235, 229;
+    --complement_tint_100: 248, 245, 242;
+
+    --complement_shade_10: 109, 54, 0;
+    --complement_shade_20: 97, 48, 0;
+    --complement_shade_30: 85, 42, 0;
+    --complement_shade_40: 73, 36, 0;
+    --complement_shade_50: 61, 30, 0;
+    --complement_shade_60: 48, 24, 0;
+    --complement_shade_70: 36, 18, 0;
+    --complement_shade_80: 24, 12, 0;
+    --complement_shade_90: 12, 6, 0;
+
+    --complement-lighten_10: 173, 86, 0;
+    --complement-lighten_20: 224, 112, 0;
+    --complement-lighten_30: 255, 137, 20;
+    --complement-lighten_40: 255, 163, 71;
+    --complement-lighten_50: 255, 188, 122;
+    --complement-lighten_60: 255, 214, 173;
+    --complement-lighten_70: 255, 239, 224;
+    --complement-lighten_80: 255, 255, 255;
+    --complement-lighten_90: 255, 255, 255;
+
+    --complement-brighten_10: 147, 86, 25;
+    --complement-brighten_20: 173, 112, 51;
+    --complement-brighten_30: 198, 137, 76;
+    --complement-brighten_40: 224, 163, 102;
+    --complement-brighten_50: 249, 188, 127;
+    --complement-brighten_60: 255, 214, 153;
+    --complement-brighten_70: 255, 239, 178;
+    --complement-brighten_80: 255, 255, 204;
+    --complement-brighten_90: 255, 255, 229;
+
+    --lighten_10: 0, 86, 173;
+    --lighten_20: 0, 112, 224;
+    --lighten_30: 20, 137, 255;
+    --lighten_40: 71, 163, 255;
+    --lighten_50: 122, 188, 255;
+    --lighten_60: 173, 214, 255;
+    --lighten_70: 224, 239, 255;
+    --lighten_80: 255, 255, 255;
+    --lighten_90: 255, 255, 255;
+
+    --brighten_10: 25, 86, 147;
+    --brighten_20: 51, 112, 173;
+    --brighten_30: 76, 137, 198;
+    --brighten_40: 102, 163, 224;
+    --brighten_50: 127, 188, 249;
+    --brighten_60: 153, 214, 255;
+    --brighten_70: 178, 239, 255;
+    --brighten_80: 204, 255, 255;
+    --brighten_90: 229, 255, 255;
+
+    --darken_10: 0, 35, 71;
+    --darken_20: 0, 10, 20;
+    --darken_30: 0, 0, 0;
+    --darken_40: 0, 0, 0;
+    --darken_50: 0, 0, 0;
+    --darken_60: 0, 0, 0;
+    --darken_70: 0, 0, 0;
+    --darken_80: 0, 0, 0;
+    --darken_90: 0, 0, 0;
+
+    --saturate_10: 0, 61, 122;
+    --saturate_20: 0, 61, 122;
+    --saturate_30: 0, 61, 122;
+    --saturate_40: 0, 61, 122;
+    --saturate_50: 0, 61, 122;
+    --saturate_60: 0, 61, 122;
+    --saturate_70: 0, 61, 122;
+    --saturate_80: 0, 61, 122;
+    --saturate_90: 0, 61, 122;
+
+    --desaturate_10: 6, 61, 116;
+    --desaturate_20: 12, 61, 110;
+    --desaturate_30: 18, 61, 104;
+    --desaturate_40: 24, 61, 98;
+    --desaturate_50: 30, 61, 91;
+    --desaturate_60: 37, 61, 85;
+    --desaturate_70: 43, 61, 79;
+    --desaturate_80: 49, 61, 73;
+    --desaturate_90: 55, 61, 67;
+
+    --monochrom_1: 0, 82, 164;
+
+    --monochrom_1_tint_20: 51, 116, 182;
+    --monochrom_1_tint_40: 102, 151, 200;
+    --monochrom_1_tint_60: 153, 185, 218;
+    --monochrom_1_tint_80: 204, 220, 236;
+    --monochrom_1_tint_90: 229, 237, 245;
+
+    --monochrom_1_shade_20: 0, 65, 131;
+    --monochrom_1_shade_40: 0, 49, 98;
+    --monochrom_1_shade_60: 0, 32, 65;
+    --monochrom_1_shade_80: 0, 16, 32;
+
+    --monochrom_2: 0, 103, 207;
+
+    --monochrom_2_tint_20: 51, 133, 216;
+    --monochrom_2_tint_40: 102, 163, 226;
+    --monochrom_2_tint_60: 153, 194, 235;
+    --monochrom_2_tint_80: 204, 224, 245;
+    --monochrom_2_tint_90: 229, 239, 250;
+
+    --monochrom_2_shade_20: 0, 82, 165;
+    --monochrom_2_shade_40: 0, 61, 124;
+    --monochrom_2_shade_60: 0, 41, 82;
+    --monochrom_2_shade_80: 0, 20, 41;
+
+    --monochrom_3: 0, 125, 249;
+
+    --monochrom_3_tint_20: 51, 151, 250;
+    --monochrom_3_tint_40: 102, 177, 251;
+    --monochrom_3_tint_60: 153, 203, 252;
+    --monochrom_3_tint_80: 204, 229, 253;
+    --monochrom_3_tint_90: 229, 242, 254;
+
+    --monochrom_3_shade_20: 0, 100, 199;
+    --monochrom_3_shade_40: 0, 75, 149;
+    --monochrom_3_shade_60: 0, 50, 99;
+    --monochrom_3_shade_80: 0, 25, 49;
+
+    --monochrom_4: 0, 18, 37;
+
+    --monochrom_4_tint_20: 51, 65, 80;
+    --monochrom_4_tint_40: 102, 112, 124;
+    --monochrom_4_tint_60: 153, 160, 167;
+    --monochrom_4_tint_80: 204, 207, 211;
+    --monochrom_4_tint_90: 229, 231, 233;
+
+    --monochrom_4_shade_20: 0, 14, 29;
+    --monochrom_4_shade_40: 0, 10, 22;
+    --monochrom_4_shade_60: 0, 7, 14;
+    --monochrom_4_shade_80: 0, 3, 7;
+
+    --monochrom_5: 0, 40, 79;
+
+    --monochrom_5_tint_20: 51, 83, 114;
+    --monochrom_5_tint_40: 102, 126, 149;
+    --monochrom_5_tint_60: 153, 169, 184;
+    --monochrom_5_tint_80: 204, 212, 219;
+    --monochrom_5_tint_90: 229, 233, 237;
+
+    --monochrom_5_shade_20: 0, 32, 63;
+    --monochrom_5_shade_40: 0, 24, 47;
+    --monochrom_5_shade_60: 0, 16, 31;
+    --monochrom_5_shade_80: 0, 8, 15;
+
+    --analog_1: 0, 110, 122;
+
+    --analog_1_tint_20: 51, 139, 148;
+    --analog_1_tint_40: 102, 168, 175;
+    --analog_1_tint_60: 153, 197, 201;
+    --analog_1_tint_80: 204, 226, 228;
+    --analog_1_tint_90: 229, 240, 241;
+
+    --analog_1_shade_20: 0, 88, 97;
+    --analog_1_shade_40: 0, 66, 73;
+    --analog_1_shade_60: 0, 44, 48;
+    --analog_1_shade_80: 0, 22, 24;
+
+    --analog_2: 0, 85, 122;
+
+    --analog_2_tint_20: 51, 119, 148;
+    --analog_2_tint_40: 102, 153, 175;
+    --analog_2_tint_60: 153, 187, 201;
+    --analog_2_tint_80: 204, 221, 228;
+    --analog_2_tint_90: 229, 238, 241;
+
+    --analog_2_shade_20: 0, 68, 97;
+    --analog_2_shade_40: 0, 51, 73;
+    --analog_2_shade_60: 0, 34, 48;
+    --analog_2_shade_80: 0, 17, 24;
+
+    --analog_3: 0, 37, 122;
+
+    --analog_3_tint_20: 51, 80, 148;
+    --analog_3_tint_40: 102, 124, 175;
+    --analog_3_tint_60: 153, 167, 201;
+    --analog_3_tint_80: 204, 211, 228;
+    --analog_3_tint_90: 229, 233, 241;
+
+    --analog_3_shade_20: 0, 29, 97;
+    --analog_3_shade_40: 0, 22, 73;
+    --analog_3_shade_60: 0, 14, 48;
+    --analog_3_shade_80: 0, 7, 24;
+
+    --analog_4: 0, 12, 122;
+
+    --analog_4_tint_20: 51, 60, 148;
+    --analog_4_tint_40: 102, 109, 175;
+    --analog_4_tint_60: 153, 157, 201;
+    --analog_4_tint_80: 204, 206, 228;
+    --analog_4_tint_90: 229, 230, 241;
+
+    --analog_4_shade_20: 0, 9, 97;
+    --analog_4_shade_40: 0, 7, 73;
+    --analog_4_shade_60: 0, 4, 48;
+    --analog_4_shade_80: 0, 2, 24;
+
+    --triad_1: 122, 0, 61;
+
+    --triad_1_tint_10: 135, 25, 80;
+    --triad_1_tint_20: 148, 51, 99;
+    --triad_1_tint_30: 161, 76, 119;
+    --triad_1_tint_40: 175, 102, 138;
+    --triad_1_tint_50: 188, 127, 158;
+    --triad_1_tint_60: 201, 153, 177;
+    --triad_1_tint_70: 215, 178, 196;
+    --triad_1_tint_80: 228, 204, 216;
+    --triad_1_tint_90: 241, 229, 235;
+    --triad_1_tint_100: 248, 242, 245;
+
+    --triad_1_shade_10: 109, 0, 54;
+    --triad_1_shade_20: 97, 0, 48;
+    --triad_1_shade_30: 85, 0, 42;
+    --triad_1_shade_40: 73, 0, 36;
+    --triad_1_shade_50: 61, 0, 30;
+    --triad_1_shade_60: 48, 0, 24;
+    --triad_1_shade_70: 36, 0, 18;
+    --triad_1_shade_80: 24, 0, 12;
+    --triad_1_shade_90: 12, 0, 6;
+
+    --triad_2: 61, 122, 0;
+
+    --triad_2_tint_10: 80, 135, 25;
+    --triad_2_tint_20: 99, 148, 51;
+    --triad_2_tint_30: 119, 161, 76;
+    --triad_2_tint_40: 138, 175, 102;
+    --triad_2_tint_50: 158, 188, 127;
+    --triad_2_tint_60: 177, 201, 153;
+    --triad_2_tint_70: 196, 215, 178;
+    --triad_2_tint_80: 216, 228, 204;
+    --triad_2_tint_90: 235, 241, 229;
+    --triad_2_tint_100: 245, 248, 242;
+
+    --triad_2_shade_10: 54, 109, 0;
+    --triad_2_shade_20: 48, 97, 0;
+    --triad_2_shade_30: 42, 85, 0;
+    --triad_2_shade_40: 36, 73, 0;
+    --triad_2_shade_50: 30, 61, 0;
+    --triad_2_shade_60: 24, 48, 0;
+    --triad_2_shade_70: 18, 36, 0;
+    --triad_2_shade_80: 12, 24, 0;
+    --triad_2_shade_90: 6, 12, 0;
+
+    --tetrad_1: 122, 0, 122;
+
+    --tetrad_1_tint_10: 135, 25, 135;
+    --tetrad_1_tint_20: 148, 51, 148;
+    --tetrad_1_tint_30: 161, 76, 161;
+    --tetrad_1_tint_40: 175, 102, 175;
+    --tetrad_1_tint_50: 188, 127, 188;
+    --tetrad_1_tint_60: 201, 153, 201;
+    --tetrad_1_tint_70: 215, 178, 215;
+    --tetrad_1_tint_80: 228, 204, 228;
+    --tetrad_1_tint_90: 241, 229, 241;
+    --tetrad_1_tint_100: 248, 242, 248;
+
+    --tetrad_1_shade_10: 109, 0, 109;
+    --tetrad_1_shade_20: 97, 0, 97;
+    --tetrad_1_shade_30: 85, 0, 85;
+    --tetrad_1_shade_40: 73, 0, 73;
+    --tetrad_1_shade_50: 61, 0, 61;
+    --tetrad_1_shade_60: 48, 0, 48;
+    --tetrad_1_shade_70: 36, 0, 36;
+    --tetrad_1_shade_80: 24, 0, 24;
+    --tetrad_1_shade_90: 12, 0, 12;
+
+    --tetrad_2: 0, 122, 0;
+
+    --tetrad_2_tint_10: 25, 135, 25;
+    --tetrad_2_tint_20: 51, 148, 51;
+    --tetrad_2_tint_30: 76, 161, 76;
+    --tetrad_2_tint_40: 102, 175, 102;
+    --tetrad_2_tint_50: 127, 188, 127;
+    --tetrad_2_tint_60: 153, 201, 153;
+    --tetrad_2_tint_70: 178, 215, 178;
+    --tetrad_2_tint_80: 204, 228, 204;
+    --tetrad_2_tint_90: 229, 241, 229;
+    --tetrad_2_tint_100: 242, 248, 242;
+
+    --tetrad_2_shade_10: 0, 109, 0;
+    --tetrad_2_shade_20: 0, 97, 0;
+    --tetrad_2_shade_30: 0, 85, 0;
+    --tetrad_2_shade_40: 0, 73, 0;
+    --tetrad_2_shade_50: 0, 61, 0;
+    --tetrad_2_shade_60: 0, 48, 0;
+    --tetrad_2_shade_70: 0, 36, 0;
+    --tetrad_2_shade_80: 0, 24, 0;
+    --tetrad_2_shade_90: 0, 12, 0;
+
+    --split_1: 85, 0, 122;
+
+    --split_1_tint_10: 102, 25, 135;
+    --split_1_tint_20: 119, 51, 148;
+    --split_1_tint_30: 136, 76, 161;
+    --split_1_tint_40: 153, 102, 175;
+    --split_1_tint_50: 170, 127, 188;
+    --split_1_tint_60: 187, 153, 201;
+    --split_1_tint_70: 204, 178, 215;
+    --split_1_tint_80: 221, 204, 228;
+    --split_1_tint_90: 238, 229, 241;
+    --split_1_tint_100: 246, 242, 248;
+
+    --split_1_shade_10: 76, 0, 109;
+    --split_1_shade_20: 68, 0, 97;
+    --split_1_shade_30: 59, 0, 85;
+    --split_1_shade_40: 51, 0, 73;
+    --split_1_shade_50: 42, 0, 61;
+    --split_1_shade_60: 34, 0, 48;
+    --split_1_shade_70: 25, 0, 36;
+    --split_1_shade_80: 17, 0, 24;
+    --split_1_shade_90: 8, 0, 12;
+
+    --split_2: 110, 122, 0;
+
+    --split_2_tint_10: 124, 135, 25;
+    --split_2_tint_20: 139, 148, 51;
+    --split_2_tint_30: 153, 161, 76;
+    --split_2_tint_40: 168, 175, 102;
+    --split_2_tint_50: 182, 188, 127;
+    --split_2_tint_60: 197, 201, 153;
+    --split_2_tint_70: 211, 215, 178;
+    --split_2_tint_80: 226, 228, 204;
+    --split_2_tint_90: 240, 241, 229;
+    --split_2_tint_100: 247, 248, 242;
+
+    --split_2_shade_10: 99, 109, 0;
+    --split_2_shade_20: 88, 97, 0;
+    --split_2_shade_30: 77, 85, 0;
+    --split_2_shade_40: 66, 73, 0;
+    --split_2_shade_50: 55, 61, 0;
+    --split_2_shade_60: 44, 48, 0;
+    --split_2_shade_70: 33, 36, 0;
+    --split_2_shade_80: 22, 24, 0;
+    --split_2_shade_90: 11, 12, 0;
+
+    --grey_00: 61, 61, 61;
+
+    --grey_tint_10: 80, 80, 80;
+    --grey_tint_20: 99, 99, 99;
+    --grey_tint_30: 119, 119, 119;
+    --grey_tint_40: 138, 138, 138;
+    --grey_tint_50: 158, 158, 158;
+    --grey_tint_60: 177, 177, 177;
+    --grey_tint_70: 196, 196, 196;
+    --grey_tint_80: 216, 216, 216;
+    --grey_tint_90: 235, 235, 235;
+    --grey_tint_100: 245, 245, 245;
+
+    --grey_shade_10: 54, 54, 54;
+    --grey_shade_20: 48, 48, 48;
+    --grey_shade_30: 42, 42, 42;
+    --grey_shade_40: 36, 36, 36;
+    --grey_shade_50: 30, 30, 30;
+    --grey_shade_60: 24, 24, 24;
+    --grey_shade_70: 18, 18, 18;
+    --grey_shade_80: 12, 12, 12;
+    --grey_shade_90: 6, 6, 6;
+}

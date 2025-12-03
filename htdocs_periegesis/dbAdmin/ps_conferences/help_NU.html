@@ -1,0 +1,107 @@
+<div id="info_general" class="info_box">
+	<div>
+		<p class="floatRight"><button class="button jq_Hide">Close</button></p>
+		<h4>General Help</h4>
+		<p>Create first a Blueprint Conference Program by filling the information in the above form or by reloading a program saved in the Blueprint Table. Read the <b>Help Information</b> [?]
+			in every Input of the Form for details.</p>
+		<p>1. <b>Sessions:</b> Start always by <b>scheduling the number of sessions</b> for each conference day, by deleting and adding sessions in the blueprint. When you are ready,
+			save your changes and <b>only then</b> continue with the number of Papers by session.</p>
+		<ul>
+			<li>Sessions are distinguished from each other with the succession of parallel colors, gray and white.</li>
+			<li>Every session contains the same number of papers that you have define in the field <b>Papers by Session</b>.</li>
+			<li>When you have defined the number of sessions for every conference day, click on the Button <b>Session ID</b>, on the header of the Table, to automatically set a unique
+				ID Number for every session. ID numbers start automatically from the last Session ID in the database (see on the Top Right of the page).
+				<ul>
+					<li><b>Save</b> your changes in the Blueprint Table when you are ready. You can then recall these changes by Reloading the Blueprint Table.</li>
+					<li>If you change the number of papers in a particular session, <b>use never</b> the Button <b>Session ID</b> again, as it reorganizes sessions with the same number
+						of papers that you defined in the field <b>Papers by Session</b>.</li>
+				</ul>
+			</li>
+		</ul>
+		<p>2. <b>Parallel Sessions:</b> You create parallel sessions be copying <b>all papers</b> of a session and moving them all in a separate group, below or above the original
+			session. All copied papers have a common background color so you can distinguish them (se below about papers).</p>
+		<ul>
+			<li><b>Obs!</b> You must still copy the same number of papers as that defined in the field <b>Papers by Session</b>, even if parallel sessions might have different number of papers. You can delete or add
+				papers later (see below) when you are ready with the sessions.</li>
+			<li>When you are ready with parallel session, Click the Button <b>Session ID</b> to get unique ID numbers for all sessions (that is why you must have the same number of
+				papers for every session), save your changes in the Blueprint Table and reload it to get rid of background colors.</li>
+		</ul>
+		<p>3. <b>Papers:</b> When you are ready with the sessions by day and have saved your Program in the Blueprint table, continue with the number of Paper by Session.</p>
+		<ul>
+			<li><b>Obs!</b> Do not use the Button <b>Session ID</b> anymore, as it presupposes that all sessions have the same number of papers!</li>
+			<li>Every row in the Bluprint represents a paper. You add and delete Papers <b>within every session</b> using the icons on the left column.</li>
+			<li>You add a paper by coping an existing row. The copy is inserted below the original row. Both are marked with different background colors.
+				You can then move the copy up and down, but do it only within the same session.</li>
+			<li>When you are ready, save your changes in the Blueprint Table and reload it to get rid of background colors.</li>
+		</ul>
+		<p>4. <b>Change Titles and Time Intervals:</b> You can click on all Table Cells that contain Titles and Time Intervals and change their content.</p>
+		<ul>
+			<li>A dialog box appears with a relevant input where you can insert new values. Changes are marked with background colors.</li>
+			<li>You can occasionally save your changes in the Blueprint Table. Reload the table when you are ready, or when you want to get rid of all background colors</li>
+		</ul>
+		<p>5. <b>Export the Blueprint to the Database:</b> When you are ready with all moments, save you changes in the Blueprint Table and click on the button <b>Go to Export Blueprint</b>.
+			This will lead you to a New Page, where you can check and upload the Blueprint Program to the Database</p>
+		<ul>
+			<li>The ID numbers of the conference, of its sessions and of its papers start automatically from the last IDs in the Database (see on the Top Right of the page). <ul>
+					<li>If changes have been made in the database after you have opened the Export Page, and some of the ID Numbers already exist in the Database, the Blueprint program will not be uploaded.
+					</li>
+				</ul>
+			</li>
+			<li>The New Conference and its sessions and papers will all be marked as <b>Hidden</b>, so nothing will be visible on the website. You have than to make your changes from
+				the administration of the website.
+				<ul>
+					<li>You can first make the New Conference visible on the website but hold sessions and papers hidden</li>
+					<li>You can then make all sessions visible, when you are ready with them.</li>
+					<li>Finally, you can make the papers visible.</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="alignRight"><button class="button jq_Hide">Close</button></p>
+	</div>
+</div>
+<div id="info_sessions" class="info_box">
+	<div>
+		<h4>Sessions per Day</h4>
+		<p>Set the number of sessions by day as equal to the <b>Day</b> with the <b>highest</b> number of sessions. If other days contains less Sessions, you can delete them by using
+			the icon [X] on the left column.</p>
+		<ul>
+			<li>You <b>delete a session</b> by deleting all Papers belonging to that session.</li>
+		</ul>
+		<p>Alternatively, you can set the lowest or the average number of sessions, but you have then both to delete and to add sessions, which is more complicated.</p>
+		<p class="alignRight"><button class="button jq_Hide">Close</button></p>
+	</div>
+</div>
+<div id="info_papers" class="info_box">
+	<div>
+		<h4>Papers per Session</h4>
+		<p>Set the number of papers by session as equal to the session with highest number of papers.
+			You can then delete papers from particular Session.</p>
+		<p>Alternatively, you can set the lowest or the average number of papers, but you have then both to delete and to add papers, which is more complicated.</p>
+		<p class="alignRight"><button class="button jq_Hide">Close</button></p>
+	</div>
+</div>
+<div id="info_minutes" class="info_box">
+	<div>
+		<h4>Minutes Per Paper</h4>
+		<p>Write the <b>everage</b> number of minutes per paper for all sessions. You can then change the minutes per paper for particulat sessions. Please include <b>pauses</b> between Papers</p>
+		<ul>
+			<li>Define the everage number of minutes per paper in relation to the <b>number</b> of papers per session and the Start Time of Sessions (see corresponding help about The Start Time of Sessions on the Right).</li>
+			<li>The <b>End Time</b> of Sessions will be automatically counted as Start Time + (Number of Papers * Number of Minutes per Paper).</li>
+			<li>The Start and End Time of papers for every session will be automatically crated by using the number of minutes per paper.</li>
+			<li>However, you can later change the Start and End Time of both Sessions and Papers in the Blueprint, by clicking on the corresponding Table Cell (see General Help).</li>
+		</ul>
+		<p class="alignRight"><button class="button jq_Hide">Close</button></p>
+	</div>
+</div>
+<div id="info_time" class="info_box">
+	<div>
+		<h4>Start Time for Sessions</h4>
+		<p>Insert Time only for the defined number of Sessions per Day.</p>
+		<ul>
+			<li>End Time of every session will be automatically counted as Start Time + (Number of Papers * Minutes per Paper).</li>
+			<li>So, you must take into account the counted End Time of a session when you set the Start Time for the next session.</li>
+			<li>You can then change the Start and End Time of sessions in the Blueprint.</li>
+		</ul>
+		<p class="alignRight"><button class="button jq_Hide">Close</button></p>
+	</div>
+</div>

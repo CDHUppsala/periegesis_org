@@ -1,0 +1,57 @@
+/* Templates STYLES for administration
+================================================ */
+.templateTableImgLeft-60,
+.templateTableImgLeft-40,
+.templateTableImgTop {
+	clear: both;
+	table-layout: fixed;
+	overflow: hidden;
+	width: 100%;
+	margin: 15px 0;
+}
+
+.templateTableImgLeft-60 td:first-child {
+	vertical-align: top;
+	width: 60%;
+	padding: 10px 5px 5px 0;
+}
+
+.templateTableImgLeft-60 td:last-child {
+	vertical-align: top;
+	width: 40%;
+	padding: 10px 0 10px 5px;
+}
+
+.templateTableImgLeft-40 td:first-child {
+	vertical-align: top;
+	width: 40%;
+	padding: 10px 5px 10px 0;
+}
+
+.templateTableImgLeft-40 td:last-child {
+	vertical-align: top;
+	width: 60%;
+	padding: 10px 0 10px 5px;
+}
+
+.templateTableImgLeft-40 img,
+.templateTableImgLeft-60 img,
+.templateTableImgTop img {
+	max-width: 100%;
+	height: auto;
+}
+
+.templateTableImgTop img {
+	margin: 10px 0;
+}
+
+
+/* Line margins as separate divs
+========================== */
+.line {
+	font-size: 1px;
+	height: 1px;
+	margin: 12px 0;
+	border-bottom: 1px dotted #ccc;
+	clear: both;
+}

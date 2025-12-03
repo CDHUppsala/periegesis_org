@@ -1,0 +1,500 @@
+* {
+	box-sizing: border-box;
+}
+
+header,
+footer,
+nav,
+main,
+section,
+article,
+aside,
+figure,
+figcaption,
+dialog,
+menu,
+summary,
+details {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+}
+
+body {
+	font-family: var(--body-fonts);
+	background: #fff;
+	line-height: 150%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--heading-fonts);
+	color: #000;
+	line-height: 160%;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+a {
+	color: var(--basic-color);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--complement);
+}
+
+.slideUp,
+.slideDown {
+	cursor: pointer;
+	position: relative
+}
+
+.slideUp:after {
+	content: "\25B4";
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.slideDown:after {
+	content: "\25BE";
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+/*
+	================================
+	TOP STRUCTURE 
+	=================================== 
+*/
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 46px;
+	overflow: hidden;
+	background-color: var(--basic-color);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 90%);
+}
+
+header .row {
+	display: flex;
+	flex-direction: row;
+	/*  center, flex-start, flex-end, space-around, space-between, */
+	justify-content: space-between;
+	/*  center, flex-start (top), flex-end (bottom), stretch, baseline */
+	align-items: center;
+	padding: 0 20px;
+}
+
+header a {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 0.9rem;
+}
+
+header a:hover {
+	color: rgba(0, 0, 0, 0.9);
+}
+
+
+header .left img {
+	height: 44px;
+	width: auto;
+	opacity: 0.8;
+}
+
+header .right a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+header .right a::before {
+	content: url('../../imgPG/sx_svg/sx_svg_white/sx_reload.svg');
+}
+
+.sxNavMarker {
+	cursor: pointer;
+	padding: 2px;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.75);
+	display: block;
+}
+
+.sxNavMarker:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+.sxNavMarker .sx_svg {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	stroke-width: 0;
+	stroke: none;
+	fill: currentColor;
+}
+
+/*
+	================================
+	MAIN STRUCTURE
+	===================================
+*/
+
+.content {
+	position: fixed;
+	top: 46px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}
+
+/*
+	Left side
+	The background color in <main> is important for animation by jQuery:
+		- it is moved to a position over <aside> with heigher z-index
+		- otherwise the <aside> will b visible
+*/
+
+main {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+main img {
+	width: 100%;
+	height: auto;
+	margin: 2.5rem auto;
+}
+
+main .scroll {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	padding-bottom: 4rem;
+}
+
+main .text {
+	line-height: 1.6;
+	text-align: left;
+	padding: 1rem;
+}
+
+
+
+/*
+	Information about current multimedia file
+*/
+main ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+main ul.tabLinks {
+	float: left;
+	width: 100%;
+	text-align: left;
+	padding: 5px 0 0 5px;
+	border-bottom: 1px #ddd solid;
+	background-color: #eee;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.8), #eee 40px);
+}
+
+main ul.tabLinks li {
+	float: left;
+	border: 1px #fff solid;
+	border-radius: 5px 5px 0 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.1));
+	text-align: center;
+	padding: 7px 20px;
+	margin: 2px 1px 1px 0;
+	cursor: pointer;
+}
+
+main ul.tabLinks li.active {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.02) 8px, #fff);
+	padding-bottom: 9px;
+	margin-bottom: -1px;
+}
+
+main li.player {
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 1rem;
+	overflow: hidden;
+}
+
+main li.player div {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+main li.player_notes {
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: left;
+	display: none;
+}
+
+/*
+	Multimedia players
+*/
+video {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+audio {
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+}
+
+/*
+	Media containers
+	==========================================
+*/
+
+figure {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+figcaption {
+	font-size: 0.96em;
+	font-style: italic;
+	line-height: 125%;
+	text-align: left;
+	margin-top: 0.75rem;
+}
+
+.image_center {
+	display: block;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	padding: 0;
+}
+
+.media_wrapper {
+	position: relative;
+	/* ratio 16:9 */
+	padding-bottom: 56.25%;
+	height: 0;
+}
+
+.media_wrapper object,
+.media_wrapper embed,
+.media_wrapper iFrame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+	Difference between PDF and Media 
+*/
+
+#body_PDF figure,
+#body_PDF .media_wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#body_PDF .media_wrapper object,
+#body_PDF .media_wrapper embed,
+#body_PDF .media_wrapper iFrame {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+In case multimmedia functions display figcaption for PDF files
+*/
+#body_PDF main figcaption {
+	display:none;
+}
+
+/*
+	==========================================
+	End Media containers
+*/
+
+/*
+	Right side
+*/
+
+aside {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0 5px 5px 10px;
+	text-align: left;
+	border-left: 1px #ddd solid;
+	background-color: #eee;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.8), #eee 40px);
+	z-index: 1000;
+}
+
+/*
+	Classes that include _important in their name are used 
+	by jQuery to position of the Main and Aside tags
+*/
+
+@media only screen and (min-width: 740px) {
+	main .text {
+		padding: 0 20%;
+	}
+
+}
+
+@media only screen and (max-width: 1279px) {
+
+	.main_min_importent {
+		right: 0% !important;
+	}
+
+	.aside_min_importent {
+		left: 100% !important;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	main {
+		right: 25%;
+	}
+
+	aside {
+		left: 75%;
+		font-size: 0.96rem;
+	}
+
+	.main_importent {
+		right: 25% !important;
+	}
+
+	.aside_importent {
+		left: 75% !important;
+	}
+
+	main .text {
+		padding: 0 16%;
+	}
+
+	main iFrame,
+	main video,
+	main music,
+	main embed {
+		height: 75%;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+
+	html,
+	body {
+		font-size: 19px;
+	}
+
+	aside {
+		font-size: 1rem;
+	}
+
+	main .text {
+		padding: 0 22%;
+	}
+
+	aside ul {
+		font-size: 0.95rem;
+	}
+
+	main iFrame,
+	main video,
+	main music,
+	main embed {
+		width: 90%;
+		height: 75%;
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+
+	html,
+	body {
+		font-size: 20px;
+		line-height: 1.8;
+	}
+
+	main .text {
+		padding: 0 26%;
+	}
+
+	aside ul {
+		font-size: 0.9rem;
+	}
+}

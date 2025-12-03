@@ -1,0 +1,406 @@
+﻿/*	================================================
+1.	Nav Menu for Anchors of item Sections
+	================================================ 
+	Automatically created Navigation menu on the top-right 
+	that automatically includes as links the titles of all item Sections.
+	jQuery scrolls to the section when Clicking on its title.
+*/
+
+.item_anchor {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--basic-color);
+	padding: 0 3px 3px 3px;
+	text-align: left;
+	display: block;
+	max-width: 460px;
+	z-index: 80;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-right: 0;
+	visibility: hidden;
+}
+
+.item_anchor div {
+	font-size: 2.5em;
+	font-weight: normal;
+	color: #fff;
+	opacity: 0.8;
+	cursor: pointer;
+	padding: 1px 8px;
+	line-height: 100%;
+}
+
+.item_anchor ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	display: block;
+}
+
+.item_anchor li {
+	display: block;
+	margin-top: 4px;
+	padding: 0;
+	background-color: #fff;
+}
+
+.item_anchor li span {
+	display: block;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 125%;
+	padding: 8px 5px;
+	text-align: left;
+	color: #333;
+	cursor: pointer;
+}
+
+.item_anchor li span:hover {
+	color: var(--basic-color);
+}
+
+/*	================================================	
+	2.	Styles for the Sections, rows, card-items and images
+		of every item.
+	================================================
+*/
+
+.item_block {
+	position: relative;
+	background: transparent;
+	padding: 0;
+	margin: 0 0 6rem 0;
+}
+
+.item_block h2 {
+	color: var(--basic-color);
+	font-size: 1.4rem;
+	font-weight: 900;
+}
+
+.item_block h3,
+.item_block h4 {
+	color: var(--basic_60);
+}
+
+/*
+	item sections without Flex
+*/
+.item {
+	margin: 0 auto;
+	padding: 4rem 0;
+	border-bottom: solid 1px rgba(255, 255, 255, 0.8);
+}
+.item>div {
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+
+.item_header {
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 6px;
+}
+
+.item_header h1 {
+	text-align: center;
+	color: var(--basic-color);
+	font-size: 2rem;
+	font-weight: 900;
+	padding: 0;
+	margin: 0;
+}
+
+.item_header .text_normal {
+	padding: 0 5%;
+	text-align: left;
+}
+
+.item_header .text_normal ul,
+.item_header .text_normal ol {
+	text-align: left;
+}
+
+/*
+	item sections with Flex
+	- used to place item_header of a section on Left or Right
+	- It is set dynamically, so it might not exist
+	- define styles only when it exists, related only to it
+*/
+.item_flex {
+	display: block;
+}
+
+/*
+	The content, rows and items of every item
+*/
+
+.item_content {
+	border-radius: 6px;
+	padding: 0;
+
+}
+
+.item_row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background: transparent;
+	padding: 1rem;
+	margin-bottom: 0.5rem;
+	border-radius: 6px;
+	pointer-events: none;
+	gap: 1rem;
+}
+
+.item_element {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	flex: 1 100%;
+	border-radius: 3px;
+	pointer-events: auto;
+	opacity: 0.86;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.item_element:hover {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.item_element figure {
+	padding: 0;
+}
+
+.item_element>h2 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.item_element figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	/*border-radius: 6px 6px 0 0;*/
+}
+
+.item_element figcaption {
+	font-style: normal !important;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.item_element .text_normal {
+	font-size: 1em;
+}
+
+.item_element .absolute-button {
+	margin-top: auto;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+/**
+* Dynamically determined classes
+* Selected by the administrator when desining sections
+*/
+
+.item .item_shadow {
+	box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.1), 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item .item_shadow_hover:hover {
+	box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.1), 10px 10px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item .item_hover:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.item figure.image_shadow img {
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4), 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 10px 14px 10px 6px;
+	width: calc(100% - 20px);
+	height: auto;
+}
+
+.item figure.image_radius_100 img {
+	border-radius: 100%;
+}
+
+.item figure.image_radius_50 img {
+	border-radius: 50%;
+}
+
+.item figure.image_radius_25 img {
+	border-radius: 25%;
+}
+
+.item figure.image_radius_10 img {
+	border-radius: 10%;
+}
+
+.item figure.image_radius_5 img {
+	border-radius: 5%;
+}
+
+.item figure.image_max_height_100 img,
+.item figure.image_max_height_150 img,
+.item figure.image_max_height_200 img,
+.item figure.image_max_height_250 img,
+.item figure.image_max_height_300 img{
+	margin: 0.5rem auto 0 auto !important;
+	width: auto;
+	max-width: 100%;
+	padding: 0;
+}
+.item figure.image_max_height_100 img {
+	max-height: 100px !important;
+}
+.item figure.image_max_height_150 img {
+	max-height: 150px !important;
+}
+.item figure.image_max_height_200 img {
+	max-height: 200px !important;
+}
+.item figure.image_max_height_250 img {
+	max-height: 250px !important;
+}
+.item figure.image_max_height_300 img {
+	max-height: 300px !important;
+}
+
+/**
+	Fix text behide the image of a item item
+	Appliew to the element .item_element > figure
+*/
+
+
+.item_element .text_fixed {
+	position: relative;
+	cursor: pointer;
+}
+
+.item_element .text_fixed img {
+	opacity: 1;
+	transition: opacity 0.3s linear;
+}
+
+.item_element .text_fixed figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	padding: 0 1rem !important;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.item_element .text_fixed:hover img {
+	opacity: 0;
+}
+
+.item_element .text_fixed:hover figcaption {
+	opacity: 1;
+}
+
+@media (min-width: 768px) {
+
+	.item_element {
+		flex: 1 1 45%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.item .item_hover {
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	.item .item_hover:hover {
+		background-color: rgba(255, 255, 255, 0.8) !important;
+	}
+
+	.item_element {
+		flex: 1 1 30%;
+	}	
+	.item {
+		padding-left: 2.5%;
+		padding-right: 2.5%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.item_flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.item_flex .item_header {
+		flex: 0 30%;
+	}
+
+	.item_flex .item_content {
+		flex: 1 70%;
+	}
+
+	.item_flex .item_header h1 {
+		text-align: left;
+	}
+
+	.item_header .text_normal {
+		padding: 0 8%
+	}
+
+	.item_flex .item_header .text_normal {
+		padding: 0;
+	}
+
+	/* Max 4 Items per Row
+	*/
+	.item_element {
+		flex: 1 20%;
+	}
+
+	.item {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+
+	.item_header .text_normal {
+		padding: 0 20%
+	}
+	.item_flex .item_header .text_normal {
+		padding: 0;
+	}
+
+	.item {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+}
+
+@media only screen and (min-width: 1920px) {
+
+	/* Max 6 Items per Row, decrease the percentage to allow for mor Items
+	.item_element {
+		flex: 1 15%;
+	}
+	*/
+}

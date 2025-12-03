@@ -1,0 +1,206 @@
+<h2>Map Functions Overview</h2>
+<p>Click the
+    <button class="svg_wrapper" title="Show Guide">
+        <svg id="sx_info_big_square" viewBox="0 0 32 32">
+            <path
+                d="M14 1 q-2 0 -2 2 v4 q0 2 2 2 h4 q2 0 2 -2 v-4 q0 -2 -2 -2z M14 12 q-2 0 -2 2 v15 q0 2 2 2 h4 q2 0 2 -2 v-15 q0 -2 -2 -2z">
+            </path>
+        </svg>
+    </button>
+    button at any time to reopen this guide.
+</p>
+<h3>This interactive map offers five core features:</h3>
+
+<ol>
+    <li>
+        <h4>Explore the Map</h4>
+        <ul>
+            <li>Explore the map using OpenStreetMap or switch to other base layers via the top-right selector.</li>
+            <li><strong>Tip</strong>: Hold the <code>Shift Key</code> and draw a rectangle to zoom into a specific
+                area — even when layers have been loaded on the map.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Search Tools</h4>
+        <ul>
+            <li><em>Search by Coordinates</em>: Enter latitude and longitude to find the corresponding place name.</li>
+            <li><em>Search by Place Name</em>: Enter a location name to retrieve its coordinates.</li>
+            <li><em>Click Search</em>: Click anywhere on the map to get both coordinates and place name.
+                <ul>
+                    <li>You enable and disable this function by the checkbox <code>Use Click Search</code>.
+                    </li>
+                    <li>When click searching is enabled, the cursor consists of a hand with an index finger, for the
+                        exact location of a place.</li>
+                </ul>
+            </li>
+            <li><strong>Tip 1:</strong> Single-click a location for search. Double-click to zoom in.</li>
+            <li><strong>Tip 2:</strong> Single-clicking adds a marker and fills the search fields with respective
+                information.
+                <ul>
+                    <li>Use the <code>Clear</code> button to remove both information and marker.</li>
+                    <li>Uncheck (and recheck) the <code>Use Click Search</code> to remove only the marker.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Tip 3:</strong> Uncheck <code>Use Click Search</code> to disable marker placement, and use
+                clicks
+                for zooming only.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>Map Areas</h4>
+        <ul>
+            <li>Load map area files from the Map Areas dropdown list.</li>
+            <li>Supported formats: <code>.geojson</code>, <code>.topojson</code>, <code>.kml</code> and well-structured
+                <code>.json</code>.
+            </li>
+            <li><b>For administrators:</b>
+                <ul>
+                    <li>Upload your Map Areas files to the default folder <code>map_areas/</code> on the server.</li>
+                    <li>Include a JSON file, <code>index.json</code>, listing the file names:
+                        <pre>[
+    "world_100.geojson",
+    "world_200.geojson",
+    "..."
+]</pre>
+                    </li>
+                    <li>The select element <code>Map Areas</code> on the top of this page is then automatically
+                        updated to include those files as options.</li>
+                </ul>
+            </li>
+            <li><strong>Tip:</strong> Choose the first option from the dropdown menu to remove all loaded map areas.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>Map Places</h4>
+        <ul>
+            <li>Loads files with places over map locations, such as the places mentioned in
+                Pausanias' Description of Greece in 10 books, or (travelling) routes, with lines and eventually marked
+                places.</li>
+            <li>Supports the following file formats: <code>.geojson</code>, <code>.topojson</code>,
+                <code>.kml</code>, <code>.gpx</code>, <code>.csv</code>, and simple <code>.json</code>:
+                <pre>Simple JSON File:
+[
+  {
+    "BookID" : "1.1.1",
+    "Place" : "Ἀθηναίοις",
+    "Links" : "...",
+    "Lat" : "37.971687",
+    "Lon" : "23.726464",
+    "Description" : "..."
+  },
+  {...}
+]
+</pre>
+                <pre>CSV File:
+BookID,Place,Links,Lat,Lon,Type,Description
+1.1.1,Ἀθηναίοις,"...",37.971687,23.726464,"..."
+...
+</pre>.
+            </li>
+            <li>Detection of <b>Coordinate Field Names</b> is flexible and case insensitive. CSV and JSON files can
+                contain any of the following alternatives:
+                <ul>
+                    <li><code>lat/lon</code>, Lat/Lon or LAT/LON</li>
+                    <li><code>lat/lng</code>. Lat/Lng or LAT/LNG</li>
+                    <li><code>latitude/longitude</code>, Latitude/Longitude, or LATITUDE/LONGITUDE</li>
+                </ul>
+            </li>
+            <li><b>For administrators:</b>
+                <ul>
+                    <li>Upload files with Map Places to the default folder <code>map_places/</code> on the server.</li>
+                    <li>Include an <code>index.json</code> file listing chosen file names.</li>
+                    <li>The select element <code>Map Places</code> on the top of this page is then
+                        automatically updated to include those files as options.</li>
+                </ul>
+            </li>
+
+            <li><strong>Tip:</strong> Choose the first option from the dropdown menu to remove all loaded files with map
+                places.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>User's Local File Loader</h4>
+        <ul>
+            <li>Use the folder icon
+                <button class="svg_wrapper">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M3 1 q-2 0 -2 2 v4h16 l -6-6z M1 9 v20 q0 2 2 2 h26 q2 0 2 -2 v-18 q 0 -2 -2 -2 z">
+                        </path>
+                    </svg>
+                </button> to load local files directly from your device.
+            </li>
+            <li>Loacal Loader supports all file formats and structures mentioned above.</li>
+        </ul>
+    </li>
+</ol>
+<h3>Some other Features and functions</h3>
+<ul>
+    <li><strong>Zooming</strong>
+        <ul>
+            <li>The map is automatically zooming to the boundaries (places or areas) of the <b>first</b> loaded file.
+            </li>
+            <li>Subsequent loading of files does not change zooming - to enable comparisons.</li>
+            <li>To zoom the map to the bounderies of a file, click any time on the <code>z</code> button at the left of its name,
+                within the <code>Loaded Files</code> panel.</li>
+        </ul>
+    </li>
+    <li><strong>Stacking Areas and Places</strong>
+        <ul>
+            <li>Check the <code>Stack</code> checkbox to allow multiple map areas and places from
+                different files, loaded from the server or from your local device, to overlay each other.</li>
+            <li>You can see all loaded files in the <code>Loaded Files</code> panel.</li>
+            <li>Clicking on their respective <b>checkbox</b> separately toggles their visibility.</li>
+            <li>Click on the
+                <button class="svg_wrapper">
+                    <svg viewBox="0 0 32 32">
+                        <path
+                            d="M2 6 a1 1 0 0 1 4 -4 l10 10 10-10 a1 1 0 0 1 4 4 l-10 10 10 10 a1 1 0 0 1 -4 4 l-10 -10 -10 10 a1 1 0 0 1 -4-4 l10-10z">
+                        </path>
+                    </svg>
+                </button>
+                button to instantly remove all loaded files from the map and reset zooming.
+            </li>
+        </ul>
+    </li>
+    <li><strong>Information Popups</strong>
+        <ul>
+            <li>Clicking on map layers (place markers and areas) displays, if available, a popup with sanitized
+                information, usually in
+                terms of Key: Value.</li>
+            <li>URLs in popups are automatically converted to links, which open in a new tab.</li>
+            <li><strong>Tip:</strong> Check and uncheck any time <code>Show Properties</code> to enable and disable
+                popup
+                information when clicking on map layers - clicking will then zoom instead.</li>
+        </ul>
+    </li>
+    <li><b>Supported Geometry Types:</b>
+        <ul>
+            <li>Full support for types: Point, MultiPoint, LineString, MultiLineString, Polygon and MultiPolygon</li>
+            <li>Partial Support for <b>GeometryCollection:</b>
+                <ul>
+                    <li>If all geometries are <b>Polygon</b>, they are merged into a single <b>MultiPolygon</b>.</li>
+                    <li>Mixed geometry types are split into individual features with shared properties.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h3>You can use each function independently, or use them together:</h3>
+<ul>
+    <li><strong>Use Click Search</strong> can be kept active in all occasions, both with Map
+        Places and Map Areas.</li>
+    <li>You can load <strong>multiple</strong> Map Areas and Map
+        Places, both from select lists and from local files.
+    </li>
+    <li>Where Map Places or Areas <strong>intersect</strong>, the last loaded layer gets priority
+        regarding popups and hovering.</li>
+    <li>When <code>Show Properties</code> is enabled, <code>Use Click Search</code> is automatically
+        disabled within Map Areas. To re-enable Click Searching inside those areas, uncheck
+        <code>Show Properties</code>.
+    </li>
+
+</ul>

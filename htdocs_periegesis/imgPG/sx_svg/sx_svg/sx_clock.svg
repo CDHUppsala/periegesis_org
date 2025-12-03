@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="sx_clock" viewBox="0 0 32 32">
+        <path
+            d="M16 1 a1 1 0 0 0 0 30 a1 1 0 0 0 0 -30 M16 4 a1 1 0 0 1 0 24 a1 1 0 0 1 0 -24 m-1.5 3 v10.5 h8 a1 1 0 0 0 0 -3 h-5 v-8.5 a1 1 0 0 0 -3 0z" />
+    </svg>

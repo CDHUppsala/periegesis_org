@@ -1,0 +1,58 @@
+
+/**
+Adapt default styles to a specific project
+
+*/
+
+/*  Obs! Obs! Obs! Obs! 
+    The height of #logo and #logo_small /inludding padding and margin)
+    defines the haight of the navigation bar, 
+    both the normal (#logo) and the fixed (#logo_small)
+    - the height must be equal or heigher than the other parts of Nav
+*/
+
+#logo {
+    padding: 0;
+    text-align: left;
+    margin: auto auto 0 0;
+}
+#logo_small {
+    padding: 0;
+    text-align: left;
+    display: none;
+    margin: auto auto 0 0;
+    position: absolute;
+    top: 2px;
+    left: 15px;
+    width: 48px;
+}
+
+#logo img {
+    display: block;
+    width: 140px;
+    height: auto;
+}
+
+#logo_small img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.nav_top_flex {
+		justify-content: center;
+		margin: 0 auto;
+	}
+    /* 
+        Center the head menu in desktops
+        Usually used when the $nav_head does not include logo 
+    */
+    .nav_head_menu>ul {
+        justify-content: center;
+    }
+}
+
+.section_element .text_normal {
+	padding: 0;
+}

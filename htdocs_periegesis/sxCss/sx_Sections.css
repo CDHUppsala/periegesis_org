@@ -1,0 +1,447 @@
+﻿/*	================================================
+	COMMON css
+	- For First Page Promotions
+	- For Products and Services in table items
+
+1.	Nav Menu for Anchors of Sections
+	================================================ 
+	Automatically created Navigation menu on the top-right 
+	that automatically includes as links the titles of all Sections that
+		- include the class .jq_anchor_mark)
+		- the class element includes the attributes ID (anchor) and data-id (title text)
+	jQuery scrolls to the section when Clicking on its title.
+		- Set top: 0 and visibility: hidden, in case the class .jq_anchor_mark is not found 
+		- jQuery initially calculates and sets the top fixed position
+*/
+
+.section_anchor {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: var(--basic-color);
+	padding: 0 3px 3px 3px;
+	text-align: left;
+	display: block;
+	max-width: 460px;
+	z-index: 80;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-right: 0;
+	visibility: hidden;
+}
+
+.section_anchor div {
+	font-size: 2.5em;
+	font-weight: normal;
+	color: rgba(255, 255, 255, 0.6);
+	opacity: 0.8;
+	cursor: pointer;
+	padding: 1px 8px;
+	line-height: 100%;
+}
+
+.section_anchor ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	display: block;
+}
+
+.section_anchor li {
+	display: block;
+	margin-top: 4px;
+	padding: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.section_anchor li span {
+	display: block;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 125%;
+	padding: 8px 5px;
+	text-align: left;
+	color: var(--grey-shade-20);
+	cursor: pointer;
+}
+
+.section_anchor li span:hover {
+	color: var(--basic-color);
+}
+
+/*	================================================	
+	2.	Styles for the Sections, rows, card-items and images
+		of every item.
+	================================================
+*/
+
+.section_block {
+	position: relative;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+}
+
+/*
+	item sections without Flex
+*/
+.section_wrapper {
+	margin: 0 auto;
+	padding: 4rem 1%;
+	border-bottom: 1px solid var(--grey-tint-80);
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.section_wrapper:last-of-type {
+	border-bottom: 0;
+}
+
+.section_wrapper>div {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1280px;
+}
+
+.section_header {
+	padding: 1rem;
+	margin: 0 0 2rem 0;
+	border-radius: 6px;
+}
+
+.section_header h1 {
+	text-align: center;
+}
+
+.section_header .text_normal {
+	padding: 0 5%;
+	text-align: center;
+}
+
+.section_header .text_normal ul,
+.section_header .text_normal ol {
+	text-align: left;
+}
+
+/*
+	item sections with Flex
+	- used to place item_header of a section on Left or Right
+	- It is set dynamically, so it might not exist
+	- define styles only when it exists, related only to it
+*/
+.section_flex {
+	display: block;
+}
+
+/*
+	The content, rows and items of every item
+*/
+
+.section_content {
+	border-radius: 6px;
+	padding: 0;
+}
+
+
+.section_row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: transparent;
+	border-radius: 6px;
+	pointer-events: none;
+	row-gap: 1rem;
+	column-gap: 1%;
+	padding: 0;
+	margin: 0 0 2rem 0;
+}
+
+.section_element {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	flex: 1 1 100%;
+	border-radius: 3px;
+	pointer-events: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.section_element:hover {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.section_element figure {
+	padding: 0;
+	margin: 0;
+}
+
+.section_element>h2 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.section_element figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.section_element .image_float_left {
+	float: left;
+	margin: 0.25rem 1rem 0.5rem 0 !important;
+	width: 30% !important;
+}
+
+.section_element .image_float_right {
+	float: right;
+	margin: 0 0 0.5rem 1rem !important;
+	width: 30%;
+}
+
+.section_element figcaption {
+	font-style: normal !important;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.section_element .text_normal {
+	margin: 0;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+.section_element .text_normal p:first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.section_element .absolute-button {
+	margin-top: auto;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+/**
+	Fix text behide the image of a item item
+	Appliew to the element .section_element > figure
+*/
+
+
+.section_element .text_fixed {
+	position: relative;
+}
+
+.section_element .text_fixed img {
+	opacity: 1;
+}
+
+.section_element .text_fixed figcaption {
+	position: static;
+	top: 2px;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	padding: 0 1rem;
+}
+
+.section_element .text_fixed .text_normal {
+	font-size: 0.85rem;
+	line-height: 125%;
+	opacity: 1;
+	transition: opacity 0.3s linear;
+}
+
+
+@media (min-width: 768px) {
+
+	.section_element {
+		flex: 1 1 45%;
+	}
+}
+
+@media (min-width: 1024px) {
+
+	.section_element .text_fixed {
+		cursor: pointer;
+	}
+
+	.section_element .text_fixed figcaption {
+		position: absolute;
+	}
+
+	.section_element .text_fixed .text_normal {
+		opacity: 0;
+	}
+
+	.section_element .text_fixed:hover .text_normal {
+		opacity: 1;
+	}
+
+	.section_wrapper .section_hover {
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	.section_wrapper .section_hover:hover {
+		background-color: rgba(255, 255, 255, 0.8) !important;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.section_flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.section_flex .section_header {
+		flex: 0 34%;
+	}
+
+	.section_flex .section_content {
+		flex: 1 66%;
+	}
+
+	.section_flex .section_header h1 {
+		text-align: left;
+	}
+
+	.section_header .text_normal {
+		padding: 0 8%
+	}
+
+	.section_flex .section_header .text_normal {
+		padding: 0;
+	}
+
+	/* Max 4 Items per Row
+	*/
+	.section_element {
+		flex: 1 20%;
+	}
+
+}
+
+@media only screen and (min-width: 1600px) {
+
+	.section_header .text_normal {
+		padding: 0 20%
+	}
+
+	.section_flex .section_header .text_normal {
+		padding: 0;
+	}
+
+}
+
+@media only screen and (min-width: 1920px) {
+
+	/* Max 6 Items per Row, decrease the percentage to allow for mor Items
+	.section_element {
+		flex: 1 15%;
+	}
+	*/
+}
+
+/**
+* Dynamically determined classes
+* Selected by the administrator when desining sections
+*/
+
+.section_wrapper .section_shadow {
+	box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.1), 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section_wrapper .section_shadow_hover:hover {
+	box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.1), 10px 10px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section_wrapper .section_hover:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.section_wrapper figure.image_shadow img {
+	box-shadow: 8px 8px 12px 6px rgba(0, 0, 0, 0.3), 3px 3px 8px 3px rgba(0, 0, 0, 0.3);
+	margin: 10px 14px 10px 6px;
+	width: calc(100% - 20px);
+	height: auto;
+}
+
+.section_wrapper figure.image_radius_100 img {
+	border-radius: 100%;
+}
+
+.section_wrapper figure.image_radius_50 img {
+	border-radius: 50%;
+}
+
+.section_wrapper figure.image_radius_25 img {
+	border-radius: 25%;
+}
+
+.section_wrapper figure.image_radius_10 img {
+	border-radius: 10%;
+}
+
+.section_wrapper figure.image_radius_5 img {
+	border-radius: 5%;
+}
+
+.section_wrapper figure.image_max_height_100 img,
+.section_wrapper figure.image_max_height_125 img,
+.section_wrapper figure.image_max_height_150 img,
+.section_wrapper figure.image_max_height_200 img,
+.section_wrapper figure.image_max_height_250 img,
+.section_wrapper figure.image_max_height_300 img,
+.section_wrapper figure.image_max_height_400 img,
+.section_wrapper figure.image_max_height_500 img,
+.section_wrapper figure.image_max_height_600 img {
+	display: block;
+	margin: 0.5rem auto 0 auto !important;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	padding: 0;
+}
+
+.section_wrapper figure.image_max_height_100 img {
+	max-height: 100px !important;
+}
+
+.section_wrapper figure.image_max_height_125 img {
+	max-height: 125px !important;
+}
+
+.section_wrapper figure.image_max_height_150 img {
+	max-height: 150px !important;
+}
+
+.section_wrapper figure.image_max_height_200 img {
+	max-height: 200px !important;
+}
+
+.section_wrapper figure.image_max_height_250 img {
+	max-height: 250px !important;
+}
+
+.section_wrapper figure.image_max_height_300 img {
+	max-height: 300px !important;
+}
+
+.section_wrapper figure.image_max_height_400 img {
+	max-height: 400px !important;
+}
+
+.section_wrapper figure.image_max_height_500 img {
+	max-height: 500px !important;
+}
+
+.section_wrapper figure.image_max_height_600 img {
+	max-height: 600px !important;
+}

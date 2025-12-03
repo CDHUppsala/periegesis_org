@@ -1,0 +1,209 @@
+/*
+    * Cycler with Multiple Cards per slide
+    * Cyclers are created by the same function that creates
+        multicard advertising cards (cards in multiple rows, without slide/cycling),
+        so they all use the sam basic class .flex_cards, defined in sx_FlexCarts.css
+    * A parent container with the class .cycler_flex transforms any
+        multicard advertising to cycler
+    * You can use in cyclers the default attributes for the 
+        basic/common class .flex_cards or change them bellow
+*/
+
+.cycler-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.cycler_flex {
+    position: relative;
+    overflow: hidden;
+    padding: 0 1.5rem;
+}
+
+/*  A temporal absolute element used by jQuery:
+        * To Append it to the parent container .flex_cards (see bellow)
+        * To clone from the parent container the active (visible) slice
+            of figures and append them to the absolut element
+        * Remove the same slice from the bigining of the parent element
+            to its end, whereby the next slice of figures takes it place.
+        * Animate the absolut element outside its parent container and then
+            remove it, thereby making the next slice visible
+*/
+.cycler_flex_absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    background: #ffffff99;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/*
+    * Obs!
+    The Cycler is using flex_cards, not grid_cards, 
+    as is the case with all other forms of card presentation
+        - from advertsing tebles
+        - from text table
+*/
+.cycler_flex .flex_cards {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+        transition: transform 0.6s linear;
+
+}
+/**
+    Every card contains a figure with an image/media and a figcaptions.
+        - Use the default values from .sx_FlexCarts.css or change them
+*/
+.cycler_flex .flex_cards figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0.5rem;
+    overflow: hidden;
+    background: #ffffff99;
+    border: 1px solid #ffffff80;
+    width: 100%;
+}
+
+.cycler_flex .flex_cards img,
+.cycler_flex .flex_cards video {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.cycler_flex .flex_cards figcaption {
+    text-align: left;
+    padding: 0;
+    line-height: 120%;
+    font-size: 0.9em;
+    font-style: normal;
+}
+
+/*
+    Max 4 cards per row - or change it
+*/
+@media (min-width: 768px) {
+    .cycler_flex .flex_cards figure {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cycler_flex .flex_cards figure {
+        width: 33.333%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .cycler_flex .flex_cards figure {
+        width: 25%;
+    }
+}
+
+/*  
+    Obs! Navigation, for manual cycling, added by jQuery
+*/
+.cycler_flex ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    z-index: 10;
+}
+
+.cycler_flex li {
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    color: #666666;
+}
+
+.cycler_flex:hover li {
+    opacity: 1;
+}
+
+.cycler_flex [class*='nav-'] {
+    font-size: 2em;
+    font-weight: 900;
+    padding: 0.25rem 0 0 0;
+    cursor: pointer;
+}
+
+.cycler_flex li.nav-prev:after {
+    content: "\276E";
+    padding-right: 1rem;
+}
+
+.cycler_flex li.nav-next:after {
+    content: "\276F";
+    padding-left: 1rem;
+}
+
+.cycler_flex li.description {
+    position: relative;
+    display: none;
+}
+
+/*  The place av the navigation bar
+        cycler_nav_middle 
+            default: No class is needed 
+            presuposes default Left and Right pedding of the .flex_cards
+        cycler_nav_bottom 
+            add the class cycler_nav_bottom to 
+            - the class .flex_cards and remove the default padding
+            - to the element UL and 
+                - transform it from absolute to static position
+                - make description visble
+    Can be send to jQuery as value of the container attribute data-place="" 
+        if empty the default value cycler_nav_middle will be assumed
+    The class .cycler_flex__nav_bottom modifies the main class .cycler_flex
+        in the same containe
+
+*/
+
+.cycler_flex__nav_bottom {
+    padding: 0 !important;
+}
+
+.cycler_flex__nav_bottom ul  {
+    position: static;
+    border-top: 1px solid #ddd;
+}
+
+.cycler_flex__nav_bottom li.description {
+    flex: 2;
+    display: block;
+    text-align: center;
+}

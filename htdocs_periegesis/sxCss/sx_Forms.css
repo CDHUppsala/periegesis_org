@@ -1,0 +1,363 @@
+/*
+	For font sizes use EM not REM, to scale with the size of the container
+*/
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button {
+	cursor: pointer;
+	padding: 14px;
+	font-size: 1em;
+}
+
+input,
+select {
+	font-size: 1em;
+	margin: 0.25rem 0;
+	padding: 0.5rem 0.25rem;
+	vertical-align: baseline;
+}
+
+
+input[type=submit],
+input[type=button],
+input[type=reset] {
+	padding: 0.25rem 0.75rem;
+	cursor: pointer;
+	margin-left: 1px;
+}
+
+
+input[type=radio],
+input[type=checkbox] {
+	transform: scale(1.25);
+}
+
+textarea {
+	width: 50%;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+label {
+	display: block;
+	margin: 0.25rem 0 0 0;
+}
+
+fieldset {
+	padding: 1.25rem;
+	margin: 0.25em 0;
+	clear: both;
+	background: #eee;
+	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.99) 25%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.99));
+	border: 1px solid #ddd;
+	border-radius: 0.25em;
+}
+
+fieldset p:first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+legend {
+	border: 1px solid #ddd;
+	padding: 0.25em 0.75em;
+	background: #fff;
+	border-radius: 0.25em;
+
+}
+
+/*
+	=======================================
+	FIELDSET
+	Redifine the above styles for Form elements by using the fieldset element
+	- You can then use or remove the fieldset element for 2 different sets of styles
+	=======================================
+*/
+
+fieldset select,
+fieldset input[type=tel],
+fieldset input[type=email],
+fieldset input[type=text],
+fieldset input[type=password] {
+	padding: 0.6rem 0.2rem;
+	margin: 0.1rem 0;
+	width: 85%;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+fieldset input[name=entered] {
+	padding: 0.1rem;
+	width: 3rem !important;
+}
+
+fieldset input[type=file],
+fieldset input[type=submit],
+fieldset input[type=button],
+fieldset input[type=reset] {
+	padding: 1em;
+	cursor: pointer;
+	background-color: #ddd;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+}
+
+fieldset input[type=submit]:hover,
+fieldset input[type=button]:hover,
+fieldset input[type=reset]:hover {
+	background-color: aqua;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+}
+
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+	transform: scale(1.8);
+	margin: 0 0.75rem;
+}
+
+fieldset textarea {
+	width: 98%;
+	padding: 0.5rem;
+	font-size: 1em;
+}
+
+.fieldset_flex {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-between;
+	align-items: stretch;
+	vertical-align: top;
+	gap: 10%;
+}
+
+.fieldset_flex>* {
+	flex: content;
+	vertical-align: text-top;
+}
+
+.fieldsets_grid {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr;
+	column-gap: 0.25rem;
+	margin: 0;
+}
+
+/*
+	Place fieldsets in a Grid - mainly in search pages
+*/
+
+@media only screen and (min-width: 768px) {
+	.fieldsets_grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.fieldsets_grid input {
+		width: 98% !important;
+	}
+
+	.form_fieldsets_grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 0.25rem;
+		align-items: stretch;
+		margin: 0 auto;
+	}
+
+	.form_inputs_grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr 3fr;
+		column-gap: 0.25rem;
+		align-items: flex-start;
+	}
+
+	.form_inputs_grid select,
+	.form_inputs_grid input[type=email],
+	.form_inputs_grid input[type=text],
+	.form_inputs_grid input[type=password] {
+		width: 98%;
+	}
+
+	fieldset select,
+	fieldset input[type=email],
+	fieldset input[type=text],
+	fieldset input[type=password] {
+		width: 60%;
+	}
+}
+
+/*	
+	===========================================================
+	Merge together Text/Email/Password Input with Submit Input
+		.search_top for specific use
+		.merge_inputs for generic use anywhere
+		Don't use fieldset
+		Use [type=] to replace default definitions
+	===========================================================
+*/
+
+.search_top,
+.merge_inputs {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	padding: 4px 0;
+}
+
+/*	SPECIFIC USE: .search_top
+	Search form on the Top, where the values of sizes 
+	must be Set in EM (NOT in REM) 
+	for the inputs to scale with the parent font size 
+	(increase and decrease between mobile and desctop)
+*/
+
+.search_top input[type=text] {
+	font-size: 0.85em;
+	width: 8em;
+	background: #fff;
+	opacity: 0.75;
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	border-right: 0;
+	border-radius: 5px 0 0 5px;
+	margin: 0;
+	padding: 4px;
+}
+
+.search_top button {
+	position: relative;
+	width: 2em;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	background-color: var(--top-search_bg);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0));
+	border: 1px solid rgba(255, 255, 255, 0.75);
+	border-left: 0;
+	border-radius: 0 5px 5px 0;
+}
+
+.search_top button::after {
+	content: url('../imgPG/sx_svg/sx_svg_white/sx_search.svg');
+	position: absolute;
+	left: 8px;
+	top: 1px;
+	height: 1.2em;
+	width: 1.2em;
+}
+
+.search_top button:hover {
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.25));
+}
+
+/*	GENERAL USE: .merge_inputs
+	The class can be places in a parent element (form or DIV) 
+	that includes the two inputs, without fieldset
+*/
+
+.merge_inputs input[type=email],
+.merge_inputs input[type=text],
+.merge_inputs input[type=search],
+.merge_inputs input[type=password] {
+	padding: 0.6rem 0.2rem;
+	margin: 0;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-radius: 6px 0 0 6px;
+}
+
+.merge_inputs input[type=submit] {
+	padding: 0.6rem 0.2rem;
+	margin: 0;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-radius: 0 6px 6px 0;
+	color: rgba(255, 255, 255, 0.75);
+	background-color: var(--footer-bg);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+}
+
+.merge_inputs input[type=submit]:hover {
+	color: rgba(255, 255, 255, 1);
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+}
+
+/*
+	===================================
+	Various Classes related to forms
+	===================================
+*/
+.input_text {
+	display: none
+}
+
+.five_stars {
+	position: relative;
+	display: inline-block;
+	width: 128px;
+	height: 32px;
+	background: #ddd;
+	vertical-align: text-bottom;
+	margin: 0 0.5rem;
+}
+
+.five_stars::before {
+	content: url('../imgPG/sx_svg/sx_svg_bg/sx_star_five.svg');
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+/* To move the ancor position under the fixed navigation bar */
+.ancor_margin {
+    margin-top: 4rem;
+}
+
+/*
+	The width is determined by the ratio of vote results
+*/
+.five_stars span {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #f90;
+}
+
+.grid_form_review_wrapper fieldset {
+    padding: 0.5rem 0.75rem 2rem 0.5rem
+}
+
+.grid_form_review {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.wide_select_form fieldset select {
+	width: auto;
+}

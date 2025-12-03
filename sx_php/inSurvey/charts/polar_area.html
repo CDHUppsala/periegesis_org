@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bar and Line</title>
+    <style>
+        .chart_container {
+            position: relative;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script>
+        const data = {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
+            }]
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="chart">
+        <div class="chart_container">
+            <canvas id="polarArea"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const polarArea = new Chart(
+            document.getElementById('polarArea'),
+            config = {
+                type: 'polarArea',
+                data: data,
+                options: {
+                    aspectRatio: 1,
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    /*
+                    scales: {
+                        r: {
+                            ticks: {
+                                display: false
+                            }
+                        }
+                    }
+                */
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>

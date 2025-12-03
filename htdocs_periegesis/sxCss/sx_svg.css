@@ -1,0 +1,92 @@
+.sx_svg {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin: 0;
+	padding: 0;
+	stroke-width: 0;
+	stroke: none;
+}
+
+.sx_svg {
+	fill: currentColor;
+}
+
+/*
+    svg within image tag <img>
+	- used in footer
+*/
+.sx_svg_img,
+.sx_svg_image {
+	background-color: transparent;
+	width: 0.8em;
+	height: auto;
+}
+
+/*
+  A set of svg-images appearing in texts pages 
+  within the container "print"
+*/
+.print .sx_svg {
+	fill: var(--svg-fill);
+}
+
+.print .sx_svg:hover {
+	fill: var(--svg-fill-hover);
+}
+
+.print_sole {
+	float: right;
+	margin-top: 0.5rem;
+}
+
+.print_sole .sx_svg {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+/*
+	svg in lists with or without Links:
+	- set the <svg within the <a tag
+	- defines only the structure, not colors and behaviour, 
+	  which are defined locally
+	- used mainly in sx_footer.php
+*/
+
+.svg_list {
+	list-style: none;
+	line-height: 160%;
+	padding: 0;
+}
+
+.svg_list li {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 1.8rem;
+}
+
+.svg_list li svg {
+	position: absolute;
+	left: 0.1rem;
+	top: 0.25rem;
+}
+
+/* 
+	Links that change only the color of the svg-image included as symbol
+	Can be included in lists - or anywhere
+*/
+.svg_links a {
+	position: relative;
+	padding-left: 1.5em;
+	display: block;
+	margin-bottom: 0.4em;
+}
+
+.svg_links a svg {
+	position: absolute;
+	left: 0;
+	top: 0.25em;
+	width: 1em;
+	height: 1em
+}

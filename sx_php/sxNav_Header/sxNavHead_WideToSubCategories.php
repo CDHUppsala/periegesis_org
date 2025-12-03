@@ -1,0 +1,54 @@
+<?php
+/**
+ * Include once as the file is also used (included) 
+ * in Main (vertically) navigation files (in sxNav_Main)
+ */
+include_once __DIR__ . "/functions_Nav_Queries.php";
+include __DIR__ . "/functions_Nav_Menu_Lists.php";
+
+$strNavPath = "texts.php?";
+if (empty($str_TextClassesInMainMenuTitle)) {
+	$str_TextClassesInMainMenuTitle = lngCategories;
+}
+?>
+<div class="sxNavHeader" id="jqNavHeader">
+	<ul>
+		<li><a href="index.php"><?= (lngHomePage) ?></a></li>
+		<?php
+		$arr_Rows = sx_getRowsNavBySubCategories();
+		if (is_array($arr_Rows)) {
+			sx_getHeaderNavList_ToSubcategories_Wide($arr_Rows, $strNavPath, $str_TextClassesInMainMenuTitle)
+		?>
+		<?php
+		}
+		$arr_Rows = null;
+		if ($radio_UseEvents) { ?>
+			<li><a href="events.php"><?= $str_EventsMenuTitle ?></a></li>
+			<?php }
+		if ($radio_UseTextsAbout) {
+			if ($radio_TextAboutHeaderMenuByGroup) {
+				sx_getAboutMenu_HeaderGroups($radio_ShowAboutTextsInHeader, false);
+			} else { ?>
+				<li><a href="about.php"><?= $str_TextsAboutTitle ?></a></li>
+			<?php
+			}
+		}
+		if ($radio_IncludeCourses && sx_IncludeCourses) { ?>
+			<li><a href="courses.php"><?= $str_CoursesLinkTitle ?></a></li>
+		<?php
+		}
+		if ($radio_UseMembersList) { ?>
+			<li><a href="about.php?members=yes"><?= $str_MembersListTitle ?></a></li>
+		<?php }
+
+		if (sx_includeForum && $radio_IncludeForum && !empty($str_ForumLinkTitle)) { ?>
+			<li><a href="sxInc_Forum.php"><?= $str_ForumLinkTitle ?></a></li>
+		<?php }
+		if (sx_IncludeTopContact == False) { ?>
+			<li><a href="contact.php"><?= lngContact ?></a></li>
+		<?php }
+		if (sx_IncludeTopSearch == False) { ?>
+			<li><a href="search.php"><?= lngSearch ?></a></li>
+		<?php } ?>
+	</ul>
+</div>

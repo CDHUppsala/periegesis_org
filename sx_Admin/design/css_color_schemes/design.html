@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>CSS Root Colors</title>
+    <link rel="stylesheet" href="src/css_root_colors.css">
+    <script src="../../js/jq/jquery.min.js"></script>
+    <script src="src/tinycolor.js"></script>
+    <script src="src/mix.js"></script>
+    <script src="src/css_root_colors.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="ps_flex_header">
+        <div class="color_form">
+            HEX: #<input id="HEX_Color" name="HEX_Color" size="6" type="text" value="">
+            <input id="GetColors" name="GetColors" type="color" value="#152555">
+            <input id="GetHEXColor" name="GetHEXColor" type="button" value="Set HEX Color">
+        </div>
+
+        <div class="color_form">
+            <label>R:<input id="R_Color" name="R_Color" type="number" min="0" max="255"></label>
+            <label>G:<input id="G_Color" name="G_Color" type="number" min="0" max="255"></label>
+            <label>B:<input id="B_Color" name="B_Color" type="number" min="0" max="255"></label>
+            <input id="GetRBGColor" name="GetRBGColor" type="button" value="Set RBG Color">
+        </div>
+    </div>
+    <div class="page">
+        <div class="sub_header ps_flex_row ps_flex_between">
+            <div>
+                <b>Color Brightness:</b> <code id="Brightness"></code>
+                <b>Is Light:</b> <code id="IsLight"></code>
+                <b>Is Dark:</b> <code id="IsDark"></code>
+                <b>Luminance:</b> <code id="Luminance"></code>
+            </div>
+            <div class="ps_links">
+                <a target="_blank" href="colors/default.html">RGB Colors</a> |
+                <a target="_blank" href="colors/500_Colours.html">500 Colors</a> |
+                <a target="_blank" href="color_meanings/index.html">Color Meanings</a> |
+                <a target="_blank" href="tiny/index.html">tinycolor palettes</a>
+                <a target="_blank" href="tiny/tinycolor.html">tinycolor codes</a>
+            </div>
+        </div>
+
+        <div class="ps_flex">
+            <div class="ps_container color_span">
+                <h2>basic</h2>
+                <div id="basic"></div>
+                <h2>hue-spin</h2>
+                <div id="hue-spin"></div>
+                <h2>monochromatic</h2>
+                <div id="monochromatic"></div>
+                <h2>analogous</h2>
+                <div id="analogous"></div>
+                <h2>triad</h2>
+                <div id="triad"></div>
+                <h2>tetrad</h2>
+                <div id="tetrad"></div>
+                <h2>split</h2>
+                <div id="split"></div>
+
+            </div>
+
+            <div class="ps_container">
+                <div class="ps_flex">
+                    <h4>CSS Root Color Variables</h4>
+                    <button id="copy" title="Copy to Clipboard">Copy</button>
+                    <button id="download" title="Download as CSS file">Download</button>
+                </div>
+                <textarea id="root_variables"></textarea>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        (function ($) {
+            var steps = 10;
+            var adjust = 20;
+            var colour = '#3366dd';
+            var root_variables = $('#root_variables');
+            root_variables.html('').append(':root {\n\n');
+            var rgb_strings = "";
+
+            function str_replace_rgb(rgb) {
+                rgb = rgb.replace("rgb(", "");
+                return rgb.replace(")", "");
+            }
+
+            function gen_palette_white(id, color_value, steps, title) {
+                var str_colors = "";
+                var str_names = "";
+                var str_title = title + '-tint';
+
+                for (r = 0; r < steps; r++) {
+                    alpha = r / 10;
+                    c_mix = mix.gradient(color_value, '#fff', alpha);
+                    str_colors += '<span style="background-color:' + c_mix + ';"></span>';
+                    str_names += '<span>' + c_mix + '</span>';
+
+                    var temp_title = title;
+                    var first_title = title;
+                    if (temp_title.indexOf('-') > 0) {
+                        temp_title = temp_title.replace('-', '_');
+                        first_title = temp_title;
+                    } else {
+                        first_title += '_00';
+                    }
+                    if (r === 0) {
+                        root_variables.append('\n');
+                        root_variables.append('--' + title + ': ' + c_mix + ";\n\n");
+                        rgb_strings += '\n--' + first_title + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ";\n\n";
+                    } else {
+                        root_variables.append('--' + title + '-tint-' + r * 10 + ': ' + c_mix + ';\n');
+                        rgb_strings += '--' + temp_title + '_tint_' + r * 10 + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ';\n';
+                    }
+                }
+                $(id).append('<div><b>' + str_title + '</b></div>');
+                $(id).append('<div class="bg_colors">' + str_colors + '</div>');
+                $(id).append('<div>' + str_names + '</div>');
+            }
+            function gen_palette_black(id, color_value, steps, title) {
+                var str_colors = "";
+                var str_names = "";
+                var str_title = title + '-shade';
+                root_variables.append('\n');
+                rgb_strings += '\n';
+                for (r = 0; r < steps; r++) {
+                    alpha = r / 10;
+                    c_mix = mix.gradient(color_value, '#000', alpha);
+                    str_colors += '<span style="background-color:' + c_mix + ';"></span>';
+                    str_names += '<span>' + c_mix + '</span>';
+
+                    var temp_title = title;
+                    if (temp_title == 'basic-color') { temp_title = 'basic_color' }
+                    if (r > 0) {
+                        root_variables.append('--' + title + '-shade-' + r * 10 + ': ' + c_mix + ';\n');
+                        rgb_strings += '--' + temp_title + '_shade_' + r * 10 + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ';\n';
+                    }
+                }
+                $(id).append('<div><b>' + str_title + '</b></div>');
+                $(id).append('<div class="bg_colors">' + str_colors + '</div>');
+                $(id).append('<div>' + str_names + '</div>');
+            }
+
+            /**
+             * Start from 1 to avoid the repetition of the main color
+             * For analogous colors, the main color is also repeated att 3
+             */
+            function create_palette_for_array(id, color_data, steps, title) {
+                var color_array = color_data.map(function (t) { return t.toHexString(); });
+                var abstract = 0;
+                for (var i = 1; i < color_array.length; i++) {
+                    if (i === 3 && title == 'analog') {
+                        abstract = 1;
+                        continue;
+                    }
+                    if (i === 2 && title == 'tetrad') {
+                        abstract = 1;
+                        continue;
+                    }
+                    var z = i - abstract;
+                    gen_palette_white(id, color_array[i], steps, title + '-' + z);
+                    gen_palette_black(id, color_array[i], steps, title + '-' + z);
+                }
+            }
+
+            function colorChange(new_colour) {
+                colour = new_colour
+                var tiny = tinycolor(colour);
+
+                /**
+                 * For basic colors
+                 */
+                var basic_value = tinycolor(colour).toHexString();
+                var greyscale_value = tinycolor(colour).greyscale().toHexString();
+                var complement_value = tinycolor(colour).complement().toHexString();
+
+                var lighten_value = tinycolor(colour).lighten(adjust).toHexString();//100 would be white
+                var brighten_value = tinycolor(colour).brighten(adjust).toHexString();
+                var darken_value = tinycolor(colour).darken(adjust).toHexString();//100 would be black
+                var desaturate_value = tinycolor(colour).desaturate(adjust).toHexString();//100 would equal greyscale()
+                var saturate_value = tinycolor(colour).saturate(adjust).toHexString();
+
+                $('#basic').html('');
+                gen_palette_white('#basic', basic_value, steps, 'basic-color');
+                gen_palette_black('#basic', basic_value, steps, 'basic-color');
+                gen_palette_white('#basic', lighten_value, steps, 'lighten');
+                gen_palette_black('#basic', lighten_value, steps, 'lighten');
+                gen_palette_white('#basic', brighten_value, steps, 'brighten');
+                gen_palette_black('#basic', brighten_value, steps, 'brighten');
+                gen_palette_white('#basic', darken_value, steps, 'darken');
+                gen_palette_black('#basic', darken_value, steps, 'darken');
+                gen_palette_white('#basic', desaturate_value, steps, 'desaturate');
+                gen_palette_black('#basic', desaturate_value, steps, 'desaturate');
+                gen_palette_white('#basic', saturate_value, steps, 'saturate');
+                gen_palette_black('#basic', saturate_value, steps, 'saturate');
+                gen_palette_white('#basic', greyscale_value, steps, 'grey');
+                gen_palette_black('#basic', greyscale_value, steps, 'grey');
+                gen_palette_white('#basic', complement_value, steps, 'complement');
+                gen_palette_black('#basic', complement_value, steps, 'complement');
+
+                /**
+                 * hue shift
+                 * Start from 1 to avoid the repetition of the main color
+                 * as 0 and 9 gives the main color (9*40=360)
+                 */
+                $('#hue-spin').html('');
+                for (var i = 1; i < 9; i++) {
+                    var spinned = tinycolor(colour).spin(i * 40).toHexString();
+                    gen_palette_white('#hue-spin', spinned, steps, 'spin-' + i);
+                    gen_palette_black('#hue-spin', spinned, steps, 'spin-' + i);
+                }
+
+                /**
+                 * Harmonies
+                 */
+                var monochromatic_value = tiny.monochromatic();
+                var analogous_value = tiny.analogous();
+                var triad_value = tiny.triad();
+                var tetrad_value = tiny.tetrad();
+                var splitcomplement_value = tiny.splitcomplement();
+
+                $('#monochromatic').html('');
+                $('#analogous').html('');
+                $('#triad').html('');
+                $('#tetrad').html('');
+                $('#split').html('');
+                create_palette_for_array('#monochromatic', monochromatic_value, steps, 'monochrom');
+                create_palette_for_array('#analogous', analogous_value, steps, 'analog');
+                create_palette_for_array('#triad', triad_value, steps, 'triad');
+                create_palette_for_array('#tetrad', tetrad_value, steps, 'tetrad');
+                create_palette_for_array('#split', splitcomplement_value, steps, 'split');
+
+                /**
+                 * Tone, Tint and Shade opacities
+                 */
+                function get_opacities(type) {
+                    root_variables.append("\n");
+                    for (r = 0; r < 11; r++) {
+                        opacity = (r / 10).toFixed(1);
+                        suffix = opacity * 100;
+                        if (type == 'tone') {
+                            str_color = 'rgba(128, 128, 128, ' + opacity + ')';
+                        } else if (type == 'tint') {
+                            str_color = 'rgba(255, 255, 255, ' + opacity + ')';
+                        } else {
+                            str_color = 'rgba(0, 0, 0, ' + opacity + ')';
+                        }
+                        root_variables.append("--" + type + '-' + suffix + ": " + str_color + ";\n");
+                    }
+                }
+
+                get_opacities('tone');
+                get_opacities('tint');
+                get_opacities('shade');
+
+                var temp = '\n\n/*\nTo be used as variables for background gradients,\nfor example: rgba(var(--color), 0.00)\n*/\n\n';
+                root_variables.append(temp);
+                root_variables.append(rgb_strings);
+                root_variables.append('}');
+            }
+
+            /**
+             * update color from input
+             */
+            function call_HEX(call_color) {
+                $('#HEX_Color').val(call_color.substring(1))
+                $('#GetColors').val(call_color)
+                obj_color = tinycolor(call_color);
+                var str_color_RGB = obj_color.toString('rgb');
+                var arr_rgb = str_color_RGB.split('(')[1].split(')')[0].split(',');
+                $('#R_Color').val(arr_rgb[0].trim());
+                $('#G_Color').val(arr_rgb[1].trim());
+                $('#B_Color').val(arr_rgb[2].trim());
+
+                $('#Brightness').text(obj_color.getBrightness());
+                $('#IsLight').text(obj_color.isLight());
+                $('#IsDark').text(obj_color.isDark());
+                $('#Luminance').text(obj_color.getLuminance());
+            }
+            function call_RGB(call_color) {
+                $('#HEX_Color').val(call_color.substring(1));
+                $('#GetColors').val(call_color);
+            }
+
+            $("#GetHEXColor").click(function () {
+                var hex_color = $('#HEX_Color').val();
+                if (hex_color.indexOf('#') < 0) {
+                    hex_color = "#" + hex_color;
+                }
+
+                call_HEX(hex_color);
+                colorChange(hex_color);
+            });
+
+            $("#GetRBGColor").click(function () {
+                var rgb_color = 'rgb(' + $('#R_Color').val() + ', ' + $('#G_Color').val() + ', ' + $('#B_Color').val() + ')';
+                obj_color = tinycolor(rgb_color);
+                hex_color = obj_color.toHexString();
+
+                call_RGB(hex_color);
+                colorChange(hex_color);
+            });
+
+            $('#GetColors').on('change', function () {
+                $('#HEX_Color').val($(this).val());
+                $('#GetHEXColor').click();
+            })
+
+
+            /**
+             * set random color on load
+             */
+            var randomcolor = tinycolor.random();
+            colorChange(randomcolor.toRgb());
+            call_HEX(randomcolor.toHexString());
+
+            /**
+              * Copy Textarea
+              */
+            $("#copy").click(function () {
+                if (!navigator.clipboard) {
+                    $("#root_variables").select();
+                    document.execCommand('copy');
+                } else {
+                    var text_to_copy = document.getElementById("root_variables").value;
+                    navigator.clipboard.writeText(text_to_copy).then(
+                        function () {
+                            alert("The text has been copied to your clipboard!");
+                        })
+                        .catch(
+                            function () {
+                                alert("Error, please copy the text manually!");
+                            });
+                }
+            });
+
+            /**
+             * Save Textarea
+             */
+            $('#download').click(function () {
+                var b_color = tinycolor(colour).toHexString().replace('#', '');
+
+                /*
+                // You must click on (call the funtion from) an existing <a> link 
+                var container = document.querySelector('textarea');
+                var anchor = document.querySelector('a#save');
+                anchor.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(container.value);
+                anchor.download = 'ps_cs_root_variables_' + b_color + '.css';
+                */
+
+                // Create temporal <a> link - can be called från any click
+                var textcontent = document.getElementById("root_variables").value;
+                var downloadableLink = document.createElement('a');
+                downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
+                downloadableLink.download = "ps_cs_root_variables_" + b_color + ".css";
+                document.body.appendChild(downloadableLink);
+                downloadableLink.click();
+                document.body.removeChild(downloadableLink);
+            });
+
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>

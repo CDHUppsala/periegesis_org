@@ -1,0 +1,259 @@
+/*
+	=============================================================
+	FOR ALL CALENDARS - TEXT, EVENTS, PROGRAMS
+	=============================================================
+*/
+
+.calendar_bg {
+	font-family: "Roboto Condensed", Roboto, Arial, Helvetica, sans-serif;
+	clear: both;
+	padding: 0 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.calendar_bg form {
+	display: flex;
+	justify-content: flex-end;
+	align-items: stretch;
+}
+.calendar_bg form {
+	display: none;
+}
+
+
+/*
+	The main body of the calendar
+*/
+
+.calendar_table {
+	width: 100%;
+	font-family: "Roboto Condensed", Roboto, Arial, Helvetica, sans-serif !important;
+	text-align: center;
+	z-index: 10;
+	position: relative;
+}
+
+.calendar_table th {
+	text-align: center;
+	padding: 4px;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
+}
+
+.calendar_table th a {
+	display: block;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.calendar_table th a:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+.calendar_table tr {
+	background: none;
+	border: 0;
+}
+
+.calendar_table td{
+	padding: 2px 4px;
+	text-align: center;
+	vertical-align: middle;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: rgba(0, 0, 0, 0.6);
+	line-height: 100% !important;
+}
+
+.tbody_items th a {
+	line-height: 220%;
+}
+
+.calendar_table tr.week {
+	font-weight: normal;
+	text-align: center;
+	background: #bcd;
+}
+
+.calendar_table tr.week td {
+	background: rgba(255, 255, 255, 0.75);
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.calendar_table tr.week td:last-child {
+	border-right: 0;
+}
+
+.calendar_table td.notDay {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.calendar_table td.thisDay {
+	background: #eee;
+}
+
+.calendar_table td a {
+	display: block;
+	color: #09c;
+	font-weight: normal;
+}
+
+.calendar_table td a:hover {
+	color: #c09;
+}
+
+.marking_cells {
+	cursor: pointer;
+}
+.marking_cells:hover {
+	color: #000;
+}
+.calendar_table td.marked_cell {
+	background: #CCEBF5;
+}
+
+
+
+/*
+	Booking Calendar
+*/
+
+.border_cell,
+.booking_calendar .tbody_items td:nth-child(7n + 3) {
+	border-right: 1px solid #666 !important;
+}
+
+/*
+	Reservations
+*/
+
+
+.reservations th {
+	font-weight: normal !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+	white-space: nowrap;
+	vertical-align: middle;
+	padding: 4px;
+}
+
+.reservations td {
+	position: relative;
+}
+
+.reservations td div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 5px 0 0 3px;
+	font-size: 0.9rem;
+	background-color: #eee;
+	z-index: 1000;
+	border: 1px solid #999;
+	overflow: hidden;
+	text-align: left;
+}
+
+.reservations td div button {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	padding: 0 8px;
+	vertical-align: middle;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+.reservations .tbody_filter tr {
+	background-color: #ccc !important;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25)) !important;
+}
+.reservations .tbody_filter th,
+.reservations .tbody_filter td {
+	background-color: transparent !important;
+	background-image: none  !important;
+}
+
+.reservations .tbody_filter th {
+	color: #000;
+}
+.reservations .tbody_filter td {
+	width: 100%;
+}
+.reservations .tbody_filter th a:hover {
+	color: #09c
+}
+
+.reservations tbody:nth-child(2) tr:first-child th {
+	color: #000;
+}
+
+
+.dipslay_none {
+	display: none;
+}
+
+.bg_cell {
+	background: #eee !important;
+	overflow: hidden;
+}
+
+
+.toggle_up,
+.toggle_down {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.toggle_up::before {
+	content: "\25B4";
+	font-size: 1.8rem;
+	vertical-align: text-bottom;
+}
+
+.toggle_down::before {
+	content: "\25BE";
+	font-size: 1.8rem;
+	vertical-align: text-bottom;
+}
+
+
+.modal_reservations {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 5%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9000;
+	display: none;
+}
+
+.modal_content {
+	position: relative;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	gap: 2px;
+	width: 480px;
+	margin: auto;
+	padding: 1rem 0.5rem;
+	background-color: #fff;
+	border: 2px solid #666;
+	border-radius: 7px;
+}
+.modal_content input {
+	flex: 1;
+}
+.modal_content input[readonly] {
+	background-color: #f3f3f3;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+}
+.modal_content fieldset {
+	width: 100%;
+	margin-top: 0.5rem;
+	text-align: center;
+}

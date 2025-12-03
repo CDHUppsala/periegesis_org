@@ -1,0 +1,324 @@
+﻿*{box-sizing:border-box}
+html, body {overflow: hidden;}
+body {
+	padding: 0;
+	margin:0;
+	font-family: "Ubuntu Condensed", "Roboto Condensed", Roboto, verdanan, arial, helvetica, sans-serif;
+	font-size: 11px;
+	color: #444;
+	line-height: 140%;
+	font-size: 16px;
+}
+h1, h2, h3 {
+	font-family: jura, "Roboto Condensed", Roboto, arial, Verdana, Geneva, Tahoma, sans-serif !important;
+	color: #000;
+	line-height: 100%;
+	margin-bottom: 5px;
+}
+h1 {font-size: 1.3em;}
+h2 {font-size: 1.2em;}
+h3 {font-size: 1.1em;}
+h4 {font-size: 1em;}
+
+div p:first-child {margin-top: 0; padding-top:0;}
+
+a {color: #06d; text-decoration: none;}
+a:hover	{color: #d10;}
+
+.text{
+	font-family: "Ubuntu Condensed", "Roboto Condensed", Roboto, verdanan, arial, helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 140%;
+}
+.text_small {font-size: 0.90em;}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*===============================================================
+	PAGANATION AND PRIVIOUS-NEXT BUTTONS
+===============================================================*/
+
+.pagination {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 4px;
+    padding: 0;
+    margin: 0;
+    list-style:none;
+    font-size:1em;
+	text-align: center;
+}
+.pagination li {
+	display: inline-block;
+	padding:0;
+	margin:0 5px;
+    list-style:none;
+}
+
+.pagination li span {
+	display: inline-block;
+    color: #666;
+    padding: 4px 20px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+    cursor:pointer;
+}
+.pagination li:first-child span {
+    border-radius: 7px 0 0 7px;
+}
+.pagination li:last-child span {
+    border-radius: 0 7px 7px 0;
+}
+.pagination li span:hover {
+	background-color: #ddd;
+}
+
+/* ================================
+	TOP STRUCTURE
+=================================== */
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 44px;
+	overflow: hidden;
+	background-color:#06d;
+	background:linear-gradient(rgba(0,102,221,0.8), #06d);
+}
+#header a {color: #cde;}
+#header a:hover	{color: #fff;}
+
+#header .left {position: absolute; top: 0; bottom: 0; left: 0; right: 75%; 
+	text-align: left;
+	padding: 0 0 0 10px;
+	vertical-align: middle;
+}
+#header .middle {position: absolute; top: 0; bottom: 0; left: 25%; right: 25%; text-align: center;}
+
+#header .right {position: absolute; top: 0; bottom: 0; left: 75%; right: 0; text-align:right; padding:10px 10px 0 0;}
+
+.navMarker {
+	display: inline-block;
+	width: 60px;
+	height: 40px;
+	margin: 2px 10px 0 0;
+	cursor: pointer;
+	border: 1px rgba(255,255,255,0.3) solid;
+	border-radius:5px;
+}
+.navLeft {background: url('../imgPG/iconsArrDown.png') center no-repeat;}
+.navRight {background: url('../imgPG/iconShowHide.png') center no-repeat;}
+
+
+/* ===================================================================
+	MAIN STRUCTURE
+====================================================================== */
+#main {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	right: 0;
+	bottom: 90px;
+	overflow: hidden;
+}
+
+/* Main Left
+************************** */
+#main .left {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 80%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	direction:rtl;
+	background: #fff;
+	z-index: 100;
+}
+#main .left .dirLeft {
+	padding: 5px 10px 0 5px;
+	text-align: left;
+	direction:ltr;
+	}
+#main .left .text{
+	text-align: left;
+	padding-left: 15px;
+}
+
+/* Main Middle
+***************************/
+#main .middle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20%;
+	right: 20%;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	background-color: #fff;
+}
+#photoBG {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 40px;
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+/* Main Right
+***************************/
+#main .right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 80%;
+	right: 0;
+	padding: 5px 10px;
+	text-align: left;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #fff;
+	z-index: 100;
+}
+
+/* ===================================================================
+	FOOTER STRUCTURE
+====================================================================== */
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 90px;
+	overflow: hidden;
+	background: #ccc url('../imgPG/grad240WT40.png') left bottom repeat-x;
+	color: #999;
+	border-top: 1px solid #333;
+	text-align: center;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+/* Footer Menu
+***************************/
+.footer ul {
+	display: table;
+	margin: 4px auto 0 auto; 
+	opacity: 0.4;
+}
+.footer:hover ul {opacity: 1;}
+.footer ul li {
+	display: table-cell;
+	padding: 0;
+}
+.footer ul li img {
+	display: block;
+	max-width: 100%;
+	max-height: 66px;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+
+/*	===================================================== 
+1.	BASIC STRUCTURE - Don't CHANGE these styles 
+	===================================================== */
+/*	General Menu styles					|--> DON'T CHANGE
+********************************************************* */
+.sxAccordionNav ul {padding: 0; margin: 0; list-style: none;}
+.sxAccordionNav div {clear: both; cursor: pointer;}
+
+.sxAccordionNav a, 
+.sxAccordionNav div, 
+.sxAccordionNav span {line-height: 100%;}
+
+/*	Basic style for all li/a			|--> DON'T CHANGE
+********************************************************* */
+.sxAccordionNav li {vertical-align: top !important;}
+.sxAccordionNav ul li a {display:block;}
+
+/*	=====================================================
+2. Define Minimum height of Lists: Change Padding for span within div's and a's 
+	===================================================== */
+.sxAccordionNav ul li span {display: block; padding: 6px 0;}
+.sxAccordionNav ul li ul li span {padding: 4px 0;}
+.sxAccordionNav ul li ul li ul li span {padding: 3px 0;}
+
+/*	=====================================================
+3. Common Font Styles for All clickable Menu Levels: As and DIVs
+	===================================================== */
+.sxAccordionNav a,
+.sxAccordionNav div {font-weight: normal; color: #06d;}
+.sxAccordionNav a:hover,
+.sxAccordionNav div:hover,
+.sxAccordionNav .open {color: #DE0700;}
+
+.sxAccordionNav li > a,
+.sxAccordionNav li > div {font-size: 1.1em;}
+.sxAccordionNav li li > a,
+.sxAccordionNav li li > div {font-size: 1.1em;}
+.sxAccordionNav li li li > a,
+.sxAccordionNav li li li > div {font-size: 1em;}
+.sxAccordionNav li li li li > a {}
+
+/*	=====================================================
+4.	Common Backgrounds for all clickable Menu Levels: As and DIVs
+	===================================================== */
+/*
+	Levels that not contain sublevels (Links A)
+***************************************************** */
+.sxAccordionNav li a {
+	padding: 0 0 0 16px;
+	background: url('../imgPG/sx_dotArR1.png') left 8px no-repeat;
+}
+.sxAccordionNav li a:hover {background-image: url('../imgPG/sx_dotArR4.png');}
+
+/*
+	Levels that contain sublevels (Tags DIV)
+***************************************************** */
+.sxAccordionNav div {
+	font-weight: bold;
+	padding: 0 0 0 18px;
+	background: url('../imgPG/sx_dotArUD1.png') left 10px no-repeat;
+}
+.sxAccordionNav div:hover {background-image: url('../imgPG/sx_dotArD4.png');}
+.sxAccordionNav .open {background-image: url('../imgPG/sx_dotArU1.png');}
+
+/*	=====================================================
+5.	Left Margins for all List Levels bellow Groups
+	===================================================== */
+.sxAccordionNav ul ul {margin: 0 0 0 20px;}
+
+
+
+/* ===================================================================
+	FOR TABLETS AND MOBILE
+====================================================================== */
+
+@media only screen and (max-width: 1024px) {
+	.navMarker {display:inline-block;}
+	#main .left {right:100%;}
+	#main .middle {left:0 ;right:0;}
+	#main .right {left:100%;}
+}
+@media only screen and (min-width: 1025px) {
+	.navMarker {display:none;}
+	#main .left {right:80% !important;}
+	#main .middle {left:20%;right:20%;}
+	#main .right {left:80% !important;}
+}
+/*	End
+========= */

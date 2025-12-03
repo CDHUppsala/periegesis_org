@@ -1,0 +1,379 @@
+/*	
+	===================================
+	TOP-Navigation MENU
+	VERTICAL for Mobile Devices
+	HORIZONTAL for other
+	=================================== 
+	Links to Site Languages, Applications, Users Login and Search
+		- php: sxNav_Header.php/sxNav_Top.php
+		- jQuery/CSS selecter: .nav_top_apps_Marker - The Marker to Show/Hide Top Menu in Mobile Devises (see sxNav_Markers.css)
+*/
+
+/*
+    #nav_top (se at the end, bellow)
+        .nav_top_apps
+        .nav_top_login
+    #header
+        - big logo
+        - advertice
+    #nav_head
+        - big logo / small logo
+        .nav_head_menu
+*/
+
+/*
+#nav_top ________________________________________
+|   .nav_top_flex _______________________________
+|   |   .nav_top_relative _______________________ 
+|   |   |   .nav_top_apps_Marker_________________
+|   |   |   |   Mark: icon visible in mobiles
+|   |   |   |____________________________________
+|   |   |   .nav_top_apps __________________________
+|   |   |   |   Navigation for various applications
+|   |   |   |___________________________________
+|   |   |________________________________________
+|   |   .nav_top_login __________________________
+|   |   |   Icons for login, shopping cart, search, etc.
+|   |   |________________________________________
+|   |____________________________________________
+|________________________________________________
+*/
+/*
+    Set the font size in relation to root: REM
+    Set all other font sizes, if any, as EM
+*/
+#nav_top {
+	background-color: var(--top-bg);
+	z-index: 200;
+	padding: 0.25rem 1%;
+	font-size: 0.8rem;
+	position: relative;
+}
+
+/**
+    If no flags on the left, center the top navigation
+    However, in mobiles, set the application mark to the right
+*/
+.nav_top_flex {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 2rem;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.nav_top_relative {
+	position: relative;
+}
+
+/*
+    ===================================================
+    1 FIRST TOP MENU - Absolut position in mobiles
+	Class .nav_top_apps_visible makes top menu visible even in mobiles
+    ===================================================
+*/
+
+.nav_top_apps_visible,
+.nav_top_apps {
+	font-family: var(--top-fonts);
+	position: absolute;
+	left: 0;
+	top: 100%;
+	right: 0;
+	padding: 25px;
+	background-color: var(--top-bg);
+	color: var(--top-color);
+	border: 2px solid var(--top-border);
+	display: none;
+	border-radius: 0 0 0 9px;
+	z-index: 2000;
+	font-size: 1.25rem;
+}
+
+.nav_top_apps ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav_top_apps li {
+	display: block;
+	text-align: left;
+	margin: 0;
+	padding: 10px 0;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.nav_top_apps li a {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	color: var(--top-link);
+}
+
+.nav_top_apps li a:hover {
+	color: var(--top-link-hover);
+}
+
+.nav_top_apps .socialMedia svg {
+	font-size: 1.4em;
+	vertical-align: -20%;
+}
+
+.nav_top_apps input[type=text] {
+	width: 8em;
+}
+
+.nav_top_apps .profile_menu {
+	position: relative;
+}
+
+.nav_top_apps .profile_menu>ul {
+	position: relative;
+	display: block;
+	padding: 12px 0 0 32px;
+	white-space: nowrap;
+}
+
+.nav_top_apps .profile_menu>ul>li {
+	display: block;
+}
+
+.nav_top_apps .profile_menu>ul {
+	padding: 10px 32px 10px 10px;
+	white-space: nowrap;
+	background-color: inherit;
+	border-radius: 5px 0 5px 5px;
+}
+
+.nav_top_apps .profile_menu>ul a svg {
+	margin-right: 0.75rem
+}
+
+.nav_top_apps .profile_menu>ul a {
+	color: val(--basic-color);
+}
+
+.nav_top_apps .profile_menu>ul a:hover {
+	color: val(--brighten);
+}
+
+/* 
+	If top navigation will be visible in mobiles;
+	-	Use the CONSTANT SX_appsNavigationVisibleInMobiles to add .nav_top_apps_visible in desktop menu
+	-	Values for .nav_top_apps_visible should be equal to .nav_top_apps for the media bellow 
+		that defines the breakpoint for desktops
+	-	Include also here all subclasses that have different values 
+*/
+.nav_top_apps_visible {
+	position: static !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	display: block !important;
+	border: 0 !important;
+	font-size: 0.9rem !important;
+}
+
+.nav_top_apps_visible li {
+	display: inline-block !important;
+	padding: 0 0 0 8px !important;
+	margin: 0 !important;
+}
+
+@media screen and (min-width: 1024px) {
+
+	.nav_top_apps_Marker {
+		display: none;
+	}
+
+	.nav_top_apps {
+		position: static;
+		padding: 0 !important;
+		margin: 0;
+		display: block !important;
+		border: 0;
+		font-size: 0.9rem;
+	}
+
+	.nav_top_apps ul {
+		padding: 0;
+		background: transparent;
+	}
+
+	.nav_top_apps li {
+		display: inline-block;
+		padding: 0 0 0 8px;
+		margin: 0;
+	}
+
+	.nav_top_apps li a {
+		display: inline-block;
+		padding: 0;
+		background: none;
+		opacity: 1;
+	}
+
+	.nav_top_apps li a:hover {
+		padding: 0;
+		background: none;
+		opacity: 1;
+	}
+
+	.nav_top_apps li span {
+		font-weight: bold;
+	}
+
+	.nav_top_apps input[type=text] {
+		width: 8rem;
+	}
+
+	.nav_top_apps .profile_menu>a {
+		background-color: var(--top-profile-bg);
+		padding: 0.2rem 0.75rem;
+		border-radius: 5px 5px 0 0;
+		color: var(--basic-shade-10);
+		opacity: 1;
+	}
+
+	.nav_top_apps .profile_menu>a:hover {
+		background-color: var(--top-profile-bg);
+	}
+
+	.nav_top_apps .profile_menu>a::before {
+		content: " \21E3";
+		font-weight: bold;
+		display: inline;
+		overflow: hidden;
+	}
+
+	.nav_top_apps .profile_menu:hover>a::before {
+		content: " \21E1";
+	}
+
+	.nav_top_apps .profile_menu>ul {
+		display: none;
+		background-color: var(--top-profile-bg);
+		position: absolute;
+		color: var(--top-bg);
+		top: 102%;
+		right: 0;
+	}
+
+	.nav_top_apps .profile_menu ul a {
+		color: var(--basic-shade-10);
+	}
+
+	.nav_top_apps .profile_menu ul a:hover {
+		color: var(--basic-shade-60);
+	}
+
+}
+
+@media screen and (max-width: 1023.98px) {
+	.nav_top_apps .profile_menu>ul {
+		display: block !important;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 5px;
+	}
+
+	.nav_top_apps .profile_menu>a {
+		text-align: left;
+		font-style: italic;
+		display: block;
+		padding: 0 8px 8px 0;
+	}
+
+}
+
+/*
+    ===================================================
+    2 SECOND TOP MENU - Always visible, even in mobiles
+    ===================================================
+*/
+
+/**
+    Login, shopping carts and search on top
+    In the sam row, but sparate from apps menu
+    font-size: 1rem;
+*/
+
+.nav_top_login {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: first baseline;
+	gap: 1em;
+	color: var(--top-link);
+}
+
+.nav_top_login .flex_between {
+	align-items: baseline;
+}
+
+.nav_top_login a,
+.nav_top_login svg {
+	cursor: pointer;
+	color: var(--top-link);
+}
+
+.nav_top_login a:hover,
+.nav_top_login svg:hover {
+	color: var(--top-link-hover);
+}
+
+.nav_top_login span {
+	margin-left: -0.8em;
+	color: var(--top-link);
+}
+
+.nav_top_login_absolute {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding: 1em;
+	font-size: 1.2em;
+	background: var(--top-bg);
+	border: 1px solid var(--top-border);
+	border-radius: 0 0 0 5px;
+	display: none;
+	z-index: 3000;
+	white-space: nowrap;
+}
+
+.nav_top_login_absolute ul,
+.nav_top_login_absolute li {
+	margin: 0;
+	padding: 0.2em 0;
+	list-style: none;
+}
+
+.nav_top_login_absolute li a {
+	position: relative;
+	display: block;
+	padding: 0 0 0 18px;
+	margin: 0;
+	color: var(--top-link);
+}
+
+.nav_top_login_absolute li a::before {
+	content: "\203A";
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.nav_top_login_absolute li a:hover {
+	color: var(--top-link-hover);
+}
+
+.nav_top_login_absolute li a span {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}

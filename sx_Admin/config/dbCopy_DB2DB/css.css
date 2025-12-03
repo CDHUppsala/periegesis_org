@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Cambria, "Book Antiqua", georgia;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+h2,
+h4,
+p,
+hr,
+form {
+    clear: both
+}
+
+h2 {
+    margin: 5px 0 0 0;
+    padding: 0;
+    font-size: 1.3em;
+    font-family: "Book Antiqua"
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #000;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 8px 0;
+}
+
+div {
+    padding: 0 25px 5px 0;
+}
+
+pre {
+    background: #eee;
+    border: 1px solid #ddd;
+    max-width: 100%;
+    overflow: auto;
+    font-size: 14px;
+    padding: 4px;
+}
+
+input,
+select,
+button {
+    font-size: 16px;
+}
+
+button {
+    padding: 3px 5px
+}
+
+td {
+    padding: 0;
+}
+
+td:last-child() {
+    text-align: left
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.half:first-child {
+    padding: 5px 12px;
+}
+
+.third {
+    flex: auto;
+    margin: 2px;
+    padding: 0 5px;
+    background: #eee;
+    border: 1px solid #ddd
+}
+
+.third p {
+    text-indent: -26px;
+    padding-left: 26px;
+}
+
+.color {
+    color: #f60;
+}
+
+.small {
+    font-size: 15px;
+}
+
+.paddingLeft {
+    margin-top: -15px;
+}
+
+.red {
+    color: #d10
+}
+
+.blue {
+    color: #01d
+}
+.grid-header {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-gap: 20px 40px;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    padding: 10px;
+}
+
+.grid-container div {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.grid-container div th {
+    background-image: none;
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+.grid-container div td {
+    text-align: left;
+    padding-left: 4px;
+}
+
+
+.tipsBG {
+    display: inline-block; 
+    text-indent: 0;
+    position: relative; 
+    color: #c30;
+    cursor: pointer;
+    text-align: left;
+}
+.tips {
+    position: absolute; top: 96%; right: 0; width: 320px; background: #fff;
+    border: 4px solid #ccc;
+    color: #000;
+    text-indent: 0; padding: 15px;
+    display: none;
+    z-index: 10;
+}
+.textXXS {font-size: 0.75em; padding: 0; margin: -12px 0 0 15px;}

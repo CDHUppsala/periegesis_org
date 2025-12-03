@@ -1,0 +1,3636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>500 Color Names by Color Group from color-meanings.com</title>
+    <style>
+        body {
+            font-size: 18px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            vertical-align: middle;
+            padding: 0 5px;
+        }
+
+        th {
+            border-bottom: 1px solid #999;
+        }
+
+        th:nth-child(4) {
+            cursor: pointer;
+            color: #cc0000;
+        }
+
+        td:nth-child(1) {
+            padding: 0;
+        }
+
+        td:nth-child(3),
+        td:nth-child(4) {
+            background: #ffffff;
+        }
+
+        #clear {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 5px 10px 0px 10px;
+            background: #ffffff;
+        }
+
+        td a {
+            display: inline-block;
+            width: 240px;
+            height: 50px;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+        .flex_row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            margin-top: 2.25rem;
+        }
+    </style>
+    <script type="text/javascript" src="../../../../sxScripts/jq/jquery.min.js"></script>
+    <script>
+
+        function hexToHsl(hex) {
+            // Remove the '#' character if present
+            hex = hex.replace('#', '');
+
+            // Convert HEX to RGB
+            const r = parseInt(hex.substring(0, 2), 16) / 255;
+            const g = parseInt(hex.substring(2, 4), 16) / 255;
+            const b = parseInt(hex.substring(4, 6), 16) / 255;
+
+            // Find the minimum and maximum values of RGB
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+
+            // Calculate the difference between max and min RGB values
+            const d = max - min;
+
+            // Calculate the luminance (lightness)
+            const l = (max + min) / 2;
+
+            // Calculate the saturation
+            let s;
+            if (d === 0) {
+                s = 0; // achromatic (gray)
+            } else {
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            }
+
+            // Calculate the hue
+            let h;
+            if (d === 0) {
+                h = 0; // achromatic (gray)
+            } else {
+                switch (max) {
+                    case r:
+                        h = (g - b) / d + (g < b ? 6 : 0);
+                        break;
+                    case g:
+                        h = (b - r) / d + 2;
+                        break;
+                    case b:
+                        h = (r - g) / d + 4;
+                        break;
+                }
+                h /= 6;
+            }
+            let hh = Math.round(h * 360).toString();
+            if (hh.length == 1) {
+                hh = '00' + hh;
+            } else if (hh.length == 2) {
+                hh = '0' + hh;
+            }
+
+            let ss = Math.round(s * 100).toString();
+            if (ss.length == 1) {
+                ss = '000' + hh;
+            } else if (ss.length == 2) {
+                ss = '00' + ss;
+            } else if (ss.length == 3) {
+                ss = '0' + ss;
+            }
+
+            let ll = Math.round(l * 100).toString();
+            if (ll.length == 1) {
+                ll = '000' + hh;
+            } else if (ll.length == 2) {
+                ll = '00' + ll;
+            } else if (ll.length == 3) {
+                ll = '0' + ll;
+            }
+
+            //return [h * 360, s * 100, l * 100];
+            return hh + ss + ll;
+            //return ss + ll;
+        }
+
+
+        $(document).ready(function () {
+
+            $('table').on('click', 'th:nth-child(4)', function () {
+                const table = $(this).parents('table').eq(0);
+                const rows = table.find('tr:gt(0)').toArray().sort(comparator($(this).index()));
+
+                // Reverse the sort direction if the header was already sorted
+                this.asc = !this.asc;
+                if (!this.asc) {
+                    rows.reverse();
+                }
+
+                // Reinsert the sorted rows into the table
+                for (let i = 0; i < rows.length; i++) {
+                    table.append(rows[i]);
+                }
+            });
+            function comparator(index) {
+                return function (a, b) {
+                    const valA = getCellColorBrightness($(a).children('td').eq(index));
+                    const valB = getCellColorBrightness($(b).children('td').eq(index));
+                    return valA - valB;
+                };
+            }
+
+            function getCellColorBrightness(cell) {
+                //const backgroundColor = cell.css('background-color');
+                //const brightness = tinycolor(backgroundColor).getBrightness();
+                const backgroundColor = cell.text().trim();
+                const brightness = hexToHsl(backgroundColor);
+                return brightness;
+            }
+
+            $('#scroll_top').on('click', function (e) {
+                e.preventDefault;
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 300);
+            })
+        });
+
+
+        function colorchange(num) {
+            document.getElementById('body').style.backgroundColor = '#' + num;
+            document.getElementById('currentBG').textContent = '#' + num;
+        }
+    </script>
+</head>
+
+<body id="body">
+    <div id="clear">
+        <div>
+            <span>Click on a color to change the Background</span><br>
+            <span>Current BG Color: </span><span id="currentBG">#FFFFFF</span><br>
+            <a href="javascript:colorchange('FFFFFF')">Clear BG Color</a> |
+            <a href="javascript:void(0)" id="scroll_top">Scroll to Top</a>
+        </div>
+        <div class="flex_row">
+            <ul>
+                <li><a href="#black">Black</a></li>
+                <li><a href="#blue">Blue</a></li>
+                <li><a href="#brown">Brown</a></li>
+                <li><a href="#gray">Gray</a></li>
+                <li><a href="#green">Green</a></li>
+                <li><a href="#orange">Orange</a></li>
+                <li><a href="#red">Red</a></li>
+                <li><a href="#pink">Pink</a></li>
+                <li><a href="#purple">Purple</a></li>
+                <li><a href="#white">White</a></li>
+                <li><a href="#yellow">Yellow</a></li>
+            </ul>
+            <ul>
+                <li><a target="_blank" href="black.html">100+ black</a></li>
+                <li><a target="_blank" href="blue.html">100+ blue</a></li>
+                <li><a target="_blank" href="brown.html">100+ brown</a></li>
+                <li><a target="_blank" href="gray.html">100+ gray</a></li>
+                <li><a target="_blank" href="green.html">100+ green</a></li>
+                <li><a target="_blank" href="orange.html">100+ orange</a></li>
+                <li><a target="_blank" href="red.html">100+ red</a></li>
+                <li><a target="_blank" href="pink.html">100+ pink</a></li>
+                <li><a target="_blank" href="purple.html">100+ purple</a></li>
+                <li><a target="_blank" href="white.html">100+ white</a></li>
+                <li><a target="_blank" href="yellow.html">100+ yellow</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <h1>500 Color Names by Color Group - From <a target="_blank" href="https://www.color-meanings.com/list-of-colors-names-hex-codes/">color-meanings.com</a></h1>
+
+    <h2 id="red">Red Color Names</h2>
+    <p><a href="https://www.color-meanings.com/red-color-meaning-the-color-red/" data-type="post" data-id="168">The color red</a> symbolizes action, strength, energy, and passion.</p>
+    <p><strong>Here are 50 red color names with hex codes:</strong></p>
+    <table id="tbl_red">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#d0312d"><a href="javascript:colorchange('d0312d')"> </a></td>
+            <td style="color:#D0312D">RED</td>
+            <td>RED</td>
+            <td>#D0312D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#990f02"><a href="javascript:colorchange('990f02')"> </a></td>
+            <td style="color:#990F02">CHERRY RED</td>
+            <td>CHERRY RED</td>
+            <td>#990F02</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e3242b"><a href="javascript:colorchange('e3242b')"> </a></td>
+            <td style="color:#E3242B">ROSE</td>
+            <td>ROSE</td>
+            <td>#E3242B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#60100b"><a href="javascript:colorchange('60100b')"> </a></td>
+            <td style="color:#60100B">JAM</td>
+            <td>JAM</td>
+            <td>#60100B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#541e1b"><a href="javascript:colorchange('541e1b')"> </a></td>
+            <td style="color:#541E1B">MERLOT</td>
+            <td>MERLOT</td>
+            <td>#541E1B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#610c04"><a href="javascript:colorchange('610c04')"> </a></td>
+            <td style="color:#610C04">GARNET</td>
+            <td>GARNET</td>
+            <td>#610C04</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b90e0a"><a href="javascript:colorchange('b90e0a')"> </a></td>
+            <td style="color:#B90E0A">CRIMSON</td>
+            <td>CRIMSON</td>
+            <td>#B90E0A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#900603"><a href="javascript:colorchange('900603')"> </a></td>
+            <td style="color:#900603">RUBY</td>
+            <td>RUBY</td>
+            <td>#900603</td>
+        </tr>
+        <tr>
+            <td style="background-color:#900d09"><a href="javascript:colorchange('900d09')"> </a></td>
+            <td style="color:#900D09">SCARLET</td>
+            <td>SCARLET</td>
+            <td>#900D09</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4e0707"><a href="javascript:colorchange('4e0707')"> </a></td>
+            <td style="color:#4E0707">WINE</td>
+            <td>WINE</td>
+            <td>#4E0707</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7e2811"><a href="javascript:colorchange('7e2811')"> </a></td>
+            <td style="color:#7E2811">BRICK</td>
+            <td>BRICK</td>
+            <td>#7E2811</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a91b0d"><a href="javascript:colorchange('a91b0d')"> </a></td>
+            <td style="color:#A91B0D">APPLE</td>
+            <td>APPLE</td>
+            <td>#A91B0D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#420c09"><a href="javascript:colorchange('420c09')"> </a></td>
+            <td style="color:#420C09">MAHOGANY</td>
+            <td>MAHOGANY</td>
+            <td>#420C09</td>
+        </tr>
+        <tr>
+            <td style="background-color:#710c04"><a href="javascript:colorchange('710c04')"> </a></td>
+            <td style="color:#710C04">BLOOD</td>
+            <td>BLOOD</td>
+            <td>#710C04</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5e1916"><a href="javascript:colorchange('5e1916')"> </a></td>
+            <td style="color:#5E1916">SANGRIA RED</td>
+            <td>SANGRIA RED</td>
+            <td>#5E1916</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7a1712"><a href="javascript:colorchange('7a1712')"> </a></td>
+            <td style="color:#7A1712">BERRY</td>
+            <td>BERRY</td>
+            <td>#7A1712</td>
+        </tr>
+        <tr>
+            <td style="background-color:#680c07"><a href="javascript:colorchange('680c07')"> </a></td>
+            <td style="color:#680C07">CURRANT</td>
+            <td>CURRANT</td>
+            <td>#680C07</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bc544b"><a href="javascript:colorchange('bc544b')"> </a></td>
+            <td style="color:#BC544B">BLUSH RED</td>
+            <td>BLUSH RED</td>
+            <td>#BC544B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d21404"><a href="javascript:colorchange('d21404')"> </a></td>
+            <td style="color:#D21404">CANDY</td>
+            <td>CANDY</td>
+            <td>#D21404</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9b1003"><a href="javascript:colorchange('9b1003')"> </a></td>
+            <td style="color:#9B1003">LIPSTICK</td>
+            <td>LIPSTICK</td>
+            <td>#9B1003</td>
+        </tr>
+        <tr>
+            <td style="background-color:#960018"><a href="javascript:colorchange('960018')"> </a></td>
+            <td style="color:#960018">CARMINE</td>
+            <td>CARMINE</td>
+            <td>#960018</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ca3433"><a href="javascript:colorchange('ca3433')"> </a></td>
+            <td style="color:#CA3433">PERSIAN RED</td>
+            <td>PERSIAN RED</td>
+            <td>#CA3433</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7e191b"><a href="javascript:colorchange('7e191b')"> </a></td>
+            <td style="color:#7E191B">VERMILION</td>
+            <td>VERMILION</td>
+            <td>#7E191B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ed2939"><a href="javascript:colorchange('ed2939')"> </a></td>
+            <td style="color:#ED2939">Imperial Red</td>
+            <td>Imperial Red</td>
+            <td>#ED2939</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cd5c5c"><a href="javascript:colorchange('cd5c5c')"> </a></td>
+            <td style="color:#CD5C5C">Indian Red</td>
+            <td>Indian Red</td>
+            <td>#CD5C5C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c21807"><a href="javascript:colorchange('c21807')"> </a></td>
+            <td style="color:#C21807">Chili Red</td>
+            <td>Chili Red</td>
+            <td>#C21807</td>
+        </tr>
+        <tr>
+            <td style="background-color:#800000"><a href="javascript:colorchange('800000')"> </a></td>
+            <td style="color:#800000">Maroon</td>
+            <td>Maroon</td>
+            <td>#800000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b22222"><a href="javascript:colorchange('b22222')"> </a></td>
+            <td style="color:#B22222">Fire Brick</td>
+            <td>Fire Brick</td>
+            <td>#B22222</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ea3c53"><a href="javascript:colorchange('ea3c53')"> </a></td>
+            <td style="color:#EA3C53">Desire</td>
+            <td>Desire</td>
+            <td>#EA3C53</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d21f3c"><a href="javascript:colorchange('d21f3c')"> </a></td>
+            <td style="color:#D21F3C">Raspberry</td>
+            <td>Raspberry</td>
+            <td>#D21F3C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff0800"><a href="javascript:colorchange('ff0800')"> </a></td>
+            <td style="color:#FF0800">Candy Apple</td>
+            <td>Candy Apple</td>
+            <td>#FF0800</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b43757"><a href="javascript:colorchange('b43757')"> </a></td>
+            <td style="color:#B43757">Hibiscus</td>
+            <td>Hibiscus</td>
+            <td>#B43757</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bf0a30"><a href="javascript:colorchange('bf0a30')"> </a></td>
+            <td style="color:#BF0A30">U.S. Flag</td>
+            <td>U.S. Flag</td>
+            <td>#BF0A30</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff2800"><a href="javascript:colorchange('ff2800')"> </a></td>
+            <td style="color:#FF2800">Ferrari</td>
+            <td>Ferrari</td>
+            <td>#FF2800</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8d021f"><a href="javascript:colorchange('8d021f')"> </a></td>
+            <td style="color:#8D021F">Burgundy</td>
+            <td>Burgundy</td>
+            <td>#8D021F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8b0000"><a href="javascript:colorchange('8b0000')"> </a></td>
+            <td style="color:#8B0000">Dark Red</td>
+            <td>Dark Red</td>
+            <td>#8B0000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d03d33"><a href="javascript:colorchange('d03d33')"> </a></td>
+            <td style="color:#D03D33">Prismatic Red</td>
+            <td>Prismatic Red</td>
+            <td>#D03D33</td>
+        </tr>
+        <tr>
+            <td style="background-color:#aa0000"><a href="javascript:colorchange('aa0000')"> </a></td>
+            <td style="color:#AA0000">49ers Red</td>
+            <td>49ers Red</td>
+            <td>#AA0000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bd2031"><a href="javascript:colorchange('bd2031')"> </a></td>
+            <td style="color:#BD2031">Cardinals Red</td>
+            <td>Cardinals Red</td>
+            <td>#BD2031</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d2122e"><a href="javascript:colorchange('d2122e')"> </a></td>
+            <td style="color:#D2122E">Ajax Red</td>
+            <td>Ajax Red</td>
+            <td>#D2122E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9e1b32"><a href="javascript:colorchange('9e1b32')"> </a></td>
+            <td style="color:#9E1B32">Alabama Crimson</td>
+            <td>Alabama Crimson</td>
+            <td>#9E1B32</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e32636"><a href="javascript:colorchange('e32636')"> </a></td>
+            <td style="color:#E32636">Alizarin Crimson</td>
+            <td>Alizarin Crimson</td>
+            <td>#E32636</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f4364c"><a href="javascript:colorchange('f4364c')"> </a></td>
+            <td style="color:#F4364C">Amaranth Red</td>
+            <td>Amaranth Red</td>
+            <td>#F4364C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff033e"><a href="javascript:colorchange('ff033e')"> </a></td>
+            <td style="color:#FF033E">American Rose</td>
+            <td>American Rose</td>
+            <td>#FF033E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ba0021"><a href="javascript:colorchange('ba0021')"> </a></td>
+            <td style="color:#BA0021">Angels Red</td>
+            <td>Angels Red</td>
+            <td>#BA0021</td>
+        </tr>
+        <tr>
+            <td style="background-color:#db0007"><a href="javascript:colorchange('db0007')"> </a></td>
+            <td style="color:#DB0007">Arsenal Red</td>
+            <td>Arsenal Red</td>
+            <td>#DB0007</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a52a2a"><a href="javascript:colorchange('a52a2a')"> </a></td>
+            <td style="color:#A52A2A">Auburn Red</td>
+            <td>Auburn Red</td>
+            <td>#A52A2A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc0000"><a href="javascript:colorchange('cc0000')"> </a></td>
+            <td style="color:#CC0000">BU Scarlet</td>
+            <td>BU Scarlet</td>
+            <td>#CC0000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c60c30"><a href="javascript:colorchange('c60c30')"> </a></td>
+            <td style="color:#C60C30">Bills Red</td>
+            <td>Bills Red</td>
+            <td>#C60C30</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bf4f51"><a href="javascript:colorchange('bf4f51')"> </a></td>
+            <td style="color:#BF4F51">Bittersweet Shimmer</td>
+            <td>Bittersweet Shimmer</td>
+            <td>#BF4F51</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-red-color-names-html-hex-rgb-codes/">red colors</a>.</p>
+
+    <h2 id="orange">Orange Color Names</h2>
+    <p><a href="https://www.color-meanings.com/orange-color-meaning-the-color-orange/" data-type="post" data-id="147">The color orange</a> symbolizes emotion, youth, optimism, and enthusiasm.</p>
+    <p><strong>Here are 50 orange color names with hex codes:</strong></p>
+    <table id="tbl_orange">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#ed7014"><a href="javascript:colorchange('ed7014')"> </a></td>
+            <td style="color:#ED7014">ORANGE</td>
+            <td>ORANGE</td>
+            <td>#ED7014</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fa8128"><a href="javascript:colorchange('fa8128')"> </a></td>
+            <td style="color:#FA8128">TANGERINE</td>
+            <td>TANGERINE</td>
+            <td>#FA8128</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fcae1e"><a href="javascript:colorchange('fcae1e')"> </a></td>
+            <td style="color:#FCAE1E">MERIGOLD</td>
+            <td>MERIGOLD</td>
+            <td>#FCAE1E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b56727"><a href="javascript:colorchange('b56727')"> </a></td>
+            <td style="color:#B56727">CIDER</td>
+            <td>CIDER</td>
+            <td>#B56727</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8d4004"><a href="javascript:colorchange('8d4004')"> </a></td>
+            <td style="color:#8D4004">RUST</td>
+            <td>RUST</td>
+            <td>#8D4004</td>
+        </tr>
+        <tr>
+            <td style="background-color:#be5504"><a href="javascript:colorchange('be5504')"> </a></td>
+            <td style="color:#BE5504">GINGER</td>
+            <td>GINGER</td>
+            <td>#BE5504</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc6a03"><a href="javascript:colorchange('fc6a03')"> </a></td>
+            <td style="color:#FC6A03">TIGER</td>
+            <td>TIGER</td>
+            <td>#FC6A03</td>
+        </tr>
+        <tr>
+            <td style="background-color:#dd571c"><a href="javascript:colorchange('dd571c')"> </a></td>
+            <td style="color:#DD571C">FIRE</td>
+            <td>FIRE</td>
+            <td>#DD571C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b2560d"><a href="javascript:colorchange('b2560d')"> </a></td>
+            <td style="color:#B2560D">BRONZE</td>
+            <td>BRONZE</td>
+            <td>#B2560D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fda172"><a href="javascript:colorchange('fda172')"> </a></td>
+            <td style="color:#FDA172">CANTALOUPE</td>
+            <td>CANTALOUPE</td>
+            <td>#FDA172</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ed820e"><a href="javascript:colorchange('ed820e')"> </a></td>
+            <td style="color:#ED820E">APRICOT</td>
+            <td>APRICOT</td>
+            <td>#ED820E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#80400b"><a href="javascript:colorchange('80400b')"> </a></td>
+            <td style="color:#80400B">CLAY</td>
+            <td>CLAY</td>
+            <td>#80400B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ec9706"><a href="javascript:colorchange('ec9706')"> </a></td>
+            <td style="color:#EC9706">HONEY</td>
+            <td>HONEY</td>
+            <td>#EC9706</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ed7117"><a href="javascript:colorchange('ed7117')"> </a></td>
+            <td style="color:#ED7117">CARROT</td>
+            <td>CARROT</td>
+            <td>#ED7117</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c95b0c"><a href="javascript:colorchange('c95b0c')"> </a></td>
+            <td style="color:#C95B0C">SQUASH</td>
+            <td>SQUASH</td>
+            <td>#C95B0C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7a3803"><a href="javascript:colorchange('7a3803')"> </a></td>
+            <td style="color:#7A3803">SPICE</td>
+            <td>SPICE</td>
+            <td>#7A3803</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d16002"><a href="javascript:colorchange('d16002')"> </a></td>
+            <td style="color:#D16002">MARMALADE</td>
+            <td>MARMALADE</td>
+            <td>#D16002</td>
+        </tr>
+        <tr>
+            <td style="background-color:#893101"><a href="javascript:colorchange('893101')"> </a></td>
+            <td style="color:#893101">AMBER</td>
+            <td>AMBER</td>
+            <td>#893101</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d67229"><a href="javascript:colorchange('d67229')"> </a></td>
+            <td style="color:#D67229">SANDSTONE</td>
+            <td>SANDSTONE</td>
+            <td>#D67229</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc5801"><a href="javascript:colorchange('cc5801')"> </a></td>
+            <td style="color:#CC5801">YAM</td>
+            <td>YAM</td>
+            <td>#CC5801</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc4c02"><a href="javascript:colorchange('fc4c02')"> </a></td>
+            <td style="color:#FC4C02">TANGELO</td>
+            <td>TANGELO</td>
+            <td>#FC4C02</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e34a27"><a href="javascript:colorchange('e34a27')"> </a></td>
+            <td style="color:#E34A27">FLAME</td>
+            <td>FLAME</td>
+            <td>#E34A27</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e68000"><a href="javascript:colorchange('e68000')"> </a></td>
+            <td style="color:#E68000">FULVOUS</td>
+            <td>FULVOUS</td>
+            <td>#E68000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff8c00"><a href="javascript:colorchange('ff8c00')"> </a></td>
+            <td style="color:#FF8C00">Dark Orange</td>
+            <td>Dark Orange</td>
+            <td>#FF8C00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff5e0e"><a href="javascript:colorchange('ff5e0e')"> </a></td>
+            <td style="color:#FF5E0E">Vivid Orange</td>
+            <td>Vivid Orange</td>
+            <td>#FF5E0E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff4500"><a href="javascript:colorchange('ff4500')"> </a></td>
+            <td style="color:#FF4500">Orange-Red</td>
+            <td>Orange-Red</td>
+            <td>#FF4500</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e26310"><a href="javascript:colorchange('e26310')"> </a></td>
+            <td style="color:#E26310">Metallic Orange</td>
+            <td>Metallic Orange</td>
+            <td>#E26310</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f5761a"><a href="javascript:colorchange('f5761a')"> </a></td>
+            <td style="color:#F5761A">Pumpkin</td>
+            <td>Pumpkin</td>
+            <td>#F5761A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fd673a"><a href="javascript:colorchange('fd673a')"> </a></td>
+            <td style="color:#FD673A">Smashed Pumpkin</td>
+            <td>Smashed Pumpkin</td>
+            <td>#FD673A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff4f00"><a href="javascript:colorchange('ff4f00')"> </a></td>
+            <td style="color:#FF4F00">International Orange</td>
+            <td>International Orange</td>
+            <td>#FF4F00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f06105"><a href="javascript:colorchange('f06105')"> </a></td>
+            <td style="color:#F06105">Spanish Orange</td>
+            <td>Spanish Orange</td>
+            <td>#F06105</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff8f00"><a href="javascript:colorchange('ff8f00')"> </a></td>
+            <td style="color:#FF8F00">Princeton Orange</td>
+            <td>Princeton Orange</td>
+            <td>#FF8F00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffa52c"><a href="javascript:colorchange('ffa52c')"> </a></td>
+            <td style="color:#FFA52C">Deep Saffron</td>
+            <td>Deep Saffron</td>
+            <td>#FFA52C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c35214"><a href="javascript:colorchange('c35214')"> </a></td>
+            <td style="color:#C35214">Alloy Orange</td>
+            <td>Alloy Orange</td>
+            <td>#C35214</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ee5921"><a href="javascript:colorchange('ee5921')"> </a></td>
+            <td style="color:#EE5921">Halloween Orange</td>
+            <td>Halloween Orange</td>
+            <td>#EE5921</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e89611"><a href="javascript:colorchange('e89611')"> </a></td>
+            <td style="color:#E89611">Gamboge</td>
+            <td>Gamboge</td>
+            <td>#E89611</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cf5b2e"><a href="javascript:colorchange('cf5b2e')"> </a></td>
+            <td style="color:#CF5B2E">Medium Vermilion</td>
+            <td>Medium Vermilion</td>
+            <td>#CF5B2E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#feba4f"><a href="javascript:colorchange('feba4f')"> </a></td>
+            <td style="color:#FEBA4F">Pastel Orange</td>
+            <td>Pastel Orange</td>
+            <td>#FEBA4F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f26e01"><a href="javascript:colorchange('f26e01')"> </a></td>
+            <td style="color:#F26E01">Philippine Orange</td>
+            <td>Philippine Orange</td>
+            <td>#F26E01</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff9944"><a href="javascript:colorchange('ff9944')"> </a></td>
+            <td style="color:#FF9944">Royal Orange</td>
+            <td>Royal Orange</td>
+            <td>#FF9944</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff7f50"><a href="javascript:colorchange('ff7f50')"> </a></td>
+            <td style="color:#FF7F50">Coral</td>
+            <td>Coral</td>
+            <td>#FF7F50</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d75341"><a href="javascript:colorchange('d75341')"> </a></td>
+            <td style="color:#D75341">Dark Coral</td>
+            <td>Dark Coral</td>
+            <td>#D75341</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e6812f"><a href="javascript:colorchange('e6812f')"> </a></td>
+            <td style="color:#E6812F">Cadmium Orange</td>
+            <td>Cadmium Orange</td>
+            <td>#E6812F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#faba5f"><a href="javascript:colorchange('faba5f')"> </a></td>
+            <td style="color:#FABA5F">Rajah</td>
+            <td>Rajah</td>
+            <td>#FABA5F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fb8842"><a href="javascript:colorchange('fb8842')"> </a></td>
+            <td style="color:#FB8842">Mango Tango</td>
+            <td>Mango Tango</td>
+            <td>#FB8842</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff9f00"><a href="javascript:colorchange('ff9f00')"> </a></td>
+            <td style="color:#FF9F00">Orange Peel</td>
+            <td>Orange Peel</td>
+            <td>#FF9F00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ec7625"><a href="javascript:colorchange('ec7625')"> </a></td>
+            <td style="color:#EC7625">Vivid Tangelo</td>
+            <td>Vivid Tangelo</td>
+            <td>#EC7625</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ec5800"><a href="javascript:colorchange('ec5800')"> </a></td>
+            <td style="color:#EC5800">Persimmon</td>
+            <td>Persimmon</td>
+            <td>#EC5800</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff3c00"><a href="javascript:colorchange('ff3c00')"> </a></td>
+            <td style="color:#FF3C00">Browns Orange</td>
+            <td>Browns Orange</td>
+            <td>#FF3C00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc5500"><a href="javascript:colorchange('cc5500')"> </a></td>
+            <td style="color:#CC5500">Burnt Orange</td>
+            <td>Burnt Orange</td>
+            <td>#CC5500</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-orange-color-names-html-hex-rgb-codes/">orange colors</a>.</p>
+
+    <h2 id="yellow">Yellow Color Names</h2>
+    <p><a href="https://www.color-meanings.com/yellow-color-meaning-the-color-yellow/" data-type="post" data-id="119">The color yellow</a> symbolizes happiness, optimism, positivity, and intellect.</p>
+    <p><strong>Here are 50 yellow color names with hex codes:</strong></p>
+    <table id="tbl_yellow">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#e6dbac"><a href="javascript:colorchange('e6dbac')"> </a></td>
+            <td style="color:#E6DBAC">TAN</td>
+            <td>TAN</td>
+            <td>#E6DBAC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eedc9a"><a href="javascript:colorchange('eedc9a')"> </a></td>
+            <td style="color:#EEDC9A">BEIGE</td>
+            <td>BEIGE</td>
+            <td>#EEDC9A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f9e076"><a href="javascript:colorchange('f9e076')"> </a></td>
+            <td style="color:#F9E076">MACAROON</td>
+            <td>MACAROON</td>
+            <td>#F9E076</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c9bb8e"><a href="javascript:colorchange('c9bb8e')"> </a></td>
+            <td style="color:#C9BB8E">HAZEL WOOD</td>
+            <td>HAZEL WOOD</td>
+            <td>#C9BB8E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d6b85a"><a href="javascript:colorchange('d6b85a')"> </a></td>
+            <td style="color:#D6B85A">GRANOLA</td>
+            <td>GRANOLA</td>
+            <td>#D6B85A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#dfc98a"><a href="javascript:colorchange('dfc98a')"> </a></td>
+            <td style="color:#DFC98A">OAT</td>
+            <td>OAT</td>
+            <td>#DFC98A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fae29c"><a href="javascript:colorchange('fae29c')"> </a></td>
+            <td style="color:#FAE29C">EGG NOG</td>
+            <td>EGG NOG</td>
+            <td>#FAE29C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c8a951"><a href="javascript:colorchange('c8a951')"> </a></td>
+            <td style="color:#C8A951">FAWN</td>
+            <td>FAWN</td>
+            <td>#C8A951</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f3eaaf"><a href="javascript:colorchange('f3eaaf')"> </a></td>
+            <td style="color:#F3EAAF">SUGAR COOKIE</td>
+            <td>SUGAR COOKIE</td>
+            <td>#F3EAAF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d8b863"><a href="javascript:colorchange('d8b863')"> </a></td>
+            <td style="color:#D8B863">SAND</td>
+            <td>SAND</td>
+            <td>#D8B863</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e3b778"><a href="javascript:colorchange('e3b778')"> </a></td>
+            <td style="color:#E3B778">SEPIA</td>
+            <td>SEPIA</td>
+            <td>#E3B778</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e7c27d"><a href="javascript:colorchange('e7c27d')"> </a></td>
+            <td style="color:#E7C27D">LATTE</td>
+            <td>LATTE</td>
+            <td>#E7C27D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#dcd7a0"><a href="javascript:colorchange('dcd7a0')"> </a></td>
+            <td style="color:#DCD7A0">OYSTER</td>
+            <td>OYSTER</td>
+            <td>#DCD7A0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e3c565"><a href="javascript:colorchange('e3c565')"> </a></td>
+            <td style="color:#E3C565">BISCOTTI</td>
+            <td>BISCOTTI</td>
+            <td>#E3C565</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fde992"><a href="javascript:colorchange('fde992')"> </a></td>
+            <td style="color:#FDE992">PARMESAN</td>
+            <td>PARMESAN</td>
+            <td>#FDE992</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bda55d"><a href="javascript:colorchange('bda55d')"> </a></td>
+            <td style="color:#BDA55D">HAZELNUT</td>
+            <td>HAZELNUT</td>
+            <td>#BDA55D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#dac17c"><a href="javascript:colorchange('dac17c')"> </a></td>
+            <td style="color:#DAC17C">SANDCASTLE</td>
+            <td>SANDCASTLE</td>
+            <td>#DAC17C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdefb2"><a href="javascript:colorchange('fdefb2')"> </a></td>
+            <td style="color:#FDEFB2">BUTTERMILK</td>
+            <td>BUTTERMILK</td>
+            <td>#FDEFB2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ede8ba"><a href="javascript:colorchange('ede8ba')"> </a></td>
+            <td style="color:#EDE8BA">SAND DOLLAR</td>
+            <td>SAND DOLLAR</td>
+            <td>#EDE8BA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbe790"><a href="javascript:colorchange('fbe790')"> </a></td>
+            <td style="color:#FBE790">SHORTBREAD</td>
+            <td>SHORTBREAD</td>
+            <td>#FBE790</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e4d00a"><a href="javascript:colorchange('e4d00a')"> </a></td>
+            <td style="color:#E4D00A">CITRINE</td>
+            <td>CITRINE</td>
+            <td>#E4D00A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eedc82"><a href="javascript:colorchange('eedc82')"> </a></td>
+            <td style="color:#EEDC82">FLAX</td>
+            <td>FLAX</td>
+            <td>#EEDC82</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eeed09"><a href="javascript:colorchange('eeed09')"> </a></td>
+            <td style="color:#EEED09">XANTHIC</td>
+            <td>XANTHIC</td>
+            <td>#EEED09</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffd37"><a href="javascript:colorchange('fffd37')"> </a></td>
+            <td style="color:#FFFD37">Sunshine Yellow</td>
+            <td>Sunshine Yellow</td>
+            <td>#FFFD37</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffef00"><a href="javascript:colorchange('ffef00')"> </a></td>
+            <td style="color:#FFEF00">Canary Yellow</td>
+            <td>Canary Yellow</td>
+            <td>#FFEF00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdff00"><a href="javascript:colorchange('fdff00')"> </a></td>
+            <td style="color:#FDFF00">Lemon Yellow</td>
+            <td>Lemon Yellow</td>
+            <td>#FDFF00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eee8aa"><a href="javascript:colorchange('eee8aa')"> </a></td>
+            <td style="color:#EEE8AA">Pale Goldenrod</td>
+            <td>Pale Goldenrod</td>
+            <td>#EEE8AA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f0e68c"><a href="javascript:colorchange('f0e68c')"> </a></td>
+            <td style="color:#F0E68C">Light Khaki</td>
+            <td>Light Khaki</td>
+            <td>#F0E68C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fce883"><a href="javascript:colorchange('fce883')"> </a></td>
+            <td style="color:#FCE883">Clover Lime</td>
+            <td>Clover Lime</td>
+            <td>#FCE883</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fada5e"><a href="javascript:colorchange('fada5e')"> </a></td>
+            <td style="color:#FADA5E">Royal Yellow</td>
+            <td>Royal Yellow</td>
+            <td>#FADA5E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffd700"><a href="javascript:colorchange('ffd700')"> </a></td>
+            <td style="color:#FFD700">Gold</td>
+            <td>Gold</td>
+            <td>#FFD700</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eed202"><a href="javascript:colorchange('eed202')"> </a></td>
+            <td style="color:#EED202">Safety Yellow</td>
+            <td>Safety Yellow</td>
+            <td>#EED202</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8e473"><a href="javascript:colorchange('f8e473')"> </a></td>
+            <td style="color:#F8E473">Laguna</td>
+            <td>Laguna</td>
+            <td>#F8E473</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffd01"><a href="javascript:colorchange('fffd01')"> </a></td>
+            <td style="color:#FFFD01">Bright Yellow</td>
+            <td>Bright Yellow</td>
+            <td>#FFFD01</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eeea62"><a href="javascript:colorchange('eeea62')"> </a></td>
+            <td style="color:#EEEA62">Greenish Yellow</td>
+            <td>Greenish Yellow</td>
+            <td>#EEEA62</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffda03"><a href="javascript:colorchange('ffda03')"> </a></td>
+            <td style="color:#FFDA03">Sunflower</td>
+            <td>Sunflower</td>
+            <td>#FFDA03</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fce205"><a href="javascript:colorchange('fce205')"> </a></td>
+            <td style="color:#FCE205">Bumblebee</td>
+            <td>Bumblebee</td>
+            <td>#FCE205</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffd74"><a href="javascript:colorchange('fffd74')"> </a></td>
+            <td style="color:#FFFD74">Butter</td>
+            <td>Butter</td>
+            <td>#FFFD74</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffe36e"><a href="javascript:colorchange('ffe36e')"> </a></td>
+            <td style="color:#FFE36E">Yellow Tan</td>
+            <td>Yellow Tan</td>
+            <td>#FFE36E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffe135"><a href="javascript:colorchange('ffe135')"> </a></td>
+            <td style="color:#FFE135">Banana</td>
+            <td>Banana</td>
+            <td>#FFE135</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fcd12a"><a href="javascript:colorchange('fcd12a')"> </a></td>
+            <td style="color:#FCD12A">Tuscany</td>
+            <td>Tuscany</td>
+            <td>#FCD12A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c49102"><a href="javascript:colorchange('c49102')"> </a></td>
+            <td style="color:#C49102">Dijon</td>
+            <td>Dijon</td>
+            <td>#C49102</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fedc56"><a href="javascript:colorchange('fedc56')"> </a></td>
+            <td style="color:#FEDC56">Mustard</td>
+            <td>Mustard</td>
+            <td>#FEDC56</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fafa37"><a href="javascript:colorchange('fafa37')"> </a></td>
+            <td style="color:#FAFA37">Maximum Yellow</td>
+            <td>Maximum Yellow</td>
+            <td>#FAFA37</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8de7e"><a href="javascript:colorchange('f8de7e')"> </a></td>
+            <td style="color:#F8DE7E">Mellow Yellow</td>
+            <td>Mellow Yellow</td>
+            <td>#F8DE7E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffff66"><a href="javascript:colorchange('ffff66')"> </a></td>
+            <td style="color:#FFFF66">Unmellow Yellow</td>
+            <td>Unmellow Yellow</td>
+            <td>#FFFF66</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cca01d"><a href="javascript:colorchange('cca01d')"> </a></td>
+            <td style="color:#CCA01D">Lemon Curry</td>
+            <td>Lemon Curry</td>
+            <td>#CCA01D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdee00"><a href="javascript:colorchange('fdee00')"> </a></td>
+            <td style="color:#FDEE00">Aureolin</td>
+            <td>Aureolin</td>
+            <td>#FDEE00</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffff33"><a href="javascript:colorchange('ffff33')"> </a></td>
+            <td style="color:#FFFF33">Electric Yellow</td>
+            <td>Electric Yellow</td>
+            <td>#FFFF33</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffe71"><a href="javascript:colorchange('fffe71')"> </a></td>
+            <td style="color:#FFFE71">Pastel Yellow</td>
+            <td>Pastel Yellow</td>
+            <td>#FFFE71</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-yellow-color-names-html-hex-rgb-codes/">yellow colors</a>.</p>
+
+    <h2 id="green">Green Color Names</h2>
+    <p><a href="https://www.color-meanings.com/green-color-meaning-the-color-green/" data-type="post" data-id="109">The color green</a> symbolizes harmony, safety, growth, and health.</p>
+    <p><strong>Here are 50 green color names with hex codes:</strong></p>
+    <table id="tbl_green">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#3cb043"><a href="javascript:colorchange('3cb043')"> </a></td>
+            <td style="color:#3CB043">GREEN</td>
+            <td>GREEN</td>
+            <td>#3CB043</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b0fc38"><a href="javascript:colorchange('b0fc38')"> </a></td>
+            <td style="color:#B0FC38">CHARTREUSE</td>
+            <td>CHARTREUSE</td>
+            <td>#B0FC38</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3a5311"><a href="javascript:colorchange('3a5311')"> </a></td>
+            <td style="color:#3A5311">JUNIPER</td>
+            <td>JUNIPER</td>
+            <td>#3A5311</td>
+        </tr>
+        <tr>
+            <td style="background-color:#728c69"><a href="javascript:colorchange('728c69')"> </a></td>
+            <td style="color:#728C69">SAGE</td>
+            <td>SAGE</td>
+            <td>#728C69</td>
+        </tr>
+        <tr>
+            <td style="background-color:#aef359"><a href="javascript:colorchange('aef359')"> </a></td>
+            <td style="color:#AEF359">LIME</td>
+            <td>LIME</td>
+            <td>#AEF359</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5dbb63"><a href="javascript:colorchange('5dbb63')"> </a></td>
+            <td style="color:#5DBB63">FERN</td>
+            <td>FERN</td>
+            <td>#5DBB63</td>
+        </tr>
+        <tr>
+            <td style="background-color:#98bf64"><a href="javascript:colorchange('98bf64')"> </a></td>
+            <td style="color:#98BF64">OLIVE</td>
+            <td>OLIVE</td>
+            <td>#98BF64</td>
+        </tr>
+        <tr>
+            <td style="background-color:#028a0f"><a href="javascript:colorchange('028a0f')"> </a></td>
+            <td style="color:#028A0F">EMERALD</td>
+            <td>EMERALD</td>
+            <td>#028A0F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#74b72e"><a href="javascript:colorchange('74b72e')"> </a></td>
+            <td style="color:#74B72E">PEAR</td>
+            <td>PEAR</td>
+            <td>#74B72E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#466d1d"><a href="javascript:colorchange('466d1d')"> </a></td>
+            <td style="color:#466D1D">MOSS</td>
+            <td>MOSS</td>
+            <td>#466D1D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#03ac13"><a href="javascript:colorchange('03ac13')"> </a></td>
+            <td style="color:#03AC13">SHAMROCK</td>
+            <td>SHAMROCK</td>
+            <td>#03AC13</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3ded97"><a href="javascript:colorchange('3ded97')"> </a></td>
+            <td style="color:#3DED97">SEAFOAM</td>
+            <td>SEAFOAM</td>
+            <td>#3DED97</td>
+        </tr>
+        <tr>
+            <td style="background-color:#234f1e"><a href="javascript:colorchange('234f1e')"> </a></td>
+            <td style="color:#234F1E">PINE</td>
+            <td>PINE</td>
+            <td>#234F1E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#03c04a"><a href="javascript:colorchange('03c04a')"> </a></td>
+            <td style="color:#03C04A">PARAKEET</td>
+            <td>PARAKEET</td>
+            <td>#03C04A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#99edc3"><a href="javascript:colorchange('99edc3')"> </a></td>
+            <td style="color:#99EDC3">MINT</td>
+            <td>MINT</td>
+            <td>#99EDC3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#354a21"><a href="javascript:colorchange('354a21')"> </a></td>
+            <td style="color:#354A21">SEAWEED</td>
+            <td>SEAWEED</td>
+            <td>#354A21</td>
+        </tr>
+        <tr>
+            <td style="background-color:#597d35"><a href="javascript:colorchange('597d35')"> </a></td>
+            <td style="color:#597D35">PICKLE</td>
+            <td>PICKLE</td>
+            <td>#597D35</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b2d3c2"><a href="javascript:colorchange('b2d3c2')"> </a></td>
+            <td style="color:#B2D3C2">PISTACHIO</td>
+            <td>PISTACHIO</td>
+            <td>#B2D3C2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#32612d"><a href="javascript:colorchange('32612d')"> </a></td>
+            <td style="color:#32612D">BASIL</td>
+            <td>BASIL</td>
+            <td>#32612D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#607d3b"><a href="javascript:colorchange('607d3b')"> </a></td>
+            <td style="color:#607D3B">CROCODILE</td>
+            <td>CROCODILE</td>
+            <td>#607D3B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3b7a57"><a href="javascript:colorchange('3b7a57')"> </a></td>
+            <td style="color:#3B7A57">AMAZON</td>
+            <td>AMAZON</td>
+            <td>#3B7A57</td>
+        </tr>
+        <tr>
+            <td style="background-color:#568203"><a href="javascript:colorchange('568203')"> </a></td>
+            <td style="color:#568203">AVOCADO</td>
+            <td>AVOCADO</td>
+            <td>#568203</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ace1af"><a href="javascript:colorchange('ace1af')"> </a></td>
+            <td style="color:#ACE1AF">CELADON</td>
+            <td>CELADON</td>
+            <td>#ACE1AF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0b6623"><a href="javascript:colorchange('0b6623')"> </a></td>
+            <td style="color:#0B6623">Forest green</td>
+            <td>Forest green</td>
+            <td>#0B6623</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3f704d"><a href="javascript:colorchange('3f704d')"> </a></td>
+            <td style="color:#3F704D">Hunter green</td>
+            <td>Hunter green</td>
+            <td>#3F704D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8f9779"><a href="javascript:colorchange('8f9779')"> </a></td>
+            <td style="color:#8F9779">Artichoke green</td>
+            <td>Artichoke green</td>
+            <td>#8F9779</td>
+        </tr>
+        <tr>
+            <td style="background-color:#29ab87"><a href="javascript:colorchange('29ab87')"> </a></td>
+            <td style="color:#29AB87">Jungle green</td>
+            <td>Jungle green</td>
+            <td>#29AB87</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00755e"><a href="javascript:colorchange('00755e')"> </a></td>
+            <td style="color:#00755E">Tropical Rainforest</td>
+            <td>Tropical Rainforest</td>
+            <td>#00755E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00a693"><a href="javascript:colorchange('00a693')"> </a></td>
+            <td style="color:#00A693">Persian green</td>
+            <td>Persian green</td>
+            <td>#00A693</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2e8b57"><a href="javascript:colorchange('2e8b57')"> </a></td>
+            <td style="color:#2E8B57">Sea green</td>
+            <td>Sea green</td>
+            <td>#2E8B57</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00a86b"><a href="javascript:colorchange('00a86b')"> </a></td>
+            <td style="color:#00A86B">Jade green</td>
+            <td>Jade green</td>
+            <td>#00A86B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a9ba9d"><a href="javascript:colorchange('a9ba9d')"> </a></td>
+            <td style="color:#A9BA9D">Laurel green</td>
+            <td>Laurel green</td>
+            <td>#A9BA9D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4b5320"><a href="javascript:colorchange('4b5320')"> </a></td>
+            <td style="color:#4B5320">Army green</td>
+            <td>Army green</td>
+            <td>#4B5320</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4cbb17"><a href="javascript:colorchange('4cbb17')"> </a></td>
+            <td style="color:#4CBB17">Kelly green</td>
+            <td>Kelly green</td>
+            <td>#4CBB17</td>
+        </tr>
+        <tr>
+            <td style="background-color:#50c878"><a href="javascript:colorchange('50c878')"> </a></td>
+            <td style="color:#50C878">Paris green</td>
+            <td>Paris green</td>
+            <td>#50C878</td>
+        </tr>
+        <tr>
+            <td style="background-color:#006600"><a href="javascript:colorchange('006600')"> </a></td>
+            <td style="color:#006600">Pakistan green</td>
+            <td>Pakistan green</td>
+            <td>#006600</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00f0a8"><a href="javascript:colorchange('00f0a8')"> </a></td>
+            <td style="color:#00F0A8">Spring</td>
+            <td>Spring</td>
+            <td>#00F0A8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#48a860"><a href="javascript:colorchange('48a860')"> </a></td>
+            <td style="color:#48A860">Chateau</td>
+            <td>Chateau</td>
+            <td>#48A860</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a8c090"><a href="javascript:colorchange('a8c090')"> </a></td>
+            <td style="color:#A8C090">Swamp</td>
+            <td>Swamp</td>
+            <td>#A8C090</td>
+        </tr>
+        <tr>
+            <td style="background-color:#74c365"><a href="javascript:colorchange('74c365')"> </a></td>
+            <td style="color:#74C365">Mantis</td>
+            <td>Mantis</td>
+            <td>#74C365</td>
+        </tr>
+        <tr>
+            <td style="background-color:#007848"><a href="javascript:colorchange('007848')"> </a></td>
+            <td style="color:#007848">Fun</td>
+            <td>Fun</td>
+            <td>#007848</td>
+        </tr>
+        <tr>
+            <td style="background-color:#609078"><a href="javascript:colorchange('609078')"> </a></td>
+            <td style="color:#609078">Viridian</td>
+            <td>Viridian</td>
+            <td>#609078</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6c7c59"><a href="javascript:colorchange('6c7c59')"> </a></td>
+            <td style="color:#6C7C59">Reseda Green</td>
+            <td>Reseda Green</td>
+            <td>#6C7C59</td>
+        </tr>
+        <tr>
+            <td style="background-color:#487800"><a href="javascript:colorchange('487800')"> </a></td>
+            <td style="color:#487800">Verdun</td>
+            <td>Verdun</td>
+            <td>#487800</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00563b"><a href="javascript:colorchange('00563b')"> </a></td>
+            <td style="color:#00563B">Castleton Green</td>
+            <td>Castleton Green</td>
+            <td>#00563B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#006a4e"><a href="javascript:colorchange('006a4e')"> </a></td>
+            <td style="color:#006A4E">Bottle Green</td>
+            <td>Bottle Green</td>
+            <td>#006A4E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#006b3c"><a href="javascript:colorchange('006b3c')"> </a></td>
+            <td style="color:#006B3C">Cadmium Green</td>
+            <td>Cadmium Green</td>
+            <td>#006B3C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#78866b"><a href="javascript:colorchange('78866b')"> </a></td>
+            <td style="color:#78866B">Camouflage Green</td>
+            <td>Camouflage Green</td>
+            <td>#78866B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#85bb65"><a href="javascript:colorchange('85bb65')"> </a></td>
+            <td style="color:#85BB65">Dollar Bill</td>
+            <td>Dollar Bill</td>
+            <td>#85BB65</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b2ec5d"><a href="javascript:colorchange('b2ec5d')"> </a></td>
+            <td style="color:#B2EC5D">Inchworm</td>
+            <td>Inchworm</td>
+            <td>#B2EC5D</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-green-color-names-html-hex-rgb-codes/">green colors</a>.</p>
+
+    <h2 id="blue">Blue Color Names</h2>
+    <p><a href="https://www.color-meanings.com/blue-color-meaning-the-color-blue/" data-type="post" data-id="42">The color blue</a> symbolizes security, trust, loyalty, and responsibility.</p>
+    <p><strong>Here are 50 blue color names with hex codes:</strong></p>
+    <table id="tbl_blue">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#3944bc"><a href="javascript:colorchange('3944bc')"> </a></td>
+            <td style="color:#3944BC">BLUE</td>
+            <td>BLUE</td>
+            <td>#3944BC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#757c88"><a href="javascript:colorchange('757c88')"> </a></td>
+            <td style="color:#757C88">SLATE</td>
+            <td>SLATE</td>
+            <td>#757C88</td>
+        </tr>
+        <tr>
+            <td style="background-color:#63c5da"><a href="javascript:colorchange('63c5da')"> </a></td>
+            <td style="color:#63C5DA">SKY</td>
+            <td>SKY</td>
+            <td>#63C5DA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0a1172"><a href="javascript:colorchange('0a1172')"> </a></td>
+            <td style="color:#0A1172">NAVY</td>
+            <td>NAVY</td>
+            <td>#0A1172</td>
+        </tr>
+        <tr>
+            <td style="background-color:#281e5d"><a href="javascript:colorchange('281e5d')"> </a></td>
+            <td style="color:#281E5D">INDIGO</td>
+            <td>INDIGO</td>
+            <td>#281E5D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1338be"><a href="javascript:colorchange('1338be')"> </a></td>
+            <td style="color:#1338BE">COBALT</td>
+            <td>COBALT</td>
+            <td>#1338BE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#48aaad"><a href="javascript:colorchange('48aaad')"> </a></td>
+            <td style="color:#48AAAD">TEAL</td>
+            <td>TEAL</td>
+            <td>#48AAAD</td>
+        </tr>
+        <tr>
+            <td style="background-color:#016064"><a href="javascript:colorchange('016064')"> </a></td>
+            <td style="color:#016064">OCEAN</td>
+            <td>OCEAN</td>
+            <td>#016064</td>
+        </tr>
+        <tr>
+            <td style="background-color:#022d36"><a href="javascript:colorchange('022d36')"> </a></td>
+            <td style="color:#022D36">PEACOCK</td>
+            <td>PEACOCK</td>
+            <td>#022D36</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1520a6"><a href="javascript:colorchange('1520a6')"> </a></td>
+            <td style="color:#1520A6">AZURE</td>
+            <td>AZURE</td>
+            <td>#1520A6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0492c2"><a href="javascript:colorchange('0492c2')"> </a></td>
+            <td style="color:#0492C2">CERULEAN</td>
+            <td>CERULEAN</td>
+            <td>#0492C2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2832c2"><a href="javascript:colorchange('2832c2')"> </a></td>
+            <td style="color:#2832C2">LAPIS</td>
+            <td>LAPIS</td>
+            <td>#2832C2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2c3e4c"><a href="javascript:colorchange('2c3e4c')"> </a></td>
+            <td style="color:#2C3E4C">SPRUCE</td>
+            <td>SPRUCE</td>
+            <td>#2C3E4C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#59788e"><a href="javascript:colorchange('59788e')"> </a></td>
+            <td style="color:#59788E">STONE</td>
+            <td>STONE</td>
+            <td>#59788E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1f456e"><a href="javascript:colorchange('1f456e')"> </a></td>
+            <td style="color:#1F456E">AEGEAN</td>
+            <td>AEGEAN</td>
+            <td>#1F456E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#241571"><a href="javascript:colorchange('241571')"> </a></td>
+            <td style="color:#241571">BLUEBERRY</td>
+            <td>BLUEBERRY</td>
+            <td>#241571</td>
+        </tr>
+        <tr>
+            <td style="background-color:#151e3d"><a href="javascript:colorchange('151e3d')"> </a></td>
+            <td style="color:#151E3D">DENIM</td>
+            <td>DENIM</td>
+            <td>#151E3D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#051094"><a href="javascript:colorchange('051094')"> </a></td>
+            <td style="color:#051094">ADMIRAL</td>
+            <td>ADMIRAL</td>
+            <td>#051094</td>
+        </tr>
+        <tr>
+            <td style="background-color:#52b2bf"><a href="javascript:colorchange('52b2bf')"> </a></td>
+            <td style="color:#52B2BF">SAPPHIRE</td>
+            <td>SAPPHIRE</td>
+            <td>#52B2BF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#82eefd"><a href="javascript:colorchange('82eefd')"> </a></td>
+            <td style="color:#82EEFD">ARCTIC</td>
+            <td>ARCTIC</td>
+            <td>#82EEFD</td>
+        </tr>
+        <tr>
+            <td style="background-color:#40e0d0"><a href="javascript:colorchange('40e0d0')"> </a></td>
+            <td style="color:#40E0D0">TURQUOISE</td>
+            <td>TURQUOISE</td>
+            <td>#40E0D0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4682b4"><a href="javascript:colorchange('4682b4')"> </a></td>
+            <td style="color:#4682B4">STEEL</td>
+            <td>STEEL</td>
+            <td>#4682B4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2e5894"><a href="javascript:colorchange('2e5894')"> </a></td>
+            <td style="color:#2E5894">B’DAZZLED</td>
+            <td>B’DAZZLED</td>
+            <td>#2E5894</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b0e0e6"><a href="javascript:colorchange('b0e0e6')"> </a></td>
+            <td style="color:#B0E0E6">Powder blue</td>
+            <td>Powder blue</td>
+            <td>#B0E0E6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#004f98"><a href="javascript:colorchange('004f98')"> </a></td>
+            <td style="color:#004F98">US Air Force Academy blue</td>
+            <td>US Air Force Academy blue</td>
+            <td>#004F98</td>
+        </tr>
+        <tr>
+            <td style="background-color:#89cff0"><a href="javascript:colorchange('89cff0')"> </a></td>
+            <td style="color:#89CFF0">Baby blue</td>
+            <td>Baby blue</td>
+            <td>#89CFF0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bcd4e6"><a href="javascript:colorchange('bcd4e6')"> </a></td>
+            <td style="color:#BCD4E6">Beau blue</td>
+            <td>Beau blue</td>
+            <td>#BCD4E6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6ca0dc"><a href="javascript:colorchange('6ca0dc')"> </a></td>
+            <td style="color:#6CA0DC">Little Boy blue</td>
+            <td>Little Boy blue</td>
+            <td>#6CA0DC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#81d8d0"><a href="javascript:colorchange('81d8d0')"> </a></td>
+            <td style="color:#81D8D0">Tiffany blue</td>
+            <td>Tiffany blue</td>
+            <td>#81D8D0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4b9cd3"><a href="javascript:colorchange('4b9cd3')"> </a></td>
+            <td style="color:#4B9CD3">Carolina blue</td>
+            <td>Carolina blue</td>
+            <td>#4B9CD3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4f97a3"><a href="javascript:colorchange('4f97a3')"> </a></td>
+            <td style="color:#4F97A3">Turkish blue</td>
+            <td>Turkish blue</td>
+            <td>#4F97A3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#73c2fb"><a href="javascript:colorchange('73c2fb')"> </a></td>
+            <td style="color:#73C2FB">Maya blue</td>
+            <td>Maya blue</td>
+            <td>#73C2FB</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6495ed"><a href="javascript:colorchange('6495ed')"> </a></td>
+            <td style="color:#6495ED">Cornflower blue</td>
+            <td>Cornflower blue</td>
+            <td>#6495ED</td>
+        </tr>
+        <tr>
+            <td style="background-color:#126180"><a href="javascript:colorchange('126180')"> </a></td>
+            <td style="color:#126180">Blue Sapphire</td>
+            <td>Blue Sapphire</td>
+            <td>#126180</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1034a6"><a href="javascript:colorchange('1034a6')"> </a></td>
+            <td style="color:#1034A6">Egyptian blue</td>
+            <td>Egyptian blue</td>
+            <td>#1034A6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#00356b"><a href="javascript:colorchange('00356b')"> </a></td>
+            <td style="color:#00356B">Yale blue</td>
+            <td>Yale blue</td>
+            <td>#00356B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1d2951"><a href="javascript:colorchange('1d2951')"> </a></td>
+            <td style="color:#1D2951">Space Cadet</td>
+            <td>Space Cadet</td>
+            <td>#1D2951</td>
+        </tr>
+        <tr>
+            <td style="background-color:#005a92"><a href="javascript:colorchange('005a92')"> </a></td>
+            <td style="color:#005A92">Imperial blue</td>
+            <td>Imperial blue</td>
+            <td>#005A92</td>
+        </tr>
+        <tr>
+            <td style="background-color:#76abdf"><a href="javascript:colorchange('76abdf')"> </a></td>
+            <td style="color:#76ABDF">Ruddy blue</td>
+            <td>Ruddy blue</td>
+            <td>#76ABDF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#72a0c1"><a href="javascript:colorchange('72a0c1')"> </a></td>
+            <td style="color:#72A0C1">Air Superiority Blue</td>
+            <td>Air Superiority Blue</td>
+            <td>#72A0C1</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6bcae2"><a href="javascript:colorchange('6bcae2')"> </a></td>
+            <td style="color:#6BCAE2">Aquamarine Blue</td>
+            <td>Aquamarine Blue</td>
+            <td>#6BCAE2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6cb4ee"><a href="javascript:colorchange('6cb4ee')"> </a></td>
+            <td style="color:#6CB4EE">Argentina Blue</td>
+            <td>Argentina Blue</td>
+            <td>#6CB4EE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#002d62"><a href="javascript:colorchange('002d62')"> </a></td>
+            <td style="color:#002D62">Astros Navy</td>
+            <td>Astros Navy</td>
+            <td>#002D62</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0066b2"><a href="javascript:colorchange('0066b2')"> </a></td>
+            <td style="color:#0066B2">Bayern Blue</td>
+            <td>Bayern Blue</td>
+            <td>#0066B2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4f86f7"><a href="javascript:colorchange('4f86f7')"> </a></td>
+            <td style="color:#4F86F7">Berry Blue</td>
+            <td>Berry Blue</td>
+            <td>#4F86F7</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5072a7"><a href="javascript:colorchange('5072a7')"> </a></td>
+            <td style="color:#5072A7">Blue Yonder</td>
+            <td>Blue Yonder</td>
+            <td>#5072A7</td>
+        </tr>
+        <tr>
+            <td style="background-color:#318ce7"><a href="javascript:colorchange('318ce7')"> </a></td>
+            <td style="color:#318CE7">Bleu de France</td>
+            <td>Bleu de France</td>
+            <td>#318CE7</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6699cc"><a href="javascript:colorchange('6699cc')"> </a></td>
+            <td style="color:#6699CC">Blue-Gray</td>
+            <td>Blue-Gray</td>
+            <td>#6699CC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0039a6"><a href="javascript:colorchange('0039a6')"> </a></td>
+            <td style="color:#0039A6">Boeing Blue</td>
+            <td>Boeing Blue</td>
+            <td>#0039A6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#13274f"><a href="javascript:colorchange('13274f')"> </a></td>
+            <td style="color:#13274F">Braves Navy</td>
+            <td>Braves Navy</td>
+            <td>#13274F</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-blue-color-names-html-hex-rgb-codes/">blue colors</a>.</p>
+
+    <h2 id="purple">Purple Color Names</h2>
+    <p><a href="https://www.color-meanings.com/purple-color-meaning-the-color-purple/" data-type="post" data-id="138">The color purple</a> symbolizes spirituality, mystery, royalty, and imagination.</p>
+    <p><strong>Here are 50 purple color names with hex codes:</strong></p>
+    <table id="tbl_purple">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#a32cc4"><a href="javascript:colorchange('a32cc4')"> </a></td>
+            <td style="color:#A32CC4">PURPLE</td>
+            <td>PURPLE</td>
+            <td>#A32CC4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7a4988"><a href="javascript:colorchange('7a4988')"> </a></td>
+            <td style="color:#7A4988">MAUVE</td>
+            <td>MAUVE</td>
+            <td>#7A4988</td>
+        </tr>
+        <tr>
+            <td style="background-color:#710193"><a href="javascript:colorchange('710193')"> </a></td>
+            <td style="color:#710193">DARK VIOLET</td>
+            <td>DARK VIOLET</td>
+            <td>#710193</td>
+        </tr>
+        <tr>
+            <td style="background-color:#630436"><a href="javascript:colorchange('630436')"> </a></td>
+            <td style="color:#630436">BOYSENBERRY</td>
+            <td>BOYSENBERRY</td>
+            <td>#630436</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e39ff6"><a href="javascript:colorchange('e39ff6')"> </a></td>
+            <td style="color:#E39FF6">ELECTRIC LAVENDER</td>
+            <td>ELECTRIC LAVENDER</td>
+            <td>#E39FF6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#601a35"><a href="javascript:colorchange('601a35')"> </a></td>
+            <td style="color:#601A35">PLUM</td>
+            <td>PLUM</td>
+            <td>#601A35</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a1045a"><a href="javascript:colorchange('a1045a')"> </a></td>
+            <td style="color:#A1045A">STRONG MAGENTA</td>
+            <td>STRONG MAGENTA</td>
+            <td>#A1045A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b65fcf"><a href="javascript:colorchange('b65fcf')"> </a></td>
+            <td style="color:#B65FCF">DEEP LILAC</td>
+            <td>DEEP LILAC</td>
+            <td>#B65FCF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#663046"><a href="javascript:colorchange('663046')"> </a></td>
+            <td style="color:#663046">GRAPE</td>
+            <td>GRAPE</td>
+            <td>#663046</td>
+        </tr>
+        <tr>
+            <td style="background-color:#be93d4"><a href="javascript:colorchange('be93d4')"> </a></td>
+            <td style="color:#BE93D4">ROYAL PERIWINKLE</td>
+            <td>ROYAL PERIWINKLE</td>
+            <td>#BE93D4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4d0f28"><a href="javascript:colorchange('4d0f28')"> </a></td>
+            <td style="color:#4D0F28">SANGRIA PURPLE</td>
+            <td>SANGRIA PURPLE</td>
+            <td>#4D0F28</td>
+        </tr>
+        <tr>
+            <td style="background-color:#311432"><a href="javascript:colorchange('311432')"> </a></td>
+            <td style="color:#311432">EGGPLANT</td>
+            <td>EGGPLANT</td>
+            <td>#311432</td>
+        </tr>
+        <tr>
+            <td style="background-color:#67032f"><a href="javascript:colorchange('67032f')"> </a></td>
+            <td style="color:#67032F">JAZZBERRY JAM</td>
+            <td>JAZZBERRY JAM</td>
+            <td>#67032F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9867c6"><a href="javascript:colorchange('9867c6')"> </a></td>
+            <td style="color:#9867C5">IRIS</td>
+            <td>IRIS</td>
+            <td>#9867C5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9e7bb5"><a href="javascript:colorchange('9e7bb5')"> </a></td>
+            <td style="color:#9E7BB5">HEATHER</td>
+            <td>HEATHER</td>
+            <td>#9E7BB5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a45ee5"><a href="javascript:colorchange('a45ee5')"> </a></td>
+            <td style="color:#A45EE5">AMETHYST</td>
+            <td>AMETHYST</td>
+            <td>#A45EE5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#290916"><a href="javascript:colorchange('290916')"> </a></td>
+            <td style="color:#290916">RAISIN</td>
+            <td>RAISIN</td>
+            <td>#290916</td>
+        </tr>
+        <tr>
+            <td style="background-color:#af69ef"><a href="javascript:colorchange('af69ef')"> </a></td>
+            <td style="color:#AF69EF">MEDIUM ORCHID</td>
+            <td>MEDIUM ORCHID</td>
+            <td>#AF69EF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4c0121"><a href="javascript:colorchange('4c0121')"> </a></td>
+            <td style="color:#4C0121">DARK MULBERRY</td>
+            <td>DARK MULBERRY</td>
+            <td>#4C0121</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2c041c"><a href="javascript:colorchange('2c041c')"> </a></td>
+            <td style="color:#2C041C">DEEP WINE</td>
+            <td>DEEP WINE</td>
+            <td>#2C041C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d8bfd8"><a href="javascript:colorchange('d8bfd8')"> </a></td>
+            <td style="color:#D8BFD8">THISTLE</td>
+            <td>THISTLE</td>
+            <td>#D8BFD8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#da70d6"><a href="javascript:colorchange('da70d6')"> </a></td>
+            <td style="color:#DA70D6">ORCHID</td>
+            <td>ORCHID</td>
+            <td>#DA70D6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8f00ff"><a href="javascript:colorchange('8f00ff')"> </a></td>
+            <td style="color:#8F00FF">ELECTRIC VIOLET</td>
+            <td>ELECTRIC VIOLET</td>
+            <td>#8F00FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9370db"><a href="javascript:colorchange('9370db')"> </a></td>
+            <td style="color:#9370DB">Medium Purple</td>
+            <td>Medium Purple</td>
+            <td>#9370DB</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9932cc"><a href="javascript:colorchange('9932cc')"> </a></td>
+            <td style="color:#9932CC">Dark Orchid</td>
+            <td>Dark Orchid</td>
+            <td>#9932CC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8b008b"><a href="javascript:colorchange('8b008b')"> </a></td>
+            <td style="color:#8B008B">Dark Magenta</td>
+            <td>Dark Magenta</td>
+            <td>#8B008B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a020f0"><a href="javascript:colorchange('a020f0')"> </a></td>
+            <td style="color:#A020F0">Veronica</td>
+            <td>Veronica</td>
+            <td>#A020F0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#df73ff"><a href="javascript:colorchange('df73ff')"> </a></td>
+            <td style="color:#DF73FF">Heliotrope</td>
+            <td>Heliotrope</td>
+            <td>#DF73FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9a4eae"><a href="javascript:colorchange('9a4eae')"> </a></td>
+            <td style="color:#9A4EAE">Purpureus</td>
+            <td>Purpureus</td>
+            <td>#9A4EAE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4e2a84"><a href="javascript:colorchange('4e2a84')"> </a></td>
+            <td style="color:#4E2A84">Northwestern Purple</td>
+            <td>Northwestern Purple</td>
+            <td>#4E2A84</td>
+        </tr>
+        <tr>
+            <td style="background-color:#512888"><a href="javascript:colorchange('512888')"> </a></td>
+            <td style="color:#512888">KSU Purple</td>
+            <td>KSU Purple</td>
+            <td>#512888</td>
+        </tr>
+        <tr>
+            <td style="background-color:#86608e"><a href="javascript:colorchange('86608e')"> </a></td>
+            <td style="color:#86608E">Pomp and Power</td>
+            <td>Pomp and Power</td>
+            <td>#86608E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#880085"><a href="javascript:colorchange('880085')"> </a></td>
+            <td style="color:#880085">Mardi Gras</td>
+            <td>Mardi Gras</td>
+            <td>#880085</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6c3082"><a href="javascript:colorchange('6c3082')"> </a></td>
+            <td style="color:#6C3082">Eminence</td>
+            <td>Eminence</td>
+            <td>#6C3082</td>
+        </tr>
+        <tr>
+            <td style="background-color:#78184a"><a href="javascript:colorchange('78184a')"> </a></td>
+            <td style="color:#78184A">Pansy Purple</td>
+            <td>Pansy Purple</td>
+            <td>#78184A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#72246c"><a href="javascript:colorchange('72246c')"> </a></td>
+            <td style="color:#72246C">Palatinate</td>
+            <td>Palatinate</td>
+            <td>#72246C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#301934"><a href="javascript:colorchange('301934')"> </a></td>
+            <td style="color:#301934">Dark Purple</td>
+            <td>Dark Purple</td>
+            <td>#301934</td>
+        </tr>
+        <tr>
+            <td style="background-color:#702963"><a href="javascript:colorchange('702963')"> </a></td>
+            <td style="color:#702963">Byzantium</td>
+            <td>Byzantium</td>
+            <td>#702963</td>
+        </tr>
+        <tr>
+            <td style="background-color:#563c5c"><a href="javascript:colorchange('563c5c')"> </a></td>
+            <td style="color:#563C5C">English Violet</td>
+            <td>English Violet</td>
+            <td>#563C5C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6f4685"><a href="javascript:colorchange('6f4685')"> </a></td>
+            <td style="color:#6F4685">Affair</td>
+            <td>Affair</td>
+            <td>#6F4685</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6f456e"><a href="javascript:colorchange('6f456e')"> </a></td>
+            <td style="color:#6F456E">Long Distance</td>
+            <td>Long Distance</td>
+            <td>#6F456E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#493f5e"><a href="javascript:colorchange('493f5e')"> </a></td>
+            <td style="color:#493F5E">Prince Charming</td>
+            <td>Prince Charming</td>
+            <td>#493F5E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8e4785"><a href="javascript:colorchange('8e4785')"> </a></td>
+            <td style="color:#8E4785">Lipstick Stain</td>
+            <td>Lipstick Stain</td>
+            <td>#8E4785</td>
+        </tr>
+        <tr>
+            <td style="background-color:#720058"><a href="javascript:colorchange('720058')"> </a></td>
+            <td style="color:#720058">Pompadour</td>
+            <td>Pompadour</td>
+            <td>#720058</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6f2da8"><a href="javascript:colorchange('6f2da8')"> </a></td>
+            <td style="color:#6F2DA8">Grape Color</td>
+            <td>Grape Color</td>
+            <td>#6F2DA8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9a2ca0"><a href="javascript:colorchange('9a2ca0')"> </a></td>
+            <td style="color:#9A2CA0">Pizza Edge</td>
+            <td>Pizza Edge</td>
+            <td>#9A2CA0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#66023c"><a href="javascript:colorchange('66023c')"> </a></td>
+            <td style="color:#66023C">Tyrian Purple</td>
+            <td>Tyrian Purple</td>
+            <td>#66023C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#645394"><a href="javascript:colorchange('645394')"> </a></td>
+            <td style="color:#645394">Ultra Violet</td>
+            <td>Ultra Violet</td>
+            <td>#645394</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bf00ff"><a href="javascript:colorchange('bf00ff')"> </a></td>
+            <td style="color:#BF00FF">Electric Purple</td>
+            <td>Electric Purple</td>
+            <td>#BF00FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7851a9"><a href="javascript:colorchange('7851a9')"> </a></td>
+            <td style="color:#7851A9">Studio</td>
+            <td>Studio</td>
+            <td>#7851A9</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-purple-color-names-html-hex-rgb-codes/">purple colors</a>.</p>
+
+    <h2 id="pink">Pink Color Names</h2>
+    <p><a href="https://www.color-meanings.com/pink-color-meaning-the-color-pink/" data-type="post" data-id="162">The color pink</a> symbolizes compassion, love, femininity, and playfulness.</p>
+    <p><strong>Here are 50 pink color names with hex codes:</strong></p>
+    <table id="tbl_pink">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#f699cd"><a href="javascript:colorchange('f699cd')"> </a></td>
+            <td style="color:#F699CD">PINK</td>
+            <td>PINK</td>
+            <td>#F699CD</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc94af"><a href="javascript:colorchange('fc94af')"> </a></td>
+            <td style="color:#FC94AF">ROSE</td>
+            <td>ROSE</td>
+            <td>#FC94AF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc46aa"><a href="javascript:colorchange('fc46aa')"> </a></td>
+            <td style="color:#FC46AA">FRENCH FUCHSIA</td>
+            <td>FRENCH FUCHSIA</td>
+            <td>#FC46AA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f25278"><a href="javascript:colorchange('f25278')"> </a></td>
+            <td style="color:#F25278">PUNCH</td>
+            <td>PUNCH</td>
+            <td>#F25278</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fec5e5"><a href="javascript:colorchange('fec5e5')"> </a></td>
+            <td style="color:#FEC5E5">BLUSH PINK</td>
+            <td>BLUSH PINK</td>
+            <td>#FEC5E5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fe7f9c"><a href="javascript:colorchange('fe7f9c')"> </a></td>
+            <td style="color:#FE7F9C">WATERMELON</td>
+            <td>WATERMELON</td>
+            <td>#FE7F9C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fda4ba"><a href="javascript:colorchange('fda4ba')"> </a></td>
+            <td style="color:#FDA4BA">FLAMINGO</td>
+            <td>FLAMINGO</td>
+            <td>#FDA4BA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f26b8a"><a href="javascript:colorchange('f26b8a')"> </a></td>
+            <td style="color:#F26B8A">ROUGE</td>
+            <td>ROUGE</td>
+            <td>#F26B8A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdab9f"><a href="javascript:colorchange('fdab9f')"> </a></td>
+            <td style="color:#FDAB9F">LIGHT SALMON</td>
+            <td>LIGHT SALMON</td>
+            <td>#FDAB9F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fe7d6a"><a href="javascript:colorchange('fe7d6a')"> </a></td>
+            <td style="color:#FE7D6A">CORAL PINK</td>
+            <td>CORAL PINK</td>
+            <td>#FE7D6A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc9483"><a href="javascript:colorchange('fc9483')"> </a></td>
+            <td style="color:#FC9483">PEACH</td>
+            <td>PEACH</td>
+            <td>#FC9483</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fc4c4e"><a href="javascript:colorchange('fc4c4e')"> </a></td>
+            <td style="color:#FC4C4E">STRAWBERRY</td>
+            <td>STRAWBERRY</td>
+            <td>#FC4C4E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9e4244"><a href="javascript:colorchange('9e4244')"> </a></td>
+            <td style="color:#9E4244">ROSEWOOD</td>
+            <td>ROSEWOOD</td>
+            <td>#9E4244</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fcbacb"><a href="javascript:colorchange('fcbacb')"> </a></td>
+            <td style="color:#FCBACB">LEMONADE</td>
+            <td>LEMONADE</td>
+            <td>#FCBACB</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fa86c4"><a href="javascript:colorchange('fa86c4')"> </a></td>
+            <td style="color:#FA86C4">TAFFY</td>
+            <td>TAFFY</td>
+            <td>#FA86C4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fd5da8"><a href="javascript:colorchange('fd5da8')"> </a></td>
+            <td style="color:#FD5DA8">BUBBLEGUM</td>
+            <td>BUBBLEGUM</td>
+            <td>#FD5DA8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f79ac0"><a href="javascript:colorchange('f79ac0')"> </a></td>
+            <td style="color:#F79AC0">BALLET SLIPPER</td>
+            <td>BALLET SLIPPER</td>
+            <td>#F79AC0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f2b8c6"><a href="javascript:colorchange('f2b8c6')"> </a></td>
+            <td style="color:#F2B8C6">LEMONADE CREPE</td>
+            <td>LEMONADE CREPE</td>
+            <td>#F2B8C6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e11584"><a href="javascript:colorchange('e11584')"> </a></td>
+            <td style="color:#E11584">MAGENTA PROCESS</td>
+            <td>MAGENTA PROCESS</td>
+            <td>#E11584</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff1694"><a href="javascript:colorchange('ff1694')"> </a></td>
+            <td style="color:#FF1694">HOT PINK</td>
+            <td>HOT PINK</td>
+            <td>#FF1694</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e52b50"><a href="javascript:colorchange('e52b50')"> </a></td>
+            <td style="color:#E52B50">AMARANTH PINK</td>
+            <td>AMARANTH PINK</td>
+            <td>#E52B50</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e3256b"><a href="javascript:colorchange('e3256b')"> </a></td>
+            <td style="color:#E3256B">RAZZMATAZZ</td>
+            <td>RAZZMATAZZ</td>
+            <td>#E3256B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffa6c9"><a href="javascript:colorchange('ffa6c9')"> </a></td>
+            <td style="color:#FFA6C9">CARNATION</td>
+            <td>CARNATION</td>
+            <td>#FFA6C9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff9999"><a href="javascript:colorchange('ff9999')"> </a></td>
+            <td style="color:#FF9999">Salmon</td>
+            <td>Salmon</td>
+            <td>#FF9999</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffb6c1"><a href="javascript:colorchange('ffb6c1')"> </a></td>
+            <td style="color:#FFB6C1">Light pink</strong>&td;
+            <td>Light pink</strong< /td>
+            <td>FFB6C1</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffd1dc"><a href="javascript:colorchange('ffd1dc')"> </a></td>
+            <td style="color:#FFD1DC">Pastel pink</td>
+            <td>Pastel pink</td>
+            <td>#FFD1DC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffb7c5"><a href="javascript:colorchange('ffb7c5')"> </a></td>
+            <td style="color:#FFB7C5">Cherry blossom</td>
+            <td>Cherry blossom</td>
+            <td>#FFB7C5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f4c2c2"><a href="javascript:colorchange('f4c2c2')"> </a></td>
+            <td style="color:#F4C2C2">Baby pink</strong>&td;
+            <td>Baby pink</strong< /td>
+            <td>F4C2C2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e75480"><a href="javascript:colorchange('e75480')"> </a></td>
+            <td style="color:#E75480">Dark pink</strong>&td;
+            <td>Dark pink</strong< /td>
+            <td>E75480</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff007f"><a href="javascript:colorchange('ff007f')"> </a></td>
+            <td style="color:#FF007F">Bright pink</strong>&td;
+            <td>Bright pink</strong< /td>
+            <td>FF007F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff6ec7"><a href="javascript:colorchange('ff6ec7')"> </a></td>
+            <td style="color:#FF6EC7">Neon pink</td>
+            <td>Neon pink</td>
+            <td>#FF6EC7</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff00ff"><a href="javascript:colorchange('ff00ff')"> </a></td>
+            <td style="color:#FF00FF">Magenta</td>
+            <td>Magenta</td>
+            <td>#FF00FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff8e8e"><a href="javascript:colorchange('ff8e8e')"> </a></td>
+            <td style="color:#FF8E8E">Tulip pink</td>
+            <td>Tulip pink</td>
+            <td>#FF8E8E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fddde6"><a href="javascript:colorchange('fddde6')"> </a></td>
+            <td style="color:#FDDDE6">Piggy Pink</td>
+            <td>Piggy Pink</td>
+            <td>#FDDDE6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffbcd9"><a href="javascript:colorchange('ffbcd9')"> </a></td>
+            <td style="color:#FFBCD9">Cotton Candy</td>
+            <td>Cotton Candy</td>
+            <td>#FFBCD9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#efbbcc"><a href="javascript:colorchange('efbbcc')"> </a></td>
+            <td style="color:#EFBBCC">Cameo pink</td>
+            <td>Cameo pink</td>
+            <td>#EFBBCC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f64a8a"><a href="javascript:colorchange('f64a8a')"> </a></td>
+            <td style="color:#F64A8A">French pink</td>
+            <td>French pink</td>
+            <td>#F64A8A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f77fbe"><a href="javascript:colorchange('f77fbe')"> </a></td>
+            <td style="color:#F77FBE">Persian pink</td>
+            <td>Persian pink</td>
+            <td>#F77FBE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e4717a"><a href="javascript:colorchange('e4717a')"> </a></td>
+            <td style="color:#E4717A">Candy pink</td>
+            <td>Candy pink</td>
+            <td>#E4717A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#de3163"><a href="javascript:colorchange('de3163')"> </a></td>
+            <td style="color:#DE3163">Cherry pink</td>
+            <td>Cherry pink</td>
+            <td>#DE3163</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc4e5c"><a href="javascript:colorchange('cc4e5c')"> </a></td>
+            <td style="color:#CC4E5C">Dark Terra cotta</td>
+            <td>Dark Terra cotta</td>
+            <td>#CC4E5C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff1493"><a href="javascript:colorchange('ff1493')"> </a></td>
+            <td style="color:#FF1493">Deep Pink</td>
+            <td>Deep Pink</td>
+            <td>#FF1493</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e5ccc9"><a href="javascript:colorchange('e5ccc9')"> </a></td>
+            <td style="color:#E5CCC9">Dust Storm</td>
+            <td>Dust Storm</td>
+            <td>#E5CCC9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f6adc6"><a href="javascript:colorchange('f6adc6')"> </a></td>
+            <td style="color:#F6ADC6">Nadeshiko Pink</td>
+            <td>Nadeshiko Pink</td>
+            <td>#F6ADC6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ff43a4"><a href="javascript:colorchange('ff43a4')"> </a></td>
+            <td style="color:#FF43A4">Wild Strawberry</td>
+            <td>Wild Strawberry</td>
+            <td>#FF43A4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d10056"><a href="javascript:colorchange('d10056')"> </a></td>
+            <td style="color:#D10056">Rubine Red</td>
+            <td>Rubine Red</td>
+            <td>#D10056</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f400a1"><a href="javascript:colorchange('f400a1')"> </a></td>
+            <td style="color:#F400A1">Hollywood Cerise</td>
+            <td>Hollywood Cerise</td>
+            <td>#F400A1</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e4007c"><a href="javascript:colorchange('e4007c')"> </a></td>
+            <td style="color:#E4007C">Mexican Pink</td>
+            <td>Mexican Pink</td>
+            <td>#E4007C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc3366"><a href="javascript:colorchange('cc3366')"> </a></td>
+            <td style="color:#CC3366">Steel Pink</td>
+            <td>Steel Pink</td>
+            <td>#CC3366</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f9429e"><a href="javascript:colorchange('f9429e')"> </a></td>
+            <td style="color:#F9429E">Rose Bonbon</td>
+            <td>Rose Bonbon</td>
+            <td>#F9429E</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-pink-color-names-html-hex-rgb-codes/">pink colors</a>.</p>
+
+    <h2 id="brown">Brown Color Names</h2>
+    <p><a href="https://www.color-meanings.com/brown-color-meaning-the-color-brown/" data-type="post" data-id="68">The color brown</a> symbolizes reliability, stability, honesty, and comfort.</p>
+    <p><strong>Here are 50 brown color names with hex codes:</strong></p>
+    <table id="tbl_brown">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#231709"><a href="javascript:colorchange('231709')"> </a></td>
+            <td style="color:#231709">BROWN OIL</td>
+            <td>BROWN OIL</td>
+            <td>#231709</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4b371c"><a href="javascript:colorchange('4b371c')"> </a></td>
+            <td style="color:#4B371C">ROASTED COFFEE</td>
+            <td>ROASTED COFFEE</td>
+            <td>#4B371C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3c280d"><a href="javascript:colorchange('3c280d')"> </a></td>
+            <td style="color:#3C280D">MOCHA</td>
+            <td>MOCHA</td>
+            <td>#3C280D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#795c34"><a href="javascript:colorchange('795c34')"> </a></td>
+            <td style="color:#795C34">PEANUT BROWN</td>
+            <td>PEANUT BROWN</td>
+            <td>#795C34</td>
+        </tr>
+        <tr>
+            <td style="background-color:#362511"><a href="javascript:colorchange('362511')"> </a></td>
+            <td style="color:#362511">CAROB</td>
+            <td>CAROB</td>
+            <td>#362511</td>
+        </tr>
+        <tr>
+            <td style="background-color:#371d10"><a href="javascript:colorchange('371d10')"> </a></td>
+            <td style="color:#371D10">HICKORY</td>
+            <td>HICKORY</td>
+            <td>#371D10</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3f301d"><a href="javascript:colorchange('3f301d')"> </a></td>
+            <td style="color:#3F301D">WOOD</td>
+            <td>WOOD</td>
+            <td>#3F301D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4a2511"><a href="javascript:colorchange('4a2511')"> </a></td>
+            <td style="color:#4A2511">PECAN</td>
+            <td>PECAN</td>
+            <td>#4A2511</td>
+        </tr>
+        <tr>
+            <td style="background-color:#432616"><a href="javascript:colorchange('432616')"> </a></td>
+            <td style="color:#432616">WALNUT</td>
+            <td>WALNUT</td>
+            <td>#432616</td>
+        </tr>
+        <tr>
+            <td style="background-color:#65350f"><a href="javascript:colorchange('65350f')"> </a></td>
+            <td style="color:#65350F">CARAMEL</td>
+            <td>CARAMEL</td>
+            <td>#65350F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5e2c04"><a href="javascript:colorchange('5e2c04')"> </a></td>
+            <td style="color:#5E2C04">GINGERBREAD</td>
+            <td>GINGERBREAD</td>
+            <td>#5E2C04</td>
+        </tr>
+        <tr>
+            <td style="background-color:#481f01"><a href="javascript:colorchange('481f01')"> </a></td>
+            <td style="color:#481F01">SYRUP</td>
+            <td>SYRUP</td>
+            <td>#481F01</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2e1503"><a href="javascript:colorchange('2e1503')"> </a></td>
+            <td style="color:#2E1503">DARK CHOCOLATE</td>
+            <td>DARK CHOCOLATE</td>
+            <td>#2E1503</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9a7b4f"><a href="javascript:colorchange('9a7b4f')"> </a></td>
+            <td style="color:#9A7B4F">TORTILLA</td>
+            <td>TORTILLA</td>
+            <td>#9A7B4F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#352315"><a href="javascript:colorchange('352315')"> </a></td>
+            <td style="color:#352315">UMBER</td>
+            <td>UMBER</td>
+            <td>#352315</td>
+        </tr>
+        <tr>
+            <td style="background-color:#80471c"><a href="javascript:colorchange('80471c')"> </a></td>
+            <td style="color:#80471C">TAWNY</td>
+            <td>TAWNY</td>
+            <td>#80471C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3b1e08"><a href="javascript:colorchange('3b1e08')"> </a></td>
+            <td style="color:#3B1E08">BRUNETTE</td>
+            <td>BRUNETTE</td>
+            <td>#3B1E08</td>
+        </tr>
+        <tr>
+            <td style="background-color:#652a0e"><a href="javascript:colorchange('652a0e')"> </a></td>
+            <td style="color:#652A0E">CINNAMON BROWN</td>
+            <td>CINNAMON BROWN</td>
+            <td>#652A0E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#532915"><a href="javascript:colorchange('532915')"> </a></td>
+            <td style="color:#532915">PENNY</td>
+            <td>PENNY</td>
+            <td>#532915</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4a3728"><a href="javascript:colorchange('4a3728')"> </a></td>
+            <td style="color:#4A3728">CEDAR BROWN</td>
+            <td>CEDAR BROWN</td>
+            <td>#4A3728</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9f8170"><a href="javascript:colorchange('9f8170')"> </a></td>
+            <td style="color:#9F8170">BEAVER</td>
+            <td>BEAVER</td>
+            <td>#9F8170</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3d2b1f"><a href="javascript:colorchange('3d2b1f')"> </a></td>
+            <td style="color:#3D2B1F">BISTRE</td>
+            <td>BISTRE</td>
+            <td>#3D2B1F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#79443b"><a href="javascript:colorchange('79443b')"> </a></td>
+            <td style="color:#79443B">BOLE</td>
+            <td>BOLE</td>
+            <td>#79443B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8a3324"><a href="javascript:colorchange('8a3324')"> </a></td>
+            <td style="color:#8A3324">Burnt umber</td>
+            <td>Burnt umber</td>
+            <td>#8A3324</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a67b5b"><a href="javascript:colorchange('a67b5b')"> </a></td>
+            <td style="color:#A67B5B">Cafe au lait</td>
+            <td>Cafe au lait</td>
+            <td>#A67B5B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4b3621"><a href="javascript:colorchange('4b3621')"> </a></td>
+            <td style="color:#4B3621">Cafe noir</td>
+            <td>Cafe noir</td>
+            <td>#4B3621</td>
+        </tr>
+        <tr>
+            <td style="background-color:#6f4e37"><a href="javascript:colorchange('6f4e37')"> </a></td>
+            <td style="color:#6F4E37">Coffee</td>
+            <td>Coffee</td>
+            <td>#6F4E37</td>
+        </tr>
+        <tr>
+            <td style="background-color:#704241"><a href="javascript:colorchange('704241')"> </a></td>
+            <td style="color:#704241">Deep coffee</td>
+            <td>Deep coffee</td>
+            <td>#704241</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b87333"><a href="javascript:colorchange('b87333')"> </a></td>
+            <td style="color:#B87333">Copper</td>
+            <td>Copper</td>
+            <td>#B87333</td>
+        </tr>
+        <tr>
+            <td style="background-color:#654321"><a href="javascript:colorchange('654321')"> </a></td>
+            <td style="color:#654321">Dark brown</td>
+            <td>Dark brown</td>
+            <td>#654321</td>
+        </tr>
+        <tr>
+            <td style="background-color:#483c32"><a href="javascript:colorchange('483c32')"> </a></td>
+            <td style="color:#483C32">Taupe</td>
+            <td>Taupe</td>
+            <td>#483C32</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c2b280"><a href="javascript:colorchange('c2b280')"> </a></td>
+            <td style="color:#C2B280">Ecru</td>
+            <td>Ecru</td>
+            <td>#C2B280</td>
+        </tr>
+        <tr>
+            <td style="background-color:#996515"><a href="javascript:colorchange('996515')"> </a></td>
+            <td style="color:#996515">Golden brown</td>
+            <td>Golden brown</td>
+            <td>#996515</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c3b091"><a href="javascript:colorchange('c3b091')"> </a></td>
+            <td style="color:#C3B091">Khaki</td>
+            <td>Khaki</td>
+            <td>#C3B091</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cc7722"><a href="javascript:colorchange('cc7722')"> </a></td>
+            <td style="color:#CC7722">Ochre</td>
+            <td>Ochre</td>
+            <td>#CC7722</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b5651d"><a href="javascript:colorchange('b5651d')"> </a></td>
+            <td style="color:#B5651D">Light brown</td>
+            <td>Light brown</td>
+            <td>#B5651D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8b4513"><a href="javascript:colorchange('8b4513')"> </a></td>
+            <td style="color:#8B4513">Saddle brown</td>
+            <td>Saddle brown</td>
+            <td>#8B4513</td>
+        </tr>
+        <tr>
+            <td style="background-color:#80461b"><a href="javascript:colorchange('80461b')"> </a></td>
+            <td style="color:#80461B">Russet</td>
+            <td>Russet</td>
+            <td>#80461B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a0522d"><a href="javascript:colorchange('a0522d')"> </a></td>
+            <td style="color:#A0522D">Sienna</td>
+            <td>Sienna</td>
+            <td>#A0522D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cd9575"><a href="javascript:colorchange('cd9575')"> </a></td>
+            <td style="color:#CD9575">Antique brass</td>
+            <td>Antique brass</td>
+            <td>#CD9575</td>
+        </tr>
+        <tr>
+            <td style="background-color:#deb887"><a href="javascript:colorchange('deb887')"> </a></td>
+            <td style="color:#DEB887">Burlywood</td>
+            <td>Burlywood</td>
+            <td>#DEB887</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cd853f"><a href="javascript:colorchange('cd853f')"> </a></td>
+            <td style="color:#CD853F">Peru</td>
+            <td>Peru</td>
+            <td>#CD853F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#deaa88"><a href="javascript:colorchange('deaa88')"> </a></td>
+            <td style="color:#DEAA88">Tumbleweed</td>
+            <td>Tumbleweed</td>
+            <td>#DEAA88</td>
+        </tr>
+        <tr>
+            <td style="background-color:#d1bea8"><a href="javascript:colorchange('d1bea8')"> </a></td>
+            <td style="color:#D1BEA8">Dark vanilla</td>
+            <td>Dark vanilla</td>
+            <td>#D1BEA8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c19a6b"><a href="javascript:colorchange('c19a6b')"> </a></td>
+            <td style="color:#C19A6B">Wood brown</td>
+            <td>Wood brown</td>
+            <td>#C19A6B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a0785a"><a href="javascript:colorchange('a0785a')"> </a></td>
+            <td style="color:#A0785A">Chamoisee</td>
+            <td>Chamoisee</td>
+            <td>#A0785A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ba8759"><a href="javascript:colorchange('ba8759')"> </a></td>
+            <td style="color:#BA8759">Deer</td>
+            <td>Deer</td>
+            <td>#BA8759</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9b7653"><a href="javascript:colorchange('9b7653')"> </a></td>
+            <td style="color:#9B7653">Dirt</td>
+            <td>Dirt</td>
+            <td>#9B7653</td>
+        </tr>
+        <tr>
+            <td style="background-color:#965a3e"><a href="javascript:colorchange('965a3e')"> </a></td>
+            <td style="color:#965A3E">Coconut</td>
+            <td>Coconut</td>
+            <td>#965A3E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a75502"><a href="javascript:colorchange('a75502')"> </a></td>
+            <td style="color:#A75502">Windsor tan</td>
+            <td>Windsor tan</td>
+            <td>#A75502</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-brown-color-names-html-hex-rgb-codes/">brown colors</a>.</p>
+
+    <h2 id="black">Black Color Names</h2>
+    <p><a href="https://www.color-meanings.com/black-color-meaning-the-color-black/" data-type="post" data-id="176">The color black</a> symbolizes protection, power, elegance, and sophistication.</p>
+    <p><strong>Here are 50 black color names with hex codes:</strong></p>
+    <table id="tbl_black">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#000000"><a href="javascript:colorchange('000000')"> </a></td>
+            <td>BLACK</td>
+            <td>#000000</td>
+        </tr>
+        <tr>
+            <td style="background-color:#080402"><a href="javascript:colorchange('080402')"> </a></td>
+            <td>EBONY</td>
+            <td>#080402</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0d0907"><a href="javascript:colorchange('0d0907')"> </a></td>
+            <td>CROW</td>
+            <td>#0D0907</td>
+        </tr>
+        <tr>
+            <td style="background-color:#28231d"><a href="javascript:colorchange('28231d')"> </a></td>
+            <td>CHARCOAL</td>
+            <td>#28231D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#040406"><a href="javascript:colorchange('040406')"> </a></td>
+            <td>MIDNIGHT</td>
+            <td>#040406</td>
+        </tr>
+        <tr>
+            <td style="background-color:#070504"><a href="javascript:colorchange('070504')"> </a></td>
+            <td>INK</td>
+            <td>#070504</td>
+        </tr>
+        <tr>
+            <td style="background-color:#050301"><a href="javascript:colorchange('050301')"> </a></td>
+            <td>RAVEN</td>
+            <td>#050301</td>
+        </tr>
+        <tr>
+            <td style="background-color:#050100"><a href="javascript:colorchange('050100')"> </a></td>
+            <td>OIL</td>
+            <td>#050100</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0a0806"><a href="javascript:colorchange('0a0806')"> </a></td>
+            <td>GREASE</td>
+            <td>#0A0806</td>
+        </tr>
+        <tr>
+            <td style="background-color:#030104"><a href="javascript:colorchange('030104')"> </a></td>
+            <td>ONYX</td>
+            <td>#030104</td>
+        </tr>
+        <tr>
+            <td style="background-color:#030001"><a href="javascript:colorchange('030001')"> </a></td>
+            <td>PITCH</td>
+            <td>#030001</td>
+        </tr>
+        <tr>
+            <td style="background-color:#160d08"><a href="javascript:colorchange('160d08')"> </a></td>
+            <td>SOOT</td>
+            <td>#160D08</td>
+        </tr>
+        <tr>
+            <td style="background-color:#060606"><a href="javascript:colorchange('060606')"> </a></td>
+            <td>SABLE</td>
+            <td>#060606</td>
+        </tr>
+        <tr>
+            <td style="background-color:#030303"><a href="javascript:colorchange('030303')"> </a></td>
+            <td>JET BLACK</td>
+            <td>#030303</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0c0908"><a href="javascript:colorchange('0c0908')"> </a></td>
+            <td>COAL</td>
+            <td>#0C0908</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0e0c0a"><a href="javascript:colorchange('0e0c0a')"> </a></td>
+            <td>METAL</td>
+            <td>#0E0C0A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#020403"><a href="javascript:colorchange('020403')"> </a></td>
+            <td>OBSIDIAN</td>
+            <td>#020403</td>
+        </tr>
+        <tr>
+            <td style="background-color:#000302"><a href="javascript:colorchange('000302')"> </a></td>
+            <td>JADE</td>
+            <td>#000302</td>
+        </tr>
+        <tr>
+            <td style="background-color:#040200"><a href="javascript:colorchange('040200')"> </a></td>
+            <td>SPIDER</td>
+            <td>#040200</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0b0705"><a href="javascript:colorchange('0b0705')"> </a></td>
+            <td>LEATHER</td>
+            <td>#0B0705</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0c0404"><a href="javascript:colorchange('0c0404')"> </a></td>
+            <td>ASPHALT</td>
+            <td>#0C0404</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1a1110"><a href="javascript:colorchange('1a1110')"> </a></td>
+            <td>LICORICE</td>
+            <td>#1A1110</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0c090a"><a href="javascript:colorchange('0c090a')"> </a></td>
+            <td>NIGHT</td>
+            <td>#0C090A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#232b2b"><a href="javascript:colorchange('232b2b')"> </a></td>
+            <td>Charleston green</td>
+            <td>#232B2B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1a2421"><a href="javascript:colorchange('1a2421')"> </a></td>
+            <td>Dark jungle green</td>
+            <td>#1A2421</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1b1b1b"><a href="javascript:colorchange('1b1b1b')"> </a></td>
+            <td>Eerie black</td>
+            <td>#1B1B1B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#242124"><a href="javascript:colorchange('242124')"> </a></td>
+            <td>Raisin black</td>
+            <td>#242124</td>
+        </tr>
+        <tr>
+            <td style="background-color:#100c08"><a href="javascript:colorchange('100c08')"> </a></td>
+            <td>Smoky black</td>
+            <td>#100C08</td>
+        </tr>
+        <tr>
+            <td style="background-color:#010127"><a href="javascript:colorchange('010127')"> </a></td>
+            <td>Black Rock</td>
+            <td>#010127</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0b0b0b"><a href="javascript:colorchange('0b0b0b')"> </a></td>
+            <td>Neutral Black</td>
+            <td>#0B0B0B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#191c27"><a href="javascript:colorchange('191c27')"> </a></td>
+            <td>Black Denim</td>
+            <td>#191C27</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0f0404"><a href="javascript:colorchange('0f0404')"> </a></td>
+            <td>Vampire Black</td>
+            <td>#0F0404</td>
+        </tr>
+        <tr>
+            <td style="background-color:#151922"><a href="javascript:colorchange('151922')"> </a></td>
+            <td>Cool Black</td>
+            <td>#151922</td>
+        </tr>
+        <tr>
+            <td style="background-color:#191c20"><a href="javascript:colorchange('191c20')"> </a></td>
+            <td>Frost Black</td>
+            <td>#191C20</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0e0c01"><a href="javascript:colorchange('0e0c01')"> </a></td>
+            <td>Power Black</td>
+            <td>#0E0C01</td>
+        </tr>
+        <tr>
+            <td style="background-color:#100e09"><a href="javascript:colorchange('100e09')"> </a></td>
+            <td>Premium Black</td>
+            <td>#100E09</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0b0510"><a href="javascript:colorchange('0b0510')"> </a></td>
+            <td>Black Magic</td>
+            <td>#0B0510</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1a2228"><a href="javascript:colorchange('1a2228')"> </a></td>
+            <td>Alien Black</td>
+            <td>#1A2228</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1b1811"><a href="javascript:colorchange('1b1811')"> </a></td>
+            <td>Black Chocolate</td>
+            <td>#1B1811</td>
+        </tr>
+        <tr>
+            <td style="background-color:#120321"><a href="javascript:colorchange('120321')"> </a></td>
+            <td>Gothic Grape</td>
+            <td>#120321</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1a1a1a"><a href="javascript:colorchange('1a1a1a')"> </a></td>
+            <td>Metropolis</td>
+            <td>#1A1A1A</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1c1c1c"><a href="javascript:colorchange('1c1c1c')"> </a></td>
+            <td>Night Shadow</td>
+            <td>#1C1C1C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1a0f0f"><a href="javascript:colorchange('1a0f0f')"> </a></td>
+            <td>Dark Raisin</td>
+            <td>#1A0F0F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#161311"><a href="javascript:colorchange('161311')"> </a></td>
+            <td>Tea Bag</td>
+            <td>#161311</td>
+        </tr>
+        <tr>
+            <td style="background-color:#0d0e0e"><a href="javascript:colorchange('0d0e0e')"> </a></td>
+            <td>Tech Black</td>
+            <td>#0D0E0E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#161616"><a href="javascript:colorchange('161616')"> </a></td>
+            <td>Dull Black</td>
+            <td>#161616</td>
+        </tr>
+        <tr>
+            <td style="background-color:#010203"><a href="javascript:colorchange('010203')"> </a></td>
+            <td>Dark Black</td>
+            <td>#010203</td>
+        </tr>
+        <tr>
+            <td style="background-color:#07000b"><a href="javascript:colorchange('07000b')"> </a></td>
+            <td>Natural Black</td>
+            <td>#07000B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#1f201f"><a href="javascript:colorchange('1f201f')"> </a></td>
+            <td>Retro Black</td>
+            <td>#1F201F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#050203"><a href="javascript:colorchange('050203')"> </a></td>
+            <td>Deep Black</td>
+            <td>#050203</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-black-color-names-html-hex-rgb-codes/">black colors</a>.</p>
+
+    <h2 id="gray">Gray Color Names</h2>
+    <p><a href="https://www.color-meanings.com/gray-color-meaning-the-color-gray/" data-type="post" data-id="84">The color gray</a> symbolizes compromise, neutrality, control, and practicality.</p>
+    <p><strong>Here are 50 gray color names with hex codes:</strong></p>
+    <table id="tbl_gray">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#808080"><a href="javascript:colorchange('808080')"> </a></td>
+            <td style="color:#808080">GRAY</td>
+            <td>GRAY</td>
+            <td>#808080</td>
+        </tr>
+        <tr>
+            <td style="background-color:#373737"><a href="javascript:colorchange('373737')"> </a></td>
+            <td style="color:#373737">SHADOW</td>
+            <td>SHADOW</td>
+            <td>#373737</td>
+        </tr>
+        <tr>
+            <td style="background-color:#594d5b"><a href="javascript:colorchange('594d5b')"> </a></td>
+            <td style="color:#594D5B">GRAPHITE</td>
+            <td>GRAPHITE</td>
+            <td>#594D5B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#322d31"><a href="javascript:colorchange('322d31')"> </a></td>
+            <td style="color:#322D31">IRON</td>
+            <td>IRON</td>
+            <td>#322D31</td>
+        </tr>
+        <tr>
+            <td style="background-color:#696880"><a href="javascript:colorchange('696880')"> </a></td>
+            <td style="color:#696880">PEWTER</td>
+            <td>PEWTER</td>
+            <td>#696880</td>
+        </tr>
+        <tr>
+            <td style="background-color:#c5c6d0"><a href="javascript:colorchange('c5c6d0')"> </a></td>
+            <td style="color:#C5C6D0">CLOUD</td>
+            <td>CLOUD</td>
+            <td>#C5C6D0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#adadc9"><a href="javascript:colorchange('adadc9')"> </a></td>
+            <td style="color:#ADADC9">SILVER</td>
+            <td>SILVER</td>
+            <td>#ADADC9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#59515e"><a href="javascript:colorchange('59515e')"> </a></td>
+            <td style="color:#59515E">SMOKE</td>
+            <td>SMOKE</td>
+            <td>#59515E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3e3d53"><a href="javascript:colorchange('3e3d53')"> </a></td>
+            <td style="color:#3E3D53">DARK SLATE</td>
+            <td>DARK SLATE</td>
+            <td>#3E3D53</td>
+        </tr>
+        <tr>
+            <td style="background-color:#41424c"><a href="javascript:colorchange('41424c')"> </a></td>
+            <td style="color:#41424C">ANCHOR</td>
+            <td>ANCHOR</td>
+            <td>#41424C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#564c4d"><a href="javascript:colorchange('564c4d')"> </a></td>
+            <td style="color:#564C4D">ASH</td>
+            <td>ASH</td>
+            <td>#564C4D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4d4c5c"><a href="javascript:colorchange('4d4c5c')"> </a></td>
+            <td style="color:#4D4C5C">PORPOISE</td>
+            <td>PORPOISE</td>
+            <td>#4D4C5C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7c6e7f"><a href="javascript:colorchange('7c6e7f')"> </a></td>
+            <td style="color:#7C6E7F">DOVE</td>
+            <td>DOVE</td>
+            <td>#7C6E7F</td>
+        </tr>
+        <tr>
+            <td style="background-color:#655967"><a href="javascript:colorchange('655967')"> </a></td>
+            <td style="color:#655967">FOG</td>
+            <td>FOG</td>
+            <td>#655967</td>
+        </tr>
+        <tr>
+            <td style="background-color:#7f7d9c"><a href="javascript:colorchange('7f7d9c')"> </a></td>
+            <td style="color:#7F7D9C">FLINT</td>
+            <td>FLINT</td>
+            <td>#7F7D9C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#232023"><a href="javascript:colorchange('232023')"> </a></td>
+            <td style="color:#232023">CHARCOAL GRAY</td>
+            <td>CHARCOAL GRAY</td>
+            <td>#232023</td>
+        </tr>
+        <tr>
+            <td style="background-color:#333333"><a href="javascript:colorchange('333333')"> </a></td>
+            <td style="color:#333333">PEBBLE</td>
+            <td>PEBBLE</td>
+            <td>#333333</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3f3f4e"><a href="javascript:colorchange('3f3f4e')"> </a></td>
+            <td style="color:#3F3F4E">LEAD</td>
+            <td>LEAD</td>
+            <td>#3F3F4E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#9897a9"><a href="javascript:colorchange('9897a9')"> </a></td>
+            <td style="color:#9897A9">COIN</td>
+            <td>COIN</td>
+            <td>#9897A9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#787276"><a href="javascript:colorchange('787276')"> </a></td>
+            <td style="color:#787276">FOSSIL</td>
+            <td>FOSSIL</td>
+            <td>#787276</td>
+        </tr>
+        <tr>
+            <td style="background-color:#3b444b"><a href="javascript:colorchange('3b444b')"> </a></td>
+            <td style="color:#3B444B">ARSENIC</td>
+            <td>ARSENIC</td>
+            <td>#3B444B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#666a6d"><a href="javascript:colorchange('666a6d')"> </a></td>
+            <td style="color:#666A6D">NEVADA</td>
+            <td>NEVADA</td>
+            <td>#666A6D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5e5e5e"><a href="javascript:colorchange('5e5e5e')"> </a></td>
+            <td style="color:#5E5E5E">SCORPION</td>
+            <td>SCORPION</td>
+            <td>#5E5E5E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#848482"><a href="javascript:colorchange('848482')"> </a></td>
+            <td style="color:#848482">Battleship Gray</td>
+            <td>Battleship Gray</td>
+            <td>#848482</td>
+        </tr>
+        <tr>
+            <td style="background-color:#625d5d"><a href="javascript:colorchange('625d5d')"> </a></td>
+            <td style="color:#625D5D">Carbon Gray</td>
+            <td>Carbon Gray</td>
+            <td>#625D5D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#555555"><a href="javascript:colorchange('555555')"> </a></td>
+            <td style="color:#555555">Davy’s Gray</td>
+            <td>Davy’s Gray</td>
+            <td>#555555</td>
+        </tr>
+        <tr>
+            <td style="background-color:#696969"><a href="javascript:colorchange('696969')"> </a></td>
+            <td style="color:#696969">Dim Gray</td>
+            <td>Dim Gray</td>
+            <td>#696969</td>
+        </tr>
+        <tr>
+            <td style="background-color:#b6b6b4"><a href="javascript:colorchange('b6b6b4')"> </a></td>
+            <td style="color:#B6B6B4">Gray Cloud</td>
+            <td>Gray Cloud</td>
+            <td>#B6B6B4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#5c5858"><a href="javascript:colorchange('5c5858')"> </a></td>
+            <td style="color:#5C5858">Gray Dolphin</td>
+            <td>Gray Dolphin</td>
+            <td>#5C5858</td>
+        </tr>
+        <tr>
+            <td style="background-color:#504a4b"><a href="javascript:colorchange('504a4b')"> </a></td>
+            <td style="color:#504A4B">Gray Wolf</td>
+            <td>Gray Wolf</td>
+            <td>#504A4B</td>
+        </tr>
+        <tr>
+            <td style="background-color:#2a3439"><a href="javascript:colorchange('2a3439')"> </a></td>
+            <td style="color:#2A3439">Gunmetal</td>
+            <td>Gunmetal</td>
+            <td>#2A3439</td>
+        </tr>
+        <tr>
+            <td style="background-color:#4c5866"><a href="javascript:colorchange('4c5866')"> </a></td>
+            <td style="color:#4C5866">Marengo</td>
+            <td>Marengo</td>
+            <td>#4C5866</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bebebe"><a href="javascript:colorchange('bebebe')"> </a></td>
+            <td style="color:#BEBEBE">Medium Gray</td>
+            <td>Medium Gray</td>
+            <td>#BEBEBE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#727472"><a href="javascript:colorchange('727472')"> </a></td>
+            <td style="color:#727472">Nickel</td>
+            <td>Nickel</td>
+            <td>#727472</td>
+        </tr>
+        <tr>
+            <td style="background-color:#928e85"><a href="javascript:colorchange('928e85')"> </a></td>
+            <td style="color:#928E85">Stone Gray</td>
+            <td>Stone Gray</td>
+            <td>#928E85</td>
+        </tr>
+        <tr>
+            <td style="background-color:#414a4c"><a href="javascript:colorchange('414a4c')"> </a></td>
+            <td style="color:#414A4C">Outer Space</td>
+            <td>Outer Space</td>
+            <td>#414A4C</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8a7f8d"><a href="javascript:colorchange('8a7f8d')"> </a></td>
+            <td style="color:#8A7F8D">Rocket Metallic</td>
+            <td>Rocket Metallic</td>
+            <td>#8A7F8D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#acacac"><a href="javascript:colorchange('acacac')"> </a></td>
+            <td style="color:#ACACAC">Silver Chalice</td>
+            <td>Silver Chalice</td>
+            <td>#ACACAC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#726e6d"><a href="javascript:colorchange('726e6d')"> </a></td>
+            <td style="color:#726E6D">Smokey Gray</td>
+            <td>Smokey Gray</td>
+            <td>#726E6D</td>
+        </tr>
+        <tr>
+            <td style="background-color:#757575"><a href="javascript:colorchange('757575')"> </a></td>
+            <td style="color:#757575">Sonic Gray</td>
+            <td>Sonic Gray</td>
+            <td>#757575</td>
+        </tr>
+        <tr>
+            <td style="background-color:#989898"><a href="javascript:colorchange('989898')"> </a></td>
+            <td style="color:#989898">Spanish Gray</td>
+            <td>Spanish Gray</td>
+            <td>#989898</td>
+        </tr>
+        <tr>
+            <td style="background-color:#8b8589"><a href="javascript:colorchange('8b8589')"> </a></td>
+            <td style="color:#8B8589">Taupe Gray</td>
+            <td>Taupe Gray</td>
+            <td>#8B8589</td>
+        </tr>
+        <tr>
+            <td style="background-color:#565051"><a href="javascript:colorchange('565051')"> </a></td>
+            <td style="color:#565051">Vampire Gray</td>
+            <td>Vampire Gray</td>
+            <td>#565051</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bbbcb6"><a href="javascript:colorchange('bbbcb6')"> </a></td>
+            <td style="color:#BBBCB6">X11 Gray</td>
+            <td>X11 Gray</td>
+            <td>#BBBCB6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#746d69"><a href="javascript:colorchange('746d69')"> </a></td>
+            <td style="color:#746D69">Dark Silver</td>
+            <td>Dark Silver</td>
+            <td>#746D69</td>
+        </tr>
+        <tr>
+            <td style="background-color:#cccdc6"><a href="javascript:colorchange('cccdc6')"> </a></td>
+            <td style="color:#CCCDC6">Pastel Gray</td>
+            <td>Pastel Gray</td>
+            <td>#CCCDC6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#bcc2c2"><a href="javascript:colorchange('bcc2c2')"> </a></td>
+            <td style="color:#BCC2C2">Misty Gray</td>
+            <td>Misty Gray</td>
+            <td>#BCC2C2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#989692"><a href="javascript:colorchange('989692')"> </a></td>
+            <td style="color:#989692">Vintage Gray</td>
+            <td>Vintage Gray</td>
+            <td>#989692</td>
+        </tr>
+        <tr>
+            <td style="background-color:#63645e"><a href="javascript:colorchange('63645e')"> </a></td>
+            <td style="color:#63645E">Zombie Gray</td>
+            <td>Zombie Gray</td>
+            <td>#63645E</td>
+        </tr>
+        <tr>
+            <td style="background-color:#a1a1a1"><a href="javascript:colorchange('a1a1a1')"> </a></td>
+            <td style="color:#A1A1A1">Perfect Gray</td>
+            <td>Perfect Gray</td>
+            <td>#A1A1A1</td>
+        </tr>
+    </table>
+
+    <p><strong>Want more?</strong> Here is a list of 100+ <a href="https://www.color-meanings.com/shades-of-gray-color-names-html-hex-rgb-codes/">gray colors</a>.</p>
+
+    <h2 id="white">White Color Names</h2>
+    <p><a href="https://www.color-meanings.com/white-color-meaning-the-color-white/" data-type="post" data-id="132">The color white</a> symbolizes cleanliness, purity, innocence, and perfection.</p>
+    <p><strong>Here are 50 white color names with hex codes:</strong></p>
+    <table id="tbl_white">
+        <tr>
+            <th>Click color to set background</th>
+            <th>Name by its Color</th>
+            <th>Name</th>
+            <th>Sort by Hex</th>
+        </tr>
+        <tr>
+            <td style="background-color:#ffffff"><a href="javascript:colorchange('ffffff')"> </a></td>
+            <td style="color:#FFFFFF">WHITE</td>
+            <td>WHITE</td>
+            <td>#FFFFFF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbfcf8"><a href="javascript:colorchange('fbfcf8')"> </a></td>
+            <td style="color:#FBFCF8">PEARL</td>
+            <td>PEARL</td>
+            <td>#FBFCF8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fef9f3"><a href="javascript:colorchange('fef9f3')"> </a></td>
+            <td style="color:#FEF9F3">ALABASTER</td>
+            <td>ALABASTER</td>
+            <td>#FEF9F3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f5fefd"><a href="javascript:colorchange('f5fefd')"> </a></td>
+            <td style="color:#F5FEFD">SNOW</td>
+            <td>SNOW</td>
+            <td>#F5FEFD</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdf6e4"><a href="javascript:colorchange('fdf6e4')"> </a></td>
+            <td style="color:#FDF6E4">PALE IVORY</td>
+            <td>PALE IVORY</td>
+            <td>#FDF6E4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffada"><a href="javascript:colorchange('fffada')"> </a></td>
+            <td style="color:#FFFADA">CREAM</td>
+            <td>CREAM</td>
+            <td>#FFFADA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fff9e3"><a href="javascript:colorchange('fff9e3')"> </a></td>
+            <td style="color:#FFF9E3">EGGSHELL</td>
+            <td>EGGSHELL</td>
+            <td>#FFF9E3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbfbf9"><a href="javascript:colorchange('fbfbf9')"> </a></td>
+            <td style="color:#FBFBF9">COTTON</td>
+            <td>COTTON</td>
+            <td>#FBFBF9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbfaf2"><a href="javascript:colorchange('fbfaf2')"> </a></td>
+            <td style="color:#FBFAF2">CHIFFON</td>
+            <td>CHIFFON</td>
+            <td>#FBFAF2</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8eeec"><a href="javascript:colorchange('f8eeec')"> </a></td>
+            <td style="color:#F8EEEC">PINK SALT</td>
+            <td>PINK SALT</td>
+            <td>#F8EEEC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8f2ed"><a href="javascript:colorchange('f8f2ed')"> </a></td>
+            <td style="color:#F8F2ED">LACE</td>
+            <td>LACE</td>
+            <td>#F8F2ED</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fff1e6"><a href="javascript:colorchange('fff1e6')"> </a></td>
+            <td style="color:#FFF1E6">COCONUT MILK</td>
+            <td>COCONUT MILK</td>
+            <td>#FFF1E6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f3ead3"><a href="javascript:colorchange('f3ead3')"> </a></td>
+            <td style="color:#F3EAD3">LINEN</td>
+            <td>LINEN</td>
+            <td>#F3EAD3</td>
+        </tr>
+        <tr>
+            <td style="background-color:#e7decc"><a href="javascript:colorchange('e7decc')"> </a></td>
+            <td style="color:#E7DECC">BONE</td>
+            <td>BONE</td>
+            <td>#E7DECC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fafafa"><a href="javascript:colorchange('fafafa')"> </a></td>
+            <td style="color:#FAFAFA">DAISY</td>
+            <td>DAISY</td>
+            <td>#FAFAFA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbfcfa"><a href="javascript:colorchange('fbfcfa')"> </a></td>
+            <td style="color:#FBFCFA">POWDER</td>
+            <td>POWDER</td>
+            <td>#FBFCFA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ecfbfc"><a href="javascript:colorchange('ecfbfc')"> </a></td>
+            <td style="color:#ECFBFC">FROST</td>
+            <td>FROST</td>
+            <td>#ECFBFC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffefc"><a href="javascript:colorchange('fffefc')"> </a></td>
+            <td style="color:#FFFEFC">PORCELAIN</td>
+            <td>PORCELAIN</td>
+            <td>#FFFEFC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fbf5df"><a href="javascript:colorchange('fbf5df')"> </a></td>
+            <td style="color:#FBF5DF">PARCHMENT</td>
+            <td>PARCHMENT</td>
+            <td>#FBF5DF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#faf5ef"><a href="javascript:colorchange('faf5ef')"> </a></td>
+            <td style="color:#FAF5EF">RICE</td>
+            <td>RICE</td>
+            <td>#FAF5EF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fff5ee"><a href="javascript:colorchange('fff5ee')"> </a></td>
+            <td style="color:#FFF5EE">SEASHELL</td>
+            <td>SEASHELL</td>
+            <td>#FFF5EE</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f1f9ec"><a href="javascript:colorchange('f1f9ec')"> </a></td>
+            <td style="color:#F1F9EC">PEPPERMINT</td>
+            <td>PEPPERMINT</td>
+            <td>#F1F9EC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdfff5"><a href="javascript:colorchange('fdfff5')"> </a></td>
+            <td style="color:#FDFFF5">MILK</td>
+            <td>MILK</td>
+            <td>#FDFFF5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8f8ff"><a href="javascript:colorchange('f8f8ff')"> </a></td>
+            <td style="color:#F8F8FF">Ghost white</td>
+            <td>Ghost white</td>
+            <td>#F8F8FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f5f5f5"><a href="javascript:colorchange('f5f5f5')"> </a></td>
+            <td style="color:#F5F5F5">White smoke</td>
+            <td>White smoke</td>
+            <td>#F5F5F5</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fefefa"><a href="javascript:colorchange('fefefa')"> </a></td>
+            <td style="color:#FEFEFA">Baby powder</td>
+            <td>Baby powder</td>
+            <td>#FEFEFA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffff0"><a href="javascript:colorchange('fffff0')"> </a></td>
+            <td style="color:#FFFFF0">Ivory</td>
+            <td>Ivory</td>
+            <td>#FFFFF0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffaf0"><a href="javascript:colorchange('fffaf0')"> </a></td>
+            <td style="color:#FFFAF0">Floral white</td>
+            <td>Floral white</td>
+            <td>#FFFAF0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ecf3f9"><a href="javascript:colorchange('ecf3f9')"> </a></td>
+            <td style="color:#ECF3F9">Link White</td>
+            <td>Link White</td>
+            <td>#ECF3F9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffafa"><a href="javascript:colorchange('fffafa')"> </a></td>
+            <td style="color:#FFFAFA">Rose White</td>
+            <td>Rose White</td>
+            <td>#FFFAFA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdfcfa"><a href="javascript:colorchange('fdfcfa')"> </a></td>
+            <td style="color:#FDFCFA">Vista White</td>
+            <td>Vista White</td>
+            <td>#FDFCFA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8fbf8"><a href="javascript:colorchange('f8fbf8')"> </a></td>
+            <td style="color:#F8FBF8">Snow Drift</td>
+            <td>Snow Drift</td>
+            <td>#F8FBF8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fffcec"><a href="javascript:colorchange('fffcec')"> </a></td>
+            <td style="color:#FFFCEC">Island Spice</td>
+            <td>Island Spice</td>
+            <td>#FFFCEC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f6f1f4"><a href="javascript:colorchange('f6f1f4')"> </a></td>
+            <td style="color:#F6F1F4">Soft Peach</td>
+            <td>Soft Peach</td>
+            <td>#F6F1F4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ebf5f0"><a href="javascript:colorchange('ebf5f0')"> </a></td>
+            <td style="color:#EBF5F0">Harp</td>
+            <td>Harp</td>
+            <td>#EBF5F0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f6f4f1"><a href="javascript:colorchange('f6f4f1')"> </a></td>
+            <td style="color:#F6F4F1">Cough Mixture</td>
+            <td>Cough Mixture</td>
+            <td>#F6F4F1</td>
+        </tr>
+        <tr>
+            <td style="background-color:#ebf6f7"><a href="javascript:colorchange('ebf6f7')"> </a></td>
+            <td style="color:#EBF6F7">Cup Cake</td>
+            <td>Cup Cake</td>
+            <td>#EBF6F7</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8f4ff"><a href="javascript:colorchange('f8f4ff')"> </a></td>
+            <td style="color:#F8F4FF">Magnolia</td>
+            <td>Magnolia</td>
+            <td>#F8F4FF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f2f3f4"><a href="javascript:colorchange('f2f3f4')"> </a></td>
+            <td style="color:#F2F3F4">Anti-Flash White</td>
+            <td>Anti-Flash White</td>
+            <td>#F2F3F4</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f7f5f6"><a href="javascript:colorchange('f7f5f6')"> </a></td>
+            <td style="color:#F7F5F6">Cascading White</td>
+            <td>Cascading White</td>
+            <td>#F7F5F6</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f2f7fd"><a href="javascript:colorchange('f2f7fd')"> </a></td>
+            <td style="color:#F2F7FD">Cotton Ball</td>
+            <td>Cotton Ball</td>
+            <td>#F2F7FD</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f8f8e8"><a href="javascript:colorchange('f8f8e8')"> </a></td>
+            <td style="color:#F8F8E8">Photon White</td>
+            <td>Photon White</td>
+            <td>#F8F8E8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fdf9ef"><a href="javascript:colorchange('fdf9ef')"> </a></td>
+            <td style="color:#FDF9EF">White Heat</td>
+            <td>White Heat</td>
+            <td>#FDF9EF</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fefffc"><a href="javascript:colorchange('fefffc')"> </a></td>
+            <td style="color:#FEFFFC">Whitewash</td>
+            <td>Whitewash</td>
+            <td>#FEFFFC</td>
+        </tr>
+        <tr>
+            <td style="background-color:#eef1ea"><a href="javascript:colorchange('eef1ea')"> </a></td>
+            <td style="color:#EEF1EA">Shadow White</td>
+            <td>Shadow White</td>
+            <td>#EEF1EA</td>
+        </tr>
+        <tr>
+            <td style="background-color:#efece1"><a href="javascript:colorchange('efece1')"> </a></td>
+            <td style="color:#EFECE1">Acoustic White</td>
+            <td>Acoustic White</td>
+            <td>#EFECE1</td>
+        </tr>
+        <tr>
+            <td style="background-color:#edf2f8"><a href="javascript:colorchange('edf2f8')"> </a></td>
+            <td style="color:#EDF2F8">Aircraft White</td>
+            <td>Aircraft White</td>
+            <td>#EDF2F8</td>
+        </tr>
+        <tr>
+            <td style="background-color:#fcfff9"><a href="javascript:colorchange('fcfff9')"> </a></td>
+            <td style="color:#FCFFF9">Ceramic</td>
+            <td>Ceramic</td>
+            <td>#FCFFF9</td>
+        </tr>
+        <tr>
+            <td style="background-color:#f4f5f0"><a href="javascript:colorchange('f4f5f0')"> </a></td>
+            <td style="color:#F4F5F0">Bright White</td>
+            <td>Bright White</td>
+            <td>#F4F5F0</td>
+        </tr>
+        <tr>
+            <td style="background-color:#edf1fe"><a href="javascript:colorchange('edf1fe')"> </a></td>
+            <td style="color:#EDF1FE">Brilliant White</td>
+            <td>Brilliant White</td>
+            <td>#EDF1FE</td>
+        </tr>
+    </table>
+    <p>Want more? Here is a list of <a target="_blank" href="https://www.color-meanings.com/shades-of-white-color-names-html-hex-rgb-codes/">100+ white colors.</a></p>
+</body>
+
+</html>

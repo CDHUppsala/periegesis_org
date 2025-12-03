@@ -1,0 +1,27 @@
+View definitions are stored in INFORMATION_SCHEMA table.
+
+SELECT VIEW_DEFINITION FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_NAME = 'viewnamehere'
+if you have created a view 'xyz' and after some time you have modified this view then this above query will show both query that was used to create view and query to modify view.
+
+If you want just latest view query then you can simply run:
+
+SHOW CREATE VIEW 'viewnamehere'
+This query will show you all information about view like character_set_client, collation_connection , DEFINER etc.
+
+
+
+For the purposes of recreating the query used to create your view and for the purposes of backing up all views, I found the following:
+
+Dump all views:
+
+select CONCAT('CREATE or REPLACE VIEW ',table_name,' AS ',view_definition,';') from information_schema.views;
+Dump views from only a specific DB:
+
+select CONCAT('CREATE or REPLACE VIEW ',table_name,' AS ',view_definition,';') from information_schema.views WHERE table_schema = '$DB_NAME';
+
+
+
+Create View
+ CREATE view productlist AS SELECT brand.brand_name, product.product_name FROM brand INNER JOIN product ON product.brand_id = brand.brand_id  
+Update View
+ CREATE OR REPLACE view productlist AS SELECT brand.brand_id, brand.brand_name, product.product_name FROM brand INNER JOIN product ON product.brand_id = brand.brand_id  

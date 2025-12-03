@@ -1,0 +1,103 @@
+/**
+    Header Structure
+        1 #header (takes always the width of window)
+            2 .header_content (used to place the content of header in the same width as the content of page:
+                        .header_content and .content should have the same margin: 0 XX% for the same media
+                3 .flex_between (is placed at the center, as the grid of page, with: margin: 0 auto)
+                        Set only the max-width as equal to the max-width of the .content_grid
+    Give the #header the same padding as .page so that
+    the width of its content follows the width of page content
+
+        #nav_top (se at the end, bellow)
+        .nav_top_apps
+        .nav_top_login
+    #header
+        - big logo
+        - advertice
+    #nav_head
+        - big logo / small logo
+        .nav_head_menu
+
+*/
+
+#header {
+    background-color: var(--header-bg);
+    background-image: var(--header-bg-image);
+    padding: 0 1%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#header .header_flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+/*  Obs! Obs! Obs! Obs! 
+    The height of #logo and #logo_small /inludding padding and margin)
+    defines the haight of the navigation bar, 
+    both the normal (#logo) and the fixed (#logo_small)
+    - the height must be equal or heigher than the other parts of Nav
+*/
+
+#logo {
+    text-align: left;
+    margin: auto auto 0 0;
+    padding: 0;
+}
+
+#logo_small {
+    text-align: left;
+    display: none;
+    margin: auto auto auto 0;
+    padding: 0;
+}
+
+#logo img {
+    display: block;
+    width: 240px;
+    height: auto;
+}
+
+
+#logo_small img {
+    display: block;
+    width: 180px;
+    height: auto;
+}
+
+
+#logo h1 {
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+#logo h1 a {
+    color: #ffffff90;
+    font-size: 1.75rem;
+}
+
+#logo h1 a:hover {
+    color: #fff;
+}
+
+#logo h2 {
+    padding: 0;
+    margin: 0;
+    color: #ffffff96;
+    font-size: 1rem;
+    font-weight: normal;
+}

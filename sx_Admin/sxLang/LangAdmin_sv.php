@@ -1,0 +1,320 @@
+<?php
+//===== 0611/0708/0809/0908/2015-01/2017-08
+CONST lngVersion = "Version V.6";
+CONST lngProgramName = "Public Sphere Content Management System";
+CONST lngSiteTitle = lngProgramName;
+CONST lngLoginError = "Antingen användarnamnet eller lösenordet är fel!";
+ 
+//################################################
+//#### LANGUAGE SVENSKA 
+//################################################
+
+CONST lngLanguage = "Språk";
+CONST lngProductCatalog = "Beställningskatalog";
+CONST lngMaxItems = "Maximal antal produkter";
+CONST lngFax = "FAX";
+CONST lngTotalProducts = "Totalt antal produkter";
+CONST lngPostalCode = "Postnummer";
+CONST lngSmallPhotos = "Småla bilder";
+ 
+function getCapitals($strTitleText) {
+	return  mb_strtoupper($strTitleText);
+}
+ 
+//===================
+//== Defines the language of the popcalendar
+//===================
+CONST langExtention = "_sv";
+ 
+CONST lngAdd = "Submit Record	";
+CONST lngAddAFileRow = "Addera en filrad";
+CONST lngAddANewRecord = "Add a New Record";
+CONST lngAddRecord = "Add Record";
+CONST lngAddress = "Address";
+CONST lngAdvanceEdit = "Advanserad redigering";
+CONST lngAdvancePayment = "Advance Payment";
+CONST lngAggregatedStatistics = "<b>Aggregated</b> Statistics";
+CONST lngAll = "Alla";
+CONST lngAllDates = "All Dates";
+CONST lngAllGroups = "All groups";
+CONST lngAllowedFileTypes = "Allowed file types";
+const lngArchive = "Arkiv";
+CONST lngAscendingOrder = "Ascending Order";
+CONST lngAsteriskFieldsRequired = "Fields marked with an asterisk are required.";
+CONST lngAutoNumber = "Auto Number";
+CONST lngBackToRecodList = "Back to the List of Records";
+CONST lngBackupDatabases = "Backa upp databaser";
+CONST lngBackupDatabasesToTheFolder = "Backup Databases to the Folder";
+CONST lngByArea = "By region";
+CONST lngByCustomer = "By Customer";
+CONST lngCustomer = "Kund";
+CONST lngByDate = "By Date";
+CONST lngByeBye = "Hej då";
+CONST lngByMonth = "By Month";
+CONST lngByPeriod = "";
+CONST lngByProduct = "By Product";
+CONST lngByQuarter = "By Quarter";
+CONST lngByWeek = "By Week";
+CONST lngByYear = "By Year";
+CONST lngByYearDay = "By Year Day";
+CONST lngChangeDescendingAscending = "Change between Descending and Ascending order";
+CONST lngCharacterProblems = "It may create problems if your text contains the characters < and >. Please, use these characters with a space before and after.";
+CONST lngCheckTheImagesYouWantToDelete = "Markera de bilder du vill radera klicka på <b>Radera markerade bilder</b>, i slutet av sidan. Klicka på en bilds namn för att se bilden.";
+CONST lngChooseTheDatabasesToBackup = "Markera de Databaser som ska säkerhetskopieras";
+CONST lngChooseTheDatabasesToRestore = "Markera de Databaser som ska återställas";
+CONST lngCity = "City";
+CONST lngCleanCheckedBoxes = "Rensa markerade boxar";
+CONST lngCleanedText = "Rensad Text";
+CONST lngCleanText = "Rensa Text";
+CONST lngCleanTextDesciption = "Cleans text from all WORD and HTML codes, as well as from empty spaces and rows.<br>Paragraphs are separated by an empty row.";
+CONST lngCleanPreserveFormedText = "Keep WORD & HTML Formation";
+CONST lngCleanPreserveFormedTextDescription = "Cleans all Word and HTML codes except headers, tables, lists, images, lines and links as well as bold, italic and underlined letters. Tables' width is set to auto.";
+CONST lngClickOnAFileToDownloadIt = "Klick på en fil för att ladda ner den";
+CONST lngCode = "kod";
+CONST lngColor = "Färg";
+CONST lngCompatibleNamesAndFieldsType = "Compatible names and fields type";
+CONST lngCompleted = "Slutförd";
+CONST lngCancelled = "Annullerade";
+CONST lngCompleteHTMLFormation = "Complete HTML-Formation";
+CONST lngCompName = "Företag";
+CONST lngConfirmDelete = "Confirm Delete";
+CONST lngCopyConfirm = "Bekräfta kopiering";
+CONST lngCopyRecord = "Kopiera registret";
+CONST lngCountry = "Country";
+CONST lngCreateInParentFolders = "Skapa i Primära map";
+CONST lngCreateNewSubfolder = "Create!";
+CONST lngFolderCreate = "Create Subfolder";
+CONST lngFolderDelete = "Delete Subfolder";
+CONST lngCreationOfNewSubfolder = "Create a New Subfolder";
+CONST lngCustomerID = "Α.Α. kund";
+CONST lngDatabase = "Databas";
+CONST lngDate = "Datum";
+CONST lngDay = "Day";
+CONST lngDefineNewSubfolder = "Define a name for the New Subfolder";
+CONST lngDeleteCheckedBoxes = "Radera markerade bilder";
+CONST lngDeleteRecord = "Delete Record";
+CONST lngDiscendingOrder = "Descending Order";
+CONST lngDiscount = "Rabatt";
+CONST lngDistributeByYear = "Distribute by Year";
+CONST lngDivision = "Division";
+CONST lngDownloadFiles = "Nedladdning av filer";
+CONST lngEdit = "Edit Record";
+CONST lngEditRecord = "Edit Record";
+CONST lngEmail = "Email";
+CONST lngErrorMessage = "";
+CONST lngExisingBackupFiles = "Exising Backup Files";
+CONST lngExistedSubfolders = "Existed subfolders in Parent Folders";
+CONST lngExtendHeaders = "Extend Headers";
+CONST lngFile = "Fil";
+CONST lngFileBrowsing = "Filbläddring";
+const lngFileMultiple = "Du kan ladda up flera filer samtidigt.";
+CONST lngFileNames = "File names";
+CONST lngFilesNotDeletedNoWritePermission = "";
+CONST lngFillFieldsWithAsterisk = "You must fill all fields that are marked with an asterisk (*).";
+CONST lngFirstPage = "First Page";
+CONST lngFormAndCopyTheCleanedText = "Form and copy the text bellow for further use.";
+CONST lngFrom = "From";
+CONST lngGoToPage = "Gå till sidan";
+CONST lngGrossPrices = "Gross prices";
+CONST lngGroups = "Groups";
+CONST lngHelp = "Help";
+CONST lngHTMLFormation = "Forma HTML";
+CONST lngID = "AA";
+CONST lngIncompatibleValuesFieldsType = "Incompatibilities between the Database Table and the XML-file";
+CONST lngInProcess = "I Process";
+CONST lngLast = "Last";
+CONST lngLastMonth = "Last Month";
+CONST lngLastPage = "Last Page";
+CONST lngLastQuarter = "Senaste kvartal";
+CONST lngLastSixMonths = "Last 6 Months";
+CONST lngLastYear = "Last Year";
+CONST lngListOfRecords = "List of records";
+CONST lngLoadArchives = "Load Archives";
+CONST lngLoadPhotos = "Load Images";
+CONST lngLoginButton = "Logga in";
+CONST lngLogInError = "Antingen användarnamnet eller lösenordet är fel!";
+CONST lngLoginForWebMasters = "Inloggning för webbsidans administratörer.";
+CONST lngMaxCharacters = "Max antal tecken";
+CONST lngMaxNumber = "Max tal";
+CONST lngMonth = "Month";
+CONST lngMonths = "months";
+CONST lngMostReadArticlesTitle = "Mest lästa artiklar";
+CONST lngMostVisitedProducts = "Mest Populära Produkter";
+CONST lngName = "Name";
+CONST lngNewOrder = "Ny Beställning";
+CONST lngNewOrders = "Nya Beställningar";
+CONST lngNewText = "Ny Text";
+CONST lngNextPage = "Next Page";
+CONST lngNo = "No";
+CONST lngNoDateField = "No Date Field";
+CONST lngNotAutoNumber = "Not Auto Number";
+CONST lngOf = "Från";
+CONST lngOfTotal = "av Totalt";
+CONST lngOnlyForWebMasters = "Denna sida är endast för webbadministratörer.";
+CONST lngOpenArchive = "Open Archive";
+CONST lngOpenFolder = "";
+CONST lngOrderByThisField = "Order the Table by this field";
+CONST lngOrderResultsByThisField = "Order results by this field";
+CONST lngOrder = "Beställnings";
+CONST lngOrderDate = "Beställnings Datum";
+CONST lngOrderDetails = "Orderdetaljer";
+CONST lngDelivery = "Leverans";
+CONST lngDeliveryInformation = "Leveransinformation";
+CONST lngReciever = "Mottagare";
+CONST lngSender = "Avsändare";
+CONST lngOrderID = "Α.Α. Order nr";
+CONST lngOrderProcessing = "Click on image to open and see its order details.";
+CONST lngOrders = "Beställningar";
+CONST lngOrderStatus = "Beställnings status";
+CONST lngPage = "Sidan";
+CONST lngPageSize = "Sidstorlek";
+CONST lngPaid = "Totalt betalade";
+CONST lngParentFoldersDoNoExist = "Parent image folders do not exist in the server!";
+CONST lngPassword = "Password";
+CONST lngPasteTextOnTextareaAndClickClear = "Please, paste a text in the text area bellow and click on Clean Text.";
+CONST lngPayAgent = "Pay Agent";
+CONST lngPayMethod = "Betalnings sätt";
+CONST lngPeriod = "Period";
+CONST lngPhone = "Phone";
+CONST lngPleaseWriteAName = "Please, write a name!";
+CONST lngPreserveFormedText = "Från WORD<br>Till HTML";
+CONST lngPreviousPage = "Previous Page";
+CONST lngPrice = "pris";
+CONST lngPrintText = "Skriva ut";
+CONST lngProcessingNewOrders = "Klicka på en av bilderna för att <b>öppna</b> eller <b>skriva ut</b> en beställning.";
+CONST lngProductName = "Produktnamn";
+CONST lngProducts = "Produkter";
+CONST lngProductStatistics = "Visits by <b>Product</b>";
+CONST lngQuantity = "Kvantitet";
+CONST lngQuarter = "Quarter";
+CONST lngReset = "Reset";
+CONST lngResetApplications = "Starta om applikationer";
+CONST lngRestoreBackupedDatabases = "Återställ säkerhetskopior";
+CONST lngRestoreBackupedDatabasesFromFolder = "Restore Backup Databases from Folder";
+CONST lngResults = "Results";
+CONST lngRetailPrices = "Retail prices";
+CONST lngReturnToBackupDatabases = "Return to Backup Databases";
+CONST lngSaleStatistics = "Sales Statistics";
+CONST lngSaveInExcel = "Spara som EXCEL";
+CONST lngSaveInHTML = "Spara i HTML";
+CONST lngSaveInWord = "Spara i WORD";
+CONST lngSearch = "Search";
+CONST lngSearchInProductListToCreatePDF = "Search Catalogs and create PDF-Product catalogs";
+CONST lngSearchMode = "Search Mode";
+CONST lngSearchPeriod = "Search Period";
+CONST lngSearchPeriodLast = "";
+CONST lngSearchText = "Search Text";
+CONST lngSelectFolder = "Välj mapp";
+CONST lngSelectGroupByField = "Select Groupping Field";
+CONST lngSelectParentFolder = "Select Parent Folder";
+CONST lngSelectTable = "Select table";
+CONST lngSelectTableAndUploadFile = "Select table and upload file";
+CONST lngSelectUploadFile = "Select upload file";
+CONST lngSetPrefix = "Set Prefix";
+CONST lngShippingCharge = "Transport";
+CONST lngShippingMethod = "Leverans sätt";
+CONST lngShowFiles = "Show the Files";
+CONST lngShowHTML = "Vissa HTML";
+CONST lngShowRecordsFromThisCategoryOnly = "Show Records from this Category Only";
+CONST lngSize = "Storlek";
+CONST lngState = "State";
+CONST lngStatus = "Status";
+CONST lngSubTotal = "Subtotal";
+CONST lngSuccessfulPayment = "Genomförd betalning";
+CONST lngTable = "Table";
+CONST lngTaxAuthority = "Skatteverket";
+CONST lngTaxNumber = "Personnummer";
+CONST lngTextStatistics = "Vistis by <b>Text</b>";
+CONST lngTheFolderIsEmpty = "Mappen är tom";
+CONST lngTheNameAllreadyExistsInFolder = "";
+CONST lngTheRequestedFolderDoesNotExist = "Den sökta mappen finns inte";
+CONST lngTheSubfolderHasBeenCreated = "The folder name has been greated successfully";
+CONST lngThisLineWillNotPrint = "Denna rad kommer inte att skrivas ut";
+CONST lngToConnectImagesToSubfoleder = "To link to a file in a subfoleder, when adding a new record, write the name of the subfolder before the file name (SubfolderName/FileName).";
+CONST lngToFolder = "till map";
+CONST lngTotal = "Total";
+CONST lngTotalDiscount = "Total discounts";
+CONST lngTotalExtraDiscount = "Total additional discounts";
+CONST lngTotalRecords = "Total register";
+CONST lngTotalVisits = "Total Visits";
+CONST lngTotalVisitsSince = "Total Visits since";
+CONST lngUnspecifiedErrorNoFoldersCreated = "Unspecified error - No folders have been created. <br><br>Probably, the folder has no write permission. Please check the folder's security level";
+CONST lngUpdate = "Update Record";
+CONST lngUpdateableMode = "Updateable Mode";
+CONST lngUpdateBasic = "Basic Product Update";
+CONST lngUpdateGeneral = "Multipel updatering av register";
+CONST lngUpdateNew = "New Product Update";
+CONST lngUpdateOffers = "Product Offers Update";
+CONST lngUpdateSelected = "Selected Product Update";
+CONST lngUploadFiles = "Ladda upp filerna";
+CONST lngUploadFilesToTheServer = "Upload files to the server";
+CONST lngValidFolderNames = "You can use latin letters, numbers and underscore. Do <b>not start</b> with number or underscore.";
+CONST lngUsername = "Username";
+CONST lngValidateArchive = "Validera arkivet";
+CONST lngWarningAboutDatabaseRestoring = "<b>Obs!</b><br>Be Shure that you want to replace the <b>active</b> databases with their security Copy.";
+CONST lngVAT = "Vat";
+CONST lngWeek = "Week";
+CONST lngVieOrder = "Faktura";
+CONST lngViewFolderFiles = "Granska/radera ladda ner filer";
+CONST lngViewFolderImages = "Granska radera bilder";
+CONST lngViewImagesNames = "Copy Image Names";
+CONST lngViewRecord = "View Record";
+CONST lngVisitsByDate = "Vistis by <b>Date</b>";
+CONST lngVisitsStatistics = "Visits Statistics";
+CONST lngVisitsToday = "Visits Today";
+CONST lngYear = "Year";
+CONST lngYes = "Yes";
+CONST lngYouAreLogouted = "Du är nu utloggad!";
+ 
+//Additions
+//================
+CONST lngRecordImagesClickToViews = "Dokumentbilder";
+CONST lngCopyImages = "Kopiering bildnamn";
+CONST lngMarkToCopyImages = "Markera en eller flera bilder. <b>Dubbel Klicka</b> i ett relevant fält för att kopiera dem. Genom <b>Dubbel Klickning</b> kan du addera flera bilder i samma fält.";
+CONST lngMultipleUpload = "Multipel uppladning";
+CONST lngMultipleUploadSelections = "Välj fist en destinationsmap och klick sedan på «Välj mapp». Välj sedan multipla arkiv för direkt uppladning.";
+CONST lngUpdateSliders = "Updatera Slider";
+CONST lngUpdatePublishedTexts = "Updatera publicerad text";
+CONST lngShowImages = "Visa bilder";
+CONST lngHideImages = "Dölj bilder";
+CONST lngCreateXMLSiteMaps = "Skapa XML-Sitemaps";
+ 
+ 
+//Additions Statistics
+//================
+CONST lngHowAccountVisitors = "Hur mäts ett besök";
+CONST lngHowAccountVisitorsNote = "<p>När en besökare öppnar webbplatsen startas en Session som varar under 20 minuter och uppdateras varje gång besökaren öppnar en ny sida.  Hela sessionsperioden räknas som ett besök.</p><p>Om besökaren lämnar webbplatsen och återvände efter 20 minuter, det räknas som ett nytt besök. Men om besökaren återvänder i mindre än 20 minuter (och har samma IP-adress), räknas det inte som ett nytt besök.</p>";
+CONST lngHide = "Dölj";
+ 
+CONST lngTextsPublished = "Texter Publicerade";
+CONST lngAllTexts = "Alla Texter";
+CONST lngTextID = "Text ID";
+CONST lngToday = "Idag";
+CONST lngTodayYesterday = "Igår och idag";
+CONST lngLastWeek = "Senaste vecka";
+CONST lngTextsVisitsByDate = "Läasta Texter per <b>publiceringsdatum</b>";
+ 
+//Add
+CONST lngSearchIDNumber = "Skriv ID numret för en dokument eller bokstäver för sökning i Textfält";
+CONST lngSearchTitleOrID = "ID Nummer eller Text";
+CONST lngFolderEmptyToDelete = "The foder must be empty in order to be deleted.";
+CONST lngPayMethodExpenses = "Betalningsutgifter";
+CONST lngTools = "Verktyg";
+CONST lngSubmitForm = "Sent Formen";
+CONST lngNewsletters = "Nihetsbrev";
+CONST lngNewslettersUnsubscribe = "Radera min email från era Nihetsbrev!";
+ 
+CONST lngUploadResizedImages = "Redigera och ladda upp bilder";
+CONST lngUploadImages = "Ladda upp bilder";
+CONST lngShipped ="Skickat";
+
+CONST lngInvoiceForm = "Typ av Faktura";
+CONST lngReceipt = "Kvitto";
+CONST lngInvoice = "Faktura";
+
+const lngSendingFromSite = "Skickat från sidan";
+
+const lngUploadLargeFiles = "Ladda upp stora filer";
+CONST lngComingDates = "Kommande datum";
+
+?>

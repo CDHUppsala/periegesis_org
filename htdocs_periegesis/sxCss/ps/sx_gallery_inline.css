@@ -1,0 +1,264 @@
+/*
+	==================================== 
+	Responsive inline-block gallery with Full Screen View
+	Use in both Separate and Integrated Folder Gallery
+	The jQuery:
+	1. 	Creates a Fixed Container with the ID: #sxFixedScreen
+	2. 	Clones the container (with the class: .ps_inline_gallery) of the inline gallery  
+		and appends it to the above Fixed Container
+	3.	Change the class name of the cloned and appended inline gallery container 
+		from .ps_inline_gallery to .ps_inline_gallery_absolute
+	==================================== 
+*/
+
+/*
+	Bobile CSS For Inline-Block Gallery
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.ps_inline_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0 4rem 0;
+    gap: 0.25rem 0.2rem;
+}
+
+.ps_inline_gallery figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    vertical-align: top;
+}
+
+#body_about .ps_inline_gallery figure {
+    border: 1px solid #e1e1e1;
+    padding: 5px;
+}
+
+.ps_inline_gallery figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    cursor: zoom-in;
+}
+
+.ps_inline_gallery figcaption {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--grey);
+}
+
+.figcaption_none {
+    display: none;
+}
+
+/*
+	An ID for a DIV element that is added by jQuery to appand the cloned inline gallery
+*/
+
+#sxFixedScreen {
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 9000;
+}
+
+/*
+	Replaces the class ps_inline_gallery when the inline gallery element is cloned and appended in #sxFixedScreen
+*/
+.ps_inline_gallery_absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.ps_inline_gallery_absolute figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ps_inline_gallery_absolute figure img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    margin: auto;
+    display: block;
+    cursor: zoom-out;
+}
+
+
+/*
+	An UL witn 3 LI elemets for navigation and image description are added by jQuery
+*/
+.ps_inline_gallery_absolute .nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.ps_inline_gallery_absolute .nav [class^='nav-'] {
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    /* Do not close the callery by clicking on image in mobile*/
+    .ps_inline_gallery_absolute .nav {
+        height: 100%;
+    }
+
+    .ps_inline_gallery_absolute .nav-prev,
+    .ps_inline_gallery_absolute .nav-next {
+        display: none;
+    }
+}
+
+.ps_inline_gallery_absolute .nav [class^='nav-']:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ps_inline_gallery_absolute .nav-prev {
+    padding-left: 0;
+}
+
+.ps_inline_gallery_absolute .nav-next {
+    padding-right: 0;
+}
+
+.ps_inline_gallery_absolute .nav-prev::after {
+    content: "\276E";
+}
+
+.ps_inline_gallery_absolute .nav-next::after {
+    content: "\276F";
+}
+
+
+.ps_inline_gallery_absolute .notes {
+    flex: 2;
+    align-self: flex-end;
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.5em;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ps_inline_gallery_absolute .notes:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.ps_inline_gallery_absolute .notes p {
+    padding: 0 0 0.1rem 0;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.ps_inline_gallery_absolute .nav-close {
+    position: fixed;
+    top: 1px;
+    right: 1px;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    font-weight: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.ps_inline_gallery_absolute .nav-close:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ps_inline_gallery_absolute .nav-close::after {
+    content: "\2715";
+}
+
+
+@media only screen and (min-width: 568px) {
+    .ps_inline_gallery figure {
+        width: 49%;
+
+    }
+
+    /** Optional use: All images (horizontal and vertical) get the same Height
+        JavaScript can detect the H/W aspect ratio of images
+        and add classes to image container (figure):
+        - img_cover for horizontal images
+        - img_contain for vertical images
+        The classe have no effect in full screen gallery
+        as ps_inline_gallery is replaced by the absolute version
+    */
+
+    .ps_inline_gallery figure.img_cover img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: 50% 0;
+    }
+
+    .ps_inline_gallery figure.img_contain img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        object-position: 50% 0;
+        background-color: #000;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .ps_inline_gallery figure {
+        max-width: 32%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .ps_inline_gallery figure {
+        max-width: 24.5%;
+    }
+    
+    #body_about .ps_inline_gallery figure {
+        max-width: 32%;
+    }
+}

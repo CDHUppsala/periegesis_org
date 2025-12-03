@@ -1,0 +1,164 @@
+/* 
+=====================================================
+For manual photo slider within texts
+Input fields with more than one image (and/or svg) separated by ; are transformed to slider
+=====================================================
+*/
+.img_cycler_manual {
+    position: relative;
+    clear: both;
+    margin-bottom: 1.25em;
+}
+
+.img_cycler_manual figure {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.img_cycler_manual figure img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 0;
+    opacity: 0;
+    z-index: 0;
+    cursor: zoom-in;
+}
+
+.img_cycler_manual figure img:first-child {
+    position: static !important;
+    opacity: 1;
+    z-index: 1
+}
+
+/* 
+The Slider Navigation Menu
+Containsa parent UL (for navigation by arrows) 
+wich in the second LI includes a child UL (for navigation by numbers) 
+*/
+
+/* Navigation by arrows - First UL
+*/
+.img_cycler_manual ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0.25em 0;
+    margin: 0;
+    opacity: 0.6;
+}
+
+.img_cycler_manual>ul:hover {
+    opacity: 1;
+}
+
+.img_cycler_manual>ul>li {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.img_cycler_manual>ul>li:first-child {
+    padding: 0.25em 1em 0.25em 0.2em;
+}
+
+.img_cycler_manual>ul>li:first-child::before {
+    content: '\276E\276E';
+    font-size: 2em;
+}
+
+.img_cycler_manual>ul>li:last-child {
+    padding: 0.25em 0.2em 0.25em 1em;
+}
+
+.img_cycler_manual>ul>li:last-child::before {
+    content: '\276F\276F';
+    font-size: 2em;
+}
+
+/*	Navigation by numbers or boxes - Second UL
+    Set the display for SPAN to none to get Boxes instead of Numbers
+*/
+.img_cycler_manual ul ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2px;
+    padding: 0;
+}
+
+.img_cycler_manual li li {
+    font-size: 1em;
+    padding: 4px 12px;
+    margin: 2px;
+    background-color: transparent;
+    color: var(--grey);
+    border: 1px solid var(--grey-tint-20);
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* Decrease padding for image thumbnails
+*/
+.img_cycler_manual .image_padding li {
+    padding: 0;
+    border-radius: 0;
+}
+
+.img_cycler_manual li li:hover,
+.img_cycler_manual li li.selected {
+    border: 1px solid var(--shade-100);
+    color: #000;
+}
+
+.img_cycler_manual li li span {
+    display: inline-block;
+    padding: 1px 12px;
+    font-size: 0.8em;
+}
+.img_cycler_manual li li img {
+    display: block;
+    margin: 0;
+    width: 6rem;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: 50% 0;
+}
+
+.img_cycler_manual div {
+    text-align: center;
+    padding: 0.5rem
+}
+
+/* Transforms the cycler to Full Window Galery
+*/
+.img_cycler_manual_fexed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: transparent;
+    opacity: 0;
+    z-index: 9000;
+}
+
+.img_cycler_manual_fexed figure img {
+    cursor: zoom-out;
+}
+
+@media (min-width:992px) {
+	.img_cycler_manual_fexed p {
+		max-width: 75%;
+		margin: 0 auto;
+	}
+}

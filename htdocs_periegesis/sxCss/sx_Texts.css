@@ -1,0 +1,916 @@
+﻿/*
+	=========================
+	HTML TAGS
+	=========================
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--heading-fonts);
+	padding: 0;
+	font-weight: 700;
+	line-height: 125%;
+	color: var(--heading-color);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+	color: var(--heading-link);
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover {
+	color: var(--heading-link-hover);
+	opacity: 0.75;
+}
+
+h1 {
+	font-size: 1.8rem;
+	margin: 0.8em 0 1em 0;
+}
+
+h2 {
+	font-size: 1.4rem;
+	margin: 0.8em 0 1em 0;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin: 0.8em 0
+}
+
+h4 {
+	font-size: 1.1rem;
+	margin: 0.4em 0;
+}
+
+h5 {
+	font-size: 1rem;
+	margin: 0.4em 0;
+}
+
+h4 span,
+h5 span {
+	font-weight: normal;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+	opacity: 1;
+}
+
+a:hover {
+	color: var(--link-hover);
+	opacity: 1;
+}
+
+a.opacity_link {
+	opacity: 0.6;
+}
+
+a.opacity_link:hover {
+	opacity: 1;
+}
+
+dt {
+	font-weight: bold;
+	padding-bottom: 0.25rem;
+}
+
+dd {
+	margin-bottom: 0.25em;
+	border-left: 6px solid #ddd;
+	padding-left: 1rem;
+}
+
+dd.text_xsmall {
+	padding-left: 2.5rem;
+}
+
+dt.row_flex {
+	flex-wrap: nowrap;
+	align-items: flex-start;
+}
+
+dt.row_flex label:last-child {
+	white-space: nowrap;
+	padding-left: 0.75rem;
+}
+
+hr {
+	height: 0;
+	border: 0;
+	border-top: 1px solid #ddd;
+	margin: 0.5em 0
+}
+
+.bold_italic {
+	font-weight: bold;
+	font-style: italic;
+}
+
+marquee {
+	font-weight: bold;
+	background: transparent;
+}
+
+marquee a {
+	color: #999;
+}
+
+marquee a:hover {
+	color: #000;
+}
+
+code {
+	background-color: #eee;
+	border: 1px solid #ddd;
+}
+
+blockquote {
+	display: block;
+	padding-left: 1em;
+	border-left: 5px solid #ccc;
+	text-align: left;
+}
+
+.colored_font {
+	color: var(--complement)
+}
+
+/*
+	==========================
+	VARIOUS KINDS OF HEADERS
+	==========================
+*/
+
+/*
+	1. Page, Section and Navigation headers. Can contain javaScript that hides/shows underlying lists
+		- One H1.head on the top of the Main column, 
+		- Multiple H2.head within the Aside column
+*/
+
+h1.head {
+	border-bottom: 4 solid var(--grey-tint-90);
+}
+
+h1.head span {
+	display: inline-block;
+	padding: 0 0 6px 0;
+	margin-bottom: -4px;
+	color: var(--grey-tint-10);
+	border-bottom: 4 solid var(--grey-tint-50);
+}
+
+h2.head_nav,
+h2.head {
+	border-bottom: 4 solid var(--grey-tint-90);
+}
+
+h2.head_nav span,
+h2.head span {
+	display: inline-block;
+	padding: 6px 0;
+	margin-bottom: 0;
+	color: var(--grey-tint-10);
+	border-bottom: 4 solid var(--grey-tint-50);
+}
+
+/*
+	Gradually replace all h2.head in 
+	Navigation menus by h2.head_nav.
+	Then, remove other clases
+*/
+
+.sxNavMainCloner h2.head,
+.sxNavSideCloner h2.head,
+.aside h2.head,
+h2.head_nav {
+	border-bottom: 0;
+	margin: 0 0 0.5rem 0;
+}
+
+.sxNavMainCloner h2.head span,
+.sxNavSideCloner h2.head span,
+.aside h2.head span,
+h2.head_nav span {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+
+/*
+    2. Header for articles that are Published Aside from main column  
+*/
+
+h2.head_aside {
+	position: relative;
+	background: var(--triad-1);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+	padding: 0 0 0.6rem 0;
+	margin: 0;
+	border-radius: 6px 6px 16px 16px;
+	font-size: 1.15rem;
+	font-weight: normal;
+	text-align: center;
+}
+
+h2.head_aside span {
+	display: block;
+	padding: 1rem 0.4rem 0.6rem 0.4rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.95);
+	border-radius: 6px 6px 0 0;
+}
+
+h3.head,
+h4.head {
+	border-bottom: 1px solid var(--grey-tint-80);
+	padding-bottom: 0.25em;
+	margin-bottom: 0.5em;
+}
+
+
+
+/*
+	3. Top Breadcrumbs information about opened archive and pagination
+		- H1 on top of the Main column (if it is visible - defined dynamically from the database), 
+		- H3 within Aside column
+*/
+
+h4.archives {
+	text-align: center;
+	margin: 8px 0 15px 0;
+	font-size: 0.85em;
+	background-color: var(--grey-tint-90);
+	border-bottom: 2px solid var(--grey-tint-80);
+}
+
+h4.archives span {
+	display: inline-block;
+	padding: 10px;
+	margin-bottom: -2px;
+	color: var(--grey-tint-40);
+	border-bottom: 2px solid var(--grey-tint-40);
+}
+
+h5.archives {
+	text-align: left;
+	margin: 25px 0 15px 0;
+	font-size: 0.8em;
+	border-bottom: 2px solid var(--grey-tint-90);
+}
+
+h5.archives span {
+	display: inline-block;
+	padding: 6px 0;
+	margin-bottom: -2px;
+	color: var(--grey-tint-50);
+	border-bottom: 2px solid var(--grey-tint-50);
+}
+
+/*
+	Up and Down Arrows usually in H1.head and H2.head or in any tag
+	JavaScript (jqToggleNextScroll) uses the classes slide_up and slide_down, with the image on the right
+	Include the class slide_left to set the image on the left, using the same javaScript.
+*/
+
+.slide_up,
+.slide_down {
+	cursor: pointer;
+	position: relative;
+	padding-right: 1.75rem;
+}
+
+.slide_up::after {
+	content: "\25B4";
+	position: absolute;
+	font-size: 1.75rem;
+	top: 0.25rem;
+	right: -0.25rem;
+}
+
+.slide_down::after {
+	content: "\25BE";
+	position: absolute;
+	font-size: 1.75rem;
+	top: 0.25rem;
+	right: -0.25rem;
+}
+
+.slide_left_up,
+.slide_left_down {
+	cursor: pointer;
+	position: relative;
+	padding: 0.5rem 2rem;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.slide_left_up::before {
+	content: "\25B4";
+	position: absolute;
+	font-size: 1rem;
+	top: 0.5rem;
+	left: 0;
+}
+
+.slide_left_down::before {
+	content: "\25BE";
+	position: absolute;
+	font-size: 1rem;
+	top: 0.5rem;
+	left: 0;
+}
+
+/*
+	The HTML-Elements Header and Footer within articles
+	Notice that the HTML elements header and footer are only defined as subselectors
+
+	- article
+		- header
+		- aside
+		- article_section (only in articles version)
+			- figure
+			- text/text_resizeable
+				- text_max_width
+					- footer
+*/
+
+article header {
+	margin-bottom: 1rem;
+}
+
+article header h1,
+article header h2,
+article header h3 {
+	line-height: 120%;
+	text-align: left;
+}
+
+
+article h3 span,
+article h4 span {
+	font-size: 0.75em;
+	color: #999;
+}
+
+/*
+	2 media and 3 text secitons in articles
+*/
+article .article_section {
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+}
+
+article footer {
+	clear: both;
+	font-weight: bold !important;
+	font-style: normal;
+	font-size: 0.9em;
+	border-top: 4px solid var(--grey-tint-50);
+	border-bottom: 4px solid var(--grey-tint-50);
+	padding: 0;
+	margin: 1rem 0;
+}
+
+.list_style_no ul,
+.list_style_no li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.cursor_pointer {
+	cursor: pointer;
+}
+
+/*
+    To highlight First Text in First Page and in First Page of archives
+*/
+
+article.heighlight {
+	background: #fff;
+	border: 0 solid #ddd;
+	border-radius: 8px !important;
+	grid-column: span 2;
+}
+
+
+/*
+	===================================
+	Block: TEXT CLASSES
+	===================================
+*/
+
+.text,
+.text_normal,
+.text_resizeable {
+	font-size: 1rem;
+	margin: 0 0 1.5rem 0;
+	text-align: left;
+	line-height: 1.8;
+	padding: 0 1rem 1rem 1rem;
+}
+
+.text,
+.text p,
+.text_resizeable,
+.text_resizeable p {
+	text-align: justify;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+/* Add to above text classes */
+.text_bg {
+	background: var(--tiny-100);
+	border: 1px solid var(--tiny-80);
+}
+
+.text_resizeable h1,
+.text_resizeable h2,
+.text_resizeable h3,
+.text_resizeable h4 {
+	text-align: left;
+}
+
+.text_small {
+	font-size: 0.95em !important;
+	line-height: 1.4;
+}
+
+.text_xsmall {
+	font-size: 0.9em !important;
+	line-height: 1.25;
+}
+
+.text_xxsmall {
+	font-size: 0.8em !important;
+	line-height: 1.2;
+}
+
+.text_large {
+	font-size: 1.2em !important;
+}
+
+.text_xlarge {
+	font-size: 1.5em !important;
+}
+
+.text_xxlarge {
+	font-size: 2em !important;
+}
+
+.text ol,
+.text ul {
+	overflow: hidden;
+}
+
+.text li {
+	padding: 0.2rem 0 0.3rem 0.6rem;
+	line-height: 1.4;
+}
+
+
+.text_margin {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.hide_in_mobile {
+	display: none;
+}
+
+.text_max_width {
+	margin: 0 auto;
+	max-width: 640px;
+}
+
+/*
+	The same as above, with bg color
+*/
+.text_bg {
+	background: var(--grey-tint-100);
+	border: 1px solid var(--grey-tint-80);
+	border-radius: 6px;
+	padding-bottom: 0.5rem;
+	margin-top: 2rem;
+}
+
+.overflow_hide {
+	overflow: hidden;
+}
+
+.no_wrap {
+	white-space: nowrap;
+}
+
+.font_weight_normal {
+	font-weight: normal;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+	.hide_in_mobile {
+		display: block
+	}
+}
+
+/*
+	Global styles
+*/
+
+.float_left {
+	float: left;
+	margin: 0 0.6em 0 0;
+}
+
+.float_right {
+	float: right;
+	margin: 0 0 0 0.6em;
+}
+
+.align_left {
+	text-align: left !important;
+	clear: both
+}
+
+.align_center {
+	text-align: center !important;
+	clear: both
+}
+
+.align_right {
+	text-align: right !important;
+	clear: both
+}
+
+.max_height {
+	max-height: 25rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.bg_cell {
+	background-color: #eeeeee !important;
+}
+
+.bg_grey {
+	background: #f3f3f3;
+	padding: 1rem;
+	border: 1px #eee solid;
+	border-radius: 6px;
+}
+
+.bg_warning,
+.bg_error {
+	clear: both;
+	color: rgba(0, 0, 0, 0.9);
+	font-weight: bold;
+	padding: 1rem;
+	margin: 1rem 0;
+	background: #ffc107;
+	border: 1px solid #ea0;
+	border-radius: 6px;
+}
+
+.bg_success {
+	clear: both;
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: bold;
+	padding: 1rem;
+	margin: 1em 0;
+	background: #28a745;
+	border: 1px solid #193;
+	border-radius: 6px;
+}
+
+.bg_info {
+	clear: both;
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: bold;
+	padding: 1rem;
+	margin: 1em 0;
+	background: #17a2b8;
+	border: 1px solid #08a;
+	border-radius: 6px;
+}
+
+.text_success {
+	color: #28a745;
+	font-weight: bold;
+}
+
+.overflow_hidden {
+	overflow: hidden;
+}
+
+.white_space_nowrap {
+	white-space: nowrap;
+}
+
+.indent {
+	text-indent: -1.5rem;
+	padding-left: 1.5rem;
+	line-height: 125%;
+}
+
+.indent span {
+	display: inline-block;
+	text-indent: 0;
+	width: 1.5rem;
+}
+
+/*
+	=============================================================
+	VIEW COMMENTS 
+	For all kinds of comment pages
+	For Add comments see sx_Forms.css
+	.bar is within .comments but can also be used separately anywhere
+	============================================================= 
+*/
+
+.bar {
+	background-color: #eee;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+	border: 1px solid #ddd;
+	margin: 2rem 0;
+	padding: 8px;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 1.2;
+}
+
+.survey {
+	text-align: center;
+	padding-top: 1rem;
+}
+
+.survey fieldset {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.survey table {
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 1rem;
+}
+
+.survey form>fieldset:first-of-type {
+	margin-top: 1rem;
+	background-color: #fff;
+}
+
+
+.comments ul,
+.comments li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/*	To compansate the anchor position with the Fixed Navigation Bar
+*/
+.comments li {
+	position: relative;
+}
+
+.comment_header {
+	position: relative;
+	margin: 20px 0 5px 0;
+	padding: 0 0 0.5rem 0.5rem
+}
+
+.comment_header span {
+	position: absolute;
+	display: inline-block;
+	top: 2px;
+	right: 2px;
+	padding: 1px 10px;
+	cursor: pointer;
+	background-color: var(--basic-color);
+}
+
+/*	Icons within the above SPAN
+*/
+
+.comment_show::before {
+	content: "\25BC";
+	color: #fff;
+	font-size: 1.3em;
+}
+
+.comment_hide::before {
+	content: "\25B2";
+	color: #fff;
+	font-size: 1.3em;
+}
+
+.comment_content {
+	margin-bottom: 2px;
+	padding: 0 1rem;
+}
+
+.comment_odd {
+	border: 1px solid #e3e3e3;
+	background: #fff;
+}
+
+.comment_even {
+	border: 1px solid #e3e3e3;
+	background: #f3f3f3;
+}
+
+
+/*
+	===================================================== 
+	SCROLL PAGE
+	=====================================================
+*/
+
+div.scroll {
+	position: fixed;
+	right: 4px;
+	bottom: 4px;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 1.4em;
+	text-align: center;
+	text-decoration: none;
+	background: var(--grey-tint-50);
+	z-index: 800;
+	opacity: 0.5;
+	display: none;
+}
+
+div.scroll:hover {
+	opacity: 1;
+}
+
+/*
+	=============================================================
+	OPEN link icons and SOCIAL MEDIA when opening an article
+	=============================================================
+*/
+
+.print_fixed,
+.print {
+	position: static;
+	text-align: right;
+	border: 0;
+	padding: 0;
+	margin: 0 0 0.5rem 0;
+	font-size: 2em;
+	background: transparent;
+	border-radius: 5px;
+}
+
+.print .sx_svg {
+	width: 0.9em;
+	height: 0.9em;
+}
+
+.print div {
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+.sx_share {
+	position: relative;
+	display: inline-block;
+}
+
+.sx_share_image {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.sx_share_media {
+	display: inline-block;
+	display: none;
+}
+
+@media (min-width: 1600px) {
+
+	.print_fixed {
+		position: fixed;
+		bottom: 3rem;
+		left: 1px;
+		width: 40px;
+		padding: 0;
+		margin: 0;
+		z-index: 10;
+	}
+
+	.print_fixed div {
+		float: none;
+		margin: 0;
+	}
+
+}
+
+/*
+	===========================
+	DIALOGS
+	===========================
+*/
+
+.accept_cookies {
+	position: fixed;
+	left: 5px;
+	bottom: 5px;
+	background: #000;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 20px;
+	padding: 40px;
+	display: none;
+	z-index: 1000;
+}
+
+.accept_cookies a {
+	color: #eee;
+}
+
+.accept_cookies a:hover {
+	color: #fff;
+}
+
+.dialog_ads {
+	position: fixed;
+	right: 2px;
+	bottom: 2px;
+	max-width: 49%;
+	background: var(--basic-color);
+	color: var(--basic-tint-90);
+	border: 2px solid var(--basic-tint-80);
+	border-radius: 2px;
+	padding: 40px;
+	display: none;
+	z-index: 1000;
+	font-size: 1.25em;
+}
+
+.dialog_ads h2,
+.dialog_ads h3 {
+	color: #fff !important;
+}
+
+.dialog_ads img {
+	max-width: 50%;
+}
+
+.dialog_ads button {
+	cursor: pointer;
+	background: #eee;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin-top: 40px;
+}
+
+.dialog_ads a {
+	background: #eee;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+
+/*
+	===========================
+	VARIOUS
+	===========================
+*/
+
+.str_dir {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+
+.icon_fonts {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 1.8rem;
+}
+
+.shadow {
+	box-shadow: 0 0 2px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	padding: 10px;
+}

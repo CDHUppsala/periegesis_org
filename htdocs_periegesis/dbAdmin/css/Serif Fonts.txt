@@ -1,0 +1,22 @@
+Windows | Mac
+
+Serif Fonts
+
+    Georgia | Georgia, serif
+    Palatino Linotype, Book Antiqua | Palatino, serif
+    Times New Roman | Times
+
+Sans-Serif Fonts
+
+    Arial | Arial, Helvetica, sans-serif
+    Lucida Sans Unicode, Segoe UI | Lucida Grande, sans-serif
+    Tahoma | Geneva, sans-serif
+    Trebuchet MS | Trebuchet MS, Helvetica, sans-serif
+    Verdana | Verdana, Geneva, sans-serif
+
+
+
+System UI for windows phones. 
+Google has been toiling away at Roboto with great success
+Apple made a splash with San Francisco, and 
+Mozilla with Fira Sans. 

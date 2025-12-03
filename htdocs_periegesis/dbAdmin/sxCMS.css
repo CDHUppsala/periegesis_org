@@ -1,0 +1,1914 @@
+/*	
+	Public Sphere CONTENT MANAGEMENT SYSTEM - CLIENT'S VERSION
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+header,
+footer,
+nav,
+main,
+section,
+article,
+aside,
+figure,
+figcaption,
+dialog,
+menu,
+summary,
+details {
+    display: block
+}
+
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, arial, Geneva, sans-serif;
+    font-size: 18px;
+    line-height: 125%;
+    color: #333;
+    padding: 0;
+    margin: 0
+}
+
+.body {
+    padding: 64px 0 128px 0;
+}
+
+#body_main {
+    font-size: 17px;
+    line-height: 160%;
+
+}
+
+
+section {
+    clear: both;
+    display: block;
+    margin-bottom: 40px;
+}
+
+hr {
+    clear: both;
+    height: 1px;
+    border: 0;
+    background-color: #09c;
+    margin: 10px 0;
+}
+
+ol {
+    padding-left: 2.5rem;
+    margin: 16px 0;
+}
+
+ul {
+    padding-left: 2rem;
+    margin: 16px 0;
+}
+
+.nerrow,
+.nerrow ul,
+.nerrow ol {
+    padding-left: 5px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+
+
+div p:first-child,
+td p:first-child {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+a {
+    color: #c30;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #09c;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #09c;
+    line-height: 125%;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+}
+
+
+pre {
+    max-height: 280px;
+    overflow: auto;
+    width: 75%;
+    background: #eee;
+}
+
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    margin-bottom: 5px;
+    border: 1px solid #e3e3e3;
+    background: #f3f3f3;
+    border-radius: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 0.5rem;
+    font-size: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    height: 400px;
+    width: 740px;
+}
+
+code {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+    border: 1px solid #ccc;
+    padding: 0 5px;
+}
+
+/* =================================================== 
+	Flex elements
+=================================================== */
+
+
+.row,
+.container {
+    display: flex;
+    /*  flex-direction: column OR row; Use flex-wrap instead*/
+    flex-wrap: nowrap;
+    /*  center, flex-start, flex-end, space-around, space-between, */
+    justify-content: space-between;
+    /*  center, flex-start (top), flex-end (bottom), stretch, baseline */
+    align-items: stretch;
+}
+
+.flex_center {
+    align-items: center;
+}
+
+.flex_bottom {
+    align-items: flex-end;
+}
+
+.flex_center .button {
+    padding: 8px !important
+}
+
+.flex_right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex_right>* {
+    margin: 0 0.5rem;
+}
+
+.flex_left {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.flex_left label {
+    margin-right: 0.5rem;
+}
+
+.flex_left>h3 {
+    margin-right: 2rem;
+}
+
+
+/* =================================================== 
+	Tables
+=================================================== */
+table {
+    border-collapse: collapse;
+    border: 0;
+}
+
+th {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 12px 4px;
+    font-weight: normal;
+    color: #fff;
+    background-color: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    white-space: normal;
+}
+
+th:last-child {
+    border-right: 0;
+}
+
+th a {
+    color: rgba(255, 255, 255, 0.98);
+    display: inline-block;
+    white-space: normal !important;
+}
+
+th a:hover {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+th a.light {
+    color: #ff3;
+}
+
+td {
+    vertical-align: top;
+    padding: 4px;
+}
+
+tr:nth-last-child(odd) {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+tr:nth-last-child(even) {
+    background: #f4f4f4;
+    border-bottom: 1px solid #fff;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    padding: 6px 0;
+}
+
+caption span {
+    line-height: 200%;
+}
+
+.no_bg,
+.no_bg tr {
+    background: transparent;
+}
+
+.no_gradient,
+.no_gradient th {
+    background-image: none;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.no_wrap {
+    white-space: nowrap;
+}
+
+.tbl_middle td {
+    vertical-align: middle;
+}
+
+.tbl_config td {
+    border: 1px solid #ddd;
+}
+
+.tbl_width {
+    max-width: 80% !important;
+}
+
+.tbl_width td:nth-child(1) {
+    width: 15%;
+}
+
+.tbl_width td:nth-child(2) {
+    width: 55%;
+}
+
+.tbl_width td:nth-child(3) {
+    width: 30%;
+}
+
+.tbl_borders {
+    border-collapse: separate;
+    border-spacing: 2px;
+    border: 1px solid #999;
+}
+
+.tbl_borders td {
+    border: 1px solid #999;
+}
+
+.tbl_borders textarea {
+    height: 8rem;
+}
+
+.td_borders td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.td_border_right {
+    border-right: 1px solid #ffffff;
+}
+
+/* =================================================== 
+	Edit Tables
+=================================================== */
+
+.edit_table {
+    width: 66%;
+    min-width: 740px;
+}
+
+.edit_table th {
+    vertical-align: top;
+    background: #09c;
+    color: rgba(255, 255, 255, 0.9);
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 12px 0 6px;
+    text-align: right;
+    white-space: normal;
+    max-width: 20%;
+}
+
+.edit_table tr:first-child th {
+    padding: 16px 12px;
+}
+
+.edit_table td {
+    background: #f3f3f3;
+    padding: 4px;
+    vertical-align: top;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    width: 80%;
+}
+
+.edit_table tr:first-child td p {
+    margin: 13px 12px;
+}
+
+.edit_table select {
+    min-width: 28rem;
+}
+
+.edit_table input[type="text"] {
+    min-width: 34rem;
+}
+
+.edit_table input[type="file"] {
+    font-size: 1.25rem;
+}
+
+.edit_table input[type="radio"] {
+    transform: scale(1.75);
+    margin: 14px 8px 14px 16px;
+}
+
+.edit_table input[type="checkbox"] {
+    transform: scale(1.5);
+    margin: 8px 8px 8px 16px;
+}
+
+.edit_table input[type="button"] {
+    vertical-align: baseline;
+    margin-left: 0.5rem;
+}
+
+.edit_table td>div {
+    padding: 2px 2px 0 0;
+}
+
+.edit_table div .help_button {
+    float: right;
+    margin-bottom: 2px;
+}
+
+/* =================================================== 
+	List Table
+=================================================== */
+
+.list_table th {
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px 24px 6px;
+    text-align: left;
+}
+
+.list_table th div {
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    color: #09c;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    line-height: 100%;
+    cursor: pointer;
+    padding: 0 0 1px 6px;
+    font-weight: normal;
+}
+
+.list_table th img {
+    width: 23px;
+    height: 23px;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+.list_table th div img {
+    width: 14px;
+    height: 14px;
+    margin: 0 auto;
+}
+
+
+.list_table td {
+    vertical-align: top;
+    font-size: 0.95em;
+    padding: 4px;
+    border-right: 1px solid #fff;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.list_table td:last-child {
+    border-right: 0
+}
+
+.list_table td:first-child {
+    white-space: nowrap;
+    padding-left: 5px;
+}
+
+.list_table td:first-child img {
+    margin: 0;
+    vertical-align: top;
+}
+
+.list_table input[type="checkbox"] {
+    transform: scale(1.5);
+    margin: 8px 0 0 16px;
+}
+
+
+/* =================================================== 
+	0 Various
+=================================================== */
+
+
+#studiox table tr:first-child {
+    display: none
+}
+
+.cleanTable tr {
+    background: transparent !important
+}
+
+
+/* =================================================== 
+	1 TEXTS
+=================================================== */
+
+.button {
+    display: inline-block;
+    background: #ccc;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    padding: 12px 20px;
+    color: #09c;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.button:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+}
+
+a.button {
+    padding: 11px 20px;
+}
+
+.button img {
+    width: 1.2em;
+    height: auto;
+}
+
+.bg {
+    background: #eee;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+.bg_gray {
+    background: #eee !important;
+    overflow: hidden;
+}
+
+.bg_yellow {
+    background: #fdc !important;
+}
+
+.bg_green {
+    background: #cfd !important;
+}
+
+.buttonBG {
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    padding: 3px 20px 3px 3px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3px;
+}
+
+.buttonBG:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+}
+
+.buttonBG img {
+    width: 1.8em;
+    height: auto;
+    margin-right: 2px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.coloredBG {
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    padding: 5px;
+    color: #fff;
+}
+.text {
+    line-height: 150%;
+    font-size: 1rem;
+}
+
+.text_small {
+    line-height: 140%;
+    font-size: 0.85em;
+}
+
+.text_xsmall {
+    line-height: 140%;
+    font-size: 0.70em;
+}
+
+.textBG {
+    background: #f3f3f3;
+    padding: 8px;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+.normalWeight {
+    font-weight: normal;
+}
+
+.textMsg {
+    margin: 10px 0;
+    color: #000;
+    background: #f3f3f3;
+    padding: 8px;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+.message,
+.msgInfo,
+.infoMsg,
+.errMsg,
+.msgError,
+.msgSuccess {
+    padding: 20px 10px;
+    margin: 10px 1px;
+    border-radius: 5px;
+    line-height: 140%;
+    font-size: 1.25rem;
+}
+
+.message b,
+.msgInfo b,
+.infoMsg b,
+.errMsg b,
+.msgError b .msgSuccess b {
+    font-size: 1.1em;
+}
+
+.warning,
+.errMsg,
+.msgError {
+    color: #000;
+    background: #fb0;
+}
+
+.msgInfo,
+.msgSuccess,
+.infoMsg,
+.success {
+    color: #fff;
+    background: #2a7;
+}
+
+.msgInfo span {
+    color: #fd0
+}
+
+.maxWidthSmall {
+    max-width: 560px;
+    margin: 15px 0 15px 5px;
+}
+
+.maxWidth {
+    max-width: 760px;
+    margin: 15px 0 15px 25px;
+}
+
+.maxWidthWide {
+    width: 75%;
+    min-width: 1024px;
+    margin: 15px 0 15px 5px;
+}
+
+.margin {
+    margin: 12px 0;
+}
+
+.padding {
+    padding: 12px;
+}
+
+.paddingL {
+    padding-left: 16px;
+}
+
+.paddingLeft {
+    padding-left: 25px;
+}
+
+.paddingR {
+    padding-right: 16px;
+}
+
+.paddingBottom {
+    padding-bottom: 25px;
+}
+
+.paddingTB {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.paddingTop {
+    padding-top: 25px;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.alignCenter table {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.floatRight {
+    float: right;
+    margin-left: 4px;
+    ;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatClear {
+    clear: both;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.info {
+    font-weight: normal;
+    padding: 0 8px;
+    margin: 0 5px;
+    color: #fff;
+    background: #09c;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.infoWhite {
+    font-weight: normal;
+    padding: 0 8px;
+    margin: 0 2px 0 5px;
+    color: #09c;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.markText {
+    color: #c40;
+    font-weight: bold;
+}
+
+.markBG {
+    color: #fff;
+    background: #c40;
+    font-weight: bold;
+}
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+.clear {
+    clear: both;
+    margin-bottom: 16px;
+}
+
+.display_none {
+    display: none;
+}
+
+/*	HELP - for search and configuration of tables
+--------------------------------------------------- */
+
+.sxHelp {
+    position: fixed;
+    top: 58px;
+    right: 2px;
+    bottom: 2px;
+    max-width: 50%;
+    padding: 0 40px 60px 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    overflow: auto;
+    z-index: 10;
+    display: none;
+}
+
+.sxHelp ul,
+.sxHelp ol {
+    padding-left: 22px;
+}
+
+.sxHelpToggle>ul>li {
+    list-style: none;
+}
+
+.sxHelpToggle>ul>li>ul {
+    display: none;
+    overflow: hidden;
+}
+
+.sxHelpToggle ul h4 {
+    cursor: pointer;
+}
+
+.sxHelpToggle ul h4::before {
+    content: "\25BE  ";
+    white-space: pre;
+}
+
+.sxHelpToggle ul h4.selected::before {
+    content: "\25B4  ";
+    white-space: pre;
+}
+
+.before::before {
+    content: "\25BE  ";
+    white-space: pre;
+}
+
+.before.selected::before {
+    content: "\25B4  ";
+    white-space: pre;
+}
+
+h3.before,
+h3.after {
+    position:relative;
+    cursor: pointer;
+}
+h3.after {
+    padding-right: 3rem;
+}
+.after::after {
+    content: "\25BE  ";
+    position: absolute;
+    top: -0.1rem;
+    right: 0;
+    font-size: 2rem;
+}
+
+.after.selected::after {
+    content: "\25B4  ";
+}
+.text h3 {
+    padding-left: 25px;;
+    text-indent: -25px;
+}
+
+
+
+/* =================================================== 
+	1 STRUCTRUE 
+=================================================== */
+
+#page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+#menuHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#menuBG {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    right: 0;
+    bottom: 54px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#menuFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#frame {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#leftCol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 50%;
+    overflow: auto;
+    padding: 0 20px 120px 20px;
+}
+
+#rightCol {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 0 15px 120px 20px;
+    border-left: 1px solid #ddd;
+    background: #f3f3f3;
+}
+
+#rightCol fieldset {
+    background: #fff;
+}
+
+#rightCol button {
+    padding: 4px;
+    font-size: 1em;
+}
+
+/* =================================================== 
+	2 LEFT FRAME 
+=================================================== */
+
+
+/*	Left Navigation Menu
+--------------------------------------------------- */
+
+.logoBox {
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+}
+
+.logoBox div {
+    padding: 3px 1px;
+    margin-top: 1px;
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    text-align: center;
+    color: #fff;
+}
+
+.logoBox div:first-child {
+    margin-top: 0;
+}
+
+.logoBox a {
+    color: #fff;
+}
+
+.logoBox a:hover {
+    color: #def;
+}
+
+#menuBG {
+    margin: 0;
+    padding: 12px 8px 12px 4px;
+}
+
+#menuBG h2 {
+    clear: both;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+    padding: 2px 0;
+    margin: 0;
+}
+
+#menuBG h2 a {
+    color: #09c;
+}
+
+#menuBG h2 a:hover {
+    color: #c30;
+}
+
+#menuBG h2 span {
+    position: relative;
+    float: left;
+    cursor: pointer;
+    width: 1.4em;
+    height: 1.4em;
+    font-weight: normal;
+    color: #09c;
+    border: 1px solid #09c;
+}
+
+#menuBG h2 span:hover {
+    color: #c30;
+    border: 1px solid #c30;
+}
+
+#menuBG h2 span::after {
+    content: "+";
+    position: absolute;
+    top: -1px;
+    left: 2px;
+    font-size: 1.4em;
+}
+
+#menuBG h2 span.selected::after {
+    content: "-";
+    position: absolute;
+    top: -1px;
+    left: 6px;
+    font-size: 1.4em;
+}
+
+#menuBG div {
+    text-align: right;
+    margin: 0 0 4px 0;
+    line-height: 140%;
+}
+
+#menuBG div a {
+    color: #222;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+#menuBG div a:hover {
+    color: #09c;
+}
+
+#menuBG div a span {
+    color: #09c;
+}
+
+#menuBG span.line {
+    display: block;
+    background: #aaa;
+    height: 1px;
+    margin: 3px 0 3px 1px;
+    border-left: 16px solid #444;
+}
+
+
+/* =================================================== 
+	3 RIGHT - MAIN FRAME
+=================================================== */
+
+
+/*	Main Header - INCLUDING LINKS AND FORMS
+--------------------------------------------------- */
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    padding: 0 6px;
+    margin: 0;
+    overflow: visible;
+    height: 58px;
+    z-index: 100;
+}
+
+#header h2 {
+    margin: 0 2rem 0 0;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
+    align-self: center;
+}
+
+#header h2 span {
+    background: #fff;
+    color: #09c;
+    padding: 0 3px;
+    font-size: 0.8rem;
+}
+
+#header .flex_end {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+#header div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#header div.margin_right_auto,
+#header div:nth-of-type(2) {
+    margin-left: auto;
+}
+
+#header .button {
+    margin: 0 0 0 4px;
+    padding: 6px 12px 0 12px;
+    border-radius: 8px 8px 0 0;
+}
+
+#header form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2px 0;
+    margin: 0 0 2px 20px;
+}
+
+#header form label {
+    color: #fff;
+    padding: 0;
+}
+
+#header form input {
+    color: #09c;
+    margin: 10px 10px 1px 0;
+}
+
+#header form input[type=text] {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+#header form select {
+    padding: 12px 4px;
+    margin-right: 4px;
+}
+
+
+/*	HELP-Navigation in main.php
+--------------------------------------------------- */
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    white-space: nowrap;
+    padding: 0 0 10px 0;
+    height: 100%;
+    background: #09c;
+    border-left: 1px solid #fff;
+    z-index: 200;
+}
+
+nav a {
+    display: block;
+    padding: 5px 32px 5px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+nav a.selected,
+nav a:hover {
+    background: #fff;
+    color: #09c;
+}
+
+nav h4 {
+    color: #fff;
+    font-weight: normal;
+    padding: 15px 0 0 10px;
+    margin: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    height: 59px;
+}
+
+
+/*	HELP-Tables in main.php
+--------------------------------------------------- */
+
+.help___main {
+    max-width: 760px;
+    margin: 15px 0 15px 25px;
+    line-height: 150%;
+    font-size: 1.1rem;
+}
+
+
+/*	HELP - POPUP help for description of table fields
+--------------------------------------------------- */
+
+#absoluteHelp {
+    position: absolute;
+    display: none;
+    width: 340px;
+    padding: 8px;
+    background: #fff;
+    border: 4px solid #09c;
+    box-shadow: 5px 5px 5px;
+    z-index: 1000;
+    max-height: 340px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#absoluteHelp ul {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+#absoluteHelp li {
+    margin: 4px 0 4px 10px;
+    padding: 0;
+}
+
+
+/*	Replaces the above POPUP help for description of table fields with a DIV under each field. 
+--------------------------------------------------- */
+
+.help_button {
+    margin-left: 1px;
+    width: 36px;
+}
+
+.help_by_field {
+    padding: 10px;
+    width: 80%;
+    display: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    line-height: 1.4;
+}
+
+
+/* =================================================== 
+	4 BACKGROUNDS FOR ALL TABLES:
+	ALONG, IN EDITING LISTS AND IN LIST OF RECORDS
+====================================================== */
+
+
+/*	Common styles */
+
+
+
+
+#tableBG {
+    clear: both;
+    margin: 10px 0 60px 0;
+}
+
+
+
+
+#tableAdminList {
+    border-collapse: separate !important;
+    border-spacing: 0;
+}
+
+#tableAdminList td {
+    border-bottom: 1px solid #ddd !important;
+    padding-top: 4px !important;
+    padding-bottom: 2px !important;
+    ;
+}
+
+#tableBG th {
+    background: #09c;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 8px 6px 20px 6px;
+    text-align: left;
+    white-space: normal;
+    max-width: 20%;
+}
+
+
+
+
+/*	Separate styles */
+
+#tableBG td {
+    background: #f3f3f3;
+    padding: 2px 4px;
+    border-top: 1px solid #fff;
+}
+
+#tableBG td:first-child {
+    background: #09c;
+    color: #f3f3f3;
+    border-top: 1px solid #f3f3f3;
+}
+
+
+
+/* =================================================== 
+	5 SEARCH NAVIGATION CLASSES
+=================================================== */
+
+#navBG {
+    margin: 8px 1px 8px 0;
+    padding: 16px 8px;
+    background: #eee;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    border: 1px solid #ddd;
+}
+
+
+
+#navBG label {
+    display: inline-block;
+    padding: 10px 6px 0 0;
+    font-weight: normal;
+}
+
+
+#navPagingBG {
+    padding: 0 80px 20px 30px;
+    font-weight: bold;
+    font-size: 1.6em;
+    color: #aaa;
+    line-height: 100%;
+}
+
+/* =============================================================
+	6 BODY STATISTICS 
+============================================================= */
+
+
+.tableBorders td {
+    padding: 6px;
+    border: 1px solid #09c;
+    text-align: right;
+}
+
+.cellStyles table {
+    background: #fff;
+}
+
+.cellStyles td {
+    background: #eee;
+    border: 1px solid #09c;
+}
+
+
+#bodyStats td.gray {
+    padding: 1px;
+    background: #ddd;
+}
+
+#bodyStats td.color {
+    padding: 1px;
+    background: #09c;
+    color: #eee
+}
+
+
+
+
+#statsBG {
+    position: relative;
+    padding-top: 3rem;
+}
+
+#statsBG span {
+    color: #000;
+    display: inline-block;
+    min-width: 74px;
+    text-align: left;
+    padding-right: 8px;
+}
+
+#statsBG span:nth-child(1) {
+    text-align: right;
+}
+
+#statsBG span:nth-child(2) {
+    color: #06c;
+}
+
+#statsBG .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#statsBG ol {
+    margin-top: 15px;
+}
+
+.rotate {
+    line-height: 100%;
+}
+
+.scroll {
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.scroll td {
+    vertical-align: bottom;
+    padding: 4px;
+}
+
+
+/* =============================================================
+	7 BODY UPLOAD
+============================================================= */
+
+#bodyUpload {
+    margin: 0 0 25px 5px;
+}
+
+#bodyUpload table {
+    width: 100%;
+}
+
+#bodyUpload td {
+    vertical-align: top;
+}
+
+#bodyUpload td img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+#bodyUpload td input[type="text"] {
+    margin-top: 0.25em;
+    width: 99%;
+    font-size: 0.9rem;
+}
+
+#bodyUpload form label {
+    display: block;
+    padding-bottom: 4px;
+}
+
+#bodyUpload label select {
+    width: 99%;
+}
+
+#bodyUpload td span {
+    font-size: 0.9rem;
+}
+
+#bodyUpload td textarea {
+    width: 100%;
+    height: 240px;
+    overflow: auto;
+}
+
+
+/* =============================================================
+	8 BODY UPLOAD XML
+============================================================= */
+
+#bodyUplodXML input[type="text"] {
+    width: 100%
+}
+
+#bodyUplodXML .maxWidth {
+    display: table-cell;
+    width: 49.9%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* =============================================================
+	9 JQUERY - DEFAULT PAGE AND IMAGES LIST IN ADD-EDIT PAGE
+============================================================= */
+
+#jqToggleContent {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 26px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#jqLoadArchivesWrapper {
+    display: none;
+    position: fixed;
+    top: 57px;
+    right: 0;
+    bottom: 1px;
+    width: 500px;
+    background: transparent;
+    padding: 0 0 0 5px;
+    z-index: 100;
+}
+
+#jq_width,
+#jqLoadArchivesToggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 25px;
+}
+
+#jq_width {
+    top: 30px;
+}
+
+.aside_show {
+    background: #fff url('images/sx_dotL4.png') center center no-repeat;
+    cursor: pointer;
+}
+
+.aside_hide {
+    background: #fff url('images/sx_dotR4.png') center center no-repeat;
+    cursor: pointer;
+}
+
+#jqLoadArchivesLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 26px;
+    border: 1px solid #09c;
+    background: #fff;
+    padding: 5px 5px 40px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* =================================================== 
+	TOOLS - XML-Files TABS FOR CHANGE WITH jQuery
+=================================================== */
+
+#tabsBG {
+    margin: 20px 0;
+}
+
+#tabs {
+    clear: both;
+    width: 100%;
+    border-bottom: 4px solid #09c;
+    overflow: hidden;
+}
+
+#tabs a {
+    float: left;
+    padding: 8px 12px;
+    margin: 0 1px 1px 0;
+    color: #09c;
+    font-weight: bold;
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.5));
+}
+
+#tabs a:hover,
+#tabs a.selected {
+    color: #fff;
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0));
+}
+
+#tabs a.selected {
+    padding: 8px 12px 9px 12px;
+    margin: 0 1px 0 0;
+}
+
+.listLinks {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 -2px 2px;
+    list-style: none;
+    text-align: center;
+}
+
+.listLinks li {
+    display: inline-block;
+    padding: 2px 20px;
+    margin: 0;
+    list-style: none;
+}
+
+.listLinks li:last-child {
+    text-align: right;
+}
+
+.listLinks li.selected {
+    border: 1px solid #e3e3e3;
+    border-bottom: 1px solid #f3f3f3;
+    background: #f3f3f3;
+    border-radius: 5px 5px 0 0;
+}
+
+.imgPreview {
+    cursor: pointer;
+    height: 80px;
+    width: auto;
+}
+
+#imgPreview {
+    display: none;
+    position: fixed;
+    top: 2px;
+    right: 2px;
+    max-width: 40%;
+    height: auto;
+    cursor: pointer;
+    z-index: 100;
+    background: #fff;
+}
+
+#imgPreview img {
+    max-width: 100%;
+    height: auto;
+}
+
+a img {
+    width: 1em;
+    height: auto;
+}
+
+a:hover img {
+    background: #f4f4f4;
+}
+
+.sx_svg_small_bg,
+.sx_svg_bg {
+    width: 2.5em;
+    height: auto;
+    background: #09c;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.sx_svg_small_bg {
+    width: 1em;
+}
+
+.sx_svg_small_bg:hover,
+.sx_svg_bg:hover {
+    background: #c40;
+    background-image: none
+}
+
+
+td .sx_svg_bg {
+    width: 1.8em;
+}
+
+.mailColor {
+    background: #C40;
+}
+
+td .reverse {
+    background: #c40;
+}
+
+td .reverse:hover {
+    background: #09c;
+}
+
+.mailColor .sx_svg_bg {
+    background: #c90;
+}
+
+.mailColor .sx_svg_bg:hover {
+    background: transparent;
+}
+
+.checkColor {
+    background: #E0C266;
+}
+
+.colorCancel {
+    padding: 0 8px;
+    text-align: center;
+    margin: 8px auto 0 auto;
+    cursor: pointer;
+}
+
+.colorCancel::after {
+    content: url('images/sx_svg_white/sx_clear_small.svg');
+    margin: 0 auto;
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+
+/*
+=============================================================
+	CONFIGURATION Styles
+============================================================= 
+*/
+
+.absolut_right {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    padding-right: 10px;
+    z-index: 1;
+}
+
+#floatdiv {
+    POSITION: absolute;
+    left: 0;
+    top: 0;
+    width: 480px;
+    padding: 0 6px 6px 6px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    Z-INDEX: 100;
+}
+
+#setupRelations {
+    padding: 6px;
+    position: relative;
+    background: #eee;
+    border: 1px solid #fff;
+    border-left: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+}
+
+#setupRelations input {
+    padding: 4px;
+}
+
+#setupRelations input[type='text'] {
+    max-width: 100px;
+}
+
+.formBG {
+    border: 1px solid #09c;
+    padding: 0 8px 8px 8px;
+    margin-bottom: 10px;
+    background: #eee;
+}
+
+/**
+ * ============================================
+ * CSS for Root Color Variables and Gradients
+ * ============================================
+*/
+
+.root_header {
+    margin-bottom: 1rem;
+}
+
+.root_inputs {
+    background-color: #eee;
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+
+.root_inputs label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.root_inputs label .bg_label {
+    background: var(--basic_color);
+}
+
+.root_inputs label span {
+    display: inline-block;
+    padding: 0.25rem 0.25rem 0.25rem 0.15rem;
+    border: 1px solid #808080;
+    border-radius: 50%;
+}
+
+.root_inputs input[type=radio],
+.root_inputs input[type=checkbox] {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.root_variables h3 {
+    padding: 5px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: normal;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.root_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.root_flex_between {
+    justify-content: space-between;
+}
+
+.root_flex_row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.root_flex_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.ps_grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid: 0 0 auto;
+}
+
+.ps_grid label:nth-child(7) {
+    grid-column: 3 / span 2;
+}
+
+/*
+	* For Color Schemes
+*/
+.root_color_wrapper {
+    display: none;
+}
+
+.root_color {
+    margin: 4px 0;
+    border: 1px solid #ddd;
+    width: 48%;
+}
+
+.root_color_box {
+    height: 50px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.root_color_inputs {
+    padding: 0.25rem 0;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 0.25rem;
+    vertical-align: top;
+}
+
+.root_color_inputs input[type="radio"] {
+    transform: scale(1.25);
+    vertical-align: text-bottom;
+}
+
+/*
+	* For Gradients
+*/
+.root_insert_gradients {
+    display: none;
+}
+
+.root_gradient_wrapper {
+    display: none;
+}
+
+.root_gradient {
+    margin: 4px 0;
+    flex: 0 1 100%;
+}
+
+.root_gradient_box {
+    height: 380px;
+    background-color: var(--basic_color);
+    outline: 1px solid #808080;
+    outline-offset: 2px;
+}

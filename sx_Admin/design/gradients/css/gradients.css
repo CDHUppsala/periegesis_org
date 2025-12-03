@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Segoe UI', 'Lucida Grande', Tahoma, Geneva, arial, sans-serif;
+    font-size: 18px;
+    line-height: 125%;
+    color: #444;
+    padding: 0;
+    margin: 0 0 5rem 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+input,
+select {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.8rem;
+    vertical-align: baseline !important;
+}
+
+button,
+input[type='button'] {
+    cursor: pointer;
+}
+
+.tabs {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    border-bottom: 4px solid #0066aa;
+}
+
+.tabs a {
+    padding: 8px 12px;
+    margin: 0 1px 1px 0;
+    color: #0066aa;
+    background: #0066aa;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.5));
+}
+
+.tabs a:hover,
+.tabs a.selected {
+    color: #fff;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0));
+}
+
+.tabs a.selected {
+    padding: 8px 12px 9px 12px;
+    margin: 0 1px 0 0;
+}
+
+.html_to_img_wrap {
+    float:right;
+    padding: 0 2px 0 0;
+    margin: 0;
+}
+.html_to_img_wrap button {
+    display: inline-block;
+    padding: 2px;
+    margin: 0 0 1px 0;
+}
+
+
+/**
+ * ============================================
+ * CSS for both Root Color Variables and Gradients
+ * ============================================
+*/
+
+
+.root_flex,
+.root_flex_between,
+.root_flex_end {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.root_flex_between {
+    justify-content: space-between;
+}
+
+.root_flex_end {
+    align-items: flex-end;
+}
+
+root_flex_center {
+    align-items:center;
+}
+
+roo_flex_nowrap {
+    flex-wrap: nowrap;
+}
+
+.root_flex_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.root_color_gradients {
+    width: 100%;
+    overflow: auto;
+}
+
+.root_color_gradients label {
+    font-weight: normal;
+}
+
+.root_header {
+    margin-bottom: 1rem;
+}
+
+.root_header h1 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 0.6rem
+}
+
+.root_inputs {
+    position: relative;
+    background-color: #eee;
+    border: 1px solid #dddddd;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.root_inputs label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.root_inputs label span {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    vertical-align: baseline;
+    padding: 0.1rem 0 0 0;
+    border: 1px solid #808080;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.root_inputs input[type=radio],
+.root_inputs input[type=checkbox] {
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: middle;
+}
+
+
+/*
+	* For Color Schemes
+*/
+
+.root_insert_colors h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.root_insert_colors h3::before {
+    content: "\25BE  ";
+    white-space: pre;
+}
+
+.root_insert_colors h3.selected::before {
+    content: "\25B4  ";
+    white-space: pre;
+}
+
+.root_color_wrapper {
+    display: none;
+}
+
+.root_color {
+    margin: 4px 0;
+    border: 1px solid #ddd;
+    flex: 0 1 48%;
+}
+
+.root_color_box {
+    height: 50px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.root_color_inputs {
+    display: inline-grid;
+    padding: 0.25rem 0;
+    grid-template-columns: auto auto;
+    align-items: first baseline;
+    gap: 0.2rem;
+}
+
+.root_color_inputs input[type="radio"] {
+    transform: scale(1.25);
+}
+
+.root_color_inputs span {
+    font-size: 0.9rem;
+    line-height: 100%;
+}
+
+.root_absolute {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    font-size: 0.9rem;
+    z-index: 100;
+
+}
+
+.root_absolute button {
+    margin: 0;
+    padding: 2px 3px;
+}
+
+/**
+    To fix the menu for color and gradient inputs 
+
+ */
+
+.jq_sticky_element {
+    position: relative;
+}
+
+
+.jq_sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+#jq_modal_open_button {
+    display: block;
+    padding: 5px;
+    background-color: #0066aa;
+    cursor: pointer;
+    margin: 0;
+}
+
+#jq_modal_open_button img {
+    display: block;
+    height: 1.5rem;
+    height: 1.5rem;
+}
+
+#jq_modal_open_button:hover {
+    background-color: #aa6600;
+}
+
+/*
+	* For Gradients
+*/
+
+
+.root_insert_gradients {
+    display: none;
+}
+
+.color_inputs_grid,
+.gradient_inputs_grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid: 0 0 auto;
+    vertical-align: middle;
+    gap: 5px;
+}
+
+.gradients_header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid #999;
+    margin-bottom: 1px;
+}
+
+.gradients_header h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.gradients_header h3::before {
+    content: "\25BE ";
+    white-space: pre;
+}
+
+.gradients_header h3.selected::before {
+    content: "\25B4 ";
+    white-space: pre;
+}
+
+.gradients_section {
+    display: none;
+    overflow: hidden;
+}
+
+.gradients_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+}
+
+.gradients_flex>div {
+    width: 49%;
+}
+
+.gradients_flex .gradient_img {
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0;
+}
+
+.gradient_item label {
+    display: block;
+    padding: 0 0 0 20px;
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 100%;
+}
+
+.gradient_item label::first-line,
+.gradient_item label input {
+    margin-left: -20px;
+}
+
+.change_gradients_width {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1px;
+    margin-left: auto;
+}
+
+
+@media (min-width: 768px) {
+    .root_color {
+        flex: 0 1 19.8%;
+    }
+
+    .root_variants {
+        flex: 0 1 19.8%;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .gradients_flex>div {
+        width: 24.5%;
+    }
+}
+
+@media (min-width: 1480px) {
+    .root_color {
+        flex: 0 1 9.8%;
+    }
+
+    .root_variants {
+        flex: 0 1 10.9%;
+    }
+
+    .root_opacity {
+        flex: 1 1 8%;
+    }
+
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.width_50 {
+    width: 49%;
+}
+
+.width_25 {
+    width: 24.5%;
+}
+
+.flex_20 {
+    flex: 0 1 19.8%;
+}
+

@@ -1,0 +1,567 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Public Sphere - Edit Button Styles</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link id="ps_cs" rel="stylesheet" type="text/css" href="../../../sxCss/root_Colors.css">
+    <link id="ButtonClasses" rel="stylesheet" type="text/css" href="sx_Buttons.css">
+
+    <link rel="stylesheet" type="text/css" href="button_classes.css">
+    <script src="../../../sxScripts/jq/jquery.min.js"></script>
+    <script src="button_classes.js"></script>
+
+</head>
+
+<body>
+    <div id="nav" class="flex_row">
+        <div>
+            <button class="button-grey button-small button-border" id="jq_about_usage">How to Use</button>
+        </div>
+        <div>
+            <button class="button-grey button-small button-border" id="color_schemes" rel="../../sxCss/root_Colors.css">Your Color Scheme</button>
+        </div>
+        <div class="flex_row">
+            <a class="button-grey button-small button-border" href="../css_color_schemes/index.html" target="_blank">Create Color Scheme</a>
+            <a class="button-grey button-border button-small" href="../gradients/index.php" target="_blank">Get Gradient Backgrounds</a>
+        </div>
+
+    </div>
+
+    <div class="header">
+        <div id="about_usage">
+            <h4>How to Use this Application</h4>
+            <ul>
+                <li>You use this application to edit and change the default styles for <b>Primary</b> and <b>Secondary</b> Button Classes
+                    that are defined in the CSS File <b><em>sx_Buttons.css</em></b>, which you can see in the right text area.
+                    <ul>
+                        <li>However, outside the Public Sphere Applications, you can use it to create completely new Button Classes and styles, based on your Color Schema.</li>
+                    </ul>
+                </li>
+                <li>With Public Sphere Applications, you might need make two kinds of changes, depending on the <b>darkness</b> or <b>lightness</b> of your Color Schema:
+                    <ol>
+                        <li>Regarding <b>Change of Colors</b>:
+                            <ul>
+                                <li>Colors are defined as variables of a <b>Color Schema</b>, saved in the CSS-File <b><em>root_Colors.css</em></b>.</li>
+                                <li>You have to use <b>color variable</b>, not HEX, RGB or other color definitions.</li>
+                                <li>However, you can <b>lighten</b> or <b>darken</b> existing colors by adding opacities of white and black on them:
+                                    <ul>
+                                        <li>To <b>lighten</b> a color, add opacities of white from 10% to 100% by adding the suffix <b>-tint-XX</b> to heir variable name (--color-name-tint-20)</li>
+                                        <li>To <b>darken</b> a color, add opacities of black from 10% to 100% by adding the suffix <b>-shade-XX</b> to heir variable name (--color-name-shade-20)</li>
+                                        <li>For the <b>--basic-color</b>, use --basic-tint-XX and --basic-shade-XX. For only this color, you can also add opacities of grey (--basic-tone-XX).</li>
+
+                                    </ul>
+                                </li>
+                                <li>Change you Color Schema for alternative colors.</li>
+                            </ul>
+                        </li>
+                        <li>Change the <b>Text Color</b> of Primary Buttons:
+                            <ul>
+                                <li>Colors are defined as variables of a Color Schema in the CSS-File <code>root_Colors.css</code>.
+                                    Change the Color Schema to change Button Colors.</li>
+                                <li>If you Color Shema is <b>dark</b>, you may not nedd to change the Text Color,
+                                    as it is by default light, usually 90% opacity of white (--tint-90) and 100% (--tint-100) for hover.</li>
+                                <li>If your Color Schema is <b>light</b>, use opacities of black, e.g. --shade-80.</li>
+                            </ul>
+                        </li>
+                        <li>Change the <b>Background Color</b> of Primary Buttons:
+                            <ul>
+                                <li>To darken a background color, add black shades from 10% to 100% to its variable name: name-shade-20</li>
+                                <li>To lighten a color, add white tints from 10% to 100/ to its variable name: name-tint-20</li>
+                                <li>For the basic-color, use basic-tint-XX and basic-shade-XX.
+                                    You can also desaturate the basic-color by adding grey tones from 10% to 100/ like this: basic-tone-10</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+
+                <li><b>Obs!</b> You may need to <b>change only the Primary Buttons</b>. Secondary Buttons either <b>inherit</b>
+                    your changes of Primary Buttons or have text colors compatible to their background colors.</li>
+            </ul>
+            <h4>How to Edit Button Styles</h4>
+            <ul>
+                <li>For <b>Primary Buttons</b>, just click on a Button, and its styles will be copied in the text area on the right.</li>
+                <li>For <b>Secondary Buttons</b>, just click on the red codes with the class names, above the examples of buttons.</li>
+                <li>Make your changes in the text area and then append them to the <b>Default Style Scheet</b> that is visible in the second text area.</li>
+                <li>Copy then the default style sheet or save it and use it to change the file <code>sx_Buttons.css</code> in your CSS folder.</li>
+            </ul>
+            <h4>Primary and Secondary Button Classes</h4>
+            <ul>
+                <li><b>Primary Buttons</b> get their colors of the main color palettes of your Color Schema:
+                    The Basic color and the Complementary color, and the pairs of Triad, Tetrad and Split colors.</li>
+                <li><b>Primary Buttons</b> stand alone and can be used as such. But they can also be combined with one or more Secondary Buttons.</li>
+                <li><b>Secondary Buttons</b> MUST always be used with primary ones to have any effect. The just modify Primary Buttons.</li>
+            </ul>
+        </div>
+
+
+        <div>
+            <div class="flex_column">
+                <div>
+                    <h4>Edit the Styles of Button Classs:</h4>
+                    <p>Click a <b>Primary Button</b> or the Class Name of a Secondary Button to copy its styles</p>
+                    <div class="flex_row">
+                        <label class="flex_row flex_row_start" title="Sets normal font color to 90% of dark: --shade-90">
+                            <span><input id="DarkNormalColor" name="DarkNormalColor" type="checkbox"></span> <span class="small">Dark Color<br>Normal</span>
+                        </label>
+                        <label class="flex_row flex_row_start" title="Sets hover font color to 90% of dark: --shade-90">
+                            <span><input id="DarkHoverColor" name="DarkHoverColor" type="checkbox"></span> <span class="small">Dark Color<br>Hover</span>
+                        </label>
+                        <label title="Append changes to the styles of this page to see their effects.">
+                            <button class="button-grey button-small" id="CheckStyles">Check</button>
+                        </label>
+                        <label title="Remove appended styles from this page.">
+                            <button class="button-grey button-small" id="RemoveStyles">Remove</button>
+                        </label>
+                        <label title="Append your classes to the end of the CSS file for Buttons.">
+                            <button class="button-grey button-small" id="AppendToCSS">Append to CSS</button>
+                        </label>
+                    </div>
+                </div>
+
+                <textarea id="MyButtonClasses"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="flex_column">
+                <div>
+                    <h4>Default Button Classes - Copy from the CSS File sx_Buttons.css</h4>
+                    <p>Appent your classes to this CSS File, copy and save it to your CSS folder.</p>
+                    <div class="flex_row">
+                        <label title="Copy the Button Classes and save them in the CSS Folder of your project.">
+                            <button class="button-grey button-small" id="copy">Copy to Clipboard</button>
+                        </label>
+                        <label title="Saves the Button Classes as CSS File with the name sx_Buttons.css ">
+                            <button class="button-grey button-small" id="download">Download as sx_Buttons.css</button>
+                        </label>
+                    </div>
+                </div>
+
+                <textarea id="DefaultButtonClasses"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <section id="primary_classes">
+
+        <h3>1. Primary Button Classes - Buttons that can stand alone or combined with Secondary Buttons Classes.
+            <em>Click on a Button</em> to copy its class to the textarea and edit it
+        </h3>
+
+        <p><b>Monochromatic Button Classes:</b> The main construction of Buttons. Hover lightens the background color. Change Text color if needed.</p>
+
+        <content>
+            <div><button class="button">.button</button></div>
+            <div><button class="button-complement">.button-complement</button></div>
+            <div><button class="button-split-1">.button-split-1</button></div>
+            <div><button class="button-split-2">.button-split-2</button></div>
+            <div><button class="button-triad-1">.button-triad-1</button></div>
+            <div><button class="button-triad-2">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2">.button-tetrad-2</button></div>
+            <div><button class="button-grey">.button-grey</button></div>
+        </content>
+
+        <p><b>Mixed Color Button Classes:</b>
+            The first two buttons mix the basic with the complementary color.
+            The others mix the left and right side of every color scheme (-1 and -2)</p>
+        <content>
+            <div><button class="button-mix">.button-mix</button></div>
+            <div><button class="button-mix-complement">.button-mix-complement</button></div>
+            <div><button class="button-mix-split-1">.button-mix-split-1</button></div>
+            <div><button class="button-mix-split-2">.button-mix-split-2</button></div>
+            <div><button class="button-mix-triad-1">.button-mix-triad-1</button></div>
+            <div><button class="button-mix-triad-2">.button-mix-triad-2</button></div>
+            <div><button class="button-mix-tetrad-1">.button-mix-tetrad-1</button></div>
+            <div><button class="button-mix-tetrad-2">.button-mix-tetrad-2</button></div>
+        </content>
+    </section>
+    <section>
+        <h3>2. Secondary Button Classes - Must always be used with Primary Classes. <em>Click on a red code</em> to copy a class to the textarea and edit it.</h3>
+
+        <p><b>Border Buttons:</b> - just add the class <code class="clickable">.button-border</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-border">.button</button></div>
+            <div><button class="button-complement button-border">.button-complement</button></div>
+            <div><button class="button-split-1 button-border">.button-split-1</button></div>
+            <div><button class="button-split-2 button-border">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-border">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-border">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-border">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-border">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-border">.button-grey</button></div>
+        </content>
+
+        <p><b>Gradient Buttons:</b> - just add the class <code class="clickable">.button-gradient</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-gradient">.button</button></div>
+            <div><button class="button-complement button-gradient">.button-complement</button></div>
+            <div><button class="button-split-1 button-gradient">.button-split-1</button></div>
+            <div><button class="button-split-2 button-gradient">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-gradient">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-gradient">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-gradient">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-gradient">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-gradient">.button-grey</button></div>
+        </content>
+
+        <p><b>Big Buttons:</b> - just add the class <code class="clickable">.button-big</code> to Primary Classes.
+            Here combined with the secondary classes <code>.button-border .button-gradient</code></p>
+        <content>
+            <div><button class="button button-big button-border button-gradient">.button</button></div>
+            <div><button class="button-complement button-big button-border button-gradient">.button-complement</button></div>
+            <div><button class="button-split-1 button-big button-border button-gradient">.button-split-1</button></div>
+            <div><button class="button-split-2 button-big button-border button-gradient">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-big button-border button-gradient">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-big button-border button-gradient">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-big button-border button-gradient">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-big button-border button-gradient">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-big button-border button-gradient">.button-grey</button></div>
+        </content>
+
+        <p><b>Small Buttons:</b> - just add the class <code class="clickable">.button-small</code> to Primary Classes.
+            Here combined with the secondary classes <code>.button-arrow</code>, <code>.button-shadow</code> and <code>.button-gradient</code></p>
+        <content>
+            <div><button class="button button-small button-arrow button-shadow button-gradient">.button</button></div>
+            <div><button class="button-complement button-small button-arrow button-shadow button-gradient">.button-complement</button></div>
+            <div><button class="button-split-1 button-small button-arrow button-shadow button-gradient">.button-split-1</button></div>
+            <div><button class="button-split-2 button-small button-arrow button-shadow button-gradient">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-small button-arrow button-shadow button-gradient">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-small button-arrow button-shadow button-gradient">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-small button-arrow button-shadow button-gradient">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-small button-arrow button-shadow button-gradient">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-small button-arrow button-shadow button-gradient">.button-grey</button></div>
+        </content>
+
+        <p><b>From grey Buttons to Colored hover:</b> - just add the class <code class="clickable">.button-grey-to-color</code> to Primary Classes.
+            Here combined with the secondary class <code>.button-big</code> and some other classes.</p>
+        <content>
+            <div><button class="button button-grey-to-color button-big">.button</button></div>
+            <div><button class="button-complement button-grey-to-color button-big">.button-complement</button></div>
+            <div><button class="button-split-1 button-grey-to-color button-big">.button-split-1</button></div>
+            <div title="With .button-gradient"><button class="button-split-2 button-grey-to-color button-gradient button-big">.button-split-2</button></div>
+            <div title="With .button-border"><button class="button-triad-1 button-grey-to-color button-border button-big">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-grey-to-color button-big">.button-triad-2</button></div>
+            <div title="With .button-gradient and .button-border"><button class="button-tetrad-1 button-grey-to-color button-gradient button-border button-big">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-grey-to-color button-big">.button-tetrad-2</button></div>
+        </content>
+
+        <p><b>Arrow Buttons:</b> - just add the class <code class="clickable">.button-arrow</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-arrow">.button</button></div>
+            <div><button class="button-complement button-arrow">.button-complement</button></div>
+            <div><button class="button-split-1 button-arrow">.button-split-1</button></div>
+            <div><button class="button-split-2 button-arrow">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-arrow">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-arrow">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-arrow">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-arrow">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-arrow">.button-grey</button></div>
+        </content>
+
+        <p><b>Shadow Buttons:</b> - just add the class <code class="clickable">.button-shadow</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-shadow">.button</button></div>
+            <div><button class="button-complement button-shadow">.button-complement</button></div>
+            <div><button class="button-split-1 button-shadow">.button-split-1</button></div>
+            <div><button class="button-split-2 button-shadow">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-shadow">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-shadow">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-shadow">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-shadow">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-shadow">.button-grey</button></div>
+        </content>
+
+        <p><b>Shadow Buttons with White Background:</b> - just add the class <code class="clickable">.button-shadow-white</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-shadow-white">.button</button></div>
+            <div><button class="button-complement button-shadow-white">.button-complement</button></div>
+            <div><button class="button-split-1 button-shadow-white">.button-split-1</button></div>
+            <div><button class="button-split-2 button-shadow-white">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-shadow-white">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-shadow-white">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-shadow-white">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-shadow-white">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-shadow-white">.button-grey</button></div>
+        </content>
+
+        <p><b>Shadow Buttons with White Background and Borders:</b> - just add the class <code class="clickable">.button-shadow-border</code> to Primary Classes.</p>
+        <content>
+            <div><button class="button button-shadow-border">.button</button></div>
+            <div><button class="button-complement button-shadow-border">.button-complement</button></div>
+            <div><button class="button-split-1 button-shadow-border">.button-split-1</button></div>
+            <div><button class="button-split-2 button-shadow-border">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-shadow-border">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-shadow-border">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-shadow-border">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-shadow-border">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-shadow-border">.button-grey</button></div>
+        </content>
+    </section>
+
+    <section>
+        <h3>3. Secondary Button Classes with Images. Must always be used with Primary Classes.</h3>
+        <p class="bg">The link to icon is defined in the <code>content</code> of the pseudoclass <code>:before</code><br>
+            For the best effect, use SVG images with transparent background.
+            <b>Click on the red code</b> to copy them to the text area and edit them.
+        </p>
+
+        <p><b>Icon Button:</b> - Just add the class <code class="clickable">.button-icon</code> to Primary Classes.
+        </p>
+        <content>
+            <div><button class="button button-icon"></button></div>
+            <div><button class="button-complement button-icon"></button></div>
+            <div><button class="button-split-1 button-icon"></button></div>
+            <div><button class="button-split-2 button-icon"></button></div>
+            <div><button class="button-triad-1 button-icon"></button></div>
+            <div><button class="button-triad-2 button-icon"></button></div>
+            <div><button class="button-tetrad-1 button-icon"></button></div>
+            <div><button class="button-tetrad-2 button-icon"></button></div>
+            <div><button class="button-grey button-icon"></button></div>
+        </content>
+
+        <p><b>Icon Button with Text:</b> - Just add the class <code class="clickable">.button-icon-left</code> to Primary Classes.
+        </p>
+        <content>
+            <div><button class="button button-icon-left">.button</button></div>
+            <div><button class="button-complement button-icon-left">.button-complement</button></div>
+            <div><button class="button-split-1 button-icon-left">.button-split-1</button></div>
+            <div><button class="button-split-2 button-icon-left">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-icon-left">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-icon-left">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-icon-left">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-icon-left">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-icon-left">.button-grey</button></div>
+        </content>
+
+        <p><b>SVG Button:</b> - Just add the class <code class="clickable">.button-svg</code> to Primary Classes.
+            Here combined with the secondary class <code>.button-shadow</code></span>
+        </p>
+        <content>
+            <div><button class="button button-svg button-shadow"></button></div>
+            <div><button class="button-complement button-svg button-shadow"></button></div>
+            <div><button class="button-split-1 button-svg button-shadow"></button></div>
+            <div><button class="button-split-2 button-svg button-shadow"></button></div>
+            <div><button class="button-triad-1 button-svg button-shadow"></button></div>
+            <div><button class="button-triad-2 button-svg button-shadow"></button></div>
+            <div><button class="button-tetrad-1 button-svg button-shadow"></button></div>
+            <div><button class="button-tetrad-2 button-svg button-shadow"></button></div>
+            <div><button class="button-grey button-svg button-shadow"></button></div>
+        </content>
+
+        <p><b>SVG Button with Text:</b> - Just add the class <code class="clickable">.button-svg-left</code> to Primary Classes.
+        </p>
+        <content>
+            <div><button class="button button-svg-left">.button</button></div>
+            <div><button class="button-complement button-svg-left">.button-complement</button></div>
+            <div><button class="button-split-1 button-svg-left">.button-split-1</button></div>
+            <div><button class="button-split-2 button-svg-left">.button-split-2</button></div>
+            <div><button class="button-triad-1 button-svg-left">.button-triad-1</button></div>
+            <div><button class="button-triad-2 button-svg-left">.button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-svg-left">.button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-svg-left">.button-tetrad-2</button></div>
+            <div><button class="button-grey button-svg-left">.button-grey</button></div>
+        </content>
+    </section>
+
+    <section>
+        <h3>4. Secondary Button Classes with Images placed within HTML. Must always be used with Primary Classes.</h3>
+        <p class="bg">
+            The link to image is defined in the source of the HTML element <code>img</code>, which has to be placed within the class container (INPUT, BUTTON, A, or any HTML element).
+            <br>For the best effect, use SVG images with transparent background.
+            <b>Click on the red code</b> to copy them to the text area and edit them.
+        </p>
+
+        <p><b>Any Image Button:</b> - Just add the class <code class="clickable">.button-image</code> to Primary Classes.
+            Here combined with the secondary class <code>.button-shadow</code></span>
+        </p>
+        <content>
+            <div><button class="button button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_home.svg"></button></div>
+            <div><button class="button-complement button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_books.svg"></button></div>
+            <div><button class="button-split-1 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_camera.svg"></button></div>
+            <div><button class="button-split-2 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_full_screen.svg"></button></div>
+            <div><button class="button-triad-1 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_gear.svg"></button></div>
+            <div><button class="button-triad-2 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_PDF_archives.svg"></button></div>
+            <div><button class="button-tetrad-1 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_video_gallery.svg"></button></div>
+            <div><button class="button-tetrad-2 button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_link.svg"></button></div>
+            <div><button class="button-grey button-image button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_library.svg"></button></div>
+        </content>
+
+        <p><b>Any Image Button with text:</b> - Just add the class <code class="clickable">.button-image-left</code> to Primary Classes.
+            Here combined with the secondary class <code>.button-gradient</code>.
+        </p>
+        <content>
+            <div><button class="button button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_home.svg"> .button</button></div>
+            <div><button class="button-complement button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_books.svg"> .button-complement</button></div>
+            <div><button class="button-split-1 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_camera.svg"> .button-split-1</button></div>
+            <div><button class="button-split-2 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_full_screen.svg"> .button-split-2</button></div>
+            <div><button class="button-triad-1 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_gear.svg"> .button-triad-1</button></div>
+            <div><button class="button-mix-triad-2 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_PDF_archives.svg"> .button-triad-2</button></div>
+            <div><button class="button-tetrad-1 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_video_gallery.svg"> .button-tetrad-1</button></div>
+            <div><button class="button-tetrad-2 button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_book_open.svg"> .button-tetrad-2</button></div>
+            <div><button class="button-grey button-image-left button-gradient"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_library.svg"> .button-grey</button></div>
+        </content>
+
+        <p><b>Button as Card with Image and Text:</b> - Just add the class <code class="clickable">.button-image-card</code> to Primary Classes.<br>
+            Here. the image is placed within a <code>DIV</code> Tag, not a <code>button</code>, together with another DIV for text conten.
+            You can change the height of image (default: 12rem).<br>
+            Here combined with the secondary class <code>.button-shadow</code>.
+        </p>
+        <content class="new_grid">
+            <div class="button button-image-card button-shadow">
+                <img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_home.svg">
+                <div class="card_text">
+                    <p>.button - This Button Card will expand to the width of its parent container. Its initial height (without text) is determined by the height of the image <b>{height:12rem; width:auto}</b>. To avoid long texts expanding the card vertically, its height is sett to the image height plus 8px for padding and borders <b>{height: calc(12rem + 8px); overflow: hidden;}</b>. So, you will not be able to see the rest of this texts...</p>
+                </div>
+            </div>
+            <div class="button-complement button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_books.svg">
+                <div class="card_text">
+                    <p>.button-complement - This Button Card contains no BUTTON Tag but a DIV with 2 children items, the IMAGE and a DIV containing this text. Its display is FLEX, with the IMAGE item set to FLEX: 0 and the DIV item to FLEX: 1, so it expands to the rest of the container. Its background color is sett to white with opacity 0.9 and its fonts color to black with opacity 0.6.</p>
+                </div>
+            </div>
+            <div class="button-split-1 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_camera.svg">
+                <div class="card_text">
+                    <p>.button-split-1</p>
+                </div>
+            </div>
+            <div class="button-split-2 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_full_screen.svg">
+                <div class="card_text">
+                    <p>.button-split-2</p>
+                    <pre>
+.button-image-card {
+    padding: 2px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    max-height: calc(12rem + 8px);
+    overflow: hidden;
+}</pre>
+                </div>
+            </div>
+            <div class="button-triad-1 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_gear.svg">
+                <div class="card_text">
+                    <p>
+                        .button-triad-1</p>
+                    <pre>
+.button-image-card img {
+    display: block;
+    height: 12rem;
+    width: auto;
+    border-radius: 3px 0 0 3px;
+    flex: 0;
+}</pre>
+                </div>
+            </div>
+            <div class="button-triad-2 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_PDF_archives.svg">
+                <div class="card_text">
+                    <p>.button-triad-2</p>
+                    <pre>
+.button-image-card>div {
+    background-color: var(--tint-90);
+    color: var(--shade-60);
+    border-radius: 0 3px 3px 0;
+    padding: 0.5rem 0.75rem;
+    flex: 1;
+}</pre>
+                </div>
+            </div>
+            <div class="button-tetrad-1 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_video_gallery.svg">
+                <div class="card_text">
+                    <p>.button-tetrad-1</p>
+                </div>
+            </div>
+            <div class="button-tetrad-2 button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_book_open.svg">
+                <div class="card_text">
+                    <p>.button-tetrad-2</p>
+                </div>
+            </div>
+            <div class="button-grey button-image-card button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_library.svg">
+                <div class="card_text">
+                    <p>.button-grey</p>
+                </div>
+            </div>
+        </content>
+
+
+
+        <p><b>Vertical Button as Card with Image and Text:</b> - Just add the class <code class="clickable">.button-image-card-vertical</code> to Primary Classes.<br>
+            Vertical alternatives of the above Cards. Here combined with the secondary class <code>.button-shadow</code></span>
+        </p>
+        <content class="new_grid_vertical">
+            <div class="button button-image-card-vertical button-shadow">
+                <img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_home.svg">
+                <div class="card_text">
+                    <p>.button</p>
+                    <pre>
+.button-image-card-vertical {
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}</pre>
+                </div>
+            </div>
+            <div class="button-complement button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_books.svg">
+                <div class="card_text">
+                    <p>.button-complement</p>
+                    <pre>
+.button-image-card-vertical img {
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 3px 3px 0 0;
+    flex: 0;
+}</pre>
+                </div>
+            </div>
+            <div class="button-split-1 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_camera.svg">
+                <div class="card_text">
+                    <p>.button-split-1</p>
+                    <pre>
+.button-image-card-vertical>div {
+    background-color: var(--tint-90);
+    color: var(--shade-60);
+    border-radius: 0 0 3px 3px;
+    padding: 1rem;
+    flex: 1;
+}</pre>
+                </div>
+            </div>
+            <div class="button-split-2 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_full_screen.svg">
+                <div class="card_text">
+                    <p>.button-split-2</p>
+                </div>
+            </div>
+            <div class="button-triad-1 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_gear.svg">
+                <div class="card_text">
+                    <p>.button-triad-1</p>
+                </div>
+            </div>
+            <div class="button-triad-2 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_PDF_archives.svg">
+                <div class="card_text">
+                    <p>.button-triad-2</p>
+                </div>
+            </div>
+            <div class="button-tetrad-1 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_video_gallery.svg">
+                <div class="card_text">
+                    <p>.button-tetrad-1</p>
+                </div>
+            </div>
+            <div class="button-tetrad-2 button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_book_open.svg">
+                <div class="card_text">
+                    <p>.button-tetrad-2</p>
+                </div>
+            </div>
+            <div class="button-grey button-image-card-vertical button-shadow"><img alt="Image Buton" src="../../../imgPG/sx_svg/sx_svg/sx_library.svg">
+                <div class="card_text">
+                    <p>.button-grey</p>
+                </div>
+            </div>
+        </content>
+    </section>
+</body>
+
+</html>

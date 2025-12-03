@@ -1,0 +1,52 @@
+// Load the XML document
+$xmlFilePath = 'path/to/your/xml/file.xml';
+$xml = simplexml_load_file($xmlFilePath);
+
+if ($xml === false) {
+    die('Error loading XML file.');
+}
+
+// Get the columns of the first row to get the names of columns
+$firstRow = $xml->children(0);
+$columnNames = [];
+foreach ($firstRow->children() as $column) {
+    $columnNames[] = $column->getName();
+}
+
+or
+
+foreach ($data->children()[0] as $column) {
+    $columnNames[] = $column->getName();
+}
+
+// Print the names of columns
+echo "Column Names: " . implode(', ', $columnNames) . "\n";
+
+// Loop through the entire document (all rows and their columns)
+foreach ($xml->children() as $row) {
+    foreach ($row->children() as $column) {
+        // Extract data from columns
+        $columnName = $column->getName();
+        $columnValue = (string) $column; // Convert SimpleXMLElement to string
+        echo "Column: $columnName, Value: $columnValue\n";
+    }
+    echo "-------------------\n";
+}
+
+or
+
+foreach ($xml->children() as $row) {
+    foreach ($row as $name => $value) {
+        // Assuming you want to extract column names
+        $columnNames[] = $name;
+    }
+}
+
+...and
+foreach ($row as $name => $value) {
+    // $name already contains the name of the child element
+    $columnName = $name;
+
+    // Extract data from columns - the text of the element, not its child elements or attributes
+    $columnValue = (string) $value; // Convert SimpleXMLElement to string
+}

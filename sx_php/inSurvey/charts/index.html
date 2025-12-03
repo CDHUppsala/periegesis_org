@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Chart Types</title>
+    <style>
+        .chart_flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .chart_container {
+            position: relative;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .chart_container {
+                width: 49%;
+                height: 49%;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+        const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June'
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: [
+                    'rgb(255, 99, 32)',
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 99, 132)',
+                    'rgb(55, 199, 32)',
+                    'rgb(55, 199, 132)',
+                    'rgb(55, 199, 232)'
+                ],
+                //borderColor: 'rgb(200, 200, 200)',
+                borderWidth: 1,
+                data: [50, -10, 35, 45, -20, 30]
+            }]
+        };
+    </script>
+
+    <script>
+        window.onload = function () {
+            new Chart(
+                document.getElementById('myChart_bar'),
+                config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Chart.js Any Title'
+                            }
+                        }
+                    }
+                }
+            );
+
+            new Chart(
+                document.getElementById('myChart_bar_horizontal'),
+                config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Chart.js Any Title'
+                            }
+                        },
+                        indexAxis: 'y',
+                        // Elements options apply to all of the options unless overridden in a dataset
+                        // In this case, we are setting the border of each horizontal bar to be 2px wide
+                        elements: {
+                            bar: {
+                                borderColor: 'rgb(0, 0, 0)',
+                            }
+                        },
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Chart.js Horizontal Bar Chart'
+                            }
+                        }
+
+
+                    }
+                }
+            );
+
+            new Chart(
+                document.getElementById('myChart_doughnut'),
+                config = {
+                    type: 'doughnut',
+                    data: data,
+                    options: {}
+                }
+            );
+
+            new Chart(
+                document.getElementById('myChart_pie'),
+                config = {
+                    type: 'pie',
+                    data: data,
+                    options: {}
+                }
+            );
+
+            new Chart(
+                document.getElementById('myChart_polarArea'),
+                config = {
+                    type: 'polarArea',
+                    data: data,
+                    options: {}
+                }
+            );
+
+            new Chart(
+                document.getElementById('line_options'),
+                config = {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        elements: {
+                            line: {
+                                borderColor: 'rgb(200, 0, 0)',
+                            }
+                        }
+                    }
+                }
+            );
+
+            new Chart(
+                document.getElementById('myChart_line'),
+                config = {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                                label: 'My First dataset',
+                                backgroundColor: [
+                                    'rgb(0, 0, 200)',
+                                    'rgb(255, 99, 232)',
+                                    'rgb(255, 99, 32)',
+                                    'rgb(55, 199, 132)',
+                                    'rgb(55, 199, 232)',
+                                    'rgb(55, 199, 32)'
+                                ],
+                                borderColor: 'rgb(0, 0, 200)',
+                                borderWidth: 2,
+                                data: [50, -10, 35, 45, -20, 30]
+                            },
+                            {
+                                label: 'My Second dataset',
+                                backgroundColor: [
+                                    'rgb(255, 99, 232)',
+                                    'rgb(200, 0, 0)',
+                                    'rgb(255, 99, 32)',
+                                    'rgb(55, 199, 132)',
+                                    'rgb(55, 199, 232)',
+                                    'rgb(55, 199, 32)'
+                                ],
+                                borderColor: 'rgb(200, 0, 0)',
+                                borderWidth: 2,
+                                data: [40, -20, 25, 35, -10, 35]
+                            }
+                        ]
+                    },
+                    options: {
+                		aspectRatio: 1,
+                		//maintainAspectRatio: false,
+                		responsive: true,
+                    }
+                }
+            );
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="chart_flex">
+        <div class="chart_container">
+            <canvas id="myChart_bar"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="myChart_bar_horizontal"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="myChart_doughnut"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="myChart_pie"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="myChart_polarArea"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="line_options"></canvas>
+        </div>
+        <div class="chart_container">
+            <canvas id="myChart_line"></canvas>
+        </div>
+    </div>
+</body>
+
+</body>
+
+</html>

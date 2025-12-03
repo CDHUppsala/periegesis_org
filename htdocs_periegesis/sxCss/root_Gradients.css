@@ -1,0 +1,890 @@
+/**
+ * Gradients are classified according:
+  * - to their type: lienear, ellipse, circle
+  * - to the number of colors: 2c, 3c
+  * - to their patterns: Cross, Repeating
+  * Variable names must include the above categories, if they are containt in the gradient:
+  * - For example: -2c- ... -Cross ... -P2
+  * - They don't need to include their type
+*/
+
+/**
+	The color variables are defined in external file as :root variables
+	and are opacisties of white:
+
+	--tint-0: rgba(255, 255, 255, 0.0);
+	--tint-05: rgba(255, 255, 255, 0.0);
+	--tint-10: rgba(255, 255, 255, 0.1);
+	--tint-20: rgba(255, 255, 255, 0.2);
+	--tint-30: rgba(255, 255, 255, 0.3);
+	--tint-40: rgba(255, 255, 255, 0.4);
+	--tint-50: rgba(255, 255, 255, 0.5);
+	--tint-60: rgba(255, 255, 255, 0.6);
+	--tint-70: rgba(255, 255, 255, 0.7);
+	--tint-80: rgba(255, 255, 255, 0.8);
+	--tint-90: rgba(255, 255, 255, 0.9);
+	--tint-100: rgba(255, 255, 255, 1.0);
+
+	--tint-0 and --tint-05 have the same opacity
+	--tint-05 is used only in gradients with 3 colors and can be used to mix 3 different colors
+*/
+
+html {
+
+	/**
+	 * linear-gradients
+ */
+
+	--lg--2c-to-top: linear-gradient(to top, var(--tint-80), var(--tint-0));
+	--lg--2c-to-bottom: linear-gradient(to bottom, var(--tint-80), var(--tint-0));
+	--lg--2c-to-left: linear-gradient(to left, var(--tint-80), var(--tint-0));
+	--lg--2c-to-right: linear-gradient(to right, var(--tint-80), var(--tint-0));
+	--lg--2c-to-top-left: linear-gradient(to top left, var(--tint-80), var(--tint-0));
+	--lg--2c-to-top-right: linear-gradient(to top right, var(--tint-80), var(--tint-0));
+	--lg--2c-to-bottom-left: linear-gradient(to bottom left, var(--tint-80), var(--tint-0));
+	--lg--2c-to-bottom-right: linear-gradient(to bottom right, var(--tint-80), var(--tint-0));
+
+	--lg--2c-to-left-Cross-top: linear-gradient(to left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-right-Cross-top: linear-gradient(to right, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-left-Cross-bottom: linear-gradient(to left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to bottom, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-right-Cross-bottom: linear-gradient(to right, var(--tint-80), var(--tint-0) 50%), linear-gradient(to bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--lg--2c-to-top-left-Cross-top-right: linear-gradient(to top left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top right, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-bottom-left-Cross-bottom-right: linear-gradient(to bottom left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to bottom right, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-bottom-left-Cross-top-left: linear-gradient(to bottom left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top left, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-bottom-right-Cross-top-right: linear-gradient(to bottom right, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top right, var(--tint-80), var(--tint-0) 50%);
+
+	--lg--2c-to-top-left-Cross-top-left: linear-gradient(to top left, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top left, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-top-right-Cross-top-right: linear-gradient(to top right, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top right, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-right-Cross-left: linear-gradient(to right, var(--tint-80), var(--tint-0) 50%), linear-gradient(to left, var(--tint-80), var(--tint-0) 50%);
+	--lg--2c-to-bottom-Cross: linear-gradient(to bottom, var(--tint-80), var(--tint-0) 50%), linear-gradient(to top, var(--tint-80), var(--tint-0) 50%);
+
+	/**
+		 * repeating-linear-gradient(angle | to side-or-corner, color [start1] stop1, color [start2] stop2, ...);
+		* If you use [start1], [start2], etc. you remove gradiency between colors
+	*/
+
+	--rlg-2c-to-top-P2: repeating-linear-gradient(to top, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-bottom-P2: repeating-linear-gradient(to bottom, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-left-P2: repeating-linear-gradient(to left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-right-P2: repeating-linear-gradient(to right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-top-left-P2: repeating-linear-gradient(to top left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-top-right-P2: repeating-linear-gradient(to top right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-bottom-left-P2: repeating-linear-gradient(to bottom left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-bottom-right-P2: repeating-linear-gradient(to bottom right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+
+	--rlg-2c-to-top-P2-SH: repeating-linear-gradient(to top, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-bottom-P2-SH: repeating-linear-gradient(to bottom, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-left-P2-SH: repeating-linear-gradient(to left, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-right-P2-SH: repeating-linear-gradient(to right, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-top-left-P2-SH: repeating-linear-gradient(to top left, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-top-right-P2-SH: repeating-linear-gradient(to top right, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-bottom-left-P2-SH: repeating-linear-gradient(to bottom left, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-bottom-right-P2-SH: repeating-linear-gradient(to bottom right, var(--tint-30) 0%, var(--tint-0) 50%);
+
+	--rlg-2c-to-left-P2-Cross: repeating-linear-gradient(to left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-right-P2-Cross: repeating-linear-gradient(to right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to bottom, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-bottom-left-P2-Cross: repeating-linear-gradient(to bottom left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top left, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+	--rlg-2c-to-bottom-right-P2-Cross: repeating-linear-gradient(to bottom right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%), repeating-linear-gradient(to top right, var(--tint-30) 0% 50%, var(--tint-0) 50% 100%);
+
+	--rlg-2c-to-left-P2-Cross-SH: repeating-linear-gradient(to left, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-right-P2-Cross-SH: repeating-linear-gradient(to right, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to bottom, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-bottom-left-P2-Cross-SH: repeating-linear-gradient(to bottom left, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top left, var(--tint-30) 0%, var(--tint-0) 50%);
+	--rlg-2c-to-bottom-right-P2-Cross-SH: repeating-linear-gradient(to bottom right, var(--tint-30) 0%, var(--tint-0) 50%), repeating-linear-gradient(to top right, var(--tint-30) 0%, var(--tint-0) 50%);
+
+	--rlg-2c-to-top-P10: repeating-linear-gradient(to top, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-left-P10: repeating-linear-gradient(to left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-top-left-P10: repeating-linear-gradient(to top left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-bottom-left-P10: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-top-P10-SH: repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 5%);
+	--rlg-2c-to-left-P10-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 5%);
+	--rlg-2c-to-top-left-P10-SH: repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 5%);
+	--rlg-2c-to-bottom-left-P10-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 5%);
+
+	--rlg-2c-to-left-P10-Cross: repeating-linear-gradient(to left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%), repeating-linear-gradient(to top, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-left-P10-Cross-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 10%), repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 10%);
+	--rlg-2c-to-bottom-left-P10-Cross: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%), repeating-linear-gradient(to top left, var(--tint-20) 0% 5%, var(--tint-0) 5% 10%);
+	--rlg-2c-to-bottom-left-P10-Cross-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 10%), repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 10%);
+
+	--rlg-2c-to-top-P20: repeating-linear-gradient(to top, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-left-P20: repeating-linear-gradient(to left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-top-left-P20: repeating-linear-gradient(to top left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-bottom-left-P20: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-top-P20-SH: repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 2.5%);
+	--rlg-2c-to-left-P20-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 2.5%);
+	--rlg-2c-to-top-left-P20-SH: repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 2.5%);
+	--rlg-2c-to-bottom-left-P20-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 2.5%);
+
+	--rlg-2c-to-left-P20-Cross: repeating-linear-gradient(to left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%), repeating-linear-gradient(to top, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-left-P20-Cross-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 5%), repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 5%);
+	--rlg-2c-to-bottom-left-P20-Cross: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%), repeating-linear-gradient(to top left, var(--tint-20) 0% 2.5%, var(--tint-0) 2.5% 5%);
+	--rlg-2c-to-bottom-left-P20-Cross-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 5%), repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 5%);
+
+
+	--rlg-2c-to-top-P50: repeating-linear-gradient(to top, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-left-P50: repeating-linear-gradient(to left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-top-left-P50: repeating-linear-gradient(to top left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-bottom-left-P50: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-top-P50-SH: repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 2%);
+	--rlg-2c-to-left-P50-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 2%);
+	--rlg-2c-to-top-left-P50-SH: repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 2%);
+	--rlg-2c-to-bottom-left-P50-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 2%);
+
+	--rlg-2c-to-left-P50-Cross: repeating-linear-gradient(to left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%), repeating-linear-gradient(to top, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-left-P50-Cross-SH: repeating-linear-gradient(to left, var(--tint-20) 0%, var(--tint-0) 2%), repeating-linear-gradient(to top, var(--tint-20) 0%, var(--tint-0) 2%);
+	--rlg-2c-to-bottom-left-P50-Cross: repeating-linear-gradient(to bottom left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%), repeating-linear-gradient(to top left, var(--tint-20) 0% 1%, var(--tint-0) 1% 2%);
+	--rlg-2c-to-bottom-left-P50-Cross-SH: repeating-linear-gradient(to bottom left, var(--tint-20) 0%, var(--tint-0) 2%), repeating-linear-gradient(to top left, var(--tint-20) 0%, var(--tint-0) 2%);
+
+	/**
+ 		* linear-gradient 3 Colors 2-20 Patterns and Cross Patterns
+ 	*/
+	--lg-3c-deg-90: linear-gradient(90deg, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--lg-3c-deg-180: linear-gradient(180deg, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--lg-3c-deg-45min: linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--lg-3c-deg-45: linear-gradient(45deg, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+
+	--rlg-3c-deg-90-P2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-45min-P2: repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-45-P2: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2-Cross: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-45-P2-Cross: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2-Cross-H1V1: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2-Cross-H1V2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2-Cross-H2V1: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rlg-3c-deg-180-P2-Cross-H2V2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+
+	--rlg-3c-deg-45-P4: repeating-linear-gradient(-45deg, var(--tint-0), var(--tint-10) 12.5%, var(--tint-05) 25%);
+
+	--rlg-3c-deg-90-P3: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-180-P3: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-45min-P3: repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-45-P3: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-180-P3-Cross: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-45-P3-Cross: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-90-P3-Cross-H1V1: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-90-P3-Cross-H1V2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-180-P3-Cross-H2V1: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rlg-3c-deg-180-P3-Cross-H2V2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+
+	--rlg-3c-deg-90-P5: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-180-P5: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-45min-P5: repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-45-P5: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-180-P5-Cross: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-45-P5-Cross: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-90-P5-Cross-H1V1: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-90-P5-Cross-H1V2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-180-P5-Cross-H2V1: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rlg-3c-deg-180-P5-Cross-H2V2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+
+	--rlg-3c-deg-90-P10: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-180-P10: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-45min-P10: repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-45-P10: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-180-P10-Cross: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-45-P10-Cross: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-90-P10-Cross-H1V1: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-90-P10-Cross-H1V2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-180-P10-Cross-H2V1: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rlg-3c-deg-180-P10-Cross-H2V2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+
+
+	--rlg-3c-deg-180-P20-Cross: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+	--rlg-3c-deg-45-P20-Cross: repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+	--rlg-3c-deg-180-P20-Cross-HD1: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+	--rlg-3c-deg-180-P20-Cross-HD2: repeating-linear-gradient(180deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+	--rlg-3c-deg-180-P20-Cross-VD1: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+	--rlg-3c-deg-180-P20-Cross-VD2: repeating-linear-gradient(90deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%), repeating-linear-gradient(-45deg, var(--tint-0) 0%, var(--tint-30) 2.50%, var(--tint-05) 5.00%);
+
+
+	/**
+ 		* radial-gradient-ellipse
+ 	*/
+	--rg-2c-ellipse-at-right: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-left: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-bottom-right: radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-bottom-left: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-top-right: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-top-left: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-bottom: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-top: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0));
+	--rg-2c-ellipse-at-center: radial-gradient(ellipse at center, var(--tint-80), var(--tint-0));
+
+	--rg-2c-ellipse-at-left-Cross-left: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-right: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-botom-left: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-top-left: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-botom-right: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-top-right: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-top: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-left-Cross-bottom: radial-gradient(ellipse at left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-bottom-left-Cross-left: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-right: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-botom-left: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-top-left: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-botom-right: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-top-right: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-top: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-left-Cross-bottom: radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-top-left-Cross-left: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-right: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-botom-left: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-top-left: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-botom-right: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-top-right: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-top: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-left-Cross-bottom: radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-top-Cross-left: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-right: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-botom-left: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-top-left: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-botom-right: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-top-right: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-top: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-Cross-bottom: radial-gradient(ellipse at top, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-top-right-Cross-left: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-right: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-botom-left: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-top-left: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-botom-right: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-top-right: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-top: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-top-right-Cross-bottom: radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-right-Cross-right: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-left: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-botom-left: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-top-left: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-botom-right: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-top-right: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-top: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-right-Cross-bottom: radial-gradient(ellipse at right, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-ellipse-at-bottom-Cross-left: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-right: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-botom-left: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-top-left: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-botom-right: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-top-right: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-top: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-bottom-Cross-bottom: radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+
+	--rg-2c-ellipse-at-middle-Cross-right: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-left: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-botom-right: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-botom-left: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-top-right: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-top-left: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-top: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-ellipse-at-middle-Cross-bottom: radial-gradient(ellipse at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(ellipse at bottom, var(--tint-80), var(--tint-0) 50%);
+
+
+
+
+
+	/**
+		* ellipses with 2 colors
+		* repeating-radial-gradient ellipse 2 colors with 2 or more patterns with Non Gradient colors
+	*/
+
+	--rrg-2c-ellipse-P2: repeating-radial-gradient(ellipse, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-SH: repeating-radial-gradient(ellipse, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-ellipse-P2-0-0-Cross-100-100: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-100-0-Cross-0-100: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-0-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-ellipse-P2-100-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-ellipse-P2-50-100-Cross-100-50: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-50-Cross-50-0: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-50-100-Cross-100-50-SH: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-ellipse-P2-0-50-Cross-50-0-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-ellipse-P2-100-100-Cross-100-0: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-0-Cross-0-100: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-100-100-Cross-100-0-SH: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-ellipse-P2-0-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-ellipse-P2-0-50-Cross-100-50: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-50-0-Cross-50-100: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-50-Cross-100-50-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-ellipse-P2-50-0-Cross-50-100-SH: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-ellipse-P2-0-100-Cross-100-100: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-0-Cross-100-0: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-ellipse-P2-0-100-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-ellipse-P2-0-0-Cross-100-0-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+
+
+
+	--rrg-2c-ellipse-P5: repeating-radial-gradient(ellipse, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-SH: repeating-radial-gradient(ellipse, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-ellipse-P5-0-0-Cross-100-100: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-100-0-Cross-0-100: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-0-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-ellipse-P5-100-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-ellipse-P5-50-100-Cross-100-50: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-50-Cross-50-0: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-50-100-Cross-100-50-SH: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-ellipse-P5-0-50-Cross-50-0-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-ellipse-P5-100-100-Cross-100-0: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-0-Cross-0-100: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-100-100-Cross-100-0-SH: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-ellipse-P5-0-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-ellipse-P5-0-50-Cross-100-50: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-50-0-Cross-50-100: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-50-Cross-100-50-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-ellipse-P5-50-0-Cross-50-100-SH: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-ellipse-P5-0-100-Cross-100-100: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-0-Cross-100-0: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-ellipse-P5-0-100-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-ellipse-P5-0-0-Cross-100-0-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+
+
+
+
+
+
+	--rrg-2c-ellipse-P10: repeating-radial-gradient(ellipse, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-SH: repeating-radial-gradient(ellipse, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-ellipse-P10-0-0-Cross-100-100: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-100-0-Cross-0-100: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-0-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-ellipse-P10-100-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-ellipse-P10-50-100-Cross-100-50: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-50-Cross-50-0: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-50-100-Cross-100-50-SH: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-ellipse-P10-0-50-Cross-50-0-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-ellipse-P10-100-100-Cross-100-0: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-0-Cross-0-100: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-100-100-Cross-100-0-SH: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-ellipse-P10-0-0-Cross-0-100-SH: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-ellipse-P10-0-50-Cross-100-50: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-50-0-Cross-50-100: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-50-Cross-100-50-SH: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-ellipse-P10-50-0-Cross-50-100-SH: repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-ellipse-P10-0-100-Cross-100-100: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-0-Cross-100-0: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-ellipse-P10-0-100-Cross-100-100-SH: repeating-radial-gradient(ellipse at 0 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-ellipse-P10-0-0-Cross-100-0-SH: repeating-radial-gradient(ellipse at 0 0, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+
+
+
+
+
+	/**
+ 		* radial-gradient-ellipse 3 colors
+ 	*/
+
+	--rg-3c-ellipse-at-50-0: radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-50-100: radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-0: radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-0: radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-100: radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-100: radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-50: radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-50: radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-50-50: radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+
+	--rg-3c-ellipse-at-50-100-Cross-50-0: radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-50-Cross-100-50: radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-0-Cross-100-0: radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-100-Cross-100-100: radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+	--rg-3c-ellipse-at-100-100-Cross-0-0: radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-100-Cross-100-0: radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-50-Cross-0-0: radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-50-Cross-100-0: radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-50-Cross-50-0: radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-50-Cross-50-0: radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-100-50-Cross-50-100: radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-ellipse-at-0-50-Cross-50-100: radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+	--rg-3c-ellipse-at-50-100-Cross-50-0-P2X2: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-50-Cross-100-50-P2X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-0-Cross-100-0-P2X2: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-100-Cross-100-100-P2X2: repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-100-100-Cross-0-0-P2X2: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-100-Cross-100-0-P2X2: repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-100-50-Cross-0-0-P2X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-50-Cross-100-0-P2X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-100-50-Cross-50-0-P2X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-50-Cross-50-0-P2X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-100-50-Cross-50-100-P2X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-0-50-Cross-50-100-P2X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-50-50-Cross-0-50-100-50-P2X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-50-50-Cross-50-0-50-100-P2X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-50-50-Cross-0-0-100-100-P2X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+	--rg-3c-ellipse-at-50-50-Cross-100-0-0-100-P2X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 25%, var(--tint-05) 50%);
+
+	--rg-3c-ellipse-at-50-100-Cross-50-0-P5X2: repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-50-Cross-100-50-P5X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-0-Cross-100-0-P5X2: repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-100-Cross-100-100-P5X2: repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-100-100-Cross-0-0-P5X2: repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-100-Cross-100-0-P5X2: repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-100-50-Cross-0-0-P5X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-50-Cross-100-0-P5X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-100-50-Cross-50-0-P5X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-50-Cross-50-0-P5X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-100-50-Cross-50-100-P5X2: repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-0-50-Cross-50-100-P5X2: repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-50-50-Cross-0-50-100-50-P5X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 0% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-50-50-Cross-50-0-50-100-P5X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 50% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-50-50-Cross-0-0-100-100-P5X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 0% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+	--rg-3c-ellipse-at-50-50-Cross-100-0-0-100-P5X2: repeating-radial-gradient(ellipse at 50% 50%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 100% 0%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%), repeating-radial-gradient(ellipse at 0% 100%, var(--tint-0) 0%, var(--tint-50) 10%, var(--tint-05) 20%);
+
+
+
+	/**
+	* Circles as copies of ellipse
+	*/
+
+
+	--rg-2c-circle-at-right: radial-gradient(circle at right, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-left: radial-gradient(circle at left, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-bottom-right: radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-bottom-left: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-top-right: radial-gradient(circle at top right, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-top-left: radial-gradient(circle at top left, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-bottom: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-top: radial-gradient(circle at top, var(--tint-80), var(--tint-0));
+	--rg-2c-circle-at-center: radial-gradient(circle at center, var(--tint-80), var(--tint-0));
+
+	--rg-2c-circle-at-left-Cross-left: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-right: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-botom-left: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-top-left: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-botom-right: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-top-right: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-top: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-left-Cross-bottom: radial-gradient(circle at left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-bottom-left-Cross-left: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-right: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-botom-left: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-top-left: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-botom-right: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-top-right: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-top: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-left-Cross-bottom: radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-top-left-Cross-left: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-right: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-botom-left: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-top-left: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-botom-right: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-top-right: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-top: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-left-Cross-bottom: radial-gradient(circle at top left, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-top-Cross-left: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-right: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-botom-left: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-top-left: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-botom-right: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-top-right: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-top: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-Cross-bottom: radial-gradient(circle at top, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-top-right-Cross-left: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-right: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-botom-left: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-top-left: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-botom-right: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-top-right: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-top: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-top-right-Cross-bottom: radial-gradient(circle at top right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-right-Cross-right: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-left: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-botom-left: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-top-left: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-botom-right: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-top-right: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-top: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-right-Cross-bottom: radial-gradient(circle at right, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-bottom-Cross-left: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-right: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-botom-left: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-top-left: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-botom-right: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-top-right: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-top: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-bottom-Cross-bottom: radial-gradient(circle at bottom, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+	--rg-2c-circle-at-middle-Cross-right: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-left: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-botom-right: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-botom-left: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-top-right: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at top right, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-top-left: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at top left, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-top: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at top, var(--tint-80), var(--tint-0) 50%);
+	--rg-2c-circle-at-middle-Cross-bottom: radial-gradient(circle at 50% 50%, var(--tint-80), var(--tint-0)), radial-gradient(circle at bottom, var(--tint-80), var(--tint-0) 50%);
+
+
+
+
+
+
+
+	/**
+		* Circles with 2 colors
+		* repeating-radial-gradient Circle 2 colors with 2 or more patterns with Non Gradient colors
+	*/
+
+	--rrg-2c-circle-P2: repeating-radial-gradient(circle, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-SH: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-circle-P2-0-0-Cross-100-100: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-0-Cross-100-100-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-circle-P2-100-0-Cross-0-100-SH: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-circle-P2-50-100-Cross-100-50: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-50-Cross-50-0: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-50-100-Cross-100-50-SH: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-circle-P2-0-50-Cross-50-0-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-circle-P2-100-100-Cross-100-0: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-100-100-Cross-100-0-SH: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-circle-P2-0-0-Cross-0-100-SH: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-circle-P2-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-50-Cross-100-50-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-circle-P2-50-0-Cross-50-100-SH: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+	--rrg-2c-circle-P2-0-100-Cross-100-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-0-Cross-100-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 50%, var(--tint-30) 50% 100%);
+	--rrg-2c-circle-P2-0-100-Cross-100-100-SH: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 50%);
+	--rrg-2c-circle-P2-0-0-Cross-100-0-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 50%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 50%);
+
+
+
+	--rrg-2c-circle-P5: repeating-radial-gradient(circle, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-SH: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-circle-P5-0-0-Cross-100-100: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-0-Cross-100-100-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-circle-P5-100-0-Cross-0-100-SH: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-circle-P5-50-100-Cross-100-50: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-50-Cross-50-0: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-50-100-Cross-100-50-SH: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-circle-P5-0-50-Cross-50-0-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-circle-P5-100-100-Cross-100-0: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-100-100-Cross-100-0-SH: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-circle-P5-0-0-Cross-0-100-SH: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-circle-P5-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-50-Cross-100-50-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-circle-P5-50-0-Cross-50-100-SH: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+	--rrg-2c-circle-P5-0-100-Cross-100-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-0-Cross-100-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 20%, var(--tint-30) 20% 40%);
+	--rrg-2c-circle-P5-0-100-Cross-100-100-SH: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 20%);
+	--rrg-2c-circle-P5-0-0-Cross-100-0-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 20%);
+
+
+
+
+	--rrg-2c-circle-P10: repeating-radial-gradient(circle, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-SH: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-circle-P10-0-0-Cross-100-100: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-0-Cross-100-100-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-circle-P10-100-0-Cross-0-100-SH: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-circle-P10-50-100-Cross-100-50: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-50-Cross-50-0: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-50-100-Cross-100-50-SH: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-circle-P10-0-50-Cross-50-0-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-circle-P10-100-100-Cross-100-0: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-100-100-Cross-100-0-SH: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-circle-P10-0-0-Cross-0-100-SH: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-circle-P10-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-50-Cross-100-50-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-circle-P10-50-0-Cross-50-100-SH: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+	--rrg-2c-circle-P10-0-100-Cross-100-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-0-Cross-100-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 10%, var(--tint-30) 10% 20%);
+	--rrg-2c-circle-P10-0-100-Cross-100-100-SH: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%);
+	--rrg-2c-circle-P10-0-0-Cross-100-0-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%);
+
+
+
+	--rrg-2c-circle-P20: repeating-radial-gradient(circle, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-SH: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 5%);
+
+	--rrg-2c-circle-P20-0-0-Cross-100-100: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-0-Cross-100-100-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%);
+	--rrg-2c-circle-P20-100-0-Cross-0-100-SH: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%);
+
+	--rrg-2c-circle-P20-50-100-Cross-100-50: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-50-Cross-50-0: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-50-100-Cross-100-50-SH: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 5%);
+	--rrg-2c-circle-P20-0-50-Cross-50-0-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 5%);
+
+	--rrg-2c-circle-P20-100-100-Cross-100-0: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-100-100-Cross-100-0-SH: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%);
+	--rrg-2c-circle-P20-0-0-Cross-0-100-SH: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%);
+
+	--rrg-2c-circle-P20-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-50-Cross-100-50-SH: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 5%);
+	--rrg-2c-circle-P20-50-0-Cross-50-100-SH: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 5%);
+
+	--rrg-2c-circle-P20-0-100-Cross-100-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-0-Cross-100-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0% 5%, var(--tint-30) 5% 10%);
+	--rrg-2c-circle-P20-0-100-Cross-100-100-SH: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%);
+	--rrg-2c-circle-P20-0-0-Cross-100-0-SH: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 5%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%);
+
+
+
+	/**
+ 		* radial-gradient-circle with 3 colors
+ 	*/
+	--rg-3c-circle-at-100-50: radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-50: radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-100-0: radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-0: radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-100-100: radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-100: radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-50-100: radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-50-0: radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-50-50: radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+	--rg-3c-circle-at-0-50-Cross-100-50: radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-0-Cross-100-0: radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-100-Cross-100-100: radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-50-0-Cross-50-100: radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-100-Cross-100-50: radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-100-100-Cross-0-50: radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-100-100-Cross-0-0: radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+	--rg-3c-circle-at-0-100-Cross-100-0: radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%), radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-50) 50%, var(--tint-05) 100%);
+
+	/**
+		  * repeating-radial-gradient Circle with 3 colors
+			  * (angle | to side-or-corner, color [start1] stop1, color [start2] stop2, ...);
+			  * If you use [start1], [start2], etc. you get non-gradient colors
+	  */
+
+	--rrg-3c-circle-P2-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-100-0: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+
+	--rrg-3c-circle-P2-0-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-0-Cross-100-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-0-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-100-0-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+
+	--rrg-3c-circle-P2-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+
+	--rrg-3c-circle-P2-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+	--rrg-3c-circle-P2-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 25%, var(--tint-05) 50%);
+
+
+	/**
+		  * repeating-radial-gradient Circle with 3 patterns and 3 colors
+	  */
+	--rrg-3c-circle-P3-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-100-0: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+
+	--rrg-3c-circle-P3-0-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-0-Cross-100-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-0-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-100-0-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+
+	--rrg-3c-circle-P3-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+
+	--rrg-3c-circle-P3-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+	--rrg-3c-circle-P3-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 16.666%, var(--tint-05) 33.333%);
+
+
+
+	/**
+		  * repeating-radial-gradient Circle with 4 patterns and 3 colors
+	  */
+	--rrg-3c-circle-P4-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-100-0: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50: repeating-radial-gradient(circle, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+
+	--rrg-3c-circle-P4-0-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-0-Cross-100-0: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-0-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-100-0-Cross-0-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-100-0-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-0-Cross-0-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-0-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-0-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+
+	--rrg-3c-circle-P4-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+
+	--rrg-3c-circle-P4-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+	--rrg-3c-circle-P4-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 12.5%, var(--tint-05) 25%);
+
+
+	/**
+		  * repeating-radial-gradient Circle with 5 patterns and 3 colors
+	  */
+	--rrg-3c-circle-P5-0-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-100-0: repeating-radial-gradient(circle at 100% 0, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-0-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-0: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-100: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-100-50: repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-0-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+
+	--rrg-3c-circle-P5-10-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-10-10-Cross-100-10: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-10-10-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-100-10-Cross-10-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-10-10-Cross-10-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-100-10-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-10-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-10-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+
+	--rrg-3c-circle-P5-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+
+	--rrg-3c-circle-P5-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+	--rrg-3c-circle-P5-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 10%, var(--tint-05) 20%);
+
+	/**
+		  * repeating-radial-gradient Circle with 10 patterns and 3 colors
+	  */
+	--rrg-3c-circle-P10-0-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-100-0: repeating-radial-gradient(circle at 100% 0, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-0-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-0: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-100: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-100-50: repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-0-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+
+
+	--rrg-3c-circle-P10-10-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-10-10-Cross-100-10: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-10-10-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-100-10-Cross-10-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-10-10-Cross-10-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-100-10-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-10-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-10-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+
+	--rrg-3c-circle-P10-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+
+	--rrg-3c-circle-P10-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+	--rrg-3c-circle-P10-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 5%, var(--tint-05) 10%);
+
+	/**
+		  * repeating-radial-gradient Circle with 20 patterns and 3 colors
+	  */
+
+	--rrg-3c-circle-P20-0-0: repeating-radial-gradient(circle at 0 0, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-100-0: repeating-radial-gradient(circle at 100% 0, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-0-100: repeating-radial-gradient(circle at 0 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-100-100: repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-0: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-100: repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-100-50: repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-0-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+
+	--rrg-3c-circle-P20-10-100-Cross-100-100: repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-10-10-Cross-100-10: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-10-10-Cross-100-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-100-10-Cross-10-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-10-10-Cross-10-100: repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-100-10-Cross-100-100: repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-10-Cross-50-100: repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-10-50-Cross-100-50: repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+
+	--rrg-3c-circle-P20-50-50-Cross-100-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-0-50: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 0% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-100-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-0-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 0% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+
+	--rrg-3c-circle-P20-50-50-Cross-100-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 100% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-0-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 0% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-50-0: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 50% 0%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+	--rrg-3c-circle-P20-50-50-Cross-50-100: repeating-radial-gradient(circle at 50% 50%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%), repeating-radial-gradient(circle at 50% 100%, var(--tint-0) 0%, var(--tint-30) 2.5%, var(--tint-05) 5%);
+
+}

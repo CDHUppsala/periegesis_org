@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Shades of Purpule Color - from color-meanings.com</title>
+    <style>
+        body {
+            font-size: 18px;
+        }
+
+        td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        td:nth-child(1) {
+            width: 380px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        td:nth-child(3) {
+            width: 640px;
+        }
+
+        #clear {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 5px 10px 0px 10px;
+            background: #ffffff;
+        }
+    </style>
+    <script>
+        function colorchange(num) {
+            document.getElementById('body').style.backgroundColor = '#' + num;
+            document.getElementById('currentBG').textContent = '#' + num;
+        }
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</head>
+
+<body id="body">
+    <div id="clear">
+        <div>
+            <span>Click on a color to change the Background</span><br>
+            <span>Current BG Color: </span><span id="currentBG">#FFFFFF</span><br>
+            <a href="javascript:colorchange('FFFFFF')">Clear BG Color</a> |
+            <a href="javascript:scrollToTop()">Scroll to Top</a>
+        </div>
+    </div>
+
+    <h1>Shades of Purple Color - From color-meanings.com</h1>
+    <figure>
+        <img src="img/purple.png">
+    </figure>
+
+    <table>
+        <tr>
+            <td onclick="colorchange('6a0dad')" style="background-color:#6a0dad"></td>
+            <td><strong>True Purple</strong><br>Hex #6A0DAD<br>RGB 106, 13, 173<br>CMYK 39, 92, 0, 32</td>
+            <td>True purple is a shade similar to violet. However, unlike violet, as it is composed of mixing red and blue, true purple is a secondary color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d8bfd8')" style="background-color:#d8bfd8"></td>
+            <td><strong>Thistle</strong><br>Hex #D8BFD8<br>RGB 216, 191, 216<br>CMYK 0, 12, 0, 15</td>
+            <td>This light purple color is meant to reflect the natural coloring of the thistle plant often associated with Scotland.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('dda0dd')" style="background-color:#dda0dd"></td>
+            <td><strong>Plum</strong><br>Hex #DDA0DD<br>RGB 221, 160, 221<br>CMYK 0, 28, 0, 13</td>
+            <td>A pale, purple color made using light reddish-purple. Much paler than the color of the plum fruit, the color officially recognized as plum is also brightly vivid.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8f00ff')" style="background-color:#8f00ff"></td>
+            <td><strong>Violet</strong><br>Hex #8F00FF<br>RGB 143, 0, 255<br>CMYK 44, 100, 0, 0</td>
+            <td>So purple as to appear almost blue, this shade is a tertiary color to purple and close in appearance to the natural color of Amethyst.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('da70d6')" style="background-color:#da70d6"></td>
+            <td><strong>Orchid</strong><br>Hex #DA70D6<br>RGB 218, 112, 214<br>CMYK 0, 49, 2, 15</td>
+            <td>This rich, bright purple is meant to reflect the naturally vivid color of the orchid flower.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('ff00ff')" style="background-color:#ff00ff"></td>
+            <td><span style="font-weight: 600;">Fuchsia</span><br>Hex #FF00FF<br>RGB 255, 0, 255<br>CMYK 0, 100, 0, 0</td>
+            <td>Leaning more towards pink, fuchsia incorporates a larger amount of red than other shades of purple to be brightly vibrant.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('ba55d3')" style="background-color:#ba55d3"></td>
+            <td><strong>Medium Orchid</strong><br>Hex #BA55D3<br>RGB 186, 85, 211<br>CMYK 12, 60, 0, 17</td>
+            <td>While medium orchid incorporates large amounts of red and blue, it is also composed of a good amount of green, which keeps it looking like a vibrant yet medium shade of purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9370db')" style="background-color:#9370db"></td>
+            <td><strong>Medium Purple</strong><br>Hex #9370DB<br>RGB 147, 112, 219<br>CMYK 33, 49, 0, 14</td>
+            <td>With more blue than red, this medium purple color reflects that of classic purple while remaining much more vibrant.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8a2be2')" style="background-color:#8a2be2"></td>
+            <td><strong>Blue Violet</strong><br>Hex #8A2BE2<br>RGB 138, 43, 226<br>CMYK 39, 81, 0, 11</td>
+            <td>With so much blue that this shade appears almost classic blue, it has just enough red to remain in the purple family.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9400d3')" style="background-color:#9400d3"></td>
+            <td><strong>Dark Violet</strong><br>Hex #9400D3<br>RGB 148, 0, 211<br>CMYK 30, 100, 0, 17</td>
+            <td>This is a deep, dark purple that remains slightly vibrant thanks to the violet tones present.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9932cc')" style="background-color:#9932cc"></td>
+            <td><strong>Dark Orchid</strong><br>Hex #9932CC<br>RGB 153, 50, 204<br>CMYK 25, 75, 0, 20</td>
+            <td>While this is a deeper color than the traditional orchid color, it is in no way to be considered a dark purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8b008b')" style="background-color:#8b008b"></td>
+            <td><strong>Dark Magenta</strong><br>Hex #8B008B<br>RGB 139, 0, 139<br>CMYK 0, 100, 0, 45</td>
+            <td>This deep magenta color is the closest to natural purple, with enough red to appear slightly more vibrant than its base color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4b0082')" style="background-color:#4b0082"></td>
+            <td><strong>Indigo</strong><br>Hex #4B0082<br>RGB 75, 0, 130<br>CMYK 42, 100, 0, 49</td>
+            <td>Indigo incorporates enough blue to appear on the blue end of the spectrum while remaining rich and vibrant enough to be considered a shade of purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('a020f0')" style="background-color:#a020f0"></td>
+            <td><strong>Veronica</strong><br>Hex #A020F0<br>RGB 160, 32, 240<br>CMYK 33, 87, 0, 6</td>
+            <td>An extremely bright purple color named after the flower veronica prostrata.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('fae6fa')" style="background-color:#fae6fa"></td>
+            <td><strong>Pale Purple</strong><br>Hex #FAE6FA<br>RGB 250, 230, 250<br>CMYK 0, 8, 0, 2</td>
+            <td>A pale, purple-pink color that has the appearance of white with a slight purple tint.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('e0b0ff')" style="background-color:#e0b0ff"></td>
+            <td><strong>Mauve</strong><br>Hex #E0B0FF<br>RGB 224, 176, 255<br>CMYK 12, 31, 0, 0</td>
+            <td>A very light, brilliant purple meant to reflect the natural color of the muted mallow wildflower.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('df73ff')" style="background-color:#df73ff"></td>
+            <td><strong>Heliotrope</strong><br>Hex #DF73FF<br>RGB 223, 115, 255<br>CMYK 13, 55, 0, 0</td>
+            <td>A pink-purple tone that reflects that of the naturally occurring heliotrope flower.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('df00ff')" style="background-color:#df00ff"></td>
+            <td><strong>Phlox</strong><br>Hex #DF00FF<br>RGB 223, 0, 255<br>CMYK 13, 100, 0, 0</td>
+            <td>Also known as psychedelic purple, this color lies somewhere between the vivacity of electric purple and magenta. Made from fluorescent magenta and blue, this color gained a large amount of popularity with hippies in the 1960s and 70s.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('fe4eda')" style="background-color:#fe4eda"></td>
+            <td><strong>Purple Pizzazz</strong><br>Hex #FE4EDA<br>RGB 254, 78, 218<br>CMYK 0, 69, 14, 0</td>
+            <td>As the name would suggest, this color is extremely bright and vibrant. First appearing as a Crayola crayon color in 1900, this color has many of the traits necessary to be classified within the spectrum of magenta and purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('de6fa1')" style="background-color:#de6fa1"></td>
+            <td><strong>Liserian Purple</strong><br>Hex #DE6FA1<br>RGB 222, 111, 161<br>CMYK 0, 50, 27, 13</td>
+            <td>A bright purple with enough red to appear almost pink. The first reference to this color is from 1912.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('c54b8c')" style="background-color:#c54b8c"></td>
+            <td><strong>Mulberry</strong><br>Hex #C54B8C<br>RGB 197, 75, 140<br>CMYK 0, 62, 29, 23</td>
+            <td>With enough red to lean towards the pink end of the purple spectrum, this is meant to reflect the color of mulberry jam.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b768a2')" style="background-color:#b768a2"></td>
+            <td><strong>Pearly Purple</strong><br>Hex #B768A2<br>RGB 183, 104, 162<br>CMYK 0, 43, 11, 28</td>
+            <td>A strong purple with more red than blue, this color first appeared in Crayola crayon sets in the 1990s.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9a4eae')" style="background-color:#9a4eae"></td>
+            <td><strong>Purpureus</strong><br>Hex #9A4EAE<br>RGB 154, 78, 174<br>CMYK 11, 55, 0, 32</td>
+            <td>Purpureus is vividly purple and the naming of this color dates all the way back to 1382.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4e2a84')" style="background-color:#4e2a84"></td>
+            <td><strong>Northwestern Purple</strong><br>Hex #4E2A84<br>RGB 78, 42, 132<br>CMYK 41, 68, 0, 48</td>
+            <td>Deeply violet and close to blue on the color scale, this color was custom created as the official color of Northwestern University.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('512888')" style="background-color:#512888"></td>
+            <td><strong>KSU Purple</strong><br>Hex #512888<br>RGB 81, 40, 136<br>CMYK 40, 71, 0, 47</td>
+            <td>This shade falls somewhat closer to blue than red on the color scale, producing a dark, violet shade used in the print materials of Kansas State University. It is almost identical to northwestern purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('86608e')" style="background-color:#86608e"></td>
+            <td><strong>Pomp and Power</strong><br>Hex #86608E<br>RGB 134, 96, 142<br>CMYK 6, 32, 0, 44</td>
+            <td>This purple shade is deep yet muted, producing a more moderate purple color sometimes associated with royalty.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('880085')" style="background-color:#880085"></td>
+            <td><strong>Mardi Gras</strong><br>Hex #880085<br>RGB 136, 0, 133<br>CMYK 0, 100, 2, 47</td>
+            <td>A deep, dark purple color commonly used in <a href="https://www.color-meanings.com/mardi-gras-colors-meanings-purple-green-gold/">Mardi Gras</a> decorations.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6c3082')" style="background-color:#6c3082"></td>
+            <td><strong>Eminence</strong><br>Hex #6C3082<br>RGB 108, 48, 130<br>CMYK 17, 63, 0, 49</td>
+            <td>This deep, medium purple has been used since the 1800s in order to describe the deep majesty of the color commonly used by royals.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('78184a')" style="background-color:#78184a"></td>
+            <td><strong>Pansy Purple</strong><br>Hex #78184A<br>RGB 120, 24, 74<br>CMYK 0, 80, 38, 53</td>
+            <td>Named after the purple pansy flower, this color mirrors the bloom, a shade between indigo and violet.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('72246c')" style="background-color:#72246c"></td>
+            <td><strong>Palatinate</strong><br>Hex #72246C<br>RGB 114, 36, 108<br>CMYK 0, 68, 5, 55</td>
+            <td>This pale violet shade is associated with the University of Durham and Newcastle University Medical School, with the name alluding to the area&#8217;s historical status.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('301934')" style="background-color:#301934"></td>
+            <td><strong>Dark Purple</strong><br>Hex #301934<br>RGB 48, 25, 52<br>CMYK 8, 52, 0, 80</td>
+            <td>A shade of purple so dark that it may almost be confused with black.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('702963')" style="background-color:#702963"></td>
+            <td><strong>Byzantium</strong><br>Hex #702963<br>RGB 112, 41, 99<br>CMYK 0, 63, 12, 56</td>
+            <td>A dark shade of purple, the name of which was first recorded in 1926 in a reference to the ancient Byzantine empire.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b284be')" style="background-color:#b284be"></td>
+            <td><strong>African Violet</strong><br>Hex #B284BE<br>RGB 178, 132, 190<br>CMYK 6, 31, 0, 25</td>
+            <td>A light Pantone purple based on the unique color of African violets.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9966cc')" style="background-color:#9966cc"></td>
+            <td><strong>Amethyst</strong><br>Hex #9966CC<br>RGB 153, 102, 204<br>CMYK 25, 50, 0, 20</td>
+            <td>This violet color is so moderate it almost appears to be transparent. Named after the color of amethyst crystals.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('856088')" style="background-color:#856088"></td>
+            <td><strong>Chinese Violet</strong><br>Hex #856088<br>RGB 133, 96, 136<br>CMYK 2, 29, 0, 47</td>
+            <td>A moderately deep purple. This subdued color correlates to the Chinese Violet flower.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('563c5c')" style="background-color:#563c5c"></td>
+            <td><strong>English Violet</strong><br>Hex #563C5C<br>RGB 86, 60, 92<br>CMYK 7, 35, 0, 64</td>
+            <td>An extremely dark purple. English Violet borders on black while retaining enough red hues to still be recognizably purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('32174d')" style="background-color:#32174d"></td>
+            <td><strong>Russian Violet</strong><br>Hex #32174D<br>RGB 50, 23, 77<br>CMYK 35, 70, 0, 70</td>
+            <td>As opposed to English Violet, Russian Violet contains more blue hues, giving this color the appearance of a blue that is edging towards black.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('f2c1d1')" style="background-color:#f2c1d1"></td>
+            <td><strong>Fairy Tale</strong><br>Hex #F2C1D1<br>RGB 242, 193, 209<br>CMYK 0, 20, 14, 5</td>
+            <td>This soft pink has enough lavender hues to pass for a purple shade. Making its display as a Pantone color, it is named after the color most seen attributed to typical fairy garb.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b53389')" style="background-color:#b53389"></td>
+            <td><strong>Fandango</strong><br>Hex #B53389<br>RGB 181, 51, 137<br>CMYK 0, 72, 24, 29</td>
+            <td>This vivid purplish red falls somewhere between a mix of pink and purple, giving this fun color its equally fanciful name.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d473d4')" style="background-color:#d473d4"></td>
+            <td><strong>French Mauve</strong><br>Hex #D473D4<br>RGB 212, 115, 212<br>CMYK 0, 46, 0, 17</td>
+            <td>While this vivid purple may also be known as deep mauve, it is classified purely as &#8220;mauve&#8221; in French and it is named after the mallow flower.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6f4685')" style="background-color:#6f4685"></td>
+            <td><strong>Affair</strong><br>Hex #6F4685<br>RGB 111, 70, 133<br>CMYK 17, 47, 0, 48</td>
+            <td>This unusually-named purple shade is a lot like a deeper version of lavender. It&#8217;s a great choice if you want something that has bold energy without the full depth of violet or similar colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b0306a')" style="background-color:#b0306a"></td>
+            <td><strong>Boss&#8217;s Jokes</strong><br>Hex #B0306A<br>RGB 176, 48, 106<br>CMYK 0, 73, 40, 31</td>
+            <td>This bright magenta-like purple is perfect if you want a bright, energetic purple shade that is almost pink. It would do especially well as an accent color against neutrals or as a part of an especially bright color palette.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9867c5')" style="background-color:#9867c5"></td>
+            <td><strong>Iris</strong><br>Hex #9867C5<br>RGB 152, 103, 197<br>CMYK 23, 48, 0, 23</td>
+            <td>The iris is a vibrant flower that comes in a whole range of colors. Iris is a well-balanced purple that manages to be light without being washed out. This springlike shade pairs very well with green and yellow pastels.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6f456e')" style="background-color:#6f456e"></td>
+            <td><strong>Long Distance</strong><br>Hex #6F456E<br>RGB 111, 69, 110<br>CMYK 0, 38, 1, 56</td>
+            <td>This subdued color is a quiet grayish purple, as evidenced by its high percentage of black. And if you look at the RGB value, you can see that it has approximately equal amounts of red and blue, making it a great classic purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('493f5e')" style="background-color:#493f5e"></td>
+            <td><strong>Prince Charming</strong><br>Hex #493F5E<br>RGB 73, 63, 94<br>CMYK 22, 33, 0, 63</td>
+            <td>This Disney-associated color is fittingly regal. Its dark, bluish cast makes it look much like the coats worn by many cartoon princes atop their white horses.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8e4785')" style="background-color:#8e4785"></td>
+            <td><strong>Lipstick Stain</strong><br>Hex #8E4785<br>RGB 142, 71, 133<br>CMYK 0, 50, 6, 44</td>
+            <td>Purple lipstick isn&#8217;t for everyone, but appropriately, many purple lipsticks are made in a similar color to Lipstick Stain. This shade involves a good bit of both magenta and black. That explains its significant energy despite the fact that it&#8217;s a cool color. Similarly, Lipstick Stain also has roughly the same amount of red and blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('720058')" style="background-color:#720058"></td>
+            <td><strong>Pompadour</strong><br>Hex #720058<br>RGB 114, 0, 88<br>CMYK 0, 100, 23, 55</td>
+            <td>The word &#8220;pompadour&#8221; refers to a distinctive hairstyle where the front of the hair is swept upward. Though it was popularized by Madame de Pompadour, one of the mistresses of King Louis XV, it is now especially popular as a men&#8217;s hairstyle. This color seems like an appropriate representation. It&#8217;s proud without being overly gaudy or hard on the eyes.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6f2da8')" style="background-color:#6f2da8"></td>
+            <td><strong>Grape Color</strong><br>Hex #6F2DA8<br>RGB 111, 45, 168<br>CMYK 34, 73, 0, 34</td>
+            <td>Despite the name, Grape Color is more the color of cartoon grapes than it is the color of the actual fruit. It&#8217;s similar to a deep lavender with a little extra blue. As you can see from the RGB value, this color has a significant amount of blue. As a cool color that&#8217;s fairly energetic, Grape Color is an especially good choice for activewear or spring clothing.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('2c041c')" style="background-color:#2c041c"></td>
+            <td><strong>Wine</strong><br>Hex #2C041C<br>RGB 44, 4, 28<br>CMYK 0, 91, 36, 83</td>
+            <td>This aptly-named color is truer to the actual color of wine than many &#8220;wine red&#8221; colors are. As a deep, dark purple, it&#8217;s roughly the color of a good pinot noir. Though Wine will generally be too dark for walls, it&#8217;s an excellent choice for dramatic accents in any room. It pairs especially well with ivory or parchment shades.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9a2ca0')" style="background-color:#9a2ca0"></td>
+            <td><strong>Pizza Edge</strong><br>Hex #9A2CA0<br>RGB 154, 44, 160<br>CMYK 4, 72, 0, 37</td>
+            <td>This color is somewhat confusingly named. After all, the edge of a pizza isn&#8217;t purple at all. Pizza Edge is roughly between the color of fuchsia and royal purple, and it has roughly equal amounts of red and blue. Pizza Edge pops when placed against yellow, but it also looks nice in a medley of cool colors like blue and green.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('66023c')" style="background-color:#66023c"></td>
+            <td><strong>Tyrian Purple</strong><br>Hex #66023C<br>RGB 102, 2, 60<br>CMYK 0, 98, 41, 60</td>
+            <td>Tyrian Purple is named after a natural pigment that comes from a species of sea snail. It gets its name from the city of Tyre in Lebanon. You may sometimes hear it called royal purple or Phoenician purple. As a reddish-colored purple, this color is ideal if you want a rich, deep purple with some energy.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('645394')" style="background-color:#645394"></td>
+            <td><strong>Ultra Violet</strong><br>Hex #645394<br>RGB 100, 83, 148<br>CMYK 32, 44, 0, 42</td>
+            <td>Despite the name, Ultra Violet isn&#8217;t an overwhelming or incredibly loud purple shade. If anything, it&#8217;s one of the quieter ones on the list. As a bluish-purple, it&#8217;s a lovely shade if you want a calming color that&#8217;s still in the purple family. Its complementary color is a somewhat dull olive green, and it also looks nice near various shades of gray.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('7851a9')" style="background-color:#7851a9"></td>
+            <td><strong>Studio</strong><br>Hex #7851A9<br>RGB 120, 81, 169<br>CMYK 29, 52, 0, 34</td>
+            <td>This appropriately-named pale purple combines businesslike calm and playful creative energy. It&#8217;s essentially a version of lilac with more blue. And since working in blue spaces has been linked to greater productivity, Studio is a great color to pick if you&#8217;re designing a workspace but still want to be surrounded by purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('bf00ff')" style="background-color:#bf00ff"></td>
+            <td><strong>Electric Purple</strong><br>Hex #BF00FF<br>RGB 191, 0, 255<br>CMYK 25, 100, 0, 0</td>
+            <td>Many purple shades are relatively calm, but this highly energetic purple is ideal if your project needs a splash of fun. As you&#8217;ll see on its CMYK values, Electric Purple is devoid of any black or yellow. It&#8217;s really a mixture of cyan and magenta. This color can really add some energy when paired with bright yellow or green.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('311432')" style="background-color:#311432"></td>
+            <td><strong>Eggplant</strong><br>Hex #311432<br>RGB 49, 20, 50<br>CMYK 2, 60, 0, 80</td>
+            <td>No list of purples is complete without the deep, dark shade of the beloved eggplant. This regal shade will add an air of quiet confidence to any project you&#8217;re working on. Pairing it with a dark green is a great choice. And because it has a relatively high proportion of black, Eggplant is a great choice for printing a logo or adding text on a white background.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('be93e4')" style="background-color:#be93e4"></td>
+            <td><strong>Periwinkle Purple</strong><br>Hex #BE93E4<br>RGB 190, 147, 228<br>CMYK 17, 36, 0, 11</td>
+            <td>You might imagine a powder-blue shade when you think of periwinkle. But the periwinkle flowers the color is named for can actually vary considerably in color. Some are blue, some are white, and some are purple, and Periwinkle Purple accurately captures the color of the purple variant. This pastel-like color is pale and dreamy, and it would make a great wall color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4d0f28')" style="background-color:#4d0f28"></td>
+            <td><strong>Sangria</strong><br>Hex #4D0F28<br>RGB 77, 15, 40<br>CMYK 0, 81, 48, 70</td>
+            <td>The fruity aroma of sangria is the perfect complement to a summer night, and this deep purple is another darker shade that works well for printing text or making logos. It looks nice against darker greens and blues. Since it has almost equal amounts of magenta and black, it&#8217;s an interesting alternative to darker bluish purples.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('290916')" style="background-color:#290916"></td>
+            <td><strong>Raisin</strong><br>Hex #290916<br>RGB 41, 9, 22<br>CMYK 0, 78, 46, 84</td>
+            <td>Not many projects typically call for a dark brownish-purple. But if you&#8217;re working on one that does, Raisin should fit the bill perfectly. Its deep color would look stunning as a background to white lettering, and it also will look good next to a very deep forest green.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('997a8d')" style="background-color:#997a8d"></td>
+            <td><strong>Mountbatten Pink</strong><br>Hex #997A8D<br>RGB 153, 122, 141<br>CMYK 0, 20, 8, 40</td>
+            <td>Though this color is described as pink, it has more of a purple cast. It also has an interesting history. Mountbatten Pink was used as a camouflage color for ships in WWII by Lord Mountbatten of Britain. Though Mountbatten believed that it worked, experts generally agreed that, if anything, being painted Mountbatten Pink actually made ships more obvious.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9c51b6')" style="background-color:#9c51b6"></td>
+            <td><strong>Fuchsia Blue</strong><br>Hex #9C51B6<br>RGB 156, 81, 182<br>CMYK 14, 55, 0, 29</td>
+            <td>You probably know fuchsia as being what&#8217;s essentially a bright magenta. But when you add some cyan, you get the lovely shade known as fuchsia blue. This color looks a lot like a quieter version of Electric Purple, which makes sense. Despite being over 55% magenta, this blue still has a significant amount of cyan and black.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('c9a0ff')" style="background-color:#c9a0ff"></td>
+            <td><strong>Good Tax</strong><br>Hex #C9A0FF<br>RGB 201, 160, 255<br>CMYK 21, 37, 0, 0</td>
+            <td>As you&#8217;ve seen, there&#8217;s no shortage of purple shades with odd names, and Good Tax is certainly one. This is a pale, pastel-like purple, and it gives off a relaxed vibe thanks to a large amount of cyan. Remarkably, it has no yellow or black in it. This explains its cooler shade and pale appearance.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('67032f')" style="background-color:#67032f"></td>
+            <td><strong>Jam</strong><br>Hex #67032F<br>RGB 103, 3, 47<br>CMYK 0, 97, 54, 60</td>
+            <td>Freshly-canned jam is something truly special, and this warm yet deep purple shade captures the essence of a jar the second you open it. Its dark red look gives it an appearance like that of cherry jam. This color makes a statement, and it&#8217;s a good choice for apparel design.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('410056')" style="background-color:#410056"></td>
+            <td><strong>Ripe Plum</strong><br>Hex #410056<br>RGB 65, 0, 86<br>CMYK 24, 100, 0, 66</td>
+            <td>The color of a true ripe plum is typically a little darker than this, but Ripe Plum is nonetheless an excellent choice for a range of products. If you favor a bold look on a home, try using it to paint the shutters and door. Ripe Plum is also a dignified color if you need tablecloths for an event.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9e7bb5')" style="background-color:#9e7bb5"></td>
+            <td><strong>Heather</strong><br>Hex #9E7BB5<br>RGB 158, 123, 181<br>CMYK 13, 32, 0, 29</td>
+            <td>You might picture gray when you imagine heather, but this soft purple is the actual color of most heather blossoms. Heather is a hardy shrub that grows in much of Scotland, and its flowers bloom toward the end of summer. This pale purple is calm enough to use in a bedroom, and it looks especially nice in a palette with other shades of purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('a32cc4')" style="background-color:#a32cc4"></td>
+            <td><strong>Magenta Purple</strong><br>Hex #A32CC4<br>RGB 163, 44, 196<br>CMYK 17, 78, 0, 23</td>
+            <td>This pretty, medium shade is close to what most people think of when they imagine purple. The particular purple looks a bit like Electric Purple, and it&#8217;s somewhat bright in color without being pale. Thanks to its high proportion of magenta, this purple shade is somewhat high-energy and works very well as an accent color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9078c0')" style="background-color:#9078c0"></td>
+            <td><strong>Mountain&#8217;s Majesty</strong><br>Hex #9078C0<br>RGB 144, 120, 192<br>CMYK 25, 38, 0, 25</td>
+            <td>This soothing color seems to tread the line between periwinkle blue and periwinkle purple. It would make a great color for a peaceful reading nook or for a bedroom. If you&#8217;re going for a fancier look, this color also pairs well with a touch of gold.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('796878')" style="background-color:#796878"></td>
+            <td><strong>Old Lavender</strong><br>Hex #796878<br>RGB 121, 104, 120<br>CMYK 0, 14, 1, 53</td>
+            <td>Appropriately, this is a color that really looks like dried lavender. While it is technically still purple, its somewhat large amounts of green and black help give it its aged look. A diluted version of this color would work well for walls. And as it is, Old Lavender is a great color for accent pieces like pillows and rugs.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('663399')" style="background-color:#663399"></td>
+            <td><strong>Rebecca Purple</strong><br>Hex #663399<br>RGB 102, 51, 153<br>CMYK 33, 67, 0, 40</td>
+            <td>Rebecca Purple has a tragic backstory. It was named for Rebecca Alison Meyer, the daughter of CSS pioneer Eric Meyer. Rebecca died on her sixth birthday, and designer Jeffrey Zeldman started a campaign to name this shade after her. Purple was Rebecca&#8217;s favorite color, and this shade was officially called &#8220;Rebecca Purple&#8221; in 2014.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8d4e85')" style="background-color:#8d4e85"></td>
+            <td><strong>Razzmic Berry Purple</strong><br>Hex #8D4E85<br>RGB 141, 78, 133<br>CMYK 0, 45, 6, 45</td>
+            <td>This color might sound familiar &#8211; it&#8217;s the name of one of Crayola&#8217;s colors. As a twist on the color raspberry, Razzmic Berry is a little more purple and a little less red. If you&#8217;re looking for a whimsical color that just might hearken back to your childhood, try using Razzmic Berry in your next project.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('673147')" style="background-color:#673147"></td>
+            <td><strong>Wine Dregs Purple</strong><br>Hex #673147<br>RGB 103, 49, 71<br>CMYK 0, 52, 31, 60</td>
+            <td>Unsurprisingly, this shade of purple has some major similarities to Wine. And fittingly, it&#8217;s a bit more gray, too. Wine Dregs Purple is an ideal choice if you want a shade of purple that doesn&#8217;t quite fit in anywhere. It&#8217;s too red to be mauve and too gray to be burgundy. But for that special project where you need a truly unique shade, Wine Dregs Purple just might be it.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('522d80')" style="background-color:#522d80"></td>
+            <td><strong>Regalia Purple</strong><br>Hex #522D80<br>RGB 82, 45, 128<br>CMYK 36, 65, 0, 50</td>
+            <td>Regalia Purple is a deep, regal purple that commands attention. It&#8217;s right at home next to gold, but it also would work very well in a palette with pastels like robin&#8217;s egg blue. Since it&#8217;s fairly heavy on both blue and black, Regalia Purple is much calmer than some other shades of deeper purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8a496b')" style="background-color:#8a496b"></td>
+            <td><strong>Twilight Lavender Purple</strong><br>Hex #8A496B<br>RGB 138, 73, 107<br>CMYK 0, 47, 22, 46</td>
+            <td>This beautifully unique, dusky color is a little like that of lavender fields at the golden hour. If you like mauve but need something with a little more red, it&#8217;s an ideal choice. Twilight Lavender Purple fits in well with grays, and it also looks good alongside some shades of green or blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8e4585')" style="background-color:#8e4585"></td>
+            <td><strong>Traditional Purple</strong><br>Hex #8E4585<br>RGB 142, 69, 133<br>CMYK 0, 51, 6, 44</td>
+            <td>As the name suggests, Traditional Purple is another representation of what many people think of when they picture purple. And fittingly, it is an average purple in many respects. It has roughly the same amount of red and blue, as well as about the same amount of magenta and cyan. Traditional Purple looks great in palettes of various shades of bluish purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4c2882')" style="background-color:#4c2882"></td>
+            <td><strong>Spanish Violet Purple</strong><br>Hex #4C2882<br>RGB 76, 40, 130<br>CMYK 42, 69, 0, 49</td>
+            <td>Some shades of purple have a bit of a backstory, and Spanish Violet Purple is one of them. You might think that it&#8217;s named after a special variety of violet. However, it&#8217;s the exact shade called&nbsp;<em>violeta</em>&nbsp;(&#8220;violet&#8221;) in a popular book of colors that&#8217;s used in many Spanish-speaking countries.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('602f6b')" style="background-color:#602f6b"></td>
+            <td><strong>Imperial Purple</strong><br>Hex #602F6B<br>RGB 96, 47, 107<br>CMYK 10, 56, 0, 58</td>
+            <td>Though Tyrian Purple is sometimes called &#8220;imperial purple,&#8221; this particular Imperial Purple is a different shade altogether. This one is deep and particularly rich in blue, much more so than Tyrian Purple. It&#8217;s especially striking when placed next to deep blue-greens.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('5b3256')" style="background-color:#5b3256"></td>
+            <td><strong>Japanese Violet Purple</strong><br>Hex #5B3256<br>RGB 91, 50, 86<br>CMYK 0, 45, 5, 64</td>
+            <td>This shade is the color officially designated as &#8220;violet&#8221; in Japan. Japan names and numbers colors with what&#8217;s known as the traditional Japanese colors group. This collection of colors has been used since the year 660 CE.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9f00c5')" style="background-color:#9f00c5"></td>
+            <td><strong>Munsell Purple</strong><br>Hex #9F00C5<br>RGB 159, 0, 197<br>CMYK 19, 100, 0, 23</td>
+            <td>This is another purple shade that&#8217;s part of a distinct color system. As the name suggests, Munsell Purple is part of the Munsell Color System, a group of colors put forth by professor Albert H. Munsell. This interesting system classifies colors based on hue (location on color spectrum), chroma (saturation), and value (lightness).</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('843f5b')" style="background-color:#843f5b"></td>
+            <td><strong>Deep Ruby Purple</strong><br>Hex #843F5B<br>RGB 132, 63, 91<br>CMYK 0, 52, 31, 48</td>
+            <td>This is another purple that comes very close to being a red. After all, based on the RGB value, you can see that it contains much more red than blue. And interestingly enough, it doesn&#8217;t include cyan (but is over 50% magenta). Its deep, slightly dusky color makes it pair nicely with slightly brighter colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('7442c8')" style="background-color:#7442c8"></td>
+            <td><strong>Purple Heart</strong><br>Hex #7442C8<br>RGB 116, 66, 200<br>CMYK 42, 67, 0, 22</td>
+            <td>This shade of purple is another of Crayola&#8217;s classic colors. It&#8217;s paler than the purple that you see on Purple Heart medals. It looks a little more like saturated lavender. Though it&#8217;s fairly light thanks to having very little black, the amount of blue in Purple Heart makes it much cooler than some other purples.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('fff0f5')" style="background-color:#fff0f5"></td>
+            <td><strong>Lavender Blush</strong><br>Hex #FFF0F5<br>RGB 255, 240, 245<br>CMYK 0, 6, 4, 0</td>
+            <td>Sometimes, you just need a barely-there purple for a project, and Lavender Blush is a prime example. At first, it looks more like a pale pink. But if you take a look at the RGB values, you&#8217;ll see that it has approximately equal parts red and blue. The very pale nature of Lavender Blush makes it a perfect understated wall color or color for stationery.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('cea2fd')" style="background-color:#cea2fd"></td>
+            <td><strong>Early Bird</strong><br>Hex #CEA2FD<br>RGB 206, 162, 253<br>CMYK 19, 36, 0, 1</td>
+            <td>Early Bird is another of the soothing, periwinkle-like purples. This one is a little more saturated than most, and it also has a bit more blue. Its name and the shade itself suggest the pale purplish blue you often see in the morning sky.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b65fcf')" style="background-color:#b65fcf"></td>
+            <td><strong>Lilac</strong><br>Hex #B65FCF<br>RGB 182, 95, 207<br>CMYK 12, 54, 0, 19</td>
+            <td>Though darker than the blooms on an actual lilac, this is nonetheless a very pretty shade of purple. Its relative lightness means that it can add some energy and life into just about any color palette. Lilac looks especially nice when paired with turquoise or similar colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('50404d')" style="background-color:#50404d"></td>
+            <td><strong>Purple Taupe</strong><br>Hex #50404D<br>RGB 80, 64, 77<br>CMYK 0, 20, 4, 69</td>
+            <td>The name of this color might come as a bit of a surprise. After all, most of us don&#8217;t think of the dull brown color of taupe and the vibrance of purple as working together. However, Purple Taupe is a highly effective color choice if you need a neutral color scheme yet want to incorporate elements of purple. Similar to some shades of olive green, Purple Taupe can be used as a neutral on some projects.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('58427c')" style="background-color:#58427c"></td>
+            <td><strong>Cyber Grape Purple</strong><br>Hex #58427C<br>RGB 88, 66, 124<br>CMYK 29, 47, 0, 51</td>
+            <td>If you&#8217;re one to notice colors with unique names, Cyber Grape is certainly a standout. This deep, calm purple is similar to the fairly dark purple typically associated with grapes. However, thanks to its large amounts of blue, Cyber Grape is similar to slate blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('653780')" style="background-color:#653780"></td>
+            <td><strong>Kingfisher Daisy</strong><br>Hex #653780<br>RGB 101, 55, 128<br>CMYK 21, 57, 0, 50</td>
+            <td>This color is named after an actual plant that&#8217;s commonly called the kingfisher daisy, Felicia, or blue daisy. These daisies typically aren&#8217;t quite as purple as this particular color. But nonetheless, this quiet purple works well in a multi-purple palette or up against some cool blues.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('61346b')" style="background-color:#61346b"></td>
+            <td><strong>Seance</strong><br>Hex #61346B<br>RGB 97, 52, 107<br>CMYK 9, 51, 0, 58</td>
+            <td>Otherworldly and ominous, Seance is a perfectly named purple shade. Its large proportions of blue and black prevent it from becoming overly warm. Seance is still fairly close to what most of us see when we picture &#8220;purple,&#8221; so it&#8217;s a familiar choice for a lot of different applications.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b6b5d8')" style="background-color:#b6b5d8"></td>
+            <td><strong>Lavender Gray</strong><br>Hex #B6B5D8<br>RGB 182, 181, 216<br>CMYK 16, 16, 0, 15</td>
+            <td>Purple-gray colors aren&#8217;t typically as popular as blue-gray ones. But if you need just a hint of purple in a backdrop or wall color, you might want to consider the misty, peaceful lavender gray. This color is heavier on the blue than on the red, but it makes for a cool, relaxing color to be around.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d05fad')" style="background-color:#d05fad"></td>
+            <td><strong>Hopbush</strong><br>Hex #D05FAD<br>RGB 208, 95, 173<br>CMYK 0, 54, 17, 18</td>
+            <td>This magenta-heavy purple almost crosses the line into pink. Regardless of whether you consider it to be pink or purple, Hopbush is named for the fruit of a bush of the same name. Hopbush fruit is pinkish-purple in color and appears in the summer. It contrasts beautifully with the leaves of the hopbush, which are typically a bronze-green color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6f3096')" style="background-color:#6f3096"></td>
+            <td><strong>Tacao</strong><br>Hex #6F3096<br>RGB 111, 48, 150<br>CMYK 26, 68, 0, 41</td>
+            <td>Tacao is a classic-looking purple that leans more blue than it does red. But its slightly cool edge makes it great for a variety of projects. Its fresh look makes it an ideal choice for spring outerwear and athletic wear. Tacao will pair well with most bright colors and most neutrals, making it incredibly versatile.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d399e6')" style="background-color:#d399e6"></td>
+            <td><strong>Brilliant Purple</strong><br>Hex #D399E6<br>RGB 211, 153, 230<br>CMYK 8, 33, 0, 10</td>
+            <td>You might expect a color called &#8220;brilliant purple&#8221; to be one of the deeper, royal-looking shades on the list. However, this one has its own brilliance. It&#8217;s light in color and similar to amethyst, and it&#8217;s easy to imagine a sparkle around the edges.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4f284b')" style="background-color:#4f284b"></td>
+            <td><strong>Murasaki Purple</strong><br>Hex #4F284B<br>RGB 79, 40, 75<br>CMYK 0, 49, 5, 69</td>
+            <td>Murasaki simply means &#8220;purple&#8221; in Japanese. The word is used to describe a range of purple vegetables. There&#8217;s a type of pepper known as Murasaki purple, and there are also Murasaki sweet potatoes. This color is very close to the color of Murasaki vegetables. It&#8217;s very deep and dark, making it ideal for creating dramatic accents on lighter backdrops.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('291e29')" style="background-color:#291e29"></td>
+            <td><strong>Blackish Purple</strong><br>Hex #291E29<br>RGB 41, 30, 41<br>CMYK 0, 27, 0, 84</td>
+            <td>This is one of the darkest purples you can possibly find. Blackish Purple may not be the color for every occasion. But since its proximity to black makes it essentially a neutral, it&#8217;s a good choice when you need a very dark, black-like neutral for a project.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('7f38ec')" style="background-color:#7f38ec"></td>
+            <td><strong>Lovely Purple</strong><br>Hex #7F38EC<br>RGB 127, 56, 236<br>CMYK 46, 76, 0, 7</td>
+            <td>True to its name, this color is a lovely shade of purple. It comes very close to being a shade of blue. As you can see from its RGB values, it&#8217;s made with a very high proportion of blue. It&#8217;s also one of the brighter shades on the list. Lovely Purple is dark enough to be used as a backdrop color, but it&#8217;s also light enough for use in the foreground of any project.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('3e2f84')" style="background-color:#3e2f84"></td>
+            <td><strong>Vulgar Purple (Grape Jelly)</strong><br>Hex #3E2F84<br>RGB 62, 47, 132<br>CMYK 53, 64, 0, 48</td>
+            <td>&#8220;Vulgar&#8221; technically just means &#8220;common,&#8221; but it has a generally negative connotation. So this color is often referred to by the more pleasant name of &#8220;Grape Jelly.&#8221; That&#8217;s a fitting name &#8211; Grape Jelly is about as dark as its namesake, although it may have a little extra blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4f2d7f')" style="background-color:#4f2d7f"></td>
+            <td><strong>University of Central<br>Arkansas Purple</strong><br>Hex #4F2D7F&nbsp;<br>RGB 79, 45, 127<br>CMYK 38, 65, 0, 50</td>
+            <td>Just about every college and university selects a specific hex and CMYK value for each color used in its logo. That helps ensure that college materials look exactly the same whether they&#8217;re used on signage, printed on shirts, or incorporated into brochures. This deep bluish purple helps make up the shield logo of the University of Central Arkansas.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('660099')" style="background-color:#660099"></td>
+            <td><strong>FedEx Purple</strong><br>Hex #660099&nbsp;<br>RGB 102, 0, 153<br>CMYK 33, 100, 0, 40</td>
+            <td>Universities aren&#8217;t the only institutions that need to ensure color consistency across materials. The same is true of large companies. This particular shade of purple may be familiar. You&#8217;ve probably seen it on the sides of FedEx vehicles. It&#8217;s the color that makes up the first part of the company logo.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9b84a1')" style="background-color:#9b84a1"></td>
+            <td><strong>Carolina Plum</strong><br>Hex #9B84A1<br>RGB 155, 132, 161<br>CMYK 4, 18, 0, 37</td>
+            <td>Some hex values are claimed by paint companies, and Carolina Plum is one of the colors that Benjamin Moore offers. This relatively pale, dusty-looking purple is kind of like a grayish lavender. It would make a good wall color if you prefer a room to be slightly dark in color without becoming suffocating.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('705160')" style="background-color:#705160"></td>
+            <td><strong>Kalamata</strong><br>Hex #705160<br>RGB 112, 81, 96<br>CMYK 0, 28, 14, 56</td>
+            <td>Kalamata is another of Benjamin Moore&#8217;s paint colors. This one is appropriately named after the kalamata olive. The olives may be slightly more brown than this color, but Kalamata is an excellent choice for a dark background color or for use as text over a lighter background.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('540e32')" style="background-color:#540e32"></td>
+            <td><strong>Black Currant</strong><br>Hex #540E32<br>RGB 84, 14, 50<br>CMYK 0, 83, 40, 67</td>
+            <td>Dark lipsticks never seem to completely go out of style, and most of them are shades of purple. This lovely color is one of those used by L.A. Girl. It stands out because, despite being a dark purple, Black Currant still has a high proportion of red. You can see this in its RGB values &#8211; it still has some blue, but it has far more red.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('551a8b')" style="background-color:#551a8b"></td>
+            <td><strong>Purple 4</strong><br>Hex #551A8B<br>RGB 85, 26, 139<br>CMYK 39, 81, 0, 45</td>
+            <td>Not all shades of purple come with interesting names. Purple 4 is a beautiful bluish purple that isn&#8217;t excessively dark. It&#8217;s a great choice if you&#8217;re working on a project that needs an energetic shade that isn&#8217;t quite as loud as Electric Purple and similar colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('875692')" style="background-color:#875692"></td>
+            <td><strong>Strong Purple</strong><br>Hex #875692<br>RGB 135, 86, 146<br>CMYK 8, 41, 0, 43</td>
+            <td>Despite the name, Strong Purple isn&#8217;t quite what you&#8217;d think of when you imagine a strong version of this versatile color. That isn&#8217;t a problem, though. As evidenced by its RGB values, Strong Purple is a medium shade with approximately equal amounts of red and blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('aa98a9')" style="background-color:#aa98a9"></td>
+            <td><strong>Pale Purple</strong><br>Hex #AA98A9<br>RGB 170, 152, 169<br>CMYK 0, 11, 1, 33</td>
+            <td>This pretty color is similar to lilac, and it&#8217;s a versatile choice if you want a light purple that isn&#8217;t quite a pastel. Pale purple would do well in a palette with other pale versions of cool colors, and it also looks good with neutrals like brown or gray.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('870074')" style="background-color:#870074"></td>
+            <td><strong>Vivid Reddish Purple</strong><br>Hex #870074<br>RGB 135, 0, 116<br>CMYK 0, 100, 14, 47</td>
+            <td>Purple is a cool color, but shades that contain more red have a look that&#8217;s a little warmer. Bluish versions tend to appear more springlike, while reddish versions like this one have a more summery feel. Vivid Reddish Purple works well against a neutral palette where it will stand out, and it also looks nice alongside similarly bright colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8968cd')" style="background-color:#8968cd"></td>
+            <td><strong>Medium Purple 3</strong><br>Hex #8968CD<br>RGB 137, 104, 205<br>CMYK 33, 49, 0, 20</td>
+            <td>Though it&#8217;s another color with a less-than-exciting name, Medium Purple 3 is an especially pretty shade. It looks a little like a darker and more saturated periwinkle. This color looks especially nice next to ivory and cream. The fact that it has more blue than red makes it a demure, cool shade of purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d982b5')" style="background-color:#d982b5"></td>
+            <td><strong>Middle Purple</strong><br>Hex #D982B5<br>RGB 217, 130, 181<br>CMYK 0, 40, 17, 15</td>
+            <td>The name of this color might make you think that it&#8217;s close in appearance to Middle Purple 3. However, it&#8217;s almost pink. Middle Purple is the name of a Crayola purple, and it&#8217;s best described as a red-heavy, medium-light purple. It has a dusky quality about it that makes it look very nice alongside tan and similar neutrals.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8a244e')" style="background-color:#8a244e"></td>
+            <td><strong>Cardinal</strong><br>Hex #8A244E<br>RGB 138, 36, 78<br>CMYK 0, 74, 43, 46</td>
+            <td>Cardinal is a confusingly named purple. After all, cardinals tend to be a bright scarlet red in color. This shade is the name of a paint made by Resene, and it&#8217;s most accurately described as a deep, red-heavy purple. It&#8217;s close to burgundy in color, and it looks especially nice next to other jewel tones.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('3b343c')" style="background-color:#3b343c"></td>
+            <td><strong>Embassy Purple</strong><br>Hex #3B343C<br>RGB 59, 52, 60<br>CMYK 2, 13, 0, 76</td>
+            <td>This businesslike, near-black purple is a shade made by Ralph Lauren. It&#8217;s roughly the color of black cherries, albeit with a little less red. Embassy Purple is a great alternative to black when printing materials, and it&#8217;s perfect for adding just a hint of purple to neutral color palettes.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('552582')" style="background-color:#552582"></td>
+            <td><strong>Lakers Purple</strong><br>Hex #552582<br>RGB 85, 37, 130<br>CMYK 35, 72, 0, 49</td>
+            <td>If you&#8217;re a sports fan, you may recognize this purple on sight. It&#8217;s the exact color used for the Lakers logo. Not surprisingly, Lakers Purple looks good alongside yellow and other bright colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('ab274f')" style="background-color:#ab274f"></td>
+            <td><strong>Amaranth Purple</strong><br>Hex #AB274F<br>RGB 171, 39, 79<br>CMYK 0, 77, 54, 33</td>
+            <td>This distinctive color is named after the purple amaranth, a species of pigweed. It&#8217;s sometimes called livid amaranth. This plant features unusual &#8220;flower spikes&#8221; that offer a welcome contrast to typical blooms. Florists sometimes use cuttings of purple amaranth to add variety to flower bouquets, and this plant can also be grown in gardens.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('4e5180')" style="background-color:#4e5180"></td>
+            <td><strong>Purple Navy</strong><br>Hex #4E5180<br>RGB 78, 81, 128<br>CMYK 39, 37, 0, 50</td>
+            <td>Some of the most interesting shades of purple are those that tread the line between purple and blue (or purple and red). And when you look at Purple Navy, it can be hard to tell whether it&#8217;s a shade of blue or a shade of purple. This deep color is ideal if you like navy blue but want to choose something a little different.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('682e3c')" style="background-color:#682e3c"></td>
+            <td><strong>Insolent Purple</strong><br>Hex #682E3C<br>RGB 104, 46, 60<br>CMYK 0, 56, 42, 59</td>
+            <td>This amusingly named color is another shade of purple used in lipstick. More specifically, Insolent Purple is one of Estee Lauder&#8217;s signature lipstick colors. Because it&#8217;s roughly between a pink and a deep purple, it&#8217;s ideal for those who want a dark lip that isn&#8217;t too dark.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('a2627a')" style="background-color:#a2627a"></td>
+            <td><strong>Smyrna Purple</strong><br>Hex #A2627A&nbsp;<br>RGB 162, 98, 122<br>CMYK 0, 40, 25, 36</td>
+            <td>Smyrna Purple is a soft, lovely shade that borders on pink. It also contains a fair amount of black (as seen in its CMYK values), so it isn&#8217;t particularly pale. Smyrna Purple would work well as a wall color if you&#8217;re looking for something bold. It also is a great choice for clothing, as it&#8217;s cheerful without being overly bright.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('592a8a')" style="background-color:#592a8a"></td>
+            <td><strong>East Carolina<br>University Purple</strong><br>Hex #592A8A<br>RGB 89, 42, 138<br>CMYK 36, 70, 0, 46</td>
+            <td>Interestingly enough, colleges and universities using purple in their logos tend to settle on similar shades of dark bluish purple. ECU Purple is very close to KSU Purple. It combines the authority of blue with the regal nature of purple, making it an excellent option for a university to choose.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('e9dce5')" style="background-color:#e9dce5"></td>
+            <td><strong>Little Princess</strong><br>Hex #E9DCE5<br>RGB 233, 220, 229<br>CMYK 0, 6, 2, 9</td>
+            <td>This enchantingly named color is made by Porter Paints. It&#8217;s a very pale cream color with just a touch of purple, making it a pleasant and classic choice for a wall color. And because it&#8217;s so close to ivory or cream, Little Princess is a viable alternative to various shades of off-white when it comes to paper and stationery.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('502380')" style="background-color:#502380"></td>
+            <td><strong>Aesthetic Purple</strong><br>Hex #502380<br>RGB 80, 35, 128<br>CMYK 38, 73, 0, 50</td>
+            <td>As the name suggests, Aesthetic Purple is very pleasing to the eye. It&#8217;s a deep bluish color that possesses an elegance that few purple shades do. Aesthetic Purple really pops when put up against bright greens and yellows, but it also pairs nicely with silver and gold.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('5d3f6a')" style="background-color:#5d3f6a"></td>
+            <td><strong>Kikyo-iru</strong><br>Hex #5D3F6A<br>RGB 93, 63, 106<br>CMYK 12, 41, 0, 58</td>
+            <td>This unique shade of purple is fairly close to what most of us likely picture when we imagine purple. It&#8217;s neither too red nor too blue. Its complementary color is a very slightly brown shade of green. In this combination, Kikyo-iru offers a picture of understated elegance.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('520e7d')" style="background-color:#520e7d"></td>
+            <td><strong>Metallic Purple</strong><br>Hex #520E7D<br>RGB 82, 14, 125<br>CMYK 34, 89, 0, 51</td>
+            <td>Metallic Purple is somewhat confusingly named. After all, it&#8217;s hard for a flat color to look metallic. But this shade is just deep enough to look nice with a touch of sparkle. This classic purple works especially well with yellow, but it also pairs nicely with various shades of blue.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('a420d0')" style="background-color:#a420d0"></td>
+            <td><strong>Hot Purple</strong><br>Hex #A420D0<br>RGB 164, 32, 208<br>CMYK 21, 85, 0, 18</td>
+            <td>This neon-like shade is very similar to Electric Purple. It&#8217;s perfect to use wherever you need a pop of color. However, Hot Purple also works nicely in summery color palettes where you need several bright, attention-grabbing colors.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('795f80')" style="background-color:#795f80"></td>
+            <td><strong>Faded Purple</strong><br>Hex #795F80<br>RGB 121, 95, 128<br>CMYK 5, 26, 0, 50</td>
+            <td>This color is aptly named, and it&#8217;s ideal if you&#8217;re looking for a grayish shade of purple that isn&#8217;t overly gray. This color is close enough to a neutral that it works well for clothing. It also will look nice alongside various shades of gray.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('53277e')" style="background-color:#53277e"></td>
+            <td><strong>Mythical Purple</strong><br>Hex #53277E<br>RGB 83, 39, 126<br>CMYK 34, 69, 0, 51</td>
+            <td>This pretty, soothing purple is somewhat similar to Lakers Purple. It&#8217;s versatile, too. Mythical Purple is dark enough to use for lettering but light enough to serve as a backdrop. It also looks nice paired with Sap Green, its complementary color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('d6cadd')" style="background-color:#d6cadd"></td>
+            <td><strong>Languid Lavender</strong><br>Hex #D6CADD<br>RGB 214, 202, 221<br>CMYK 3, 9, 0, 13</td>
+            <td>The name Languid Lavender really suits this color. It&#8217;s wistful and airy, making it the perfect springlike wall color. Languid Lavender is a bit like a paler version of amethyst, and it also can serve as a useful and versatile background color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('8d029b')" style="background-color:#8d029b"></td>
+            <td><strong>Mauveine</strong><br>Hex #8D029B<br>RGB 141, 2, 155<br>CMYK 9, 99, 0, 39</td>
+            <td>Mauveine is a color with a very interesting history. It was one of the first ever synthetic dyes. And it wasn&#8217;t even deliberately developed. A scientist discovered it in 1856 while working on finding a cure for malaria.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('7b679a')" style="background-color:#7b679a"></td>
+            <td><strong>Blue Lilac</strong><br>Hex #7B679A<br>RGB 123, 103, 154<br>CMYK 20, 33, 0, 40</td>
+            <td>Lilac and Lavender, two very popular shades of purple, both lend themselves to being mixed with blue. As you can see from its RGB values, Blue Lilac has a bit more blue than red, but it&#8217;s still an unmistakable shade of purple. It&#8217;s a good choice for painting an office if you like the color purple. Blue has been shown to stimulate creativity and productivity, and Blue Lilac manages to be both calming and energizing.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('5d3954')" style="background-color:#5d3954"></td>
+            <td><strong>Dark Byzantium</strong><br>Hex #5D3954<br>RGB 93, 57, 84<br>CMYK 0, 39, 10, 64</td>
+            <td>Named for the ancient Greek city of Byzantium (now Constantinople), Byzantium and Dark Byzantium are reminiscent of splendor. If you prefer a darker, more demure version of the classic Byzantium, you may find Dark Byzantium to be to your liking.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('743089')" style="background-color:#743089"></td>
+            <td><strong>Luxury Purple</strong><br>Hex #743089<br>RGB 116, 48, 137<br>CMYK 15, 65, 0, 46</td>
+            <td>Purple has long been considered a luxuriant color, and Luxury Purple really takes that association to a new level. It looks especially nice when used in jewelry.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('893bff')" style="background-color:#893bff"></td>
+            <td><strong>Aztech Purple</strong><br>Hex #893BFF<br>RGB 137, 59, 255<br>CMYK 46, 77, 0, 0</td>
+            <td>This shade of purple is very close to being a bright blue. As you can see from the RGB values, it has far more blue than red. And as you can see in the CMYK values, it doesn&#8217;t contain any black. Aztech Purple has an almost-neon quality, making it one of the most electric shades of purple out there.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('280353')" style="background-color:#280353"></td>
+            <td><strong>Baltimore Ravens Purple</strong><br>Hex #280353<br>RGB 40, 3, 83<br>CMYK 52, 96, 0, 67</td>
+            <td>The Baltimore Ravens have a distinctive dark black-and-purple logo, and this shade is the team&#8217;s signature deep purple. As you can tell by the logo, this color pairs well with black and other dark shades.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('cc00cc')" style="background-color:#cc00cc"></td>
+            <td><strong>Deep Magenta</strong><br>Hex #CC00CC<br>RGB 204, 0, 204<br>CMYK 0, 100, 0, 20</td>
+            <td>Not to be confused with Dark Magenta, Deep Magenta is a bright purple that, unsurprisingly, contains a lot of magenta. The color magenta was named after the Italian Battle of Magenta, as the color was developed shortly before the battle itself.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('524f81')" style="background-color:#524f81"></td>
+            <td><strong>Deep Purple</strong><br>Hex #524F81<br>RGB 82, 79, 129<br>CMYK 36, 39, 0, 49</td>
+            <td>This distinctive, almost-blue shade is sometimes called Pageant. It&#8217;s a deep color that leans toward the blue side, but it&#8217;s warmer and lighter than navy blue. This color looks especially nice alongside other jewel tones.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('593163')" style="background-color:#593163"></td>
+            <td><strong>Rustic Purple</strong><br>Hex #593163<br>RGB 89, 49, 99<br>CMYK 10, 51, 0, 61</td>
+            <td>Purple probably isn&#8217;t the color you think of when you hear the word &#8220;rustic.&#8221; However, the name suits this shade. It has a slightly dark, slightly weathered appearance that looks great when paired with heather gray.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('a865b5')" style="background-color:#a865b5"></td>
+            <td><strong>Sunset Purple</strong><br>Hex #A865B5<br>RGB 168, 101, 181<br>CMYK 7, 44, 0, 29</td>
+            <td>Sunsets may primarily be orange and yellow, but the sky at dusk often turns a light purple. Sunset Purple does well at capturing this shade. It&#8217;s a great choice if you want something that&#8217;s just a little bolder than Lilac or Lavender.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('c71585')" style="background-color:#c71585"></td>
+            <td><strong>Artist&#8217;s Purple</strong><br>Hex #C71585<br>RGB 199, 21, 133<br>CMYK 0, 89, 33, 22</td>
+            <td>Artist&#8217;s Purple is another shade that is close to magenta. This bright, bold color is essentially a darker version of magenta, and it&#8217;s a great choice if your project requires a louder color than most shades of purple.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('9861a5')" style="background-color:#9861a5"></td>
+            <td><strong>Dull Purple</strong><br>Hex #9861A5<br>RGB 152, 97, 165<br>CMYK 8, 41, 0, 35</td>
+            <td>Despite its unflattering name, Dull Purple is actually a very nice color. It looks a little like Lilac, but it&#8217;s a little deeper and darker. If your project needs a solid medium purple, this is a good color to pick.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('913073')" style="background-color:#913073"></td>
+            <td><strong>Traffic Purple</strong><br>Hex #913073<br>RGB 145, 48, 115<br>CMYK 0, 67, 21, 43</td>
+            <td>Traffic Purple is a reddish medium purple that&#8217;s warmer than many purple shades. It&#8217;s part of the European RAL color matching system. The RAL system is popular in a handful of European countries, including Italy, France, and Germany.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('392a48')" style="background-color:#392a48"></td>
+            <td><strong>Matte Purple</strong><br>Hex #392A48<br>RGB 57, 42, 72<br>CMYK 21, 42, 0, 72</td>
+            <td>With most colors displayed on screens, it&#8217;s impossible to differentiate matte and gloss. But it&#8217;s easy to see why this inky shade of purple would look good as a matte color. It&#8217;s a good choice if you&#8217;re looking for a color that is close to black but still has some definite elements of color.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('47243c')" style="background-color:#47243c"></td>
+            <td><strong>Purple Violet</strong><br>Hex #47243C<br>RGB 71, 36, 60<br>CMYK 0, 49, 15, 72</td>
+            <td>Purple Violet is another color that&#8217;s part of the RAL system. It&#8217;s someone unique in that it looks slightly brown, much like Oxblood and similar shades. Its brown undertones mean that it looks good with other neutrals. It also looks great with its complementary color, Cal Poly Pomona Green.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6a317f')" style="background-color:#6a317f"></td>
+            <td><strong>Purple CMYK</strong><br>Hex #6A317F&nbsp;<br>RGB 106, 49, 127<br>CMYK 17, 61, 0, 50</td>
+            <td>This color is the standard for purple in the CMYK printing system. Purple CMYK is a classic, slightly blue-tinted purple that looks especially good paired with blues and greens.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('6e2d91')" style="background-color:#6e2d91"></td>
+            <td><strong>Ocean Purple</strong><br>Hex #6E2D91&nbsp;<br>RGB 110, 45, 145<br>CMYK 24, 69, 0, 43</td>
+            <td>Though the ocean isn&#8217;t necessarily purple, it&#8217;s easy to see how this color got its name. It has a similar depth to the blue-green color of most oceans, and it&#8217;s watery and calm.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('b941ff')" style="background-color:#b941ff"></td>
+            <td><strong>Shiny Purple</strong><br>Hex #B941FF<br>RGB 185, 65, 255<br>CMYK 27, 75, 0, 0</td>
+            <td>You can&#8217;t really make a color look shiny on a screen, but Shiny Purple is almost neon. Much like a gleaming color would, Shiny Purple easily catches the eye.</td>
+        </tr>
+
+        <tr>
+            <td onclick="colorchange('834468')" style="background-color:#834468"></td>
+            <td><strong>Autumn Purple</strong><br>Hex #834468<br>RGB 131, 68, 104<br>CMYK 0, 48, 21, 49</td>
+            <td>If you need a shade of purple to complete an autumnal color palette, Autumn Purple is the color to pick. This demure reddish-purple is right at home alongside oranges, reds, and yellows.</td>
+        </tr>
+
+    </table>

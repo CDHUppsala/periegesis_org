@@ -1,0 +1,750 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>SVG Icons</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sx_svg.css">
+    <script src="../../sxScripts/jq/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getScript("../../sxScripts/jq/svgxuse.js");
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Separate SVG-files included in the Source of Image elements</h2>
+    <p>SVG-attributes cannot be modified by CSS-classes when included as images. You can modify the background of the
+        image.</p>
+    <p>Set the fill-color of SVG files to black or white with a <b>medium transparancy</b> to change it with the
+        background of the image:</p>
+    <pre>
+fill="rgba(0,0,0,0.65) or fill="rgba(255,255,255,0.65)
+
+&lt;div class="sx_svg_image"&gt;
+    &lt;img src="black/sx_home.svg" alt="home" /&gt;
+&lt;/div&gt;    
+</pre>
+
+    <div class="sx_svg_image">
+        <img src="sx_svg_black/sx_home.svg" alt="home" />
+        <img src="sx_svg_white/sx_menu_apps.svg" alt="menu applications" />
+        <img src="sx_svg_white/sx_menu_list_squre.svg" alt="menu list" />
+        <img src="sx_svg_white/sx_menu_squre.svg" alt="menu" />
+    </div>
+
+
+
+    <h2>Separate SVG-files included in CSS as backgrounds to pseudo-classes A::before</h2>
+    <p>SVG-attributes cannot be modified by CSS-classes when includes as background images,
+        but you can define and change the color and the content (SVG-image) of the pseudo-class for Default, Hover and
+        Selection.</p>
+    <p>For SVG files that are used with A-links as A::before pseudo-classes, you do the following:</p>
+    <ul class="normal">
+        <li>Create a <b>Surounding Path</b> arround the utter bandories of the SVG file in the <b>oposit direction</b>
+            of the rest of paths:
+            <code>M0 0 v32 h32 v-32 z</code> or <code>M0 0 h32 v32 h-32 z</code>, depending on the direction of the
+            other paths.
+        </li>
+        <li>Set the <b>fill-color</b> of the Surounding Path to <b>white</b> (or to the site color):
+            <code>fill="#fff"</code>
+            or <code>style="fill: #fff"</code>.
+        </li>
+        <li>Set the <b>background-color</b> of the SVG file to <b>transparent</b>. All paths within the white,
+            Surounding Path of the SVG file will get the transparent background-color.</li>
+        <li>You can now define the default color of the <b>pseudo-classes A::before</b> to whatever you like, and
+            change it for Hover and Selection. The inner paths of the SVG file will get these colors.</li>
+        <li>However, if the background color of the site is other than white,
+            you have to change manually the fill-color of the Surounding Path of every SVG file that you use in links.
+        </li>
+    </ul>
+    <p>
+        <b>Example:</b>
+    <pre>
+&lt;svg xmlns="http://www.w3.org/2000/svg" style="background: transaprent; stroke: none; fill: #ffffff; display: block;" viewBox="0 0 32 32"&gt;
+    &lt;title&gt;sxbg_up_down&lt;/title&gt;
+    &lt;path d="M0 0 h32v32h-32z M6 14 h20 l-10-10 Z m0 4 l 10 10 10 -10z" /&gt;
+&lt;/svg&gt;
+</pre>
+
+    <p>The example bellow uses the wrapping class <code>sx_svg_bglinks</code></p>
+    <div class="sx_svg_bglinks">
+        <a>A normal Group link</a><br>
+        <a class="selected">A link with the class "selected"</a>
+    </div>
+
+
+    <h2>Use of one External SVG-file with all svg-patterns as Symbols called by their ID: <code>use
+                link:href="sx_symbols.svg?v=25#ID"</code></h2>
+    <p>This is the normal use of SVG images. SVG-attributes can be modified by CSS-classes.</p>
+    <pre>
+&lt;div class="sx_svg_medium"&gt;
+    &lt;div&gt;&lt;svg class="sx_svg sx_home"&gt;&lt;use xlink:href="sx_symbols.svg?v=25#sx_home"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;sx_home&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    <p><b>Medium SVG Size: 2em, with the default font-size 16px</b></p>
+
+    <div class="sx_svg_medium">
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_home"></use>
+            </svg><span>sx_home</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_bold"></use>
+            </svg><span>sx_menu_bold</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_bold_list"></use>
+            </svg><span>sx_menu_bold_list</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_main"></use>
+            </svg><span>sx_menu_main</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_cards"></use>
+            </svg><span>sx_menu_cards</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_squre_list"></use>
+            </svg><span>sx_menu_squre_list</span></div>
+
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_round_list"></use>
+            </svg><span>sx_menu_round_list</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_round"></use>
+            </svg><span>sx_menu_round</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_calendar"></use>
+            </svg><span>sx_menu_calendar</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_menu_apps"></use>
+            </svg><span>sx_menu_apps</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_reload"></use>
+            </svg><span>sx_reload</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_reload_bold"></use>
+            </svg><span>sx_reload_bold</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_shopping_cart"></use>
+            </svg><span>sx_shopping_cart</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_heart"></use>
+            </svg><span>sx_heart</span></div>
+
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_heart_tall"></use>
+            </svg><span>sx_heart_tall</span></div>
+
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear_small"></use>
+            </svg><span>sx_clear_small</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear"></use>
+            </svg><span>sx_clear</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear_bold_small"></use>
+            </svg><span>sx_clear_bold_small</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear_bold"></use>
+            </svg><span>sx_clear_bold</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear_borders"></use>
+            </svg><span>sx_clear_borders</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_clear_borders_small"></use>
+            </svg><span>sx_clear_borders_small</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_minus_bold"></use>
+            </svg><span>sx_minus_bold</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_plus_bold"></use>
+            </svg><span>sx_plus_bold</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_minus_bold_borders"></use>
+            </svg><span>sx_minus_bold_borders</span></div>
+        <div><svg class="sx_svg">
+                <use xlink:href="sx_symbols.svg?v=25#sx_plus_bold_borders"></use>
+            </svg><span>sx_plus_bold_borders</span></div>
+    </div>
+
+    <section>
+        <h2>Icon Links and Icon Lists with the class: <code>.sx_svg_links</code> and <code>.sx_svg_list</code></h2>
+        <p>This is the normal use of SVG-images from a common externa file, as in the cases above.</p>
+        <pre>
+&lt;div class="sx_svg_links"&gt;
+    &lt;a&gt;&lt;svg class="sx_svg sx_minus_l"&gt;&lt;use xlink:href="sx_symbols.svg?v=25#sx_minus_l"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;sx_minus_l&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;    
+
+&lt;ul class="sx_svg_links"&gt;
+    &lt;li&gt;&lt;a&gt;&lt;svg class="sx_svg sx_minus_l"&gt;&lt;use xlink:href="sx_symbols.svg?v=25#sx_minus_l"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;sx_minus_l&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="sx_svg_list"&gt;
+    &lt;li&gt;&lt;svg class="sx_svg sx_minus_l"&gt;&lt;use xlink:href="sx_symbols.svg?v=25#sx_minus_l"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;sx_minus_l&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+        <p><b>Default SVG Size: 1em, width the default font-size: 16px</b></p>
+
+        <div class="sx_svg_links" style="float: left; width: 280px; padding: 0 10px 10px 40px; border: 1px solid #ddd">
+            <h3>Links with DIV class: <code>.sx_svg_links</code></h3>
+            <a><svg class="sx_svg sx_minus_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_minus_l"></use>
+                </svg><span>sx_minus_l</span></a>
+            <a><svg class="sx_svg sx_plus_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_plus_l"></use>
+                </svg><span>sx_plus_l</span></a>
+            <a><svg class="sx_svg sx_minus">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_minus"></use>
+                </svg><span>sx_minus sx_minus sx_minus sx_minus sx_minus sx_minus</span></a>
+            <a><svg class="sx_svg sx_plus">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_plus"></use>
+                </svg><span>sx_plus</span></a>
+            <a><svg class="sx_svg sx_arrow_down_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_down_l"></use>
+                </svg><span>sx_arrow_down_l</span></a>
+            <a><svg class="sx_svg sx_arrow_up_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_up_l"></use>
+                </svg><span>sx_arrow_up_l</span></a>
+            <a><svg class="sx_svg sx_arrows_down_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_down_l"></use>
+                </svg><span>sx_arrows_down_l</span></a>
+            <a><svg class="sx_svg sx_arrows_up_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_up_l"></use>
+                </svg><span>sx_arrows_up_l</span></a>
+            <a><svg class="sx_svg sx_arrow_down">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_down"></use>
+                </svg><span>sx_arrow_down</span></a>
+            <a><svg class="sx_svg sx_arrow_up">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_up"></use>
+                </svg><span>sx_arrow_up</span></a>
+            <a><svg class="sx_svg sx_arrows_down">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_down"></use>
+                </svg><span>sx_arrows_down</span></a>
+            <a><svg class="sx_svg sx_arrows_up">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_up"></use>
+                </svg><span>sx_arrows_up</span></a>
+            <a><svg class="sx_svg sx_arrow_right_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right_l"></use>
+                </svg><span>sx_arrow_right_l</span></a>
+            <a><svg class="sx_svg sx_arrow_left_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_left_l"></use>
+                </svg><span>sx_arrow_left_l</span></a>
+            <a><svg class="sx_svg sx_arrows_right_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right_l"></use>
+                </svg><span>sx_arrows_right_l</span></a>
+            <a><svg class="sx_svg sx_arrows_left_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_left_l"></use>
+                </svg><span>sx_arrows_left_l</span></a>
+            <a><svg class="sx_svg sx_arrow_right">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right"></use>
+                </svg><span>sx_arrow_right</span></a>
+            <a><svg class="sx_svg sx_arrow_left">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrow_left"></use>
+                </svg><span>sx_arrow_left</span></a>
+            <a><svg class="sx_svg sx_arrows_right">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right"></use>
+                </svg><span>sx_arrows_right</span></a>
+            <a><svg class="sx_svg sx_arrows_left">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_arrows_left"></use>
+                </svg><span>sx_arrows_left</span></a>
+            <a><svg class="sx_svg sx_up_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_up_s"></use>
+                </svg><span>sx_up_s</span></a>
+            <a><svg class="sx_svg sx_up">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_up"></use>
+                </svg><span>sx_up_m</span></a>
+            <a><svg class="sx_svg sx_up_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_up_l"></use>
+                </svg><span>sx_up_l</span></a>
+            <a><svg class="sx_svg sx_up_xl">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_up_xl"></use>
+                </svg><span>sx_up_xl</span></a>
+            <a><svg class="sx_svg sx_down_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_down_s"></use>
+                </svg><span>sx_down_s</span></a>
+            <a><svg class="sx_svg sx_down">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_down"></use>
+                </svg><span>sx_down_m</span></a>
+            <a><svg class="sx_svg sx_down_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_down_l"></use>
+                </svg><span>sx_down_l</span></a>
+            <a><svg class="sx_svg sx_down_xl">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_down_xl"></use>
+                </svg><span>sx_down_xl</span></a>
+            <a><svg class="sx_svg sx_up_down">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_up_down"></use>
+                </svg><span>sx_up_down</span></a>
+            <a><svg class="sx_svg sx_rigth_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rigth_s"></use>
+                </svg><span>sx_rigth_s</span></a>
+            <a><svg class="sx_svg sx_rigth">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rigth"></use>
+                </svg><span>sx_rigth_m</span></a>
+            <a><svg class="sx_svg sx_rigth_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rigth_l"></use>
+                </svg><span>sx_rigth_l</span></a>
+            <a><svg class="sx_svg sx_rigth_xl">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rigth_xl"></use>
+                </svg><span>sx_rigth_xl</span></a>
+            <a><svg class="sx_svg sx_left_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_left_s"></use>
+                </svg><span>sx_left_s</span></a>
+            <a><svg class="sx_svg sx_left">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_left"></use>
+                </svg><span>sx_left_m</span></a>
+            <a><svg class="sx_svg sx_left_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_left_l"></use>
+                </svg><span>sx_left_l</span></a>
+            <a><svg class="sx_svg sx_left_xl">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_left_xl"></use>
+                </svg><span>sx_left_xl</span></a>
+            <a><svg class="sx_svg sx_rect_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rect_s"></use>
+                </svg><span>sx_rect_s</span></a>
+            <a><svg class="sx_svg sx_rect">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rect"></use>
+                </svg><span>sx_rect_m</span></a>
+            <a><svg class="sx_svg sx_rect_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_rect_l"></use>
+                </svg><span>sx_rect_l</span></a>
+            <a><svg class="sx_svg sx_circle_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_circle_s"></use>
+                </svg><span>sx_circle_s</span></a>
+            <a><svg class="sx_svg sx_circle">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_circle"></use>
+                </svg><span>sx_circle_m</span></a>
+            <a><svg class="sx_svg sx_circle_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_circle_l"></use>
+                </svg><span>sx_circle_l</span></a>
+            <a><svg class="sx_svg sx_romb_s">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_romb_s"></use>
+                </svg><span>sx_romb_s</span></a>
+            <a><svg class="sx_svg sx_romb">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_romb"></use>
+                </svg><span>sx_romb_m</span></a>
+            <a><svg class="sx_svg sx_romb_l">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_romb_l"></use>
+                </svg><span>sx_romb_l</span></a>
+        </div>
+        <div style="float: left; width: 340px; padding: 0 10px 10px 20px; border: 1px solid #ddd">
+            <h3>Links in List with UL class: <code>.sx_svg_links</code></h3>
+            <ul class="sx_svg_links">
+                <li><a><svg class="sx_svg sx_minus_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_minus_l"></use>
+                        </svg><span>sx_minus_l</span></a></li>
+                <li><a><svg class="sx_svg sx_plus_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_plus_l"></use>
+                        </svg><span>sx_plus_l</span></a></li>
+                <li><a><svg class="sx_svg sx_minus">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_minus"></use>
+                        </svg><span>sx_minus sx_minus sx_minus sx_minus sx_minus sx_minus</span></a></li>
+                <li><a><svg class="sx_svg sx_plus">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_plus"></use>
+                        </svg><span>sx_plus</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_down_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_down_l"></use>
+                        </svg><span>sx_arrow_down_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_up_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_up_l"></use>
+                        </svg><span>sx_arrow_up_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_down_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_down_l"></use>
+                        </svg><span>sx_arrows_down_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_up_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_up_l"></use>
+                        </svg><span>sx_arrows_up_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_down">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_down"></use>
+                        </svg><span>sx_arrow_down</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_up">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_up"></use>
+                        </svg><span>sx_arrow_up</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_down">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_down"></use>
+                        </svg><span>sx_arrows_down</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_up">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_up"></use>
+                        </svg><span>sx_arrows_up</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_right_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right_l"></use>
+                        </svg><span>sx_arrow_right_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_left_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_left_l"></use>
+                        </svg><span>sx_arrow_left_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_right_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right_l"></use>
+                        </svg><span>sx_arrows_right_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_left_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_left_l"></use>
+                        </svg><span>sx_arrows_left_l</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_right">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right"></use>
+                        </svg><span>sx_arrow_right</span></a></li>
+                <li><a><svg class="sx_svg sx_arrow_left">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrow_left"></use>
+                        </svg><span>sx_arrow_left</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_right">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right"></use>
+                        </svg><span>sx_arrows_right</span></a></li>
+                <li><a><svg class="sx_svg sx_arrows_left">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_arrows_left"></use>
+                        </svg><span>sx_arrows_left</span></a></li>
+                <li><a><svg class="sx_svg sx_up_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_up_s"></use>
+                        </svg><span>sx_up_s</span></a></li>
+                <li><a><svg class="sx_svg sx_up">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_up"></use>
+                        </svg><span>sx_up_m</span></a></li>
+                <li><a><svg class="sx_svg sx_up_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_up_l"></use>
+                        </svg><span>sx_up_l</span></a></li>
+                <li><a><svg class="sx_svg sx_up_xl">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_up_xl"></use>
+                        </svg><span>sx_up_xl</span></a></li>
+                <li><a><svg class="sx_svg sx_down_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_down_s"></use>
+                        </svg><span>sx_down_s</span></a></li>
+                <li><a><svg class="sx_svg sx_down">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_down"></use>
+                        </svg><span>sx_down_m</span></a></li>
+                <li><a><svg class="sx_svg sx_down_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_down_l"></use>
+                        </svg><span>sx_down_l</span></a></li>
+                <li><a><svg class="sx_svg sx_down_xl">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_down_xl"></use>
+                        </svg><span>sx_down_xl</span></a></li>
+                <li><a><svg class="sx_svg sx_up_down">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_up_down"></use>
+                        </svg><span>sx_up_down</span></a></li>
+                <li><a><svg class="sx_svg sx_rigth_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rigth_s"></use>
+                        </svg><span>sx_rigth_s</span></a></li>
+                <li><a><svg class="sx_svg sx_rigth">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rigth"></use>
+                        </svg><span>sx_rigth_m</span></a></li>
+                <li><a><svg class="sx_svg sx_rigth_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rigth_l"></use>
+                        </svg><span>sx_rigth_l</span></a></li>
+                <li><a><svg class="sx_svg sx_rigth_xl">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rigth_xl"></use>
+                        </svg><span>sx_rigth_xl</span></a></li>
+                <li><a><svg class="sx_svg sx_left_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_left_s"></use>
+                        </svg><span>sx_left_s</span></a></li>
+                <li><a><svg class="sx_svg sx_left">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_left"></use>
+                        </svg><span>sx_left_m</span></a></li>
+                <li><a><svg class="sx_svg sx_left_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_left_l"></use>
+                        </svg><span>sx_left_l</span></a></li>
+                <li><a><svg class="sx_svg sx_left_xl">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_left_xl"></use>
+                        </svg><span>sx_left_xl</span></a></li>
+                <li><a><svg class="sx_svg sx_rect_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rect_s"></use>
+                        </svg><span>sx_rect_s</span></a></li>
+                <li><a><svg class="sx_svg sx_rect">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rect"></use>
+                        </svg><span>sx_rect_m</span></a></li>
+                <li><a><svg class="sx_svg sx_rect_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_rect_l"></use>
+                        </svg><span>sx_rect_l</span></a></li>
+                <li><a><svg class="sx_svg sx_circle_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_circle_s"></use>
+                        </svg><span>sx_circle_s</span></a></li>
+                <li><a><svg class="sx_svg sx_circle">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_circle"></use>
+                        </svg><span>sx_circle_m</span></a></li>
+                <li><a><svg class="sx_svg sx_circle_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_circle_l"></use>
+                        </svg><span>sx_circle_l</span></a></li>
+                <li><a><svg class="sx_svg sx_romb_s">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_romb_s"></use>
+                        </svg><span>sx_romb_s</span></a></li>
+                <li><a><svg class="sx_svg sx_romb">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_romb"></use>
+                        </svg><span>sx_romb_m</span></a></li>
+                <li><a><svg class="sx_svg sx_romb_l">
+                            <use xlink:href="sx_symbols.svg?v=25#sx_romb_l"></use>
+                        </svg><span>sx_romb_l</span></a></li>
+            </ul>
+        </div>
+
+        <div style="float: left; width: 340px; padding: 0 10px 10px 20px; border: 1px solid #ddd">
+            <h3>List with UL class (50% transparent SVG): <code>.sx_svg_list</code></h3>
+            <ul class="sx_svg_list">
+                <li><svg class="sx_svg sx_minus_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_minus_l"></use>
+                    </svg><span>sx_minus_l sx_minus_l sx_minus_l sx_minus_l sx_minus_l sx_minus_l </span></li>
+                <li><svg class="sx_svg sx_plus_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_plus_l"></use>
+                    </svg><span>sx_plus_l sx_plus_l sx_plus_l sx_plus_l sx_plus_l</span></li>
+                <li><svg class="sx_svg sx_minus">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_minus"></use>
+                    </svg><span>sx_minus sx_minus sx_minus sx_minus sx_minus sx_minus</span></li>
+                <li><svg class="sx_svg sx_plus">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_plus"></use>
+                    </svg><span>sx_plus sx_plus sx_plus sx_plus sx_plus sx_plus sx_plus</span></li>
+                <li><svg class="sx_svg sx_arrow_right_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right_l"></use>
+                    </svg><span>sx_arrow_right_l</span></li>
+                <li><svg class="sx_svg sx_arrows_right_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right_l"></use>
+                    </svg><span>sx_arrows_right_l</span></li>
+                <li><svg class="sx_svg sx_arrow_right">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_arrow_right"></use>
+                    </svg><span>sx_arrow_right</span></li>
+                <li><svg class="sx_svg sx_arrows_right">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_arrows_right"></use>
+                    </svg><span>sx_arrows_right</span></li>
+                <li><svg class="sx_svg sx_rigth_s">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rigth_s"></use>
+                    </svg><span>sx_rigth_s</span></li>
+                <li><svg class="sx_svg sx_rigth">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rigth"></use>
+                    </svg><span>sx_rigth_m</span></li>
+                <li><svg class="sx_svg sx_rigth_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rigth_l"></use>
+                    </svg><span>sx_rigth_l</span></li>
+                <li><svg class="sx_svg sx_rigth_xl">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rigth_xl"></use>
+                    </svg><span>sx_rigth_xl</span></li>
+                <li><svg class="sx_svg sx_rect_s">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rect_s"></use>
+                    </svg><span>sx_rect_s</span></li>
+                <li><svg class="sx_svg sx_rect">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rect"></use>
+                    </svg><span>sx_rect_m</span></li>
+                <li><svg class="sx_svg sx_rect_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_rect_l"></use>
+                    </svg><span>sx_rect_l</span></li>
+                <li><svg class="sx_svg sx_circle_s">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_circle_s"></use>
+                    </svg><span>sx_circle_s</span></li>
+                <li><svg class="sx_svg sx_circle">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_circle"></use>
+                    </svg><span>sx_circle_m</span></li>
+                <li><svg class="sx_svg sx_circle_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_circle_l"></use>
+                    </svg><span>sx_circle_l</span></li>
+                <li><svg class="sx_svg sx_romb_s">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_romb_s"></use>
+                    </svg><span>sx_romb_s</span></li>
+                <li><svg class="sx_svg sx_romb">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_romb"></use>
+                    </svg><span>sx_romb_m</span></li>
+                <li><svg class="sx_svg sx_romb_l">
+                        <use xlink:href="sx_symbols.svg?v=25#sx_romb_l"></use>
+                    </svg><span>sx_romb_l</span></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h2>Various SVG-images included from external file as symbols (created by Studio X)</h2>
+        <p><b>Large SVG Size: 3em, width the default font-size: 16px</b></p>
+
+        <div class="sx_svg_large">
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=24?sx=sx#sx_XML"></use>
+                </svg><span>sx_XML</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_HTML"></use>
+                </svg><span>sx_HTML</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_DOC"></use>
+                </svg><span>sx_DOC</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_FAQ"></use>
+                </svg><span>sx_FAQ</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_CSV"></use>
+                </svg><span>sx_CSV</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_JSON"></use>
+                </svg><span>sx_JSON</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_XLS"></use>
+                </svg><span>sx_XLS</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_PDF"></use>
+                </svg><span>sx_PDF</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_PDF_archives"></use>
+                </svg><span>sx_PDF_archives</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_PDF_center"></use>
+                </svg><span>sx_PDF_center</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_download"></use>
+                </svg><span>sx_download</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_envelop"></use>
+                </svg><span>sx_envelop</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_mail_open"></use>
+                </svg><span>sx_mail_open</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_mail_small"></use>
+                </svg><span>sx_mail_small</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_mail"></use>
+                </svg><span>sx_mail</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_user"></use>
+                </svg><span>sx_user</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_user_profile"></use>
+                </svg><span>sx_user_profile</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_user_logout"></use>
+                </svg><span>sx_user_logout</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_image"></use>
+                </svg><span>sx_image</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_image_gallery"></use>
+                </svg><span>sx_image_gallery</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_video_center"></use>
+                </svg><span>sx_video_center</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_video"></use>
+                </svg><span>sx_video</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_video_gallery"></use>
+                </svg><span>sx_video_gallery</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_film"></use>
+                </svg><span>sx_film</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_print"></use>
+                </svg><span>sx_print</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_camera"></use>
+                </svg><span>sx_camera</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_folder"></use>
+                </svg><span>sx_folder</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_trash"></use>
+                </svg><span>sx_trash</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_pencil"></use>
+                </svg><span>sx_pencil</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_sort_alpha_asc"></use>
+                </svg><span>sx_sort_alpha_asc</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_sort_alpha_desc"></use>
+                </svg><span>sx_sort_alpha_desc</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_save"></use>
+                </svg><span>sx_save</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_map_marker"></use>
+                </svg><span>sx_map_marker</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_map"></use>
+                </svg><span>sx_map</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_question"></use>
+                </svg><span>sx_question</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_question_bold"></use>
+                </svg><span>sx_question_bold</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_full_screen"></use>
+                </svg><span>sx_full_screen</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_info"></use>
+                </svg><span>sx_info</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_books"></use>
+                </svg><span>sx_books</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_library"></use>
+                </svg><span>sx_library</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_book_open"></use>
+                </svg><span>sx_book_open</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_new_window_arrow_bold"></use>
+                </svg><span>sx_new_window_arrow_bold</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_new_window_arrow"></use>
+                </svg><span>sx_new_window_arrow</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_new_window"></use>
+                </svg><span>sx_new_window</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_link_rings"></use>
+                </svg><span>sx_link_rings</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_link"></use>
+                </svg><span>sx_link</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_link_rings-bg"></use>
+                </svg><span>sx_link_rings-bg</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_link-bg"></use>
+                </svg><span>sx_link-bg</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_link_verticle"></use>
+                </svg><span>sx_link_verticle</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_gear"></use>
+                </svg><span>sx_gear</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_star"></use>
+                </svg><span>sx_star</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_search"></use>
+                </svg><span>sx_search</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_search_right"></use>
+                </svg><span>sx_search_right</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_search_minus"></use>
+                </svg><span>sx_search_minus</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_search_plus"></use>
+                </svg><span>sx_search_plus</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_search_plus_right"></use>
+                </svg><span>sx_search_plus_right</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_phone"></use>
+                </svg><span>sx_phone</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_clock"></use>
+                </svg><span>sx_clock</span></div>
+
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_music"></use>
+                </svg><span>sx_music</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_music_notes"></use>
+                </svg><span>sx_music_notes</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_surveys"></use>
+                </svg><span>sx_surveys</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_forum"></use>
+                </svg><span>sx_forum</span></div>
+            <div><svg class="sx_svg">
+                    <use xlink:href="sx_symbols.svg?v=25#sx_left_right"></use>
+                </svg><span>sx_left_right</span></div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>CSS Root Colors</title>
+    <link rel="stylesheet" href="src/css_root_colors.css">
+    <script src="../../js/jq/jquery.min.js"></script>
+    <script src="src/tinycolor.js"></script>
+    <script src="src/mix.js"></script>
+</head>
+
+<body>
+    <div class="ps_flex_header">
+        <div class="color_form" title="Click outside the color palette after selection">
+            <input id="GetColors" name="GetColors" type="color" value="#152555">
+        </div>
+        <div class="color_form">
+            <input id="GetColorWheel" name="GetColorWheel" type="button" value="Color Wheel">
+        </div>
+
+        <div class="color_form">
+            HEX: #<input id="HEX_Color" name="HEX_Color" size="6" type="text" value="">
+            <input id="GetHEXColor" name="GetHEXColor" type="button" value="Set HEX Color">
+        </div>
+
+        <div class="color_form">
+            <label>R:<input id="R_Color" name="R_Color" type="number" min="0" max="255"></label>
+            <label>G:<input id="G_Color" name="G_Color" type="number" min="0" max="255"></label>
+            <label>B:<input id="B_Color" name="B_Color" type="number" min="0" max="255"></label>
+            <input id="GetRBGColor" name="GetRBGColor" type="button" value="Set RBG Color">
+        </div>
+        <div>
+            <h3>Public Sphere - CSS Color Scheme Creator
+                <span>Using <a target="_blank" href="https://github.com/bgrins/TinyColor">tinycolor.js</a> and mix.js</span>
+            </h3>
+        </div>
+    </div>
+
+
+
+    <!--div class="ps_flex_header">
+        <div class="color_form">
+            HEX: #<input id="HEX_Color" name="HEX_Color" size="6" type="text" value="">
+            <input id="GetColors" name="GetColors" type="color" value="#152555">
+            <input id="GetHEXColor" name="GetHEXColor" type="button" value="Set HEX Color">
+        </div>
+
+        <div class="color_form">
+            <label>R:<input id="R_Color" name="R_Color" type="number" min="0" max="255"></label>
+            <label>G:<input id="G_Color" name="G_Color" type="number" min="0" max="255"></label>
+            <label>B:<input id="B_Color" name="B_Color" type="number" min="0" max="255"></label>
+            <input id="GetRBGColor" name="GetRBGColor" type="button" value="Set RBG Color">
+        </div>
+        <div>
+            <h4>Create Color Schemes</h4>
+        </div>
+    </div-->
+
+
+    <div class="page">
+        <div class="sub_header ps_flex_row ps_flex_between">
+            <div>
+                <b>Brightness</b> <code id="Brightness"></code>
+                <b>Luminance</b> <code id="Luminance"></code>
+                <b>RGB</b> <code id="str_rgb"></code><code id="str_rgb_percent"></code>
+                <b>HSL</b> <code id="str_hsl"></code>
+                <b>HSV</b> <code id="str_hsv"></code>
+            </div>
+            <div class="ps_links">
+                <a target="_blank" href="colors/default.html">RGB Colors</a> |
+                <a target="_blank" href="colors/500_Colours.html">500 Colors</a> |
+                <a target="_blank" href="color_meanings/index.html">Color Meanings</a> |
+                <a target="_blank" href="tiny/index.html">tinycolor palettes</a>
+                <a target="_blank" href="tiny/tinycolor.html">tinycolor codes</a>
+            </div>
+        </div>
+
+        <div class="ps_flex">
+            <div class="ps_container color_span">
+
+
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Basic Color</h4>
+                        <div class="ps_flex_row ps_gap">
+                            <div class="ps_flex_column" id="basic">
+                            </div>
+                            <div>Basic, Complementary and Grey colors with
+                                tint and shade gradients increased by 10%</div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>basic-tint<br>and<br>basic-shade</span></h4>
+                        <div class="ps_flex_column" id="basic_colors">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4>Complemet</h4>
+                        <div class="ps_flex_column" id="complement">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4>Grey</h4>
+                        <div class="ps_flex_column" id="grey">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Scales</h4>
+                        <div class="ps_flex_row ps_gap">
+                            <div class="ps_flex_column" id="scales">
+                            </div>
+                        </div>
+                        <div class="text">20% scales of Basic color with tint and shade gradients increased by 20%</div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Lighten</h4>
+                        <div class="ps_flex_column" id="lighten">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4>Brighten</h4>
+                        <div class="ps_flex_column" id="brighten">
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Darken</h4>
+                        <div class="ps_flex_column" id="darken">
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4>Desaturate</h4>
+                        <div class="ps_flex_column" id="desaturate">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Monochrom</h4>
+                        <div class="ps_flex_row ps_gap">
+                            <div class="ps_flex_column" id="monochrom">
+                            </div>
+                        </div>
+                        <div class="text">With tint and shade gradients increased by 20%</div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>monochrom-1<br>to<br>monochrom-5</span></h4>
+                        <div class="ps_flex_column" id="monochromatic">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Analog</h4>
+                        <div class="ps_flex_row ps_gap">
+                            <div class="ps_flex_column" id="analog">
+                            </div>
+                        </div>
+                        <div class="text">With tint and shade gradients increased by 20%</div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>analog-1<br>to<br>analog-4</span></h4>
+                        <div class="ps_flex_column" id="analogous">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Triad</h4>
+                        <div>
+                            <div class="ps_flex_column" id="triad">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ps_flex_row">
+                        <h4><span>triad-1</span></h4>
+                        <div class="ps_flex_column" id="triad-left">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>triad-2</span></h4>
+                        <div class="ps_flex_column" id="triad-right">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Tetrad</h4>
+                        <div class="ps_flex_column" id="tetrad">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>tetrad-1</span></h4>
+                        <div class="ps_flex_column" id="tetrad-left">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>tetrad-2</span></h4>
+                        <div class="ps_flex_column" id="tetrad-right">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Split</h4>
+                        <div>
+                            <div class="ps_flex_column" id="split">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>split-1</span></h4>
+                        <div class="ps_flex_column" id="split-left">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>split-2</span></h4>
+                        <div class="ps_flex_column" id="split-right">
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                <div class="ps_container">
+                    <div class="ps_flex_row">
+                        <h4>Hue Spin</h4>
+                        <div class="ps_flex_column" id="spin">
+                        </div>
+                    </div>
+                    <div class="ps_flex_row">
+                        <h4><span>spin-1<br>to<br>spin-8<br><br>
+                                Spin the Color Wheel by 40dg, with tint and shade gradients increased by 20%
+                            </span></h4>
+                        <div class="ps_flex_column" id="hue">
+                        </div>
+                    </div>
+                </div>
+            -->
+
+            </div>
+
+            <div class="ps_container">
+                <div class="ps_flex">
+                    <h4>CSS Root Color Variables</h4>
+                    <button id="copy" title="Copy to Clipboard">Copy</button>
+                    <button id="download" title="Download as CSS file">Download</button>
+                </div>
+                <textarea id="root_variables"></textarea>
+            </div>
+
+        </div>
+        <div id="color_wheel">
+            <div class="color_wheel_flex">
+                <p>RGB: <span id="mouse_over_color">Move the cursor</span></p>
+                <p>RGB: <span id="clicked_rgb_color">Click the cursor</span></p>
+                <p>HEX: <span id="clicked_hex_color"></span></p>
+                <button id="get_clicked_hex_color">Get Color</button>
+            </div>
+            <div class="color_wheel_flex">
+                <div id="center_white"></div>
+                <div id="center_black"></div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        (function ($) {
+            var steps = 10;
+            var adjust = 20;
+            var colour = '#3366dd';
+            var root_variables = $('#root_variables');
+            root_variables.html('').append(':root {\n\n');
+            var rgb_strings = "";
+
+            function str_replace_rgb(rgb) {
+                rgb = rgb.replace("rgb(", "");
+                return rgb.replace(")", "");
+            }
+
+            function get_tints_shades(id, color_value, steps, title) {
+                var str_colors = "";
+                var str_names = "";
+
+                for (r = 0; r < steps; r++) {
+                    alpha = r / 10;
+                    z = r;
+                    if (steps < 9) {
+                        alpha = (r / 10) * 2;
+                        z = r * 2
+                    }
+                    c_mix = mix.gradient(color_value, '#fff', alpha);
+                    str_colors += '<span style="background-color:' + c_mix + ';"></span>';
+                    str_names += '<span>' + c_mix + '</span>';
+
+                    var temp_title = title;
+                    var first_title = title;
+                    if (temp_title.indexOf('-') > 0) {
+                        temp_title = temp_title.replace('-', '_');
+                        first_title = temp_title;
+                    } else {
+                        first_title += '_00';
+                    }
+                    if (r === 0) {
+                        root_variables.append('\n');
+                        if (title == 'basic') {
+                            root_variables.append('--' + title + '-color: ' + c_mix + ";\n\n");
+                        } else {
+                            root_variables.append('--' + title + ': ' + c_mix + ";\n\n");
+                        }
+                        rgb_strings += '\n--' + first_title + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ";\n\n";
+                    } else {
+                        root_variables.append('--' + title + '-tint-' + z * 10 + ': ' + c_mix + ';\n');
+                        rgb_strings += '--' + temp_title + '_tint_' + z * 10 + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ';\n';
+                    }
+                }
+
+                if (steps >= 9) {
+                    $(id).append('<div>' + str_colors + '</div>');
+                    $(id).append('<div>' + str_names + '</div>');
+                    str_colors = "";
+                    str_names = "";
+                }
+
+                root_variables.append('\n');
+                rgb_strings += '\n';
+                for (r = 0; r < steps; r++) {
+                    z = r;
+                    alpha = r / 10;
+                    if (steps < 9) {
+                        if (r === 0) { continue }
+                        alpha = (r / 10) * 2;
+                        z = r * 2;
+                    }
+                    c_mix = mix.gradient(color_value, '#000', alpha);
+                    str_colors += '<span style="background-color:' + c_mix + ';"></span>';
+                    str_names += '<span>' + c_mix + '</span>';
+
+                    var temp_title = title;
+                    if (temp_title == 'basic-color') { temp_title = 'basic_color' }
+                    if (r > 0) {
+                        root_variables.append('--' + title + '-shade-' + z * 10 + ': ' + c_mix + ';\n');
+                        rgb_strings += '--' + temp_title + '_shade_' + z * 10 + ': ' +
+                            str_replace_rgb(tinycolor(c_mix).toRgbString()) + ';\n';
+                    }
+                }
+                $(id).append('<div>' + str_colors + '</div>');
+                $(id).append('<div>' + str_names + '</div>');
+            }
+
+            /**
+             * Start from 1 to avoid the repetition of the main color
+             * For analogous colors, the main color is also repeated att 3
+             */
+            function create_palette_for_array(id, color_data, steps, title) {
+                var color_array = color_data.map(function (t) { return t.toHexString(); });
+                var abstract = 0;
+                for (var i = 1; i < color_array.length; i++) {
+                    if (i === 3 && title == 'analog') {
+                        abstract = 1;
+                        continue;
+                    }
+                    if (i === 2 && title == 'tetrad') {
+                        abstract = 1;
+                        continue;
+                    }
+                    var z = i - abstract;
+                    var pos = '-left'
+                    if (z == 2) {
+                        pos = '-right'
+                    }
+                    if (title == 'monochrom' || title == 'analog') {
+                        pos = '';
+                        append_sole_color('#' + title, color_array[i]);
+                    } else {
+                        append_sole_color(id, color_array[i]);
+                    }
+                    get_tints_shades(id + pos, color_array[i], steps, title + '-' + z);
+                }
+            }
+            function append_sole_color(id, color) {
+                $(id + ' .wrap_color').append('<span style="background-color:' + color + ';"</span>');
+                $(id + ' .wrap_text').append('<span>' + color + '</span>');
+            }
+
+            function colorChange(new_colour) {
+                colour = new_colour
+                var tiny = tinycolor(colour);
+
+                /**
+                 * For basic colors
+                 */
+                var basic_value = tinycolor(colour).toHexString();
+                var greyscale_value = tinycolor(colour).greyscale().toHexString();
+                var complement_value = tinycolor(colour).complement().toHexString();
+
+                $('#basic').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#basic_colors').html('');
+                $('#complement').html('');
+                $('#grey').html('');
+                append_sole_color('#basic', basic_value);
+                append_sole_color('#basic', complement_value);
+                append_sole_color('#basic', greyscale_value);
+                get_tints_shades('#basic_colors', basic_value, steps, 'basic');
+                get_tints_shades('#complement', complement_value, steps, 'complement');
+                get_tints_shades('#grey', greyscale_value, steps, 'grey');
+
+                var lighten_value = tinycolor(colour).lighten(adjust).toHexString();//100 would be white
+                var brighten_value = tinycolor(colour).brighten(adjust).toHexString();
+                var darken_value = tinycolor(colour).darken(adjust).toHexString();//100 would be black
+                var desaturate_value = tinycolor(colour).desaturate(adjust).toHexString();//100 would equal greyscale()
+
+                $('#lighten').html('');
+                $('#brighten').html('');
+                $('#darken').html('');
+                $('#desaturate').html('');
+                $('#saturate').html('');
+                $('#scales').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+
+                append_sole_color('#scales', lighten_value);
+                append_sole_color('#scales', brighten_value);
+                append_sole_color('#scales', darken_value);
+                append_sole_color('#scales', desaturate_value);
+                get_tints_shades('#lighten', lighten_value, 5, 'lighten');
+                get_tints_shades('#brighten', brighten_value, 5, 'brighten');
+                get_tints_shades('#darken', darken_value, 5, 'darken');
+                get_tints_shades('#desaturate', desaturate_value, 5, 'desaturate');
+
+                /**
+                 * Harmonies
+                 */
+                var monochromatic_value = tiny.monochromatic();
+                var analogous_value = tiny.analogous();
+                var triad_value = tiny.triad();
+                var tetrad_value = tiny.tetrad();
+                var splitcomplement_value = tiny.splitcomplement();
+
+                $('#monochrom').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#analog').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#monochromatic').html('');
+                $('#analogous').html('');
+
+                $('#triad').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#triad-left').html('');
+                $('#triad-right').html('');
+
+                $('#tetrad').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#tetrad-left').html('');
+                $('#tetrad-right').html('');
+
+                $('#split').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#split-left').html('');
+                $('#split-right').html('');
+
+                create_palette_for_array('#monochromatic', monochromatic_value, 5, 'monochrom');
+                create_palette_for_array('#analogous', analogous_value, 5, 'analog');
+                create_palette_for_array('#triad', triad_value, steps, 'triad');
+                create_palette_for_array('#tetrad', tetrad_value, steps, 'tetrad');
+                create_palette_for_array('#split', splitcomplement_value, steps, 'split');
+
+                /**
+                 * hue shift
+                 * Start from 1 to avoid the repetition of the main color
+                 * as 0 and 9 gives the main color (9*40=360)
+                 * Gives allmoste the same colors as the other functions
+                 * Can be used for any X*Y=360
+                 */
+                /*
+                $('#spin').html('<div class="wrap_color"></div><div class="wrap_text"></div>');
+                $('#hue').html('');
+                for (var i = 1; i < 12; i++) {
+                    var spinned = tinycolor(colour).spin(i * 30).toHexString();
+                    append_sole_color('#spin', spinned);
+                    get_tints_shades('#hue', spinned, 5, 'spin-' + i);
+                }
+                */
+
+                /**
+                 * Tone, Tint and Shade opacities
+                 * Are saved as root variables but not displayed
+                 */
+                function get_opacities(type) {
+                    root_variables.append("\n");
+                    for (r = 0; r < 11; r++) {
+                        opacity = (r / 10).toFixed(1);
+                        suffix = opacity * 100;
+                        if (type == 'tone') {
+                            str_color = 'rgba(128, 128, 128, ' + opacity + ')';
+                        } else if (type == 'tint') {
+                            str_color = 'rgba(255, 255, 255, ' + opacity + ')';
+                        } else {
+                            str_color = 'rgba(0, 0, 0, ' + opacity + ')';
+                        }
+                        // -05 is used to change gradients with 3 transparent colors which include 0.0 and 0.05
+                        if (r === 1 && type == 'tint') {
+                            root_variables.append('--tint-05: rgba(255, 255, 255, 0.05);\n');
+                        }
+                        root_variables.append("--" + type + '-' + suffix + ": " + str_color + ";\n");
+                    }
+                }
+
+                get_opacities('tone');
+                get_opacities('tint');
+                get_opacities('shade');
+
+                var temp = '\n\n/*\nTo be used as variables for background gradients,\nfor example: rgba(var(--color), 0.00)\n*/\n\n';
+                root_variables.append(temp);
+                root_variables.append(rgb_strings);
+                root_variables.append('}');
+            }
+
+            /**
+             * update color from input
+             */
+            function set_color_types(call_color) {
+                obj_color = tinycolor(call_color);
+                $('#Brightness').text(obj_color.getBrightness().toString().substring(0, 3));
+                $('#Luminance').text(obj_color.getLuminance().toString().substring(0, 4));
+                $('#str_rgb').text(obj_color.toRgbString());
+                $('#str_rgb_percent').text(obj_color.toPercentageRgbString());
+                $('#str_hsl').text(obj_color.toHslString());
+                $('#str_hsv').text(obj_color.toHsvString());
+            }
+            function set_RGB(call_color) {
+                obj_color = tinycolor(call_color);
+                var str_color_RGB = obj_color.toString('rgb');
+                var arr_rgb = str_color_RGB.split('(')[1].split(')')[0].split(',');
+                $('#R_Color').val(arr_rgb[0].trim());
+                $('#G_Color').val(arr_rgb[1].trim());
+                $('#B_Color').val(arr_rgb[2].trim());
+            }
+            function set_HEX(call_color) {
+                $('#HEX_Color').val(call_color.substring(1));
+                $('#GetColors').val(call_color);
+            }
+
+            $("#GetHEXColor").click(function () {
+                var hex_color = $('#HEX_Color').val();
+                if (hex_color.indexOf('#') < 0) {
+                    hex_color = "#" + hex_color;
+                }
+
+                set_HEX(hex_color);
+                set_RGB(hex_color);
+                set_color_types(hex_color);
+                colorChange(hex_color);
+            });
+
+            $("#GetRBGColor").click(function () {
+                var rgb_color = 'rgb(' + $('#R_Color').val() + ', ' + $('#G_Color').val() + ', ' + $('#B_Color').val() + ')';
+                obj_color = tinycolor(rgb_color);
+                hex_color = obj_color.toHexString();
+
+                set_HEX(hex_color);
+                set_color_types(hex_color);
+                colorChange(hex_color);
+            });
+
+            $('#GetColors').on('change', function () {
+                $('#HEX_Color').val($(this).val());
+                $('#GetHEXColor').click();
+            })
+
+            /**
+             * set random color on load
+             */
+            var randomcolor = tinycolor.random();
+            hex_color = randomcolor.toHexString();
+            set_HEX(hex_color);
+            set_RGB(hex_color);
+            set_color_types(hex_color);
+            colorChange(hex_color);
+
+            /**
+              * Copy Textarea
+              */
+            $("#copy").click(function () {
+                if (!navigator.clipboard) {
+                    $("#root_variables").select();
+                    document.execCommand('copy');
+                } else {
+                    var text_to_copy = document.getElementById("root_variables").value;
+                    navigator.clipboard.writeText(text_to_copy).then(
+                        function () {
+                            alert("The text has been copied to your clipboard!");
+                        })
+                        .catch(
+                            function () {
+                                alert("Error, please copy the text manually!");
+                            });
+                }
+            });
+
+            /**
+             * Save Textarea
+             */
+            $('#download').click(function () {
+                var b_color = tinycolor(colour).toHexString().replace('#', '');
+
+                /*
+                // You must click on (call the funtion from) an existing <a> link 
+                var container = document.querySelector('textarea');
+                var anchor = document.querySelector('a#save');
+                anchor.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(container.value);
+                anchor.download = 'ps_cs_root_variables_' + b_color + '.css';
+                */
+
+                // Create temporal <a> link - can be called från any click
+                var textcontent = document.getElementById("root_variables").value;
+                var downloadableLink = document.createElement('a');
+                downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
+                downloadableLink.download = "ps_cs_root_variables_" + b_color + ".css";
+                document.body.appendChild(downloadableLink);
+                downloadableLink.click();
+                document.body.removeChild(downloadableLink);
+            });
+
+            $('#GetColorWheel').on('click', function () {
+                $('#color_wheel').slideToggle(300);
+            })
+
+            // jQuery function related to color wheel at the end of page
+
+            $("#get_clicked_hex_color").click(function () {
+                var hex_color = $('#clicked_hex_color').text();
+                if (hex_color.indexOf('#') < 0) {
+                    hex_color = "#" + hex_color;
+                }
+                reset_colors(hex_color);
+                $('#GetColorWheel').click();
+            });
+
+
+
+        })(jQuery);
+    </script>
+    <script src="src/color_wheel.js"></script>
+
+</body>
+
+</html>

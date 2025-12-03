@@ -1,0 +1,447 @@
+/*	===================================
+	FLEXIBLE MULTIMENU UPP TO 3 LEVELS
+	===================================
+	Common CSS for all available Header Menus
+		- The jQuery codes to Show/Hide the menu for both Desctop and Mobiles are also common to all Header Menus
+			jqNavHeadMenuMarker and jqNavHeadMenu
+
+    =====================================================
+	To make the Top Navigation Menu FIXED when scrolling
+    =====================================================
+    Add the class .jqNavFixed as follow (is defined dynamically and added dynamically)
+        <nav id="nav_head">
+            <div class="nav_head_fixed jqNavHeadFixed">
+	jQuery toggles the position of .nav_head_fixed between relative and fixed depending on page scrolling
+
+*/
+
+
+/*
+    =====================================================
+    HEAD NAVIGATION STRUCTURE
+    =====================================================
+*/
+
+/*
+    #nav_top (se at the end, bellow)
+        .nav_top_apps
+        .nav_top_login
+    #header
+        - big logo
+        - advertice
+    #nav_head
+        - big logo / small logo
+        .nav_head_menu
+*/
+/*
+#nav_head ______________________________
+|   .nav_head_fixed _________________________
+|   |   .nav_head_flex_between ______________
+|   |   |   #logo ______________________
+|   |   |   |   Logotype
+|   |   |   |___________________________
+|   |   |   Containers with cloned aside navs in ABSOLUTE position: visible in mobiles
+|   |   |      .sxNavMainCloner
+|   |   |      .sxNavSideCloner
+|   |   |   .nav_marks_flex_between ____
+|   |   |   |   Marks: icans visible in mobiles
+|   |   |   |       .sxNavHeaderMarker
+|   |   |   |       .sxNavMainMarker
+|   |   |   |       .sxNavSideMarker
+|   |   |   |___________________________
+|   |   |   .nav_head_menu _______________
+|   |   |   |   The website Navigation
+|   |   |   |___________________________
+|   |   |_______________________________
+|   |___________________________________
+|_______________________________________
+*/
+
+#nav_head {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a pedding value to .nav_head_fixed so that its height is equal to the height of #sxNavHeadMenuMarker
+		It is important for fixed top navigation, the height of which is determined by
+			- the height of #sxNavHeadMenuMarker, in screen with mobile sizes
+	*/
+
+.nav_head_fixed {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 1%;
+    background-color: var(--nav-bg);
+    background-image: var(--nav-bg-image);
+    border-bottom: 1px solid var(--nav-border);
+}
+
+/* Has an effect only when logo is in $nav_head */
+.nav_head_flex_between {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*  Obs! Obs! Obs!
+    The height of the fixed navigation bar is determined:
+	-   In desktops, by the height of the .nav_head_menu - that is the first menu LI: .nav_head_menu>ul>li
+    -   In mobiles, by the height (padding) of the next Markers' container
+    Justify all marks to the right of #nav_head
+    */
+.nav_marks_flex_between {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 2rem;
+    padding: 0.3rem 0;
+    margin-left: auto;
+}
+
+/*
+    =====================================================
+    HEAD NAVIGATION
+    =====================================================
+*/
+
+.nav_head_menu {
+    font-family: var(--nav-fonts);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.1rem;
+    background: var(--nav-bg);
+    display: none;
+    overflow: auto;
+}
+
+.nav_head_menu>ul {
+    display: block;
+}
+
+.nav_head_menu ul,
+.nav_head_menu li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav_head_menu div,
+.nav_head_menu span,
+.nav_head_menu a {
+    display: inline-block;
+    text-transform: none;
+}
+
+/*
+	=================================== 
+	FIRST LEVEL; span and a
+	===================================
+*/
+
+.nav_head_menu>ul>li {
+    padding: 0.5rem 0;
+}
+
+.nav_head_menu>ul>li>div,
+.nav_head_menu>ul>li>a,
+.nav_head_menu>ul>li>span,
+.nav_head_menu>ul>li>span a {
+    cursor: pointer;
+    color: var(--nav-link);
+    font-weight: bold;
+}
+
+.nav_head_menu>ul>li:hover>div,
+.nav_head_menu>ul>li:hover>a,
+.nav_head_menu>ul>li:hover>span,
+.nav_head_menu>ul>li:hover>span a {
+    color: var(--nav-link-hover);
+}
+
+.nav_head_menu>ul>li>a:after,
+.nav_head_menu>ul>li>span a:after {
+    content: ' \00276F\00276F';
+    font-size: 0.94rem;
+}
+
+/*	
+	=================================== 
+	SECOND LEVEL
+	===================================
+*/
+
+.nav_head_menu ul ul {
+    display: block;
+    margin: 10px 0 0 24px;
+    background-color: inherit;
+    display: block;
+}
+
+.nav_head_menu li li {
+    padding: 6px;
+}
+
+.nav_head_menu li li div,
+.nav_head_menu li li a {
+    position: relative;
+    padding: 0 0 8px 1.5rem;
+    color: var(--nav-link);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav_head_menu li li a::before {
+    content: ' \00276F\00276F';
+    font-size: 0.7em;
+    position: absolute;
+    top: 0.14em;
+    left: 0;
+}
+
+.nav_head_menu li li div::before {
+    content: '\00276F';
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    left: 0.2em;
+    transform: rotate(90deg);
+}
+
+.nav_head_menu .profile_menu a {
+    padding: 0 0 0.4em 0;
+}
+
+.nav_head_menu .profile_menu a::before {
+    content: "";
+}
+
+.nav_head_menu .profile_menu svg {
+    margin-right: 0.75rem;
+}
+
+
+.nav_head_menu>ul>li>ul>li:hover>a {
+    color: var(--nav-link-hover);
+}
+
+.nav_head_menu li li li:hover>a {
+    color: var(--nav-link-hover);
+}
+
+/*	
+	=================================== 
+	SECOND LEVEL + 1
+	=================================== 
+*/
+
+.nav_head_menu li li li a {
+    font-weight: normal
+}
+
+.nav_head_menu ul ul ul {
+    display: block;
+    position: static;
+    padding: 0 0 0 20px;
+}
+
+/*
+	Transform Header Nav FROM Mobile Devices TO Desktop
+	Use !important to reset values changed by jQuery, 
+    	since jQuery uses the ID jqNavHeadMenu to change 
+        the values that are set in CLASS .nav_head_menu 
+*/
+
+@media (min-width: 1024px) {
+
+    /* Hide all Markers and Cloners */
+    .nav_head_menu_Marker,
+    .nav_main_menu_Marker,
+    .nav_aside_menus_Marker {
+        display: none;
+    }
+
+    .nav_main_menu_Cloner,
+    .nav_aside_menus_Cloner {
+        display: none;
+    }
+
+    /*  Obs!
+        Set position to static, for these desktop css, as jQuery presupposes it
+        to distinquish it from the absolut position in mobiles
+	*/
+
+    .nav_head_menu {
+        position: static;
+        display: block !important;
+        height: auto !important;
+        padding: 0;
+        overflow: visible !important;
+        font-size: 1rem;
+    }
+
+    /*	First Level
+	===================================
+    In sx_custom.css, you can center the menu by settin justify-content to center
+    if #nav_head does not include logo
+	*/
+    .nav_head_menu>ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        column-gap: 0.5rem;
+        margin: 0;
+    }
+
+    /*  Obs! Obs! Obs!
+        The height of the fixed navigation bar is determined:
+		-   In desktops, by the height of the first LI bellow (its padding values)
+        -   In mobiles, by the height of the Markers' container: nav_marks_flex_between
+	*/
+    .nav_head_menu>ul>li {
+        display: inline-block;
+        padding: 0.75rem 0 0.25rem 0.5rem;
+        text-align: left;
+        position: relative;
+        border-top: 0 solid transparent;
+    }
+
+    .nav_head_menu>ul>li>a,
+    .nav_head_menu>ul>li>div,
+    .nav_head_menu>ul>li>span,
+    .nav_head_menu>ul>li>span a {
+        cursor: pointer;
+        font-weight: normal;
+    }
+
+    .nav_head_menu>ul>li>a:after,
+    .nav_head_menu>ul>li>span a:after {
+        content: "";
+    }
+
+    .nav_head_menu>ul>li>a span::after,
+    .nav_head_menu>ul>li>div span::after,
+    .nav_head_menu>ul>li>span::after {
+        content: " \21E3";
+        display: inline;
+        overflow: hidden;
+    }
+
+    .nav_head_menu>ul>li:hover>a span::after,
+    .nav_head_menu>ul>li:hover>div span::after,
+    .nav_head_menu>ul>li:hover>span::after {
+        content: " \21E1";
+    }
+
+    /* Local design: Draw a line over the link */
+    .nav_head_menu>ul>li.selected,
+    .nav_head_menu>ul>li:hover {
+        border-top: 0 solid var(--nav-link-hover);
+    }
+
+    /*	Second Level
+	=================================== */
+    .nav_head_menu ul ul {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin: 0;
+        padding: 20px;
+        background-color: var(--nav-bg);
+        overflow: auto;
+        border: 0;
+        display: none;
+    }
+
+    .nav_head_menu li li {
+        padding: 1px 0;
+    }
+
+    .nav_head_menu li li div,
+    .nav_head_menu li li a {
+        white-space: nowrap;
+        font-weight: normal;
+    }
+
+    /*	Second Level + 1
+	=================================== */
+    .nav_head_menu ul ul ul {
+        display: block;
+        position: static;
+        padding: 0 20px 8px 26px;
+    }
+
+    .nav_head_menu li li li {
+        line-height: 125%;
+    }
+
+    /*	You can include in the same menu both WIDE and DROP DOWN menus
+        Drop down menu use the classes li.static
+            Absolute position in relation to the parent LI
+		Wide-screen menu uses the class ul.wide
+		    Absolut position in reltion nav_head, Not to parent LI
+	=================================== */
+    .nav_head_menu>ul>li.static {
+        position: static;
+    }
+
+    .nav_head_menu .wide {
+        left: 0;
+        right: 0;
+        text-align: center;
+        border-top: 1px solid var(--nav-border);
+        padding: 25px 10px;
+    }
+
+    .nav_head_menu .wide>li {
+        display: inline-block !important;
+        vertical-align: top;
+        padding: 10px;
+        margin: 0;
+        text-align: left;
+        flex: 1 1 24.5%;
+    }
+
+    .nav_head_menu .wide>li>a {
+        font-size: 1.2em;
+    }
+
+    .nav_head_menu .wide>li>a::before {
+        content: "\203A\203A ";
+        font-size: 0.8em;
+
+    }
+
+    .nav_head_menu .wide li ul {
+        position: static;
+        display: block !important;
+    }
+
+    .nav_head_menu .wide li li a {
+        white-space: pre-wrap;
+    }
+}
+
+/*
+    When screen windth chages from desktop to mobile
+*/
+@media (max-width: 1023.98px) {
+    .nav_head_menu ul ul {
+        display: block !important;
+    }
+}

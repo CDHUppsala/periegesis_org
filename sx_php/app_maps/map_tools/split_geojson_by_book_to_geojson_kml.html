@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Split Pausanias GeoJSON by Book to GeoJSON and KML | Digital Periegesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+    <meta name="creator" content="Public Sphere" />
+    <meta name="title" content="Split Pausanias GeoJSON by Book to GeoJSON and KML | Digital Periegesis" />
+    <meta name="description"
+        content="Upload a GeoJSON file with Pausanias passages and split it into 10 GeoJSON and 20 KML files by book. Supports ExtendedData and HTML-formatted Description outputs." />
+    <meta name="keywords"
+        content="Pausanias, GeoJSON splitter, KML generator, passages, books, chapters, sections, ExtendedData, HTML Description, Digital Periegesis" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Split Pausanias GeoJSON by Book to GeoJSON and KML | Digital Periegesis" />
+    <meta property="og:description"
+        content="Split a GeoJSON file with Pausanias passages into 10 GeoJSON and 20 KML files by book. Includes ExtendedData and HTML Description formats." />
+    <meta property="og:site_name" content="Digital Periegesis" />
+    <meta property="og:url"
+        content="https://www.periegesis.org/en/map_tools.php?p=split-geojson-by-book-to-geojson-kml" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
+    <link rel="canonical" href="https://www.periegesis.org/en/map_tools.php?p=split-geojson-by-book-to-geojson-kml" />
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 4rem;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.5rem;
+            width: 100%;
+            background-color: #003D7A;
+            color: #ffffffcc;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+
+        .fixed a {
+            color: #ffffffcc;
+            text-decoration: none;
+        }
+
+        .fixed a:hover {
+            color: #ffffff;
+        }
+
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem auto;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1024px;
+            padding: 1rem;
+            margin: 0 auto;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            line-height: 1.5;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            text-align: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 1280px;
+            margin: 1rem auto;
+        }
+
+        input,
+        button,
+        select {
+            font-size: 1rem;
+            padding: 0.5rem;
+            margin: 0.5em 0;
+        }
+
+        input[type="file"] {
+            font-size: 1rem;
+            padding: 0.4rem;
+            background: #fff;
+            color: #003D7A;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="fixed">
+            <a title="Home to Digital Periegesis" href="index.php">dp</a><br>
+            <a title="Search in Maps" href="map_search.php">SM</a>
+        </div>
+        <select id="Server_GeoFile" name="Server_GeoFile">
+            <option value="">Select Server File</option>
+        </select>
+        <div>
+            <input type="file" id="geojsonInput" accept=".geojson">
+            <button onclick="split_LocalGeoToBooks()">Generate GeoJSON + KML by Book</button>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div>
+            <h2>Split a GeoJson file with Places in Pausanias' 10 Books to 10 GeoJson and KML Files</h2>
+            <div class="container">
+                <p>The GeoJson file must contains the Property Name <b>passages</b> or <b>Passages</b>,
+                    with pre-structured values for Books, Chapters and Sections in JSON format.</p>
+                <p>The GeoJson file is filtered by book and split to:</p>
+                <ul>
+                    <li>10 <b>GeoJson</b> files, one for each book.</li>
+                    <li>10 <b>KML</b> files with the element <b>ExtendedData</b> that includes property names and values
+                        within <b>Data</b> and <b>Value</b> elements.</li>
+                    <li>10 <b>KML</b> files with the element <b>Description</b> that includes property names and values
+                        in
+                        <b>HTML</b> format. The name of these files has the suffix <b>_HTML</b>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="downloadLinks" class="grid"></div>
+
+    <script>
+
+        const maps_ParentFolder = '../imgMedia/maps';
+        const maps_PlacesFolder = `${maps_ParentFolder}/map_places`;
+
+        // Populate the select element with GeoJson file(s) from the server
+        let csv_FilesList = [];
+        fetch(`${maps_PlacesFolder}/index_geo.json`)
+            .then(response => response.json())
+            .then(data => {
+                csv_FilesList = data;
+
+                const selector = document.getElementById('Server_GeoFile');
+                data.forEach((filename, index) => {
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = filename;
+                    selector.appendChild(option);
+                });
+            });
+
+
+        // Load and split server geo to books
+        document.getElementById("Server_GeoFile").addEventListener("change", function () {
+            const index = parseInt(this.value);
+            file_Name = csv_FilesList[index];
+            if (!file_Name) return alert("Please select a .csv file first.");
+            server_fileURL = `${maps_PlacesFolder}/${file_Name}`;
+
+            fetch(server_fileURL)
+                .then(response => response.json())
+                .then(geoText => {
+                    split_IntoBooks(geoText)
+
+                });
+        });
+
+
+        // Load and split local geo to books
+        function split_LocalGeoToBooks() {
+            const input = document.getElementById('geojsonInput');
+            const file = input.files[0];
+            if (!file) return alert("Please select a .geojson file first.");
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const geojson = JSON.parse(event.target.result);
+                split_IntoBooks(geojson)
+            };
+
+            reader.readAsText(file);
+        }
+
+        function split_IntoBooks(geojson) {
+            const books = {};
+
+            for (let i = 1; i <= 10; i++) {
+                books[i] = {
+                    type: "FeatureCollection",
+                    features: []
+                };
+            }
+
+            geojson.features.forEach(feature => {
+                const passages = feature.properties.passages || feature.properties.Passages || [];
+                passages.forEach(passage => {
+                    const bookNum = parseInt(passage.split('.')[0], 10);
+                    if (books[bookNum]) {
+                        books[bookNum].features.push(feature);
+                    }
+                });
+            });
+
+            const container = document.getElementById('downloadLinks');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= 10; i++) {
+                const geojsonBlob = new Blob([JSON.stringify(books[i], null, 2)], { type: 'application/json' });
+                const geojsonURL = URL.createObjectURL(geojsonBlob);
+                container.appendChild(makeDownloadLink(geojsonURL, `Nodegoat_Book_${i}.geojson`, `Download Book ${i} (.geojson)`));
+
+                const kmlPlain = convertGeoJSONToKML(books[i], `Book ${i}`, false);
+                const kmlPlainBlob = new Blob([kmlPlain], { type: 'application/vnd.google-earth.kml+xml' });
+                const kmlPlainURL = URL.createObjectURL(kmlPlainBlob);
+                container.appendChild(makeDownloadLink(kmlPlainURL, `Nodegoat_Book_${i}.kml`, `Download Book ${i} (.kml)`));
+
+                const kmlRich = convertGeoJSONToKML(books[i], `Book ${i}`, true);
+                const kmlRichBlob = new Blob([kmlRich], { type: 'application/vnd.google-earth.kml+xml' });
+                const kmlRichURL = URL.createObjectURL(kmlRichBlob);
+                container.appendChild(makeDownloadLink(kmlRichURL, `Nodegoat_Book_${i}_HTML.kml`, `Download Book ${i} (.kml HTML)`));
+            }
+        }
+
+        function makeDownloadLink(url, filename, label) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            link.textContent = label;
+            link.style.display = 'block';
+            return link;
+        }
+
+        function convert___GeoJSONToKML(geojson, folderName = "Features", rich = false) {
+            const placemarks = geojson.features.map(feature => {
+                const coords = feature.geometry.coordinates;
+                const props = feature.properties || {};
+                const name = escapeXML(props.name || "Unnamed");
+
+                const description = rich
+                    ? Object.entries(props).map(([k, v]) => {
+                        const safeKey = escapeXML(k);
+                        const safeValue = formatValueRich(v);
+                        return `<strong>${safeKey}</strong>: ${safeValue}`;
+                    }).join('<br>')
+                    : Object.entries(props).map(([k, v]) => {
+                        const safeKey = escapeXML(k);
+                        const safeValue = formatValuePlain(v);
+                        return `${safeKey}: ${safeValue}`;
+                    }).join('\n');
+
+                return `
+      <Placemark>
+        <name>${name}</name>
+        <description><![CDATA[${description}]]></description>
+        <Point><coordinates>${coords[0]},${coords[1]}</coordinates></Point>
+      </Placemark>`;
+            }).join('\n');
+
+            return `<` + `?xml version="1.0" encoding="UTF-8"?>
+  <kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+      <name>${folderName}</name>
+      ${placemarks}
+    </Document>
+  </kml>`;
+        }
+
+
+        function convertGeoJSONToKML(geojson, folderName = "Features", rich = false) {
+            const placemarks = geojson.features.map(feature => {
+                const coords = feature.geometry.coordinates;
+                const props = feature.properties || {};
+                const name = escapeXML(props.name || "Unnamed");
+
+                const content = rich
+                    ? `<description><![CDATA[${buildRichDescription(props)}]]></description>`
+                    : buildExtendedData(props);
+
+                return `
+      <Placemark>
+        <name>${name}</name>
+        ${content}
+        <Point><coordinates>${coords[0]},${coords[1]}</coordinates></Point>
+      </Placemark>`;
+            }).join('\n');
+
+            return `<` + `?xml version="1.0" encoding="UTF-8"?>
+  <kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+      <name>${folderName}</name>
+      ${placemarks}
+    </Document>
+  </kml>`;
+        }
+
+        function buildRichDescription(props) {
+            return Object.entries(props).map(([k, v]) => {
+                const safeKey = escapeXML(k);
+                const safeValue = formatValueRich(v);
+                return `<strong>${safeKey}</strong>: ${safeValue}`;
+            }).join('<br>');
+        }
+
+        function buildExtendedData(props) {
+            const dataTags = Object.entries(props).map(([k, v]) => {
+                const safeKey = escapeXML(k);
+                const rawValue = typeof v === 'string' ? v : JSON.stringify(v);
+                const safeValue = escapeXML(rawValue);
+                return `<Data name="${safeKey}"><value>${safeValue}</value></Data>`;
+            }).join('\n');
+            return `<ExtendedData>\n${dataTags}\n</ExtendedData>`;
+        }
+
+        function formatValueRich(value) {
+            if (Array.isArray(value)) {
+                return value.map(v => formatSingleRich(v)).join(', ');
+            }
+            return formatSingleRich(value);
+        }
+
+        function formatSingleRich(val) {
+            const str = String(val);
+            const urlPattern = /^https?:\/\/[^\s]+$/i;
+            const safeStr = escapeXML(str);
+            return urlPattern.test(str)
+                ? `<a href="${safeStr}" target="_blank">${safeStr}</a>`
+                : safeStr.includes(",") && !safeStr.includes(", ")
+                    ? safeStr.replace(/,/g, ", ")
+                    : safeStr;
+        }
+
+        function formatValuePlain(value) {
+            if (Array.isArray(value)) {
+                return value.map(v => formatSinglePlain(v)).join(', ');
+            }
+            return formatSinglePlain(value);
+        }
+
+        function formatSinglePlain(val) {
+            const str = String(val);
+            const urlPattern = /^https?:\/\/[^\s]+$/i;
+            return urlPattern.test(str)
+                ? str
+                : str.includes(",") && !str.includes(", ")
+                    ? str.replace(/,/g, ", ")
+                    : str;
+        }
+
+        function escapeXML(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&apos;");
+        }
+    </script>
+
+</body>
+
+</html>

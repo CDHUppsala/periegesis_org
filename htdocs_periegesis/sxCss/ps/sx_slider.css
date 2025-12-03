@@ -1,0 +1,318 @@
+/*  Public Sphere - Slider
+	jQuery uses the Height/Width Ratio of first image 
+    to define the height of the cycler - as padding-top
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.sx_slider {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0 0 2.5rem 0;
+}
+
+.sx_slider figure {
+    position: relative;
+    overflow: hidden;
+    padding: auto 0 0 0 !important;
+    margin: 0 !important;
+}
+
+.sx_slider figure>img {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.sx_slider .sx_container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    z-index: 100 !important;
+    opacity: 1 !important;
+    list-style: none;
+}
+
+.sx_slider .sx_container .sx_thumbs {
+    padding: 0 !important;
+    margin: 2px !important;
+}
+
+/*
+    Styles to change the height of the slider in tables and mobiles
+    OBS! Use them only for sliders with vary low H/W ratio (< 0.4)
+    - Alternatively, you can change the height (padding-top) to an 
+      appropriate ratio to the width (40vw - 60vw, or heigher).
+*/
+
+@media (max-width: 992px) {
+    .sx_slider figure {
+        padding-top: calc(40vw) !important;
+    }
+
+    .sx_slider figure img {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translateY(-50%) translateX(-50%) !important;
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sx_slider figure {
+        padding-top: calc(50vw) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .sx_slider figure {
+        padding-top: calc(60vw) !important;
+    }
+
+}
+
+/*
+	Arrow Navigation and Descriptions
+*/
+
+.sx_slider .sx_nav {
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.sx_slider .sx_nav li {
+    margin: 0;
+}
+
+.sx_slider [class*='nav-'] {
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    font-weight: 900;
+    color: #eee;
+    padding: 0.25em;
+    opacity: 0;
+    z-index: 10;
+}
+
+.sx_slider:hover [class*='nav-'] {
+    opacity: 0.8;
+}
+
+.sx_slider .nav-prev {
+    left: 0;
+}
+
+.sx_slider .nav-next {
+    right: 0;
+}
+
+.sx_slider .nav-prev:after {
+    content: "\276E \276E";
+    text-shadow: 4px 2px 4px #666;
+}
+
+.sx_slider .nav-next:after {
+    content: "\276F \276F";
+    text-shadow: -4px 2px 4px #666;
+}
+
+/*
+    Image description in the margin under the slider images
+    at the center of the navigation list:
+     - a <li> Beteeen Prev and Next navigation
+     - It can be moved and placed in a container (.sx_container) within <figure>,
+        - so, keeep some styles to !important
+    Set the height of description at least equal to the title (H1), so that the subtitle, if any,
+    can be visible under the title without moving the rest av page,
+    but only when description is at the bottom of the slider
+*/
+.sx_slider .description {
+    text-align: center;
+    background: #fff !important;
+    background-image: none !important;
+    opacity: 1;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    height: 2.6rem;
+    overflow: visible;
+}
+
+.sx_slider .sx_container .description {
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .sx_slider .description {
+        opacity: 0.6;
+    }
+}
+
+.sx_slider:hover .description {
+    opacity: 0.9;
+}
+
+.sx_slider .description_left {
+    flex: 2;
+    border-radius: 0 8px 0 0;
+}
+
+.sx_slider .description_right {
+    flex: auto;
+    border-radius: 0 0 0 8px;
+}
+
+.sx_slider .description h1 {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 100%;
+}
+
+.sx_slider .description h1 a {
+    color: var(--heading-link)
+}
+
+.sx_slider .description h1 a:hover {
+    color: var(--heading-link-hover);
+}
+
+.sx_slider .description p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--body-color);
+    line-height: 120%;
+}
+
+/*
+	Thumbs Navigation
+*/
+
+.sx_slider .sx_thumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.5rem 0 0 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sx_slider .sx_thumbs li {
+    margin: 0 0.2rem;
+    padding: 0.2rem;
+    width: 1.5rem;
+    text-align: center;
+    font-size: 0.75em;
+    opacity: 0.75;
+    background: #eeeeee;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    line-height: 120%;
+    color: #999;
+}
+
+.sx_slider .sx_thumbs li:hover,
+.sx_slider .sx_thumbs li.active {
+    background: #bbb;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+    border: 1px solid #ccc;
+    color: #fff;
+}
+
+.sx_slider:hover .sx_thumbs li {
+    opacity: 1;
+}
+
+/*
+	To make thumb numbers invisible
+*/
+.sx_slider li.hide_numbers span {
+    display: none;
+}
+
+/*
+	When Thumbs are Texts - For events
+*/
+.sx_slider .thumbs_as_text li {
+    width: 5em !important;
+    border-radius: 3px !important;
+    margin: 0 0.1rem;
+}
+
+/*
+	When Thumbs are Images
+    sx_thumbs thumbs_as_imgs bottom_margin
+*/
+
+.sx_slider .thumbs_as_imgs li {
+    margin: 0 1px;
+    border: 1px solid #fff;
+    border-bottom: 5px solid #fff !important;
+    background: #ffffff;
+    width: 4rem !important;
+    height: auto;
+    overflow: hidden;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.sx_slider .thumbs_as_imgs li:hover,
+.sx_slider .thumbs_as_imgs li.active {
+    border: 1px solid #fff;
+    border-bottom: 5px solid var(--body-color) !important;
+    background: #ffffff;
+}
+
+.sx_slider .thumbs_as_imgs li img {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/*
+	Alternative positions of Thumbs Navigation
+        - default is named bottom_margin with no effects
+	Changed by jQuery according to the value of id-place="xxx" in the slider container
+	Set the value of id-place as equal to the name of the prefered class
+        - bottom_left bottom_center bottom_right
+*/
+
+
+.sx_slider .image_left {
+    justify-content: flex-start;
+}
+
+.sx_slider .image_center {
+    justify-content: center;
+}
+
+.sx_slider .image_right {
+    justify-content: flex-end;
+}
+
+.sx_slider .image_left li,
+.sx_slider .image_center li,
+.sx_slider .image_right li {
+    border-color: #fff;
+}

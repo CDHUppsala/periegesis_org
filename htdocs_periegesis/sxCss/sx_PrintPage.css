@@ -1,0 +1,87 @@
+html,
+body,
+table {
+    font-family: "Trebuchet MS", Tahoma, Helvetica, sans-serif;
+    font-size: 14pt;
+    line-height: 140%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 120%;
+    padding: 0;
+    margin: 10pt 0
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+h4 {
+    font-size: 12pt;
+}
+
+th {
+    background: #ddd;
+    color: #000;
+    vertical-align: top;
+}
+
+td {
+    vertical-align: top;
+    padding: 0 3pt;
+    border-bottom: 1px solid #ddd;
+    ;
+}
+
+hr {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    padding: 6pt;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.maxWidth {
+    width: 40%;
+    float: left;
+}
+
+.clear,
+.clearSpace,
+.line {
+    clear: both;
+    width: 100%;
+}
+
+.svg_table_list {
+    width: auto;
+}
+
+.svg_table_list td:nth-child(2) {
+    width: 100%;
+}
+
+.svg_table_list img {
+    width: 1.5rem;
+    height: 1.5rem;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="../../sxCss/root_Colors.css?v=2023-09-20">
+    <script type="text/javascript" charset="utf-8" src="../../sxScripts/jq/jquery.min.js?v=2023"></script>
+    <script type="text/javascript" charset="utf-8" src="../../sxScripts/js_ps_basic.js?v=2023"></script>
+    <style>
+        html,
+        body {
+            font-size: 18px;
+            font-family: arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .box {
+            display: inline-block;
+            width: 8.9%;
+            margin: 0;
+            border-left: 1px solid #fff;
+            vertical-align: top;
+        }
+
+        .box_color {
+            width: 100%;
+            height: 40px
+        }
+
+        .box span {
+            line-height: 125%;
+            color: #666;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="color:#888888" id="jq_InsertRootColor">
+        <h3>CSS Root Color Variables</h3>
+    </div>
+    <script>
+        (function ($) {
+            var root_variables = sx_getCSSRootVariables();
+            var insertRootColor = $("#jq_InsertRootColor");
+            var radioTint = false;
+            var myarr = ["lighten", "brighten", "darken", "desaturate", "monochrom", "analog"];
+
+            for (var key in root_variables) {
+                if (key.includes('--tone')) {
+                    break;
+                }
+                if (key.includes('_')) {
+                    break;
+                }
+
+                var radioNewLine = true;
+                if (key.includes('-tone') && key.includes('-tone-10') == false) {
+                    radioNewLine = false;
+                } else if (key.includes('-saturate') && key.includes('-saturate-10') == false) {
+                    radioNewLine = false;
+                }
+                if (key.includes('-saturate-100')) {
+                    radioNewLine = false;
+                }
+
+                var value = root_variables[key];
+                var radio = $.inArray(value, myarr);
+                if (
+                    ((radioTint && key.includes('-shade') && radio === false) ||
+                        (key.includes('-shade') === false && key.includes('-tint') == false)) && radioNewLine) {
+                    insertRootColor.append('<br>');
+                }
+                var $div_wrap = '<div class="box">';
+                $div_wrap += '<div class="box_color" style="; background-color:' + value + '">';
+                $div_wrap += '</div>';
+                $div_wrap += '<span>' + key + '</span><br>';
+                $div_wrap += '<span>' + value + '</span></div>';
+
+                radioTint = key.includes('-tint');
+                insertRootColor.append($div_wrap);
+            }
+        })(jQuery);
+    </script>
+</body>
+
+</html>

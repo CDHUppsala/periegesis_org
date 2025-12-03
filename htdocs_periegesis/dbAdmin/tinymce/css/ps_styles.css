@@ -1,0 +1,106 @@
+/* Public Sphere Styles*/
+aside {
+    display: block
+}
+
+.float_left {
+    float: left;
+    width: 40%;
+    margin: 0 0.6rem 0.6rem 0;
+}
+
+.float_right {
+    float: right;
+    width: 40%;
+    margin: 0 0 0.6rem 0.6rem;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    font-size: 0.9em
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+.image_center {
+    position: relative;
+    clear: both;
+    display: table;
+    table-layout: fixed;
+    border: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.image_left {
+    float: left;
+    margin: 4px 12px 2px 0;
+    width: 40%;
+    display: table;
+    table-layout: fixed;
+}
+
+.image_right {
+    float: right;
+    margin: 4px 0 2px 12px;
+    width: 40%;
+    display: table;
+    table-layout: fixed;
+}
+
+.image_center img,
+.image_left img,
+.image_right img {
+    width: 100%;
+    height: auto;
+}
+
+.image_left object,
+.image_left embed,
+.image_left video,
+.image_left audio,
+.image_left iFrame {
+    width: 100%;
+    min-height: 192px;
+}
+
+.bg_gray {
+    background: #eee;
+    padding: 5px;
+    border: 1px #ddd solid;
+}
+
+.poem {
+    padding-left: 48px !important;
+}
+
+.poem p {
+    line-height: 100%;
+    padding: 0;
+    margin: 0.5em 0;
+}
+
+.poem p strong {
+    display: inline-block;
+    padding: 0;
+    width: 44px;
+    margin-left: -48px;
+}
+
+.no_style tr {
+    background: transparent !important;
+    border: 0 !important;
+}
+
+.clear {
+    clear: both;
+}

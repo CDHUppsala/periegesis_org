@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hyphenation example</title>
+        <meta charset="utf-8">
+        <script src="../../sxScripts/jq/jquery.min.js"></script>
+        <script src="jquery.hypher.js"></script>
+        <script src="browser/en-us.js"></script>
+        <script src="browser/sv.js"></script>
+        <script src="browser/el-monoton.js"></script>
+        <script>
+            // the .text * is important to include all html elements, p, table, etc
+        
+            jQuery(function ($) {
+                $('p').hyphenate('en-us');
+                $('.svenska').hyphenate('sv');
+                $('.text, .text *').hyphenate('el');
+                $('p[lang=el]').hyphenate('el');
+            });
+        </script>
+    </head>
+    <style>
+        body {
+            width: 300px;
+            text-align: justify;
+        }
+    </style>
+    <body>
+        <p>I call our world Flatland, not because we call it so, but to make its nature clearer to you, my happy readers, who are privileged to live in Space.</p>
+
+        <p>Imagine a vast sheet of paper on which straight Lines, Triangles, Squares, Pentagons, Hexagons, and other figures, instead of remaining fixed in their places, move freely about, on or in the surface, but without the power of rising above or sinking below it, very much like shadows — only hard and with luminous edges — and you will then have a pretty correct notion of my country and countrymen. Alas, a few years ago, I should have said "my universe;" but now my mind has been opened to higher views of things.</p>
+
+        <p>In such a country, you will perceive at once that it is impossible that there should be anything of what you call a "solid" kind; but I dare say you will suppose that we could at least distinguish by sight the Triangles, Squares, and other figures, moving about as I have described them. On the contrary, we could see nothing of the kind, not at least so as to distinguish one figure from another. Nothing was visible, nor could be visible, to us, except Straight Lines; and the necessity of this I will speedily demonstrate.</p>
+
+        <p>Place a penny on the middle of one of your tables in Space; and leaning over it, look down upon it. It will appear a circle.</p>
+
+        <p>But now, drawing back to the edge of the table, gradually lower your eye (thus bringing yourself more and more into the condition of the inhabitants of Flatland), and you will find the penny becoming more and more oval to your view; and at last when you have placed your eye exactly on the edge of the table (so that you are, as it were, actually a Flatlander) the penny will then have ceased to appear oval at all, and will have become, so far as you can see, a straight line.</p>
+
+        <p>The same thing would happen if you were to treat in the same way a Triangle, or Square, or any other figure cut out of pasteboard. As soon as you look at it with your eye on the edge on the table, you will find that it ceases to appear to you a figure, and that it becomes in appearance a straight line. Take for example an equilateral Triangle — who represents with us a Tradesman of the respectable class. Fig. 1 represents the Tradesman as you would see him while you were bending over him from above; figs. 2 and 3 represent the Tradesman, as you would see him if your eye were close to the level, or all but on the level of the table; and if your eye were quite on the level of the table (and that is how we see him in Flatland) you would see nothing but a straight line.</p>
+    
+    <div class="svenska">
+
+Datorn och internet har revolutionerat många sidor av våra liv. Inom undervisningen i fysik och matematik har simuleringar och animeringar (sk applets) en potential att bli oslagbara som medel i förståelsen och fördjupningen av vissa begrepp och processer.
+
+Men de simuleringar som finns ute på nätet ger oftast bara elementära möjligheter, som att ändra värdet på visa variabler, t.ex. k- och m-värdet för en rät linje. Som lärare och elev vet man egentligen inte riktigt vad man skall göra, mera än att bara ändra värdet på dessa variabler och se vad som händer. Det saknas oftast instruktioner om hur man på ett konstruktivt sätt skall ändra värdet på variablerna så att det leder till en fördjupad förståelse av t.ex. linjens ekvation i k-form. I den mån simuleringar erbjuder instruktioner, så finns de oftast utanför simuleringen, vilket försvårar användbarheten av uppgifterna.
+
+Dessutom är simuleringarna oftast fragmentariska; helhet och integrering saknas. En enskild simulering kan t.ex. visa linjens ekvation i k-form, men inte de andra formerna.
+
+Men det saknas framförallt konstruktioner av komplexa uppgifter som utnyttjar simuleringens styrka, och som ger eleverna möjlighet att undersöka, utreda, experimentera och fördjupa förståelsen av ett visst område, t.ex. linjens ekvation i olika former.
+
+
+    </div>
+    <hr>
+    <p lang="el">
+Την «επιστολή Τσακαλώτου» αναμένουν οι Βρυξέλλες ωστόσο κυβερνητικές πηγές διευκρινίζουν πως για να γίνει αυτό θα πρέπει να έχουν προηγηθεί γραπτώς οι διευκρινίσεις που ζητούν οι θεσμοί από την ελληνική πλευρά. Στόχος της αλληλογραφίας μεταξύ των δύο πλευρών να ξεπαγώσουν τα βραχυπρόθεσμα μέτρα για την ελάφρυνση του ελληνικού χρέους. Οι συζητήσεις μεταξύ των ελληνικών αρχών και των θεσμών συνεχίστηκαν χωρίς ουσιαστικό αποτέλεσμα μέχρι και το απόγευμα της Τετάρτης.
+
+Σύμφωνα με ευρωπαϊκές πηγές, οι υπουργοί Οικονομικών της Ευρωζώνης αναμένουν την ελληνική επιστολή και σύμφωνα με πληροφορίες δε θα γίνει ούτε EWG ούτε έκτακτο Eurogroup όπως απειλούσε η ευρωπαϊκή τρόικα.
+
+Σύμφωνα με κυβερνητικές πηγές για να υπάρξει απάντηση της ελληνικής κυβέρνησης σε ανησυχίες που έχουν διατυπωθεί από την πλευρά των θεσμών σχετικά με τις πρόσφατες εξαγγελίες για τις συντάξεις, θα πρέπει πρώτα οι τελευταίοι να στείλουν γραπτώς τις διευκρινίσεις που ζητούν, ώστε και η ελληνική πλευρά να απαντήσει συγκεκριμένα σε αυτές. Για αυτό άλλωστε και δεν θα αποσταλεί αύριο κάποια επιστολή από την ελληνική κυβέρνηση προς τους θεσμούς.
+        
+    </p>
+    <hr>
+    <div class="text">
+<p>Την «επιστολή Τσακαλώτου» αναμένουν οι Βρυξέλλες ωστόσο κυβερνητικές πηγές διευκρινίζουν πως για να γίνει αυτό θα πρέπει να έχουν προηγηθεί γραπτώς οι διευκρινίσεις που ζητούν οι θεσμοί από την ελληνική πλευρά. Στόχος της αλληλογραφίας μεταξύ των δύο πλευρών να ξεπαγώσουν τα βραχυπρόθεσμα μέτρα για την ελάφρυνση του ελληνικού χρέους. Οι συζητήσεις μεταξύ των ελληνικών αρχών και των θεσμών συνεχίστηκαν χωρίς ουσιαστικό αποτέλεσμα μέχρι και το απόγευμα της Τετάρτης.
+
+Σύμφωνα με ευρωπαϊκές πηγές, οι υπουργοί Οικονομικών της Ευρωζώνης αναμένουν την ελληνική επιστολή και σύμφωνα με πληροφορίες δε θα γίνει ούτε EWG ούτε έκτακτο Eurogroup όπως απειλούσε η ευρωπαϊκή τρόικα.
+
+Σύμφωνα με κυβερνητικές πηγές για να υπάρξει απάντηση της ελληνικής κυβέρνησης σε ανησυχίες που έχουν διατυπωθεί από την πλευρά των θεσμών σχετικά με τις πρόσφατες εξαγγελίες για τις συντάξεις, θα πρέπει πρώτα οι τελευταίοι να στείλουν γραπτώς τις διευκρινίσεις που ζητούν, ώστε και η ελληνική πλευρά να απαντήσει συγκεκριμένα σε αυτές. Για αυτό άλλωστε και δεν θα αποσταλεί αύριο κάποια επιστολή από την ελληνική κυβέρνηση προς τους θεσμούς.
+
+Διευκρίνιζαν πάντως ότι η παροχή για τους χαμηλοσυνταξιούχους είναι εφάπαξ. Όπως έλεγαν οι ίδιοι παράγοντες κάποιες από τις ερωτήσεις θα ζητάνε επιβεβαίωση αν είναι εφάπαξ η οικονομική ενίσχυση, αν ο ΦΠΑ θα ισχύσει μόνο για το 2017, αν διατηρούμε την δέσμευση για τήρηση του προγράμματος.
+
+Την Τετάρτη συνεχίστηκαν οι παρασκηνιακές διαβουλεύσεις με ανταλλαγή ηλεκτρονικής αλληλογραφίας μεταξύ των δύο πλευρών προκειμένου να υπάρξουν οι απαραίτητες διευκρινήσεις.
+
+Την Δευτέρα, το EWG ζήτησε από την ελληνική κυβέρνηση έγγραφες διαβεβαιώσεις ότι το επίδομα της «13ης σύνταξης» θα χορηγηθεί εφάπαξ και δεν θα χορηγείται σε μόνιμη βάση. 
+
+«Κλείνουν» τα βραχυπρόθεσμα χωρίς νέο EWG ή Eurogroup</p>
+
+«Λευκό καπνό» αναμένει η ελληνική κυβέρνηση σύντομα και αφού ολοκληρωθεί η ανταλλαγή επιστολών. Σύμφωνα με κυβερνητική πηγή, «με τα δεδομένα που υπάρχουν, δεν υπάρχει ενδεχόμενο να χρειαστεί νέα τηλεδιάσκεψη EuroWorking Group ή Euroworking Group».
+
+Σύμφωνα με την ίδια πηγή, «θα δοθεί λύση που θα ξεκλειδώσει σύντομα τα βραχυχρόνια μέτρα ελάφρυνσης του χρέους» και «η εφαρμογή των τελευταίων δεν θα συνδεθεί με την ολοκλήρωση της αξιολόγησης».
+
+Και στη μέση η... αξιολόγηση
+
+Πέρα, όμως, από το «θέμα» που προέκυψε με τις εξαγγελίες της κυβέρνησης, ανοιχτή παραμένει η δεύτερη αξιολόγηση με τα ανοιχτά ζητήματα να δημιουργούν προβλήματα. Οι συζητήσεις μεταξύ θεσμών και κυβέρνησης συνεχίζονται εξ αποστάσεως, ενώ στόχος είναι η ολοκλήρωση της αξιολόγησης πριν από το Eurogroup της 26ης Ιανουαρίου.
+
+Οι δανειστές, πάντως, δεν δείχνουν να βιάζονται ιδιαίτερα, από τη στιγμή που δεν υπάρχουν άμεσες χρηματοδοτικές ανάγκες για την Ελλάδα, καθώς οι πληρωμές θα αρχίσουν να τρέχουν από τον Απρίλιο.
+
+Αίνιγμα παραμένει και η στάση που θα κρατήσει το Διεθνές Νομισματικό Ταμείο, το οποίο επιμένει στις σκληρές απαιτήσεις του.
+    </div>
+    </body>
+</html>

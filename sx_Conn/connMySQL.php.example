@@ -1,0 +1,54 @@
+<?php
+
+mb_internal_encoding('UTF-8');
+mb_http_output('UTF-8');
+mb_regex_encoding('UTF-8');
+
+/*  
+    ===================
+    Show/Hide errors
+    ===================
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+ini_set('error_reporting', E_ALL);
+
+*/
+
+
+CONST SX_DatabaseName = "ps_periegesis";
+$radioTestDB = false;
+
+if ($radioTestDB) {
+    define('sx_ServerName', "");
+    define('sx_UserName', "");
+    define('sx_Password', "");
+    define('sx_TABLE_SCHEMA', SX_DatabaseName);
+    define('sx_Charset', "utf8mb4");
+} else {
+    define('sx_ServerName', "");
+    define('sx_UserName', "");
+    define('sx_Password', "");
+    define('sx_TABLE_SCHEMA', SX_DatabaseName);
+    define('sx_Charset', "utf8mb4");
+}
+
+function dbconn()
+{
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        //PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false
+    ];
+    static $conn;
+    if ($conn === null) {
+        $dsn = "mysql:host=" . sx_ServerName . ";dbname=" . sx_TABLE_SCHEMA . ";charset=" . sx_Charset;
+        try {
+            $conn = new PDO($dsn, sx_UserName, sx_Password, $options);
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage(), (int) $e->getCode());
+        }
+    }
+    return $conn;
+}
+
+$conn = dbConn();

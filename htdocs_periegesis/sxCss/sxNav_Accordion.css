@@ -1,0 +1,114 @@
+/*	
+    The Class for jQuery selector: .jqAccordionNav {}
+    A header (h3) followed by independed UL blocks (of 1-4 levels) 
+    h3
+        UL
+            LI
+                ...
+        UL
+    H3
+*/
+
+.sxAccordionNav {
+    font-family: var(--aside-nav-fonts);
+    clear: both;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.sxAccordionNav ul,
+.sxAccordionNav li {
+    padding: 0;
+    margin: 0.25em 0;
+    list-style: none;
+}
+
+.sxAccordionNav ul {
+    font-size: 1rem;
+}
+
+.sxAccordionNav ul ul {
+    font-size: 0.95em;
+    margin-left: 1.25em;
+    display: none;
+}
+
+
+.sxAccordionNav a,
+.sxAccordionNav div {
+    display: block;
+    padding-left: 1.25em;
+    position: relative;
+    color: var(--aside-nav-link);
+    cursor: pointer;
+}
+
+.sxAccordionNav a:hover,
+.sxAccordionNav div:hover {
+    color: var(--aside-nav-link-hover);
+}
+
+.sxAccordionNav a.open,
+.sxAccordionNav div.open {
+    color: var(--aside-nav-link-open);
+}
+
+.sxAccordionNav a::before {
+    content: "\23F5 ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.8em;
+}
+
+/* For e.g. Dates and Author Names
+.sxAccordionNav li a span {
+	color: var(--grey-tint-50);
+}
+ */
+
+
+.sxAccordionNav div::before {
+    content: "\00276F";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.8em;
+}
+
+.sxAccordionNav div:hover::before,
+.sxAccordionNav div.open::before {
+    content: "\00276F";
+    transform: rotate(90deg);
+}
+
+/**
+    FOR TEXT ARCHIVES
+*/
+.sxAccordionNav li a.archive {
+    float: right;
+    width: 1.25em;
+    height: 1.25em;
+    padding: 0;
+    margin: 0 0 0 0.25em;
+    text-align: right;
+    vertical-align: top;
+    opacity: 0.4;
+    z-index: 10;
+}
+
+.sxAccordionNav a.archive::before {
+    content: "";
+    position: static;
+}
+
+.sxAccordionNav a.archive::after {
+    content: url('../imgPG/sx_svg/svg_icons_black/sx_folder.svg');
+    position: static;
+    width: 100%;
+    height: auto;
+}
+
+.sxAccordionNav a.archive:hover {
+    opacity: 1;
+}

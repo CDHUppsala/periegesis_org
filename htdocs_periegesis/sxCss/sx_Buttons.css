@@ -1,0 +1,673 @@
+﻿/*
+===============================
+TO CHANGE THE BACKGROUND COLOR OF BUTTONS
+===============================
+Background colors are defined as variables, reperesenting the main Palette of your Color Schema.
+To darken a color, add black opacities from 10% to 100% to its variable name: name-shade-20
+To lighten a color, add white opacities from 10% to 100/ to its variable name: name-tint-20
+For the basic-color, use basic-tint-XX and basic-shade-XX.
+For the basic-color you can also add grey opacities from 10% to 100% like this: basic-tone-20.
+So, darken the light background of a button by adding the suffix -shade-20 to its variable name.
+===============================
+TO CHANGE THE TEXT COLOR OF BUTTONS
+===============================
+Text colors are defined as variables with opacities of black and white, from 10% to 100%.
+DARK COLOR: color: var(--shade-XX); - where XX = 100 gives 100% black.
+LIGHT COLOR: color: vari(--tint-XX); - where XX = 100 gives 100% white.
+If you set XX < 100, the text color gets some tones of the background color.
+*/
+
+/**
+===============================
+BUTTONS:
+To be used with the HTML tag elements INPUT, BUTTON and A,
+but basically, with any DIV element if you remove incompatible default styles.
+=================================
+*/
+
+/**
+1. Primary Button Classes
+
+.button
+.button-complement
+.button-split-1
+.button-split-2
+.button-triad-1
+.button-triad-2
+.button-tetrad-1
+.button-tetrad-2
+.button-grey
+
+2.  Primary Mixed Color Button Classes: 
+    The first two buttons mix reversely the basic with the complementary:
+        - Hovering on button-mix (the basic color) shows the complement color, and the reverse.
+    The others mix reversely the pair colors of split, triad and tetrad to each other:
+        - Hovering on button-mix-split-1 shows the split-2 color, and the reverse.
+
+.button-mix
+.button-mix-complement
+.button-mix-split-1
+.button-mix-split-2
+.button-mix-triad-1
+.button-mix-triad-2
+.button-mix-tetrad-1
+.button-mix-tetrad-2
+.button-toborder-grey
+
+3.  Secondary Button Classes
+===============================
+    All secondary classes MUST be combined with a primary class to have any effect:
+        - class="button button-gradient" transforms the primary button to gradient.
+    You can add multiple secondary classes to a primary class:
+        - class="button button-gradient button-border" transforms the primary button 
+          to gradient with borders.
+===============================
+
+.button-border
+.button-gradient
+.button-big
+.button-small
+.button-grey-to-color
+.button-arrow
+.button-shadow
+.button-shadow-white
+.button-shadow-border
+
+4.  Secondary Button Classes with Images
+===============================
+    You can use any image form compatible to HTML, including SVG
+        - Best results are achieved by transparent images.
+    The class is set in the container of the image: INPUT, BUTTON, A, or any HTML element.
+        - For buttons with suffix '-icon' and '-svg', insert the image in css (contain).
+        - For buttons with suffix '-image', insert images as HTML elements within their class container
+===============================
+
+.button-icon
+.button-icon-left
+.button-svg
+.button-svg-left
+.button-image
+.button-image-left
+.button-image-card
+.button-image-card-vertical
+*/
+
+/**
+===============================
+Common Styles for all "button-" CLASSES
+	By default, light text colors are used for both Primary Buttons and their hovering:
+		var(--tint-90), which is 90% opacity of white, and (--tint-100) for hovering
+	If you color scheme is light use dark text colors:
+		e.g var(--shade-80), which is 80% opacity of black, and var(--shade-90) for hovering.
+    All colors are defined as variables in root_Colors.css and change with new color schemes
+===============================
+*/
+
+.button,
+[class*="button-"] {
+	position: relative;
+	display: inline-block;
+    border-width: 0;
+	background-origin:border-box;
+	padding: 16px 18px;
+	text-align: left;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: 100% !important;
+	margin: 2px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: 0.3s;
+	color: var(--tint-90);
+}
+
+.button:hover,
+[class*="button-"]:hover {
+	color: var(--tint-100);
+}
+
+/**
+============================
+Primary Buttons Classes - can be combined with one or more Secondary Classes
+============================
+*/
+/** 
+==============
+Monochromatic Color Buttons:
+    Use all main colors variables from the color scheme
+==============
+*/
+
+.button {
+    border-color: var(--basic-tint-40);
+	background-color: var(--basic-color);
+}
+
+.button:hover {
+	background-color: var(--basic-tint-20);
+}
+
+.button-complement {
+    border-color: var(--complement-tint-40);
+	background-color: var(--complement);
+}
+
+.button-complement:hover {
+	background-color: var(--complement-tint-20);
+}
+
+.button-split-1 {
+    border-color: var(--split-1-tint-40);
+	background-color: var(--split-1);
+}
+
+.button-split-1:hover {
+	background-color: var(--split-1-tint-20);
+}
+
+.button-split-2 {
+    border-color: var(--split-2-tint-40);
+	background-color: var(--split-2);
+}
+
+.button-split-2:hover {
+	background-color: var(--split-2-tint-20);
+}
+
+.button-triad-1 {
+    border-color: var(--triad-1-tint-40);
+	background-color: var(--triad-1);
+}
+
+.button-triad-1:hover {
+	background-color: var(--triad-1-tint-20);
+}
+
+.button-triad-2 {
+    border-color: var(--triad-2-tint-40);
+	background-color: var(--triad-2);
+}
+
+.button-triad-2:hover {
+	background-color: var(--triad-2-tint-20);
+}
+
+.button-tetrad-1 {
+    border-color: var(--tetrad-1-tint-40);
+	background-color: var(--tetrad-1);
+}
+
+.button-tetrad-1:hover {
+	background-color: var(--tetrad-1-tint-20);
+}
+
+.button-tetrad-2 {
+    border-color: var(--tetrad-2-tint-40);
+	background-color: var(--tetrad-2);
+}
+
+.button-tetrad-2:hover {
+	background-color: var(--tetrad-2-tint-20);
+}
+
+.button-grey {
+    border-color: var(--grey-tint-40);
+	background-color: var(--grey);
+}
+
+.button-grey:hover {
+	background-color: var(--grey-tint-20);
+}
+
+/** ==============
+	Mixed Color Buttons: 
+    Mix pairs of triad, tetrad and split colors:
+        Hovering the one color paire, shows the other
+	The first two buttons mix the basic color with the complementary color
+===============
+*/
+
+.button-mix {
+	background-color: var(--basic-color);
+}
+
+.button-mix:hover {
+	background-color: var(--complement);
+}
+
+.button-mix-complement {
+	background-color: var(--complement);
+}
+
+.button-mix-complement:hover {
+	background-color: var(--basic-color);
+}
+
+.button-mix-split-1 {
+	background-color: var(--split-1);
+}
+
+.button-mix-split-1:hover {
+	background-color: var(--split-2);
+}
+
+.button-mix-split-2 {
+	background-color: var(--split-2);
+}
+
+.button-mix-split-2:hover {
+	background-color: var(--split-1);
+}
+
+.button-mix-triad-1 {
+	background-color: var(--triad-1);
+}
+
+.button-mix-triad-1:hover {
+	background-color: var(--triad-2);
+}
+
+.button-mix-triad-2 {
+	background-color: var(--triad-2);
+}
+
+.button-mix-triad-2:hover {
+	background-color: var(--triad-1);
+}
+
+.button-mix-tetrad-1 {
+	background-color: var(--tetrad-1);
+}
+
+.button-mix-tetrad-1:hover {
+	background-color: var(--tetrad-2);
+}
+
+.button-mix-tetrad-2 {
+	background-color: var(--tetrad-2);
+}
+
+.button-mix-tetrad-2:hover {
+	background-color: var(--tetrad-1);
+}
+
+.button-toborder-grey {
+	background-color: var(--grey-tin-40);
+}
+
+.button-toborder-grey:hover {
+	background-color: var(--grey-tint-90);
+	border-color: var(--grey-tin-40);
+	color: var(--grey-shade-10);
+}
+
+
+/**
+	==========================
+	Secondary Button Classes
+	MUST always be used with (or added to) Primary Classes 
+	==========================
+*/
+
+
+/**
+==============
+	Border Buttons 
+===============
+*/
+
+.button-border {
+	border-width: 1px;
+    border-style: solid;
+	background-image: linear-gradient(var(--tint-70), var(--tint-70));
+	color: var(--shade-90) !important;
+}
+
+.button-border:hover {
+	background-image: linear-gradient(var(--tint-80), var(--tint-60));
+}
+
+
+
+/**
+===============
+	Gradient Buttons
+===============
+*/
+
+.button-gradient {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    color: var(--shade-90) !important;
+}
+
+.button-gradient:hover {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
+    color: var(--shade-90);
+}
+
+
+/**
+===============
+	Gradient Buttons with borders - from grey to color
+===============
+*/
+
+.button-grey-to-color {
+	background-color: var(--grey-tint-10);
+    color: var(--tint-90);
+}
+
+
+/**
+===============
+	Arrow Buttons
+===============
+*/
+
+.button-arrow:hover {
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+.button-arrow:after {
+	content: '»';
+	opacity: 0;
+	transition: 0.3s;
+	font-weight: bold;
+}
+
+.button-arrow:hover:after {
+	padding-left: 8px;
+	opacity: 1;
+}
+
+/**
+===============
+	Shadow Buttons
+===============
+*/
+
+.button-shadow {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-shadow:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/**
+===============
+	Shadow Buttons - white background on hover
+===============
+*/
+
+.button-shadow-white {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-shadow-white:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	background-color: #ffffff;
+	color: #000000;
+}
+
+/**
+===============
+	Shadow Buttons - white background on hover with borders
+===============
+*/
+
+.button-shadow-border {
+	border-width: 2px;
+    border-style: solid;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-shadow-border:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	background-color: #ffffff;
+	color: var(--shade-90);
+}
+
+
+/**
+===============
+	Big Buttons
+===============
+*/
+
+.button-big {
+	padding: 24px 24px;
+	font-size: 1.2rem;
+}
+
+/**
+===============
+	Big Buttons
+===============
+*/
+
+.button-small {
+	padding: 10px;
+	font-size: 1rem;
+}
+
+/**
+===============
+	Icon / Image Buttons without text
+===============
+*/
+
+.button-icon:before {
+	content: '\26ED';
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 2rem;
+	transition: transform .3s ease-in-out;
+}
+
+.button-icon:hover:before {
+	transform: rotate(90deg);
+}
+
+/**
+===============
+	Icon / Image Buttons with text on right
+===============
+*/
+
+.button-icon-left {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.5rem;
+	padding-left: 10px;
+}
+
+.button-icon-left:before {
+	content: "\25FC ";
+}
+
+.button-icon-left .selected,
+.button-icon-left:hover:before {
+	content: "\25B6 ";
+}
+
+/**
+===============
+	SVG Buttons without text
+===============
+*/
+
+.button-svg {
+	padding: 2px 2px 0 2px !important;
+	border-radius: 3px;
+}
+
+.button-svg:before {
+	content: url('../../imgPG/sx_svg/sx_svg/sx_home.svg');
+	height: 3rem;
+	width: 3rem;
+	display: inline-block;
+	margin: 0;
+}
+
+/**
+===============
+	SVG Buttons with text on right
+	- 	Probably you cannot set border-radius for SVG in this context, 
+		so remove/reduce it from the left side of the container
+===============
+*/
+
+.button-svg-left {
+	padding: 2px 16px 2px 2px !important;
+	display: inline-flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 3px 5px 5px 3px;
+}
+
+.button-svg-left:before {
+	content: url('../../imgPG/sx_svg/sx_svg/sx_home.svg');
+	height: 3rem;
+	width: 3rem;
+}
+
+
+/**
+===============
+	Any Image Buttons
+===============
+*/
+
+.button-image {
+	padding: 2px 2px 0 2px !important;
+}
+
+.button-image img {
+	display: inline-block;
+	border-radius: 3px;
+	width: 3rem;
+	height: auto;
+	margin: 0;
+}
+
+
+/**
+===============
+	Any Image Buttons with text on right
+===============
+*/
+
+.button-image-left {
+	padding: 2px 16px 2px 2px !important;
+	display: inline-flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.button-image-left img {
+	display: inline-block;
+	width: 3rem;
+	height: auto;
+	border-radius: 3px;
+}
+
+/**
+===============
+	Buttons as Card with image on left and text on right
+===============
+*/
+
+.button-image-card {
+	padding: 2px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 1rem;
+	max-height: calc(12rem + 8px);
+	overflow: hidden;
+}
+
+.button-image-card img {
+	display: block;
+	height: 12rem;
+	width: auto;
+	border-radius: 3px 0 0 3px;
+	flex: 0;
+}
+
+.button-image-card>div {
+	background-color: var(--tint-90);
+	color: var(--shade-60);
+	border-radius: 0 3px 3px 0;
+	padding: 0.5rem 0.75rem;
+	flex: 1;
+}
+
+.button-image-card p {
+	padding: 0;
+    margin-top: 0;
+}
+
+/**
+===============
+	Buttons as Vertical Card with image on top and text on bottom
+===============
+*/
+
+.button-image-card-vertical {
+	padding: 2px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.button-image-card-vertical img {
+	display: block;
+	width: auto;
+	height: auto;
+	border-radius: 3px 3px 0 0;
+	flex: 0;
+}
+
+.button-image-card-vertical>div {
+	background-color: var(--tint-90);
+	color: var(--shade-60);
+	border-radius: 0 0 3px 3px;
+	padding: 1rem;
+	flex: 1;
+}
+
+.button-image-card-vertical p {
+	padding: 0;
+    margin-top: 0;
+}
+
+/*
+===============
+For javaScript, to change vertical arrow up and down
+===============
+*/
+.order_desc:after {
+	content: "\25bc"
+}
+
+.order_asc:after {
+	content: "\25b2"
+}
+
+/*
+===============
+My Button Classes
+    Your changes will be added here bellow.
+===============
+*/

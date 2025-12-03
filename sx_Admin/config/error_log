@@ -1,0 +1,24 @@
+[28-Sep-2021 00:18:29 Europe/Athens] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT CONCAT(FirstName,' ', LastName) AS RequestName FROM conf_participants ...' at line 1 in /home/tw445534/public_html/dbAdmin/configFunctions.php:160
+Stack trace:
+#0 /home/tw445534/public_html/dbAdmin/configFunctions.php(160): PDO->query()
+#1 /home/tw445534/public_html/dbAdmin/config/configRelatedFields.php(191): include('/home/tw445534/...')
+#2 {main}
+  thrown in /home/tw445534/public_html/dbAdmin/configFunctions.php on line 160
+[28-Sep-2021 00:19:00 Europe/Athens] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT CONCAT(FirstName,' ', LastName) AS RequestName FROM conf_participants ...' at line 1 in /home/tw445534/public_html/dbAdmin/configFunctions.php:160
+Stack trace:
+#0 /home/tw445534/public_html/dbAdmin/configFunctions.php(160): PDO->query()
+#1 /home/tw445534/public_html/dbAdmin/config/configTableFields.php(135): include('/home/tw445534/...')
+#2 {main}
+  thrown in /home/tw445534/public_html/dbAdmin/configFunctions.php on line 160
+[28-Sep-2021 00:19:02 Europe/Athens] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT CONCAT(FirstName,' ', LastName) AS RequestName FROM conf_participants ...' at line 1 in /home/tw445534/public_html/dbAdmin/configFunctions.php:160
+Stack trace:
+#0 /home/tw445534/public_html/dbAdmin/configFunctions.php(160): PDO->query()
+#1 /home/tw445534/public_html/dbAdmin/config/configRelatedFields.php(191): include('/home/tw445534/...')
+#2 {main}
+  thrown in /home/tw445534/public_html/dbAdmin/configFunctions.php on line 160
+[28-Sep-2021 00:20:19 Europe/Athens] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT CONCAT(FirstName,' ', LastName) AS RequestName FROM conf_participants ...' at line 1 in /home/tw445534/public_html/dbAdmin/configFunctions.php:160
+Stack trace:
+#0 /home/tw445534/public_html/dbAdmin/configFunctions.php(160): PDO->query()
+#1 /home/tw445534/public_html/dbAdmin/config/configTableFields.php(135): include('/home/tw445534/...')
+#2 {main}
+  thrown in /home/tw445534/public_html/dbAdmin/configFunctions.php on line 160

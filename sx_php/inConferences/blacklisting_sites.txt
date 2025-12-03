@@ -1,0 +1,23 @@
+Spamhaus: Spamhaus is a leading provider of real-time threat intelligence and spam filtering solutions. It maintains various blacklists, including the Spamhaus Block List (SBL), which identifies IP addresses of known spammers, and the Exploits Block List (XBL), which identifies compromised machines. Spamhaus is highly respected for its comprehensive databases and accurate threat intelligence.z
+
+Barracuda Reputation Block List (BRBL): BRBL is a reputation-based blacklist maintained by Barracuda Networks. It helps organizations protect their networks from email-borne threats by identifying IP addresses known for sending spam or malicious content. BRBL integrates seamlessly with Barracuda's email security solutions and is trusted by many organizations for its effectiveness in blocking threats.
+
+VirusTotal: VirusTotal is a free online service that analyzes files and URLs for potential threats. It aggregates data from various antivirus engines and other sources to provide comprehensive threat intelligence. While VirusTotal is primarily known for analyzing files and URLs, it also offers information about blacklisted IPs and domains, making it a valuable tool for cybersecurity professionals.
+
+------------
+
+Cisco Talos Intelligence: Cisco Talos provides threat intelligence and security research to help organizations identify and mitigate cybersecurity threats. Their services include threat intelligence feeds, email and web security solutions, and research publications covering a wide range of cybersecurity topics.
+
+Proofpoint Threat Intelligence: Proofpoint offers threat intelligence solutions that help organizations detect, analyze, and respond to advanced threats. Their services include threat intelligence feeds, email security, cloud security, and security awareness training.
+
+FireEye Threat Intelligence: FireEye provides threat intelligence services and solutions designed to help organizations defend against advanced cyber attacks. Their offerings include threat intelligence feeds, threat intelligence platforms, incident response services, and security assessments.
+
+IBM X-Force Threat Intelligence: IBM X-Force offers threat intelligence services and solutions to help organizations stay ahead of cyber threats. Their offerings include threat intelligence feeds, threat hunting services, incident response services, and security analytics platforms.
+
+Recorded Future: Recorded Future provides threat intelligence solutions that help organizations identify and prioritize cybersecurity threats. Their services include threat intelligence feeds, threat intelligence platforms, and security research reports.
+
+AlienVault Open Threat Exchange (OTX): AlienVault OTX is an open threat intelligence platform that allows organizations to share and collaborate on threat intelligence. It provides access to a vast repository of threat data contributed by the global cybersecurity community.
+
+Anomali ThreatStream: Anomali ThreatStream is a threat intelligence platform that helps organizations aggregate, analyze, and operationalize threat intelligence. It offers threat intelligence feeds, threat hunting capabilities, and integration with security operations tools.
+
+Kaspersky Threat Intelligence: Kaspersky offers threat intelligence services and solutions to help organizations detect and respond to cyber threats. Their offerings include threat intelligence feeds, threat intelligence platforms, and security assessments.

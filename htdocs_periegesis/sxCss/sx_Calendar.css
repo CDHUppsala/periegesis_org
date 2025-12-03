@@ -1,0 +1,370 @@
+/*
+	=============================================================
+	FOR ALL CALENDARS - TEXT, EVENTS, PROGRAMS
+	=============================================================
+	4 blocks:
+	.texts_calendar_block
+	.events_calendar_block
+		- Both Blocks share the same table
+		.calendar_table
+	.events_by_month_block
+	.events_by_week_block
+*/
+
+/*
+Common font-family
+*/
+.events_calendar_block .calendar_table,
+.events_by_list_block {
+	font-family: var(--font-condensed);
+}
+
+.events_calendar_block {
+	clear: both;
+	padding: 0;
+	margin-bottom: 0.5rem;
+}
+
+.events_calendar_block form {
+	display: flex;
+	justify-content: flex-end;
+	align-items: stretch;
+}
+
+.texts_calendar_block form {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin-top: 2px;
+	padding: 0 4px;
+	background-color: #eeeeee;
+	border: 1px solid #dddddd;
+}
+
+/*
+	The main body of the calendar
+*/
+
+.calendar_table {
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	position: relative;
+}
+
+/* Change default styles
+*/
+.calendar_table th {
+	text-align: center;
+	padding: 0.4rem;
+	font-weight: normal;
+}
+
+/* Remove default styles
+*/
+.calendar_table tr {
+	background: none;
+	border: 0;
+}
+
+.calendar_table td {
+	padding: 6px 2px;
+	text-align: center;
+	vertical-align: top;
+	background: #fff;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	color: rgba(0, 0, 0, 0.6);
+	line-height: 100% !important;
+	font-size: 0.85rem;
+}
+
+/* Navigation betwen months and years
+*/
+.calendar_table .month_nav td {
+	background-color: var(--grey-tint-80);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	vertical-align: middle;
+	border: 0;
+	border-bottom: 1px solid #ffffff;
+}
+
+.calendar_table .month_nav td span {
+	display: block;
+	padding: 6px;
+	background-color: #ffffff;
+	font-weight: bold;
+}
+.calendar_table .month_nav td a {
+	display: block;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+/* The week number on the left of the calendar
+*/
+.calendar_table td.week {
+	background-color: #eeeeee;
+	font-size: 0.9rem;
+}
+
+/* Other styles
+*/
+.calendar_table td.notDay {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.calendar_table td.thisDay {
+	background-color: var(--grey-tint-100);
+}
+
+.calendar_table td a {
+	color: var(--split-2);
+	font-weight: bold;
+}
+
+.calendar_table td a:hover {
+	color: var(--basic-color);
+}
+
+/*
+	Big and Small Events Calendars
+	- The DIV is displayed within every date and contains event details
+	- It is shown in Big calendar and hidden in Small calendar
+	- In small calendar the DIV is shown as popup on mouse over the date
+	DEVELOP: Make the Big calendar also visible in mobiles, with hidden DIVs
+*/
+.calendar_table td div {
+	position: relative;
+	padding: 5px;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	display: block;
+	text-align: left;
+	line-height: 140%;
+}
+
+.calendar_table td div span {
+	display: block;
+}
+
+/*
+	For Small Events Calendar - add to DIV the class: .popup
+*/
+.calendar_table td div.popup {
+	position: absolute !important;
+	top: 101%;
+	left: 0;
+	width: 100%;
+	padding: 0 10px 10px 10px;
+	background: #fff;
+	border: 2px solid var(--grey);
+	border-radius: 4px;
+	line-height: 120%;
+	display: none;
+	z-index: 1000;
+}
+
+.calendar_table td div p {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.8rem;
+	font-weight: bold;
+	margin: 0 -10px 10px -10px;
+	padding-left: 10px;;
+	background-color: var(--grey-tint-60);
+	background-image: linear-gradient(rgba(255,255,255, 0.2), rgba(255,255,255,0));
+	border-radius: 2px 2px 0 0;
+}
+
+.calendar_table td div .popup_close {
+	padding: 6px 8px;
+	margin: 1px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.calendar_table td div.popup {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: auto;
+	}
+}
+
+/*
+	=============================================
+	For Events by Month: 
+	table.events_by_month
+	=============================================
+*/
+.events_by_month_block {
+	padding: 0;
+}
+
+.events_by_month {
+	border: 0 !important;
+}
+
+.events_by_month th {
+	border: 0 !important;
+	text-align: left;
+	font-size: 0.9rem;
+	background-color: var(--grey-tint-80);
+	color: var(--grey-shade-40);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.events_by_month td {
+	border: 0 !important;
+	background: #fff;
+	padding: 1px 0 0 0;
+	font-size: 0.9rem;
+}
+
+.events_by_month td a {
+	color: var(--split-2);
+}
+
+.events_by_month td a:hover {
+	color: var(--basic-color);
+}
+
+.events_by_month td div img {
+	display: block;
+	margin:0;
+}
+
+/*
+	=============================================
+	For Events by Week
+	- div.events_by_week_block
+		div.pagination (defined elswhere)
+			ul.jqWeekTabs
+		ul.events_by_week
+			li (Layers, shown/hided by jqWeekTabs)
+	=============================================
+*/
+
+.events_by_week_block {
+	padding: 0;
+	overflow: hidden;
+}
+
+.events_by_week {
+	background-color: var(--grey-tint-80);
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+	border-radius: 7px 7px 0 0;
+}
+
+.events_by_week li {
+	background: rgba(255, 255, 255, 0.4);
+	padding: 0 0 0 12px;
+	margin: 0;
+	overflow: hidden;
+}
+
+.events_by_week>li>div {
+	background: #fff;
+	padding: 0.75em;
+	margin: 1px 1px 4px 1px;
+	border-radius: 7px 0 0 7px;
+	line-height: 120%;
+	overflow: hidden;
+}
+
+.events_by_week h4 {
+	color: var(--grey);
+	overflow: hidden;
+}
+
+/*
+	=============================================
+	List events in First Page and in Events Page
+	div.events_by_list_block
+		div.events_by_list (includes .flex_between 2 UL)
+			ul...._date
+			ul.._content
+	=============================================
+*/
+.events_by_list_block {
+	padding: 0;
+	font-size: 0.85rem;
+}
+
+@media (min-width: 1280px) {
+
+	#body_index .events_by_list_block {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 0 auto;
+		font-size: 1rem;
+	}
+
+}
+
+.events_by_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	line-height: 100% !important;
+	margin: 0 10px 10px 0;
+}
+
+.events_by_list a {
+	font-weight: bold;
+}
+
+.events_by_list ul {
+	margin: 0;
+	list-style: none;
+}
+
+.events_by_list_date {
+	min-width: 3em;
+	text-align: center;
+	padding: 0;
+}
+
+.events_by_list_date li {
+	padding: 3px;
+	background: #9ab;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+	color: rgba(255, 255, 255, 0.98);
+	vertical-align: middle;
+	border-radius: 7px 0 0 0;
+}
+
+.events_by_list_date li:last-child {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+	color: #666;
+	border: 1px solid #99aabb90;
+	border-right: 0;
+	border-radius: 0 0 0 7px;
+	box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+}
+
+.events_by_list_content {
+	flex: 2;
+	padding: 0.5rem;
+	margin-right: 4px;
+	border: 1px solid #99aabb;
+	border-radius: 0 5px 5px 5px;
+	box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);
+	background: #fff;
+	z-index: 1;
+}
+
+.events_by_list_content li {
+	margin: 0 0 0.75em 0;
+	line-height: 125%;
+}

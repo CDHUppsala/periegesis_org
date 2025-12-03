@@ -1,0 +1,132 @@
+/*
+	==================================== 
+ * 	Public Sphere
+ *	Full Screen Overlay Gallery Box
+ *	Selects all images in the page that have the attribute "data-gallerybox" 
+ *		with the same name as the clicked on and creates an Overlay Gallery
+	==================================== 
+*/
+
+
+/*
+	A Fixed DIV element that is added as overlay by jQuery to include the gallery
+*/
+
+.sx_lightbox_overlay_fixed {
+	opacity: 0;
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 9000;
+}
+
+/*
+	An Absolute DIV within the qbove fixed one
+	that is added be jQuery and includes figures and their images
+*/
+.sx_lightbox_overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.sx_lightbox_overlay figure {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 2rem;
+	padding: 10px 0;
+	margin: 0;
+	text-align: center;
+}
+
+.sx_lightbox_overlay figure img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: block;
+	cursor: zoom-out;
+}
+
+/*
+	An UL witn 3 LI elemets for navigation and image description are added by jQuery
+*/
+.sx_lightbox_overlay .nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	background: transparent;
+	color: rgba(255,255,255,0.25);
+}
+
+.sx_lightbox_overlay .nav [class^='nav-'] {
+	font-size: 2.5rem;
+	margin: 0;
+	padding: 1rem;
+	cursor: pointer;
+}
+
+.sx_lightbox_overlay .nav [class^='nav-']:hover {
+	color: rgba(255,255,255,0.75);
+}
+
+.sx_lightbox_overlay .nav-prev {
+	padding-left: 0;
+}
+
+.sx_lightbox_overlay .nav-next {
+	padding-right: 0;
+}
+
+.sx_lightbox_overlay .nav-prev::after {
+	content: "\276E \276E";
+}
+
+.sx_lightbox_overlay .nav-next::after {
+	content: "\276F \276F";
+}
+
+.sx_lightbox_overlay .notes {
+	flex: 2;
+	align-self:flex-end;
+	padding: 0.4em;
+	font-size: 0.9rem;
+	color: rgba(255,255,255,0.5);
+}
+
+.sx_lightbox_overlay .nav-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 2rem;
+	padding: 0 0.5rem;
+	font-weight: bold;
+	text-align: center;
+	color: rgba(255,255,255,0.25);
+	cursor: pointer;
+    z-index: 10;
+}
+.sx_lightbox_overlay .nav-close::after {
+	content: "\2716";
+}
+.sx_lightbox_overlay .nav-close:hover {
+	color: rgba(255,255,255,0.75);
+}

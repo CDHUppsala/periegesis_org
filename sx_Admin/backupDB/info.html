@@ -1,0 +1,91 @@
+<section class="container">
+    <div>
+        <h2>Backup to Restore or Copy a Database Schema</h2>
+        <h3 class="before jq_toggleNext">Select Tables</h3>
+        <ul class="display_none">
+            <li>You can backup a <b>Sole</b> Table, any <b>Set</b> of Tables or the <b>Entire</b> Database.</li>
+            <li>If you select a Sole Table or a Set of Tables, please also include all other tables that might be
+                <b>related</b> to the selected ones.
+            </li>
+            <li>Usually, although not necessary and not exclusively, you might include all tables <b>within a successive color group</b>.</li>
+        </ul>
+        <h3 class="before jq_toggleNext">The Name of the Backup File</h3>
+        <ul class="display_none">
+            <li>The default name of the backup file is the <b>Database Name</b> followed by:
+                <ul>
+                    <li>The content type of the Backup File (see information besides):
+                        <ul>
+                            <li><b>Contents</b>: Truncate tables and import backed up contents.</li>
+                            <li><b>Structures</b>: Statements for the creation of Database and its Tables' Structures,
+                                without contents</li>
+                            <li><b>Both</b>: Both Structures and Contents.</li>
+                        </ul>
+                    </li>
+                    <li> A suffix with the current <b>Data and Time</b>.</li>
+                    <li>For example: <b>database_name_Both_2021-11-14_17-05-28.sql</b></li>
+                </ul>
+            </li>
+            <li>If you select anly a set of tables, the first table name and the number of selected tables will be
+                automatically added to the Database Name, together with the above suffix
+                (<b>database_name_Contents_text_authors_7_tables_2021-11-14_17-21-15.sql</b>).</li>
+            <li>However, You can set whatever name you like - and also delete the suffix.</li>
+        </ul>
+
+        <h3 class="before jq_toggleNext">The Content of the Backup File</h3>
+        <ul class="display_none">
+            <li><b>Backup Only Contents</b>
+                <ul>
+                    <li>The default Backup File includes the SQL Statements:
+                        <ul>
+                            <li><b>TRANCATE TABLE</b>, to remove all contents of tables but keep their structure, and
+                            </li>
+                            <li><b>INSERT INTO ... VALUES</b>, to restore contents with the backed up ones.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>Backup Both Table Structures and Contents</b>
+                <ul>
+                    <li>Click on this box to include in the Backup File the SQL statements:
+                        <ul>
+                            <li><b>CREATE DATABASE IF NOT EXISTS</b>, to create the Database Schema, if it does not
+                                exist.
+                                <ul>
+                                    <li>However, you can also change the name of the current Schema (<b>New Database
+                                            Name</b>) and create copies of
+                                        your current database (a Backup Databases rather the only a file).</li>
+                                    <li>You can then, instead of restoring the current database,
+                                        redirect the connection of your site to the Backup Database.</li>
+                                </ul>
+                            </li>
+                            <li><b>DROP TABLE IF EXISTS</b>, which deletes not only the content but also the structure
+                                of table.</li>
+                            <li><b>CREATE TABLE</b>, which recreates the structure of the deleted table.</li>
+                            <li><b>INSERT INTO ... VALUES</b>, which adds the backed up content to the above table.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>Backup Only Table Structures</b>
+                <ul>
+                    <li>Click on this box if you want to create another database, for another project, with the same
+                        Table Structures and the same or different Database (Shema) Name as the current one, however,
+                        without content.</li>
+                    <li>Define a <b>New Database Name</b> if you want to change its name.</li>
+                    <li>The SQL statements include all the above-mentioned statements, except the last one: <b>INSERT
+                            INTO ... VALUES</b></li>
+                </ul>
+            </li>
+        </ul>
+        <h3 class="before jq_toggleNext">SQL, GZIP and ZIP</h3>
+        <ul class="display_none">
+            <li>By default, the Backup file is saved in SQL Format. For large databases, please select the GZIP
+                Compression.</li>
+            <li>You can <b>Restore</b> your Database (or create a copy) by using Backup File of both SQL and GZIP format
+                - The program automatically recognises the format of the file and imports it.</li>
+            <li>If you select to <b>Download</b> the SQL Backup File on you local computer, it will be compressed in ZIP Format by default.
+            </li>
+        </ul>
+    </div>
+    <div></div>
+</section>

@@ -1,0 +1,450 @@
+﻿/*
+================================================
+	TABS IN List
+	TO SHOW/HIDE TEXT IN NEXT List
+	WHICH CAN INCLUDE ADDITIONAL TABS IN List
+	jQuery selector jsTabs
+================================================
+*/
+.tabs {
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+
+/*	For Tabs with a tabs_content
+*/
+.tabs .tabs {
+	background: #fff;
+	padding: 1rem;
+	border: 1px solid #ddd;
+}
+
+/*	The firs UL with LIs that include the Tabs options
+*/
+.tabs_options {
+	clear: both;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tabs_options li {
+	font-weight: bold;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 0 2px 3px 0;
+	padding: 15px 20px;
+	background: #ddd;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+	border: 1px solid #ddd;
+	color: #000;
+	border-radius: 5px 5px 0 0;
+	z-index: 1;
+}
+
+.tabs_options li:hover,
+.tabs_options li.selected {
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.99));
+	color: #0695ad;
+}
+
+.tabs_options li.selected {
+	margin-bottom: 0;
+	padding-bottom: 18px;
+	border-bottom: 1px solid #fff;
+}
+
+/*
+	The second UL with LIs including Text
+*/
+.tabs_content {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tabs_content>li {
+	display: none;
+	padding: 0;
+	margin: -1px 0 0 0;
+	background: #eee;
+}
+
+.tabs_content>li article {
+	padding: 1.5rem 2rem 1.5rem 1rem;
+	background: #fff;
+	margin-bottom: 8px;;
+	border: 1px solid #ddd;
+	border-radius: 0;
+}
+
+.tabs_content>li article:last-child {
+	border-bottom: none;
+}
+
+.tabs_content h3 {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+/*	===================================
+	NAVIGATION BY TABS
+	- Evry Tab corresponds to a Layer
+	- Layers can include the class .nav-aside or .sxAccordionNav
+	<nav class="nav_tabs_bg">
+		<div class="nav_tabs jqNavTabs">
+            <ul>
+				<li>Tabs</li>...
+			</ul>
+        </div>
+        <div class="nav_tab_layers nav_aside">
+            <ul>Layers</ul>...
+		</div>
+	</nav>
+=========================================*/
+
+.nav_tabs_bg {
+	background: transparent;
+	border: 0;
+}
+
+.nav_tabs {
+	font-family: var(--font-condensed);
+	clear: both;
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.nav_tabs ul {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-bottom: 3px solid #ddd;
+	gap: 0;
+}
+
+.nav_tabs li {
+	padding: 0 0.4rem 0.25em 0.4rem;
+	margin: 0 0 -3px 0;
+	cursor: pointer;
+	vertical-align: baseline;
+	line-height: 125%;
+	color: #999;
+	flex: 1 auto;
+}
+
+.conference_program .nav_tabs li {
+	flex: 0 auto;
+	margin-right: 2rem;;
+}
+
+.nav_tabs li.selected {
+	border-bottom: 3px solid #333;
+	color: #333;
+}
+
+.nav_tabs li:hover:not(.selected)  {
+	color: #333 !important;
+}
+
+
+/*
+	Layers that open and close with Tabs
+*/
+.nav_tab_layers {
+	clear: both;
+	margin: 0 0 20px 0;
+}
+
+.nav_tab_layers .nav_tabs li {
+	padding-bottom: 1rem;;
+	margin: 1rem 1rem -3px 1rem;
+}
+
+.nav_tab_layers>ul {
+	display: none;
+	margin: 0;
+	padding: 1rem 0;
+	list-style: none;
+	max-height: 25rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.nav_tab_layers a.archive {
+	margin: 0 6px;
+}
+
+
+/*
+	===============================================================
+	PAGANATION AND PRIVIOUS-NEXT BUTTONS AND WEEK DAYS BUTTONS
+	For Months and Weeks events/menus: Week Days include 2 Flex ULs
+	===============================================================
+*/
+
+.pagination {
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+.pagination ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.pagination li {
+	padding: 0;
+	margin: 0 1px 0 0;
+	background-color: #fff;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	border: 1px solid #ccc;
+}
+
+.pagination li.active,
+.pagination li:hover {
+	background-color: #ccc;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+}
+
+.pagination li li {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+.pagination li span,
+.pagination li a {
+	color: black;
+	display: block;
+	padding: 10px 0;
+	margin: auto;
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination>ul>li:first-child {
+	padding: 0 0.25em;
+	border-radius: 7px 0 0 7px;
+	letter-spacing: 1px;
+}
+
+.pagination>ul>li:last-child {
+	margin: 0;
+	padding: 0 0.25em;
+	border-radius: 0 7px 7px 0;
+	letter-spacing: 1px;
+}
+
+/*
+	The second LI is either a Header or includs a second Flex UL
+	Remove styles for second LI if it includes a second UL
+*/
+
+.pagination>ul>li:nth-child(2) {
+	flex: 2;
+	font-size: 0.8rem;
+}
+
+.pagination>ul>li:nth-child(2):hover {
+	background-color: inherit;
+	background-image: none;
+}
+
+.pagination .remove_styles {
+	background: none;
+	margin: 0;
+	border: 0;
+}
+
+
+/*
+	===============================================================
+	PAGE NAVIGATION FOR ARCHIVES
+	===============================================================
+*/
+
+.page_navigation {
+	clear: both;
+	margin: 10px 0;
+	text-align: center;
+	line-height: 100%;
+	background: #e4e4e4;
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+
+.page_navigation ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 3px 0;
+	margin: 0 auto;
+
+}
+
+.page_navigation li {
+	padding: 0;
+	margin: 0 1px;
+}
+
+.page_navigation li:nth-child(3) {
+	padding: 0 0.25em;
+}
+
+.page_navigation li span,
+.page_navigation li a {
+	color: black;
+	display: inline-block;
+	padding: 15px 10px;
+	margin: 1px 0;
+	vertical-align: middle;
+	text-decoration: none;
+	background-color: #ccc;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+	border: 1px solid #ddd;
+	transition: background-color 0.3s;
+}
+
+.page_navigation li span {
+	color: #ccc;
+	background-color: #f0f0f0;
+	background-image: none;
+}
+
+.page_navigation li:first-child a {
+	border-radius: 5px 0 0 5px;
+}
+
+.page_navigation li:last-child a {
+	border-radius: 0 5px 5px 0;
+}
+
+.page_navigation li a:hover {
+	background-color: #ccc;
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+}
+
+.page_navigation form {
+	display: inline-block;
+	margin: 4px auto;
+	padding: 6px 16px;
+	background: #eee;
+	background-image: linear-gradient(rgba(255, 255, 255, 75), rgba(255, 255, 255, 0));
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+.page_navigation form label {
+	display: inline !important;
+	padding: 0 0.25rem;
+	vertical-align: middle;
+}
+
+.page_navigation input,
+.page_navigation select {
+	vertical-align: middle;
+	font-size: 1em;
+	color: #000;
+	padding: 4px 2px 4px 6px;
+	min-width: 3em;
+	height: 2em;
+	border: 1px solid #ddd;
+	border-radius: 5px 0 0 5px;
+}
+
+.page_navigation input[type=submit] {
+	cursor: pointer;
+	background: #fff;
+	border-radius: 0 5px 5px 0;
+}
+
+.page_navigation input[type=submit]:hover {
+	background: #ccc;
+}
+
+
+
+
+
+ /*
+  =============================================================
+ 	ACCORDION IN dt Tags TO SHOW/HIDE Content IN NEXT dd Tags
+ =============================================================*/
+
+ .accordion {
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+/* DT - Clickable Accordion Headers
+*/
+.accordion dt {
+	clear: both;
+	position: relative;
+	cursor: pointer;
+	margin: 0;
+	padding: 0.8rem 0.5rem 0.8rem 2rem;
+	background: var(--basic-color);
+	background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0));
+	border-bottom: 1px solid #fff;
+	font-size: 1em;
+	font-weight: bold;
+	color: rgba(255,255,255,0.8);
+}
+
+.accordion dt:hover {
+	background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.0));
+	color: #fff;
+}
+
+.accordion dt.selected {
+	background: var(--complement);
+	background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0));
+}
+
+.accordion dt::before {
+	content: "\276F";
+	position: absolute;
+	top: 0; left: 0;
+	padding: 0.8rem 0.8rem 0 0.4rem;
+}
+
+.accordion dt:hover::before  {
+	content: "\276F";
+	padding: 0.8rem 0.8rem 0.4rem 0.8rem;
+	transform: rotate(90deg);
+}
+
+.accordion dt.selected::before {
+	content: "\276F";
+	padding: 0.4rem 0.8rem 0.8rem 0.8rem;
+	transform: rotate(-90deg);
+}
+
+
+/* DD For Accordion Content
+*/
+.accordion dd {
+	padding: 1rem 2rem;
+	margin: 2px 0;
+	display: none;
+	background: #fafafa;
+	border: 1px solid #ddd;
+}

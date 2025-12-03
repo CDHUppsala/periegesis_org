@@ -1,0 +1,239 @@
+
+/*
+    Generic Flex classes that can be redifined by their own or parents elements and used anywhere
+    Starts from mobile device
+   - align-items: center, flex-start (top), flex-end (bottom), stretch, baseline
+*/
+.flex_columns,
+.flex_start,
+.flex_end,
+.flex_center,
+.flex_around,
+.flex_between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    visibility: visible;
+}
+
+.flex_nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.flex_start {
+    justify-content: flex-start;
+}
+
+.flex_end {
+    justify-content: flex-end;
+}
+
+.flex_center {
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.flex_around {
+    justify-content: space-around;
+}
+
+.flex_align_start {
+    align-items: flex-start;
+}
+
+.flex_align_end {
+    align-items: flex-end;
+}
+
+.flex_align_stretch {
+    align-items: stretch;
+}
+
+/*
+    Used with multiple flex-items of col-* items
+*/
+.flex_columns {
+    align-items: flex-start;
+    gap: 0 2%
+}
+.flex_columns .image_center {
+    margin: 0;
+}
+
+
+.flex_items,
+[class*="col-"] {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .flex_items {
+        width: 48%;
+        flex: 1;
+    }
+    .col-34 {
+        width: 34%;
+        flex: 1 0 auto;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .col-66 {
+        width: 64%;
+        flex: 1 0 auto;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+
+/*
+    Use grids for all Footer Ads and Product cards in Product Promotions
+    - Set max-width for the .grid_container_wrapper in case it is placed in the footer of #page
+    - When it is placed in .contet, max-width is already defined there,
+        so just remove padding, which also defined there.
+*/
+
+.grid_container_wrapper {
+    margin: 4rem auto;
+    padding: 0 1em;
+    max-width: 1600px;
+    overflow: hidden;
+}
+
+.contet .grid_container_wrapper {
+    padding: 0;
+}
+
+
+.grid_container_wrapper .page_navigation:first-of-type {
+    margin-bottom: 2em;
+}
+
+.grid_container_wrapper .page_navigation:last-of-type {
+    margin-top: 2em;
+}
+
+/**
+    Define the font-size here, in EM, 
+    and the rest in the card will scale in relation to it.
+*/
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em 0.5em;
+    padding: 0;
+    overflow: hidden;
+    font-size: 1em;
+}
+
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5em;
+    margin: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 0 solid var(--grey-tint-100);
+    width: 100%;
+}
+
+.grid-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.grid-card .img_contain img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: 50% 0;
+}
+
+.grid-card .card_caption {
+    background: var(--grey-tint-100);
+    padding: 0.5em;
+}
+
+.grid-card h4 {
+    margin: 0;
+}
+
+.grid-card a {
+    color: var(--grey);
+    font-size: 0.9em;
+}
+
+.grid-card a:hover {
+    color: initial;
+}
+
+.grid-card a.link {
+    color: var(--complement);
+}
+
+.grid-card a.link::before {
+    content: '\23F5 ';
+    margin: 0 0.25rem 0 -0.2rem;
+}
+
+.grid-card a.link:hover {
+    color: var(--complement-shade-40);
+}
+
+.grid-card .text_small {
+    font-size: 0.9em;
+    margin: 0.5rem 0;
+}
+
+.grid-card .text_xsmall {
+    font-size: 0.5em;
+    margin: 0.5rem 0;
+}
+
+.grid-card .priceBG {
+    margin: 0;
+    margin-top: auto;
+    border-top: 1px solid var(--grey-tint-90);
+    background: var(--grey-tint-100);
+    padding: 0.25rem 0.5rem;
+}
+
+.grid-card .priceBG svg {
+    margin-top: 0.25rem;
+}
+
+
+/* For large desktops (4 products per row) 
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+*/
+
+@media (min-width: 768px) {
+    .grid_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .grid_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media (min-width: 1280px) {
+    .grid_container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}

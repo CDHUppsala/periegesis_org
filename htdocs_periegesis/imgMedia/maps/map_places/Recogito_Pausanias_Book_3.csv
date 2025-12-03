@@ -1,0 +1,1246 @@
+BookID,Place,Links,Lat,Lon,Type,Label,Tags,Comments
+3.1.1,Ἑρμᾶς,http://pleiades.stoa.org/places/570291,37.32399,22.543094,temple,"Hermai, Phonemenoi|Hermai","built|monument|Paus|37.3091 22.5324","DAI3652686 Hermai border monuments"
+3.1.1,Εὐρώταν,http://pleiades.stoa.org/places/570248,37.1615197,22.3334931,river,"Eurotas (river)",physical|potamos,NULL
+3.1.1,θάλασσαν,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,"Lakonian gulf"
+3.1.1,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.1.1,Λακωνικὴ,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.1.2,ὄρος,http://pleiades.stoa.org/places/570706,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",physical|oros,NULL
+3.1.2,Σπάρτη,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.1.3,"ἄγαλμα τοῦ Ἀπόλλωνος",http://arachne.dainst.org/entity/3586274,37.02692,22.43636,NULL,"Cult image: Apollo Amyklaios  Amykles (Paus. 3.1.3; Paus. 3.10.8; Paus. 3.16.2; Paus. 3.19.1-3)",object|agalma|Apollo,NULL
+3.1.3,Ἀμύκλαις,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.1.3,Ἀμύκλας,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.1.3,Λακωνικῇ,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.1.3,πόλισμα,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built|polisma,NULL
+3.1.4,Ἄργους,http://pleiades.stoa.org/places/570106,37.631561,22.719464,settlement,"Argos, Argos|Argos",built|polis,NULL
+3.1.4,Θαλάμαις,http://pleiades.stoa.org/places/570715,36.786208,22.325671,settlement,"Thalamai, Thalames, formerly Koutiphari|Thalamai",built,NULL
+3.1.4,Λακεδαιμόνιοί,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.1.4,Μεσσηνίαν,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,NULL,NULL
+3.1.4,Μεσσηνίας,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.1.4,Μεσσηνίων,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.1.4,Πελλάναν,http://pleiades.stoa.org/places/570576,38.0446,22.5384,settlement,"Pellene/Pellana, Pellene|Pellene",built|polis,NULL
+3.1.5,Ἄργος,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",built|polis,NULL
+3.1.5,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.1.5,Μεσσήνη,http://dare.ht.lu.se/places/21909,37.175491,21.920439,"sanctuary,settlement,fort","Messene, Mavromati|Ithome, Ithomi|Sanctuary of Zeus Ithomatas, Mavromati|Ithome/Thamiai|Messene",regional,NULL
+3.1.6,Δελφοῖς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.1.6,Πελοπόννησον,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.1.6,Πελοπόννησον,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.1.7,Καλλίστην,http://pleiades.stoa.org/places/808255902,36.4,25.4,archipelago,"Santorini Archipelago",island,NULL
+3.1.8,Θηραῖοι,http://pleiades.stoa.org/places/599973,36.36399,25.478129,"island,settlement","Thera, Thera|Thera Ins., Thira|Akrotiri|Akrotiri|Thera|Thera (island)",island|Theraians|proxy,NULL
+3.1.8,νήσῳ,http://pleiades.stoa.org/places/599973,36.36399,25.478129,"island,settlement","Thera, Thera|Thera Ins., Thira|Akrotiri|Akrotiri|Thera|Thera (island)",island,NULL
+3.2.1,Αἰολίδα,http://pleiades.stoa.org/places/550406,38.846442875,26.950801749999997,region,Aeolis,regional,NULL
+3.2.1,Ἀχαΐᾳ,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",regional,NULL
+3.2.1,Ἰωνίας,http://pleiades.stoa.org/places/550597,38.258572855555556,27.36601213333333,region,"Ionia (region)",regional,NULL
+3.2.1,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.2.1,Λέσβον,http://pleiades.stoa.org/places/550696,39.20874,26.10052,island,"Lesbos Ins./Lesbus Ins., Lesbos|Lesbos (island)",island,NULL
+3.2.1,Μυσῶν,http://pleiades.stoa.org/places/550710,38.75,28.25,"labeled feature",Maionia/Mysia,historical|Mysians|proxy,NULL
+3.2.1,Πάτρας,http://pleiades.stoa.org/places/570567,38.243265,21.738518,settlement,"Patrae/Patrai, Patras|Patra(e)",built|polis,NULL
+3.2.2,Ἀργεῖοι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.2.2,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.2.2,Ἀργολίδα,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.2.2,Κυνουρέας,http://pleiades.stoa.org/places/570395,37.25,22.75,region,Kynouria,regional|Kynourians|proxy,NULL
+3.2.2,Κυνουρεῖς,http://pleiades.stoa.org/places/570395,37.25,22.75,region,Kynouria,regional|Kynourians|proxy,NULL
+3.2.2,Κυνουριακῆς,http://pleiades.stoa.org/places/570395,37.25,22.75,region,Kynouria,regional,NULL
+3.2.2,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.2.2,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.2.3,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.2.3,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.2.3,Κυνουριακὴν,http://pleiades.stoa.org/places/570395,37.25,22.75,region,Kynouria,regional,NULL
+3.2.3,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.2.3,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.2.4,Κνωσσός,http://pleiades.stoa.org/places/589872,35.297847,25.163106,"settlement,architecturalcomplex","Knosos/Col. Iulia Nobilis Cnosos, Knossos|Knosos/Col. Iulia Nobilis Cnosos",built|polis,NULL
+3.2.4,Κρῆτες,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",regional|Cretans|proxy,NULL
+3.2.4,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.2.5,Αἴγυν,http://pleiades.stoa.org/places/570052,37.246287,22.165456,settlement,"Aigys, W Kamara|Aigys",built,NULL
+3.2.5,Αἴγυν,http://pleiades.stoa.org/places/570052,37.246287,22.165456,settlement,"Aigys, W Kamara|Aigys",built,NULL
+3.2.5,Αἰγῦται,http://pleiades.stoa.org/places/570052,37.246287,22.165456,settlement,"Aigys, W Kamara|Aigys",historical|Aigytai|proxy,"Archelaus enslaved them for pro-Arcadian sympathies"
+3.2.5,Ἀρκάδων,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional|Arcadians|proxy,NULL
+3.2.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.2.5,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.2.6,Ἀμυκλαιεῖς,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",historical|Amyklaians|proxy,NULL
+3.2.6,Ἀμυκλαιεῦσιν,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",historical|Amyklaians|proxy,NULL
+3.2.6,Ἀμύκλας,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.2.6,"Ἀρτέμιδος ἱερῷ",http://topostext.org/place/371222SLim,37.1109,22.1714,NULL,"Artemis Limnatis sanct. (Messenia)","built|hieron|Artemis Limnatis","On border of Lakonia and Messenia"
+3.2.6,Ἀχαιῶν,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",regional|Achaians|proxy,NULL
+3.2.6,Γεράνθρας,http://pleiades.stoa.org/places/570263,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built,NULL
+3.2.6,Γερανθρᾶται,http://pleiades.stoa.org/places/570263,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",historical|Geranthratai|proxy,NULL
+3.2.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.2.6,Λίμναις,http://topostext.org/place/371222ULim,37.1217,22.1918,NULL,"Limnai (Messenia)",chôrion,NULL
+3.2.6,Μεσσηνίας,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.2.6,Μεσσηνίων,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.2.6,Πελοποννήσου,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.2.6,Φᾶριν,http://pleiades.stoa.org/places/570591,37.029321,22.2805645,settlement,"Pharis, Vapheio/Ag. Vasilios?|Pharis",built,"controlled by Achaians"
+3.2.6,Φαρῖται,http://pleiades.stoa.org/places/570591,37.029321,22.2805645,settlement,"Pharis, Vapheio/Ag. Vasilios?|Pharis",historical|Pharitai|proxy,NULL
+3.2.7,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.2.7,Ἀχαιῶν,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",regional|Achaians|proxy,NULL
+3.2.7,Ἕλος,http://topostext.org/place/368226UHel,36.8432,22.6075,NULL,"Helos (Lakonia)",built|polisma,NULL
+3.2.7,Κρησὶ,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",historical|Cretans|proxy,NULL
+3.2.7,Κρῆτας,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",historical|Cretans|proxy,NULL
+3.2.7,Κρήτην,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",regional,NULL
+3.2.7,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.2.7,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.3.1,Ζεφυρίῳ,http://pleiades.stoa.org/places/452495,38.03955,16.14501,cape,"Zephyrium Pr., Capo Bruzzano|Zephyrium Pr.",physical|akra,NULL
+3.3.1,Ἰταλίαν,http://pleiades.stoa.org/places/1052,42.5,12.5,region,Italia,regional,NULL
+3.3.1,Κρότωνα,http://pleiades.stoa.org/places/452317,39.028864,17.205128,"city-wall,sanctuary,settlement","Hera, Capo Colonna, Crotone|Croton/Croto, Crotone|Croto(n)|Temple of Hera Lacinia",built|apoikia,NULL
+3.3.1,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.3.1,Λακεδαιμόνιοί,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.3.1,Λοκροὺς,http://pleiades.stoa.org/places/452369,38.20782,16.23715,"stoa,townhouse,theatre,sanctuary,settlement","Lokroi Epizephyrioi, Locri|Lokroi Epizephyrioi",built|apoikia,NULL
+3.3.1,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.2,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.2,Μεσσήνη,http://dare.ht.lu.se/places/21909,37.175491,21.920439,"sanctuary,settlement,fort","Messene, Mavromati|Ithome, Ithomi|Sanctuary of Zeus Ithomatas, Mavromati|Ithome/Thamiai|Messene",regional,NULL
+3.3.2,Μεσσηνίας,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.3.2,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.2,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.3.3,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.3.3,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.3.3,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.3,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.3.4,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.3.4,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.4,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.4,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.4,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.4,Μεσσήνιοί,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.4,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.4,Πελοποννήσου,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.3.4,Πελοποννήσου,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.3.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.3.5,Λακεδαιμόνιος,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|male|Lakedaimonian|proxy,NULL
+3.3.5,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.5,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.3.5,Τεγέαν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",built,NULL
+3.3.5,Τεγεάτας,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.3.5,Τεγεατῶν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.3.6,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.3.6,Σπαρτιᾶται,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.3.7,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.3.7,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.3.7,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.7,Σκῦρον,http://pleiades.stoa.org/places/541093,38.82754,24.6099,"island,settlement","Scyrus Ins., Skyros|Skyros, Kastro, Skyros|Scyrus (island)|Skyros",island,NULL
+3.3.7,Σκῦρον,http://pleiades.stoa.org/places/541093,38.82754,24.6099,"island,settlement","Scyrus Ins., Skyros|Skyros, Kastro, Skyros|Scyrus (island)|Skyros",island,NULL
+3.3.7,Σκύρου,http://pleiades.stoa.org/places/541093,38.82754,24.6099,"island,settlement","Scyrus Ins., Skyros|Skyros, Kastro, Skyros|Scyrus (island)|Skyros",island,NULL
+3.3.8,Νικομηδεῦσιν,http://pleiades.stoa.org/places/511337,40.76445,29.923486,settlement,"Nicomedia//Nikomedeia, İzmit|Nicomedia",built|polis,NULL
+3.3.8,Φασήλιδι,http://pleiades.stoa.org/places/639051,36.524579,30.551573,settlement,"Phaselis, Tekirova|Phaselis",built,NULL
+3.3.9,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.3.10,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.4.1,Ἀργεῖοι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.4.1,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.4.1,Ἀργολίδα,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.4.1,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.4.1,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.4.2,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.4.2,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.4.2,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.4.2,Ἀθηνῶν,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.4.2,Αἴγιναν,http://pleiades.stoa.org/places/579844,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",island,NULL
+3.4.2,Αἰγινητῶν,http://pleiades.stoa.org/places/579853,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",historical|Aiginetans|proxy,NULL
+3.4.2,Ἐλευσῖνι,http://pleiades.stoa.org/places/579910,38.041096,23.538311,"sanctuary,settlement","Demeter Temple, Elefsina|Eleusis, Elefsina|Demeter, T.|Eleusis",hieron,NULL
+3.4.2,Ἕλλησιν,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,historical|Hellenes|proxy,NULL
+3.4.2,Ἰσαγόρου,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenian|male|tyrant|proxy,"Isagoras the Athenian"
+3.4.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.4.2,Ὀργάδος,http://topostext.org/place/381234RSOr,38.0918,23.3853,NULL,"Sacred Orgas region (Attica)",chôra|orgas,"Orgas of the Eleusinian gods"
+3.4.3,Αἰγίνῃ,http://pleiades.stoa.org/places/579844,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",island,NULL
+3.4.3,Αἰγίνης,http://pleiades.stoa.org/places/579844,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",island,NULL
+3.4.3,Δελφοῖς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.4.3,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.4.3,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.4.4,Δελφοῖς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.4.4,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.4.5,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.4.5,Ἀργεῖοι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.4.5,Δελφοὶ,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",historical|Delphians|proxy,NULL
+3.4.5,Ὀργάδα,http://topostext.org/place/381234RSOr,38.0918,23.3853,NULL,"Sacred Orgas region (Attica)",NULL,NULL
+3.4.6,"γῆν ἐπεργασαμένοις τὴν ἱεράν",http://topostext.org/place/381234RSOr,38.0918,23.3853,NULL,"Sacred Orgas region (Attica)",gê,"Sacred land of the twin goddesses"
+3.4.6,Ἐλαιοῦντι,http://pleiades.stoa.org/places/501411,40.051661,26.220385,settlement,"Elaious, 3 miles E Tekke Burnu|Elaious",built,NULL
+3.4.6,Ἐλευσῖνι,http://pleiades.stoa.org/places/579910,38.041096,23.538311,"sanctuary,settlement","Demeter Temple, Elefsina|Eleusis, Elefsina|Demeter, T.|Eleusis",hieron,NULL
+3.4.6,Μεγαρεῦσιν,http://dare.ht.lu.se/places/21951,37.2038,15.18273,"region,settlement","Megara Hyblaia/Megara, Megara Hyblaea, Augusta|Megara, Megara|Megaris, Megarid|Megara Hyblaia|Megara|Megaris",built|proxy,NULL
+3.4.7,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.4.7,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.4.7,Θερμοπύλας,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.4.7,Ἰλίῳ,http://pleiades.stoa.org/places/550595,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.4.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.4.7,Μαραθῶνι,http://topostext.org/place/381241LMaB,38.144,24.0002,NULL,"Marathon battlefield (Attica)",battlefield,NULL
+3.4.8,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.4.8,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.4.8,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.4.8,Ἕλληνας,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.4.8,Θερμοπύλας,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.4.8,Μήδοις,http://pleiades.stoa.org/places/903080,34.5,46.5,region,Media/Mad(aya),regional|Medes|proxy,NULL
+3.4.8,Οἴτης,http://pleiades.stoa.org/places/540968,38.7922475,22.2564576,mountain,"Oeta Mons, Oeta|Oeta M.",physical|oros,NULL
+3.4.8,Πέρσαις,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,regional|Persians|proxy,NULL
+3.4.8,Τραχίνιος,http://topostext.org/place/388224RTra,38.75,22.4,NULL,"Trachis region (Phthiotis)",historical|Trachinian|proxy,NULL
+3.4.9,Ἑλλήσποντον,http://pleiades.stoa.org/places/501434,40.2,26.4,water-open,Hellespontus,physical,NULL
+3.4.9,Κῴαν,http://pleiades.stoa.org/places/599581,36.844,27.17,island,"Kos/Cos, Kos|Kos/Cos (island)",historical|female|Koan|proxy,NULL
+3.4.9,Κῴοις,http://pleiades.stoa.org/places/599581,36.844,27.17,island,"Kos/Cos, Kos|Kos/Cos (island)",historical|Koans|proxy,NULL
+3.4.9,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.4.9,Πέρσης,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,proxy|male,NULL
+3.4.9,Πλάταιάν,http://dare.ht.lu.se/places/21988,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",battlefield,NULL
+3.4.10,Αἰγινήτου,http://dare.ht.lu.se/places/21936,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",male|proxy,NULL
+3.4.10,Κῶν,http://pleiades.stoa.org/places/599581,36.844,27.17,island,"Kos/Cos, Kos|Kos/Cos (island)",island,NULL
+3.4.10,Πλαταιᾶσι,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",battlefield,NULL
+3.5.1,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.5.1,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.5.1,Ἀττικὴν,http://pleiades.stoa.org/places/579888,38.051998833333336,23.818991099999998,region,Attica,regional,NULL
+3.5.1,Πειραιᾶ,http://pleiades.stoa.org/places/580062,37.937222,23.644609,"theatre,region,settlement,fort","Peiraieus/Piraeus, Peiraieus/Piraeus|Peiraieus/Piraeus",built,NULL
+3.5.1,Πλαταιᾶσι,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",battlefield,NULL
+3.5.1,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.5.2,Ἀθηνῶν,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.5.2,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.3,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.5.3,"Ἁλιαρτίων τεῖχος",http://topostext.org/place/384231PHal,38.3787,23.088,NULL,"Haliartos (Boeotia)",teichos,NULL
+3.5.3,Βοιωτίαν,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,regional,NULL
+3.5.3,Θηβαίων,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.5.3,Θηβαίων,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.5.3,Θήβας,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",built,NULL
+3.5.3,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.3,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.3,Φωκέας,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.5.3,Φωκίδα,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,regional,NULL
+3.5.4,Ἀθηναίους,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.5.4,Ἀρκαδίας,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional,NULL
+3.5.4,Βοιωτίαν,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,regional,NULL
+3.5.4,Θηβαῖοι,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.5.4,Θήβας,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",built,NULL
+3.5.4,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.5.4,Τεγεατῶν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.5.5,"Ἁλιαρτίων τείχει",http://topostext.org/place/384231PHal,38.3787,23.088,NULL,"Haliartos (Boeotia)",teichos,NULL
+3.5.5,Θερμοπύλαις,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.5.5,Θηβαίους,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.5.5,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.5,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.5,Σφακτηρίᾳ,http://pleiades.stoa.org/places/570686,36.930136,21.665725,island,"Sphakteria Ins., Sphakteria|Sphakteria (island)",island,NULL
+3.5.6,Ἀργεῖοι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.5.6,Βοιωτίαν,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,regional,NULL
+3.5.6,ἱερὸν,http://topostext.org/place/375224SAth,37.4555,22.4203,NULL,"Athena Alea (Arkadia)","built|hieron|Athena Alea",NULL
+3.5.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.5.6,Πελοποννησίοις,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,historical|Peloponnesians|proxy,NULL
+3.5.6,Τεγεᾶται,http://dare.ht.lu.se/places/21915,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.5.7,Κορίνθῳ,http://dare.ht.lu.se/places/17070,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",built,NULL
+3.5.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.8,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.5.8,Ἀργεῖοι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.5.8,Ἀργείοις,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",historical|Argives|proxy,NULL
+3.5.8,Ἀργολίδα,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.5.8,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.5.8,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.5.8,Πελοποννησίων,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,historical|Peloponnesians|proxy,NULL
+3.5.8,Τεγεατῶν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.5.9,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.5.9,Ἀργολίδος,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.5.9,Ὀλυνθίους,http://pleiades.stoa.org/places/491678,40.296525,23.354208,"townhouse,villa,settlement","Olynthos, Nea Olynthos|Olynthos",historical|Olynthians|proxy,NULL
+3.5.9,Ὄλυνθον,http://pleiades.stoa.org/places/491678,40.296525,23.354208,"townhouse,villa,settlement","Olynthos, Nea Olynthos|Olynthos",built|polis,NULL
+3.5.9,Χαλκιδεῦσι,http://topostext.org/place/405233RCha,40.5,23.3,NULL,"Chalcidike region (Chalkidike)",historical|Chalkidians|proxy,NULL
+3.6.1,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.6.1,Βοιωτοῖς,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,historical|Boiotians|proxy,NULL
+3.6.1,Δηλίῳ,http://topostext.org/place/383237UDel,38.34,23.6765,NULL,"Delion sanct. (Boeotia)",hieron|battlefield,NULL
+3.6.1,Θεσσαλίᾳ,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional|battlefield,NULL
+3.6.1,Λεύκτροις,http://pleiades.stoa.org/places/540913,38.25422,23.18095,settlement,"Leuktra, Leuktra|Leuktra",battlefield,NULL
+3.6.3,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.6.4,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.6.4,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.6.4,Αἰγυπτίων,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",historical|Egyptians|proxy,NULL
+3.6.4,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.6.4,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.6.5,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.6.5,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.6.5,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.6.5,Αἰγυπτίους,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",historical|Egyptians|proxy,NULL
+3.6.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.6.5,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.6.5,Μακεδόσιν,http://pleiades.stoa.org/places/491656,41.25,21.75,unknown,Macedonia,historical|Macedonians|proxy,NULL
+3.6.5,Μακεδόσιν,http://pleiades.stoa.org/places/491656,41.25,21.75,unknown,Macedonia,historical|Macedonians|proxy,NULL
+3.6.6,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.6.6,Μουσεῖον,http://topostext.org/place/380237LMus,37.9674,23.7215,NULL,"Mouseion Hill (Athens)",physical,"Macedonian fortress"
+3.6.7,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.6.7,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.6.8,Αἰγύπτιον,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",historical|Egyptian|proxy,NULL
+3.6.8,Ἀρκαδίαν,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional,NULL
+3.6.8,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.6.8,Μακεδονίᾳ,http://pleiades.stoa.org/places/491656,41.25,21.75,unknown,Macedonia,regional,NULL
+3.6.8,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.6.9,Αἰγύπτῳ,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",regional,NULL
+3.6.9,Σικυώνιον,http://pleiades.stoa.org/places/570668,37.98336,22.71135,settlement,"Sicyon, Vasiliko|Sicyon/Demetrias",historical|Sicyonian|proxy,NULL
+3.6.9,Σπαρτιᾶται,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.7.1,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.7.2,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.7.2,Κυνουρεῦσιν,http://topostext.org/place/374227RKyn,37.424,22.693,NULL,"Kynouria region (Arkadia)",historical|Kynourians|proxy,NULL
+3.7.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.7.2,Σπάρτη,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.7.3,Ἀργείοις,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",historical|Argives|proxy,NULL
+3.7.3,Ἀργολίδα,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.7.3,Ἀρκαδίας,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional,NULL
+3.7.3,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.7.3,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.7.3,Τεγεάτας,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.7.3,Τεγεάτας,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.7.3,Τεγεατῶν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.7.4,Ἀργείοις,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",historical|Argives|proxy,NULL
+3.7.4,Ἀργολίδα,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.7.4,Ἀσιναῖοι,http://pleiades.stoa.org/places/570124,37.52659,22.87403,settlement,"Asine, Tolon/Asine|Asine",historical|Asinaioi|proxy,NULL
+3.7.4,"ἱερῷ τῆς Λιμνάδος",http://topostext.org/place/371222SLim,37.1109,22.1714,NULL,"Artemis Limnatis sanct. (Messenia)","built|hieron|Artemis Limnados",NULL
+3.7.4,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.7.4,Μεσσηνίων,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.7.5,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.7.5,Θυρεάτιδος,http://pleiades.stoa.org/places/570736,37.25,22.75,region,Thyrea(tis),regional,NULL
+3.7.5,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.7.5,Μεσσηνίαν,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,NULL,NULL
+3.7.5,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.7.6,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.7.6,Πελοποννήσου,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.7.6,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.7.7,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.7.8,Ἀθηναίους,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.8,Πέρσας,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,regional,NULL
+3.7.8,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.7.9,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.9,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.9,Θεσσαλίαν,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional,NULL
+3.7.9,Θεσσαλίαν,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional,NULL
+3.7.9,Μυκάλῃ,http://pleiades.stoa.org/places/599805,37.66144,27.12558,mountain,"Mycale Mons, Samsun Dağ|Mycale M.",battlefield,NULL
+3.7.10,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.10,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.10,"Ἀθηνᾶν τὴν Ἀλέαν",http://topostext.org/place/375224SAth,37.4555,22.4203,NULL,"Athena Alea (Arkadia)",built|hieron,NULL
+3.7.10,ἄστυ,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",asty,"capture of asty of Plataia"
+3.7.10,Ἀττικὴν,http://pleiades.stoa.org/places/579888,38.051998833333336,23.818991099999998,region,Attica,regional,NULL
+3.7.10,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.7.10,Πλαταιέων,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",historical|Plataians|proxy,NULL
+3.7.10,Τεγέαν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",built,NULL
+3.7.10,Τεγέαν,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",built,NULL
+3.7.11,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.7.11,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.7.11,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.7.11,Πελοποννησίων,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,historical|Peloponnesians|proxy,NULL
+3.8.1,Λακεδαίμονος,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.8.2,Δελφούς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",built|hieron,NULL
+3.8.2,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.8.2,Σπαρτιᾶταί,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.8.3,Ἠλείαν,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",regional,NULL
+3.8.3,Ἠλείοις,http://pleiades.stoa.org/places/570220,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",historical|Eleans|proxy,NULL
+3.8.3,Ἠλείους,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",historical|Eleans|proxy,NULL
+3.8.3,Ἠλείων,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",historical|Eleans|proxy,NULL
+3.8.3,"ἱεροῦ τοῦ Ὀλυμπίασιν",http://pleiades.stoa.org/places/570531,37.637849,21.630126,"palaistra,sanctuary,temple-2","Olympia, Archaia Olympia|Olympia",built|hieron,NULL
+3.8.3,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.8.3,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.8.3,Λεπρεάτας,http://pleiades.stoa.org/places/570423,37.439599,21.724777,settlement,"Lepreon/Lepreum, Lepreon|Lepreon",historical|Lepreatai|proxy,NULL
+3.8.3,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.8.4,Ἀλφειοῦ,http://pleiades.stoa.org/places/570067,37.6125,21.451667,river,"Alphe(i)os (river)",potamos,NULL
+3.8.4,Ἠλεῖος,http://pleiades.stoa.org/places/570220,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",historical|male|Elean,NULL
+3.8.4,Ἠλείων,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",historical|Eleans|proxy,NULL
+3.8.4,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.8.4,Ὀλυμπίας,http://pleiades.stoa.org/places/570531,37.637849,21.630126,"palaistra,sanctuary,temple-2","Olympia, Archaia Olympia|Olympia",hieron,NULL
+3.8.5,Ἠλείαν,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",regional,NULL
+3.8.5,Ἠλεῖοι,http://dare.ht.lu.se/places/21944,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",historical|Eleans|proxy,NULL
+3.8.5,Ἠλείων,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",historical|Eleans|proxy,NULL
+3.8.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.8.5,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.8.5,Λεπρεάταις,http://pleiades.stoa.org/places/570423,37.439599,21.724777,settlement,"Lepreon/Lepreum, Lepreon|Lepreon",historical|Lepreatai|proxy,NULL
+3.8.5,Ὀλυμπίᾳ,http://pleiades.stoa.org/places/570531,37.637849,21.630126,"palaistra,sanctuary,temple-2","Olympia, Archaia Olympia|Olympia",NULL,NULL
+3.8.5,Σπαρτιάτην,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",Q369194|attribute|proxy,NULL
+3.8.6,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.8.6,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.8.6,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.8.6,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.8.6,"Αἰγὸς ποταμοῖς",http://pleiades.stoa.org/places/501336,40.35074,26.61011,settlement,"Aigospotamos, Cumalı?|Aigospotamos",battlefield,NULL
+3.8.6,Ἀττικὴν,http://pleiades.stoa.org/places/579888,38.051998833333336,23.818991099999998,region,Attica,regional,NULL
+3.8.6,Δεκελείᾳ,http://pleiades.stoa.org/places/579907,38.152799,23.794134,church,"Dekeleia, Tatoi|Dekeleia",built|phrourion,NULL
+3.8.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.8.6,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",Spartiates|proxy|Q369194|attribute,NULL
+3.8.7,Ἀρκαδίας,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional,NULL
+3.8.7,Ἡραίᾳ,http://pleiades.stoa.org/places/570287,37.613569,21.863791,settlement,"Heraia/Heraea, Agios Ioannis|Heraia",built,NULL
+3.8.7,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.8.8,Ἀρκάδες,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,historical|Arcadians|proxy,NULL
+3.8.8,Ἡραίας,http://pleiades.stoa.org/places/570287,37.613569,21.863791,settlement,"Heraia/Heraea, Agios Ioannis|Heraia",NULL,NULL
+3.8.8,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.8.9,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.8.9,Σπάρτη,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.8.10,Δελφούς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",built|hieron,NULL
+3.8.10,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.9.1,Ἀθηναίους,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.9.1,Ἄργους,http://pleiades.stoa.org/places/570106,37.631561,22.719464,settlement,"Argos, Argos|Argos",built|polis,NULL
+3.9.1,Ἕλληνας,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.9.1,Ἰσθμοῦ,http://pleiades.stoa.org/places/570317,37.9510881,22.9602226,isthmus,Isthmos,physical,NULL
+3.9.1,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.1,Πελοπόννησον,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.9.2,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.9.2,Κορίνθιοι,http://pleiades.stoa.org/places/570182,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",historical|Corinthians|proxy,NULL
+3.9.3,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.9.3,Αὐλίδα,http://pleiades.stoa.org/places/579889,38.4335,23.5925,settlement,"Aulis, Mikro Vathy/Ag. Nikolaos|Aulis",hieron|Artemis,NULL
+3.9.3,Θηβαῖοι,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.3,Θηβαίοις,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.3,Θήβας,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",built,NULL
+3.9.3,Πλαταιεῦσιν,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",historical|Plataians|proxy,NULL
+3.9.3,Τροίαν,http://pleiades.stoa.org/places/550595,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.9.4,Ἑλλάδος,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.9.4,Θηβαῖοι,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.4,ἱεροῦ,http://topostext.org/place/384236UAul,38.4335,23.5925,NULL,"Aulis (Euboea)",built|hieron|Artemis,NULL
+3.9.4,Περσῶν,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,historical|Persians|proxy,NULL
+3.9.5,Λυδία,http://pleiades.stoa.org/places/550701,38.624771249999995,27.9632845,region,Lydia/Maionia,regional,NULL
+3.9.5,Σάρδεις,http://dare.ht.lu.se/places/21160,38.488333,28.040278,settlement,"Sardis/Hyde?, Sart|Sardis/Hyde?",built,NULL
+3.9.5,Σάρδεις,http://dare.ht.lu.se/places/21160,38.488333,28.040278,settlement,"Sardis/Hyde?, Sart|Sardis/Hyde?",built,NULL
+3.9.5,Σοῦσα,http://dare.ht.lu.se/places/22221,32.19202,48.24854,settlement,"Shushan/Shusha/Susa/Seleucia ad Eulaeum/Shush-i er-Kar, Shush|Susa/Seleucia ad Eulaeum",built,NULL
+3.9.6,Ἀθήνας,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built|polis,NULL
+3.9.6,"Ἕρμου πεδίῳ",http://pleiades.stoa.org/places/550575,38.5178164,28.1112899,river,"Hermus (river)",battlefield,"Plain of Hermos"
+3.9.6,Ἰωνίαν,http://pleiades.stoa.org/places/550597,38.258572855555556,27.36601213333333,region,"Ionia (region)",regional,NULL
+3.9.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.9.6,Περσῶν,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,historical|Persians|proxy,NULL
+3.9.6,Σκύθας,http://pleiades.stoa.org/places/991379,42.5,27.5,province,Scythia,historical|Scythians|proxy,NULL
+3.9.7,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.9.8,Ἀθηναῖος,http://dare.ht.lu.se/places/10975,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|male|proxy,NULL
+3.9.8,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.9.8,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.9.8,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.9.8,Ἑλλάδι,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.9.8,Θήβαις,http://dare.ht.lu.se/places/21952,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",built,NULL
+3.9.8,Κορινθίων,http://pleiades.stoa.org/places/570182,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",historical|Corinthians|proxy,NULL
+3.9.8,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.8,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.9.8,Ῥόδιον,http://dare.ht.lu.se/places/22218,36.41451,28.15629,"island,settlement,temple-2,stadion","Ialysus/Ialysos, Trianda, Ialysos|Lindos/Lindus, Lindos|Apollo Erethimios, Apollo Erethimios|Rhodos Ins., Rhodos|Rhodos, Rhodos|Kamiros/Camirus, Kamiros, Kalavarda|Apollo Erethimios, T.|Ialysos|Kamiros|Lindos|Rhodos|Rhodos (island)",historical|male|proxy,NULL
+3.9.8,Σάρδεις,http://dare.ht.lu.se/places/21160,38.488333,28.040278,settlement,"Sardis/Hyde?, Sart|Sardis/Hyde?",built,NULL
+3.9.9,Ἀμφίσσης,http://topostext.org/place/385224PAmp,38.53,22.374,NULL,"Amphissa (Phokis)",built,NULL
+3.9.9,Θηβαίων,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.9,Λοκρίδα,http://pleiades.stoa.org/places/540919,38.25,21.75,unknown,"Locris Ozolia",regional,NULL
+3.9.9,Λοκροί,http://pleiades.stoa.org/places/540919,38.25,21.75,unknown,"Locris Ozolia",regional|Lokrians|proxy,NULL
+3.9.9,Λοκροῖς,http://pleiades.stoa.org/places/540919,38.25,21.75,unknown,"Locris Ozolia",regional|Lokrians|proxy,NULL
+3.9.9,Φωκέας,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.9.9,Φωκεῖς,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.9.10,Αὐλίδι,http://pleiades.stoa.org/places/579889,38.4335,23.5925,settlement,"Aulis, Mikro Vathy/Ag. Nikolaos|Aulis",built,NULL
+3.9.10,Θηβαίοις,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.10,Θηβαίους,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.10,Θηβαίους,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.10,Λακεδαίμονα,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.9.10,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.10,Λοκροὶ,http://pleiades.stoa.org/places/540919,38.25,21.75,unknown,"Locris Ozolia",historical|Lokrians|proxy,NULL
+3.9.10,Φωκεῖς,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.9.10,Φωκίδα,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,regional,NULL
+3.9.11,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.9.11,Θήβας,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",built,NULL
+3.9.11,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.9.11,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.11,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.11,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.9.12,Ἀβύδου,http://dare.ht.lu.se/places/22863,40.19406,26.41122,settlement,"Abydos, Maltepe|Abydos",built,NULL
+3.9.12,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.9.12,Βοιωτίαν,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,regional,NULL
+3.9.12,Θεσσαλίαν,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional,NULL
+3.9.12,Θεσσαλοὶ,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,historical|Thessalians|proxy,NULL
+3.9.12,Θηβαίους,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.12,Θρᾴκην,http://topostext.org/place/410265RThr,41.0,26.5,NULL,"Thrace region (Evros)",regional,NULL
+3.9.12,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.9.12,Σηστὸν,http://dare.ht.lu.se/places/21216,40.21343,26.38916,settlement,"Sestos, Yalikabat|Sestos",built,NULL
+3.9.13,Βοιωτοί,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,historical|Boiotians|proxy,NULL
+3.9.13,Βοιωτῶν,http://pleiades.stoa.org/places/540689,38.34668803333333,23.184677533333332,region,Boeotia,historical|Boiotians|proxy,NULL
+3.9.13,Θεσσαλίαν,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional,NULL
+3.9.13,Θηβαίους,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.9.13,ἱερὸν,http://topostext.org/place/384230SAth,38.4128,22.9968,NULL,"Athena Itonia sanct. (Boeotia)","built|hieron|Athena Itonia",NULL
+3.9.13,Κορωνείᾳ,http://dare.ht.lu.se/places/23114,38.392613,22.956902,settlement,"Koroneia, Palea Koronia|Coronea",built|battlefield,NULL
+3.10.1,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.10.1,Ἀμυκλαιεῖς,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",historical|Amyklaians|proxy,NULL
+3.10.1,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.10.1,Κορίνθιοι,http://pleiades.stoa.org/places/570182,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",historical|Corinthians|proxy,NULL
+3.10.1,Κόρινθον,http://dare.ht.lu.se/places/17070,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",built,NULL
+3.10.1,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.10.2,Αἰγυπτίων,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",historical|Egyptians|proxy,NULL
+3.10.2,Αἴγυπτον,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",regional,NULL
+3.10.2,Αἰγύπτῳ,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",regional,NULL
+3.10.2,Αἰτωλίαν,http://pleiades.stoa.org/places/540591,38.51586100952381,21.759714990476194,region,Aetolia,regional,NULL
+3.10.2,Αἰτωλοῖς,http://pleiades.stoa.org/places/540591,38.51586100952381,21.759714990476194,region,Aetolia,historical|Aetolians|proxy,NULL
+3.10.2,Αἰτωλῶν,http://pleiades.stoa.org/places/540591,38.51586100952381,21.759714990476194,region,Aetolia,historical|Aetolians|proxy,NULL
+3.10.2,Ἀκαρνᾶνας,http://pleiades.stoa.org/places/530767,38.672287499999996,21.317874500000002,region,Acarnania,historical|Acarnanians|proxy,NULL
+3.10.2,Ἀκαρνάνων,http://pleiades.stoa.org/places/530767,38.672287499999996,21.317874500000002,region,Acarnania,historical|Acarnanians|proxy,NULL
+3.10.2,Καλυδῶνα,http://dare.ht.lu.se/places/21986,38.372423,21.533106,"sanctuary,settlement","Calydon, Evinochori|Calydon",built,NULL
+3.10.2,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.10.3,Ἀθηναῖοί,http://dare.ht.lu.se/places/10975,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.10.3,Δελφοῖς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.10.3,Θηβαίοις,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.10.3,Θηβαίων,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.10.3,Λακεδαιμόνιοί,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.10.3,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.10.3,Φωκεῖς,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.3,Φωκεῦσιν,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.3,Φωκεῦσιν,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.3,Φωκέων,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.4,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.10.4,Φωκεῖς,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.4,Φωκέων,http://pleiades.stoa.org/places/541048,38.25,22.25,unknown,Phocis,historical|Phocians|proxy,NULL
+3.10.5,Ἰταλίαν,http://pleiades.stoa.org/places/1052,42.5,12.5,region,Italia,regional,NULL
+3.10.5,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.10.5,Μακεδόσιν,http://pleiades.stoa.org/places/491656,41.25,21.75,unknown,Macedonia,historical|Macedonians|proxy,NULL
+3.10.5,Ταραντίνοις,http://dare.ht.lu.se/places/16562,40.476034,17.228553,"settlement,temple-2","Taras/Tarentum/Neptunia, Taranto|Taras/Tarentum/Neptunia",historical|Tarentines|proxy,NULL
+3.10.6,ἄγαλμά,http://arachne.dainst.org/entity/3586275,37.049635,22.818732,NULL,"Statue: Herakles  Parnon (Paus. 3.10.6)",object|agalma|Herakles,"Left of the Skotitas-Sparta road"
+3.10.6,Ἑρμῶν,http://topostext.org/place/373225SHer,37.324,22.5431,NULL,"Hermai (Lakonia)","built|monument|37.3091 22.5324|Paus",NULL
+3.10.6,Σκοτίταν,http://topostext.org/place/373225RSko,37.31,22.51,NULL,"Skotitas region (Lakonia)",chôrion|Paus|Q124607542,"full of oak forests"
+3.10.6,τρόπαιον,http://arachne.dainst.org/entity/3586278,37.049635,22.818732,NULL,"Tropaion  Parnon (Paus. 3.10.6)",built|tropaion|Herakles|Paus,"Trophy erected by Herakles left of Skotitas-Sparta road, victory of Hippokoon"
+3.10.7,Ἀχαιοὶ,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",historical|Achaians|proxy,NULL
+3.10.7,Κάρυαι,http://topostext.org/place/373225UKar,37.3308,22.444,NULL,"Karyai? (Arkadia)",built,NULL
+3.10.7,Καρύας,http://topostext.org/place/373225UKar,37.3308,22.444,NULL,"Karyai? (Arkadia)",built|chôrion|Paus,NULL
+3.10.7,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.10.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.10.7,Σελλασίας,http://topostext.org/place/372224PSel,37.1884,22.4397,NULL,"Sellasia (Lakonia)",built|ereipia|Paus,NULL
+3.10.8,ἀγάλματος,http://arachne.dainst.org/entity/3586274,37.02692,22.43636,NULL,"Cult image: Apollo Amyklaios  Amykles (Paus. 3.1.3; Paus. 3.10.8; Paus. 3.16.2; Paus. 3.19.1-3)","object|agalma|Apollo Amyklaios",NULL
+3.10.8,Ἀμυκλαῖον,http://topostext.org/place/370224UAmy,37.0363,22.4502,NULL,"Amyklai (Lakonia)",built|hieron,"Amyklaion sanctuary of Apollo"
+3.10.8,Ἀμύκλαις,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.10.8,Ἀμύκλαις,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.10.8,Θόρνακι,http://topostext.org/place/371224UTho,37.11868,22.41642,NULL,"Thornax? Ekklesies (Lakonia)",built|Paus,NULL
+3.10.8,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.1,Θόρνακος,http://topostext.org/place/371224UTho,37.11868,22.41642,NULL,"Thornax? Ekklesies (Lakonia)",built,NULL
+3.11.1,Λακεδαίμων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,built|polis,NULL
+3.11.1,Σπάρτη,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.11.1,Σπαρτιάτας,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy,NULL
+3.11.2,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.11.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.2,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.2,Πλατανιστᾷ,http://topostext.org/place/371224SPla,37.0841,22.4191,NULL,"Platanista grove (Lakonia)",alsos,NULL
+3.11.2,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.11.3,Ἁλικαρνασσοῦ,http://dare.ht.lu.se/places/21187,37.037864,27.424112,"settlement,tomb,architecturalcomplex,port","Mausoleum at Halicarnassus, Bodrum|Halikarnassos/Halicarnassus, Bodrum|Halicarnassus/Halikarnassos",built,NULL
+3.11.3,"ἄλλοι καὶ",http://arachne.dainst.org/entity/3888126,37.07333,22.42972,NULL,"Statue as Gebälkträger: Mardonios , son of the Gobryas  Sparta (Paus. 3.11.3)",object|pilaster|Mardonios,NULL
+3.11.3,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.11.3,"ἐπὶ τῶν κιόνων Πέρσαι",http://arachne.dainst.org/entity/3888343,37.07333,22.42972,NULL,"Statues as Gebälkträger: Perser  Sparta (Paus. 3.11.3)",built|sculpture|Persians,NULL
+3.11.3,Μηδικῶν,http://pleiades.stoa.org/places/903080,34.5,46.5,region,Media/Mad(aya),army|Medes|proxy,NULL
+3.11.3,πεποίηται,http://arachne.dainst.org/entity/3888127,37.07333,22.42972,NULL,"Statue as Gebälkträger: Artemisia, Tochter of the Lygdamis, Königin of Harlikanassos  Sparta (Paus. 3.11.3)",built|sculpture|Artemisia,NULL
+3.11.3,Σαλαμῖνα,http://topostext.org/place/380236ASSB,37.952,23.573,NULL,"Salamis Sea Battle (Attica)",NULL,NULL
+3.11.4,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.11.4,Ῥωμαίοις,http://dare.ht.lu.se/places/1438,41.89262,12.4843457,"settlement,urban","Roma, Roma|Roma",historical|Romans|proxy,NULL
+3.11.5,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.11.5,"Αἰγὸς ποταμοὺς",http://dare.ht.lu.se/places/32292,40.35074,26.61011,settlement,"Aigospotamos, Cumalı?|Aigospotamos",battlefield,NULL
+3.11.5,Κύπρον,http://pleiades.stoa.org/places/707498,35.040883529816504,33.27533716422018,island,"Cyprus (island)",island,NULL
+3.11.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.11.5,"χαλκῆν εἰκόνα Ἀγίου",http://arachne.dainst.org/entity/3586279,37.07333,22.42972,NULL,"Portrait statue: Agias (Seher)  Sparta (Paus. 3.11.5)",object|eikôn|Agias|Paus,"bronze portrait statue of Agias"
+3.11.6,Ἄνδριον,http://pleiades.stoa.org/places/589693,37.8528,24.86222,"island,settlement-modern,settlement","Andros Ins., Andros|Andros, Palaiopolis, Andros|Andros (settlement)|Andros (island)",proxy|male,NULL
+3.11.6,Ἠλείῳ,http://dare.ht.lu.se/places/21944,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",historical|Elean|proxy,NULL
+3.11.7,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.11.7,Ἀρκάδων,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional|Arcadians|proxy,NULL
+3.11.7,Ἀρκάδων,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional|Arcadians|proxy,NULL
+3.11.7,Διπαιεῖς,http://topostext.org/place/375223PDip,37.544,22.273,NULL,"Dipaia? (Arkadia)",built|polisma,NULL
+3.11.7,Διπαιεῦσιν,http://topostext.org/place/375223PDip,37.544,22.273,NULL,"Dipaia? (Arkadia)",built|battlefield,NULL
+3.11.7,Ἤλιδος,http://dare.ht.lu.se/places/21944,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",built,NULL
+3.11.7,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.11.7,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.7,Μαιναλίᾳ,http://topostext.org/place/377223LMai,37.653,22.262,NULL,"Mainalos Mt. (Arkadia)",regional,NULL
+3.11.7,Μαντινέων,http://dare.ht.lu.se/places/21917,37.618138,22.393259,settlement,"Mantineia/Antigoneia, Mantineia|Mantineia/Antigoneia",historical|Mantineians|proxy,NULL
+3.11.7,Περσῶν,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,historical|Persians|proxy,NULL
+3.11.7,Πλαταιᾶσιν,http://topostext.org/place/382233PPla,38.2213,23.2733,NULL,"Plataea (Boeotia)",battlefield,NULL
+3.11.7,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.11.7,Τεγέᾳ,http://dare.ht.lu.se/places/21915,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",battlefield,NULL
+3.11.7,Τεγεάτας,http://pleiades.stoa.org/places/570707,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",historical|Tegeates|proxy,NULL
+3.11.8,Ἀθηναίους,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.11.8,Ἀργείους,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.11.8,Δελφοῖς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.11.8,Ἰθώμην,http://pleiades.stoa.org/places/570318,37.1857343,21.9249021,mountain,"Ithome Mons, Ithome|Ithome M.",NULL,NULL
+3.11.8,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.11.8,Τανάγρᾳ,http://dare.ht.lu.se/places/22779,38.309371,23.587064,settlement,"Tanagra, Graimada|Tanagra",battlefield,NULL
+3.11.9,ἀγάλματα,http://arachne.dainst.org/entity/3888344,37.07333,22.42972,NULL,"Cult image group (?): Apollo Pythaeos, Artemis, Leto  Sparta (Paus. 3.11.9)",object|agalma,"in agora of Sparta"
+3.11.9,Ἀπόλλωνος,http://arachne.dainst.org/entity/3888128,37.07333,22.42972,NULL,"Apollo Pythaeos in group with Artemis and Leto  Sparta (Paus. 3.11.9)","object|agalma|Apollo Pythaeus|Q37340",NULL
+3.11.9,Ἀρτέμιδος,http://arachne.dainst.org/entity/3888129,37.07333,22.42972,NULL,"Artemis in group (?) with Apollo and Leto  Sparta (Paus. 3.11.9)",object|agalma|Artemis|Q39503,NULL
+3.11.9,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.9,Λητοῦς,http://arachne.dainst.org/entity/3888130,37.07333,22.42972,NULL,"Leto in group (?) with Apollo and Artemis  Sparta (Paus. 3.11.9)",object|agalma,"Agora of Sparta"
+3.11.9,Σπαρτιάταις,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.11.9,Χορὸς,http://topostext.org/place/371224SCho,37.0815,22.42665,NULL,"Choros (Sparta)",topos|Paus,NULL
+3.11.10,ἀνδριὰς,http://arachne.dainst.org/entity/3586280,37.07333,22.42972,NULL,"Statue: Demos of Lakedaimonier  Sparta (Paus. 3.11.10)","andrias|Demos Spartiaton",NULL
+3.11.10,εἰκὼν,http://arachne.dainst.org/entity/3586281,37.07333,22.42972,NULL,"Statue: King Polydoros (politician)  Sparta (Paus. 3.11.10)",object|eikôn|Paus,"Beside the tomb of Orestes"
+3.11.10,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.10,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.11.10,Τεγέας,http://dare.ht.lu.se/places/21915,37.464,22.429,"theatre,church,settlement","Tegea, Piali/Episkopi|Tegea",built,NULL
+3.11.11,Ἀργείων,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional|Argeioi|proxy,NULL
+3.11.11,Ἑρμῆς,http://arachne.dainst.org/entity/3888125,37.07333,22.42972,NULL,"Statue: Hermes Agoraios with Dionysosknaben  Sparta (Paus. 3.11.11)","object|statue|Hermes Agoraios|Q41484",NULL
+3.11.11,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.11.11,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.12.3,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.12.4,ἄγαλμα,http://arachne.dainst.org/entity/3586282,37.07333,22.42972,NULL,"Cult image: Athena Keleutheia  Sparta (Paus. 3.12.4)","object|agalma|Athena Keleutheia|Paus","set up by Odysseus"
+3.12.4,Ἰνδικὴν,http://pleiades.stoa.org/places/50004,22.5,77.5,region,India,regional,NULL
+3.12.4,Ἰνδοὺς,http://pleiades.stoa.org/places/50004,22.5,77.5,region,India,historical|Indians|proxy,NULL
+3.12.5,τέμενος,http://topostext.org/place/371224SPoT,37.07593,22.4289,NULL,"Poseidon Tainarios (Sparta)","built|temenos|Poseidon Tainarios|Paus",NULL
+3.12.6,ἄγαλμα,http://arachne.dainst.org/entity/3586283,37.07333,22.42972,NULL,"Statue: Athena  Sparta (Paus. 3.12.6)",object|agalma|Athena,NULL
+3.12.6,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.12.6,Ἴλιον,http://dare.ht.lu.se/places/21153,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.12.6,Ἰταλίαν,http://pleiades.stoa.org/places/1052,42.5,12.5,region,Italia,regional,NULL
+3.12.6,Τάραντα,http://dare.ht.lu.se/places/16562,40.476034,17.228553,"settlement,temple-2","Taras/Tarentum/Neptunia, Taranto|Taras/Tarentum/Neptunia",built|apoikia,NULL
+3.12.6,Τροίαν,http://pleiades.stoa.org/places/550595,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.12.7,Ἀθήναις,http://dare.ht.lu.se/places/10975,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",built,NULL
+3.12.7,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.12.7,Αἰγιεῖς,http://dare.ht.lu.se/places/21941,38.252707,22.081952,settlement,"Aigion, Aigio|Aigion",historical|Aegians|proxy,NULL
+3.12.7,Ἀττικὴν,http://pleiades.stoa.org/places/579888,38.051998833333336,23.818991099999998,region,Attica,regional,NULL
+3.12.7,Ἀχαιῶν,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",regional|Achaians|proxy,NULL
+3.12.7,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.12.7,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.12.8,Ἤλιδος,http://dare.ht.lu.se/places/21944,37.89131,21.37493,"theatre,settlement","Elis, Elis|Elis",built,NULL
+3.12.8,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.12.9,Ἀμυκλαιεῖς,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",historical|Amyklaians|proxy,NULL
+3.12.9,Ἀρκάδος,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,proxy|male,NULL
+3.12.9,"γῆν τὴν Λακωνικὴν",http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,gê,NULL
+3.12.9,Θερμοπύλας,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.12.9,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.12.10,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.12.10,Μιλησίου,http://dare.ht.lu.se/places/21166,37.5292362,27.2774885,"theatre,settlement,port","Miletos/Miletus, Milet, Balat, Didim|Miletus",historical|Milesian|proxy,NULL
+3.12.11,ἀγάλματα,http://arachne.dainst.org/entity/3888345,37.07333,22.42972,NULL,"Statue Group: Zeus Olympios and Aphrodite Olympia  Sparta (Paus. 3.12.11)",object|agalma,"in circular building by Skias in Sparta"
+3.12.11,Ἀργείοις,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",historical|Argives|proxy,NULL
+3.12.11,Ἀφροδίτης,http://arachne.dainst.org/entity/3888132,37.07333,22.42972,NULL,"Aphrodite Olympia in group with Zeus Olympios  Sparta (Paus. 3.12.11)","object|agalma|Aphrodite Olympia|Q35500",NULL
+3.12.11,Διὸς,http://arachne.dainst.org/entity/3888131,37.07333,22.42972,NULL,"Zeus Olympios in group with Aphrodite Olympia  Sparta (Paus. 3.12.11)","object|agalma|Zeus Olympios|Q34201","in round building at Sparta"
+3.12.11,Κνωσσίους,http://dare.ht.lu.se/places/22252,35.297847,25.163106,"settlement,architecturalcomplex","Knosos/Col. Iulia Nobilis Cnosos, Knossos|Knosos/Col. Iulia Nobilis Cnosos",historical|Knossians|proxy,NULL
+3.13.1,Μεσσηνίᾳ,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.13.2,Θρᾷκα,http://topostext.org/place/410265RThr,41.0,26.5,NULL,"Thrace region (Evros)",mythical|Thracian|proxy,NULL
+3.13.2,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.13.2,Μεσσηνίων,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.13.2,"Ὀλυμπίας Ἀφροδίτης",http://arachne.dainst.org/entity/3888132,37.07333,22.42972,NULL,"Aphrodite Olympia in group with Zeus Olympios  Sparta (Paus. 3.12.11)",object|agalma,"opposite Olympian Aphrodite"
+3.13.2,Πελοποννήσου,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.13.3,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.13.3,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.13.4,Ἀκαρνᾶνα,http://pleiades.stoa.org/places/530767,38.672287499999996,21.317874500000002,region,Acarnania,mythical|Acarnanian|proxy,NULL
+3.13.4,Ἀκαρνανίας,http://pleiades.stoa.org/places/530767,38.672287499999996,21.317874500000002,region,Acarnania,regional,NULL
+3.13.4,Ἀχαιῶν,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",regional|Achaians|proxy,NULL
+3.13.4,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.13.4,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.13.5,Ἕλληνας,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.13.5,"Ἴδῃ τῇ Τρωικῇ",http://dare.ht.lu.se/places/41118,39.69936,26.85852,mountain,"Ida Mons, Kaz Dağ|Ida M.",physical|oros,NULL
+3.13.5,"ἵππου τοῦ δουρείου",http://arachne.dainst.org/entity/4061190,39.95732,26.23909,NULL,"Wooden so-called Trojan Horse  Troja (Paus. 2.29.4; Paus. 3.13.5)","object|doureios hippos","Trojan Horse"
+3.13.6,ἄγαλμα,http://arachne.dainst.org/entity/3586287,37.07333,22.42972,NULL,"Statue: Aphetaios  Sparta (Paus. 3.13.6)",object|agalma,NULL
+3.13.6,Καρνείου,http://arachne.dainst.org/entity/3586284,37.07333,22.42972,NULL,"Cult image: (Apollo) Karneios Oiketas  Sparta (Paus. 3.13.3-4)",object|Q671534,"Heroon of Karneios in Sparta"
+3.13.7,ναός,http://topostext.org/place/371224SDiK,37.0851,22.428,NULL,"Dionysos Kolonatas (Sparta)","built|naos|Dionysos Kolonatas|Q117272549","Temple of Dionysos Kolonatas"
+3.13.7,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.13.8,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.13.8,Διονύσου,http://topostext.org/place/371224SDiK,37.0851,22.428,NULL,"Dionysos Kolonatas (Sparta)",built|naos|Q41680,"temple of Dionysos Kolonatas"
+3.13.8,Εὐρώτα,http://pleiades.stoa.org/places/570248,37.1615197,22.3334931,river,"Eurotas (river)",potamos|physical,NULL
+3.13.9,εἰκών,http://arachne.dainst.org/entity/3586286,37.07333,22.42972,NULL,"Portrait statue: Hetoimokles (athlete)  Sparta (Paus. 3.13.9)",object|eikôn|Paus,"Portrait of Hetoimokles on road on right from hill, Sparta"
+3.13.9,ξόανον,http://arachne.dainst.org/entity/3586285,37.07333,22.42972,NULL,"Cult image: Aphrodite Hera  Sparta (Paus. 3.13.8-9)","object|Aphrodite Hera|Paus|Q693222|xoanon|attribute",NULL
+3.14.1,Θερμοπύλαις,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.14.1,Θερμοπυλῶν,http://dare.ht.lu.se/places/21976,38.796511,22.538294,"shrine,pass,fort","Thermopylae, Thermopylae|Anthele, Anthili|Anthela|Thermopylae",battlefield,NULL
+3.14.1,Μήδους,http://pleiades.stoa.org/places/903080,34.5,46.5,region,Media/Mad(aya),army|Medes|proxy,NULL
+3.14.1,Πλαταιᾶσι,http://pleiades.stoa.org/places/541063,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",battlefield,NULL
+3.14.1,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.14.2,"ἄκραν τὴν ἐς θάλασσαν ἐσέχουσαν",http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",physical|akra,NULL
+3.14.2,ἱερόν,http://topostext.org/place/371224SArI,37.0856,22.41533,NULL,"Issorion Artemis shrine (Sparta)","built|hieron|Artemis Issoria",NULL
+3.14.2,Κρητῶν,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",historical|Cretans|proxy,NULL
+3.14.2,Πιτανατῶν,http://topostext.org/place/371224DPit,37.0808,22.4038,NULL,"Pitane (Lakonia)",historical|Pitanatai|proxy,NULL
+3.14.2,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.14.3,Θηραίῳ,http://dare.ht.lu.se/places/23504,36.36399,25.478129,"island,settlement","Thera, Thera|Thera Ins., Thira|Akrotiri|Akrotiri|Thera|Thera (island)",historical|male|Theraian|proxy,NULL
+3.14.3,Κυρήνην,http://dare.ht.lu.se/places/21126,32.818736,21.856169,settlement,"Cyrene, Shahhat|Cyrene",built,NULL
+3.14.3,Λακεδαιμόνιος,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|male|Lakedaimonian|proxy,NULL
+3.14.3,Λιβύων,http://pleiades.stoa.org/places/716588,31.5,26.5,region,Libya,historical|Libyans|proxy,NULL
+3.14.4,Μεσσηνίαν,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.14.4,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.14.4,ξόανον,http://arachne.dainst.org/entity/3586288,37.07333,22.42972,NULL,"Cult image: Thetis  Sparta (Paus. 3.14.4-5)",object|Thetis|Q693222|xoanon|attribute,NULL
+3.14.5,Ἑρμιόνῃ,http://pleiades.stoa.org/places/570292,37.385218,23.243591,"settlement,port","Hermione/Hermion, Ermione|Hermion(e)",built|polis,NULL
+3.14.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.14.5,Σπαρτιάταις,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.14.6,"ἄγαλμα ἀρχαῖον",http://arachne.dainst.org/entity/3586289,37.07333,22.42972,NULL,"Cult image: Herakles  Sparta (Paus. 3.14.6)",object|agalma|Herakles,"Ancient agalma by Dromos at Sparta"
+3.14.6,"Ἡρακλέους τὸ ἄγαλμα",http://arachne.dainst.org/entity/3586293,37.07333,22.42972,NULL,"Cult image: Herakles  Sparta (Paus. 3.15.3)",object|agalma,NULL
+3.14.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.14.6,Σπαρτιάτου,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",male|Spartiate|proxy,NULL
+3.14.7,εἰσιν,http://arachne.dainst.org/entity/3888346,37.07333,22.42972,NULL,"Standing statues Diokouroi  Sparta (Paus. 3.14.7)",object|statue|Dioskouroi,"Statues of Dioscuri Apheterioi at beginning of Sparta racetrack"
+3.14.7,ξόανον,http://arachne.dainst.org/entity/3586290,37.07333,22.42972,NULL,"Cult image: Asklepios Agnitas  Sparta (Paus. 3.14.7)","object|Asklepios Agnitas|Paus|Q693222|xoanon|attribute","xoanon carved of Agnus Castus (chaste tree)"
+3.14.7,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.14.8,ἄγαλμα,http://arachne.dainst.org/entity/3586291,37.07333,22.42972,NULL,"Statue: Herakles  Sparta (Paus. 3.14.8)",object|agalma|Herakles,NULL
+3.14.8,"εἰκὼν Λυκούργου",http://arachne.dainst.org/entity/3586292,37.07333,22.42972,NULL,"Statue: Lawgiver Lykurgos  Sparta (Paus. 3.14.8)",object|eikôn|Lykourgos|Paus,"Portrait statue of Lykourgos at other bridge to Platanista, Sparta"
+3.14.8,Πλατανιστᾶς,http://topostext.org/place/371224SPla,37.0841,22.4191,NULL,"Platanista grove (Lakonia)",chôrion|platanoi|Paus,"tall trees"
+3.14.9,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.14.9,Θεράπνης,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",built,NULL
+3.14.9,Κολοφώνιοι,http://dare.ht.lu.se/places/21170,38.115556,27.142222,settlement,"Colophon, Değirmendere|Colophon",historical|Kolophonians|proxy,NULL
+3.14.9,Κολοφωνίους,http://dare.ht.lu.se/places/21170,38.115556,27.142222,settlement,"Colophon, Değirmendere|Colophon",historical|Kolophonians|proxy,NULL
+3.14.9,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.14.9,Φοιβαῖόν,http://topostext.org/place/371224SPho,37.069,22.44165,NULL,"Phoibaion (Sparta)",NULL,NULL
+3.14.9,Φοιβαίῳ,http://topostext.org/place/371224SPho,37.069,22.44165,NULL,"Phoibaion (Sparta)",built|hieron|Q124615381,NULL
+3.14.10,Πλατανιστᾷ,http://topostext.org/place/371224SPla,37.0841,22.4191,NULL,"Platanista grove (Lakonia)",alsos,NULL
+3.14.10,Φοιβαίῳ,http://topostext.org/place/371224SPho,37.069,22.44165,NULL,"Phoibaion (Sparta)",built|hieron|Q124615381,NULL
+3.15.1,Πλατανιστᾷ,http://topostext.org/place/371224SPla,37.0841,22.4191,NULL,"Platanista grove (Lakonia)",alsos,NULL
+3.15.1,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.15.2,Λακώνων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakonians|proxy,NULL
+3.15.3,"ἄγαλμα Ἡρακλέους",http://arachne.dainst.org/entity/3586293,37.07333,22.42972,NULL,"Cult image: Herakles  Sparta (Paus. 3.15.3)",object|agalma|Herakles|Paus,NULL
+3.15.3,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.15.4,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.15.5,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.15.6,Καλλίστη,http://dare.ht.lu.se/places/41498,36.36399,25.478129,"island,settlement","Thera, Thera|Thera Ins., Thira|Akrotiri|Akrotiri|Thera|Thera (island)",island,"formerly Kalliste"
+3.15.7,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.15.7,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.15.7,"Ἄπτερον καλουμένην Νίκην",http://topostext.org/binder/JB0627,37.975374,23.723929,NULL,"Athena Nike xoanon","object|agalma|Nike Apteros|opsis","DAI:3586295   xoanon"
+3.15.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.15.7,"πέδας ἐστὶν ἔχων Ἐνυάλιος",http://arachne.dainst.org/entity/3586294,37.07333,22.42972,NULL,"Statue: (Ares) Enyalios  Sparta (Paus. 3.15.7)",object|agalma|Enyalios|Paus|xoanon,"ancient agalma of Enyalios in fetters"
+3.15.8,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.15.9,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.15.9,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.15.10,"Ἀφροδίτης ξόανον ὡπλισμένης",http://arachne.dainst.org/entity/3586296,37.07333,22.42972,NULL,"Cult image: Aphrodite  Sparta (Paus. 3.15.10)",object|xoanon|Aphrodite,"Armed xoanon of Aphrodite"
+3.15.11,ζῴδιον,http://arachne.dainst.org/entity/3586297,37.07333,22.42972,NULL,"Cult image: Aphrodite Morpho  Sparta (Paus. 3.15.10-11)","object|zôidion|Aphrodite Morpho","Morpho Aphrodite of cedar, in veil and fetters"
+3.16.1,ἀγαλμάτων,http://arachne.dainst.org/entity/3888347,37.07333,22.42972,NULL,"Cult images of the Leukippiden  Sparta (Paus. 3.16.1)",object|agalma|Leukippides|Paus,"two statues, one with modern face dedicated by Leukippis"
+3.16.2,Ἀμύκλαις,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.16.2,Ἀπόλλωνι,http://arachne.dainst.org/entity/3586274,37.02692,22.43636,NULL,"Cult image: Apollo Amyklaios  Amykles (Paus. 3.1.3; Paus. 3.10.8; Paus. 3.16.2; Paus. 3.19.1-3)","object|agalma|Apollo Amyklaios|Q37340",NULL
+3.16.2,Κυρήνης,http://dare.ht.lu.se/places/21126,32.818736,21.856169,settlement,"Cyrene, Shahhat|Cyrene",built,NULL
+3.16.2,Σπαρτιάτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",male|Spartiate|proxy|Q369194,NULL
+3.16.3,ἀγάλματα,http://arachne.dainst.org/entity/3652687,37.07333,22.42972,NULL,"Statues: Diokouroi  Sparta (Paus. 3.16.2-3)",agalma|Dioskouroi,"miraculous images of Dioskouroi"
+3.16.4,Ἐρυκίνην,http://dare.ht.lu.se/places/22637,38.03528,12.5919,"mountain,settlement","Eryx, Erice|Eryx Mons, Erice|Eryx|Eryx M.",regional|chôra|proxy,Erykine
+3.16.4,Σικελίαν,http://pleiades.stoa.org/places/462492,37.53667611952188,14.08648464579389,island,"Sicilia (island)",island,NULL
+3.16.5,Ἐγεσταῖοι,http://dare.ht.lu.se/places/22636,37.939199,12.839871,settlement,"Segesta/Egesta, Calatafimi-Segesta|Segesta/Egesta",historical|Egestaioi|proxy,NULL
+3.16.5,Σικελίαν,http://pleiades.stoa.org/places/462492,37.53667611952188,14.08648464579389,island,"Sicilia (island)",island,NULL
+3.16.6,Ἀρτεμισίῳ,http://topostext.org/place/390232SArt,39.0097,23.217,NULL,"Artemision (Euboea)",battlefield,NULL
+3.16.6,Κλεωναίων,http://dare.ht.lu.se/places/21930,37.81708,22.75372,settlement,"Kleonai/Cleonae, Ag. Vasileios/Kleonai|Kleonai",historical|Kleonaians|proxy,NULL
+3.16.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.16.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.16.6,Μήδους,http://pleiades.stoa.org/places/903080,34.5,46.5,region,Media/Mad(aya),army|Medes|proxy,NULL
+3.16.6,Σαλαμῖνι,http://topostext.org/place/380236ASSB,37.952,23.573,NULL,"Salamis Sea Battle (Attica)",battlefield,NULL
+3.16.7,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.16.7,Ἀθηναῖοι,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.16.7,Βραυρῶνι,http://dare.ht.lu.se/places/22845,37.926189,23.9937505,"sanctuary,temple-2","Artemis Brauronia, Brauron|Artemis Brauronia, T.","built|hieron|Artemis Brauronia",NULL
+3.16.7,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.16.7,ξόανον,http://arachne.dainst.org/entity/3586298,37.07333,22.42972,NULL,"Cult image: Artemis Orthia/ Lygodesma (Taurike)  Sparta (Paus. 3.16.7-11)",object|Artemis|Q693222|xoanon|attribute,NULL
+3.16.7,"Ὀρθίας ἱερόν",http://topostext.org/place/371224SArt,37.083,22.435,NULL,"Artemis Ortheia (Lakonia)",built|hieron|Paus,NULL
+3.16.7,Ταυρικῆς,http://pleiades.stoa.org/places/226778,44.883441823333335,34.27150174333333,"peninsula,region","Taurike Chersonesos",peninsula,NULL
+3.16.8,ἄγαλμα,http://arachne.dainst.org/entity/3586299,38.5,28.05,NULL,"Cult image: Artemis Anaïtis (Taurike)  Sartmahmut (Paus. 3.16.8)","agalma|Artemis Anaiitis",NULL
+3.16.8,Ἀθηναίοις,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.16.8,Βραυρῶνος,http://dare.ht.lu.se/places/22845,37.926189,23.9937505,"sanctuary,temple-2","Artemis Brauronia, Brauron|Artemis Brauronia, T.",built|hieron,NULL
+3.16.8,Εὔξεινον,http://pleiades.stoa.org/places/1224,43.0786852,34.7425505,water-open,"Pontus Euxinus",historical|Euxeinos|proxy,NULL
+3.16.8,Καππάδοκες,http://pleiades.stoa.org/places/991402,37.5,37.5,province,Cappadocia,historical|Kappadokians|proxy,NULL
+3.16.8,Λαοδικεῖς,http://dare.ht.lu.se/places/21505,35.513994,35.782047,"settlement,port","Laodicea, Latakia|Laodicea",historical|Laodikeans|proxy,NULL
+3.16.8,Λαοδικεῖς,http://dare.ht.lu.se/places/21505,35.513994,35.782047,"settlement,port","Laodicea, Latakia|Laodicea",historical|Laodikeans|proxy,NULL
+3.16.8,Λυδῶν,http://pleiades.stoa.org/places/550701,38.624771249999995,27.9632845,region,Lydia/Maionia,historical|Lydians|proxy,NULL
+3.16.8,Μήδῳ,http://pleiades.stoa.org/places/903080,34.5,46.5,region,Media/Mad(aya),army|Mede|proxy,NULL
+3.16.8,Σοῦσα,http://dare.ht.lu.se/places/22221,32.19202,48.24854,settlement,"Shushan/Shusha/Susa/Seleucia ad Eulaeum/Shush-i er-Kar, Shush|Susa/Seleucia ad Eulaeum",built,NULL
+3.16.8,"Ταυρικῇ θεῷ",http://arachne.dainst.org/entity/3586298,37.07333,22.42972,NULL,"Cult image: Artemis Orthia/ Lygodesma (Taurike)  Sparta (Paus. 3.16.7-11)",object|xoanon,NULL
+3.16.8,"τὸ γὰρ ἐκ",http://arachne.dainst.org/entity/3586028,37.926132,23.993808,NULL,"Cult image: Artemis Taurike/ Brauronia Brauron (Paus. 1.23.7; Paus. 1.33.1; Paus. 3.16.7-8; Paus. 8.46.3)",object|xoanon|Artemis,NULL
+3.16.9,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.16.9,Λιμνᾶται,http://topostext.org/place/371222ULim,37.1217,22.1918,NULL,"Limnai (Messenia)",historical|Limnatai|proxy,NULL
+3.16.9,ξόανον,http://arachne.dainst.org/entity/3586298,37.07333,22.42972,NULL,"Cult image: Artemis Orthia/ Lygodesma (Taurike)  Sparta (Paus. 3.16.7-11)",object|Orthia|Q693222|xoanon|attribute,NULL
+3.16.9,Πιτάνης,http://topostext.org/place/371224DPit,37.0808,22.4038,NULL,"Pitane (Lakonia)",built|deme,NULL
+3.16.9,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.16.10,ξόανον,http://arachne.dainst.org/entity/3586298,37.07333,22.42972,NULL,"Cult image: Artemis Orthia/ Lygodesma (Taurike)  Sparta (Paus. 3.16.7-11)",object|Q693222|xoanon|attribute,NULL
+3.16.11,Ταυρικῇ,http://pleiades.stoa.org/places/226778,44.883441823333335,34.27150174333333,"peninsula,region","Taurike Chersonesos",regional,NULL
+3.17.1,Ἀργείοις,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",historical|Argives|proxy,NULL
+3.17.1,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.17.1,Θηβαίοις,http://pleiades.stoa.org/places/541138,38.318092,23.255096,"sanctuary,settlement","Kabeirion, Kabeirion|Thebai, Thiva|Kabeirion|Thebai/Thebae",historical|Thebans|proxy,NULL
+3.17.1,Καδμεία,http://topostext.org/place/383233XCad,38.3209,23.3178,NULL,"Cadmeia exc. (Boeotia)",acropolis,NULL
+3.17.1,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.17.1,Λάρισα,http://topostext.org/place/376227FLar,37.638,22.715,NULL,"Larisa Citadel (Argolid)",acropolis,NULL
+3.17.1,Ὀρθίας,http://topostext.org/place/371224SArt,37.083,22.435,NULL,"Artemis Ortheia (Lakonia)",built|hieron,NULL
+3.17.2,ἄγαλμα,http://arachne.dainst.org/entity/3586300,37.07333,22.42972,NULL,"Cult image: Athena Poliuchos / Chalkioikos  Sparta (Paus. 3.17.2)",object|agalma|Paus,NULL
+3.17.2,Ἀφιδναίων,http://dare.ht.lu.se/places/22762,37.974359,23.362766,"unlocated,port,fort,church,settlement","Nisaia, Nisaia|Beletsi|Varnavas|Aphidna, Kotroni, Afidnes|Leipsydrion, Leipsydrion|Korynos|Melainai, Melainai|Panakton/Panaktos, Kavasala|Hysiai, Hysiai|Pagai, Alepochori|Mazi|Hysiai|Melainai|Nisaia|Pagai|Aphidna|Beletsi|Korynos|Mazi|Panakton|Leipsydrion|Varnava",mythical|Aphidnaians|proxy,NULL
+3.17.2,ἱερὸν,http://topostext.org/place/371224SACh,37.08265,22.42338,NULL,"Athena Chalkioikos temple (Sparta)","built|hieron|Athena Poliouchos|Paus","Sanctuary of Athena Poliouchos at Sparta"
+3.17.2,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.17.2,ναὸν,http://topostext.org/place/371224SACh,37.08265,22.42338,NULL,"Athena Chalkioikos temple (Sparta)","built|naos|Athena Poliouchos",NULL
+3.17.3,"Ἀθηνᾶς γένεσιν",http://arachne.dainst.org/entity/3586305,37.07333,22.42972,NULL,"Bronze relief: Geburt of Athena  Sparta (Paus. 3.17.3)",object|sculpture|Athena,"Chalkioikos, Sparta"
+3.17.3,"Ἀμφιτρίτη καὶ Ποσειδῶν",http://arachne.dainst.org/entity/3586306,37.07333,22.42972,NULL,"Bronze relief: Amphitrite, Poseidon  Sparta (Paus. 3.17.3)",object|sculpture|Amphitrite,"Chalkioikos, Sparta"
+3.17.3,ἀπολύων,http://arachne.dainst.org/entity/3586303,37.07333,22.42972,NULL,"Bronze relief: Hephaistos, Hera  Sparta (Paus. 3.17.3)",object|relief,NULL
+3.17.3,ἁρπαγή,http://arachne.dainst.org/entity/3586302,37.07333,22.42972,NULL,"Bronze relief: Diokouroi, Leukippidai  Sparta (Paus. 3.17.3)",object|relief,NULL
+3.17.3,"Περσεῖ δʼ ἐς Λιβύην",http://arachne.dainst.org/entity/3586304,37.07333,22.42972,NULL,"Bronze relief: nymphs, Perseus, Helm, Schuhe  Sparta (Paus. 3.17.3)",object|sculpture,"Chalkioikos, Sparta"
+3.17.3,πολλὰ,http://arachne.dainst.org/entity/3586301,37.07333,22.42972,NULL,"Bronze relief: Herakles  Sparta (Paus. 3.17.3)",object|relief|Herakles,NULL
+3.17.4,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.17.4,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.17.4,"Αἰγὸς ποταμοῖς",http://pleiades.stoa.org/places/501336,40.35074,26.61011,settlement,"Aigospotamos, Cumalı?|Aigospotamos","battlefield|tx:405 BCE",NULL
+3.17.4,"δύο τοὺς ὄρνιθας καὶ ἴσας ἐπʼ αὐτοῖς Νίκας",http://arachne.dainst.org/entity/3586307,37.07333,22.42972,NULL,"Statue: Niken  Sparta (Paus. 3.17.4)",object|sculpture,"Two Eagles and Nike statues, for naval victories at Ephesos and Aigospotamoi, at western stoa of acropolis of Sparta"
+3.17.4,Ἔφεσον,http://dare.ht.lu.se/places/21155,37.941944,27.339722,"theatre,settlement,temple-2,architecturalcomplex","Ephesos/Ephesus/Arsinoeia/Arsinoe, Efes, Selçuk|Ephesus/Arsinoe(ia)",built|battlefield,NULL
+3.17.5,Ἕλλησιν,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,historical|Hellenes|proxy,NULL
+3.17.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.17.5,ξόανα,http://arachne.dainst.org/entity/3586308,37.07333,22.42972,NULL,"Cult image: Aphrodite Areia  Sparta (Paus. 3.17.5)",object|xoanon|Paus|Q693222,"Xoana of Aphrodite Areia, very ancient, in temple"
+3.17.6,ἄγαλμα,http://arachne.dainst.org/entity/3586309,37.07333,22.42972,NULL,"Cult image: Zeus Hypatos  Sparta (Paus. 3.17.6; Paus. 8.14.7)","object|agalma|Zeus Hypatos",NULL
+3.17.6,"γυναικός ἐστιν εἰκών",http://arachne.dainst.org/entity/3586310,37.07333,22.42972,NULL,"Portrait statue: Euryleonis (Athletin)  Sparta (Paus. 3.17.6)",object|eikôn,"By the Skênôma on Spartan acropolis"
+3.17.6,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.17.6,Ῥηγῖνον,http://pleiades.stoa.org/places/452416,38.111146,15.649244,"sanctuary,settlement,architecturalcomplex","Area sacra Griso-Laboccetta, Reggio di Calabria|Rhegion/Regium, Reggio di Calabria|Rhegion/Regium",historical|male|proxy,NULL
+3.17.7,Βυζαντίου,http://dare.ht.lu.se/places/5472,41.012379,28.975926,"urban,settlement","Byzantium/Byzantion/Constantinopolis, Istanbul|Byzantium|Constantinopolis",male|Byzantine|proxy,NULL
+3.17.7,"δύο εἰκόνες Παυσανίου",http://arachne.dainst.org/entity/3652688,37.07333,22.42972,NULL,"Statues: two Statues of Pausanias (general, politician) in Group with Aphrodite, Hypnos and Thanatos?  Sparta (Paus. 3.17.7-9)",object|eikôn|Pausanias,"Two portraits of Pausanias  by altar at Chalkioikos, Sparta"
+3.17.7,Πλάταιαν,http://dare.ht.lu.se/places/21988,38.221019,23.273866,settlement,"Plataiai, Kokkla|Plataea",battlefield,NULL
+3.17.7,Χαλκίοικον,http://topostext.org/place/371224SACh,37.08265,22.42338,NULL,"Athena Chalkioikos temple (Sparta)",built|naos,NULL
+3.17.8,Βυζαντίας,http://dare.ht.lu.se/places/5472,41.012379,28.975926,"urban,settlement","Byzantium/Byzantion/Constantinopolis, Istanbul|Byzantium|Constantinopolis",female|proxy,NULL
+3.17.8,Ἑλλάδα,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.17.8,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.17.8,Ἑλλήσποντον,http://pleiades.stoa.org/places/501434,40.2,26.4,water-open,Hellespontus,physical,NULL
+3.17.8,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.17.9,Ἀρκάδων,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional|Arcadians|proxy,NULL
+3.17.9,Δελφῶν,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",hieron,NULL
+3.17.9,εἰκόνας,http://arachne.dainst.org/entity/3652688,37.07333,22.42972,NULL,"Statues: two Statues of Pausanias (general, politician) in Group with Aphrodite, Hypnos and Thanatos?  Sparta (Paus. 3.17.7-9)",object|eikôn,NULL
+3.17.9,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.17.9,Φιγαλίαν,http://dare.ht.lu.se/places/21947,37.3963,21.8391,settlement,"Phigaleia/Phigalia/Phialeia, Figalia|Phigaleia",built,NULL
+3.18.1,ἄγαλμα,http://arachne.dainst.org/entity/3586311,37.07333,22.42972,NULL,"Statue: Aphrodite Ambologera (in Group with Pausanias, Hypnos and Thanatos?)  Sparta (Paus. 3.18.1)","object|agalma|Aphrodite Ambologêras",NULL
+3.18.1,"ἀνδριάντων τοῦ Παυσανίου",http://arachne.dainst.org/entity/4020518,37.07333,22.42972,NULL,"Statues of Pausanias  Sparta (Paus. 3.18.1)",object|andrias|Pausanias,NULL
+3.18.1,Θανάτου,http://arachne.dainst.org/entity/3888134,37.07333,22.42972,NULL,"Thanatos in group with Hypnos  Sparta (Paus. 3.18.1)",object|agalma|Thanatos|Q199647,"with Aphrodite Ambologeras, Sparta"
+3.18.1,Ὕπνου,http://arachne.dainst.org/entity/3888133,37.07333,22.42972,NULL,"Hypnos in group with Thanatos  Sparta (Paus. 3.18.1)",object|agalma|Hypnos|Q189347,NULL
+3.18.2,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.18.3,Ἀμμώνιοι,http://pleiades.stoa.org/places/716520,29.20514,25.54359,"oasis,settlement,temple-2","Ammon/Ammonos Hieron/Ammoneion, Aghurmi, Siwa|Ammon",historical|Ammonians|proxy,NULL
+3.18.3,Ἀφυταῖοι,http://dare.ht.lu.se/places/31721,40.099366,23.436606,settlement,"Aphytis, Aphytos|Aphytis",historical|Aphytaioi|proxy,NULL
+3.18.3,Ἀφυταίους,http://dare.ht.lu.se/places/31721,40.099366,23.436606,settlement,"Aphytis, Aphytos|Aphytis",historical|Aphytaioi|proxy,NULL
+3.18.3,Ἄφυτιν,http://dare.ht.lu.se/places/31721,40.099366,23.436606,settlement,"Aphytis, Aphytos|Aphytis",NULL,NULL
+3.18.3,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.18.3,"ἐν Λιβύῃ μαντείῳ",http://pleiades.stoa.org/places/716520,29.20514,25.54359,"oasis,settlement,temple-2","Ammon/Ammonos Hieron/Ammoneion, Aghurmi, Siwa|Ammon",built|manteion|Ammon,NULL
+3.18.3,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.18.3,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.18.3,Λακεδαιμονίους,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.18.3,Λιβύων,http://pleiades.stoa.org/places/716588,31.5,26.5,region,Libya,historical|Libyans|proxy,NULL
+3.18.3,Παλλήνῃ,http://topostext.org/place/400236LPal,40.06,23.41,NULL,"Pallene/Phlegra (Chalkidike)",regional,NULL
+3.18.4,ἄγαλμα,http://arachne.dainst.org/entity/3586312,37.07333,22.42972,NULL,"Cult image: Artemis Knagia  Sparta (Paus. 3.18.4-5)","object|agalma|Artemis Knagia",NULL
+3.18.4,Ἄφιδναν,http://dare.ht.lu.se/places/22762,37.974359,23.362766,"unlocated,port,fort,church,settlement","Nisaia, Nisaia|Beletsi|Varnavas|Aphidna, Kotroni, Afidnes|Leipsydrion, Leipsydrion|Korynos|Melainai, Melainai|Panakton/Panaktos, Kavasala|Hysiai, Hysiai|Pagai, Alepochori|Mazi|Hysiai|Melainai|Nisaia|Pagai|Aphidna|Beletsi|Korynos|Mazi|Panakton|Leipsydrion|Varnava",built|deme,NULL
+3.18.4,Κρησὶν,http://pleiades.stoa.org/places/991373,37.5,22.5,province,Creta,proxy|Cretans,NULL
+3.18.4,Κρήτην,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",regional,NULL
+3.18.5,Ἀθηναίων,http://pleiades.stoa.org/places/579885,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",historical|Athenians|proxy,NULL
+3.18.5,Ἄφιδναν,http://dare.ht.lu.se/places/22762,37.974359,23.362766,"unlocated,port,fort,church,settlement","Nisaia, Nisaia|Beletsi|Varnavas|Aphidna, Kotroni, Afidnes|Leipsydrion, Leipsydrion|Korynos|Melainai, Melainai|Panakton/Panaktos, Kavasala|Hysiai, Hysiai|Pagai, Alepochori|Mazi|Hysiai|Melainai|Nisaia|Pagai|Aphidna|Beletsi|Korynos|Mazi|Panakton|Leipsydrion|Varnava",built|deme,NULL
+3.18.5,Ἀφίδνῃ,http://dare.ht.lu.se/places/22762,37.974359,23.362766,"unlocated,port,fort,church,settlement","Nisaia, Nisaia|Beletsi|Varnavas|Aphidna, Kotroni, Afidnes|Leipsydrion, Leipsydrion|Korynos|Melainai, Melainai|Panakton/Panaktos, Kavasala|Hysiai, Hysiai|Pagai, Alepochori|Mazi|Hysiai|Melainai|Nisaia|Pagai|Aphidna|Beletsi|Korynos|Mazi|Panakton|Leipsydrion|Varnava",built,NULL
+3.18.5,Θεσπρώτοις,http://topostext.org/place/394204RThp,39.4,20.4,NULL,"Thesprotia region (Thesprotia)",mythical|Thesprotians|proxy,NULL
+3.18.5,Κρήτην,http://pleiades.stoa.org/places/589748,35.21984439173344,24.995769971494504,island,"Creta (island)",regional,NULL
+3.18.5,Λακεδαιμόνιοί,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.18.6,Ἀμύκλας,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.18.6,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.18.6,Τίασα,http://topostext.org/place/373223WTia,37.064,22.449,NULL,"Tiasa R. (Lakonia)",potamos|Q124615228,NULL
+3.18.7,Ἀμύκλαις,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.18.7,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.18.7,στήλης,http://arachne.dainst.org/entity/3586313,37.02692,22.43636,NULL,"Relief stele: Ainetos (athlete)  Amykles (Paus. 3.18.7)",object|stêlê,"Olympic victor"
+3.18.8,ἄγαλμα,http://arachne.dainst.org/entity/3888137,37.02692,22.43636,NULL,"Statue under a tripod: Kore  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|agalma|Kore,NULL
+3.18.8,ἄγαλμα,http://arachne.dainst.org/entity/3888135,37.02692,22.43636,NULL,"Statue under a tripod: Aphrodite  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|agalma,NULL
+3.18.8,Αἰγινήτου,http://dare.ht.lu.se/places/21936,37.74991,23.42372,"island,settlement,temple-2","Aigina, Aigina|Aphaia, Temple of Aphaea|Aegina Ins., Aegina|Aegina (island)|Aigina|Temple of Aphaia on Aegina",male|proxy,NULL
+3.18.8,"Αἰγὸς ποταμοῖς",http://pleiades.stoa.org/places/501336,40.35074,26.61011,settlement,"Aigospotamos, Cumalı?|Aigospotamos",battlefield,NULL
+3.18.8,Ἀργεῖος,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",male|proxy,NULL
+3.18.8,Ἄρτεμις,http://arachne.dainst.org/entity/3888136,37.02692,22.43636,NULL,"Statue under a tripod: Artemis  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|agalma|Artemis|Q39503,NULL
+3.18.8,"Ἀφροδίτην παρὰ Ἀμυκλαίῳ",http://arachne.dainst.org/entity/3888142,37.02692,22.43636,NULL,"Statue: Aphrodite 'beim Amyklaion'  Amykles (Paus. 3.18.8)",object|agalma|Aphrodite,NULL
+3.18.8,"γυναῖκα ἐποίησεν ἔχουσαν λύραν",http://arachne.dainst.org/entity/3888141,37.02692,22.43636,NULL,"Statue: Sparte  Amykles (Paus. 3.18.8)",object|statue,NULL
+3.18.8,δευτέρῳ,http://arachne.dainst.org/entity/3888139,37.02692,22.43636,NULL,"Second Tripod  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|tripous,NULL
+3.18.8,Πάριος,http://dare.ht.lu.se/places/29024,37.08579,25.150728,settlement,"Paros, Parikia|Paros",male|proxy,NULL
+3.18.8,"πρώτῳ τρίποδι",http://arachne.dainst.org/entity/3888138,37.02692,22.43636,NULL,"First Tripod  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|tripous,NULL
+3.18.8,τρίποδες,http://arachne.dainst.org/entity/3888143,37.02692,22.43636,NULL,"Tripod over the statue of Sparte  Amykles (Paus. 3.18.8)",NULL,NULL
+3.18.8,τρίτος,http://arachne.dainst.org/entity/3888140,37.02692,22.43636,NULL,"Third Tripod  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|tripous,NULL
+3.18.9,"ἄγαλμα δὲ Λευκοφρυήνης",http://arachne.dainst.org/entity/3586314,37.02692,22.43636,NULL,"Statue: Artemis Leukophryene  Amykles (Paus. 3.18.9)",object|agalma|anathema|Leukophryne|Paus,NULL
+3.18.9,θρόνον,http://arachne.dainst.org/entity/9407,37.036382,22.450422,NULL,"Throne of Amyklai (Amyklaion)  Amyklaion hill (Paus. 3.8.10)",object|thronos|Paus|Q106363909,"Throne of Amyklaios"
+3.18.9,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.18.9,Μάγνητος,http://dare.ht.lu.se/places/21173,37.8507,27.52785,settlement,"Magnesia ad Maeandrum/Leukophrys, Tekin|Magnesia ad Sipylum, Manisa|Magnesia ad Maeandrum/Leukophrys|Magnesia ad Sipylum",male|Magnesian|proxy,NULL
+3.18.9,Χάριτες,http://arachne.dainst.org/entity/4020519,37.02692,22.43636,NULL,"Charites of the Bathykles  Amykles (Paus. 3.18.9)",object|anathema|Charites,"Charites, offering of Bathycles"
+3.18.10,"ἔμπροσθεν αὐτόν, κατὰ ταὐτὰ δὲ καὶ ὀπίσω",http://arachne.dainst.org/entity/4030702,37.03639,22.450379,NULL,"Stützfiguren: Charites, Horai, Echidna, Typhos, Tritons  Amyklaion Heiligtum (Paus. 3.18.10)",object|supports,"Throne supports, front and back, Amyklai"
+3.18.10,μάχη,http://arachne.dainst.org/entity/3586318,37.02692,22.43636,NULL,"Relief: Herakles?, Pholos, Kentauren  Amykles (Paus. 3.18.10)",object|relief,"Amyklai throne"
+3.18.10,μονομαχία,http://arachne.dainst.org/entity/3586317,37.02692,22.43636,NULL,"Relief: Herakles, Kyknos  Amykles (Paus. 3.18.10)",object|relief|Herakles,"Amyklai throne"
+3.18.10,φέρουσι,http://arachne.dainst.org/entity/3586316,37.02692,22.43636,NULL,"Relief: Poseidon, Zeus, Taygete, Alkyone (Pleijaden), Atlas (as part of the scene or eigenständig?)  Amykles (Paus. 3.18.10)",object|relief,"Amyklai throne"
+3.18.11,"ἄγουσα Ἡρακλέα",http://arachne.dainst.org/entity/3586325,37.02692,22.43636,NULL,"Relief: Athena (Zeus and other gods?), Herakles  Amykles (Paus. 3.18.11)",object|relief,NULL
+3.18.11,ἁρπαγὴ,http://arachne.dainst.org/entity/3586324,37.02692,22.43636,NULL,"Relief: Rape of the Leukippidai (Kastor, Polydeukes, Hilaeira, Phoibe)  Amykles (Paus. 3.18.11)",object|relief,NULL
+3.18.11,θρόνῳ,http://arachne.dainst.org/entity/9407,37.036382,22.450422,NULL,"Throne of Amyklai (Amyklaion)  Amyklaion hill (Paus. 3.8.10)",built|thronos,NULL
+3.18.11,μάχην,http://arachne.dainst.org/entity/3586322,37.02692,22.43636,NULL,"Relief: Herakles (eine scene with Tyndareus and Eurytos?), Gigant Thurios  Amykles (Paus. 3.18.11)",object|relief,"Amyklai throne"
+3.18.11,"παῖδα ἔτι ὄντα ἐς οὐρανόν",http://arachne.dainst.org/entity/3586326,37.02692,22.43636,NULL,"Relief: Hermes with Dionysosknabe  Amykles (Paus. 3.18.11)",object|relief,NULL
+3.18.11,πεποίηκε,http://arachne.dainst.org/entity/3586319,37.02692,22.43636,NULL,"Relief: Theseus, Minotauros  Amykles (Paus. 3.18.11)",object|relief,"Amyklai throne"
+3.18.11,πεποίηται,http://arachne.dainst.org/entity/3586321,37.02692,22.43636,NULL,"Relief: Perseus, Gorgo Medusa  Amykles (Paus. 3.18.11)",object|relief,NULL
+3.18.11,πρὸς,http://arachne.dainst.org/entity/3586323,37.02692,22.43636,NULL,"Relief: Tyndareos, Eurytos (scene with Herakles and Thurios?)  Amykles (Paus. 3.18.11)",object|relief,"Amyklai throne"
+3.18.11,χορός,http://arachne.dainst.org/entity/3586320,37.02692,22.43636,NULL,"Relief: Phaiaken, Demodokos  Amykles (Paus. 3.18.11)",object|relief,NULL
+3.18.12,ἐπείργασται,http://arachne.dainst.org/entity/3586330,37.02692,22.43636,NULL,"Relief: Herakles, Diomedes, Pferde?  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,"Ἑρμῆς δὲ παρʼ Ἀλέξανδρον",http://arachne.dainst.org/entity/3586332,37.02692,22.43636,NULL,"Relief: Hermes, Aphrodite, Athena, Hera, Paris  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,Εὐήνῳ,http://pleiades.stoa.org/places/540780,38.3288971,21.5193991,river,"Euenos (river)",potamos|representation,NULL
+3.18.12,ἡρπασμένος,http://arachne.dainst.org/entity/3586327,37.02692,22.43636,NULL,"Relief: Hemera (Eos), Raub of the Kephalos  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,Θρᾷκα,http://topostext.org/place/410265RThr,41.0,26.5,NULL,"Thrace region (Evros)",mythical|Thracian|proxy,NULL
+3.18.12,καταπαύουσιν,http://arachne.dainst.org/entity/3586333,37.02692,22.43636,NULL,"Relief: 'Seven against Thebes': Adrastos, Tydeus, Amphiaraos, Lykurgos  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,κομίζουσιν,http://arachne.dainst.org/entity/3586328,37.02692,22.43636,NULL,"Relief: Harmonia, weitere gods, Kadmos  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,μονομαχία,http://arachne.dainst.org/entity/3586329,37.02692,22.43636,NULL,"Relief: Achilles, Memnon  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,παραδίδωσι,http://arachne.dainst.org/entity/3586343,37.02692,22.43636,NULL,"Relief: Peleus, Achill, Kentaur Chiron  Amykles (Paus. 3.18.12)",object|relief,NULL
+3.18.12,τιμωρούμενος,http://arachne.dainst.org/entity/3586331,37.02692,22.43636,NULL,"Relief: Herakles, Kentaur Nessos  Amykles (Paus. 3.18.12)",relief|Nessos,NULL
+3.18.13,ἀναιρεῖ,http://arachne.dainst.org/entity/3586340,37.02692,22.43636,NULL,"Relief: Bellerophon, Chimaira, Pegasos?  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,διώκοντα,http://arachne.dainst.org/entity/3586335,37.02692,22.43636,NULL,"Relief: Athena, Hephaistos  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,"Ἥρα δὲ ἀφορᾷ πρὸς Ἰὼ τὴν Ἰνάχου βοῦν οὖσαν",http://arachne.dainst.org/entity/3586334,37.02692,22.43636,NULL,"Relief: Hera, Io (als Kuh), Kuh  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,"Ἡρακλῆς τὰς Γηρυόνου βοῦς",http://arachne.dainst.org/entity/3586358,37.02692,22.43636,NULL,"Relief: Herakles, Rinder of the Geryoneus  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,"ἵππος εἷς φέρων",http://arachne.dainst.org/entity/3586339,37.02692,22.43636,NULL,"Relief: Megapenthes, Nikostratos, horse  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,"καθήμενός ἐστιν ἑκάτερος",http://arachne.dainst.org/entity/3586338,37.02692,22.43636,NULL,"Relief: Anaxis, Mnasinus, Pferde  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,πεποίηται,http://arachne.dainst.org/entity/3586336,37.02692,22.43636,NULL,"Relief: Herakles, Hydra  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.13,"ὡς ἀνήγαγε",http://arachne.dainst.org/entity/3586337,37.02692,22.43636,NULL,"Relief: Herakles, Kerberos  Amykles (Paus. 3.18.13)",object|relief,NULL
+3.18.14,"ἀνωτάτω δὲ χορὸς",http://arachne.dainst.org/entity/3586342,37.02692,22.43636,NULL,"Relief: Chor of Magnesians (musicians)  Amykles (Paus. 3.18.14)",object|relief,NULL
+3.18.14,θρόνον,http://arachne.dainst.org/entity/9407,37.036382,22.450422,NULL,"Throne of Amyklai (Amyklaion)  Amyklaion hill (Paus. 3.8.10)",thronos,NULL
+3.18.14,θρόνου,http://arachne.dainst.org/entity/9407,37.036382,22.450422,NULL,"Throne of Amyklai (Amyklaion)  Amyklaion hill (Paus. 3.8.10)",thronos,NULL
+3.18.14,Μάγνητες,http://dare.ht.lu.se/places/21173,37.8507,27.52785,settlement,"Magnesia ad Maeandrum/Leukophrys, Tekin|Magnesia ad Sipylum, Manisa|Magnesia ad Maeandrum/Leukophrys|Magnesia ad Sipylum",historical|Magnesians|proxy,NULL
+3.18.14,"πρὸς τοῖς ἄνω πέρασιν",http://arachne.dainst.org/entity/3586341,37.02692,22.43636,NULL,"Relief: Diokouroi, Diokouroi (Tyndariden), Sphinx, Panther, lioness  Amykles (Paus. 3.18.14)",object|relief,NULL
+3.18.15,ἄγχων,http://arachne.dainst.org/entity/3586348,37.02692,22.43636,NULL,"Relief: Herakles, lion  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.15,ἀπελαύνουσιν,http://arachne.dainst.org/entity/3586346,37.02692,22.43636,NULL,"Relief: Phineus?, Kalaïs and Zetes (Boreaden), Harpyien  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.15,ἀποκτείνων,http://arachne.dainst.org/entity/3586345,37.02692,22.43636,NULL,"Relief: Herakles, Aktorione (Eurytos and Kteatos?)  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.15,Ἄρτεμις,http://arachne.dainst.org/entity/3888136,37.02692,22.43636,NULL,"Statue under a tripod: Artemis  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|agalma|Artemis|Q39503,NULL
+3.18.15,ἡρπακότες,http://arachne.dainst.org/entity/3586347,37.02692,22.43636,NULL,"Relief: Peirithoos, Theseus, Helena  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.15,θήρα,http://arachne.dainst.org/entity/3586344,37.02692,22.43636,NULL,"Relief: Meleagros?, Atalante?, Melanion?, Peleus? u. a., Kalydonischer boar, Kalydonischer boar, Hunde?  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.15,Καλυδωνίου,http://pleiades.stoa.org/places/540699,38.372423,21.533106,"sanctuary,settlement","Calydon, Evinochori|Calydon",proxy|male,NULL
+3.18.15,τοξεύει,http://arachne.dainst.org/entity/3586349,37.02692,22.43636,NULL,"Relief: Apollon, Artemis, Tityos  Amykles (Paus. 3.18.15)",object|relief,NULL
+3.18.16,Αἰγύπτιον,http://pleiades.stoa.org/places/981503,19.211408766666665,30.567329633333333,region,"Ancient Egypt (region)",historical|Egyptian|proxy,NULL
+3.18.16,"Ἄκαστος ἔθηκεν ἀγῶνα ἐπὶ πατρὶ",http://arachne.dainst.org/entity/3586354,37.02692,22.43636,NULL,"Relief: Akastos (Leichenspiele für Pelias)  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,δεθείη,http://arachne.dainst.org/entity/3586353,37.02692,22.43636,NULL,"Relief: Hera, Hephaistos?  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,ζευγνύων,http://arachne.dainst.org/entity/3586356,37.02692,22.43636,NULL,"Relief: Admetos, lion, boar  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,"Θησέως πρὸς Ταῦρον τὸν Μίνω",http://arachne.dainst.org/entity/3586351,37.02692,22.43636,NULL,"Relief: Theseus, Minotauros  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,μάχη,http://arachne.dainst.org/entity/3586350,37.02692,22.43636,NULL,"Relief: Herakles, Kentaur Oreios  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,"πρὸς Ἀχελῷον Ἡρακλέους πάλη",http://arachne.dainst.org/entity/3586352,37.02692,22.43636,NULL,"Relief: River god Acheloos, Herakles  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,"τὰ ἐς",http://arachne.dainst.org/entity/3586355,37.02692,22.43636,NULL,"Relief: Menelaos bei Proteus  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.18.16,Τρῶες,http://dare.ht.lu.se/places/21153,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",mythical|Trojans|proxy,NULL
+3.18.16,"Τρῶες ἐπιφέροντες χοὰς Ἕκτορι",http://arachne.dainst.org/entity/3586357,37.02692,22.43636,NULL,"Relief: Trojans  Amykles (Paus. 3.18.16)",object|relief,NULL
+3.19.1,ἄγαλμα,http://arachne.dainst.org/entity/3586274,37.02692,22.43636,NULL,"Cult image: Apollo Amyklaios  Amykles (Paus. 3.1.3; Paus. 3.10.8; Paus. 3.16.2; Paus. 3.19.1-3)","object|agalma|Apollo Amyklaios|Paus","huge and ancient, not work of Bathykles"
+3.19.1,θρόνου,http://arachne.dainst.org/entity/9407,37.036382,22.450422,NULL,"Throne of Amyklai (Amyklaion)  Amyklaion hill (Paus. 3.8.10)",object|thronos,"Throne of Amyklaian Apollo"
+3.19.3,ἄγαλμα,http://arachne.dainst.org/entity/3586359,37.02692,22.43636,NULL,"Relief: Biris (=Iris?); Amphitrite and Poseidon; Zeus and Hermes; Dionysos, Semele and Ino; Demeter, Kore and Plouton (Hades); Moiren and Horen; Aphrodite, Athena and Artemis, Hyakinthos and Polyboia  Amykles (Paus. 3.19.3-4)",object|agalma|Biris,"Amyklai base"
+3.19.4,Ἄρτεμις,http://arachne.dainst.org/entity/3888136,37.02692,22.43636,NULL,"Statue under a tripod: Artemis  Amykles (Paus. 3.18.7-8; Paus. 4.14.2)",object|agalma|Artemis|Q39503,NULL
+3.19.4,ἔγραψεν,http://arachne.dainst.org/entity/3586360,41.89474,12.4839,NULL,"Painting: Hyakinthos  Rom (Paus. 3.19.4)",object|graphê|Hyakinthos|opsis,NULL
+3.19.4,"πεποίηται δὲ ἐπὶ τοῦ βωμοῦ",http://arachne.dainst.org/entity/3586359,37.02692,22.43636,NULL,"Relief: Biris (=Iris?); Amphitrite and Poseidon; Zeus and Hermes; Dionysos, Semele and Ino; Demeter, Kore and Plouton (Hades); Moiren and Horen; Aphrodite, Athena and Artemis, Hyakinthos and Polyboia  Amykles (Paus. 3.19.3-4)",object|relief,"Amyklai altar/statue base"
+3.19.4,"Ὑακίνθου τὸ ἄγαλμα",http://arachne.dainst.org/entity/3586359,37.02692,22.43636,NULL,"Relief: Biris (=Iris?); Amphitrite and Poseidon; Zeus and Hermes; Dionysos, Semele and Ino; Demeter, Kore and Plouton (Hades); Moiren and Horen; Aphrodite, Athena and Artemis, Hyakinthos and Polyboia  Amykles (Paus. 3.19.3-4)",agalma|Hyakinthos,"Carved altar/base for Apollo, with many reliefs"
+3.19.5,"ἐπὶ τῷ βωμῷ",http://arachne.dainst.org/entity/3586362,37.02692,22.43636,NULL,"Relief base: Muses, Horai, daughter of Thestios  Amykles (Paus. 3.19.5)",object|relief,NULL
+3.19.5,πεποίηται,http://arachne.dainst.org/entity/3586361,37.02692,22.43636,NULL,"Relief base: Athena and other gods, Herakles  Amykles (Paus. 3.19.5)",object|relief,"Amyklai altar"
+3.19.6,ἄγαλμα,http://arachne.dainst.org/entity/3586363,37.02692,22.43636,NULL,"Cult image: Alexandra / Kassandra  Amykles (Paus. 3.19.6)",object|agalma|Alexandra,"in sanctuary near Amyklai"
+3.19.6,Ἀμύκλαι,http://topostext.org/place/370224UAmy,37.0363,22.4502,NULL,"Amyklai (Lakonia)",built,NULL
+3.19.6,Ἀμύκλαι,http://topostext.org/place/370224UAmy,37.0363,22.4502,NULL,"Amyklai (Lakonia)",built|kômê,NULL
+3.19.6,Ἀμυκλαιεῖς,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",historical|Amyklaians|proxy,NULL
+3.19.6,εἰκὼν,http://arachne.dainst.org/entity/3586364,37.02692,22.43636,NULL,"Statue: Klytaimnestra  Amykles (Paus. 3.19.6)",object|eikon,NULL
+3.19.6,Θεράπνην,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",built,NULL
+3.19.6,"ἱερὸν Ἀλεξάνδρας",http://topostext.org/place/370224SAgA,37.024,22.4474,NULL,"Agamemnon/Alexandra sanctuary (Lakonia)",built|hieron|Alexandra|Paus,"Sanctuary of Alexandra at Amyklai kômê."
+3.19.6,πόλεως,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.19.7,ἄγαλμα,http://arachne.dainst.org/entity/3586366,37.07333,22.42972,NULL,"Cult image: Ares Theritas  Sparta (Paus. 3.19.7-8)","object|agalma|Ares Theritas","Agalma of Ares Theritas brought by Dioskouroi from Colchis"
+3.19.7,Εὐρώταν,http://pleiades.stoa.org/places/570248,37.1615197,22.3334931,river,"Eurotas (river)",physical|potamos,NULL
+3.19.7,Κόλχων,http://pleiades.stoa.org/places/863770,42.5,42.5,region,Colchis/Lazike,mythical|Colchians|proxy,NULL
+3.19.7,ξόανόν,http://arachne.dainst.org/entity/3586365,37.07333,22.42972,NULL,"Cult image: Athena Alea  Sparta (Paus. 3.19.7)","xoanon|Athena Alea","on Sparta-Therapne road"
+3.19.8,Ἔλληνές,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,historical|Hellenes|proxy,NULL
+3.19.8,Κόλχων,http://pleiades.stoa.org/places/863770,42.5,42.5,region,Colchis/Lazike,mythical|Colchians|proxy,NULL
+3.19.9,Θεράπνη,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",chôrion,NULL
+3.19.9,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.19.9,"Μενελάου δέ ἐστιν ἐν αὐτῇ ναός",http://topostext.org/place/370225SMen,37.0658,22.4535,NULL,"Menelaion (Lakonia)",built|naos|Menelaus|Paus,NULL
+3.19.9,Ῥόδιοι,http://pleiades.stoa.org/places/590030,36.41451,28.15629,"island,settlement,temple-2,stadion","Ialysus/Ialysos, Trianda, Ialysos|Lindos/Lindus, Lindos|Apollo Erethimios, Apollo Erethimios|Rhodos Ins., Rhodos|Rhodos, Rhodos|Kamiros/Camirus, Kamiros, Kalavarda|Apollo Erethimios, T.|Ialysos|Kamiros|Lindos|Rhodos|Rhodos (island)",historical|Rhodians|proxy,NULL
+3.19.9,Ῥόδον,http://dare.ht.lu.se/places/41162,36.41451,28.15629,"island,settlement,temple-2,stadion","Ialysus/Ialysos, Trianda, Ialysos|Lindos/Lindus, Lindos|Apollo Erethimios, Apollo Erethimios|Rhodos Ins., Rhodos|Rhodos, Rhodos|Kamiros/Camirus, Kamiros, Kalavarda|Apollo Erethimios, T.|Ialysos|Kamiros|Lindos|Rhodos|Rhodos (island)",island,NULL
+3.19.10,Ἀργείαν,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",female|Argive|proxy,NULL
+3.19.10,Ῥοδίοις,http://dare.ht.lu.se/places/41162,36.41451,28.15629,"island,settlement,temple-2,stadion","Ialysus/Ialysos, Trianda, Ialysos|Lindos/Lindus, Lindos|Apollo Erethimios, Apollo Erethimios|Rhodos Ins., Rhodos|Rhodos, Rhodos|Kamiros/Camirus, Kamiros, Kalavarda|Apollo Erethimios, T.|Ialysos|Kamiros|Lindos|Rhodos|Rhodos (island)",historical|Rhodians|proxy,NULL
+3.19.10,Ῥόδον,http://dare.ht.lu.se/places/41162,36.41451,28.15629,"island,settlement,temple-2,stadion","Ialysus/Ialysos, Trianda, Ialysos|Lindos/Lindus, Lindos|Apollo Erethimios, Apollo Erethimios|Rhodos Ins., Rhodos|Rhodos, Rhodos|Kamiros/Camirus, Kamiros, Kalavarda|Apollo Erethimios, T.|Ialysos|Kamiros|Lindos|Rhodos|Rhodos (island)",island,NULL
+3.19.11,ἄγαλμα,http://arachne.dainst.org/entity/3586367,45.256404,30.204699,NULL,"Cult image: Achill  Schlangeninsel (Paus. 3.19.11)",object|agalma|Achilles,"on Leuke island"
+3.19.11,Εὐξείνῳ,http://pleiades.stoa.org/places/1224,43.0786852,34.7425505,water-open,"Pontus Euxinus",sea,NULL
+3.19.11,Ἱμεραίους,http://dare.ht.lu.se/places/22259,37.96884,13.82184,"temple,settlement,plaza","Himera, Himera, Termini Imerese|Himera",historical|Himerans|proxy,NULL
+3.19.11,Ἴστρου,http://dare.ht.lu.se/places/16181,45.16291,29.647293,river,"Danuvius/Danubius/Istros/Hister, Donau|Danuvius/Istros/Hister (river)",potamos|ekbolai,NULL
+3.19.11,Κροτωνιάτας,http://pleiades.stoa.org/places/452317,39.028864,17.205128,"city-wall,sanctuary,settlement","Hera, Capo Colonna, Crotone|Croton/Croto, Crotone|Croto(n)|Temple of Hera Lacinia",historical|Krotoniatai|proxy,NULL
+3.19.11,Λευκή,http://dare.ht.lu.se/places/41084,45.25471,30.20325,island,"Leuke Ins./Achilleos Nesos, Zmeinyi|Leuke Ins./Achilleos Nesos",island,NULL
+3.19.12,Δελφούς,http://pleiades.stoa.org/places/540726,38.482289,22.501169,"sanctuary,settlement","Delphi/Delphoi, Delphi|Delphi",built|hieron,NULL
+3.19.12,Ἰταλίᾳ,http://pleiades.stoa.org/places/452346,38.25,16.25,region,Italia,regional,NULL
+3.19.12,Κροτωνιάταις,http://pleiades.stoa.org/places/452317,39.028864,17.205128,"city-wall,sanctuary,settlement","Hera, Capo Colonna, Crotone|Croton/Croto, Crotone|Croto(n)|Temple of Hera Lacinia",historical|Krotoniatai|proxy,NULL
+3.19.12,Κροτωνιάταις,http://pleiades.stoa.org/places/452317,39.028864,17.205128,"city-wall,sanctuary,settlement","Hera, Capo Colonna, Crotone|Croton/Croto, Crotone|Croto(n)|Temple of Hera Lacinia",historical|Krotoniatai|proxy,NULL
+3.19.12,Κροτωνιάτης,http://pleiades.stoa.org/places/452317,39.028864,17.205128,"city-wall,sanctuary,settlement","Hera, Capo Colonna, Crotone|Croton/Croto, Crotone|Croto(n)|Temple of Hera Lacinia",historical|male|Krotoniate|proxy,NULL
+3.19.12,Λευκήν,http://dare.ht.lu.se/places/41084,45.25471,30.20325,island,"Leuke Ins./Achilleos Nesos, Zmeinyi|Leuke Ins./Achilleos Nesos",island,NULL
+3.19.12,Λοκρούς,http://dare.ht.lu.se/places/16737,38.20782,16.23715,"stoa,townhouse,theatre,sanctuary,settlement","Lokroi Epizephyrioi, Locri|Lokroi Epizephyrioi",historical|Lokrians|proxy,NULL
+3.19.12,Ὀπουντίους,http://topostext.org/place/386231ROpu,38.6,23.1,NULL,"Lokris Opuntia region (Phthiotis)","historical|Opountian Lokrians|proxy",NULL
+3.19.13,Ἱμέραν,http://dare.ht.lu.se/places/22259,37.96884,13.82184,"temple,settlement,plaza","Himera, Himera, Termini Imerese|Himera",built|polis,NULL
+3.19.13,Λευκῆς,http://pleiades.stoa.org/places/226677,45.25471,30.20325,island,"Leuke Ins./Achilleos Nesos, Zmeinyi|Leuke Ins./Achilleos Nesos",island,NULL
+3.20.1,Θεράπνῃ,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",chôrion,NULL
+3.20.1,Θεράπνῃ,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",chôrion,NULL
+3.20.1,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.20.2,Ἀλεσίαις,http://dare.ht.lu.se/places/27399,37.043277,22.413455,settlement,"Alesiai, near Ag. Ioannis|Alesiai",chôrion,NULL
+3.20.2,Ἀλεσίας,http://dare.ht.lu.se/places/27399,37.043277,22.413455,settlement,"Alesiai, near Ag. Ioannis|Alesiai",built|chôrion,"from Poseidon Gaiouchos heading toward Taygetos"
+3.20.2,Θεράπνης,http://dare.ht.lu.se/places/22272,37.066091,22.454127,settlement,"Therapne, Varika|Therapne",built,NULL
+3.20.2,Ταΰγετον,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.2,Φοιβαῖον,http://topostext.org/place/371224SPho,37.069,22.44165,NULL,"Phoibaion (Sparta)",built|hieron,NULL
+3.20.3,Ἀμύκλας,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.20.3,Βρυσίαι,http://topostext.org/place/370235XAVa,36.979,22.478,NULL,"Ag. Vasilios exc. Bryseai? (Lakonia)",built|polis,"former polis"
+3.20.3,Λακωνικῇ,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.20.3,Ταΰγετόν,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.3,Ταϋγέτου,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.3,Φᾶρις,http://dare.ht.lu.se/places/31043,37.029321,22.2805645,settlement,"Pharis, Vapheio/Ag. Vasilios?|Pharis",built|polis,NULL
+3.20.4,Βρυσεῶν,http://topostext.org/place/370235XAVa,36.979,22.478,NULL,"Ag. Vasilios exc. Bryseai? (Lakonia)",built,NULL
+3.20.4,Πέρσας,http://pleiades.stoa.org/places/922698,30.5,51.5,unknown,Persis/Pars,regional,NULL
+3.20.4,Ταΰγετον,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.4,Ταϋγέτου,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.5,ἱερόν,http://topostext.org/place/370224SElD,37.01384,22.41979,NULL,"Eleusinian Demeter sanctuary (Lakonia)","built|hieron|Demeter Eleusinia",NULL
+3.20.5,Λακεδαιμόνιοι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,historical|Lakedaimonians|proxy,NULL
+3.20.5,ξόανον,http://arachne.dainst.org/entity/3586370,36.962066,22.331085,NULL,"Statue: Orpheus  Taygetos (Paus. 3.20.5)",object|Orpheus|Q693222|xoanon|attribute,NULL
+3.20.5,Ταϋγέτου,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.6,Ἀμύκλας,http://pleiades.stoa.org/places/570074,35.0133,24.76084,"settlement,port","Amyklaion?, Kommos|Amyklai/Amyclae, Agia Kyriaki, Amykles|Amyklai|Amyklaion?",built,NULL
+3.20.6,Ἑλλάδος,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional,NULL
+3.20.6,Ἕλληνας,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.20.6,Ἕλος,http://topostext.org/place/368226UHel,36.8432,22.6075,NULL,"Helos (Lakonia)",built|polisma,NULL
+3.20.6,Ἕλος,http://topostext.org/place/368226UHel,36.8432,22.6075,NULL,"Helos (Lakonia)",built|polisma,NULL
+3.20.6,θαλάσσῃ,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,NULL
+3.20.6,Θεσσαλίᾳ,http://pleiades.stoa.org/places/1332,39.6,22.2,region,Thessalia,regional|battlefield,NULL
+3.20.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.20.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.20.6,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.20.7,ἄγαλμα,http://arachne.dainst.org/entity/3586372,36.962066,22.331085,NULL,"Cult image: Artemis Dereatis  Taygetos (Paus. 3.20.7)","object|agalma|Artemis Dereatis",NULL
+3.20.7,Ἐλευσίνιον,http://topostext.org/place/370224SElD,37.01384,22.41979,NULL,"Eleusinian Demeter sanctuary (Lakonia)",built|hieron,NULL
+3.20.7,Ἕλους,http://topostext.org/place/368226UHel,36.8432,22.6075,NULL,"Helos (Lakonia)",NULL,NULL
+3.20.7,Λαπίθαιον,http://topostext.org/place/370224ULap,36.9896,22.4301,NULL,"Lapithaion (Lakonia)",place,NULL
+3.20.7,Λαπίθαιόν,http://topostext.org/place/370224ULap,36.9896,22.4301,NULL,"Lapithaion (Lakonia)",place,NULL
+3.20.7,ξόανον,http://arachne.dainst.org/entity/3586371,36.832122,22.697582,NULL,"Cult image: Kore  Helos (Paus. 3.20.7)",object|Kore|Q693222|xoanon|attribute,NULL
+3.20.7,Ταϋγέτῳ,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.20.8,ἄγαλμα,http://arachne.dainst.org/entity/3586373,37.07333,22.42972,NULL,"Statue: Athena Pareia  Sparta (Paus. 3.20.8)","object|agalma|Athena Pareia",NULL
+3.20.8,Ἀρκαδίας,http://pleiades.stoa.org/places/570102,37.567419268449626,22.165323097346306,region,Arcadia,regional,NULL
+3.20.8,Πλατανιστᾷ,http://topostext.org/place/371224SPla,37.0841,22.4191,NULL,"Platanista grove (Lakonia)",alsos,NULL
+3.20.8,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.20.8,Σπαρτιᾶται,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194,NULL
+3.20.9,"κίονες δὲ ἑπτὰ",http://arachne.dainst.org/entity/3652689,37.07333,22.42972,NULL,"Statues: Planeten  Sparta (Paus. 3.20.9)",object|kiones,"near tomb of the Horse, columns representing planets"
+3.20.10,ἄγαλμα,http://arachne.dainst.org/entity/3586374,37.07333,22.42972,NULL,"Statue: Aidos  Sparta (Paus. 3.20.10-11)",object|agalma|Aidos,NULL
+3.20.10,Ἰθάκην,http://topostext.org/place/383204UIth,38.453,20.643,NULL,"Homeric Ithaca? (Ithaki)",island,NULL
+3.20.10,Λακεδαίμονι,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.20.10,πόλεως,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.20.11,"ἄγαλμα δὲ ἀνέθηκεν Αἰδοῦς",http://arachne.dainst.org/entity/3586374,37.07333,22.42972,NULL,"Statue: Aidos  Sparta (Paus. 3.20.10-11)",agalma|Aidos,NULL
+3.20.11,Λακεδαίμονα,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.21.1,Αἰγίου,http://dare.ht.lu.se/places/21941,38.252707,22.081952,settlement,"Aigion, Aigio|Aigion",built|polis,NULL
+3.21.1,Ἀχαιὸν,http://pleiades.stoa.org/places/570028,38.102121472776034,22.224585911364017,region,"Achaea/Achaia (region)",male|Achaian|proxy,NULL
+3.21.1,Εὐρώτα,http://pleiades.stoa.org/places/570248,37.1615197,22.3334931,river,"Eurotas (river)",potamos,NULL
+3.21.1,Ἠλείων,http://topostext.org/place/378215REle,37.8,21.5,NULL,"Eleia or Elis region (Eleia)",historical|Eleans|proxy,NULL
+3.21.2,Πελλάνα,http://topostext.org/place/372223PPel,37.2083,22.3244,NULL,"Pellana (Lakonia)",built|polis,NULL
+3.21.2,Πελλάναν,http://topostext.org/place/372223PPel,37.2083,22.3244,NULL,"Pellana (Lakonia)",built|polis,NULL
+3.21.2,Σπάρτης,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.21.3,Βελεμίνα,http://topostext.org/place/373223UBel,37.2785,22.2869,NULL,"Belemina/Belmina (Lakonia)",place,NULL
+3.21.3,Βελεμίνα,http://topostext.org/place/373223UBel,37.2785,22.2869,NULL,"Belemina/Belmina (Lakonia)",place,NULL
+3.21.3,Εὐρώτα,http://pleiades.stoa.org/places/570248,37.1615197,22.3334931,river,"Eurotas (river)",potamos,NULL
+3.21.3,Λακωνικῆς,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.21.3,Πελλάνας,http://topostext.org/place/372223PPel,37.2083,22.3244,NULL,"Pellana (Lakonia)",built|polis,NULL
+3.21.4,ἄγαλμα,http://arachne.dainst.org/entity/3586375,36.884856,22.548448,NULL,"Cult image: Zeus Krokeatas  Krokeai (Paus. 3.21.4)","object|agalma|Zeus Krokeatas",NULL
+3.21.4,Γύθιον,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",built,NULL
+3.21.4,Διόσκουροι,http://arachne.dainst.org/entity/3888349,36.884856,22.548448,NULL,"Bronze Statues: Diokouroi  Krokeai (Paus. 3.21.4)",object|statue|Dioskouroi|Q190103,"Bronze statues at Krokeai quarries"
+3.21.4,Κροκέαι,http://dare.ht.lu.se/places/28521,36.884856,22.548448,settlement,"Krokeai, Krokees|Krokeai",built|kômê,NULL
+3.21.4,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.21.5,"ἄγαλμα τοῦ θεοῦ",http://arachne.dainst.org/entity/3586376,36.815881,22.519226,NULL,"Cult image: Poseidon  Aigiai (Paus. 3.21.5)",object|agalma|Poseidon,"Aigiai at Lake of Poseidon"
+3.21.5,Αἰγίας,http://topostext.org/place/368225UAig,36.7863,22.5129,NULL,"Aigiai (Lakonia)",built|polisma|Paus,NULL
+3.21.5,Γύθιον,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",built,NULL
+3.21.5,Κροκέας,http://dare.ht.lu.se/places/28521,36.884856,22.548448,settlement,"Krokeai, Krokees|Krokeai",built|kômê,NULL
+3.21.6,Αἰγιῶν,http://topostext.org/place/368225UAig,36.7863,22.5129,NULL,"Aigiai (Lakonia)",built,NULL
+3.21.6,Γύθιον,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",built,NULL
+3.21.6,θαλάσσῃ,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,NULL
+3.21.6,ἰσθμοῦ,http://pleiades.stoa.org/places/570317,37.9510881,22.9602226,isthmus,Isthmos,physical|isthmos,NULL
+3.21.6,Κορινθίων,http://pleiades.stoa.org/places/570182,37.906045,22.878721,"sanctuary,settlement,fort","Corinthus/Korinthos, Korinthos|Akrokorinthos, Akrokorinthos|Akrokorinthos|Corinthus/Korinthos",historical|Corinthians|proxy,NULL
+3.21.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.21.6,Λακωνικῆς,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.21.6,Πελοπόννησος,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.21.6,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.21.6,Φοινίκων,http://pleiades.stoa.org/places/678334,33.25,35.25,region,Phoenice,historical|Phoenicians|proxy,NULL
+3.21.7,Αἰγιῶν,http://topostext.org/place/368225UAig,36.7863,22.5129,NULL,"Aigiai (Lakonia)",built,NULL
+3.21.7,Ἀκριαὶ,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built|polis,NULL
+3.21.7,Ἀλαγονία,http://topostext.org/place/370223UAla,36.9556,22.2612,NULL,"Alagonia? (Messenia)",built|uncertain|polisma,NULL
+3.21.7,Ἀσωπὸς,http://topostext.org/place/367229UAso,36.6845,22.8426,NULL,"Asopos (Lakonia)",built|polis,NULL
+3.21.7,Βοιαὶ,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built|polis,NULL
+3.21.7,Βρασιαὶ,http://dare.ht.lu.se/places/31055,37.144402,22.890275,settlement,"Prasiai, Paralio Leonidi|Prasiai",built|polis,NULL
+3.21.7,Γερηνία,http://dare.ht.lu.se/places/27436,36.927195,22.208656,settlement,"Gerenia/Gerena, Zarnatas?|Geren(i)a",built|polis,NULL
+3.21.7,Γερόνθραι,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built|polis,NULL
+3.21.7,Γύθιον,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",built,NULL
+3.21.7,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.21.7,"Ἐπίδαυρος ἡ Λιμηρὰ",http://dare.ht.lu.se/places/21913,36.731301,23.02637,settlement,"Epidauros Limera, Palaia Monemvasia|Epidauros Limera",built|polis,NULL
+3.21.7,Ζάραξ,http://dare.ht.lu.se/places/31094,36.787,23.088,settlement,"Zarax, Ierakas|Zarax",built|polis,NULL
+3.21.7,Θαλάμαι,http://topostext.org/place/368223PTha,36.7862,22.3257,NULL,"Thalamai (Messenia)",built|polis,NULL
+3.21.7,Καινήπολις,http://dare.ht.lu.se/places/27451,36.460433,22.442714,settlement,"Kainepolis, Kyparissos|Kainepolis",built|polis,NULL
+3.21.7,Λᾶς,http://dare.ht.lu.se/places/30995,36.7279,22.5047,settlement,"Las/La, Passavas, Diro|La(s)",built|polis,NULL
+3.21.7,Λεῦκτρα,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built|polis,NULL
+3.21.7,Μαριός,http://dare.ht.lu.se/places/31012,37.042584,22.819373,settlement,"Marios, Mari|Marios",built|polis,NULL
+3.21.7,Οἴτυλός,http://dare.ht.lu.se/places/31027,36.705058,22.3848,settlement,"Oitylos, Oitylos|Oitylos",built|polis,NULL
+3.21.7,Πύρριχος,http://dare.ht.lu.se/places/31058,36.659054,22.432959,settlement,"Pyrrichos, Pyrrhikos/Kotronas|Pyrrichos",built|polis,NULL
+3.21.7,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.21.7,Ταινάρῳ,http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",physical,NULL
+3.21.7,Τευθρώνη,http://dare.ht.lu.se/places/31077,36.621145,22.489063,settlement,"Teuthrone, Kotronas|Teuthrone",built|polis,NULL
+3.21.8,ἄγαλμά,http://arachne.dainst.org/entity/3586379,36.761727,22.564267,NULL,"Cult image: Asklepios  Githion (Paus. 3.21.8)",object|agalma|Asklepios,NULL
+3.21.8,ἄγαλμα,http://arachne.dainst.org/entity/3586380,36.761727,22.564267,NULL,"Cult image: Poseidon Gaiaochos  Githion (Paus. 3.21.8)","object|agalma|Poseidon Gaiaochos",NULL
+3.21.8,ἀγάλματα,http://arachne.dainst.org/entity/3888350,36.761727,22.564267,NULL,"Group (?): Apollo and Herakles with Tripod (?)  Githion (Paus. 3.21.8)",object|agalma|Herakles|Apollo|Paus,"In agora of Gythion"
+3.21.8,"Ἀπόλλων Κάρνειος",http://arachne.dainst.org/entity/3586378,36.761727,22.564267,NULL,"Statue: Apollo Karneios  Githion (Paus. 3.21.8)","object|agalma|Apollo Karneios|Paus","Elsewhere in Gythion"
+3.21.8,Γυθεᾶται,http://pleiades.stoa.org/places/570268,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",historical|Gytheatai|proxy,NULL
+3.21.8,Διόνυσος,http://arachne.dainst.org/entity/3586377,36.761727,22.564267,NULL,"Statue: Dionysos  Githion (Paus. 3.21.8)",object|agalma|Dionysos|Q41680,"near Apollo and Herakles statues at Gythion"
+3.21.9,ἄγαλμα,http://arachne.dainst.org/entity/3586382,36.761727,22.564267,NULL,"Cult image: Athena  Githion (Paus. 3.21.9)",object|agalma|Athena,NULL
+3.21.9,Γυθεᾶται,http://pleiades.stoa.org/places/570268,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",historical|Gytheatai|proxy,NULL
+3.21.9,θαλάσσῃ,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,NULL
+3.21.9,"ὃν δὲ",http://arachne.dainst.org/entity/3586381,36.761727,22.564267,NULL,"Statue: Geron/Nereus  Githion (Paus. 3.21.9)",object|Geron,NULL
+3.22.1,"ἀργὸς λίθος",http://arachne.dainst.org/entity/3586383,36.761727,22.564267,NULL,"Felsblock: Zeus Kappotas  Githion (Paus. 3.22.1)",object|lithos,"unworked stone of Zeus Kappotas near Gythion"
+3.22.1,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.22.1,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.22.1,Κρανάη,http://dare.ht.lu.se/places/43559,36.75398,22.57391,island,"Kranae, Marathonisi|Kranae (island)",island,"in front of Gythion"
+3.22.2,ἄγαλμα,http://arachne.dainst.org/entity/3888145,36.761727,22.564267,NULL,"Standing statue: Thetis / Themis ?  Githion (Paus. 3.22.2)",object|agalma|Thetis,NULL
+3.22.2,θεὰς,http://arachne.dainst.org/entity/3888351,36.761727,22.564267,NULL,"Standing statues of Praxidikai  Githion (Paus. 3.22.2)",object|agalma|Praxidikai,NULL
+3.22.2,Ἴλιον,http://dare.ht.lu.se/places/21153,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.22.2,Λαρύσιον,http://topostext.org/place/368228LLar,36.754,22.564,NULL,"Larysion Mt. (Lakonia)",oros|hieron|Dionysos,"sacred to Dionysos, above Migonion"
+3.22.2,Τροίας,http://dare.ht.lu.se/places/21153,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.22.3,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.22.3,Ἕλους,http://topostext.org/place/368226UHel,36.8432,22.6075,NULL,"Helos (Lakonia)",built|polis|ereipia,"80 stades beyond Trinasos"
+3.22.3,Τρινασοῦ,http://topostext.org/place/368226FTri,36.796,22.602,NULL,"Trinasos (Lakonia)",built|teichê|Paus,"Fortress on mainland 30 stades left from Gythion"
+3.22.3,Τρινασοῦ,http://topostext.org/place/368226FTri,36.796,22.602,NULL,"Trinasos (Lakonia)",built|teichê,"Fortress on mainland 30 stades left from Gythion"
+3.22.4,ἄγαλμα,http://arachne.dainst.org/entity/3586384,36.789191,22.789944,NULL,"Cult image: Meter  Akriai (Paus. 3.22.4)","object|agalma|Mêtêr Theon",NULL
+3.22.4,ἄγαλμα,http://arachne.dainst.org/entity/3586385,38.61202,27.42646,NULL,"Relief: Meter  Manisa (Paus. 3.22.4)","object|agalma|Mêtêr Theon|opsis",NULL
+3.22.4,Ἀκρίαι,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built|polis,NULL
+3.22.4,Ἀκρίας,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built|proxy,"Those holding Akriai"
+3.22.4,θαλάσσης,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,NULL
+3.22.4,Κοδδίνου,http://pleiades.stoa.org/places/550653,38.585627,27.503594,settlement,"Koddinou Petra, Taş Süret|Koddinou Petra",built|petra,NULL
+3.22.4,Μαγνησί,http://dare.ht.lu.se/places/21172,37.8507,27.52785,settlement,"Magnesia ad Maeandrum/Leukophrys, Tekin|Magnesia ad Sipylum, Manisa|Magnesia ad Maeandrum/Leukophrys|Magnesia ad Sipylum",historical|Magnesians|proxy,NULL
+3.22.4,Μάγνητες,http://dare.ht.lu.se/places/21172,37.8507,27.52785,settlement,"Magnesia ad Maeandrum/Leukophrys, Tekin|Magnesia ad Sipylum, Manisa|Magnesia ad Maeandrum/Leukophrys|Magnesia ad Sipylum",historical|Magnesians|proxy,NULL
+3.22.4,Πελοποννησίοις,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,historical|Peloponnesians|proxy,NULL
+3.22.4,Σιπύλου,http://dare.ht.lu.se/places/41128,38.5668,27.45394,mountain,"Sipylos Mons, Manisa Dağı|Sipylos/Manisa Dağı",oros,NULL
+3.22.5,Ἀκριᾶται,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",historical|Akriatai|proxy,NULL
+3.22.6,Ἀκριῶν,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built,NULL
+3.22.6,Ἀκριῶν,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built,NULL
+3.22.6,Γερόνθραι,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built|polis,NULL
+3.22.6,Γερόνθραις,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built|polis|Paus,NULL
+3.22.6,Γερόνθρας,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built,NULL
+3.22.6,Γερονθρῶν,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built,NULL
+3.22.6,Λακεδαίμονα,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.22.6,Παλαιὰ,http://pleiades.stoa.org/places/570545,36.875634,22.802548,settlement,"Palaia/Pleiai, SW Apidea|Palaia/Pleiai",built|kômê,"on Akriai-Geronthrai road"
+3.22.6,Πελοπόννησον,http://pleiades.stoa.org/places/570577,37.25289777692308,22.312752688461543,"peninsula,region",Peloponnesus/Peloponnesos/Peloponnese,regional,NULL
+3.22.7,ἀγάλματος,http://arachne.dainst.org/entity/3586386,36.99457,22.70505,NULL,"Cult image: Apollo  Geronthrai (Paus. 3.22.7)",object|agalma|Apollo,"ivory head, rest destroyed by fire"
+3.22.8,Γερονθρῶν,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built,NULL
+3.22.8,Γερονθρῶν,http://dare.ht.lu.se/places/27437,36.992193,22.706912,settlement,"Geronthrai, Geraki|Geronthrai",built,NULL
+3.22.8,Γλυππία,http://dare.ht.lu.se/places/27438,37.174817,22.683334,settlement,"Glyppia, Ag. Vasileios|Glyppia",built|kômê,"Beyond Marios, also inland"
+3.22.8,Μαριὸς,http://dare.ht.lu.se/places/31012,37.042584,22.819373,settlement,"Marios, Mari|Marios",built|polisma,NULL
+3.22.8,Μαριός,http://dare.ht.lu.se/places/31012,37.042584,22.819373,settlement,"Marios, Mari|Marios",built|polis,NULL
+3.22.8,Σελινοῦντα,http://topostext.org/place/370227USel,37.035,22.692,NULL,"Selinous (Lakonia)",built|kômê,"20 stadia from Geronthrai on road"
+3.22.9,Ἀκριῶν,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built,NULL
+3.22.9,Ἀκριῶν,http://topostext.org/place/368228UAkr,36.8,22.792,NULL,"Akriai (Lakonia)",built,NULL
+3.22.9,Ἀσωπὸς,http://topostext.org/place/367229UAso,36.6845,22.8426,NULL,"Asopos (Lakonia)",built|polis,"60 stades from Akriae on the sea"
+3.22.9,Ῥωμαίων,http://dare.ht.lu.se/places/1438,41.89262,12.4843457,"settlement,urban","Roma, Roma|Roma",proxy,NULL
+3.22.10,Ἀσκληπιεῖον,http://topostext.org/place/367229SHyp,36.7308,22.9017,NULL,"Hyperteleaton (Lakonia)",built|hieron|Asklepios,NULL
+3.22.10,Ἀσωποῦ,http://topostext.org/place/367229UAso,36.6845,22.8426,NULL,"Asopos (Lakonia)",built,NULL
+3.22.10,Ἀσωποῦ,http://topostext.org/place/367229UAso,36.6845,22.8426,NULL,"Asopos (Lakonia)",polis,NULL
+3.22.10,"ἱερὸν Ἀσκληπιοῦ",http://topostext.org/place/367229SHyp,36.7308,22.9017,NULL,"Hyperteleaton (Lakonia)",built|hieron|Asklepios,"Sanctuary of Asklepios in locality Hyperteleaton"
+3.22.10,"Ὄνου γνάθον",http://topostext.org/place/365229LOno,36.466,22.933,NULL,"Onougnathos cape (Lakonia)",physical|akra,"200 stadia from Asopos"
+3.22.10,Ὑπερτελέατον,http://pleiades.stoa.org/places/570302,36.732977,22.904198,temple,"Hyperteleaton, Chasanaga|Hyperteleaton",chôrion,"site of sanctuary of Asklepios"
+3.22.11,Βοιαὶ,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built|polis,"toward the edge of the Boiatic gulf"
+3.22.11,Ἤτιδος,http://topostext.org/place/368228PEti,36.489,23.066,NULL,"Etis? (Lakonia)",built|polis,"incorporated into Boiai"
+3.22.11,Ἰταλίαν,http://pleiades.stoa.org/places/1052,42.5,12.5,region,Italia,regional,NULL
+3.22.11,Σίδης,http://topostext.org/place/363233PSid,36.476,23.164,NULL,"Side (Lakonia)",built|polis,"incorporated in Boiai"
+3.22.13,ἄγαλμα,http://arachne.dainst.org/entity/3586387,36.512414,23.05791,NULL,"Statue: Hermes  Boiai (Paus. 3.22.13)",object|agalma|Hermes,NULL
+3.22.13,Βοιατῶν,http://topostext.org/place/365231PBoi,36.517,23.062,NULL,"Boiai (Lakonia)",historical|Boiatai|proxy,NULL
+3.22.13,Βοιῶν,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built,NULL
+3.22.13,Ἤτιδος,http://topostext.org/place/368228PEti,36.489,23.066,NULL,"Etis? (Lakonia)",built|polis|ereipia,"ruins of Etis less than 7 stadia from Boiai"
+3.23.1,Βοιῶν,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built,NULL
+3.23.1,Ἕλλησίν,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,historical|Hellenes|proxy,NULL
+3.23.1,"θεὸς ξόανον ὡπλισμένον",http://arachne.dainst.org/entity/3586388,36.25139,23.01806,NULL,"Cult image: Aphrodite Urania  Kythera (Paus. 3.23.1)","object|xoanon|Aphrodite Ourania|Paus",armed
+3.23.1,Κύθηρα,http://pleiades.stoa.org/places/570186,36.26229,22.97822,"island,settlement","Cythera Ins., Kythira|Kythera, Kythera|Cythera Ins.|Kythera",island,NULL
+3.23.1,Κύθηρα,http://pleiades.stoa.org/places/570400,36.26229,22.97822,"island,settlement","Cythera Ins., Kythira|Kythera, Kythera|Cythera Ins.|Kythera",built|polis|Paus,NULL
+3.23.1,Κυθήροις,http://pleiades.stoa.org/places/570186,36.26229,22.97822,"island,settlement","Cythera Ins., Kythira|Kythera, Kythera|Cythera Ins.|Kythera",island,NULL
+3.23.1,"Ὄνου γνάθου",http://topostext.org/place/365229LOno,36.466,22.933,NULL,"Onougnathos cape (Lakonia)",akra,NULL
+3.23.1,Πλατανιστοῦντα,http://topostext.org/place/363230LPla,36.3852,22.9503,NULL,"Platanistos cape (Kythera)",akra,NULL
+3.23.1,Πλατανιστοῦντα,http://topostext.org/place/363230LPla,36.3852,22.9503,NULL,"Platanistos cape (Kythera)",akra,NULL
+3.23.1,Σκάνδειά,http://dare.ht.lu.se/places/31066,36.229899,23.073782,settlement,"Skandeia, Ag. Nikolaos|Skandeia",built|epineion|Paus,NULL
+3.23.1,Σκανδείας,http://dare.ht.lu.se/places/31066,36.229899,23.073782,settlement,"Skandeia, Ag. Nikolaos|Skandeia",epineion,NULL
+3.23.2,Βοιῶν,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built,NULL
+3.23.2,Ἐπιδήλιον,http://topostext.org/place/368233UEpi,36.64,23.03,NULL,"Epidelion (Lakonia)",built|sanctuary|Apollo|Paus,"100 stades after Cape Malea"
+3.23.2,Μαλέας,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",akra,NULL
+3.23.2,Μαλέας,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",akra|Paus,NULL
+3.23.2,Νύμφαιον,http://topostext.org/place/364232UNym,36.43,23.136,NULL,"Nymphaion (Lakonia)",built|limên|Paus,NULL
+3.23.2,"Ποσειδῶνος ἄγαλμα ὀρθὸν",http://arachne.dainst.org/entity/3586389,36.445281,23.158946,NULL,"Cult image: Poseidon  Nymphaion (Paus. 3.23.2)",object|agalma|Poseidon|Paus,standing
+3.23.3,"Ἀπόλλωνος ξόανον",http://arachne.dainst.org/entity/3586390,36.535521,23.151133,NULL,"Cult image: Apollo  Epidelion (Paus. 3.23.2-5)",object|xoanon|Apollo|Paus,"from Delos"
+3.23.3,Δήλου,http://dare.ht.lu.se/places/22862,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",built|emporion,NULL
+3.23.3,Δήλῳ,http://dare.ht.lu.se/places/22686,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",built|hieron,NULL
+3.23.3,Ἕλλησιν,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,historical|Hellenes|proxy,NULL
+3.23.4,Βοιατῶν,http://topostext.org/place/365231PBoi,36.517,23.062,NULL,"Boiai (Lakonia)",historical|Boiatai|proxy,NULL
+3.23.4,Δηλίους,http://dare.ht.lu.se/places/22862,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",historical|Delians|proxy,NULL
+3.23.4,Δῆλον,http://dare.ht.lu.se/places/22862,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",built,"flattened by Menophanes"
+3.23.4,Δήλου,http://dare.ht.lu.se/places/22862,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",built,unwalled
+3.23.4,Ἐπιδήλιον,http://topostext.org/place/368233UEpi,36.64,23.03,NULL,"Epidelion (Lakonia)",built|sanctuary|Apollo,NULL
+3.23.4,ξόανον,http://arachne.dainst.org/entity/3586390,36.535521,23.151133,NULL,"Cult image: Apollo  Epidelion (Paus. 3.23.2-5)",object|Q693222|xoanon|attribute,NULL
+3.23.5,Δῆλον,http://dare.ht.lu.se/places/22686,37.397274,25.268194,"architecturalcomplex,sanctuary,monument,island,settlement,plaza","Delos, Delos|Apollo, Apollo, Delos|Delos Ins., Delos|Sanctuary of Apollo on Delos|Delos (settlement)|Delos (island)",built|hieron,NULL
+3.23.5,Ῥωμαίων,http://dare.ht.lu.se/places/1438,41.89262,12.4843457,"settlement,urban","Roma, Roma|Roma",historical|Romans|proxy,NULL
+3.23.6,Ἀργολίδι,http://pleiades.stoa.org/places/570104,37.6566371145232,22.92059272180843,region,Argolis,regional,NULL
+3.23.6,Βοιαῶν,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built,"border of Boiai with Epidauros Limera"
+3.23.6,Ἐπιδαυρίων,http://topostext.org/place/376232PEpi,37.6335,23.1602,NULL,"Epidauros (Argolid)",historical|Epidaurians|proxy,NULL
+3.23.6,"Ἐπίδαυρός ἐστιν ἡ Λιμηρά",http://topostext.org/place/367230UEpi,36.731,23.026,NULL,"Epidauros Limera (Lakonia)",built|polis,"200 stadia from Epidelion"
+3.23.6,Ἐπιδηλίου,http://topostext.org/place/368233UEpi,36.64,23.03,NULL,"Epidelion (Lakonia)",built,NULL
+3.23.6,Κῶν,http://pleiades.stoa.org/places/599581,36.844,27.17,island,"Kos/Cos, Kos|Kos/Cos (island)",island,NULL
+3.23.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.23.6,Λακωνικῆς,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.23.7,Ἐπιδαύρου,http://dare.ht.lu.se/places/22612,37.596111,23.079167,"theatre,sanctuary,settlement","Asklepieion, Asklipieio|Epidauros, Palaia Epidauros|The Sanctuary of Asklepios at Epidauros|Epidauros",built,NULL
+3.23.9,Αἴτνῃ,http://dare.ht.lu.se/places/23686,37.751113,14.9958286,mountain,"Aetna Mons, Etna|Aetna M.",oros|crater,NULL
+3.23.10,"ἄγαλμα ὀρθὸν λίθου",http://arachne.dainst.org/entity/3586391,37.59669,23.07524,NULL,"Cult image: Asklepios  Epidauros (Paus. 3.23.10)",object|agalma|Asklepios,"Standing stone statue"
+3.23.10,Βοιῶν,http://dare.ht.lu.se/places/23295,36.5121752,23.06003809999993,settlement,"Boiai/Boia, Neapoli Vion|Boia(i)",built,NULL
+3.23.10,"Ἐπίδαυρον τὴν Λιμηρὰν",http://topostext.org/place/367230UEpi,36.731,23.026,NULL,"Epidauros Limera (Lakonia)",built,NULL
+3.23.11,Λακωνικὴ,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.23.11,Μινῴα,http://dare.ht.lu.se/places/43580,36.68818,23.0502,cape,"Minoa Pr., Monemvasia|Minoa Pr.",akra,NULL
+3.24.1,"ἄγαλμα κιθάραν ἔχον",http://arachne.dainst.org/entity/3586392,36.786089,23.087935,NULL,"Cult image: Apollo  Zarax (Paus. 3.24.1)",object|agalma|Apollo,NULL
+3.24.1,Ἐπιδαύρου,http://topostext.org/place/367230UEpi,36.731,23.026,NULL,"Epidauros Limera (Lakonia)",built,NULL
+3.24.1,Ζάρακι,http://dare.ht.lu.se/places/31094,36.787,23.088,settlement,"Zarax, Ierakas|Zarax",built,NULL
+3.24.1,Ζάραξ,http://dare.ht.lu.se/places/31094,36.787,23.088,settlement,"Zarax, Ierakas|Zarax",built|chôrion,"Good-harbor chorion"
+3.24.1,Λακωνικῶν,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.24.2,Ζάρακος,http://dare.ht.lu.se/places/31094,36.787,23.088,settlement,"Zarax, Ierakas|Zarax",built,NULL
+3.24.2,Κυφάντων,http://topostext.org/place/370230PKyp,36.9683,22.9925,NULL,"Kyphanta (Lakonia)",built|ereipia|Paus,"north 100 stadia from Zarax by the sea, and turn inland 10 stades."
+3.24.2,"λίθου δὲ τὸ ἄγαλμα",http://arachne.dainst.org/entity/3586393,36.974754,22.988269,NULL,"Cult image: Asklepios  Kyphanta (Paus. 3.24.2)",object|agalma|Asklepios,"stone statue"
+3.24.3,Βρασιαὶ,http://dare.ht.lu.se/places/31055,37.144402,22.890275,settlement,"Prasiai, Paralio Leonidi|Prasiai",built|polis|Paus,"200 stadia sail from Kyphanta"
+3.24.3,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.24.3,Κυφάντων,http://topostext.org/place/370230PKyp,36.9683,22.9925,NULL,"Kyphanta (Lakonia)",built,NULL
+3.24.4,Βρασιὰς,http://dare.ht.lu.se/places/31055,37.144402,22.890275,settlement,"Prasiai, Paralio Leonidi|Prasiai",built,NULL
+3.24.4,Βρασιᾶται,http://topostext.org/place/371229PPra,37.145,22.8882,NULL,"Prasiai (Arkadia)",historical|Brasiatai|proxy,NULL
+3.24.4,Ὀρειάτας,http://pleiades.stoa.org/places/570629,37.144402,22.890275,settlement,"Prasiai, Paralio Leonidi|Prasiai",polis,"Oreiatai old name"
+3.24.5,ἄγαλμα,http://arachne.dainst.org/entity/3888146,37.149,22.882,NULL,"Statuette: Athena  Prasiai (Paus. 3.24.5)",object|agalma|Athena,NULL
+3.24.5,Βρασιαῖς,http://dare.ht.lu.se/places/31055,37.144402,22.890275,settlement,"Prasiai, Paralio Leonidi|Prasiai",built,NULL
+3.24.5,"χαλκοῖ ποδιαίων ἑστήκασιν οὐ μείζονες",http://arachne.dainst.org/entity/3888352,37.149,22.882,NULL,"Bronze statues of the Diokouroi / Korybanten / Kabiren?  Prasiai (Paus. 3.24.5)",object|statuette|Dioskouroi,"Three statues a foot high on promontory of Brasiai, Dioskouroi or Korybants"
+3.24.6,ἄγαλμα,http://arachne.dainst.org/entity/3586394,36.727888,22.505241,NULL,"Cult image: Herakles  Las (Paus. 3.24.6)",object|agalma|Herakles,NULL
+3.24.6,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.24.6,Γυθίου,http://dare.ht.lu.se/places/21912,36.763663,22.562341,"settlement,port","Gytheion/Gythion, Githeo|Gyth(e)ion",NULL,NULL
+3.24.6,θαλάσσης,http://topostext.org/place/367227WLac,36.66,22.71,NULL,"Laconian Gulf (Lakonia)",thalassa,NULL
+3.24.6,Λακωνικὴν,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional,NULL
+3.24.6,Λᾶς,http://dare.ht.lu.se/places/30995,36.7279,22.5047,settlement,"Las/La, Passavas, Diro|La(s)",built|polis,"10 stadia from the sea, 40 stadia from Gythion"
+3.24.6,Μακεδόνων,http://topostext.org/place/408225RMak,40.81,22.5,NULL,"Macedonia region (Greece)",historical|Macedonians|proxy|army,NULL
+3.24.6,τρόπαιον,http://arachne.dainst.org/entity/3586396,36.727888,22.505241,NULL,"Tropaion  Las (Paus. 3.24.6)",built|tropaion,"Trophy in front of walls of Las, over Macedonians, time of Philip"
+3.24.7,"ἄγαλμα ἀρχαῖον",http://arachne.dainst.org/entity/3586395,36.727888,22.505241,NULL,"Statue: Hermes  Las (Paus. 3.24.7)",object|agalma|Hermes,NULL
+3.24.7,Κόλχοι,http://pleiades.stoa.org/places/863770,42.5,42.5,region,Colchis/Lazike,mythical|Colchians|proxy,NULL
+3.24.7,Κόλχοις,http://pleiades.stoa.org/places/863770,42.5,42.5,region,Colchis/Lazike,mythical|Colchians|proxy,NULL
+3.24.7,Κόλχων,http://pleiades.stoa.org/places/863770,42.5,42.5,region,Colchis/Lazike,mythical|Colchians|proxy,NULL
+3.24.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.24.7,πόλεως,http://pleiades.stoa.org/places/570417,36.7279,22.5047,settlement,"Las/La, Passavas, Diro|La(s)",built|polis|tx:Paus,Las
+3.24.8,Σπαρτιατῶν,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",historical|Spartiates|proxy|Q369194|attribute,NULL
+3.24.9,πόλεως,http://dare.ht.lu.se/places/30995,36.7279,22.5047,settlement,"Las/La, Passavas, Diro|La(s)",built|polis,NULL
+3.24.9,Σμῆνος,http://topostext.org/place/368223WSme,36.727,22.501,NULL,"Smenos R. (Lakonia)",potamos,"5 stades distant from Las, springs on Taygetos"
+3.24.9,Ταϋγέτῳ,http://dare.ht.lu.se/places/41218,36.9528148,22.3503405,mountain,"Taygetos Mons, Taygetos|Taygetos M.",oros,NULL
+3.24.10,ἀνδριὰς,http://arachne.dainst.org/entity/3586397,36.69704,22.521276,NULL,"Grave figure: Las (founder of the city)  Arainon (Paus. 3.24.10)",object|andrias,"portrait statue on mnema"
+3.24.10,Ἀραΐνῳ,http://dare.ht.lu.se/places/27407,36.69704,22.521276,settlement,"Arainon, Ageranos|Arainon",chôrion|Paus,NULL
+3.24.11,Τροίαν,http://pleiades.stoa.org/places/550595,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.25.1,Πύρριχος,http://dare.ht.lu.se/places/31058,36.659054,22.432959,settlement,"Pyrrichos, Pyrrhikos/Kotronas|Pyrrichos",built|polis,"40 stades from the Skyras river, inland"
+3.25.1,Σκύρας,http://topostext.org/place/367225WSky,36.68812,22.51748,NULL,"Skyras R. (Lakonia)",potamos,NULL
+3.25.1,Σκύρου,http://pleiades.stoa.org/places/541093,38.82754,24.6099,"island,settlement","Scyrus Ins., Skyros|Skyros, Kastro, Skyros|Scyrus (island)|Skyros",island,NULL
+3.25.2,Μαλέᾳ,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",akra,NULL
+3.25.2,Μαλέαν,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",akra,NULL
+3.25.2,Μαλέας,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",akra,NULL
+3.25.2,Μαλέας,http://dare.ht.lu.se/places/43582,36.43603,23.19975,cape,"Malea Pr., Akr. Maleas|Malea Pr.",oros,NULL
+3.25.3,ἀμφότερα,http://arachne.dainst.org/entity/3586399,36.656646,22.438765,NULL,"Cult image: Apollo Amazonios  Pyrrhichos (Paus. 3.25.3)","object|xoanon|Apollo Amazonios",NULL
+3.25.3,Θερμώδοντος,http://pleiades.stoa.org/places/857352,41.1939559,36.9424975,river,"Thermodon (river)",potamos|mythical,"river of the Amazons"
+3.25.3,ξόανα,http://arachne.dainst.org/entity/3586398,36.656646,22.438765,NULL,"Cult image: Artemis Astrateia  Pyrrhichos (Paus. 3.25.3)","object|xoanon|Artemis Astrateia|Paus|Q693222",NULL
+3.25.3,Πυρρίχῳ,http://dare.ht.lu.se/places/31058,36.659054,22.432959,settlement,"Pyrrichos, Pyrrhikos/Kotronas|Pyrrichos",built,NULL
+3.25.4,ἄγαλμα,http://arachne.dainst.org/entity/3586400,36.39352,22.482276,NULL,"Cult image: Poseidon Tainarios  Kap Tenaro (Paus. 3.25.4)",object|agalma|Poseidon,NULL
+3.25.4,Ἀθηναῖον,http://dare.ht.lu.se/places/10975,37.971687,23.726464,settlement,"Athenae, Athína|Athenae",male|Athenian|proxy,NULL
+3.25.4,Ἀχίλλειός,http://topostext.org/place/363223HAcL,36.423,22.474,NULL,"Achilleios harbor (Lakonia)",built|limên,NULL
+3.25.4,Πυρρίχου,http://dare.ht.lu.se/places/31058,36.659054,22.432959,settlement,"Pyrrichos, Pyrrhikos/Kotronas|Pyrrichos",built,NULL
+3.25.4,Ταίναρον,http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",akra,NULL
+3.25.4,Τευθρώνη,http://dare.ht.lu.se/places/31077,36.621145,22.489063,settlement,"Teuthrone, Kotronas|Teuthrone",built|polis,NULL
+3.25.4,Τευθρώνη,http://dare.ht.lu.se/places/31077,36.621145,22.489063,settlement,"Teuthrone, Kotronas|Teuthrone",built|polis,NULL
+3.25.4,Ψαμαθοῦς,http://topostext.org/place/364225UPsa,36.4372,22.4824,NULL,"Psamathous (Lakonia)",built|limên,NULL
+3.25.5,Ἑλλήνων,http://pleiades.stoa.org/places/1001896,37.5,22.5,province,Hellas,regional|Hellenes|proxy,NULL
+3.25.5,Μιλήσιος,http://dare.ht.lu.se/places/21166,37.5292362,27.2774885,"theatre,settlement,port","Miletos/Miletus, Milet, Balat, Didim|Miletus",male|Milesian|proxy,NULL
+3.25.5,Ταινάρῳ,http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",akra|Paus,NULL
+3.25.7,"Ἀρίων ὁ κιθαρῳδὸς",http://arachne.dainst.org/entity/3586401,36.39352,22.482276,NULL,"Statue: Arion  Kap Tenaro (Paus. 3.25.7)",object|statue|Paus,"Arion the kitharode on dolphin, bronze"
+3.25.7,Ποροσελήνῃ,http://dare.ht.lu.se/places/27351,39.336684,26.654808,settlement,"Pordoselene/Poroselene/Nasos, Alibey Adası|Por(d)oselene/Nasos",built,NULL
+3.25.7,Ταινάρῳ,http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",akra,NULL
+3.25.8,Ταινάρῳ,http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",akra,NULL
+3.25.9,"ἄγαλμα ὀρθὸν λίθου",http://arachne.dainst.org/entity/3586402,36.4018,22.4867,NULL,"Cult image: Aphrodite  Tainaron (Paus. 3.25.9)",object|agalma|Aphrodite|Paus,"Standing agalma at temple of Aphrodite in Kainepolis"
+3.25.9,Θυρίδες,http://dare.ht.lu.se/places/41219,36.46799,22.39224,cape,"Thyrides Pr., Ákra Poúnda|Thyrides",akra,NULL
+3.25.9,Ἱππόλας,http://dare.ht.lu.se/places/27447,36.503959,22.362287,settlement,"Hippola, Kipoula|Hippola",built|polis|ereipia,"30 stadia from Kainepolis"
+3.25.9,Καινήπολις,http://dare.ht.lu.se/places/27451,36.460433,22.442714,settlement,"Kainepolis, Kyparissos|Kainepolis",built|polis|Paus,"40 stadia from Tainaron cape by sea"
+3.25.9,μέγαρον,http://topostext.org/place/365224SDeK,36.462,22.4359,NULL,"Demeter megaron Kainepolis (Lakonia)",built|megaron|Demeter,NULL
+3.25.9,Μέσσα,http://topostext.org/place/365224UMes,36.541,22.367,NULL,"Messa? (Lakonia)",built|polis|limên,NULL
+3.25.9,ναός,http://topostext.org/place/365224SApK,36.4632,22.4352,NULL,"Aphrodite temple (Kainepolis)",built|naos|Aphrodite,"Temple of Aphrodite at Kainepolis"
+3.25.9,Ταίναρον,http://dare.ht.lu.se/places/22614,36.401551,22.4866293,settlement,"Tainaron/Tainaros/Taenarum/Taenaros, Tainaron|Tainaron (settlement)",built|polis,"Same as Kainepolis?"
+3.25.9,Ταινάρου,http://dare.ht.lu.se/places/22614,36.401551,22.4866293,settlement,"Tainaron/Tainaros/Taenarum/Taenaros, Tainaron|Tainaron (settlement)",akra,NULL
+3.25.9,"Ταινάρου δὲ τῆς ἄκρας",http://dare.ht.lu.se/places/41220,36.3856534,22.4831905,cape,"Tainaron Pr., Akrotírio Ténaro|Tainaron Pr.",akra,NULL
+3.25.10,Ἀργεῖος,http://dare.ht.lu.se/places/21779,37.631561,22.719464,settlement,"Argos, Argos|Argos",male|proxy,NULL
+3.25.10,ξόανον,http://arachne.dainst.org/entity/3586403,36.707275,22.38694,NULL,"Statue: Apollo Karneios  Oitylos (Paus. 3.25.10)","object|Apollo Karneios|Q693222|xoanon|attribute",NULL
+3.25.10,Οἴτυλον,http://dare.ht.lu.se/places/31027,36.705058,22.3848,settlement,"Oitylos, Oitylos|Oitylos",built|polis|Paus,"150 stades from Messa harbor"
+3.25.10,Οἰτύλῳ,http://dare.ht.lu.se/places/31027,36.705058,22.3848,settlement,"Oitylos, Oitylos|Oitylos",built,NULL
+3.26.1,ἕτερον,http://arachne.dainst.org/entity/3586404,36.78502,22.32952,NULL,"Statue: Helios (zusammengehördend with Pasiphae/Selene?)  Thalames (Paus. 3.26.1)",object|agalma|Helios,"bronze statue of Helios in open air"
+3.26.1,Θαλάμας,http://topostext.org/place/368223PTha,36.7862,22.3257,NULL,"Thalamai (Messenia)",built,"80 stadia by road from Oitylos"
+3.26.1,Θαλαμάταις,http://topostext.org/place/368223PTha,36.7862,22.3257,NULL,"Thalamai (Messenia)",historical|Thalamatai|proxy,NULL
+3.26.1,Οἰτύλου,http://dare.ht.lu.se/places/31027,36.705058,22.3848,settlement,"Oitylos, Oitylos|Oitylos",built,NULL
+3.26.1,Πασιφάης,http://arachne.dainst.org/entity/3586413,36.78502,22.32952,NULL,"Statue: Pasiphae (= Selene? together with Helios?)  Thalames (Paus. 3.26.1)",object|agalma|Pasiphae|Paus,"bronze statue in open air at sanctuary of Ino, with Helios"
+3.26.1,"χαλκοῦν δὲ καὶ τοῦτο",http://arachne.dainst.org/entity/3586405,36.78502,22.32952,NULL,"Cult image: Ino  Thalames (Paus. 3.26.1)",object|agalma|Paus,"Bronze statue covered with wreathes so impossible to see"
+3.26.2,Θαλαμᾶται,http://topostext.org/place/368223PTha,36.7862,22.3257,NULL,"Thalamai (Messenia)",historical|Thalamatai|proxy,NULL
+3.26.2,Θαλαμῶν,http://topostext.org/place/368223PTha,36.7862,22.3257,NULL,"Thalamai (Messenia)",built,NULL
+3.26.2,Πελλάναν,http://pleiades.stoa.org/places/570576,38.0446,22.5384,settlement,"Pellene/Pellana, Pellene|Pellene",built|polis,NULL
+3.26.2,Πέφνος,http://dare.ht.lu.se/places/31039,36.812375,22.296786,settlement,Pephnos|Pephnos,built|Paus,"20 stadia from Thalamai on the sea"
+3.26.3,"ἀγάλματα Διοσκούρων χαλκᾶ",http://arachne.dainst.org/entity/3888353,36.815469,22.296324,NULL,"Standing statues of Diokouroi  Pephnos (Paus. 3.26.2-3)",object|agalma|Dioskouroi|Paus,"Foot-high statues in open air on the islet of Pephnos"
+3.26.3,Λακεδαιμονίοις,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.26.3,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.26.4,"Ἀσκληπιοῦ τε ἄγαλμα",http://arachne.dainst.org/entity/3586406,36.843766,22.266553,NULL,"Cult image: Asklepios  Leuktra (Paus. 3.26.4)",object|agalma|Asklepios,"stone statue"
+3.26.4,Ἰνοῦς,http://arachne.dainst.org/entity/3586407,36.843766,22.266553,NULL,"Statue: Ino  Leuktra (Paus. 3.26.4)",object|agalma|Ino|Q223690,"elsewhere in Leuktra"
+3.26.4,Λεῦκτρα,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built|polis|Paus,NULL
+3.26.4,Λεῦκτρα,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built,NULL
+3.26.4,Μεσσήνιοί,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.26.4,Πέφνου,http://dare.ht.lu.se/places/31039,36.812375,22.296786,settlement,Pephnos|Pephnos,built,NULL
+3.26.5,ἄγαλμα,http://arachne.dainst.org/entity/3586410,36.843766,22.266553,NULL,"Statue: Athena  Leuktra (Paus. 3.26.5)",object|agalma|Athena,NULL
+3.26.5,ἄγαλμα,http://arachne.dainst.org/entity/3586408,36.843766,22.266553,NULL,"Cult image: Kassandra /Alexandra  Leuktra (Paus. 3.26.5)",object|agalma|Kassandra,NULL
+3.26.5,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.26.5,Λεύκτροις,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built,NULL
+3.26.5,ξόανά,http://arachne.dainst.org/entity/3586409,36.843766,22.266553,NULL,"Statue: Apollo Karneios (several)  Leuktra (Paus. 3.26.5)","object|xoanon|Apollo Karneios|Q693222",NULL
+3.26.5,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.26.6,ἄγαλμα,http://arachne.dainst.org/entity/3586411,36.843766,22.266553,NULL,"Statue: Zeus Ithomatas  Leuktra (Paus. 3.26.6)","object|agalma|Zeus Ithômatas",NULL
+3.26.6,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.26.6,Λεῦκτρα,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",NULL,NULL
+3.26.6,Λεῦκτρα,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built,NULL
+3.26.6,Μεσσηνίας,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.26.6,Μεσσήνιοί,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.26.6,"χώρᾳ τῆς Λευκτρικῆς",http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",chôra,"Seaside area of Leuktra"
+3.26.7,Καρδαμύλη,http://dare.ht.lu.se/places/28512,36.884777,22.237649,settlement,"Kardamyle, Kardamyle|Kardamyle",built|polisma,"8 stades from sea, 60 stadia from Leuktra"
+3.26.7,Καρδαμύλη,http://dare.ht.lu.se/places/28512,36.884777,22.237649,settlement,"Kardamyle, Kardamyle|Kardamyle",built,NULL
+3.26.7,Λακεδαιμονίων,http://pleiades.stoa.org/places/570406,37.07624042080912,22.46082645177671,region,Lacedaemon/Laconia,regional|Lakedaimonians|proxy,NULL
+3.26.7,Λεύκτρων,http://dare.ht.lu.se/places/31002,36.84279,22.26501,settlement,"Leuktron, Stoupa|Leuktron",built,"60 stades from Kardamyle"
+3.26.7,Μεσσηνίας,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,regional,NULL
+3.26.7,Σπάρτῃ,http://pleiades.stoa.org/places/570685,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.26.7,Σπάρτην,http://dare.ht.lu.se/places/21911,37.08149,22.42454,"theatre,temple,settlement,temple-2","Sparta/Sparte, Sparti|Sparta",built|polis,NULL
+3.26.8,Γερηνίαν,http://topostext.org/place/369222UGer,36.934,22.195,NULL,"Gerenia? (Messenia)",built|polis,NULL
+3.26.8,Μεσσηνίους,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.26.8,Πύλος,http://topostext.org/place/370217XNes,37.027,21.695,NULL,"Pylos/Palace of Nestor (Messenia)",built|polis,NULL
+3.26.9,"ἄγαλμα δὲ τοῦ Μαχάονος χαλκοῦν",http://arachne.dainst.org/entity/3586412,36.931335,21.805801,NULL,"Cult image: Machaon  Gerenia (Paus. 3.26.9)",object|agalma|Machaon,"bronze statue, upright"
+3.26.9,Γερηνίᾳ,http://topostext.org/place/369222UGer,36.934,22.195,NULL,"Gerenia? (Messenia)",built,NULL
+3.26.9,Μεσσήνιοι,http://pleiades.stoa.org/places/570480,37.06945533333334,21.9323415,region,Messenia,historical|Messenians|proxy,NULL
+3.26.10,Ἀσκληπιεῖον,http://pleiades.stoa.org/places/550459,39.118873,27.165609,settlement,"Asklepieion, Asklepieion|Asklepieion",built|hieron|Asklepios|opsis,"Asklepieion of Pergamon"
+3.26.10,Ἴλιον,http://dare.ht.lu.se/places/21153,39.9577,26.23873,settlement,"Ilium/Troia, Hisarlık|Ilium/Troia",battlefield,NULL
+3.26.10,"Καρικῆς ἠπείρου",http://pleiades.stoa.org/places/991381,37.213163833551015,28.088996902733474,province,Caria,regional|êpeiros,"Coastal Caria"
+3.26.10,Περγάμῳ,http://dare.ht.lu.se/places/21158,39.1325,27.184167,"theatre,sanctuary,settlement,temple-2","Pergamon/Pergamum, Bergama, İzmir|Pergamum",built,NULL
+3.26.10,Σύρνον,http://dare.ht.lu.se/places/30798,36.720882,28.196786,settlement,"Syrna, Bayır|Syrna",built|uncertain,NULL
+3.26.11,Ἀλαγονία,http://topostext.org/place/370223UAla,36.9556,22.2612,NULL,"Alagonia? (Messenia)",built|polisma|uncertain,NULL
+3.26.11,Γερηνίας,http://topostext.org/place/369222UGer,36.934,22.195,NULL,"Gerenia? (Messenia)",built|polis,NULL
+3.26.11,Γερηνίας,http://topostext.org/place/369222UGer,36.934,22.195,NULL,"Gerenia? (Messenia)",built|polis,NULL
+3.26.11,Καλάθιόν,http://pleiades.stoa.org/places/570324,36.92565,22.17928,mountain,"Kalathion Mons, Ag. Georgios|Kalathion M.",physical|oros,NULL

@@ -1,0 +1,20 @@
+
+.plup_list_files {
+    display: table;
+    border: 1px solid #ddd;
+}
+
+.plup_list_files div {
+    display: table-row;
+    padding: 4px;
+}
+
+.plup_list_files div:nth-child(even) {
+    background: #eee;
+}
+
+.plup_list_files div>* {
+    display: table-cell;
+    padding: 3px 8px;
+    border: 1px solid #ddd;
+}
