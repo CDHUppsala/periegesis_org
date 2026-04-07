@@ -80,17 +80,18 @@ docker-compose up -d
 ```
 
 ### Configuration (Environment Variables)
-The Docker setup uses environment variables to configure the application. These are defined in `docker-compose.yml`:
+The Docker setup uses environment variables to configure the application. These are defined in the `.env` file and passed to the containers in `docker-compose.yml`:
 
-| Variable | Description | Default in Compose |
-| --- | --- | --- |
-| `DB_HOST` | Database hostname | `db` |
+| Variable | Description | Default in .env    |
+| --- | --- |--------------------|
+| `DB_HOST` | Database hostname | `db`               |
 | `DB_NAME` | Database schema name | `ps_uu_periegesis` |
-| `DB_USER` | Database username | `ps_uu_DigitalPeriegesis` |
-| `DB_PASS` | Database password | `ps_uu_V453-O821-D974` |
-| `SITE_SOCKET` | Protocol (http:// or https://) | `http://` |
-| `SITE_URL` | Site hostname and port | `localhost:8044` |
-| `CHECK_TRUE_SITE`| Enable canonical URL check | `false` |
+| `DB_USER` | Database username | `username`         |
+| `DB_PASS` | Database password | `password`         |
+| `DB_CHARSET`| Database character set | `utf8mb4`          |
+| `SITE_SOCKET` | Protocol (http:// or https://) | `http://`          |
+| `SITE_URL` | Site hostname and port | `localhost:8080`    |
+| `CHECK_TRUE_SITE`| Enable canonical URL check | `false`            |
 
 ### Setup (Manual/Local)
 If you prefer not to use Docker, follow these steps:

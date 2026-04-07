@@ -4,10 +4,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE:
-      MYSQL_USER:
-      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
     volumes:
       - db_data:/var/lib/mysql
       # Initial database dump for initialization
@@ -24,13 +24,14 @@ services:
     ports:
       - "8044:80"
     environment:
-      - DB_HOST=db
-      - DB_NAME=
-      - DB_USER=
-      - DB_PASS=
-      - DB_CHARSET=utf8mb4
-      - SITE_SOCKET=http://
-      - SITE_URL=
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_CHARSET=${DB_CHARSET}
+      - SITE_SOCKET=${SITE_SOCKET}
+      - SITE_URL=${SITE_URL}
+      - CHECK_TRUE_SITE=${CHECK_TRUE_SITE}
     depends_on:
       db:
         condition: service_healthy
