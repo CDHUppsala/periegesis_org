@@ -10,7 +10,14 @@ if (in_array($request_Table, $arr_NotAddableTables)) {
     exit();
 }
 ?>
-<?php include __DIR__ . "/functionsAddEdit.php"; ?>
+<?php
+include __DIR__ . "/functionsAddEdit.php";
+
+if ($is_AutoincrementPK === false) {
+    Header("Location: main.php?strMsg=noPK");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,18 +80,13 @@ if (in_array($request_Table, $arr_NotAddableTables)) {
 
                             <?php
                             $radioMemoExists = false;
-                            if ($i == 0) {
-                                if ($boolIsAuto) { ?>
-                                    <td>
-                                        <input class="button floatRight" type="submit" name="DefaultMode" value="<?= lngEdit ?>">
-                                        <input class="button floatRight" type="submit" name="AddPureText" value="<?= lngAdd ?>">
-                                        <p><?= lngAutoNumber ?> <?= sx_getHelpForJava($xName, $strHelp) ?></p>
-                                    </td>
+                            if ($i == 0) { ?>
+                                <td>
+                                    <input class="button floatRight" type="submit" name="DefaultMode" value="<?= lngEdit ?>">
+                                    <input class="button floatRight" type="submit" name="AddPureText" value="<?= lngAdd ?>">
+                                    <p><?= lngAutoNumber ?> <?= sx_getHelpForJava($xName, $strHelp) ?></p>
+                                </td>
                                 <?php
-                                } else {
-                                    Header("Location: main.php?strMsg=noPK");
-                                    exit;
-                                }
                             } else {
                                 if ($xType == "BLOB") {
                                     $radioMemoExists = true; ?>
@@ -132,8 +134,13 @@ if (in_array($request_Table, $arr_NotAddableTables)) {
                                 ?>
                                     <td><?php sx_getRelationInputs($xName, $strRFVAdd, $strRFV) ?> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
                                 <?php
-                                } else { ?>
-                                    <td><input type="text" name="<?= $xName ?>"> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
+                                } else {
+                                    $readonly = '';
+                                    if ($xName === 'UserPasswordHashed') {
+                                        $readonly = ' readonly';
+                                    }
+                                ?>
+                                    <td><input type="text" name="<?= $xName ?>" <?= $readonly ?>> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
                             <?php
                                 }
                             } ?>

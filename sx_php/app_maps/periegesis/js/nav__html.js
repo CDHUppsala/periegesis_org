@@ -1,3 +1,15 @@
+
+/**
+ * ========================================================
+ * Public Sphere 2025-12
+ * LOADS once Pausanias' 10 Books in a hidden container
+ * Displays in a panel Pausanias' Books by section, in English and Greek
+ *  - Converts Places and Persons in the English text that contain external URLs to clickable links
+ *  - Marks place names in every open Greek text section from Recogito annotations database table
+ *  - Sents place locations (Lat/Long) of each section to be displayed on the map
+ * ========================================================
+ */
+
 // External sources for IDs in texts
 const wiki_pedia = 'https://en.wikipedia.org/wiki/';
 const wiki_data = 'https://www.wikidata.org/wiki/';

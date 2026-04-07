@@ -16,14 +16,18 @@ $data = fopen($import_FileName, "r");
 $strUpdateMsg = "";
 if ($data === false) {
     echo '<div class="msgError">';
-        echo "<p><b>Failed to loading the CSV File</b></p>";
-        echo '<p>Could not read the CSV File!</p>';
+    echo "<p><b>Failed to loading the CSV File</b></p>";
+    echo '<p>Could not read the CSV File!</p>';
     echo '</div>';
 } else {
 
     // The first row contains the Filed Names of the CSV file
     // Get the separator, assuming either comma or semicolon
     $header = fgets($data);
+    // Remove UTF‑8 BOM if present
+    $header = preg_replace('/^\xEF\xBB\xBF/', '', $header);
+
+
     $columnSeparator = strpos($header, ",") !== false ? "," : ";";
 
     $arr_Headers = explode($columnSeparator, $header);
@@ -45,7 +49,7 @@ if ($data === false) {
     print_r($arr_Headers);
     print_r($arr_FieldNames);
     echo '</pre>';
-    
+
     for ($c = 0; $c < $int_Columns; $c++) {
         $name = $arr_Headers[$c];
         $iKey = array_search($name, $arr_FieldNames);
@@ -78,7 +82,7 @@ if ($data === false) {
         $primaryKeys = [];
         $intLine = 1;
         // Continue from line 2
-        while (($arrLineData = fgetcsv($data, 0, $columnSeparator,'"','\\')) !== false) {
+        while (($arrLineData = fgetcsv($data, 0, $columnSeparator, '"', '\\')) !== false) {
             // Check if line columns are eaqual to header columns
             $iLineColumns = count($arrLineData);
             if ($iLineColumns !== $int_Columns) {

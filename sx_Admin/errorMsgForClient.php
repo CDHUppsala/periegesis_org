@@ -19,7 +19,7 @@ if (!empty($strMsg)) {
 	if ($strMsg == "userLevel") {
 		$strTextMsg = "Sorry! You have no access to this function!";
 	} elseif ($strMsg = "noPK") {
-		$strTextMsg = "Sorry! The first field of the table must be a Primary Key, an autoincremented, long integer!";
+		$strTextMsg = "Sorry! The first field of the table must be an Autoincremented Primary Key of type Long Integer!";
 	} elseif ($strMsg = "err") {
 		$strTextMsg = "Error in adding/updating records!\n\nPlease check the last record added or updated.";
 	} else {

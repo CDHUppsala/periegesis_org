@@ -101,6 +101,8 @@ function sx_getRowsNavByArticles()
 }
 function sx_getListNavByArticles($arr, $strNavPath)
 {
+    $articleCountByGroup = sx_preCountArticlesByGroup($arr);
+
     if (is_array($arr) && !empty($arr)) {
         $levelUL1 = false;
         $levelUL2 = false;
@@ -114,23 +116,36 @@ function sx_getListNavByArticles($arr, $strNavPath)
             $intMenuArticleID = $row['ArticleID'];
             $strMenuTitle = $row['Title'];
 
+            $isSingleArticleGroup = ($articleCountByGroup[$intMenuGroupID] === 1);
+
             if ($intMenuGroupID !== $loop1) {
                 if ($levelUL2) {
                     echo "</ul></li>";
                 }
                 $levelUL2 = false;
+
                 if ($levelUL1) {
                     echo "</ul></li>";
                 }
-                //To make Groups clickable, even if they have categories
+                $levelUL1 = false;
+
+                if ($isSingleArticleGroup) {
+                    // Direct link to the article instead of Group
+                    echo '<li><a href="' . $strNavPath . 'aid=' . $intMenuArticleID . '">' . $strMenuGroupName . '</a>';
+                    $loop1 = $intMenuGroupID;
+                    continue;
+                }
+
+                //To make Groups clickable, even if they might have categories
                 if (SX_useLinksInArticleGroups) {
                     echo '<li><span><a href="' . $strNavPath . 'agid=' . $intMenuGroupID . '">' . $strMenuGroupName . '</a></span>';
                 } else {
                     echo '<li><span>' . $strMenuGroupName . '</span>';
                 }
-                $levelUL1 = true;
                 echo '<ul>';
+                $levelUL1 = true;
             }
+
             if ($levelUL1 && $intMenuCatID !== $loop2) {
                 if ($levelUL2) {
                     echo "</ul></li>";
@@ -154,4 +169,17 @@ function sx_getListNavByArticles($arr, $strNavPath)
             echo "</ul></li>";
         }
     }
+}
+
+function sx_preCountArticlesByGroup($arr)
+{
+    $count = [];
+    foreach ($arr as $row) {
+        $gid = (int)$row['ArticleGroupID'];
+        if (!isset($count[$gid])) {
+            $count[$gid] = 0;
+        }
+        $count[$gid]++;
+    }
+    return $count;
 }

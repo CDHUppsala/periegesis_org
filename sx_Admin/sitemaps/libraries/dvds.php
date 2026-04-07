@@ -4,7 +4,7 @@ $iRows = 0;
 
 if (sx_radioBookMaps == false) {
     echo "<h2>Products Map is not active</h1>";
-    echo "<p>Please check the file admin_design.php</p>";
+    echo "<p>Please check the file admin_design.asp</p>";
     exit();
 }
 /**

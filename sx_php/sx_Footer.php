@@ -13,6 +13,10 @@ if (defined('SX_showSpecialFooter') && SX_showSpecialFooter) {
 } elseif (defined('SX_showSpecialArtFooter') && SX_showSpecialArtFooter) {
     include __DIR__ . "/sx_Footer_Art.php";
     $useSpecialFooter = true;
+} elseif (defined('SX_showSpecialSimpleFooter') && SX_showSpecialSimpleFooter) {
+    include __DIR__ . "/sx_Footer_Simple.php";
+    $useSpecialFooter = true;
+
 } else { ?>
     <footer class="footer" id="footer">
         <?php get_footer_Advertisements_In_Footer_Top() ?>

@@ -71,6 +71,10 @@ function sx_replaceCommaToDot($float)
     return $float;
 }
 
+function sx_IsValidPrimaryKey($value) {
+    return filter_var($value, FILTER_VALIDATE_INT) !== false && $value > 0;
+}
+
 
 /**
  * DATE
@@ -439,27 +443,22 @@ function sx_IsUniquePKey($tbl, $column)
     }
 }
 
-
 function sx_IsAutoincrement($tbl, $column)
 {
     $conn = dbconn();
     $sql = "SELECT EXTRA
-        FROM information_schema.columns 
-        WHERE TABLE_SCHEMA = ?
-        AND table_name = ? 
-        AND COLUMN_NAME = ?
-        AND Extra = 'auto_increment'";
-    $fstmt = $conn->prepare($sql);
-    $fstmt->execute([sx_TABLE_SCHEMA, $tbl, $column]);
-    $sTemp = $fstmt->fetch(PDO::FETCH_COLUMN);
-    if ($sTemp) {
-        $fstmt = null;
-        return true;
-    } else {
-        $fstmt = null;
-        return false;
-    }
+            FROM information_schema.columns
+            WHERE TABLE_SCHEMA = ?
+              AND TABLE_NAME = ?
+              AND COLUMN_NAME = ?
+              AND EXTRA = 'auto_increment'";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([sx_TABLE_SCHEMA, $tbl, $column]);
+
+    return (bool) $stmt->fetchColumn();
 }
+
 function sx_getTableComments($request_Table)
 {
     $conn = dbconn();

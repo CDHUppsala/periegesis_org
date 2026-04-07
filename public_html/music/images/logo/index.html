@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>SVG Logotypes Digital Periegesis</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="generator" content="Public Sphere" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link href="sx_svg.css" rel="stylesheet">
+    <script src="../../sxScripts/jq/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var iEm = 0;
+            $(".jqChangeWidth a").click(function (e) {
+                e.defaultPrevented;
+                $("figure").css({
+                    "width": $(this).attr("data-id") + "em"
+                });
+                $(this).addClass("selected").siblings().removeClass("selected");
+                iEm = $(this).attr("data-id")
+                $("#pixels").text(iEm * 20);
+            })
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('width')) {
+                var intWidth = searchParams.get('width');
+                if ($.isNumeric(intWidth)) {
+                    $("figure").css({
+                        "width": intWidth + "em"
+                    });
+                    $(".jqChangeWidth a").removeClass("selected");
+                    $("#pixels").text(intWidth * 20);
+
+                }
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <section class="flex">
+        <menu class="jqChangeWidth">
+            <p>All logotypes are <b>SVG-Files</b>. You can include them anywhere as image: &lt;img src="logo_name.svg"
+                alt="" /&gt;</p>
+            <p>Width (1em = 20px):
+                <a data-id="8" href="javascript:void(0)">8em</a> |
+                <a data-id="10" href="javascript:void(0)">10em</a> |
+                <a class="selected" data-id="20" href="javascript:void(0)">20em</a> |
+                <a data-id="30" href="javascript:void(0)">30em</a> |
+                <a data-id="40" href="javascript:void(0)">40em</a> |
+                <a data-id="50" href="javascript:void(0)">50em</a> |
+                <a data-id="60" href="javascript:void(0)">60em</a> |
+                <a data-id="80" href="javascript:void(0)">80em</a> |
+                <a data-id="100" href="javascript:void(0)">100em</a> |
+                <a data-id="200" href="javascript:void(0)">200em</a> |
+                <a data-id="300" href="javascript:void(0)">300em</a> |
+                <a data-id="400" href="javascript:void(0)">400em</a> |
+                <a data-id="500" href="javascript:void(0)">500em</a> |
+                <a data-id="1000" href="javascript:void(0)">1000em</a>
+            </p>
+            <p>Click on the above links to change the Width and Resolution of the SVG-image - <b>current width:</b>
+                <span id="pixels" style="font-weight: bold; color: #c60">400</span> pixels<br>
+                You can also add the query string <b>?width=any_number</b> to the end of the Address: e.g. <a
+                    href="index.html?width=25">index.html?width=25.</a><br>
+                The <b>Width/Height</b> of SVG-Files is Not Defined, so they will expand to fit to the Width/Height of
+                their Parent Element.
+            </p>
+        </menu>
+        <menu class="jqChangeWidth">
+            <h4>To save SVG-Files as PNG-Files</h4>
+            <ul>
+                <li>Right click on a SVG-File and select "Open image in new tab"</li>
+                <li>Open the New Tab and use the browser's Print Screen Key to save the image in PNG.</li>
+                <li>You can of course use the Print Screen Key even in this page and then crop your image.</li>
+                <li>You can also use programs for Web or Screen Capture usually included in operating systems and
+                    browsers.</li>
+            </ul>
+        </menu>
+    </section>
+
+    <section>
+        <figure>
+            <img alt="home" src="Digital_Periegesis_color.svg" />
+            <figcaption><b>File Name:</b> <span>Digital_Periegesis_color.svg</span><br>
+                SVG Element with colored text and transparent background (within a white Parent Element)</figcaption>
+        </figure>
+        <figure>
+            <img alt="home" src="Digital_Periegesis_bg.svg" />
+            <figcaption><b>File Name:</b> <span>Digital_Periegesis_bg.svg</span><br>
+                SVG Element with 10% transparency of white text and colored background</figcaption>
+        </figure>
+        <figure class="bgColor2">
+            <img alt="home" src="Digital_Periegesis.svg" />
+            <figcaption><b>File Name:</b> <span>Digital_Periegesis.svg</span><br>
+                SVG Element with 10% transparency of white text within <b>ANY</b> background color of the <b>PARENT</b>
+                Element</figcaption>
+        </figure>
+    </section>
+
+    <figure>
+        <img alt="home" src="Periegesis_color.svg" />
+        <figcaption><b>File Name:</b> <span>Periegesis_color.svg</span><br>
+            SVG Element with colored text and transparent background (within a white Parent Element)</figcaption>
+    </figure>
+    <figure>
+        <img alt="home" src="Periegesis_bg.svg" />
+        <figcaption><b>File Name:</b> <span>Periegesis_bg.svg</span><br>
+            SVG Element with 10% transparency of white text and colored background</figcaption>
+    </figure>
+    <figure class="bgColor2">
+        <img alt="home" src="Periegesis.svg" />
+        <figcaption><b>File Name:</b> <span>Periegesis.svg</span><br>
+            SVG Element with 10% transparency of white text within <b>ANY</b> background color of the <b>PARENT</b>
+            Element</figcaption>
+    </figure>
+    </section>
+    <section>
+        <figure>
+            <img alt="home" src="Digital_Periegesis_favicon.svg" />
+            <figcaption><b>File Name:</b> <span>Digital_Periegesis_favicon.svg</span><br>
+                SVG Element with white text and colored background</figcaption>
+        </figure>
+        <figure>
+            <img alt="home" src="Digital_Periegesis_favicon_even.svg" />
+            <figcaption><b>File Name:</b> <span>Digital_Periegesis_favicon_even.svg</span><br>
+                SVG Element with white text and colored background</figcaption>
+        </figure>
+    </section>
+
+</body>
+
+</html>

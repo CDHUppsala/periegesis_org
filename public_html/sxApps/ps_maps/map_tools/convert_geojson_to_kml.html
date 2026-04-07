@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Convert GeoJSON to KML with ExtendedData and HTML | Digital Periegesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+    <meta name="creator" content="Public Sphere" />
+    <meta name="title" content="Convert GeoJSON to KML with ExtendedData and HTML | Digital Periegesis" />
+    <meta name="description"
+        content="Convert GeoJSON files with any geometry type to two KML files: one with ExtendedData and one with HTML-formatted Description." />
+    <meta name="keywords"
+        content="GeoJSON to KML, convert GeoJSON, KML ExtendedData, KML Description, HTML formatting, geographic data, Digital Periegesis" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Convert GeoJSON to KML with ExtendedData and HTML | Digital Periegesis" />
+    <meta property="og:description"
+        content="Convert GeoJSON files to two KML outputs: one with plain-text ExtendedData and one with HTML-formatted Description." />
+    <meta property="og:site_name" content="Digital Periegesis" />
+    <meta property="og:url" content="https://www.periegesis.org/en/map_tools.php?p=convert-geojson-to-kml" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
+    <link rel="canonical" href="https://www.periegesis.org/en/map_tools.php?p=convert-geojson-to-kml" />
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 4rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.5rem 20%;
+            background-color: #003D7A;
+            color: #ffffffcc;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+
+        .fixed a {
+            color: #ffffffcc;
+            text-decoration: none;
+        }
+
+        .fixed a:hover {
+            color: #ffffff;
+        }
+
+        #dropzone {
+            border: 2px dashed #ffffffcc;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 10%;
+        }
+
+        input,
+        button {
+            padding: 0.5rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1024px;
+            padding: 1rem;
+            margin: 0 auto;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            line-height: 1.5;
+        }
+
+        #loadingContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #loadingContainer img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="fixed">
+            <a title="Home to Digital Periegesis" href="index.php">dp</a> |
+            <a title="Search in Maps" href="map_search.php">SM</a>
+        </div>
+        <label>Choose GeoJson file:
+            <input type="file" id="geojsonInput" accept=".geojson">
+        </label>
+        <button onclick="convertFullGeoJSON()">Convert to KML</button>
+    </div>
+    <div class="flex">
+        <div>
+            <h2>Convert a GeoJson File with any Geometry to two KML Files</h2>
+            <div class="container">
+                <p>Property Names and Values from the GeoJson file are converted:</p>
+                <ul>
+                    <li>To <b>ExtendedData</b>, with Data Names and Values in plain text.</li>
+                    <li>To <b>Description</b>, with HTML formatting of Names and Values.</li>
+                </ul>
+                <p>The KML file with Description in HTML has the suffix <b>_HTML</b>.</p>
+            </div>
+        </div>
+    </div>
+    <p id="loadingContainer">
+        <img id="loadingImg" src="../imgPG/loading_blue.gif"> <span id="loadingText"></span>
+    </p>
+
+    <div id="downloadLinks" class="flex"></div>
+    <div class="flex">
+        <p id="featureCount"></p>
+    </div>
+
+
+    <script>
+        function showSpinner(message = 'Converting...') {
+            document.getElementById('loadingImg').style.display = 'block';
+            document.getElementById('loadingText').textContent = message;
+        }
+
+        function hideSpinner() {
+            document.getElementById('loadingImg').style.display = 'none';
+            document.getElementById('loadingText').textContent = '';
+        }
+
+        let invalid_features = 0;
+        let valid_features = 0;
+        function convertFullGeoJSON() {
+            let version_updated = new Date().toISOString().split('T')[0];
+
+            invalid_features = 0;
+            valid_features = 0;
+            const input = document.getElementById('geojsonInput');
+            const file = input.files[0];
+            if (!file) return alert("Please select a .geojson file first.");
+
+            const fiel_Name = file.name.replace(/\.[^/.]+$/, "");
+            const count_Features = document.getElementById('featureCount');
+            const container = document.getElementById('downloadLinks');
+            count_Features.innerHTML = '';
+            container.innerHTML = '';
+            showSpinner();
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const geojson = JSON.parse(event.target.result);
+
+                // Extract, if exist, metadata keys "updated" or "version" (case-insensitive)
+                const metadata_prop = geojson.properties || {};
+                if (Object.keys(metadata_prop).length) {
+                    const metadataKeys = Object.keys(metadata_prop).filter(
+                        key => key.toLowerCase() === "updated" || key.toLowerCase() === "version"
+                    );
+                    if (metadataKeys) {
+                        version_updated = metadata_prop[metadataKeys];
+                        console.log('metadataKeys: ', metadataKeys)
+                        console.log('version_updated: ', version_updated)
+                    }
+                }
+
+
+                const kmlPlain = convertGeoJSONToKML(geojson, "Full Dataset", false);
+                const kmlRich = convertGeoJSONToKML(geojson, "Full Dataset", true);
+
+                container.appendChild(makeDownloadLink(
+                    new Blob([kmlPlain], { type: 'application/vnd.google-earth.kml+xml' }),
+                    `${fiel_Name}_${version_updated}.kml`,
+                    'Download KML with Extended Data'
+                ));
+
+                container.appendChild(makeDownloadLink(
+                    new Blob([kmlRich], { type: 'application/vnd.google-earth.kml+xml' }),
+                    `${fiel_Name}_${version_updated}_HTML.kml`,
+                    'Download KML with HTML Description'
+                ));
+                hideSpinner();
+                const total_Features = valid_features + invalid_features;
+                count_Features.innerHTML = `The output includes ${valid_features} <b>valid</b> features of totally ${total_Features} <b>features</b>. ${invalid_features} <b>invalid</b> features are excluded.`;
+            };
+
+            reader.readAsText(file);
+        }
+
+        function makeDownloadLink(blob, filename, label) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            link.textContent = label;
+            link.style.display = 'block';
+            return link;
+        }
+
+        function convertGeometryToKML(geometry) {
+            switch (geometry.type) {
+                case 'Point':
+                    return `<Point><coordinates>${geometry.coordinates.join(',')}</coordinates></Point>`;
+                case 'LineString':
+                    return `<LineString><coordinates>${geometry.coordinates.map(coord => coord.join(',')).join(' ')}</coordinates></LineString>`;
+                case 'Polygon':
+                    return `<Polygon><outerBoundaryIs><LinearRing><coordinates>${geometry.coordinates[0].map(coord => coord.join(',')).join(' ')}</coordinates></LinearRing></outerBoundaryIs></Polygon>`;
+                case 'MultiPolygon':
+                    //return geometry.coordinates.map(polygon => `<Polygon><outerBoundaryIs><LinearRing><coordinates>${polygon[0].map(coord => coord.join(',')).join(' ')}</coordinates></LinearRing></outerBoundaryIs></Polygon>`).join('\n');
+                    return `<MultiGeometry>` + geometry.coordinates.map(polygon => `<Polygon><outerBoundaryIs><LinearRing><coordinates>${polygon[0].map(coord => coord.join(',')).join(' ')}</coordinates></LinearRing></outerBoundaryIs></Polygon>`).join('\n') + `</MultiGeometry>`;
+                case 'MultiLineString':
+                    //return geometry.coordinates.map(line => `<LineString><coordinates>${line.map(coord => coord.join(',')).join(' ')}</coordinates></LineString>`).join('\n');
+                    return `<MultiGeometry>` + geometry.coordinates.map(line => `<LineString><coordinates>${line.map(coord => coord.join(',')).join(' ')}</coordinates></LineString>`).join('\n') + `</MultiGeometry>`;
+                default:
+                    invalid_features++;
+                    // console.log('unsupported geometry: ', invalid_features);
+                    return '';
+            }
+        }
+
+        function convertGeoJSONToKML(geojson, folderName = "Features", rich = false) {
+            const metadata = geojson.properties || {};
+
+            // Extract metadata as properties immediately under FeatureCollection (and name, if any): 
+            let extended_metadata = '';
+            if (Object.keys(metadata).length) {
+                extended_metadata = build_ExtendedMetaData(metadata);
+            }
+
+
+            const placemarks = geojson.features.map(feature => {
+                const geometry = feature.geometry;
+                const props = feature.properties || {};
+                const name = escapeXML(props.name || props.Name || "Unnamed");
+
+                const content = rich
+                    ? `\n<description><![CDATA[${buildRichDescription(props)}]]></description>\n`
+                    : build_ExtendedData(props);
+
+                if (!geometry || !geometry.type || !geometry.coordinates) {
+                    invalid_features++;
+                    // console.log('skip invalid geometry: ', invalid_features);
+                    return []; // skip this feature
+                }
+
+                let geometryTag = '';
+
+                switch (geometry.type) {
+                    case 'Point':
+                    case 'LineString':
+                    case 'Polygon':
+                    case 'MultiPolygon':
+                    case 'MultiLineString':
+                        geometryTag = convertGeometryToKML(geometry);
+                        break;
+
+                    case 'GeometryCollection':
+                        geometryTag = geometry.geometries.map(subGeometry => convertGeometryToKML(subGeometry)).join('\n');
+                        break;
+
+                    default:
+                        invalid_features++;
+                        // console.log('unsupported geometry: ', invalid_features);
+                        return []; // skip this feature
+                }
+
+
+
+                if (!geometryTag.trim()) {
+                    invalid_features++;
+                    // console.log('empty geometry tag: ', invalid_features);
+                    return []; // skip this feature
+                }
+
+                valid_features++;
+
+                return [`\n<Placemark><name>${name}</name>${content}${geometryTag}</Placemark>`];
+            });
+
+
+            return `<` + `?xml version="1.0" encoding="UTF-8"?>
+  <kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+      <name>${folderName}</name>
+      ${extended_metadata}
+      ${placemarks}
+    </Document>
+  </kml>`;
+        }
+
+        function buildRichDescription(props) {
+            return Object.entries(props).map(([k, v]) => {
+                const safeKey = escapeXML(k);
+                const safeValue = formatValueRich(v);
+                return `<strong>${safeKey}</strong>: ${safeValue}`;
+            }).join('<br>');
+        }
+
+        function build_ExtendedData(props) {
+            const dataTags = Object.entries(props).map(([k, v]) => {
+                const safeKey = escapeXML(k);
+                const rawValue = typeof v === 'string' ? v : JSON.stringify(v);
+                const safeValue = escapeXML(rawValue);
+                return `<Data name="${safeKey}"><value>${safeValue}</value></Data>`;
+            }).join('\n');
+            return `\n<ExtendedData>\n${dataTags}\n</ExtendedData>\n`;
+        }
+
+        function build_ExtendedMetaData(meta_data) {
+            const dataTags = Object.entries(meta_data).map(([k, v]) => {
+                const safeKey = escapeXML(k);
+                const rawValue = typeof v === 'string' ? v : JSON.stringify(v);
+                const safeValue = escapeXML(rawValue);
+                return `<Data name="${safeKey}"><value>${safeValue}</value></Data>`;
+            }).join('\n');
+            return `\n<ExtendedData>\n${dataTags}\n</ExtendedData>\n`;
+        }
+
+        function formatValueRich(value) {
+            if (Array.isArray(value)) {
+                return value.map(v => formatSingleRich(v)).join(', ');
+            }
+            return formatSingleRich(value);
+        }
+
+        function formatSingleRich(val) {
+            const str = String(val);
+            const urlPattern = /^https?:\/\/[^\s]+$/i;
+            const safeStr = escapeXML(str);
+            return urlPattern.test(str)
+                ? `<a href="${safeStr}" target="_blank">${safeStr}</a>`
+                : safeStr.includes(",") && !safeStr.includes(", ")
+                    ? safeStr.replace(/,/g, ", ")
+                    : safeStr;
+        }
+
+        function escapeXML(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&apos;");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -79,7 +79,9 @@ if (empty($str_AboutGroupName)) {
 			if ($radio_ShowSocialMediaInText) {
 				$radioMediaLinks = true;
 			}
-			include PROJECT_PHP . "/basic_PrintIncludes.php";
+			if (defined('SX_includePrintsInAbout') && SX_includePrintsInAbout) {
+				include PROJECT_PHP . "/basic_PrintIncludes.php";
+			}
 
 			$radioSorting = true;
 			if (!empty($strImagesFromFolder) && strlen($strImagesFromFolder) > 2) {

@@ -161,7 +161,7 @@ if (!empty($strDataMarkNotes)) {
             <button id="LoadExternalFiles" class="button" type="submit">Load All Annotation Files</button>
         </form>
     </header>
-    <h2>Import Array Data from XML, JSON and CSV Files to Database Tables</h2>
+    <h2>Import CSV Files with Recogito Annotations of Pausanias Books to 2 Database Tables</h2>
     <div class="maxWidthWide">
 
         <form method="POST" name="importForm" action="index.php" enctype="multipart/form-data">
@@ -170,27 +170,16 @@ if (!empty($strDataMarkNotes)) {
                     <select size="1" name="DatabaseTable" id="DatabaseTable">
                         <option value="">Select Table</option>
                         <?php
-                        $stmt = $conn->prepare("
-                        SELECT table_name
-                        FROM information_schema.tables
-                        WHERE table_schema = ?
-                        AND table_type = 'BASE TABLE'
-                    ");
-
-                        $stmt->execute([$conn->query('select database()')->fetchColumn()]);
-
-                        $tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
-
-                        foreach ($tables as $table) {
-                            if (empty($arrNonUsedTables) || !in_array($table, $arrNonUsedTables)) {
-                                $strSelected = "";
-                                if ($table == $str_DBTableName) {
-                                    $strSelected = "selected ";
-                                } ?>
-                                <option <?= $strSelected ?>value="<?= $table ?>"><?= $table ?></option>
-                        <?php }
+                        $withBooks = '';
+                        $original = '';
+                        if ($str_DBTableName === 'pausanias_annotations') {
+                            $withBooks = " selected";
+                        } elseif ($str_DBTableName === 'pausanias_annotations_recogito') {
+                            $original = " selected";
                         }
-                        $rs = null; ?>
+                        ?>
+                        <option value="pausanias_annotations"<?= $withBooks ?>>Pausanias Annotations By BookID</option>
+                        <option value="pausanias_annotations_recogito"<?= $original ?>>Pausanias Annotations Original</option>
                     </select>
                 </div>
 
@@ -254,7 +243,7 @@ if (!empty($strDataMarkNotes)) {
         $verifyTime = '';
         if (ini_get('memory_limit') < 512 * 1024 * 1024) {
             $verifyMemory = " (<b>Lower</b> Server Memory!)";
-        } 
+        }
         if (ini_get('max_execution_time') < 600) {
             $verifyTime = " (<b>Lower</b> Server Execution Time!)";
         }
@@ -262,7 +251,7 @@ if (!empty($strDataMarkNotes)) {
         <div>
             Server <b>Memory</b>: <?php echo ini_get('memory_limit') . $verifyMemory ?>.
             Server <b>Execution</b> Time: <?php echo ini_get('max_execution_time') . $verifyTime ?>.
-            <b>Max Size</b> for CSV, XML and JSON Files: <?php echo number_format((int)(ini_get('memory_limit')) / 10,1); ?>M.
+            <b>Max Size</b> for CSV, XML and JSON Files: <?php echo number_format((int)(ini_get('memory_limit')) / 10, 1); ?>M.
         </div>
 
         <div id="WaitingImage" style="display: none; padding: 20px 0; text-align: center"><img src="../../images/wait.gif"></div>

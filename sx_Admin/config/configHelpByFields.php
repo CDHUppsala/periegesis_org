@@ -18,11 +18,11 @@ include PROJECT_ADMIN . "/configFunctions.php";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Public Sphere CMS - Help Information by Field</title>
-	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2024">
-	<script src="../js/jq/jquery.min.js?v=2024"></script>
-	<script src="<?php echo sx_ADMIN_DEV ?>config/js/jqConfigFunctions.js?v=2024"></script>
-	<script src="../tinymce/tinymce.min.js?v=2025-09"></script>
-    <script src="../tinymce/config/help_fields.js?v=2025-09"></script>
+	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
+	<script src="../js/jq/jquery.min.js?v=2026-04"></script>
+	<script src="<?php echo sx_ADMIN_DEV ?>config/js/jqConfigFunctions.js?v=2026-04"></script>
+	<script src="../tinymce/tinymce.min.js?v=2026-04"></script>
+    <script src="../tinymce/config/help_fields.js?v=2026-04"></script>
 </head>
 
 <body class="body">

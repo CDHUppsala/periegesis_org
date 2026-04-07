@@ -22,6 +22,23 @@ $aResults = null;
                 <?php
             }
         }
+        if (defined('SX_Use_Extra_Tools') && SX_Use_Extra_Tools) {
+            if (defined('SX_Inclued_Extra_Tools_In_Main_Menu') && SX_Inclued_Extra_Tools_In_Main_Menu) {
+                if ($radio_IncludeExternalSource && !empty($str_ExternalSourceTitle) && !empty($str_ExternalSourceURL)) { ?>
+                    <li><a href="<?php echo $str_ExternalSourceURL ?>" target="_blank"><?php echo $str_ExternalSourceTitle ?></a></li>
+                <?php
+                }
+                if ($radio_IncludeTextInMap && !empty($str_TextInMapTitle)) { ?>
+                    <li><a href="map_periegesis.php"><?php echo $str_TextInMapTitle ?></a></li>
+                <?php
+                }
+                if ($radio_IncludeMapTools && !empty($str_MapToolsTitle)) { ?>
+                    <li><a href="map_search.php"><?php echo $str_MapToolsTitle ?></a></li>
+                <?php
+                }
+            }
+        }
+
         if ($radio_IncludeArticles && sx_radioUseArticles) {
             if (sx_radioArticleMenuByArticle) {
                 $aResults = sx_getRowsNavByArticles();

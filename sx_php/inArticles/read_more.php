@@ -111,10 +111,10 @@ if ($iPageSize == 0) {
 
 
 $strWhere = "";
-$strOrderBy = " ORDER BY a.InsertDate DESC,a.ArticleID DESC ";
+$strOrderBy = " ORDER BY a.Sorting DESC, a.InsertDate DESC, a.ArticleID DESC ";
 if (intval($int_ArticleCategoryID) > 0) {
 	$strWhere = " AND a.ArticleCategoryID = " . $int_ArticleCategoryID;
-	$strOrderBy = " ORDER BY a.Sorting DESC, a.InsertDate DESC, a.ArticleID DESC ";
+	//$strOrderBy = " ORDER BY a.Sorting DESC, a.InsertDate DESC, a.ArticleID DESC ";
 } elseif (intval($int_ArticleGroupID) > 0) {
 	$strWhere = " AND a.ArticleGroupID = " . $int_ArticleGroupID;
 } else {

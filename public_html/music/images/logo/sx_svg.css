@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 20px;
+    padding-bottom: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #06f;
+    text-decoration: none
+}
+
+a:hover {
+    color: #f60;
+}
+
+a.selected {
+    color: #000;
+    font-weight: bolder
+}
+
+
+.flex {
+    display:flex;
+}
+
+menu {
+    position: relative;
+    background: #eee;
+    border: 1px solid #ddd;
+    margin: 20px 2px;
+    padding: 5px 20px;
+    border: 1px solid #000;
+    width: 50%;
+    font-size: 0.9rem;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+
+code {
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.pixels {
+    font-weight: bold;
+    color: #f60
+}
+
+.absolute {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 120px; height: 120px;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/*
+  Width and Height must be adapted to the W/H of evry svg-symbol
+*/
+
+figure {
+    display: inline-block;
+    vertical-align: top;
+    width: 20em;
+    height: auto;
+    margin: 10px 10px 50px 0;
+    padding: 0;
+    border: 2px solid #fff
+}
+
+figure.bg {
+    border: 4px solid #000;
+    background: #364;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+figure.bgColor1 {
+    background: #dd7700;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    padding-top: 5px;
+}
+figure.bgColor2 {
+    background: #000000;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+    padding-top: 5px;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+figcaption {
+    text-align: center;
+    padding: 0.5em 0;
+    margin-top: 1em;
+    background: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+figcaption span {
+    color: #ff3;
+}

@@ -63,11 +63,11 @@ function sx_getTableHelp($strName)
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Public Sphere CMS - Help Information by Table</title>
-	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2025">
-	<script src="../js/jq/jquery.min.js?v=2025"></script>
-	<script src="<?php echo sx_ADMIN_DEV ?>config/js/jqConfigFunctions.js?v=2025"></script>
-	<script src="../tinymce/tinymce.min.js?v=2025"></script>
-    <script src="../tinymce/config/help.js?v=2025"></script>
+	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
+	<script src="../js/jq/jquery.min.js?v=2026-04"></script>
+	<script src="<?php echo sx_ADMIN_DEV ?>config/js/jqConfigFunctions.js?v=2026-04"></script>
+	<script src="../tinymce/tinymce.min.js?v=2026-04"></script>
+    <script src="../tinymce/config/help.js?v=2026-04"></script>
 </head>
 
 <body class="body">

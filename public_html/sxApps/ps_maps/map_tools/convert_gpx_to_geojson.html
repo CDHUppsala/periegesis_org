@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+<wpt>` → GeoJSON `Point` (waypoints)
+<trk>` → GeoJSON `LineString` or `MultiLineString` (tracks)
+<rte>` → GeoJSON `LineString` (routes)
+-->
+
+<head>
+    <title>Convert GPX to GeoJSON | Digital Periegesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+    <meta name="creator" content="Public Sphere" />
+    <meta name="title" content="Convert GPX to GeoJSON | Digital Periegesis" />
+    <meta name="description"
+        content="Upload GPX files with waypoints, tracks, or routes and convert them to GeoJSON features. Supports Compact and Pretty output formats." />
+    <meta name="keywords"
+        content="GPX to GeoJSON, convert GPX, waypoints, tracks, routes, Compact output, Pretty output, geographic data, Digital Periegesis" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Convert GPX to GeoJSON | Digital Periegesis" />
+    <meta property="og:description"
+        content="Convert GPX files with waypoints, tracks, or routes to GeoJSON format. Choose Compact or Pretty output styles." />
+    <meta property="og:site_name" content="Digital Periegesis" />
+    <meta property="og:url" content="https://www.periegesis.org/en/map_tools.php?p=convert-gpx-to-geojson" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
+    <link rel="canonical" href="https://www.periegesis.org/en/map_tools.php?p=convert-gpx-to-geojson" />
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 4rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.5rem 20%;
+            background-color: #003D7A;
+            color: #ffffffcc;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+
+        .fixed a {
+            color: #ffffffcc;
+            text-decoration: none;
+        }
+
+        .fixed a:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 924px;
+            padding: 1rem;
+            margin: 0 auto;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            line-height: 1.5;
+        }
+
+        #dropzone {
+            border: 2px dashed #ffffffcc;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 10%;
+        }
+
+        input,
+        button {
+            padding: 0.5rem;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        pre {
+            background-color: #f6f6f6;
+            border: 1px solid #dddddd;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="fixed">
+            <a title="Home to Digital Periegesis" href="index.php">dp</a><br>
+            <a title="Search in Maps" href="map_search.php">SM</a>
+        </div>
+        <form id="gpxForm" class="header">
+            <label for="gpxFile">Select GPX file:
+                <input type="file" id="gpxFile" accept=".gpx" required>
+            </label>
+            <fieldset>
+                <legend>Output Format</legend>
+                <label>
+                    <input type="radio" name="format" value="compact" checked> Compact (in a single-line)
+                </label><br>
+                <label><input type="radio" name="format" value="pretty"> Pretty (for file size < 25MB)</label>
+            </fieldset>
+            <button type="submit">Convert to GeoJSON</button>
+        </form>
+    </div>
+
+    <div class="flex">
+        <div>
+            <h2>GPX to GeoJSON Converter</h2>
+            <div class="container">
+                <p>Upload a GPX file containing waypoints, tracks, or routes. The tool will convert them to GeoJSON
+                    features.</p>
+                <ul>
+                    <li><b>Compact</b> outputs the conversion content in a single line.</li>
+                    <li><b>Pretty</b> outputs feature properties in new lines but collapses all coordinates in a single
+                        line.
+                    </li>
+                    <li>If the file size is greater then 25MB, the Compact output is automatically used.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <button id="downloadBtn" class="hide">Download GeoJSON</button>
+    </div>
+    <div id="previewInfo"></div>
+    <pre id="outputPreview" class="hide"></pre>
+    <script>
+        const max_SizeKB = 25000;
+        let file_Size = 0;
+
+        // Collapses all coordinates of all geometry types to a row
+        function selectivePrettyPrint(obj) {
+            const placeholderMap = new Map();
+            let counter = 0;
+
+            // Step 1: Replace large arrays with placeholders
+            const jsonWithPlaceholders = JSON.stringify(obj, (key, value) => {
+                if (key === "coordinates" && Array.isArray(value)) {
+                    const id = `__COORD_${counter++}__`;
+                    placeholderMap.set(id, JSON.stringify(value)); // compact version
+                    return id;
+                }
+                return value;
+            }, 2);
+
+            // Step 2: Replace placeholders with compact arrays
+            let finalJson = jsonWithPlaceholders;
+            for (const [id, compact] of placeholderMap.entries()) {
+                finalJson = finalJson.replace(`"${id}"`, compact);
+            }
+
+            return finalJson;
+        }
+
+        // 1. Form Handler**
+        document.getElementById("gpxForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const fileInput = document.getElementById("gpxFile");
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            file_Size = file.size;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const gpxText = e.target.result;
+                const geojson = convert_GPXtoGeoJSON(gpxText);
+                showPreview(geojson);
+                showConversionSummary(convertedCount, skippedCount);
+                enableDownload(geojson);
+            };
+            reader.readAsText(file);
+        });
+
+        // 2. Preview Function
+        function showPreview(geojson) {
+            const preview = document.getElementById("outputPreview");
+            const previewInfo = document.getElementById("previewInfo");
+            const sample = geojson.features.slice(0, 5);
+            /*
+                        const jsonText = JSON.stringify(sample, (key, value) => {
+                            if (key === "coordinates") {
+                                return JSON.stringify(value); // flatten coordinates
+                            }
+                            return value;
+                        }, 2);
+                        */
+            const jsonText = selectivePrettyPrint(sample);
+
+
+            preview.textContent = jsonText;
+            preview.classList.remove("hide");
+            previewInfo.textContent = `5 previews of totally ${geojson.features.length} features`;
+        }
+
+        // 3. **Download Function**
+        function getSelectedFormat() {
+            return document.querySelector('input[name="format"]:checked').value;
+        }
+
+        // 4. Download
+        function enableDownload(geojson) {
+            const format = getSelectedFormat();
+            let jsonText;
+
+            if (format === "pretty" && file_Size < max_SizeKB * 1024) {
+                // jsonText = JSON.stringify(geojson, null, 2);
+                jsonText = selectivePrettyPrint(geojson);
+            } else {
+                jsonText = JSON.stringify(geojson); // compact
+            }
+
+            const blob = new Blob([jsonText], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+
+            const btn = document.getElementById("downloadBtn");
+            btn.onclick = () => {
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "converted.geojson";
+                a.click();
+            };
+            btn.classList.remove("hide");
+        }
+
+
+        // 5. Display summary of successed and skipped conversions
+        function showConversionSummary(converted, skipped) {
+            const summary = document.createElement("p");
+            summary.textContent = `Converted ${converted} waypoints. Skipped ${skipped} due to invalid coordinates.`;
+            document.getElementById("previewInfo").appendChild(summary);
+        }
+
+
+        let convertedCount = 0;
+        let skippedCount = 0;
+
+        // Defensive Parsing (skipp over malformed lat/lon and counts them)
+        function safeCoord(element) {
+            const lat = parseFloat(element.getAttribute("lat"));
+            const lon = parseFloat(element.getAttribute("lon"));
+            if (isNaN(lat) || isNaN(lon)) {
+                skippedCount++;
+                return null;
+            }
+            convertedCount++;
+            // return [lon, lat];
+            const props = extract_GPXMetadata(element);
+            return { coord: [lon, lat], props };
+        }
+
+        // Conversion Flow:
+        function convert_GPXtoGeoJSON(gpxText) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(gpxText, "text/xml");
+            const geojson = {
+                type: "FeatureCollection",
+                features: []
+            };
+            const waypoints = xmlDoc.getElementsByTagName("wpt");
+            for (let wpt of waypoints) {
+                const result = safeCoord(wpt);
+                if (!result) continue;
+
+                geojson.features.push({
+                    type: "Feature",
+                    geometry: {
+                        type: "Point",
+                        coordinates: result.coord
+                    },
+                    properties: result.props
+                });
+            }
+
+            const routes = xmlDoc.getElementsByTagName("rte");
+            for (let rte of routes) {
+                const points = Array.from(rte.getElementsByTagName("rtept"))
+                    .map(safeCoord)
+                    .filter(p => p !== null);
+
+                const coords = points.map(p => p.coord);
+
+                geojson.features.push({
+                    type: "Feature",
+                    geometry: { type: "LineString", coordinates: coords },
+                    properties: extract_GPXMetadata(rte)
+                });
+            }
+
+            const tracks = xmlDoc.getElementsByTagName("trk");
+            for (let trk of tracks) {
+                const segments = trk.getElementsByTagName("trkseg");
+                const lines = [];
+                for (let seg of segments) {
+                    const coords = Array.from(seg.getElementsByTagName("trkpt"))
+                        .map(pt => safeCoord(pt)?.coord)
+                        .filter(c => c !== null);
+                    if (coords.length > 0) lines.push(coords);
+                }
+
+                geojson.features.push({
+                    type: "Feature",
+                    geometry: {
+                        type: lines.length > 1 ? "MultiLineString" : "LineString",
+                        coordinates: lines.length > 1 ? lines : lines[0]
+                    },
+                    properties: extract_GPXMetadata(trk)
+                });
+            }
+            return geojson;
+        }
+
+        // Metadata Extractor:
+        function extract_GPXMetadata(element) {
+            const props = {};
+            const tags = ["name", "desc", "ele", "time"];
+            for (let tag of tags) {
+                const el = element.getElementsByTagName(tag)[0];
+                if (el && el.textContent.trim()) {
+                    props[tag] = el.textContent.trim();
+                }
+            }
+            return props;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

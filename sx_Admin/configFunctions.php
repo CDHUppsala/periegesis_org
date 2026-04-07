@@ -626,6 +626,7 @@ function sx_getRelationInputs($currentFieldName, $str_RFVAdd, $str_RFV)
                 <script>
                     <?php
                     if (!empty($str_RFV)) { ?>
+
                         $sx('select[name="<?= $currentFieldName ?>"]').ready(function() {
                             sx_LoadDistinctWhere("<?= $currentFieldName ?>", "<?= $str_RFV ?>", "<?= $grandFiledName ?>", "", "<?= $relationSQL ?>");
                         });

@@ -22,7 +22,7 @@ $dataSQL = "";
 if (isset($_POST["relation_SQL"])) {
     $dataSQL = $_POST["relation_SQL"];
 }
-
+echo $dataSQL;
 $arrResults = null;
 if (!empty($grandValue) && !empty($dataSQL)) {
     $stmt = $conn->prepare($dataSQL);

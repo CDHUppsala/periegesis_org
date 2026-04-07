@@ -164,17 +164,19 @@
             const lng = $(this).attr('data-lng');
 
             $('#jq_ModalMap').slideDown(300, function() {
-                loadMapScenario(lat, lng, $strTitle);
+                load_Map_Scenario(lat, lng, $strTitle);
             });
         })
 
+        // Opens leaflet OSM in modal window from the footer of the page
+        // See, sx_FooterIncludes.php and js_OpenStreetMap.js
         $("#jq_CloseModalMap").click(function() {
             $("#jq_ModalMap").slideUp(300, function() {
-                if (sx_LeafletMap && typeof sx_LeafletMap.remove === 'function') {
+                if (sx_Leaflet_Map && typeof sx_Leaflet_Map.remove === 'function') {
                     try {
-                        sx_LeafletMap.remove();
+                        sx_Leaflet_Map.remove();
                     } catch (e) {}
-                    sx_LeafletMap = null;
+                    sx_Leaflet_Map = null;
                 }
             });
         });

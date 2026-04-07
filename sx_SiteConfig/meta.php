@@ -1,7 +1,7 @@
 <title><?= $str_MetaTitle ?></title>
-<meta name="Creator" content="Public Sphere" />
-<meta name="title" content="<?= $str_MetaTitle ?>" />
-<meta name="description" content="<?= $str_MetaDescription ?>" />
+    <meta name="Creator" content="Public Sphere" />
+    <meta name="title" content="<?= $str_MetaTitle ?>" />
+    <meta name="description" content="<?= $str_MetaDescription ?>" />
 <?php if (strpos(sx_HOST_PATH, "/fr/") > 0) { ?>
     <meta name="Language" content="fr" />
     <meta property="og:locale" content="fr_FR" />

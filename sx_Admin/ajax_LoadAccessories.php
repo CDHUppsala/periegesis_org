@@ -1,8 +1,8 @@
 <?php
-include "functionsLanguage.php";
-include "functionsTableName.php";
-include "login/lockPage.php";
-include "functionsDBConn.php";
+include "functionsLanguage.asp";
+include "functionsTableName.asp";
+include "login/lockPage.asp";
+include "functionsDBConn.asp";
 
 $i_GroupID = @$_POST["selectedGroupID"];
 if (intval($i_GroupID) == 0) {
@@ -11,7 +11,7 @@ if (intval($i_GroupID) == 0) {
 <div id="bodyUpload" class="jqAccessories">
 	<h3><?=lngAccessoryGroups?></h3>
 	<p><?=lngMarkToCopyImages?></p>
-	<form action="ajax_LoadAccessories.php" method="post" name="LoadSelectForm" id="jqLoadSelectForm">
+	<form action="ajax_LoadAccessories.asp" method="post" name="LoadSelectForm" id="jqLoadSelectForm">
 		<select name="selectedGroupID">
 			<option value="0"><?=lngSelectGroup?></option>
 <?php

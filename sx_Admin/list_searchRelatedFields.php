@@ -46,9 +46,12 @@ $sLast_SelectName = "";
 // to check current search fields
 if (!empty($searchFieldNameWhere)) {
     $sWhereCode = str_replace(" AND ", "", $searchFieldNameWhere);
-    $arrCode = explode(" = ", $sWhereCode);
-    $searchName = trim($arrCode[0]);
-    $searchNumber = trim($arrCode[1]);
+    // In cases where the request from the content list is NoEmpty value (<> '')
+    if (str_contains($sWhereCode, '=')) {
+        $arrCode = explode(" = ", $sWhereCode);
+        $searchName = trim($arrCode[0]);
+        $searchNumber = trim($arrCode[1]);
+    }
 } ?>
 
 <form name="SelectClasses" id="jqSelectClasses">

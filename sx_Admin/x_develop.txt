@@ -1,0 +1,10 @@
+Develop the view of images and media
+
+C:\webs\ps_dev\sx_Admin\js\jqFunctions.js
+$imgPreview
+C:\webs\ps_dev\sx_Admin\js\sxjq_imgPreview_NU.js
+.imgPreview
+
+C:\webs\ps_dev\sx_Admin\functionsImages.php
+C:\webs\ps_dev\sx_Admin\sxUpload\view_files.php
+C:\webs\ps_dev\sx_Admin\view_images.php

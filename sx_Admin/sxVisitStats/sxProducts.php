@@ -26,7 +26,7 @@ function sx_getProductVisits($x)
 					$strProductName = $row['ProductName'] ?? '';
 					$intTotalTextVisits += $intLoopValue ?>
 					<li>
-						<a target="_blank" href="../../<?= sx_DefaultSiteLang ?>/products.php?pid=<?= $intLoopID ?>"><span><?= number_format($intLoopValue, 0) ?></span>
+						<a target="_blank" href="../../<?= sx_DefaultSiteLang ?>/products.asp?pid=<?= $intLoopID ?>"><span><?= number_format($intLoopValue, 0) ?></span>
 							<span><?= lngID . ": " . $intLoopID ?></span> <?= $strProductName ?></a>
 					</li>
 				<?php

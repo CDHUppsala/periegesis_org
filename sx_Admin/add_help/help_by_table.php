@@ -67,10 +67,10 @@ function sx_getTableHelp($strName)
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Public Sphere CMS - Help Information by Table</title>
-    <link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2024">
+    <link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
     <script src="../js/jq/jquery.min.js"></script>
-    <script src="../tinymce/tinymce.min.js?v=2024"></script>
-    <script src="../tinymce/config/help.js?v=2024"></script>
+    <script src="../tinymce/tinymce.min.js?v=2026-04"></script>
+    <script src="../tinymce/config/help.js?v=2026-04"></script>
     <?php
     include __DIR__ . "/functions_jq.php";
     ?>

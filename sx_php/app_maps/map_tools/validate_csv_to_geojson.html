@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Validate and Convert CSV to GeoJSON | Digital Periegesis</title>
+    <title>Validate and Convert CSV to Valid CSV and GeoJSON | Digital Periegesis</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="language" content="en" />
@@ -233,8 +233,8 @@
     <script>
         function detectLatLonFields(headers) {
             const normalized = headers.map(h => h.trim());
-            const latCandidates = ['lat', 'Lat', 'LAT', 'latitude', 'Latitude', 'LATITUDE'];
-            const lonCandidates = ['lon', 'Lon', 'LON', 'lng', 'Lng', 'LNG', 'long', 'Long', 'LONG', 'longitude', 'Longitude', 'LONGITUDE'];
+            const latCandidates = ['lat', 'Lat', 'LAT', 'latitude', 'Latitude', 'LATITUDE', 'representative_latitude', 'reprLat'];
+            const lonCandidates = ['lon', 'Lon', 'LON', 'lng', 'Lng', 'LNG', 'long', 'Long', 'LONG', 'longitude', 'Longitude', 'LONGITUDE', 'representative_longitude', 'reprLong'];
             const latfield = normalized.find(h => latCandidates.includes(h)) || null;
             const lonfield = normalized.find(h => lonCandidates.includes(h)) || null;
             return { latfield, lonfield };
@@ -438,7 +438,7 @@
                     id: index
                 });
             });
-console.log(validRows.length)
+
             window._normalizedRows = validRows;
             window._geojson = {
                 type: 'FeatureCollection',

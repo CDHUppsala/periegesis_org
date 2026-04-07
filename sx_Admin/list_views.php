@@ -47,7 +47,10 @@ if (!empty($_GET["RequestTable"])) {
     for ($i = 0; $i < $maxcol; $i++) {
         $meta = $stmt->getColumnMeta($i);
         $xName = $meta["name"];
-        $xType = $meta["native_type"];
+        $xType = null;
+        if (isset($meta["native_type"])) {
+            $xType = $meta["native_type"];
+        }
         $arrColumnNames[] = $xName;
         $arrFieldNames[$i][0] = $xName;
         $arrFieldNames[$i][1] = $xType;

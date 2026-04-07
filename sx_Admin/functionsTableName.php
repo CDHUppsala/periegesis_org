@@ -45,18 +45,18 @@ if($request_Table == "sx_config_groups" || $request_Table == "sx_config_tables" 
  * Define the name of all tables that will NOT be accessible  by Administrator Level > 1
  */
 
-$arr_LevelRestrictionTables = array("admin_login", "admin_logs", "languages", 
+$arr_LevelRestrictionTables = ["admin_login", "admin_logs", "languages", 
     "site_setup", "site_config_basic", "site_config_texts", "site_config_apps", "text_groups", 
 	"text_categories", "text_subcategories", "themes", 
 	"about_groups", "about_categories", "about",
 	"newsletters", "pdf_setup", "media_setup", "book_setup", "Report_setup", "faq_setup",
-	"conf_setup", "conf_participants", "conf_to_participants", "conf_administrators", "conf_participants_setup");
+	"conf_setup", "conf_participants", "conf_to_participants", "conf_administrators", "conf_participants_setup"];
 
 /**
  * Define all tables that includ the field "LoginAdminID", witch contains the Login ID of the current administrator
  */
-$arrTablesWithLoginAdminID = array("text", "text_news", "texts_blog", "about", 
-	"conferences", "conf_sessions", "conf_papers");
+$arrTablesWithLoginAdminID = ["text", "text_news", "texts_blog", "about", 
+	"conferences", "conf_sessions", "conf_papers"];
  
 /**
  * Check if current table includes the field "LoginAdminID"
@@ -70,15 +70,32 @@ if (in_array($request_Table,$arrTablesWithLoginAdminID)) {
  * GENERAL RESTRICTIONS FOR SELECTED TABLES
  * Define Copying, Editing, Deleting and Adding restriction for different tables
  */
-$arr_NotCopyableTables = array("orders", "ordered_items", "visits_products", "visits_texts", "visits", "visits_events", "conf_rights");
-$arr_NotEditableTables = array("visits_products", "visits_texts", "visits", "visits_events", "conf_contributors", "conf_rights");
-$arr_NotDeleteableTables = array("orders", "ordered_items", "products", "product_groups", "product_categories", "visits_products", "visits_texts", "visits",
+$arr_NotCopyableTables = ["orders", "ordered_items", "visits_products", "visits_texts", "visits", "visits_events", "conf_rights"];
+$arr_NotEditableTables = ["visits_products", "visits_texts", "visits", "visits_events", "conf_contributors", "conf_rights"];
+$arr_NotDeleteableTables = ["orders", "ordered_items", "products", "product_groups", "product_categories", "visits_products", "visits_texts", "visits",
 	"texts", "text_news", "texts_blog", "text_groups", "text_categories", "text_subcategories",
-	"conferences", "conf_sessions");
-$arr_NotAddableTables = array("orders", "ordered_items", "visits_products", "visits_texts", "visits");
-$arr_NewsLetterTables = array("products", "news", "articles", "texts", "text_news", "texts_blog", "events", "conferences");
+	"conferences", "conf_sessions"];
+$arr_NotAddableTables = ["orders", "ordered_items", "visits_products", "visits_texts", "visits"];
+$arr_NewsLetterTables = ["products", "news", "articles", "texts", "text_news", "texts_blog", "events", "conferences"];
 
-$arr_ConferenceTables = array("conferences", "conf_sessions", "conf_papers");
+$arr_ConferenceTables = ["conferences", "conf_sessions", "conf_papers"];
+
+// Special additions to websites
+
+$arr_NotAddableTables = array_merge(
+    $arr_NotAddableTables,
+    ["pausanias_books", "pausanias_books_by_chapter", "pausanias_books_el", "pausanias_books_en"]
+);
+$arr_NotCopyableTables = array_merge(
+    $arr_NotCopyableTables,
+    ["pausanias_books", "pausanias_books_by_chapter", "pausanias_books_el", "pausanias_books_en", 
+	"pausanias_nodegoat_places", "wikidata"]
+);
+$arr_NotDeleteableTables = array_merge(
+    $arr_NotDeleteableTables,
+    ["pausanias_books", "pausanias_books_by_chapter", "pausanias_books_el", "pausanias_books_en"]
+);
+
 
 /**
  * Activate next include 

@@ -874,3 +874,21 @@ function return_file_extension($file)
         return '';
     }
 }
+
+/*
+    echo $fileInfo['dirname'];   // uploads
+    echo $fileInfo['basename'];  // mydata_file-2025.csv
+    echo $fileInfo['filename'];  // mydata_file-2025   ← what you want
+    echo $fileInfo['extension']; // csv
+*/
+
+
+function return_file_name($file)
+{
+    $fileInfo = pathinfo($file);
+    if (isset($fileInfo['filename'])) {
+        return $fileInfo['filename'];
+    } else {
+        return '';
+    }
+}

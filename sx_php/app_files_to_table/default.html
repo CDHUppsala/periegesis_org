@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Filter and Convert CSV to GeoJSON and KML | Digital Periegesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+    <meta name="creator" content="Public Sphere" />
+    <meta name="title" content="Filter and Convert CSV to GeoJSON and KML | Digital Periegesis" />
+    <meta name="description"
+        content="Convert CSV files with geographic point data to GeoJSON and KML formats. Supports filtering by Book, Type, and Region, and generates two KML versions for mapping platforms." />
+    <meta name="keywords"
+        content="CSV to GeoJSON, CSV to KML, convert CSV, geographic data, latitude longitude, Digital Periegesis, KML ExtendedData, Google Maps" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Filter and Convert CSV to GeoJSON and KML | Digital Periegesis" />
+    <meta property="og:description"
+        content="Convert and filter CSV files with geographic point data into GeoJSON and KML formats. Includes dual KML output for mapping platforms." />
+    <meta property="og:site_name" content="Digital Periegesis" />
+    <meta property="og:url" content="https://www.periegesis.org/en/map_tools.php?p=filter-csv-to-geojson-kml" />
+
+    <link rel="canonical" href="https://www.periegesis.org/en/map_tools.php?p=filter-csv-to-geojson-kml" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
+
+    <script>
+        // A - 1:1 vanilla JS port (drop-in for your original sx_create_csv_table)
+        //var sx_create_csv_table = function(_, jq_intRundom, constant_tableData) {
+        function sx_create_csv_table(jq_intRundom, constant_tableData, LoadedFileName) {
+            var sx_filtered_data = null;
+
+            // DOM caching (native)
+            var dataTable = document.getElementById('dataTable_' + jq_intRundom);
+            if (!dataTable) {
+                console.warn('dataTable not found', jq_intRundom);
+                return;
+            }
+
+            var headerObject = dataTable.querySelector('.jq_TableHeaders');
+            var dataTableContainer = dataTable.parentElement;
+            var parent_container = dataTableContainer ? dataTableContainer.parentElement : null;
+            var paginationContainer = parent_container ? parent_container.querySelector('.jq_pagination_container') : null;
+            var searchObject = parent_container ? parent_container.querySelector('.jq_table_search') : null;
+            var helpObject = parent_container ? parent_container.querySelector('.jq_table_help') : null;
+            var toggleTableView = parent_container ? parent_container.querySelector('.jq_ToggleTableView') : null;
+
+            var rowsPerPage = 200;
+            var currentPage = 1;
+            var sortDirection = {};
+            var totalPages;
+            var active_SortingIndex = -1;
+
+            var tableData;
+            var columnNames;
+
+            tableData = constant_tableData || [];
+            if (!tableData.length) {
+                console.warn('no table data');
+                return;
+            }
+            columnNames = Object.keys(tableData[0]);
+
+            // Initial rendering
+            var totalRows = tableData.length;
+            totalPages = Math.ceil(totalRows / rowsPerPage);
+            if (totalRows <= rowsPerPage && paginationContainer) {
+                // hide pagination area
+                paginationContainer.style.display = 'none';
+            }
+
+            sx_renderTable();
+            sx_generatePagination();
+
+            var isTwoColumnsTable = false;
+
+            function sx_getWindowWidth() {
+                return window.innerWidth || document.documentElement.clientWidth;
+            }
+
+            function sx_renderTable() {
+                sx_renderHeaders();
+                if (sx_getWindowWidth() < 768) {
+                    isTwoColumnsTable = true;
+                    sx_renderTwoColumnRows();
+                } else {
+                    isTwoColumnsTable = false;
+                    sx_renderRows();
+                }
+            }
+
+            function sx_renderHeaders() {
+                var thead = dataTable.querySelector('thead');
+                if (!thead) return;
+                thead.innerHTML = ''; // empty
+                thead.style.display = 'table-header-group';
+                for (var i = 0; i < columnNames.length; i++) {
+                    var columnName = columnNames[i];
+                    var th = document.createElement('th');
+                    th.setAttribute('role', 'columnheader');
+                    th.setAttribute('aria-sort', 'none');
+                    th.textContent = columnName;
+                    thead.appendChild(th);
+                }
+            }
+
+            function sx_getPaginatedData() {
+                var startIndex = (currentPage - 1) * rowsPerPage;
+                return tableData.slice(startIndex, startIndex + rowsPerPage);
+            }
+
+            function sx_convert_to_link(loopValue, columnName) {
+                if (typeof loopValue === 'string' && (loopValue.startsWith('http://') || loopValue.startsWith('https://'))) {
+                    var lastPart = loopValue.substring(loopValue.lastIndexOf('/') + 1).trim();
+                    if (lastPart === '') lastPart = columnName;
+                    return '<a target="_blank" href="' + escapeHtml(loopValue) + '">' + escapeHtml(lastPart) + '</a>';
+                }
+                return escapeHtml(loopValue);
+            }
+
+            // simple HTML escape for safety
+            function escapeHtml(v) {
+                if (v === null || v === undefined) return '';
+                return String(v)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+            }
+
+            function sx_renderRows() {
+                var slicedData = sx_getPaginatedData();
+                var tbody = dataTable.querySelector('tbody');
+                if (!tbody) return;
+
+                var html = "";
+
+                for (var r = 0; r < slicedData.length; r++) {
+                    var rowData = slicedData[r];
+                    html += "<tr>";
+                    for (var c = 0; c < columnNames.length; c++) {
+                        var columnName = columnNames[c];
+                        var rawValue = rowData[columnName];
+                        var value = sx_convert_to_link(rawValue, columnName);
+                        html += '<td class="' + escapeHtml(columnName) + '">' + value + '</td>';
+                    }
+                    html += "</tr>";
+                }
+
+                tbody.innerHTML = html;
+
+                totalRows = tableData.length;
+                var visibleRows = slicedData.length;
+                if (searchObject) {
+                    var el = searchObject.querySelector('.jq_TotalRows');
+                    if (el) el.innerHTML = 'Total Rows: ' + totalRows + '<br>Rows/Page: ' + visibleRows;
+                }
+            }
+
+            function sx_renderTwoColumnRows() {
+                var slicedData = sx_getPaginatedData();
+                var tbody = dataTable.querySelector('tbody');
+                if (!tbody) return;
+
+                var thead = dataTable.querySelector('thead');
+                if (thead) thead.style.display = 'none';
+
+                var html = "";
+                var rowClass = "odd";
+
+                for (var r = 0; r < slicedData.length; r++) {
+                    var rowData = slicedData[r];
+                    for (var c = 0; c < columnNames.length; c++) {
+                        var columnName = columnNames[c];
+                        var val = rowData[columnName];
+                        if (val !== "" && val !== undefined && val !== null) {
+                            html += '<tr class="' + rowClass + '">';
+                            html += '<td>' + escapeHtml(columnName) + '</td>';
+                            html += '<td>' + sx_convert_to_link(val, columnName) + '</td>';
+                            html += '</tr>';
+                        }
+                    }
+                    rowClass = (rowClass === 'odd') ? 'even' : 'odd';
+                }
+
+                tbody.innerHTML = html;
+
+                totalRows = tableData.length;
+                var visibleRows = slicedData.length;
+                if (searchObject) {
+                    var el = searchObject.querySelector('.jq_TotalRows');
+                    if (el) el.innerHTML = 'Total Rows: ' + totalRows + '<br>Rows/Page: ' + visibleRows;
+                }
+            }
+
+            function sx_generatePagination() {
+                if (!paginationContainer) return;
+                var ul = paginationContainer.querySelector('.jq_pagination');
+                if (!ul) return;
+
+                var paginationHtml = '';
+                for (var i = 1; i <= totalPages; i++) {
+                    paginationHtml += '<li class="' + (i === currentPage ? 'active' : '') + '" data-page="' + i + '">' + i + '</li>';
+                }
+                ul.innerHTML = paginationHtml;
+
+                if (active_SortingIndex > -1) {
+                    var headerThs = dataTableContainer.querySelectorAll('.jq_TableHeaders th');
+                    if (headerThs && headerThs[active_SortingIndex]) {
+                        headerThs[active_SortingIndex].classList.add('active');
+                        // remove from siblings
+                        for (var k = 0; k < headerThs.length; k++) {
+                            if (k !== active_SortingIndex) headerThs[k].classList.remove('active');
+                        }
+                    }
+                }
+            }
+
+            // Pagination click (event delegation)
+            if (paginationContainer) {
+                paginationContainer.addEventListener('click', function (ev) {
+                    var target = ev.target;
+                    // find li with data-page
+                    var li = target.closest('li[data-page]');
+                    if (!li) return;
+                    var page = parseInt(li.getAttribute('data-page'), 10);
+                    if (page) {
+                        currentPage = page;
+                        sx_renderTable();
+                        sx_generatePagination();
+                        if (dataTableContainer) dataTableContainer.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, false);
+            }
+
+            // .jq_page handler (prev/next) - delegated
+            if (paginationContainer) {
+                paginationContainer.addEventListener('click', function (ev) {
+                    var target = ev.target.closest('.jq_page');
+                    if (!target) return;
+                    ev.preventDefault();
+                    var page = target.getAttribute('data-page');
+                    if (page === 'next') {
+                        currentPage = currentPage + 1;
+                        if (currentPage > totalPages) currentPage = 1;
+                    } else {
+                        currentPage = currentPage - 1;
+                        if (currentPage < 1) currentPage = totalPages;
+                    }
+                    sx_renderTable();
+                    sx_generatePagination();
+                    if (dataTableContainer) dataTableContainer.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, false);
+            }
+
+            // Search button click (delegated within searchObject)
+            if (searchObject) {
+                searchObject.addEventListener('click', function (ev) {
+                    var btn = ev.target.closest('.jq_SearchButton');
+                    if (!btn) return;
+                    var input = btn.parentElement.querySelector('.jq_SearchInput');
+                    var searchText = input ? input.value.toLowerCase() : '';
+                    filterTable(searchText);
+                    currentPage = 1;
+                    sx_renderTable();
+                    sx_generatePagination();
+                    if (dataTableContainer) dataTableContainer.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, false);
+
+                // Clear button
+                searchObject.addEventListener('click', function (ev) {
+                    var btn = ev.target.closest('.jq_ClerButton');
+                    if (!btn) return;
+                    var input = btn.parentElement.querySelector('.jq_SearchInput');
+                    if (input) input.value = '';
+                    var searchBtn = btn.parentElement.querySelector('.jq_SearchButton');
+                    if (searchBtn) searchBtn.click();
+                }, false);
+
+                // Help toggle (replacement for slideToggle) - we simply toggle a class
+                searchObject.addEventListener('click', function (ev) {
+                    var btn = ev.target.closest('.jq_SearchTableHelp');
+                    if (!btn) return;
+                    if (!helpObject) return;
+                    helpObject.classList.toggle('visible'); // add CSS for .visible to animate if you want
+                }, false);
+
+                // fullscreen toggles
+                searchObject.addEventListener('click', function (ev) {
+                    var el = ev.target.closest('.jq_full_screen');
+                    if (el) {
+                        el.style.display = 'none';
+                        var next = el.nextElementSibling;
+                        if (next) next.style.display = '';
+                        if (parent_container) parent_container.classList.add('csv_table_fixed');
+                        document.documentElement.style.overflow = 'hidden';
+                        document.body.style.overflow = 'hidden';
+                        if (parent_container && parent_container.parentElement)
+                            parent_container.parentElement.style.height = '100vh';
+                    }
+                }, false);
+
+                searchObject.addEventListener('click', function (ev) {
+                    var el = ev.target.closest('.jq_full_screen_close');
+                    if (el) {
+                        el.style.display = 'none';
+                        var prev = el.previousElementSibling;
+                        if (prev) prev.style.display = '';
+                        if (parent_container) parent_container.classList.remove('csv_table_fixed');
+                        document.documentElement.style.overflow = '';
+                        document.body.style.overflow = '';
+                        if (parent_container && parent_container.parentElement)
+                            parent_container.parentElement.style.height = 'auto';
+                    }
+                }, false);
+            }
+
+            function filterTable(searchText) {
+                if (searchText.trim() === "") {
+                    tableData = constant_tableData;
+                    sx_filtered_data = null;
+                } else {
+                    var search = searchText.toLowerCase();
+                    tableData = constant_tableData.filter(function (row) {
+                        return Object.values(row).some(function (value) {
+                            return String(value || "").toLowerCase().includes(search);
+                        });
+                    });
+                    sx_filtered_data = tableData;
+                }
+                totalPages = Math.ceil(tableData.length / rowsPerPage);
+            }
+
+            // Header click => sorting
+            if (headerObject) {
+                headerObject.addEventListener('click', function (ev) {
+                    var th = ev.target.closest('th');
+                    if (!th) return;
+                    // get index of th among siblings
+                    var ths = Array.prototype.slice.call(headerObject.querySelectorAll('th'));
+                    var columnIndex = ths.indexOf(th);
+                    if (columnIndex === -1) return;
+
+                    sortTable(columnIndex);
+                    currentPage = 1;
+                    sx_renderTable();
+                    sx_generatePagination();
+
+                    // mark active header
+                    ths.forEach(function (el) {
+                        el.classList.remove('active');
+                    });
+                    ths[columnIndex].classList.add('active');
+                    active_SortingIndex = columnIndex;
+
+                    if (dataTableContainer) dataTableContainer.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, false);
+            }
+
+            function sortTable(columnIndex) {
+                var columnKey = columnNames[columnIndex];
+                var isAscending = sortDirection[columnKey] === 'asc';
+
+                tableData.sort(function (a, b) {
+                    var valueA = a[columnKey];
+                    var valueB = b[columnKey];
+
+                    if (columnKey === 'RowID') {
+                        return isAscending ? (valueA - valueB) : (valueB - valueA);
+                    }
+
+                    var isNumericA = typeof valueA === 'number' && !isNaN(valueA);
+                    var isNumericB = typeof valueB === 'number' && !isNaN(valueB);
+
+                    if (isNumericA && isNumericB) {
+                        return isAscending ? (valueA - valueB) : (valueB - valueA);
+                    } else {
+                        var aStr = (valueA ?? "").toString();
+                        var bStr = (valueB ?? "").toString();
+                        return isAscending ? aStr.localeCompare(bStr) : bStr.localeCompare(aStr);
+                    }
+                });
+
+                sortDirection[columnKey] = isAscending ? 'desc' : 'asc';
+            }
+
+            // window resize debounce
+            var debounce;
+            window.addEventListener('resize', function () {
+                clearTimeout(debounce);
+                debounce = setTimeout(function () {
+                    if (sx_getWindowWidth() < 768) {
+                        if (!isTwoColumnsTable) {
+                            sx_renderTable();
+                            sx_generatePagination();
+                            isTwoColumnsTable = true;
+                        }
+                    } else {
+                        if (isTwoColumnsTable) {
+                            sx_renderTable();
+                            sx_generatePagination();
+                            isTwoColumnsTable = false;
+                        }
+                    }
+                }, 200);
+            });
+
+            // toggle table view button
+            if (toggleTableView) {
+                toggleTableView.addEventListener('click', function () {
+                    if (!isTwoColumnsTable) {
+                        sx_renderTwoColumnRows();
+                        sx_generatePagination();
+                        isTwoColumnsTable = true;
+                    } else {
+                        sx_renderHeaders();
+                        sx_renderRows();
+                        sx_generatePagination();
+                        isTwoColumnsTable = false;
+                    }
+                }, false);
+            }
+
+            // help close: simple handler (replace slideUp)
+            if (helpObject) {
+                helpObject.addEventListener('click', function (ev) {
+                    var btn = ev.target.closest('.jq_TableHelpClose');
+                    if (!btn) return;
+                    helpObject.style.display = 'none';
+                }, false);
+            }
+
+            document.getElementById("jq_FilteredToCSV_" + jq_intRundom).addEventListener("click", async function (e) {
+                e.preventDefault();
+
+                if (!sx_filtered_data || !Array.isArray(sx_filtered_data) || sx_filtered_data.length === 0) {
+                    alert("No filtered data available for download. Please download the entire Source File instead.");
+                    return;
+                }
+
+                // Extract headers
+                const headers = [...new Set(sx_filtered_data.flatMap(row => Object.keys(row)))];
+
+                // 1. Create a ReadableStream that feeds CSV rows
+                const csvStream = new ReadableStream({
+                    start(controller) {
+                        // Write header
+                        controller.enqueue(headers.join(",") + "\n");
+                    },
+                    pull(controller) {
+                        if (!this.index) this.index = 0;
+
+                        if (this.index >= sx_filtered_data.length) {
+                            controller.close();
+                            return;
+                        }
+
+                        const row = sx_filtered_data[this.index++];
+                        const values = headers.map(h => JSON.stringify(row[h] ?? ""));
+                        const line = values.join(",") + "\n";
+
+                        controller.enqueue(line);
+                    },
+                    cancel() { }
+                });
+
+                // 2. Encode text chunks
+                const encoder = new TextEncoderStream();
+
+                // 3. Pipe: ReadableStream → Encoder → Response → Blob
+                const response = new Response(csvStream.pipeThrough(encoder));
+                const blob = await response.blob();
+
+                // 4. Download the file
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${LoadedFileName}_${new Date().toISOString().slice(0, 10)}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+
+            document.getElementById("jq_FilteredToJSON_" + jq_intRundom).addEventListener("click", function (e) {
+                e.preventDefault();
+
+                if (!sx_filtered_data || !Array.isArray(sx_filtered_data) || sx_filtered_data.length === 0) {
+                    alert("No filtered data available for download. Please download the entire Source File instead.");
+                    return;
+                }
+
+                const blob = new Blob(
+                    [JSON.stringify(sx_filtered_data, null, 2)], // pretty printed JSON
+                    {
+                        type: "application/json"
+                    }
+                );
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${LoadedFileName}_${new Date().toISOString().slice(0, 10)}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+
+            document.getElementById("jq_FilteredToXML_" + jq_intRundom).addEventListener("click", function (e) {
+                e.preventDefault();
+
+                if (!sx_filtered_data || !Array.isArray(sx_filtered_data) || sx_filtered_data.length === 0) {
+                    alert("No filtered data available for download. Please download the entire Source File instead.");
+                    return;
+                }
+
+                function escapeXML(str) {
+                    return String(str)
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&apos;");
+                }
+
+                let xml = `<items>\n`;
+
+                for (const row of sx_filtered_data) {
+                    xml += `  <item>\n`;
+                    for (const key in row) {
+                        const safeKey = key.replace(/[^A-Za-z0-9_\-:.]/g, "_");
+                        const safeValue = escapeXML(row[key] ?? "");
+                        xml += `    <${safeKey}>${safeValue}</${safeKey}>\n`;
+                    }
+                    xml += `  </item>\n`;
+                }
+
+                xml += `</items>`;
+
+                const blob = new Blob([xml], {
+                    type: "application/xml"
+                });
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${LoadedFileName}_${new Date().toISOString().slice(0, 10)}.xml`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        };
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="fixed">
+            <a title="Home to Digital Periegesis" href="index.php">Periegesis</a><br>
+            <a title="Search in Maps" href="map_search.php">Search Map</a>
+        </div>
+        <select id="Server_CSVFile" name="Server_CSVFile">
+            <option value="">Convert Server CSV File</option>
+        </select>
+        <div>
+            <input type="file" id="FilePicker" accept=".csv">
+            <button onclick="convert_CSVToGeoJSON()">Convert Local CSV</button>
+        </div>
+        <div>
+            <input type="checkbox" id="DisplayAllRows"> Display All Rows<br>
+            <input type="checkbox" id="DisplayFilteredRows" checked> Display Filtered Rows
+        </div>
+        <div>
+            <select id="RowsPerPage" name="RowsPerPage">
+                <option value="25" selected>25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+            </select> Rows Per Page
+
+        </div>
+    </div>
+
+
+    <section>
+        <div class="csv_tableFixed">
+            <div class="jq_table_container csv_table_container">
+                <div class="jq_table_search csv_table_search text_xxsmall">
+                    <div class="flex_start">
+                        <button class="jq_ToggleTableView button-small button-border button-gradient"
+                            title="Switch between 2 and multiple columns">&#11134</button>
+                        <div class="jq_TotalRows"></div>
+                    </div>
+                    <div class="csv_table_title">
+                        <?php echo sx_get_title_from_string($strSourceFileName) ?>
+                    </div>
+                    <div class="flex_end">
+                        <input class="jq_SearchInput" type="text" name="searchInput">
+                        <button class="jq_SearchButton button-small button-grey button-gradient">Search</button>
+                        <button class="jq_ClerButton button-small button-grey button-gradient">Clear</button>
+
+                        <a class="jq_SearchTableHelp" title="View Help" href="javascript:void(0)"><svg class="sx_svg">
+                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_04#sx_question_bold"></use>
+                            </svg></a>
+                        <a class="jq_full_screen" title="View in Full Screen" href="javascript:void(0)"><svg
+                                class="sx_svg">
+                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_04#sx_full_screen"></use>
+                            </svg></a>
+                        <a class="jq_full_screen_close" style="display: none;" title="Close Full Screen"
+                            href="javascript:void(0)"><svg class="sx_svg">
+                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_04#sx_clear_bold"></use>
+                            </svg></a>
+                    </div>
+                </div>
+
+
+                <div class="jq_data_table_container csv_data_table_container">
+                    <table class="jq_data_table csv_data_table" id="dataTable_<?php echo $int_Rundom ?>">
+                        <thead class="jq_TableHeaders"></thead>
+                        <tbody class="jq_DataBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="jq_pagination_container csv_pagination_container">
+                    <a class="button-grey button-gradient csv_page jq_page" data-page="prev"
+                        href="javascript:void(0)">&#9664;</a>
+                    <ul class="jq_pagination csv_pagination"></ul>
+                    <a class="button-grey button-gradient csv_page jq_page" data-page="next"
+                        href="javascript:void(0)">&#9654;</a>
+                </div>
+            </div>
+
+            <div class="flex_center csv_export">
+                <div>
+                    <div class="text_xsmall">Print or Export Only Visible Table Rows (max 200) to:</div>
+                    <a class="button-grey button-gradient jq_PrintElementToPDF"
+                        data-id="dataTable_<?php echo $int_Rundom ?>">PDF</a>
+                    <a class="button-grey button-gradient jq_ExportTableToHTML"
+                        data-id="dataTable_<?php echo $int_Rundom ?>">HTML</a>
+                    <a class="button-grey button-gradient jq_ExportTableToExcel"
+                        data-id="dataTable_<?php echo $int_Rundom ?>">Excel</a>
+                    <a class="button-grey button-gradient jq_ExportElementToCSV"
+                        data-id="dataTable_<?php echo $int_Rundom ?>">CSV</a>
+                    <a class="button-grey button-gradient jq_ExportElementToWord"
+                        data-id="dataTable_<?php echo $int_Rundom ?>">WORD</a>
+                </div>
+                <div>
+                    <div class="text_xsmall">Download Filtered File to:</div>
+                    <a class="button-grey button-gradient" id="jq_FilteredToCSV_<?php echo $int_Rundom ?>">CSV</a>
+                    <a class="button-grey button-gradient" id="jq_FilteredToJSON_<?php echo $int_Rundom ?>">JSON</a>
+                    <a class="button-grey button-gradient" id="jq_FilteredToXML_<?php echo $int_Rundom ?>">XML</a>
+                </div>
+                <div>
+                    <div class="text_xsmall">Download Source File:</div>
+                    <a class="button-grey button-gradient" target="_blank" href="<?= $strSourceFilePath ?>">Entire
+                        Source
+                        File</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <div class="jq_table_help csv_table_help">
+            <div class="flex_between">
+                <h4>Pagination, Searching and Sorting the Table</h4>
+                <button class="button-grey jq_TableHelpClose">Close</button>
+            </div>
+            <ul>
+                <li><b>Pagination</b> is automatically applied to all tables with more than 200 rows, by 200 rows
+                    per page.
+                    <ul>
+                        <li>You can navigate to the Next or Previous page by clicking on the left or right arrow
+                            or jump to any page by clicking on its number. The open page automatically scrolls back
+                            to the first row.</li>
+                        <li>If you search or sort the table, pagination is regenerated and starts from the first
+                            page and first row.</li>
+                    </ul>
+                </li>
+                <li><b>Sorting</b> is Alphabetic for all columns of the table except the first one, the column
+                    RowID, where it is numeric.
+                    <ul>
+                        <li>Alphabetic sorting means that 10 comes before 2 in ascending ordering and 9 before 10 in
+                            descending.</li>
+                        <li>Click on <b>RowID</b> to return to the initial ordering of the table.</li>
+                        <li>Clicking on the same column alternates the sorting order between ascending and
+                            descending order.</li>
+                        <li>Sorting is applied to the entire table, not only to the currently visible page,
+                            and generates each time a new pagination, with the visible part of the table displaying
+                            the first page and scrolling to the first row.</li>
+                        <li>However, if you have active searching results, in one or more pages, sorting is applied
+                            only to these results and its pages.
+                        <li>Sorting also includes invisible text, like the URL and the Title of Links. Columns that
+                            include text with both links and without links
+                            are sorted separately from each other, as linked text starts with the HTML element
+                            <code>
+                                < a</code>, which comes first in alphabetic order.
+                            However, linked text should be ordered alphabetically, as all links contain in the
+                            beginning, before the URL,
+                            the hidden attribute <code>data-title</code> with the first word of the text.
+                        </li>
+                    </ul>
+                </li>
+                <li><b>Searching</b> is also applied to the entire table, not only to the currently visible page.
+                    <ul>
+                        <li>Searching also includes non-visible text, so you might get some non-expected results (if
+                            you search for HTTP you will get all links).</li>
+                        <li>Click on <b>Clear</b> to remove the searching text, restore the initial state of the
+                            table and return to the first page.</li>
+                        <li>If you have sorted the results of searching, sorting is still active even after cleaning
+                            the search.
+                            Click in that case on the column RowID to restore the initial order of the table.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="align_right">
+                <button class="button-grey jq_TableHelpClose">Close</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <script>
+            async function loadDataFile(file) {
+                const filename = file.name;
+                const ext = filename.split(".").pop().toLowerCase();
+
+                const text = await file.text();
+                const cleanText = removeBOM(text);
+
+                if (ext === "csv") {
+                    return parseCSV(cleanText);
+                }
+                if (ext === "json") {
+                    return parseJSON(cleanText);
+                }
+                if (ext === "xml") {
+                    return parseXML(cleanText);
+                }
+
+                throw new Error("Unsupported file type");
+            }
+
+            function removeBOM(str) {
+                if (str.charCodeAt(0) === 0xFEFF) {
+                    return str.slice(1);
+                }
+                return str;
+            }
+
+            function parseCSV(csvText) {
+                // Detect separator from first line
+                const firstLine = csvText.split("\n")[0];
+                const separator = firstLine.includes(",") ? "," : ";";
+
+                const lines = csvText.split(/\r?\n/).filter(l => l.trim() !== "");
+                if (lines.length === 0) return [];
+
+                // Extract headers
+                let headers = lines.shift().split(separator).map(h => h.trim());
+
+                // Remove potential BOM from first header
+                if (headers[0].charCodeAt(0) === 0xFEFF) {
+                    headers[0] = headers[0].slice(1);
+                }
+
+                const addRowID = !headers.includes("RowID");
+
+                const data = [];
+                let rowIndex = 1;
+
+                for (const line of lines) {
+                    const cols = splitCSVRow(line, separator);
+                    const obj = {};
+
+                    if (addRowID) obj.RowID = rowIndex++;
+
+                    headers.forEach((h, i) => {
+                        obj[h] = (cols[i] ?? "").replace(/","/g, '", "');
+                    });
+
+                    data.push(obj);
+                }
+
+                return normalizeStructure(data);
+            }
+
+            function splitCSVRow(row, sep) {
+                const result = [];
+                let current = "";
+                let inQuotes = false;
+
+                for (let i = 0; i < row.length; i++) {
+                    const char = row[i];
+
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                        continue;
+                    }
+                    if (char === sep && !inQuotes) {
+                        result.push(current);
+                        current = "";
+                        continue;
+                    }
+                    current += char;
+                }
+                result.push(current);
+                return result;
+            }
+
+            function parseJSON(jsonText) {
+                let data = [];
+
+                try {
+                    data = JSON.parse(jsonText);
+                } catch (e) {
+                    alert("Invalid JSON file");
+                    return [];
+                }
+
+                return normalizeStructure(data);
+            }
+
+            function parseXML(xmlText) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+                if (xmlDoc.querySelector("parsererror")) {
+                    alert("Invalid XML file");
+                    return [];
+                }
+
+                // Convert XML → JS object (deep)
+                const root = xmlDoc.documentElement;
+                const jsObject = xmlToJSON(root);
+
+                // Match your PHP: <root><item> ... → we extract the inner array
+                const firstKey = Object.keys(jsObject)[0];
+                let arr = jsObject[firstKey];
+
+                if (!Array.isArray(arr)) {
+                    arr = [arr];
+                }
+
+                return normalizeStructure(arr);
+            }
+
+            function xmlToJSON(node) {
+                let obj = {};
+
+                // element nodes with children
+                if (node.children.length > 0) {
+                    [...node.children].forEach(child => {
+                        const name = child.nodeName;
+
+                        if (!obj[name]) obj[name] = [];
+
+                        obj[name].push(xmlToJSON(child));
+                    });
+                } else {
+                    // node with text only
+                    obj = node.textContent;
+                }
+
+                return obj;
+            }
+
+            function normalizeStructure(arr) {
+                if (!Array.isArray(arr) || arr.length === 0) return [];
+
+                const allKeys = new Set();
+
+                arr.forEach(row => {
+                    if (row && typeof row === "object") {
+                        Object.keys(row).forEach(k => allKeys.add(k));
+                    }
+                });
+
+                const keys = [...allKeys];
+
+                return arr.map(row => {
+                    const obj = {};
+                    keys.forEach(k => obj[k] = row[k] ?? "");
+                    return obj;
+                });
+            }
+
+            document.getElementById("FilePicker").addEventListener("change", async function () {
+                const file = this.files[0];
+                if (!file) return;
+
+                const arrData = await loadDataFile(file);
+
+                // Now create the table
+                sx_create_csv_table(
+                    Math.floor(Math.random() * 999999),
+                    arrData,
+                    file.name.replace(/\.[^.]+$/, "")
+                );
+            });
+
+
+        </script>
+    </section>
+</body>
+
+</html>

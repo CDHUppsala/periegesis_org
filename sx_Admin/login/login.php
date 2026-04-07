@@ -6,20 +6,26 @@ include realpath(PROJECT_PATH . "/sx_Conn/connMySQL.php");
 $strHost = $_SERVER["HTTP_HOST"];
 $sxSuffix = $strHost . "/sxAdmin/";
 
-/*
-    To prohibit connections from false sites
-    - The constants sx_TrueSiteURL and sx_radioCheckTrueSiteURL is defined in sx_languages.php
-    - Activated automatically if CONSTANT sx_SiteURL is defined
-    Not used in test domains
-*/
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+/**
+ * To prohibit connections from false sites
+ * - Blocks reverse‑proxy or mirror access
+ * - Prevents accidental or malicious hostname variations
+ * - The constants sx_CheckTrueSiteURL and sx_TrueSiteURL are defined in the site's language page
+ */
 
-if (defined('sx_TrueSiteURL') && !empty(sx_TrueSiteURL) && sx_radioCheckTrueSiteURL) {
-	if (sx_TrueSiteURL != sx_ROOT_HOST) {
-		sx_writeToLog('Login_Admin: Rong URL: ' . sx_ROOT_HOST);
-		$_SESSION[] = array();
+if (defined('sx_CheckTrueSiteURL') && sx_CheckTrueSiteURL === true) {
+	$currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https://' : 'http://')
+		. $_SERVER['HTTP_HOST'];
+
+	if (!str_starts_with($currentUrl, sx_TrueSiteURL)) {
+		sx_writeToLog('Login_Admin: Rong URL: ' . $currentUrl);
+		// Clear session
+		$_SESSION = [];
 		session_unset();
+		session_destroy();
+		// Slow down bots / brute-force attempts
 		sleep(15);
+		// Redirect to main domain
 		header("Location: " . sx_TrueSiteURL);
 		exit();
 	}

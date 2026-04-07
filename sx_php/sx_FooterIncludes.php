@@ -13,7 +13,6 @@
 <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq_iframe_to_modal.js?v=2024-12-20"></script>
 
 <?php if (defined('SX_includePlaceMaps') && SX_includePlaceMaps) : ?>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <div class="sx_modal_map" id="jq_ModalMap">
         <div class="flex_between flex_nowrap close_map">
             <div id="js_MapNotes"></div>
@@ -21,7 +20,6 @@
         </div>
         <div id='js_ModalMapContainer'></div>
     </div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="<?= sx_ROOT_DEV ?>/sxScripts/js_OpenStreetMap.js?v=2025-09-08"></script>
 <?php endif;
 

@@ -54,13 +54,6 @@
                             <?= $str_FAQLinkTitle ?></a></li>
                 <?php
                 }
-                if (sx_includeReports && $radio_IncludeReports && !empty($str_ReportsLinkTitle)) { ?>
-                    <li><a href="reports.php"><svg class="sx_svg">
-                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_book_open"></use>
-                            </svg>
-                            <?= $str_ReportsLinkTitle ?></a></li>
-                <?php
-                } 
                 if (sx_includeBooks && $radio_IncludeBooks && !empty($str_BooksLinkTitle)) { ?>
                     <li><a href="books.php"><svg class="sx_svg">
                                 <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_library"></use>
@@ -68,9 +61,25 @@
                             <?= $str_BooksLinkTitle ?></a></li>
                 <?php
                 }
+                
+
+                if (defined('SX_IncludeExternalLink') && SX_IncludeExternalLink) { ?>
+                    <li><a href="<?php echo SX_IncludeExternalLinkURL ?>" title="Map visualization of Pausanias Description of Greece" target="_blank"><svg class="sx_svg">
+                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_new_window"></use>
+                            </svg>
+                            <?= SX_IncludeExternalLinkTitle ?></a></li>
+                <?php
+                }
+                if (sx_includeReports && $radio_IncludeReports && !empty($str_ReportsLinkTitle)) { ?>
+                    <li><a href="reports.php" title="Read Pausanias Description of Greece by Book and Chapter, in English and Greek"><svg class="sx_svg">
+                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_book_open"></use>
+                            </svg>
+                            <?= $str_ReportsLinkTitle ?></a></li>
+                <?php
+                } 
 
                 if (defined('SX_IncludeAppTextToMaps') && SX_IncludeAppTextToMaps) { ?>
-                    <li><a href="map_periegesis.php"><svg class="sx_svg">
+                    <li><a href="map_periegesis.php" target="_blank" title="Read Pausanias' books by section in English and Greek, with section places marked on the map"><svg class="sx_svg">
                                 <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_map"></use>
                             </svg>
                             <?= SX_IncludeAppTextToMapsTitle ?></a></li>
@@ -78,20 +87,13 @@
                 }
 
                 if (defined('SX_IncludeAppSearchMaps') && SX_IncludeAppSearchMaps) { ?>
-                    <li><a href="map_search.php"><svg class="sx_svg">
+                    <li><a href="map_search.php" target="_blank" title="Interactive geo-historical map of Greece — from ancient sites to modern administration, with search of place coordinates and names"><svg class="sx_svg">
                                 <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_marker"></use>
                             </svg>
                             <?= SX_IncludeAppSearchMapsTitle ?></a></li>
                 <?php
                 }
-                if (defined('SX_IncludeExternalLink') && SX_IncludeExternalLink) { ?>
-                    <li><a href="<?php echo SX_IncludeExternalLinkURL ?>" target="_blank"><svg class="sx_svg">
-                                <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_new_window"></use>
-                            </svg>
-                            <?= SX_IncludeExternalLinkTitle ?></a></li>
-                <?php
-                }
-                
+
                 if (sx_includeFilms && $radio_IncludeFilms && sx_includeFilms_OnTop) { ?>
                     <li><a href="films.php"><svg class="sx_svg">
                                 <use xlink:href="../imgPG/sx_svg/sx_symbols.svg?v=2025_09#sx_film"></use>

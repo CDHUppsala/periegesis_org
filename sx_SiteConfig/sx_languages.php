@@ -10,23 +10,30 @@ session_start([
   ]);
 */
 
+/**
+ * Set the URL addresses for the production environment
+ * Provides a canonical‑URL enforcement layer that:
+ * - Ensures one single, correct, official URL, preventing SEO duplication
+ * - Ensures consistency of sessions, as they exist under the same hostname
+ * - Blocks reverse‑proxy or mirror access
+ * - Prevents accidental or malicious hostname variations
+ */
 const sx_Socket = "https://";
-//const sx_SiteURL = "www.periegesis.org";
-const sx_SiteURL = "www.periegesis.abm.uu.se";
+const sx_SiteURL = "www.periegesis.org";
+const sx_TrueSiteURL = 'https://www.periegesis.org';
 
-/*
-    Set sx_radioCheckTrueSiteURL = false for test domains
-    False is Not valid for root directory
-*/
-const sx_radioCheckTrueSiteURL = true;
-
-define("sx_TrueSiteURL", sx_Socket . sx_SiteURL);
+/**
+ * In production environment, set the value of the next constant to true
+ * In local, development environment, set the value to false to avoid redirection to the above production URL
+ * The check is pursued in sx_sitePaths.php
+ */
+const sx_CheckTrueSiteURL = false;
 
 const sx_RadioMultiLang = false;
 const sx_DefaultSiteLang = "en";
 
-$langArr = array(
-    array("en", "English", "")
-);
+$langArr = [
+    ["en","English",""],
+];
 
 define("sx_LangArr", $langArr);

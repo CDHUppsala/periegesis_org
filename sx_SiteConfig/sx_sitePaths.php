@@ -41,14 +41,20 @@ if (isset($_GET["strMsg"])) {
 if (isset($_GET["page"])) {
     $strREQUEST = remove_Right_Query_From_Key("page", $strREQUEST);
 }
+
 define("sx_LOCATION", sx_ROOT_HOST . $strREQUEST);
 
-/*
-    To prohibit connections from false sites
-*/
-if (!empty(sx_TrueSiteURL) && sx_radioCheckTrueSiteURL) {
-    if (sx_ROOT_HOST != sx_TrueSiteURL) {
-        header("Location: " . sx_TrueSiteURL);
+/**
+ * Check the URL to provides a canonical‑URL enforcement layer that:
+ * - Ensures one single, correct, official URL, preventing SEO duplication
+ * - Ensures sessions consistencies, as they exist under one hostname
+ * - Blocks reverse‑proxy or mirror access
+ * - Prevents accidental or malicious hostname variations
+ */
+if (defined('sx_CheckTrueSiteURL') && sx_CheckTrueSiteURL === true) {
+    if (!str_starts_with(sx_LOCATION, sx_TrueSiteURL)) {
+        header("Location: " . sx_TrueSiteURL . $strREQUEST, true, 301);
+        exit;
     }
 }
 
@@ -71,4 +77,9 @@ if($strCachedData === 'Update') {
     exit();
 }
 
+/**
+ * Load CSS and JavaScript files from the root directory of the site.
+ * In developement environment, change to the common, local
+ *   directory for developing CSS and JS files 
+ */
 CONST sx_ROOT_DEV = '..';

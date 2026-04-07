@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Filter and Convert CSV to GeoJSON and KML | Digital Periegesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+    <meta name="creator" content="Public Sphere" />
+    <meta name="title" content="Filter and Convert CSV to GeoJSON and KML | Digital Periegesis" />
+    <meta name="description"
+        content="Convert CSV files with geographic point data to GeoJSON and KML formats. Supports filtering by Book, Type, and Region, and generates two KML versions for mapping platforms." />
+    <meta name="keywords"
+        content="CSV to GeoJSON, CSV to KML, convert CSV, geographic data, latitude longitude, Digital Periegesis, KML ExtendedData, Google Maps" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Filter and Convert CSV to GeoJSON and KML | Digital Periegesis" />
+    <meta property="og:description"
+        content="Convert and filter CSV files with geographic point data into GeoJSON and KML formats. Includes dual KML output for mapping platforms." />
+    <meta property="og:site_name" content="Digital Periegesis" />
+    <meta property="og:url" content="https://www.periegesis.org/en/map_tools.php?p=default" />
+
+    <link rel="canonical" href="https://www.periegesis.org/en/map_tools.php?p=default" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ul {
+            line-height: 1.5;
+        }
+
+        input,
+        button,
+        select {
+            font-size: 1rem;
+            padding: 0.5rem;
+            margin: 0.25em 0;
+        }
+
+        input[type="file"] {
+            padding: 0.4rem 0.2rem;
+            background: #fff;
+            color: #003D7A;
+        }
+
+
+        .header {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0;
+            padding: 0;
+            background-color: #003D7A;
+            color: #ffffffcc;
+        }
+
+        .header .file_picker {
+            margin-left: auto;
+            padding-right: 0.2rem;
+        }
+
+        @media (min-width: 768px) {
+
+            .header {
+                justify-content: center;
+            }
+
+            .header .file_picker {
+                margin-left: 0;
+                padding-right: 0;
+            }
+        }
+
+
+        .fixed {
+            position: fixed;
+            top: 0.25rem;
+            left: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.25;
+        }
+
+        .fixed a {
+            color: #ffffffcc;
+            text-decoration: none;
+        }
+
+        .fixed a:hover {
+            color: #ffffff;
+        }
+
+        .flex_between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            background-color: #f6f6f6;
+        }
+
+        .bg {
+            background-color: #eee;
+            border: 1px solid #ddd;
+        }
+
+        .bg a {
+            margin: 1rem 0;
+            text-decoration: none;
+        }
+
+        .flex_center {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0 0.25rem;
+            margin-left: auto;
+        }
+
+        .align_right {
+            text-align: right;
+        }
+
+        .flex_column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0 1rem;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1024px;
+            padding: 1rem;
+            margin: 0 auto;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            line-height: 1.5;
+        }
+
+
+        .csv_tableFixed {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .csv_table_fixed {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: all 0.5s;
+            z-index: 1000;
+            background-color: #fff;
+        }
+
+        .csv_table_fixed .csv_data_table_container {
+            max-height: 80vh;
+        }
+
+        .csv_table_container {
+            position: relative;
+        }
+
+        .csv_table_search {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0 1rem;
+            padding: 0 0.25rem;
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .svg_div {
+            background-color: #eee;
+            border: 1px solid #888;
+            border-radius: 2px;
+            padding: 0.15rem;
+        }
+
+        .svg_div:hover {
+            background-color: #ddd;
+        }
+
+        .svg_div svg {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+
+        .csv_data_table_container {
+            max-height: 70vh;
+            overflow-y: auto;
+            position: relative;
+            border-bottom: 1px solid #aaa;
+        }
+
+        .csv_data_table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .csv_data_table th,
+        .csv_data_table td {
+            border: 1px solid #ddd;
+            padding: 4px;
+            text-align: left;
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        .csv_data_table tr:nth-last-of-type(odd) {
+            background-color: #f3f6f9;
+        }
+
+        .csv_data_table th {
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            font-weight: bold;
+            white-space: nowrap;
+            background-color: #ccc;
+            border-right: 2px solid #fff;
+            font-size: 1rem;
+            padding: 8px 4px;
+        }
+
+        .csv_data_table thead th.active {
+            color: brown;
+        }
+
+        /** 2 columns table for mobiles */
+        .csv_data_table tr.odd {
+            background-color: #f3f6f9;
+            border-bottom: 1px solid #fff !important;
+        }
+
+        .csv_data_table tr.even {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .csv_pagination_container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .csv_pagination {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            max-width: 1400px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .csv_pagination li {
+            padding: 1px 4px;
+            margin: 0;
+            width: 28px;
+            cursor: pointer;
+            border: 0;
+            font-size: 0.75rem;
+            text-align: right;
+            line-height: 140%;
+            border: 1px solid #ddd;
+        }
+
+        .csv_pagination li:hover {
+            background-color: #ddd;
+        }
+
+        .csv_pagination li.active {
+            font-weight: bold;
+            background-color: #ddd;
+            color: brown;
+        }
+
+        .csv_export {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .csv_SearchHelp {
+            display: none;
+        }
+
+        .csv_SearchHelp>div {
+            padding: 1rem 2rem;
+            max-width: 920px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+        }
+
+        .absolute {
+            position: absolute;
+            left: 0;
+            top: 6rem;
+            right: 0;
+            bottom: 0;
+            overflow: auto;
+            z-index: 10;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+
+    <script>
+
+        let ps_Loaded_FileName = null;
+        let ps_LoadedTableData = null;
+        let ps_TablaData = [];
+
+        let rows_PerPage = 100;
+        let current_Page = 1;
+        let total_LoadedRows = 0;
+        let total_Rows = 0;
+        let total_Pages = 0;
+
+        // Keep track of column sort directions & Cache numeric info
+        let column_Names = null;
+        let sort_Direction = {};
+        let numeric_ColumnCache = {};
+        let active_SortingIndex = -1;
+        let is_TwoColumnsTable = false;
+
+        function sx_create_csv_table(loaded_tableData, LoadedFileName) {
+            ps_LoadedTableData = loaded_tableData;
+            ps_Loaded_FileName = LoadedFileName;
+            sort_Direction = {};
+            numeric_ColumnCache = {};
+
+            if (!data_Table) {
+                console.warn('data_Table not found');
+                return;
+            }
+
+            // Change the initial visibility of search help
+            search_Help.classList.remove('visible');
+            search_Help.classList.add('absolute');
+
+
+            let rows_custom = parseInt(document.querySelector(".ps_RowsPerPage").value);
+            if (!Number.isInteger(rows_custom) || rows_custom <= 0) {
+                rows_custom = 50;
+            }
+            rows_PerPage = rows_custom;
+            current_Page = 1;
+
+            ps_TablaData = [...ps_LoadedTableData] || [];
+            if (!ps_TablaData.length) {
+                return;
+            }
+            total_LoadedRows = ps_TablaData.length;
+
+            column_Names = Object.keys(ps_TablaData[0]);
+
+            // Initial rendering
+            total_Rows = ps_TablaData.length;
+            total_Pages = Math.ceil(total_Rows / rows_PerPage);
+
+            if (total_Rows <= rows_PerPage && pagination_Container) {
+                // hide pagination area
+                pagination_Container.style.display = 'none';
+            } else {
+                pagination_Container.style.display = 'flex';
+            }
+
+            // Reset the sorting column (index) with every load
+            active_SortingIndex = -1;
+
+            sx_renderTable();
+            sx_generatePagination();
+
+        };
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="fixed">
+            <a title="Home to Digital Periegesis" href="index.php">Periegesis</a><br>
+            <a title="Search in Maps" href="map_search.php">Search Map</a>
+        </div>
+        <div class="file_picker">
+            <input type="file" id="FilePicker" accept=".csv,.json,.xml">
+        </div>
+    </div>
+
+    <div class="csv_tableFixed">
+        <div class="csv_table_container">
+            <div class="jq_table_search csv_table_search">
+                <div class="jq_ToggleTableView svg_div" title="Switch between 2 and multiple columns">
+                    <svg id="sx_share_vertical_25" class="svg_First" viewBox="0 0 32 32">
+                        <path
+                            d="M3 1 q-2 0 -2 2 v26 q0 2 2 2 h3 q2 0 2 -2 v-26 q0-2 -2-2z M12 1 q-2 0 -2 2 v26 q0 2 2 2 h17 q2 0 2 -2 v-26 q0-2 -2-2z">
+                        </path>
+                    </svg>
+                    <svg id="sx_shared_horizontal_25" class="svg_Second" style="display: none" viewBox="0 0 32 32">
+                        <path
+                            d="M3 1 q-2 0 -2 2 v3 q0 2 2 2 h26 q2 0 2 -2 v-3 q0-2 -2-2z M3 10 q-2 0 -2 2 v17 q0 2 2 2 h26 q2 0 2 -2 v-17 q0-2 -2-2z">
+                        </path>
+                    </svg>
+                </div>
+
+                <div>Rows Per Page:
+                    <select class="ps_RowsPerPage" name="RowsPerPage">
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200" selected>200</option>
+                    </select>
+                </div>
+
+                <div class="jq_TotalRows"></div>
+
+                <div class="ps_Search_Container flex_center">
+                    <input class="jq_SearchInput" type="text" name="searchInput">
+                    <button class="jq_SearchButton button-text">Search</button>
+                    <button class="jq_ClerButton button-text">Clear</button>
+
+                    <div class="jq_ToggleSearchHelp svg_div" title="View Help">
+                        <svg id="sx_question_bold" viewBox="0 0 32 32">
+                            <path
+                                d="M6 11 a10 10 0 0 1 10 -10 a 1 1 0 0 1 0 20 v3 q0 1 -1 1 h-2 q-1 0 -1 -1 v-6 q0 -1 1 -1 h3 a1 1 0 0 0 0 -12 a6 6 0 0 0 -6 6z M13 27 q-1 0 -1 1 v2 q0 1 1 1 h2 q1 0 1 -1 v-2 q0 -1 -1 -1z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jq_data_table_container csv_data_table_container">
+                <table class="jq_data_table csv_data_table" id="DataTable_Instance">
+                    <thead class="jq_TableHeaders"></thead>
+                    <tbody class="jq_TableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="jq_pagination_container csv_pagination_container">
+                <button class="button-text jq_page" data-page="prev">&#9664;</button>
+                <ul class="jq_pagination csv_pagination"></ul>
+                <button class="button-text jq_page" data-page="next">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="csv_export">
+            <div>
+                <div>Print or Export Visible Table Rows (max 200) as:</div>
+                <button data-action="pdf" data-id="DataTable_Instance">PDF</button>
+                <button data-action="excel" data-id="DataTable_Instance">Excel</button>
+                <button data-action="word" data-id="DataTable_Instance">Word</button>
+                <button data-action="csv" data-id="DataTable_Instance">CSV</button>
+                <button data-action="html" data-id="DataTable_Instance">HTML</button>
+            </div>
+            <div>
+                <div>Export Initial/Filtered File as:</div>
+                <button id="jq_FilteredToCSV">CSV</button>
+                <button id="jq_FilteredToJSON">JSON</button>
+                <button id="jq_FilteredToXML">XML</button>
+            </div>
+        </div>
+
+        <div class="jq_SearchHelp csv_SearchHelp visible">
+            <div>
+                <h2>Filter, Convert and Download any CSV, JSON and XML File</h2>
+                <p>Load a file of CSV, JSON or XML format from your local computer to view its content in a table.</p>
+                <p>Filter the table by searching in all fields/columns with free text.
+                    Convert and export the filtered results to any of the above file formats.</p>
+                <h2>Pagination, Searching and Sorting the Table</h2>
+                <ul>
+                    <li><b>Pagination</b> is automatically applied to all tables with more than 200 rows, by 200 rows
+                        per page.
+                        <ul>
+                            <li>You can navigate to the Next or Previous page by clicking on the left or right arrow
+                                or jump to any page by clicking on its number. The open page automatically scrolls back
+                                to the first row.</li>
+                            <li>If you search or sort the table, pagination is regenerated and starts from the first
+                                page and first row.</li>
+                        </ul>
+                    </li>
+                    <li><b>Sorting</b> is <b>Alphabetic</b> for columns that contain string values and <b>Numeric</b>
+                        for columns that contain only numeric values.
+                        <ul>
+                            <li>To anable return to the initial table ordering, the column <b>ps_Row</b> is added
+                                automatically with autoincremented numeric values, starting from 1.
+                                Click on <b>ps_Row</b> to return to the initial ordering of the table.</li>
+                            <li>The column <b>ps_Row</b> is included when you print/export Visible Table Rows, but
+                                excluded when you download Initial or Filtered Data.</li>
+                            <li>Clicking on the same column alternates sorting between ascending and descending order.
+                            </li>
+                            <li>Sorting is applied to the entire table, not only to the currently visible page,
+                                and generates each time a new pagination, with the visible part of the table displaying
+                                the first page and scrolling to the first row.</li>
+                            <li>If you have active searching results, sorting is applied only to these filtered results.
+                            </li>
+                            <li>Sorting also includes invisible text, like the URL and the Title of Links. Columns that
+                                include text with both links and without links are sorted separately from each other, as
+                                linked text starts with the HTML element <code>a</code>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Searching/Filtering</b> is also applied to the entire table, not only to the currently
+                        visible page.
+                        <ul>
+                            <li>Searching also includes non-visible text, so you might get some non-expected results (if
+                                you search for HTTP you will get all links).</li>
+                            <li>Click on <b>Clear</b> to remove the searching text, restore the initial state of the
+                                table and return to the first page.</li>
+                            <li>If you have sorted the results of searching, sorting is still active even after cleaning the search. Click in that case on the column <b>ps_Row</b> to restore the initial order of the table.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="align_right">
+                    <button class="jq_SearchHelpClose">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+
+            const data_TableContainer = document.querySelector('.jq_data_table_container');
+            const data_Table = document.querySelector('.jq_data_table');
+            const thead = data_Table.querySelector('thead');
+            const tbody = data_Table.querySelector('tbody');
+
+            const search_Help = document.querySelector('.jq_SearchHelp');
+            const toggle_search_Help = document.querySelector('.jq_ToggleSearchHelp');
+            const toggle_view = document.querySelector('.jq_ToggleTableView');
+
+            const search_Container = document.querySelector('.ps_Search_Container');
+
+            const pagination_Container = document.querySelector('.jq_pagination_container');
+
+            /**
+             * ===============================================
+             * 1 Open local file from File System
+             * ===============================================
+             */
+
+            document.getElementById("FilePicker").addEventListener("change", async function () {
+                const file = this.files[0];
+                if (!file) return;
+
+                const arrData = await loadDataFile(file);
+
+                // Now create the table
+                sx_create_csv_table(
+                    arrData,
+                    file.name.replace(/\.[^.]+$/, "")
+                );
+            });
+
+
+            /**
+             * ===============================================
+             * 2 Parse the File and initialize the table
+             * ===============================================
+             */
+
+            async function loadDataFile(file) {
+                const filename = file.name;
+                const ext = filename.split(".").pop().toLowerCase();
+
+                const text = await file.text();
+                const cleanText = removeBOM(text);
+
+                if (ext === "csv") {
+                    return parseCSV(cleanText);
+                }
+                if (ext === "json") {
+                    return parseJSON(cleanText);
+                }
+                if (ext === "xml") {
+                    return parseXML(cleanText);
+                }
+
+                throw new Error("Unsupported file type");
+            }
+
+            function removeBOM(str) {
+                if (str.charCodeAt(0) === 0xFEFF) {
+                    return str.slice(1);
+                }
+                return str;
+            }
+
+            function parseCSV(csvText) {
+                // Detect separator from first line
+                const firstLine = csvText.split("\n")[0];
+                const separator = firstLine.includes(",") ? "," : ";";
+
+                const lines = csvText.split(/\r?\n/).filter(l => l.trim() !== "");
+                if (lines.length === 0) return [];
+
+                // Extract headers
+                let headers = lines.shift().split(separator).map(h => h.trim());
+
+                // Remove potential BOM from first header
+                if (headers[0].charCodeAt(0) === 0xFEFF) {
+                    headers[0] = headers[0].slice(1);
+                }
+
+                const addRowID = !headers.includes("ps_Row");
+
+                const data = [];
+                let rowIndex = 1;
+
+                for (const line of lines) {
+                    const cols = splitCSVRow(line, separator);
+                    const obj = {};
+
+                    if (addRowID) obj.ps_Row = rowIndex++;
+
+                    headers.forEach((h, i) => {
+                        obj[h] = cols[i] ?? "";
+                    });
+
+                    data.push(obj);
+                }
+
+                return normalizeStructure(data);
+            }
+
+            function splitCSVRow(row, sep) {
+                const result = [];
+                let current = "";
+                let inQuotes = false;
+
+                for (let i = 0; i < row.length; i++) {
+                    const char = row[i];
+
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                        continue;
+                    }
+                    if (char === sep && !inQuotes) {
+                        result.push(current);
+                        current = "";
+                        continue;
+                    }
+                    current += char;
+                }
+                result.push(current);
+                return result;
+            }
+
+            function parseJSON(jsonText) {
+                jsonText = jsonText.replace(/^\uFEFF/, ""); // Remove BOM
+
+                let data = [];
+
+                try {
+                    data = JSON.parse(jsonText);
+                } catch (e) {
+                    alert("Invalid JSON file");
+                    return [];
+                }
+
+                if (!Array.isArray(data)) data = [data];
+
+                // Insert ps_Row as FIRST key in each object
+                data = data.map((row, i) => ({
+                    ps_Row: i + 1,
+                    ...row
+                }));
+
+                return normalizeStructure(data);
+            }
+
+
+            function parseXML(xmlText) {
+                xmlText = xmlText.replace(/^\uFEFF/, ""); // Remove BOM
+
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+                if (xmlDoc.querySelector("parsererror")) {
+                    alert("Invalid XML file");
+                    return [];
+                }
+
+                // Convert XML → JS object (deep)
+                const root = xmlDoc.documentElement;
+                const jsObject = xmlToJSON(root);
+
+                // Extract <root><item>...</item></root> structure
+                const firstKey = Object.keys(jsObject)[0];
+                let arr = jsObject[firstKey];
+
+                if (!Array.isArray(arr)) {
+                    arr = [arr];
+                }
+
+                // Insert ps_Row as first key
+                arr = arr.map((row, i) => ({
+                    ps_Row: i + 1,
+                    ...row
+                }));
+
+                return normalizeStructure(arr);
+            }
+
+            /**
+             * ===============================================
+             * 3 Parse helpers
+             * ===============================================
+             */
+
+            function xmlToJSON(node) {
+                let obj = {};
+
+                // element nodes with children
+                if (node.children.length > 0) {
+                    [...node.children].forEach(child => {
+                        const name = child.nodeName;
+                        if (!obj[name]) obj[name] = [];
+                        obj[name].push(xmlToJSON(child));
+                    });
+                } else {
+                    // node with text only
+                    obj = node.textContent;
+                }
+
+                return obj;
+            }
+
+            function normalizeStructure(arr) {
+                if (!Array.isArray(arr) || arr.length === 0) return [];
+
+                // Collect all keys
+                const allKeys = new Set();
+                arr.forEach(row => {
+                    if (row && typeof row === "object") {
+                        Object.keys(row).forEach(k => allKeys.add(k));
+                    }
+                });
+
+                const keys = [...allKeys];
+
+                // Helper to normalize values
+                const normalizeValue = v => {
+                    if (v === null || v === undefined) return "";
+
+                    if (typeof v !== "string") return v;
+
+                    const s = v.trim();
+
+                    // Numbers (int or float)
+                    if (/^-?\d+$/.test(s)) return parseInt(s, 10);
+                    if (/^-?\d+\.\d+$/.test(s)) return parseFloat(s);
+
+                    // Boolean values
+                    const low = s.toLowerCase();
+                    if (low === "true") return true;
+                    if (low === "false") return false;
+
+                    return s; // keep as string
+                };
+
+                // Return normalized rows
+                return arr.map(row => {
+                    const obj = {};
+                    keys.forEach(k => {
+                        obj[k] = normalizeValue(row[k]);
+                    });
+                    return obj;
+                });
+            }
+
+
+            /**
+             * ===============================================
+             * 4. Render the table Headers, Rows and Pagination:
+             *      - Initially from the function that loads the file
+             *      - Subsequenly from event listneres for
+             *          . Searching/filtering
+             *          . Sorting
+             *          . Pagination
+             * ===============================================
+             */
+
+
+            function sx_getWindowWidth() {
+                return window.innerWidth || document.documentElement.clientWidth;
+            }
+            const ps_WindowWidth = sx_getWindowWidth();
+            /*
+                        if (ps_WindowWidth < 768) {
+                            toggle_view.style.display = 'none';
+                        } else {
+                            toggle_view.style.display = 'block';
+                        }
+            */
+            function sx_renderTable(mode = "normal") {
+                let slicedData = sx_getPaginatedData();
+                if (!tbody) return;
+
+                let html = "";
+
+                if (mode === "normal") {
+                    // Render headers
+                    thead.innerHTML = "";
+                    const tr = document.createElement("tr");
+                    column_Names.forEach((name, i) => {
+                        const th = document.createElement("th");
+                        th.textContent = name;
+                        th.dataset.columnIndex = i;
+                        tr.appendChild(th);
+                    });
+                    thead.appendChild(tr);
+
+                    // Render rows
+                    for (let r = 0; r < slicedData.length; r++) {
+                        const rowData = slicedData[r];
+                        html += "<tr>";
+                        for (let c = 0; c < column_Names.length; c++) {
+                            let columnName = column_Names[c];
+                            let rawValue = rowData[columnName];
+                            let value = sx_convert_to_link(rawValue, columnName);
+
+                            value = String(value).replace(/,(?!\s)/g, ", ");
+                            html += `<td class="${escapeHtml(columnName)}">${value}</td>`;
+                        }
+                        html += "</tr>";
+                    }
+
+                    is_TwoColumnsTable = false;
+                } else if (mode === "twoColumn") {
+                    // Clear headers
+                    thead.innerHTML = "";
+
+                    let rowClass = "odd";
+                    for (let r = 0; r < slicedData.length; r++) {
+                        const rowData = slicedData[r];
+                        for (let c = 0; c < column_Names.length; c++) {
+                            let columnName = column_Names[c];
+                            let val = rowData[columnName];
+                            if (val !== "" && val !== undefined && val !== null) {
+                                html += `<tr class="${rowClass}">`;
+                                html += `<td><b>${escapeHtml(columnName)}</b></td>`;
+                                html += `<td>${sx_convert_to_link(val, columnName)}</td>`;
+                                html += "</tr>";
+                            }
+                        }
+                        rowClass = (rowClass === "odd") ? "even" : "odd";
+                    }
+
+                    is_TwoColumnsTable = true;
+                }
+
+                tbody.innerHTML = html;
+                show_dataRows();
+                sx_generatePagination();
+                updateToggleButton();
+            }
+
+            function updateToggleButton() {
+                const svgFirst = toggle_view.querySelector('.svg_First');
+                const svgSecond = toggle_view.querySelector('.svg_Second');
+
+                if (is_TwoColumnsTable) {
+                    if (svgFirst) svgFirst.style.display = 'none';
+                    if (svgSecond) svgSecond.style.display = 'block';
+                } else {
+                    if (svgFirst) svgFirst.style.display = 'block';
+                    if (svgSecond) svgSecond.style.display = 'none';
+                }
+            }
+
+            function sx_generatePagination() {
+                if (!pagination_Container) return;
+                const ul = pagination_Container.querySelector('.jq_pagination');
+                if (!ul) return;
+
+                let paginationHtml = '';
+                for (let i = 1; i <= total_Pages; i++) {
+                    paginationHtml += '<li class="' + (i === current_Page ? 'active' : '') + '" data-page="' + i + '">' + i + '</li>';
+                }
+                ul.innerHTML = paginationHtml;
+
+                if (active_SortingIndex > -1) {
+                    let headerThs = data_TableContainer.querySelectorAll('.jq_TableHeaders th');
+                    if (headerThs && headerThs[active_SortingIndex]) {
+                        headerThs[active_SortingIndex].classList.add('active');
+                        // remove from siblings
+                        for (let k = 0; k < headerThs.length; k++) {
+                            if (k !== active_SortingIndex) headerThs[k].classList.remove('active');
+                        }
+                    }
+                }
+            }
+
+
+
+            /**
+             * ===============================================
+             * 5 Render Table Helpers
+             * ===============================================
+             */
+
+
+            function sx_getPaginatedData() {
+                const startIndex = (current_Page - 1) * rows_PerPage;
+                return ps_TablaData.slice(startIndex, startIndex + rows_PerPage);
+            }
+
+            function sx_convert_to_link(loopValue, columnName) {
+                if (typeof loopValue === 'string' && (loopValue.startsWith('http://') || loopValue.startsWith('https://'))) {
+                    let lastPart = loopValue.substring(loopValue.lastIndexOf('/') + 1).trim();
+                    if (lastPart === '') lastPart = columnName;
+                    return '<a target="_blank" href="' + escapeHtml(loopValue) + '">' + escapeHtml(lastPart) + '</a>';
+                }
+                return escapeHtml(loopValue);
+            }
+
+            // simple HTML escape for safety
+            function escapeHtml(v) {
+                if (v === null || v === undefined) return '';
+                return String(v)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+            }
+
+
+            function show_dataRows() {
+                let filtered_Rows = '';
+                total_Rows = ps_TablaData.length;
+                if (total_Rows !== total_LoadedRows) {
+                    filtered_Rows = ` | Filtered Rows: ${total_Rows}`;
+                }
+
+                const el = document.querySelector('.jq_TotalRows');
+                el.innerHTML = 'Total Rows: ' + total_LoadedRows + filtered_Rows;
+            }
+
+
+            /**
+             * ===============================================
+             * 6 Add Event Listener
+             * ===============================================
+             */
+
+
+            // Change the number of rows per page
+            document.querySelector(".ps_RowsPerPage").addEventListener('change', function () {
+                rows_custom = parseInt(this.value, 10);
+                if (Number.isInteger(rows_custom) && rows_custom > 0) {
+                    rows_PerPage = rows_custom;
+                    total_Pages = Math.ceil(total_Rows / rows_PerPage);
+                    current_Page = 1;
+                    sx_renderTable(is_TwoColumnsTable ? "twoColumn" : "normal");
+
+                    sx_generatePagination();
+                }
+            });
+
+            // Sort by header/Column
+            thead.addEventListener('click', (ev) => {
+                const th = ev.target.closest("th");
+                if (!th) return;
+
+                const column_Index = Number(th.dataset.columnIndex);
+
+                sortTable(column_Index);
+
+                current_Page = 1;
+                sx_renderTable(is_TwoColumnsTable ? "twoColumn" : "normal");
+                sx_generatePagination();
+
+                // mark active header
+                thead.querySelectorAll("th").forEach(function (el) {
+                    el.classList.remove('active');
+                    if (Number(el.dataset.columnIndex) === column_Index) {
+                        el.classList.add('active');
+                    }
+                });
+
+                // Save the sorting column (index) when searching and paginating
+                active_SortingIndex = column_Index;
+
+                if (data_TableContainer) data_TableContainer.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Pagination by arrows or page number
+            pagination_Container.addEventListener('click', function (ev) {
+                // Case 1: direct page number <li data-page="...">
+                const li = ev.target.closest('li[data-page]');
+                if (li) {
+                    const page = parseInt(li.getAttribute('data-page'), 10);
+                    if (page) {
+                        current_Page = page;
+                        sx_renderTable(is_TwoColumnsTable ? "twoColumn" : "normal");
+                        sx_generatePagination();
+                        if (data_TableContainer) {
+                            data_TableContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }
+                    return; // stop here if handled
+                }
+
+                // Case 2: next/prev navigation element with .jq_page
+                const nav = ev.target.closest('.jq_page');
+                if (nav) {
+                    ev.preventDefault();
+                    const page = nav.getAttribute('data-page');
+                    if (page === 'next') {
+                        current_Page = current_Page + 1;
+                        if (current_Page > total_Pages) current_Page = 1;
+                    } else {
+                        current_Page = current_Page - 1;
+                        if (current_Page < 1) current_Page = total_Pages;
+                    }
+                    sx_renderTable(is_TwoColumnsTable ? "twoColumn" : "normal");
+                    sx_generatePagination();
+                    if (data_TableContainer) {
+                        data_TableContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            }, false);
+
+
+            // Search/filter button
+            document.querySelector('.jq_SearchButton').addEventListener('click', function (ev) {
+                const input = document.querySelector('.jq_SearchInput');
+                const searchText = input ? input.value.toLowerCase() : '';
+                filterTable(searchText);
+                current_Page = 1;
+                sx_renderTable(is_TwoColumnsTable ? "twoColumn" : "normal");
+                sx_generatePagination();
+                if (data_TableContainer) data_TableContainer.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, false);
+
+            // Clear serch/filter button
+            document.querySelector('.jq_ClerButton').addEventListener('click', function (ev) {
+                document.querySelector('.jq_SearchInput').value = '';
+                document.querySelector('.jq_SearchButton').click();
+            }, false);
+
+            // Toggle search Help
+            toggle_search_Help.addEventListener('click', function (ev) {
+                search_Help.classList.toggle('visible');
+            }, false);
+
+            // Close help from inside help
+            document.querySelector(".jq_SearchHelpClose").addEventListener('click', function () {
+                search_Help.classList.remove('visible');
+            }, false);
+
+
+            /**
+             * ===============================================
+             * 7 Functions called by Event Listener
+             * ===============================================
+             */
+
+
+            // Search/Filter function
+            function filterTable(searchText) {
+                if (searchText.trim() === "") {
+                    ps_TablaData = ps_LoadedTableData;
+                } else {
+                    const search = searchText.toLowerCase();
+                    ps_TablaData = ps_LoadedTableData.filter(function (row) {
+                        return Object.values(row).some(function (value) {
+                            return String(value || "").toLowerCase().includes(search);
+                        });
+                    });
+                }
+                total_Pages = Math.ceil(ps_TablaData.length / rows_PerPage);
+            }
+
+            // Sort function
+            function sortTable(columnIndex) {
+                const columnKey = column_Names[columnIndex];
+                const isAscending = sort_Direction[columnKey] === 'asc';
+
+                // Determine if column is numeric: cache result
+                let isNumericColumn;
+                if (columnKey === 'ps_Row') {
+                    isNumericColumn = true; // always numeric
+                    numeric_ColumnCache[columnKey] = isNumericColumn;
+                } else if (numeric_ColumnCache.hasOwnProperty(columnKey)) {
+                    isNumericColumn = numeric_ColumnCache[columnKey];
+                } else {
+                    isNumericColumn = detectNumericColumn(columnKey);
+                    numeric_ColumnCache[columnKey] = isNumericColumn;
+                }
+
+                // Sort ps_TablaData
+                ps_TablaData.sort((a, b) => {
+                    let valueA = a[columnKey];
+                    let valueB = b[columnKey];
+
+                    if (isNumericColumn) {
+                        const numA = Number(valueA);
+                        const numB = Number(valueB);
+
+                        const aIsValid = !isNaN(numA);
+                        const bIsValid = !isNaN(numB);
+
+                        // Missing or invalid numbers go at the end (asc) or start (desc)
+                        if (!aIsValid && !bIsValid) return 0;
+                        if (!aIsValid) return isAscending ? 1 : -1;
+                        if (!bIsValid) return isAscending ? -1 : 1;
+
+                        return isAscending ? numA - numB : numB - numA;
+                    } else {
+                        const aStr = (valueA ?? "").toString();
+                        const bStr = (valueB ?? "").toString();
+                        return isAscending ? aStr.localeCompare(bStr) : bStr.localeCompare(aStr);
+                    }
+                });
+
+                // Toggle sort direction
+                sort_Direction[columnKey] = isAscending ? 'desc' : 'asc';
+            }
+
+            // Sort Helper: Scan column once to see if it's numeric
+            function detectNumericColumn(columnKey) {
+                for (let i = 0; i < ps_TablaData.length; i++) {
+                    const v = ps_TablaData[i][columnKey];
+                    if (v !== null && v !== undefined && v !== "") {
+                        if (typeof v !== 'number' && isNaN(Number(v))) {
+                            return false; // found a non-numeric value
+                        }
+                    }
+                }
+                return true;
+            }
+
+
+            /**
+             * ===============================================
+             * 8 Event Listener for toggling between verticlal/horizontal table view
+             * ===============================================
+             */
+
+            // Resize handler
+            let debounce;
+
+            window.addEventListener("resize", () => {
+                clearTimeout(debounce);
+                debounce = setTimeout(() => {
+                    if (sx_getWindowWidth() < 768) {
+                        sx_renderTable("twoColumn");
+                        //toggle_view.style.display = "none";
+                    } else {
+                        // sx_renderTable("normal");
+                        toggle_view.style.display = "block";
+
+                    }
+                }, 200);
+            });
+
+            // Toggle button
+            toggle_view.addEventListener("click", () => {
+                sx_renderTable(is_TwoColumnsTable ? "normal" : "twoColumn");
+            }, false);
+
+
+            /**
+             * ===============================================
+             * 9 Convert and download original/filtered data in various formats
+             * ===============================================
+             */
+
+
+            // To CSV File
+            document.getElementById("jq_FilteredToCSV").addEventListener("click", async function (e) {
+                e.preventDefault();
+                if (!ps_TablaData || !Array.isArray(ps_TablaData) || ps_TablaData.length === 0) {
+                    alert("No initial or filtered data available for download. Please, load first a CSV, JSON or XML file form your local computer.");
+                    return;
+                }
+
+                const fieldToRemove = "ps_Row";
+
+                // Remove field from all rows
+                ps_TablaData.forEach(row => {
+                    delete row[fieldToRemove];
+                });
+
+                // Extract headers
+                const headers = [...new Set(ps_TablaData.flatMap(row => Object.keys(row)))];
+
+                // 1. Create a ReadableStream that feeds CSV rows
+                const csvStream = new ReadableStream({
+                    start(controller) {
+                        // Write header
+                        controller.enqueue(headers.join(",") + "\n");
+                    },
+                    pull(controller) {
+                        if (!this.index) this.index = 0;
+
+                        if (this.index >= ps_TablaData.length) {
+                            controller.close();
+                            return;
+                        }
+
+                        const row = ps_TablaData[this.index++];
+                        const values = headers.map(h => JSON.stringify(row[h] ?? ""));
+                        const line = values.join(",") + "\n";
+
+                        controller.enqueue(line);
+                    },
+                    cancel() { }
+                });
+
+                // 2. Encode text chunks
+                const encoder = new TextEncoderStream();
+
+                // 3. Pipe: ReadableStream → Encoder → Response → Blob
+                const response = new Response(csvStream.pipeThrough(encoder));
+                const blob = await response.blob();
+
+                // 4. Download the file
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${ps_Loaded_FileName}_${new Date().toISOString().slice(0, 10)}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+
+            // To JSON File
+            document.getElementById("jq_FilteredToJSON").addEventListener("click", function (e) {
+                e.preventDefault();
+
+                if (!ps_TablaData || !Array.isArray(ps_TablaData) || ps_TablaData.length === 0) {
+                    alert("No initial or filtered data available for download. Please, load first a CSV, JSON or XML file form your local computer.");
+                    return;
+                }
+
+                const fieldToRemove = "ps_Row";
+
+                // Remove field from all rows
+                ps_TablaData.forEach(row => {
+                    delete row[fieldToRemove];
+                });
+
+                const blob = new Blob(
+                    [JSON.stringify(ps_TablaData, null, 2)], // pretty printed JSON
+                    {
+                        type: "application/json"
+                    }
+                );
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${ps_Loaded_FileName}_${new Date().toISOString().slice(0, 10)}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+
+            // To XML File
+            document.getElementById("jq_FilteredToXML").addEventListener("click", function (e) {
+                e.preventDefault();
+
+                if (!ps_TablaData || !Array.isArray(ps_TablaData) || ps_TablaData.length === 0) {
+                    alert("No initial or filtered data available for download. Please, load first a CSV, JSON or XML file form your local computer.");
+                    return;
+                }
+
+                const fieldToRemove = "ps_Row";
+
+                // Remove field from all rows
+                ps_TablaData.forEach(row => {
+                    delete row[fieldToRemove];
+                });
+
+                function escapeXML(str) {
+                    return String(str)
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&apos;");
+                }
+
+                let xml = `<items>\n`;
+
+                for (const row of ps_TablaData) {
+                    xml += `  <item>\n`;
+                    for (const key in row) {
+                        const safeKey = key.replace(/[^A-Za-z0-9_\-:.]/g, "_");
+                        const safeValue = escapeXML(row[key] ?? "");
+                        xml += `    <${safeKey}>${safeValue}</${safeKey}>\n`;
+                    }
+                    xml += `  </item>\n`;
+                }
+
+                xml += `</items>`;
+
+                const blob = new Blob([xml], {
+                    type: "application/xml"
+                });
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `filtered_${ps_Loaded_FileName}_${new Date().toISOString().slice(0, 10)}.xml`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+
+
+            /**
+             * ====================================================
+             * 11. Print/Export the visible table content 
+             * ====================================================
+             */
+
+
+            // Event listeners for print/export butons - NOT USED HERE
+            document.querySelectorAll("button[data-action]").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (ps_TablaData.length > 0) {
+                        const id = btn.getAttribute("data-id");
+                        const action = btn.getAttribute("data-action");
+                        switch (action) {
+                            case "pdf": ps_exportToPDF(id); break;
+                            case "excel": ps_exportToExcel(id); break;
+                            case "word": ps_exportToWord(id); break;
+                            case "csv": ps_exportToCSV(id); break;
+                            case "html": ps_exportToHTML(id); break;
+                            default: console.warn("Unknown action:", action);
+                        }
+                    } else {
+                        alert('No file is loaded! Please, load first a CSV, JSON or XML file form your local computer.');
+                    }
+                });
+            });
+
+
+            // 1. Print Element to PDF (actually print dialog)
+            function ps_exportToPDF(id) {
+                const main = document.getElementById(id);
+                const cloned = main.cloneNode(true);
+                const html = sx_clear_cloned_html(cloned, "html");
+
+                let Title = "", SubTitle = "";
+                const h1 = main.closest("main")?.querySelector("h1");
+                const h2 = main.closest("main")?.querySelector("h2");
+                if (h1) Title = `<h1>${h1.textContent}</h1>`;
+                if (h2) SubTitle = `<h2>${h2.textContent}</h2>`;
+
+                const newWin = window.open("", "Print-Window");
+                newWin.document.open();
+                newWin.document.write(
+                    `<html><body onload="window.print();window.close();">${Title}${SubTitle}${html}</body></html>`
+                );
+                newWin.document.close();
+
+                const cloneTarget = document.getElementById("CloneTarget");
+                if (cloneTarget) cloneTarget.remove();
+            }
+
+            // 2. Export Table to Excel
+            function ps_exportToExcel(id) {
+                const main = document.getElementById(id);
+                const cloned = main.cloneNode(true);
+                const html = sx_clear_cloned_html(cloned, "html");
+
+                const blob = new Blob([html], { type: "application/vnd.ms-excel;charset=utf-8" });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = `${id}.xls`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            // 3. Export Table to HTML
+            function ps_exportToHTML(id) {
+                const main = document.getElementById(id);
+                const cloned = main.cloneNode(true);
+                const html = sx_clear_cloned_html(cloned, "html");
+
+                let Title = "", SubTitle = "";
+                const h1 = main.closest("main")?.querySelector("h1");
+                const h2 = main.closest("main")?.querySelector("h2");
+                if (h1) Title = `<h1>${h1.textContent}</h1>`;
+                if (h2) SubTitle = `<h2>${h2.textContent}</h2>`;
+
+                const content = `<html><body>${Title}${SubTitle}${html}</body></html>`;
+                const blob = new Blob([content], { type: "text/html;charset=utf-8" });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = `${id}.html`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            // 4. Export Element to Word
+            function ps_exportToWord(id) {
+                const main = document.getElementById(id);
+                const cloned = main.cloneNode(true);
+                const html = sx_clear_cloned_html(cloned, "html");
+
+                let Title = "", SubTitle = "";
+                const h1 = main.closest("main")?.querySelector("h1");
+                const h2 = main.closest("main")?.querySelector("h2");
+                if (h1) Title = `<h1>${h1.textContent}</h1>`;
+                if (h2) SubTitle = `<h2>${h2.textContent}</h2>`;
+
+                const blob = new Blob([Title + SubTitle + html], { type: "application/msword;charset=utf-8" });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = `${id}.doc`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            // 5. Export Table to CSV
+            function ps_exportToCSV(id) {
+                const table = document.getElementById(id);
+                const filename = `Table_To_CSV_${new Date().toISOString().slice(0, 10)}_${Math.floor(Math.random() * 900 + 100)}.csv`;
+
+                const rows = [];
+                const headers = Array.from(table.querySelectorAll("th")).map(th => th.textContent.replace(/"/g, ""));
+                rows.push(headers.join(","));
+
+                table.querySelectorAll("tbody tr").forEach(tr => {
+                    const cells = Array.from(tr.querySelectorAll("td")).map(td => escapeCsvValue(td.textContent.trim()));
+                    rows.push(cells.join(","));
+                });
+
+                const csvData = rows.join("\n");
+                const blob = new Blob([csvData], { type: "text/csv;charset=utf-8" });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            // CSV escape helper
+            function escapeCsvValue(value) {
+                value = value.replace(/\r?\n/g, " ").replace(/"/g, '""').replace(/,/g, " ");
+                if (value.includes('"') || value.includes(" ")) {
+                    value = `"${value}"`;
+                }
+                return value;
+            }
+
+            // clean table content helper
+            function sx_clear_cloned_html(source, type) {
+                // Create hidden container
+                const container = document.createElement("div");
+                container.id = "CloneTarget";
+                container.style.position = "absolute";
+                container.style.top = "0";
+                container.style.left = "0";
+                container.style.opacity = "0";
+                container.style.zIndex = "-100";
+
+                document.body.appendChild(container);
+
+                // Clone source and append
+                source.id = "Cloned_Table";
+                container.appendChild(source);
+
+                const el_cloned = document.getElementById("Cloned_Table");
+
+                // DOM cleanup operations 
+                // unwrap <div> children
+                el_cloned.querySelectorAll("div").forEach(div => {
+                    while (div.firstChild) {
+                        div.parentNode.insertBefore(div.firstChild, div);
+                    }
+                    div.remove();
+                });
+
+                // remove style/class from headings
+                el_cloned.querySelectorAll("h1, h2, h3, h4").forEach(h => {
+                    h.removeAttribute("style");
+                    h.removeAttribute("class");
+                });
+
+                // unwrap spans inside th/td
+                el_cloned.querySelectorAll("th span, td span").forEach(span => {
+                    while (span.firstChild) {
+                        span.parentNode.insertBefore(span.firstChild, span);
+                    }
+                    span.remove();
+                });
+
+                // unwrap anchors inside th
+                el_cloned.querySelectorAll("th a").forEach(a => {
+                    while (a.firstChild) {
+                        a.parentNode.insertBefore(a.firstChild, a);
+                    }
+                    a.remove();
+                });
+
+                // style th
+                el_cloned.querySelectorAll("th").forEach(th => {
+                    th.style.textAlign = "left";
+                    th.style.background = "#EEEEEE";
+                });
+
+                // unwrap <map> inside td
+                el_cloned.querySelectorAll("td map").forEach(map => {
+                    while (map.firstChild) {
+                        map.parentNode.insertBefore(map.firstChild, map);
+                    }
+                    map.remove();
+                });
+
+                // remove unwanted elements
+                el_cloned.querySelectorAll("br, img, a svg").forEach(el => el.remove());
+
+                // remove inline styles from rows and cells
+                el_cloned.querySelectorAll("tr").forEach(tr => {
+                    tr.removeAttribute("style");
+                    tr.querySelectorAll("td, th").forEach(cell => cell.removeAttribute("style"));
+                    tr.style.verticalAlign = "top";
+                    tr.style.borderBottom = "1px solid #EEEEEE";
+                });
+
+                // remove classes from thead/tbody
+                el_cloned.querySelectorAll("thead, tbody").forEach(el => el.removeAttribute("class"));
+
+                // remove class from table and set border-collapse
+                el_cloned.removeAttribute("class");
+                el_cloned.style.borderCollapse = "collapse";
+
+                // remove jqTabsList if present
+                const tabsList = el_cloned.querySelector("ul.jqTabsList");
+                if (tabsList) tabsList.remove();
+
+                // --- Return result ---
+                if (type === "text") {
+                    return el_cloned.innerText;
+                } else {
+                    return container.innerHTML;
+                }
+            }
+
+        </script>
+
+</body>
+
+</html>

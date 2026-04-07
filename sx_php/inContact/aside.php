@@ -121,6 +121,8 @@
 <?php
 include __DIR__ . "/map_contact.php";
 
+	get_Main_Advertisements("Bottom");
+
 if ($radio_UseAdvertises) {
 	//== Place: Top,  Bottom
 	get_Main_Advertisements("Bottom");

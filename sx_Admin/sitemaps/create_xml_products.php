@@ -2,11 +2,11 @@
 
 if (sx_radioUseProductMaps == False) {
 	echo "<h2>Products Map is not active</h1>";
-	echo "<p>Please check the file admin_design.php</p>";
+	echo "<p>Please check the file admin_design.asp</p>";
 	exit();
 }
 
-$xmlProductFileURL = "/products.php?pid=";
+$xmlProductFileURL = "/products.asp?pid=";
 $iRows = 0;
 
 /**
@@ -76,7 +76,7 @@ if (!empty(@$_POST["Create"])) {
 }
 ?>
 <h2>Sitemaps for Products</h2>
-<form action="create_xml.php?type=Products" name="createProductXML" method="post" class="maxWidth">
+<form action="create_xml.asp?type=Products" name="createProductXML" method="post" class="maxWidth">
     <h3>Create a New Sitemap or add New Products to the Existed Sitemap</h3>
 	<fieldset>
 		<p><input type="radio" name="Type" value="Products" checked> Sitemap for Products</p>

@@ -1,0 +1,1 @@
+These icons were created by Kajsa Palm with input from Linda Talata and the Digital Periegesis team to cover place types from its mapping of Pausanias and a few place types derived from ToposText. You may reuse these icons freely for any ancient mapping purpose.

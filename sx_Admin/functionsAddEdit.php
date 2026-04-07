@@ -1,6 +1,6 @@
 <?php
 
-$boolIsAuto = false;
+$is_AutoincrementPK = false;
 $strFormValidation = '';
 
 $radioGetRecords = false;
@@ -22,6 +22,7 @@ if (empty($_POST["Edit"]) && !empty($strIDName) && (int)$strIDValue > 0) {
     }
 }
 
+// Get either field names, with Adding new records, or the record for Editing
 $sql = "SELECT * FROM {$request_Table} {$strGetReordsWhere} LIMIT 1";
 $stmt = $conn->query($sql);
 $rs = $stmt->fetch(PDO::FETCH_BOTH);
@@ -40,7 +41,7 @@ for ($i = 0; $i < $maxcol; $i++) {
 
     if (empty($_POST["strAddHTML"]) && empty($_POST["AddPureText"]) && empty($_POST["Edit"])) {
         if ($i == 0) {
-            $boolIsAuto = sx_IsAutoincrement($request_Table, $xName);
+            $is_AutoincrementPK = sx_IsAutoincrement($request_Table, $xName);
         }
         /**
          * Generate a javascipt string with the required fields for Form Validation
@@ -125,238 +126,226 @@ function sx_getNewRecordID($fn, $ln, $qSelect, $qIncert)
  * Check and correct the Form Values agains the above array of Field Types.
  * Prepare the SQL-string for Adding or Updating the record
  */
-//
+
+
 function sx_getInsertUpdateRecords($action)
 {
-    $arrAddFields = '';
-    $arrAddPrepareValues = '';
-    $arrAddValues = [];
-    $strUppdatePrepare = '';
-    $arrUppdateValues = [];
     $isUpdate = ($action === 'update');
 
-    if (is_array(ARR_FieldNames) && !empty(ARR_FieldNames)) {
+    $arrAddFields = [];
+    $arrAddPlaceholders = [];
+    $arrAddValues = [];
 
-        $iCount = count(ARR_FieldNames);
+    $arrUpdateParts = [];
+    $arrUpdateValues = [];
 
-        for ($i = 0; $i < $iCount; $i++) {
-            $xName = ARR_FieldNames[$i][0];
-            $xType = ARR_FieldNames[$i][1];
+    $str_UserPassword = null;
 
-            /**
-             * Get the Form Value of every Field, using its name
-             * Start with fields with Relation Type 2 and 3, which have 2 inputs:
-             *      . An Input field with Name = Prefix "Add" + Field Name
-             *      . A Selection Box with Name = Field Name
-             * - Type 2: add new record in related table and get its ID
-             *      . if an ID is already selected in Selection Box, don't add any record
-             * - Type 3: Get all distinct values from a field and Add it as new value
-             */
-            if (isset($_POST["Add" . $xName]) && !empty($_POST["Add" . $xName])) {
-                $xValue = trim($_POST["Add" . $xName]);
-                // Add a new record in the related table and get its ID-number
-                $strRelatedTableName = $_POST["hiddenRTable" . $xName] ?? '';
-                $strRelatedFieldName = $_POST["hiddenRField" . $xName] ?? '';
-                // Adds other fields value as they are defined in WHERE-condition, if any
-                $strRelatedWhereFieldName = $_POST["hiddenRWhereName" . $xName] ?? '';
-                $strRelatedWhereFieldValue = boolval($_POST["hiddenRWhereValue" . $xName] ?? 0);
+    foreach (ARR_FieldNames as $index => $field) {
+        $xName = $field[0];
+        $xType = $field[1];
 
-                /*        
-                <input type="hidden" name="hiddenRWhereNameThemeID" value="Actual">
-                <input type="hidden" name="hiddenRWhereValueThemeID" value="True">
-                <input type="hidden" name="hiddenRTableThemeID" value="themes">
-                <input type="hidden" name="hiddenRFieldThemeID" value="ThemeName">
-                <input type="text" size="40" name="AddThemeID" value=""> 
-                */
+        // Skip primary key (first column)
+        if ($index === 0) continue;
 
-                if (!empty($strRelatedTableName) && !empty($strRelatedFieldName)) {
-                    $conn = dbconn();
-                    /**
-                     * Check if the record in the related table already exists and get its ID
-                     */
-                    $tempID = 0;
-                    $sqlCheck = "SELECT  $xName FROM $strRelatedTableName 
-                    WHERE $strRelatedFieldName = ? LIMIT 1";
-                    $fstmt = $conn->prepare($sqlCheck);
-                    $fstmt->execute([$xValue]);
-                    $tempID = $fstmt->fetchColumn();
-                    $fstmt = null;
-                    if ((int) $tempID > 0) {
-                        $xValue = $tempID;
-                    } else {
-                        $sql = "INSERT INTO $strRelatedTableName 
-					($strRelatedFieldName, $strRelatedWhereFieldName)
-                    VALUES(?,?)";
-                        $fstmt = $conn->prepare($sql);
-                        $fstmt->execute([$xValue, $strRelatedWhereFieldValue]);
-                        $xValue = $conn->lastInsertId();
-                        $fstmt = null;
-                    }
-                }
-            } elseif (isset($_POST["Distinct" . $xName]) && !empty($_POST["Distinct" . $xName])) {
-                $xValue = trim($_POST["Distinct" . $xName]);
-            } else {
-                $xValue = $_POST[$xName] ?? '';
-                if (isset(arr_AddUppdateRelated["AddToTable"]) && arr_AddUppdateRelated["AddToTable"][0] == $xName) {
-                    if (intval($xValue) == 0) {
-                        /**
-                         * If Records in Text Table include Authors:,
-                         * get the Author ID, if exists, or add a new Author and get its ID
-                         * Not for Books and advanced Texts 
-                         * with separate table for multiple text to author relations
-                         */
-                        $arr = explode(";", arr_AddUppdateRelated["AddToTable"][1]);
-                        /*
-                    [0]->SELECT AuthorID FROM text_authors WHERE FirstName = ? AND LastName = ?;
-                    [1]->INSERT INTO text_authors (FirstName,LastName) VALUES(?,?)
-                    [2]->FirstName
-                    [3]->LastName
-                    */
+        $data = sx_extractPostValue($xName);
+        $xValue = $data['value'];
 
-                        $sFirstName = (isset($arr[2]) && !empty(trim($arr[2]))) ? $_POST[trim($arr[2])] ?? '' : '';
-                        $sLastName = (isset($arr[3]) && !empty(trim($arr[3]))) ? $_POST[trim($arr[3])] ?? '' : '';
-                        if (!empty($sFirstName) && !empty($sLastName)) {
-                            $sqlSelect = $arr[0] . " LIMIT 1 ";
-                            $sqlInsert = $arr[1];
-                            // echo "$sFirstName $sLastName $sqlSelect $sqlInsert";
-                            // exit;
-                            $xValue = sx_getNewRecordID($sFirstName, $sLastName, $sqlSelect, $sqlInsert);
-                        } else {
-                            $xValue = 0;
-                        }
-                    }
-                }
-                if (isset(arr_AddUppdateRelated["UpdateTable"]) && arr_AddUppdateRelated["UpdateTable"][0] == $xName) {
-                    /*
-                        "UpdateTable":[
-                        "ThemeID",
-                        "UPDATE themes SET LastInDate = ? WHERE ThemeID = ?; PublishedDate; ThemeID"]}
-                     */
-                    if (intval($xValue) > 0) {
-                        $arr = explode(";", arr_AddUppdateRelated["UpdateTable"][1]);
-                        /*
-                             [0]-> UPDATE themes SET LastInDate = ? WHERE ThemeID = ?
-                             [1]-> PublishedDate
-                             [2]-> ThemeID 
-                        */
-                        $sqlUpdate = $arr[0];
-                        $sName = !empty($arr[1]) ? trim($arr[1]) : '';
-                        $mixValue = $_POST[$sName] ?? '';
-                        $loopType = "";
-                        for ($z = 0; $z < $iCount; $z++) {
-                            if (in_array("PublishedDate", ARR_FieldNames[$z])) {
-                                $loopType = ARR_FieldNames[$z][1];
-                                break;
-                            }
-                        }
-                        if ($loopType == "DATE" || $loopType == "DATETIME") {
-                            $mixValue = date('Y-m-d');
-                        }
-                        $conn = dbconn();
-                        $stmt = $conn->prepare($sqlUpdate);
-                        $stmt->execute([$mixValue, $xValue]);
-                    }
-                }
-            }
-
-            // echo $i ."=>". $xType ." : ". $xName  ." : ". $xValue ."<br>";
-            if ($i > 0) {
-                if ($xType == 'LONG' || $xType == 'LONGLONG') {
-                    if (is_numeric($xValue)) {
-                        $xValue = intval($xValue);
-                    } else {
-                        $xValue = 0;
-                    }
-                } elseif ($xType == 'SHORT') {
-                    if (is_numeric($xValue)) {
-                        $xValue = intval($xValue);
-                        if (intval($xValue) > 9999) {
-                            $xValue = 9999;
-                        }
-                    } else {
-                        $xValue = 0;
-                    }
-                } elseif ($xType == 'DOUBLE' || $xType == 'FLOAT') {
-                    if (is_numeric($xValue)) {
-                        $xValue = sx_replaceCommaToDot($xValue);
-                    } else {
-                        $xValue = 0;
-                    }
-                } elseif ($xType == 'DATE') {
-                    $xValue = sx_IsDate($xValue) ? $xValue : null;
-                } elseif ($xType == 'DATETIME') {
-                    $xValue = sx_IsDateTime($xValue) ? $xValue : null;
-                } elseif ($xType == 'STRING' || $xType == 'VAR_STRING') {
-                    if (!empty(($xValue))) {
-                        $xValue = sx_replaceBothQuotes(trim($xValue));
-                    } else {
-                        $xValue = null;
-                    }
-                } elseif ($xType == 'BLOB') {
-                    if (!empty($xValue)) {
-                        if (!empty($_POST["AddPureText"])) {
-                            $xValue = sx_formatTextarea($xValue);
-                        } else {
-                            $xValue = sx_replaceQuotes($xValue);
-                        }
-                    } else {
-                        $xValue = null;
-                    }
-                } elseif ($xType == 'TINY') {
-                    if ($xValue == "Yes") {
-                        $xValue = 1;
-                    } else {
-                        $xValue = 0;
-                    }
-                } else {
-                    if (is_numeric($xValue) && strpos($xValue, ",") > 0) {
-                        $xValue = sx_replaceCommaToDot($xValue);
-                    }
-                }
-
-
-                if ($isUpdate) {
-                    if (!empty($strUppdatePrepare)) {
-                        $strUppdatePrepare .= ", ";
-                    }
-                } else {
-                    if (!empty($arrAddFields)) {
-                        $arrAddFields .= ",";
-                    }
-                    if (!empty($arrAddPrepareValues)) {
-                        $arrAddPrepareValues .= ",";
-                    }
-                }
-
-                if ($isUpdate) {
-                    $strUppdatePrepare .= $xName . " = ?";
-                    $arrUppdateValues[] = $xValue;
-                } else {
-                    $arrAddFields .= " " . $xName;
-                    $arrAddPrepareValues .= " ?";
-                    $arrAddValues[] = $xValue;
-                }
-            }
+        // Handle related table ONLY for Add-fields
+        if ($data['type'] === 'add') {
+            $xValue = sx_handleRelatedTable($xName, $xValue);
         }
+
+        // Handle AddToTable / UpdateTable logic (your original "else" block)
+        if ($data['type'] === 'normal') {
+            $xValue = sx_handleAddUpdateRelated($xName, $xValue);
+        }
+
+        // Normalize value by type
+        $xValue = sx_normalizeValue($xName, $xType, $xValue, $str_UserPassword);
 
         if ($isUpdate) {
-            /*
-        echo $strUppdatePrepare ."<hr>";
-        print_r($arrUppdateValues);
-        exit;
-        */
-            return array($strUppdatePrepare, $arrUppdateValues);
+            $arrUpdateParts[] = "$xName = ?";
+            $arrUpdateValues[] = $xValue;
         } else {
-            /*
-        echo $arrAddFields ."<hr>";
-        echo $arrAddPrepareValues ."<hr>";
-        print_r($arrAddValues);
-        exit;
-        */
-            return array($arrAddFields, $arrAddPrepareValues, $arrAddValues);
+            $arrAddFields[] = $xName;
+            $arrAddPlaceholders[] = '?';
+            $arrAddValues[] = $xValue;
         }
     }
+
+    if ($isUpdate) {
+        return [implode(', ', $arrUpdateParts), $arrUpdateValues];
+    }
+
+    return [
+        implode(', ', $arrAddFields),
+        implode(', ', $arrAddPlaceholders),
+        $arrAddValues
+    ];
 }
+
+function sx_extractPostValue($xName)
+{
+    if (!empty($_POST["Add$xName"])) {
+        return ['value' => trim($_POST["Add$xName"]), 'type' => 'add'];
+    }
+
+    if (!empty($_POST["Distinct$xName"])) {
+        return ['value' => trim($_POST["Distinct$xName"]), 'type' => 'distinct'];
+    }
+
+    return ['value' => $_POST[$xName] ?? null, 'type' => 'normal'];
+}
+
+function sx_handleRelatedTable($xName, $xValue)
+{
+    $table = $_POST["hiddenRTable$xName"] ?? '';
+    $field = $_POST["hiddenRField$xName"] ?? '';
+    $whereField = $_POST["hiddenRWhereName$xName"] ?? '';
+    $whereValue = boolval($_POST["hiddenRWhereValue$xName"] ?? 0);
+
+    if (empty($table) || empty($field) || empty($xValue)) {
+        return $xValue;
+    }
+
+    if (!sx_checkTableAndFieldNames($table) || !sx_checkTableAndFieldNames($field)) {
+        throw new Exception("Invalid table or field");
+    }
+
+    $conn = dbconn();
+
+    $stmt = $conn->prepare("SELECT $xName FROM $table WHERE $field = ? LIMIT 1");
+    $stmt->execute([$xValue]);
+    $id = $stmt->fetchColumn();
+
+    if ((int)$id > 0) {
+        return $id;
+    }
+
+    $stmt = $conn->prepare("INSERT INTO $table ($field, $whereField) VALUES (?, ?)");
+    $stmt->execute([$xValue, $whereValue]);
+
+    return $conn->lastInsertId();
+}
+
+function sx_handleAddUpdateRelated($xName, $xValue)
+{
+    // AddToTable logic
+    if (isset(arr_AddUppdateRelated["AddToTable"]) && arr_AddUppdateRelated["AddToTable"][0] == $xName) {
+        if ((int)$xValue === 0) {
+            $arr = explode(";", arr_AddUppdateRelated["AddToTable"][1]);
+
+            $sFirstName = !empty($arr[2]) ? ($_POST[trim($arr[2])] ?? '') : '';
+            $sLastName  = !empty($arr[3]) ? ($_POST[trim($arr[3])] ?? '') : '';
+
+            if (!empty($sFirstName) && !empty($sLastName)) {
+                $sqlSelect = $arr[0] . " LIMIT 1";
+                $sqlInsert = $arr[1];
+
+                return sx_getNewRecordID($sFirstName, $sLastName, $sqlSelect, $sqlInsert);
+            }
+
+            return 0;
+        }
+    }
+
+    // UpdateTable logic
+    if (isset(arr_AddUppdateRelated["UpdateTable"]) && arr_AddUppdateRelated["UpdateTable"][0] == $xName) {
+        if ((int)$xValue > 0) {
+            $arr = explode(";", arr_AddUppdateRelated["UpdateTable"][1]);
+
+            $sqlUpdate = $arr[0];
+            $sName = !empty($arr[1]) ? trim($arr[1]) : '';
+            $mixValue = $_POST[$sName] ?? '';
+
+            // Detect DATE/DATETIME field
+            $loopType = '';
+            foreach (ARR_FieldNames as $field) {
+                if (in_array('PublishedDate', $field)) {
+                    $loopType = $field[1];
+                    break;
+                }
+            }
+
+            if ($loopType === 'DATE' || $loopType === 'DATETIME') {
+                $mixValue = date('Y-m-d');
+            }
+
+            $conn = dbconn();
+            $stmt = $conn->prepare($sqlUpdate);
+            $stmt->execute([$mixValue, $xValue]);
+        }
+    }
+
+    return $xValue;
+}
+
+function sx_normalizeValue($xName, $xType, $xValue, &$str_UserPassword)
+{
+    switch ($xType) {
+        case 'LONG':
+        case 'LONGLONG':
+            return is_numeric($xValue) ? (int)$xValue : 0;
+
+        case 'SHORT':
+            $val = is_numeric($xValue) ? (int)$xValue : 0;
+            return min($val, 9999);
+
+        case 'DOUBLE':
+        case 'FLOAT':
+            return is_numeric($xValue) ? sx_replaceCommaToDot($xValue) : 0;
+
+        case 'DATE':
+            return sx_IsDate($xValue) ? $xValue : null;
+
+        case 'DATETIME':
+            return sx_IsDateTime($xValue) ? $xValue : null;
+
+        case 'STRING':
+        case 'VAR_STRING':
+
+            // Handle password FIRST
+            if (REQUEST_Table === 'admin_login') {
+
+                if ($xName === 'UserPassword') {
+                    if (!empty($xValue)) {
+                        $str_UserPassword = trim($xValue);
+                    }
+                    return null;
+                }
+
+                if ($xName === 'UserPasswordHashed') {
+                    if (!empty($str_UserPassword)) {
+                        return password_hash($str_UserPassword, PASSWORD_DEFAULT);
+                    }
+                    // if no new password → keep existing value
+                    return $xValue ?: null;
+                }
+            }
+
+            // Normal string handling
+            if (empty($xValue)) return null;
+            return sx_replaceBothQuotes(trim($xValue));
+
+        case 'BLOB':
+            if (empty($xValue)) return null;
+
+            return !empty($_POST['AddPureText'])
+                ? sx_formatTextarea($xValue)
+                : sx_replaceQuotes($xValue);
+
+        case 'TINY':
+            return ($xValue === 'Yes') ? 1 : 0;
+
+        default:
+            if (is_numeric($xValue) && strpos($xValue, ',') !== false) {
+                return sx_replaceCommaToDot($xValue);
+            }
+            return $xValue;
+    }
+}
+
 
 function getBookAuthorsNames($id)
 {

@@ -1,63 +1,73 @@
 <?php
+// Basic checking - can also be removed
+function containsDangerousPattern($value)
+{
+    $v = strtolower($value);
 
-$sxGazeQueryString = $_SERVER["QUERY_STRING"];
-/*
-$strCharFilter = "',\",--,\,;,DROP,NULL,(,),<,>,%3C,%20,%3c,NUL,[,],{,},|,^,%,' '";
+    // Only block patterns that NEVER appear in legitimate requests
+    $dangerous = [
+        '<script',        // XSS payloads
+        'javascript:',    // JS URLs
+        'onerror=',       // event handlers
+        'onload=',
+        'union select',   // SQL injection
+        'drop table',     // destructive SQL
+        '--',             // SQL comment injection
+    ];
 
-echo $sxGazeQueryString .'<br>';
-echo '<pre>';
-print_r($arrCF);
-echo '</pre>';
-*/
-
-$strCharFilter = "',\",--,\,;,DROP,NULL,(,),<,>,NUL,[,],{,},|,^";
-$arrCF = explode(",", $strCharFilter);
-
-if (!empty($sxGazeQueryString)) {
-    for ($cf = 0; $cf < count($arrCF); $cf++) {
-        if (strpos($sxGazeQueryString, $arrCF[$cf], 0) !== false) {
-            /*
-            echo $sxGazeQueryString ."<br>";
-            echo $arrCF[$cf];
-            */
-            header("Location: index.php?sx=g1");
-            exit;
+    foreach ($dangerous as $bad) {
+        if (strpos($v, $bad) !== false) {
+            return true;
         }
+    }
+
+    return false;
+}
+
+// Check GET parameters
+foreach ($_GET as $key => $value) {
+    if (containsDangerousPattern($key) || containsDangerousPattern($value)) {
+        header("Location: index.php?sx=g1");
+        exit;
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["SendOrderValidation"]) && $_POST["SendOrderValidation"] != "Yes") {
-        foreach ($_POST as $key => $value) {
-            if (strtolower($key) == "supplierinfo") {
-                $value = str_replace("<br>", "", $value);
-            }
-            if (strtolower($key) == "message") {
-                $value = str_replace("'", "", $value);
-                $value = str_replace("\"", "", $value);
-            }
-            for ($cf = 0; $cf < count($arrCF); $cf++) {
-                if (strpos($value, $arrCF[$cf], 0) > 0) {
-                    header("Location: index.php?sx=g2");
-                }
-            }
-        }
+// Check POST parameters
+foreach ($_POST as $key => $value) {
+    if (containsDangerousPattern($key) || containsDangerousPattern($value)) {
+        header("Location: index.php?sx=g2");
+        exit;
     }
 }
 
 /**
  * Check user login from any application
+ * Is used in different independent/separate gallery applications (e.g. PDF gallery)
+ *  to hide/show entries that require login
  * @return bool
  */
-function sx_check__UserSessionIsActive()
+function sx_check__UserSessionIsActive(): bool
 {
-    if (!empty($_SESSION["User_Token"])) {
-        if (isset($_SESSION["Users_" . $_SESSION["User_Token"]]) && $_SESSION["Users_" . $_SESSION["User_Token"]]) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
+    if (empty($_SESSION["User_Token"])) {
         return false;
     }
+
+    $token = $_SESSION["User_Token"];
+    $sessionKey = "Users_" . $token;
+
+    if (empty($_SESSION[$sessionKey])) {
+        return false;
+    }
+
+    // Optional: check expiration
+    if (!empty($_SESSION['User_Expires']) && time() > $_SESSION['User_Expires']) {
+        session_unset();
+        session_destroy();
+        return false;
+    }
+
+    return true;
 }
+
+// Add User_Expires with login - not used yet
+// $_SESSION['User_Expires'] = time() + 3600; // 1 hour

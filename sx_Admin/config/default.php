@@ -3,6 +3,14 @@ include realpath(dirname(__DIR__) . "/functionsLanguage.php");
 include PROJECT_ADMIN . "/login/lockPage.php";
 include PROJECT_ADMIN . "/functionsDBConn.php";
 
+/**
+ * From admin_design.php
+ */
+if (defined('SX_AllowConfigDBPage') && SX_AllowConfigDBPage === false) {
+	header("location: ../login/logout.php");
+	exit();
+}
+
 $str_iFrameSource = "exportMainPage.php";
 if (isset($_GET["relaod"]) && $_GET["relaod"] == "yes") {
 	$str_iFrameSource = "configTableGroups.php";

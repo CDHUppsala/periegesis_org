@@ -22,71 +22,78 @@
     require PROJECT_CONFIG . "/meta.php";
     ?>
     <link rel="icon" type="image/svg+xml" href="../images/logo/favicon.svg">
-    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/root_Colors.css?v=2024-01">
-    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/root_Variables.css?v=2024-01">
-    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/sx_Buttons.css?v=2025-09-08?v=1">
+    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/root_Colors.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/root_Variables.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/sx_Buttons.css?v=2026-03-10">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Structure.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Tables.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Texts.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Images.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_svg.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/admin_templates.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_FlexGrid.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Tabs.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Forms.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Sections.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_GridCards.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Ads.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Calendar.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Top.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_HeaderLogo.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Head.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Aside.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Accordion.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Markers.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Apps.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/sx_Custom.css?v=2025-09-08">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Structure.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Tables.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Texts.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Images.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_svg.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/admin_templates.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_FlexGrid.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Tabs.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Forms.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Sections.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_GridCards.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Ads.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Calendar.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Top.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_HeaderLogo.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Head.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Aside.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Accordion.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sxNav_Markers.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Apps.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/sx_Custom.css?v=2026-03-10">
 
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq/jquery.min.js?v=2025-09-08"></script>
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/js_ps_basic.js?v=2025-09-08"></script>
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq_ps_basic.js?v=2025-09-08"></script>
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq_ps_nav.js?v=2025-09-08"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq/jquery.min.js?v=2026-03-10"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/js_ps_basic.js?v=2026-03-10"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq_ps_basic.js?v=2026-03-10"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/jq_ps_nav.js?v=2026-03-10"></script>
 
     <!--
     Public Sphere plugins with both .js and .css
     -->
 
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_gallery_inline.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_cycler.css?v=2025-09-08">
-    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_slider_manual.css?v=2025-09-08">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_gallery_inline.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_cycler.css?v=2026-03-10">
+    <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_slider_manual.css?v=2026-03-10">
 
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_gallery_inline.js?v=2025-09-08"></script>
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_cycler.js?v=2025-09-08"></script>
-    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_slider_manual.js?v=2025-09-08"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_gallery_inline.js?v=2026-03-10"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_cycler.js?v=2026-03-10"></script>
+    <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_slider_manual.js?v=2026-03-10"></script>
 
     <?php
     if (sx_includeFooterSlider) { ?>
-        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_cycler_flex_cards.css?v=2025-09-08">
-        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_cycler_flex_cards.js?v=2025-09-08"></script>
+        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_cycler_flex_cards.css?v=2026-03-10">
+        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_cycler_flex_cards.js?v=2026-03-10"></script>
     <?php
     }
 
     if (sx_UseLightBox) { ?>
-        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_lightbox.css?v=2025-09-08">
-        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_lightbox.js?v=2025-09-08"></script>
+        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_lightbox.css?v=2026-03-10">
+        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_lightbox.js?v=2026-03-10"></script>
     <?php
     }
 
     if (sx_includeSlider && ($radio_UseEventsSlider || ($radio_UseSlider && $radio_DefaultPage))) { ?>
-        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_slider.css?v=2024-02-10">
-        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_slider.js?v=2025-09-08"></script>
+        <link rel="stylesheet" href="<?= sx_ROOT_DEV ?>/sxCss/ps/sx_slider.css?v=2026-03-10">
+        <script src="<?= sx_ROOT_DEV ?>/sxScripts/ps/sx_slider.js?v=2026-03-10"></script>
+    <?php
+    }
+
+    if (defined('SX_includePlaceMaps') && SX_includePlaceMaps) { ?>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <?php
     }
 

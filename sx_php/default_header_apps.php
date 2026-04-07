@@ -21,49 +21,21 @@
     <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/jq/jquery.min.js"></script>
 
     <?php
-    include __DIR__  ."/basic_MediaFunctions.php";
+    include __DIR__  . "/basic_MediaFunctions.php";
 
-    $radioLocalHostSite = false;
-    if (str_contains(sx_ROOT_HOST_PATH, '//localhost:')) {
-        $radioLocalHostSite = true;
-    }
     if (str_contains(sx_ROOT_HOST_PATH, '/ps_gallery.php')) { ?>
         <link rel="stylesheet" href="../sxCss/ps/sx_Gallery.css">
-        <?php
-        if ($radioLocalHostSite) {
-            echo '<script>';
-            include PROJECT_PATH . "/sx_Scripts/ps/sx_gallery.js";
-            echo '</script>';
-        } else { ?>
-            <script type="text/javascript" charset="utf-8" src="../sxScripts/ps/sx_gallery.js"></script>
-        <?php
-        }
+        <script type="text/javascript" charset="utf-8" src="../sxScripts/ps/sx_gallery.js"></script>
+    <?php
     } elseif (str_contains(sx_ROOT_HOST_PATH, '/ps_gallery_byfolder.php')) { ?>
         <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/ps/sx_PDF_MM.css">
         <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/ps/sx_gallery_inline.css">
-        <?php
-        if ($radioLocalHostSite) {
-            echo '<script>';
-            include PROJECT_PATH . "/sx_Scripts/ps/sx_PDF_MM.js";
-            include PROJECT_PATH . "/sx_Scripts/ps/sx_gallery_inline.js";
-            echo '</script>';
-        } else { ?>
-            <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_PDF_MM.js"></script>
-            <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_gallery_inline.js"></script>
-        <?php
-        }
-    } elseif (
-        str_contains(sx_ROOT_HOST_PATH, '/ps_media.php')
-        || str_contains(sx_ROOT_HOST_PATH, '/ps_PDF.php')
-    ) { ?>
-        <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/ps/sx_PDF_MM.css">
-        <?php
-        if ($radioLocalHostSite) {
-            echo '<script>';
-            include PROJECT_PATH . "/sx_Scripts/ps/sx_PDF_MM.js";
-            echo '</script>';
-        } else { ?>
-            <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_PDF_MM.js"></script>
+        <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_PDF_MM.js"></script>
+        <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_gallery_inline.js"></script>
     <?php
-        }
-    } ?>
+    } elseif (str_contains(sx_ROOT_HOST_PATH, '/ps_media.php') || str_contains(sx_ROOT_HOST_PATH, '/ps_PDF.php')) { ?>
+        <link rel="stylesheet" href="<?= sx_ROOT_HOST ?>/sxCss/ps/sx_PDF_MM.css">
+        <script type="text/javascript" charset="utf-8" src="<?= sx_ROOT_HOST ?>/sxScripts/ps/sx_PDF_MM.js"></script>
+    <?php
+    }
+    ?>

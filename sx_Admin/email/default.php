@@ -79,11 +79,11 @@ if (empty($str_TextArea)) {
 			overflow: Hidden;
 		}
 	</style>
-	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2024">
-	<script src="../js/jq/jquery.min.js"?v=2024></script>
-	<script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2024"></script>
-	<script src="../tinymce/tinymce.min.js?v=2024"></script>
-	<script src="../tinymce/config/email.js?v=2024"></script>
+	<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
+	<script src="../js/jq/jquery.min.js"?v=2026-04></script>
+	<script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2026-04"></script>
+	<script src="../tinymce/tinymce.min.js?v=2026-04"></script>
+	<script src="../tinymce/config/email.js?v=2026-04"></script>
 </head>
 
 <body>

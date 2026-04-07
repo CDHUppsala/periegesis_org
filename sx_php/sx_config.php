@@ -193,6 +193,34 @@ if ($rs) {
 }
 
 /**
+ * Use Extra Tools, Additional to standard Applications
+ */
+
+if (defined('SX_Use_Extra_Tools') && SX_Use_Extra_Tools) {
+    $sql = "SELECT IncludeMapTools,
+        MapToolsTitle,
+        IncludeTextInMap,
+        TextInMapTitle,
+        IncludeExternalSource,
+        ExternalSourceURL,
+        ExternalSourceTitle
+    FROM site_config_tools $str_LanguageWhere";
+    $stmt = $conn->query($sql);
+    $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($rs) {
+        $radio_IncludeMapTools = $rs["IncludeMapTools"];
+        $str_MapToolsTitle = $rs["MapToolsTitle"];
+
+        $radio_IncludeTextInMap = $rs["IncludeTextInMap"];
+        $str_TextInMapTitle = $rs["TextInMapTitle"];
+        
+        $radio_IncludeExternalSource = $rs["IncludeExternalSource"];
+        $str_ExternalSourceURL = $rs["ExternalSourceURL"];
+        $str_ExternalSourceTitle = $rs["ExternalSourceTitle"];
+    }
+}
+
+/**
  * Site SETUP
  */
 

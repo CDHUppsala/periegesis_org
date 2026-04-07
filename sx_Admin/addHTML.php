@@ -68,20 +68,20 @@ if (!empty($_POST["strAddHTML"]) || !empty($_POST["AddPureText"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Public Sphere Content Management System - Add HTML Records</title>
 </head>
-<link rel="stylesheet" href="../sxCss/root_Colors.css?v=2024">
-<link rel="stylesheet" href="../sxCss/root_Gradients.css?v=2024">
-<link rel="stylesheet" href="../sxCss/root_Variables.css?v=2024">
-<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2024">
+<link rel="stylesheet" href="../sxCss/root_Colors.css?v=2026-04">
+<link rel="stylesheet" href="../sxCss/root_Gradients.css?v=2026-04">
+<link rel="stylesheet" href="../sxCss/root_Variables.css?v=2026-04">
+<link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
 <link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2023">
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jsFunctions.js?v=2023"></script>
-    <script src="js/jq/jquery.min.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqFunctions.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqLoadFormInputs.js?v=2023"></script>
+<script src="<?php echo sx_ADMIN_DEV ?>js/jsFunctions.js?v=2023"></script>
+<script src="js/jq/jquery.min.js?v=2023"></script>
+<script src="<?php echo sx_ADMIN_DEV ?>js/jqFunctions.js?v=2023"></script>
+<script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2023"></script>
+<script src="<?php echo sx_ADMIN_DEV ?>js/jqLoadFormInputs.js?v=2023"></script>
 
 
-<script src="tinymce/tinymce.min.js?v=2024"></script>
-<script src="tinymce/config/custom.js?v=2024"></script>
+<script src="tinymce/tinymce.min.js?v=2026-04"></script>
+<script src="tinymce/config/custom.js?v=2026-04"></script>
 <?php if (!empty($strFormValidation)) { ?>
     <script>
         // Public Sphere - Basic form-controll: checks that required fields are not empty
@@ -134,7 +134,7 @@ if (!empty($_POST["strAddHTML"]) || !empty($_POST["AddPureText"])) {
                             <th><?= sx_checkAsName($xName) . ": " . sx_getAsterix($xName) ?></th>
                             <?php
                             if ($i == 0) {
-                                if ($boolIsAuto) { ?>
+                                if ($is_AutoincrementPK) { ?>
                                     <td>
                                         <input class="button floatRight" type="submit" value="<?= lngAdd ?>" name="strAddHTML">
                                         <p><?= lngAutoNumber . " " . sx_getHelpForJava($xName, $strHelp) ?></p>
@@ -213,11 +213,16 @@ if (!empty($_POST["strAddHTML"]) || !empty($_POST["AddPureText"])) {
                                     } ?>
                                     <td><?php sx_getRelationInputs($xName, $strRFVAdd, $strRFV) ?> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
                                 <?php
-                                } else { 
-                                    if(!empty($xValue)) {
+                                } else {
+                                    if (!empty($xValue)) {
                                         $xValue = htmlspecialchars($xValue);
-                                    } ?>
-                                    <td><input type="text" name="<?= $xName ?>" value="<?= $xValue ?>" size="58"> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
+                                    }
+                                    $readonly = '';
+                                    if ($xName === 'UserPasswordHashed') {
+                                        $readonly = ' readonly';
+                                    }
+                                ?>
+                                    <td><input type="text" name="<?= $xName ?>" value="<?= $xValue ?>" <?= $readonly ?>> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
                             <?php
                                 }
                             } ?>

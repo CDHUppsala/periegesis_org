@@ -61,7 +61,7 @@ function sx_getAboutMenu_HeaderFooterTexts($place, $title, $groupid = 0)
     if (is_array($arrAp)) {
         $iRows = count($arrAp);
         if ($place == "footer") {
-            if (!empty($title)) { ?>
+            if (!empty(trim($title))) { ?>
                 <h4><?= $title ?></h4>
             <?php
             } ?>

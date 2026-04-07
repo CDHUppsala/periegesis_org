@@ -10,6 +10,7 @@ if (in_array($request_Table, $arr_NotEditableTables)) {
 	exit();
 }
 
+
 $strIDName = $_GET["strIDName"] ?? ''; //The name of the ID File
 $strIDValue = $_GET["strIDValue"] ?? 0; //The value of the ID File
 
@@ -22,9 +23,12 @@ if ($strReturn == "processing") {
 	$strReturnQuery = "";
 }
 
-if (empty($strIDName) || sx_checkTableAndFieldNames($strIDName) == false || (int) $strIDValue === 0) {
-	header("Location: " . $strRedirect);
-	exit();
+$validName = !empty($strIDName) && sx_checkTableAndFieldNames($strIDName);
+$validPK   = sx_IsValidPrimaryKey($strIDValue);
+
+if (!$validName || !$validPK) {
+	header("Location: list.php?strMsg=noPK");
+    exit();
 }
 
 include "functionsAddEdit.php";
@@ -78,24 +82,25 @@ if (!empty($_POST["Edit"])) {
 
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Public Sphere CMS - Eddit Records</title>
-	<link rel="stylesheet" href="../sxCss/root_Colors.css?v=2024-11">
-	<link rel="stylesheet" href="../sxCss/root_Gradients.css?v=2024-11">
-	<link rel="stylesheet" href="../sxCss/root_Variables.css?v=2024-11">
-    <link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2023">
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jsFunctions.js?v=2023"></script>
-    <script src="js/jq/jquery.min.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqFunctions.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2023"></script>
-    <script src="<?php echo sx_ADMIN_DEV ?>js/jqLoadFormInputs.js?v=2023"></script>
+	<link rel="stylesheet" href="../sxCss/root_Colors.css?v=2026-04">
+	<link rel="stylesheet" href="../sxCss/root_Gradients.css?v=2026-04">
+	<link rel="stylesheet" href="../sxCss/root_Variables.css?v=2026-04">
+    <link rel="stylesheet" href="<?php echo sx_ADMIN_DEV ?>css/sxCMS.css?v=2026-04">
+    <script src="<?php echo sx_ADMIN_DEV ?>js/jsFunctions.js?v=2026-04"></script>
+    <script src="js/jq/jquery.min.js?v=2026-04"></script>
+    <script src="<?php echo sx_ADMIN_DEV ?>js/jqFunctions.js?v=2026-04"></script>
+    <script src="<?php echo sx_ADMIN_DEV ?>js/jqAjaxLoadArchives.js?v=2026-04"></script>
+    <script src="<?php echo sx_ADMIN_DEV ?>js/jqLoadFormInputs.js?v=2026-04"></script>
 	<?php
 	if ($radio_useTinymce) { ?>
-		<script src="tinymce/tinymce.min.js?v=2024-11"></script>
-		<script src="tinymce/config/custom.js?v=2024-11"></script>
+		<script src="tinymce/tinymce.min.js?v=2026-04"></script>
+		<script src="tinymce/config/custom.js?v=2026-04"></script>
 	<?php }
 	if (!empty($strFormValidation)) { ?>
 		<script type="text/javascript">
@@ -150,7 +155,7 @@ if (!empty($_POST["Edit"])) {
 							<th><?= sx_checkAsName($xName) ?>: <?= sx_getAsterix($xName) ?></th>
 							<?php
 							if ($i == 0) {
-								if ($boolIsAuto) { ?>
+								if ($is_AutoincrementPK) { ?>
 									<td>
 										<input class="button floatRight" type="submit" name="Edit" value="<?= lngUpdate ?>">
 										<p><?= lngAutoNumber . ": " . $xValue ?> <?= sx_getHelpForJava($xName, $strHelp) ?></p>
@@ -217,8 +222,13 @@ if (!empty($_POST["Edit"])) {
 								} else { 
                                     if(!empty($xValue)) {
                                         $xValue = htmlspecialchars($xValue);
-                                    } ?>
-									<td><input type="text" name="<?= $xName ?>" value="<?= $xValue ?>"> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
+                                    } 
+                                    $readonly = '';
+                                    if($xName === 'UserPasswordHashed') {
+                                        $readonly = ' readonly';
+                                    }
+									?>
+									<td><input type="text" name="<?= $xName ?>" value="<?= $xValue ?>"<?= $readonly ?>> <?= sx_getHelpForJava($xName, $strHelp) ?></td>
 							<?php
 								}
 							} ?>

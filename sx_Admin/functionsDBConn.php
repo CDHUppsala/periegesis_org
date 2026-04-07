@@ -1,6 +1,6 @@
 <?php
 require realpath(PROJECT_PATH . "/sx_Conn/connMySQL.php");
-
+$conn = dbconn();
 /**
  * ACCESS or MySQL
  * The 2 variables are defined dynamically

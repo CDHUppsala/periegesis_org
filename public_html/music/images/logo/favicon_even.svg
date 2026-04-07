@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sxSVG" id="Digital_Periegesis_Favicon_Even" viewBox="0 0 800 720" style="background-color:#003D7A">
+    <title>Digital Periegesis</title>
+    <style>
+        .svg_d {
+            fill: #ffffff;
+            stroke: #ffffff;
+            stroke-width: 10;
+        }
+
+        .svg_p {
+            fill: #ffffff;
+            stroke: #ffffff;
+            stroke-width: 10;
+        }
+    </style>
+    <g class="svg_d" transform="matrix(1,0,0,1,30,100)">
+        <g glyph-name="360 d">
+            <path d="M 340 20 h-40 v210 a 100 70 0 0 0 -100 -50 h-80 a 100 100 0 0 0 -100 100 l 0 120 a 100 100 0 0 0 100 100 h80 a 100 70 0 0 0 100 -50 v50h40 Z M 300 390 a 70 70 0 0 1 -70 70 h-100 a 70 70 0 0 1 -70 -70 l 0 -100 a 70 70 0 0 1 70 -70 h100 a 70 70 0 0 1 70 70 Z"></path>
+        </g>
+    </g>
+    <g class="svg_p" transform="matrix(1,0,0,1,410,-60)">
+        <g glyph-name="360 p">
+            <path d="M 20 180 h40 v50 a 100 70 0 0 1 100 -50 h80 a 100 100 0 0 1 100 100 l 0 120 a 100 100 0 0 1 -100 100 h-80 a 100 70 0 0 1 -100 -50 v210 h-40 0 Z M 60 390 a 70 70 0 0 0 70 70 l 100 0 a 70 70 0 0 0 70 -70 l 0 -100 a 70 70 0 0 0 -70 -70 l -100 0 a 70 70 0 0 0 -70 70 Z"></path>
+        </g>
+    </g>
+</svg>

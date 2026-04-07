@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Following variables are originally defined in config_rticles.php
  */
@@ -78,7 +77,6 @@ if (is_array($rs)) {
     $memoArticleNotes = $rs["ArticleNotes"];
 }
 $rs = null;
-
 $str_ArticleClasses = "";
 
 if ($radioTemp) {
@@ -212,9 +210,12 @@ if ($radioTemp) {
                         }
                         $strFileExtension = return_file_extension($strFirstFilePath);
 
+                        $loade_MediaMapScritps = true;
                         if ($strFileExtension === 'csv' || $strFileExtension === 'xml' || $strFileExtension === 'json') {
-                            // Expected one or more CSV, XML or JSON files, to be transformed to tables
                             get_apps_files_to_table($strMediaPath);
+                        }elseif($strFileExtension === 'geojson' || $strFileExtension === 'kml' || $strFileExtension === 'topojson' || $strFileExtension === 'gpx') {
+                            get_apps_geo_to_map($strMediaPath, $loade_MediaMapScritps );
+                            $loade_MediaMapScritps = false;
                         } elseif ($radioMultiplePaths && !empty($arrMediaPath)) {
                             // Now, use the array variable: $arrMediaPath
                             if ($strFileExtension === 'pdf') {
@@ -319,8 +320,9 @@ if ($radioTemp) {
                         $strFileExtension = return_file_extension($strFirstFilePath);
 
                         if ($strFileExtension === 'csv' || $strFileExtension === 'xml' || $strFileExtension === 'json') {
-                            // Expected CSV, XML or JSON file, to be transformed to table
                             get_apps_files_to_table($strMediaPath);
+                        }elseif($strFileExtension === 'geojson' || $strFileExtension === 'kml' || $strFileExtension === 'topojson' || $strFileExtension === 'gpx') {
+                            get_apps_geo_to_map($strMediaPath, $loade_MediaMapScritps);
                         } elseif ($radioMultiplePaths && !empty($arrMediaPath)) {
                             // Now, use the array variable: $arrMediaPath
                             if ($strFileExtension === 'pdf') {

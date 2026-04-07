@@ -14,7 +14,7 @@ for ($r = 0; $r < $iRows; $r++) {
     $strMediaFolder = $arr[$r]["MediaFolder"];
     $memoDataNotes = $arr[$r]["Notes"];
     if (!empty($memoDataNotes)) {
-        $memoDataNotes = strip_tags($memoDataNotes, ['<p>', '<b>', '<strong>', '<i>', '<em>', '<a>']);
+        $memoDataNotes = strip_tags($memoDataNotes, ['<b>', '<strong>', '<i>', '<em>', '<a>']);
     }
     //$memoDataNotes = sx_Replace_Quotes($memoDataNotes);
 
@@ -50,7 +50,7 @@ for ($r = 0; $r < $iRows; $r++) {
                 echo '</div>';
             }
             if ($radioShowSectionTitle && !empty($strSectionTitle)) {
-                echo "<h3>$strSectionTitle</h3>";
+                echo "<h2>$strSectionTitle</h2>";
             }
             if ($radioShowSectionNotes && !empty($memoSectionNotes)) {
                 echo $memoSectionNotes;
@@ -70,6 +70,15 @@ for ($r = 0; $r < $iRows; $r++) {
             $photoName  = trim($arrPhotos[$p]);
             if (!empty($photoName)) {
                 echo '<figure>';
+                echo '<h4>';
+                if ($radioShowDataTitle && !empty($strDataTitle)) {
+                    echo "<strong>" .  $strDataTitle . "</strong>, ";
+                }
+                if ($radioShowDataNotes && !empty($memoDataNotes)) {
+                    //echo strip_tags($memoDataNotes, ['<b>', '<strong>', '<i>', '<em>', '<a>']);
+                    echo $memoDataNotes;
+                }
+                echo '</h4>';
 
                 $strObjectValue = return_Media_Type_URL($photoName);
                 if (!empty($strObjectValue)) {
@@ -85,15 +94,6 @@ for ($r = 0; $r < $iRows; $r++) {
                     echo '</figure>';
                 }
 
-                echo '<figcaption>';
-                if ($radioShowDataTitle && !empty($strDataTitle)) {
-                    echo "<strong>" .  $strDataTitle . "</strong>, ";
-                }
-                if ($radioShowDataNotes && !empty($memoDataNotes)) {
-                    // echo strip_tags($memoDataNotes);
-                    echo $memoDataNotes;
-                }
-                echo '</figcaption>';
 
                 echo '</figure>';
             }

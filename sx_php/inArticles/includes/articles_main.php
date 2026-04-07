@@ -11,6 +11,7 @@ if ($radio_UseTextsArticles == false) {
 include  dirname(__DIR__) . "/functions_pagination.php";
 
 if (intval($int_ArticleID) > 0) {
+
     include  dirname(__DIR__) . "/apps_functions.php";
     include  dirname(__DIR__) . "/index.php";
 } else {

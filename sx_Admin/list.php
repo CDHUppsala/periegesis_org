@@ -253,12 +253,15 @@ if (empty($_POST["SearchText"]) && empty($_POST["SearchDate"]) && empty($_GET["S
  */
 
 if (isset($_GET["searchFieldName"]) && isset($_GET["searchFieldValue"])) {
+    $radioNotEmpty = false;
     $tempName = sx_SQLSafe($_GET["searchFieldName"]);
     $tempValue = $_GET["searchFieldValue"];
     if (sx_IsDate($tempValue)) {
         $tempValue = "'" . $tempValue . "'";
     } elseif (intval($tempValue) > 0) {
         $tempValue = intval($tempValue);
+    } elseif ($tempValue === "NotEmpty") {
+        $radioNotEmpty = true;
     } elseif (sx_checkTableAndFieldNames($tempValue)) {
         $tempValue = "'" . $tempValue . "' ";
     } else {
@@ -266,7 +269,11 @@ if (isset($_GET["searchFieldName"]) && isset($_GET["searchFieldValue"])) {
         exit;
     }
     if (sx_checkTableAndFieldNames($tempName)) {
-        $searchFieldNameWhere = " AND " . $tempName . " = " . $tempValue;
+        if ($radioNotEmpty) {
+            $searchFieldNameWhere = " AND " . $tempName . " <> '' ";
+        } else {
+            $searchFieldNameWhere = " AND " . $tempName . " = " . $tempValue;
+        }
         $_SESSION["SearchFieldNameWhere"] = $searchFieldNameWhere;
     } else {
         /**
@@ -413,6 +420,10 @@ if (!isset($_SESSION["PrimaryKeyName"]) || empty($_SESSION["PrimaryKeyName"])) {
     $strPK = $_SESSION["PrimaryKeyName"];
 }
 
+// Check if the table has an Autoincremented PK to allow Add/Edit
+$allowAddEdit = sx_IsAutoincrement($request_Table, $strPK);
+
+
 /**
  * ========================================
  * ========================================
@@ -439,6 +450,7 @@ if (!empty($search_TextWhere)) {
 if (!empty($orderByStatement)) {
     $strSQL = $strSQL . " ORDER BY " . $orderByStatement;
 }
+
 /**
  * Count the total number of records
  */
@@ -622,11 +634,14 @@ include_once "list_navFunctions.php";
         <div class="row flex_align_center">
             <div class="row flex_justify_start">
                 <?php
-                if (!in_array($request_Table, $arr_NotAddableTables)) { ?>
-                    <h3><a href="add.php"><?= lngAddANewRecord ?></a></h3>
+                if ($allowAddEdit === false) { ?>
+                    <h3>This Table is only for View</h3>
+                <?php
+                } elseif (in_array($request_Table, $arr_NotAddableTables)) { ?>
+                    <h3>You cannot Add Records in this Table</h3>
                 <?php
                 } else { ?>
-                    <h3>This Table List is only for View</h3>
+                    <h3><a href="add.php"><?= lngAddANewRecord ?></a></h3>
                 <?php
                 } ?>
                 <h3><?php sx_getArrowPageNav() ?></h3>
@@ -677,8 +692,8 @@ include_once "list_navFunctions.php";
                          */
                         if (is_array($arrFieldNames)) {
                             $maxcol = count($arrFieldNames);
-                            $arrUsedUpdateableFields = array();
-                            $arrUsedUpdateableFieldTypes = array();
+                            $arrUsedUpdateableFields = [];
+                            $arrUsedUpdateableFieldTypes = [];
                             for ($i = 0; $i < $maxcol; $i++) {
                                 $xName = $arrFieldNames[$i][0];
                                 if (sx_getUpdateableFieldType($xName) != 50) {
@@ -750,25 +765,31 @@ include_once "list_navFunctions.php";
                     ?>
                                     <tr>
                                         <td>
-                                            <?php if (!in_array($request_Table, $arr_NotDeleteableTables)) { ?>
-                                                <a title="<?= lngDeleteRecord ?>" href="delete.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
-                                                    <img class="sx_svg_bg reverse" src="images/sx_svg/sx_clear.svg" height="24"></a>
-                                            <?php }
-                                            if (in_array($request_Table, $arr_NewsLetterTables)) { ?>
-                                                <a title="Newsletters" target="_blank" href="email/default.php?tbl=<?= $request_Table ?>&cid=<?= $intPK ?>">
-                                                    <img class="sx_svg_bg" src="images/sx_svg/sx_mail_open.svg" height="24"></a>
-                                            <?php }
-                                            if (!in_array($request_Table, $arr_NotCopyableTables)) { ?>
-                                                <a title="<?= lngCopyRecord ?>" href="copy.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
-                                                    <img class="sx_svg_bg" src="images/sx_svg/sx_plus_bold.svg"></a>
-                                            <?php } ?>
-                                            <a title="<?= lngViewRecord ?>" href="view.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
-                                                <img class="sx_svg_bg" src="images/sx_svg/sx_search.svg" height="24"></a>
-                                            <?php if (!in_array($request_Table, $arr_NotEditableTables)) { ?>
-                                                <a title="<?= lngEditRecord ?>" href="edit.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
-                                                    <img class="sx_svg_bg" src="images/sx_svg/sx_pencil.svg" height="24"></a>
-                                            <?php } ?>
-                                            <input type="hidden" name="PKValue[]" value="<?= $intPK ?>">
+                                            <?php
+                                            if ($allowAddEdit) {
+                                                if (!in_array($request_Table, $arr_NotDeleteableTables)) { ?>
+                                                    <a title="<?= lngDeleteRecord ?>" href="delete.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
+                                                        <img class="sx_svg_bg reverse" src="images/sx_svg/sx_clear.svg" height="24"></a>
+                                                <?php }
+                                                if (in_array($request_Table, $arr_NewsLetterTables)) { ?>
+                                                    <a title="Newsletters" target="_blank" href="email/default.php?tbl=<?= $request_Table ?>&cid=<?= $intPK ?>">
+                                                        <img class="sx_svg_bg" src="images/sx_svg/sx_mail_open.svg" height="24"></a>
+                                                <?php }
+                                                if (!in_array($request_Table, $arr_NotCopyableTables)) { ?>
+                                                    <a title="<?= lngCopyRecord ?>" href="copy.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
+                                                        <img class="sx_svg_bg" src="images/sx_svg/sx_plus_bold.svg"></a>
+                                                <?php } ?>
+                                                <a title="<?= lngViewRecord ?>" href="view.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
+                                                    <img class="sx_svg_bg" src="images/sx_svg/sx_search.svg" height="24"></a>
+                                                <?php if (!in_array($request_Table, $arr_NotEditableTables)) { ?>
+                                                    <a title="<?= lngEditRecord ?>" href="edit.php?strIDName=<?= $strPK ?>&strIDValue=<?= $intPK ?>">
+                                                        <img class="sx_svg_bg" src="images/sx_svg/sx_pencil.svg" height="24"></a>
+                                                <?php } ?>
+                                                <input type="hidden" name="PKValue[]" value="<?= $intPK ?>">
+                                            <?php
+                                            } else {
+                                                echo ' ';
+                                            } ?>
                                         </td>
                                     <?php
                                         }

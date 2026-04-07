@@ -698,19 +698,32 @@ function get_Link_Title_From_File_Name($file)
 function sx_get_title_from_string($str)
 {
     if (!empty($str)) {
-        if (str_contains($str, '/')) {
-            $str = explode('/', $str)[1];
-        }
-        if (str_contains($str, '.')) {
-            $str = explode('.', $str)[0];
-        }
+
+        // Get only the filename from a path
+        $str = basename($str);
+
+        // Remove extension
+        $str = pathinfo($str, PATHINFO_FILENAME);
+
+        // Remove prefix__ part
         if (str_contains($str, '__')) {
             $str = explode('__', $str)[1];
         }
-        if (str_contains($str, '_')) {
-            $str = str_replace('_', ' ', $str);
-        }
+
+        // Replace underscores with spaces
+        $str = str_replace('_', ' ', $str);
+
+        // Capitalize words
         $str = ucwords($str);
     }
+
     return $str;
+}
+
+function sx_file_exists($path) {
+    return file_exists($path) && is_file($path);
+}
+
+function is_valid_primary_key($value) {
+    return filter_var($value, FILTER_VALIDATE_INT) !== false && $value > 0;
 }

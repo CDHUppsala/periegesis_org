@@ -34,12 +34,10 @@ $stmt = null;
 if (is_array($aResults)) { ?>
 	<section class="jqNavMainToBeCloned">
 		<?php
-		//if ($radio_TextAboutHeaderMenuByGroup) { 
-		?>
+		if ($radio_TextAboutHeaderMenuByGroup) { ?>
 		<h2 class="head"><span><?= $str_TextsAboutTitle ?></span></h2>
 		<?php
-		//} 
-		?>
+		} ?>
 		<nav class="sxAccordionNav jqAccordionNav">
 			<?php
 			$iRows = count($aResults);

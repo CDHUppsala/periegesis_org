@@ -1,0 +1,312 @@
+<div id="PanelInformation">
+    <div class="panel_content">
+        <div class="info_text">
+            <h2>Map Functions Overview</h2>
+            <p>Click the
+                <button class="button_svg" title="Show Guide">
+                    <svg viewBox="0 0 32 32">
+                        <path
+                            d="M14 1 q-2 0 -2 2 v4 q0 2 2 2 h4 q2 0 2 -2 v-4 q0 -2 -2 -2z M14 12 q-2 0 -2 2 v15 q0 2 2 2 h4 q2 0 2 -2 v-15 q0 -2 -2 -2z">
+                        </path>
+                    </svg>
+                </button>
+                button at any time to reopen this guide.
+            </p>
+            <h3>In Short</h3>
+            <ul>
+                <li>Choose Map Files from the Select Elements <code>Map Places</code> and <code>Map Areas</code> or
+                    click on the
+                    button <button class="button_svg">
+                        <svg viewBox="0 0 32 32">
+                            <path d="M3 1 q-2 0 -2 2 v4h16 l -6-6z M1 9 v20 q0 2 2 2 h26 q2 0 2 -2 v-18 q 0 -2 -2 -2 z">
+                            </path>
+                        </svg>
+                    </button> to load your own Map File of format: <code>.csv</code>, <code>.geojson</code>,
+                    <code>.topojson</code>, <code>.kml</code>, and <code>.gpx</code>
+                </li>
+                <li>Click on the
+                    button <button class="button_svg"><svg id="sx_gear" viewBox="0 0 32 32">
+                        <path d="M15 5 h2 l 2 -4 5.5 2.25 -1.5 4.25 1.5 1.5 4.25 -1.5 2.25 5.5 -4 2 0 2 4 2 -2.25 5.5 -4.25 -1.5 -1.5 1.5 1.5 4.25 -5.5 2.25 -2 -4 -2 0 -2 4 -5.5 -2.25 1.5 -4.25 -1.5 -1.5 -4.25 1.5 -2.25 -5.5 4 -2 0 -2 -4 -2 2.25 -5.5 4.25 1.5 1.5 -1.5 -1.5 -4.25 5.5 -2.25z m1 3 a1 1 0 0 0 0 16  a1 1 0 0 0 0 -16z m0 3 a1 1 0 0 1 0 10 a1 1 0 0 1 0 -10">
+                        </path>
+                    </svg>
+                    </button> to convert your files to available formats</li>
+                <li>From the <code>Loaded Files & Filters</code> Panel, you can always click on
+                    <button class="button_svg" title="Show Guide">
+                        <svg viewBox="0 0 32 32">
+                            <path
+                                d="M1 1 v12 l4-4 5 5 4-4 -5-5 4-4z M1 31 h12 l-4-4 5-5 -4-4 -5 5 -4-4z M31 31 v-12 l-4 4 -5-5 -4 4 5 5 -4 4z M31 1 h-12 l 4 4 -5 5 4 4 5-5 4 4z">
+                            </path>
+                        </svg>
+                    </button>, at the right of every loaded file, to zoom the map to the boundaries of the file's map
+                    layers.
+                </li>
+                <li>Check the checkbox <code>Stack</code> to load multiple map files and overlay them upon each other.
+                </li>
+                <li>Check the checkbox <code>Click to Search</code> to enable search by clicking on the map.</li>
+                <li>Check the <code>Hide Popups</code> to disable popups when clicking on loaded map layers. Clicking
+                    then zooms
+                    instead.</li>
+                <li>Click on the button <button class="button_svg">
+                        <svg viewBox="0 0 32 32">
+                            <path
+                                d="M15.5 6 a1 1 0 0 1 2 2 l -7 7 q-1 1 0 2 l 7 7 a1 1 0 0 1 -2 2 l-9 -9 q-1-1 0 -2z m8 0 a1 1 0 0 1 2 2 l -7 7 q-1 1 0 2 l 7 7 a1 1 0 0 1 -2 2 l-9 -9 q-1-1 0 -2z">
+                            </path>
+                        </svg>
+                    </button> to toggle the visibility of Panels, and on the button <button class="button_svg">
+                        <svg viewBox="0 0 32 32">
+                            <path
+                                d="M3 1 q-2 0 -2 2 v10 q0 2 2 2 h26 q2 0 2 -2 v-10 q0-2 -2-2z M3 17 q-2 0 -2 2 v10 q0 2 2 2 h26 q2 0 2 -2 v-10 q0-2 -2-2z M 16 2 l 12 6 h-8 v6h-8v-6h-8z M 12 18 h8v12h-8z">
+                            </path>
+                        </svg>
+                    </button>, if available, to toggle the
+                    visibility of Filtering Inputs.</li>
+                <li>Click on the button <button class="button_svg">
+                        <svg viewBox="0 0 32 32">
+                            <path
+                                d="M2 6 a1 1 0 0 1 4 -4 l10 10 10-10 a1 1 0 0 1 4 4 l-10 10 10 10 a1 1 0 0 1 -4 4 l-10 -10 -10 10 a1 1 0 0 1 -4-4 l10-10z">
+                            </path>
+                        </svg>
+                    </button> to instantly remove all loaded files, reset zooming and start form the beginning.</li>
+            </ul>
+
+            <h3>Interactive map features:</h3>
+
+            <ol>
+                <li>
+                    <h4>Search Tools</h4>
+                    <ul>
+
+                <li>Click on the
+                    button <button class="button_svg"><svg id="sx_gear" viewBox="0 0 32 32">
+                        <path
+                            d="M 30.5 26.5 l -5 -5 q -1 -1 -2 -1 h -1 a -12 -12 0 1 0 -2 2 v 1 q 0 1 1 2 l 5 5 q 1 1 2 0 l 2 -2 q 1 -1 0 -2 m -12 -8 a 1 1 0 0 1 -11 -11 a 1 1 0 0 1 11 11">
+                        </path>
+                    </svg>
+                    </button> to open a form for searching on the map.</li>
+
+                        <li><em>Search by Coordinates</em>: Enter latitude and longitude to find the corresponding place name.</li>
+                        <li><em>Search by Place Name</em>: Enter a location name to retrieve its coordinates.</li>
+                        <li><em>Click to Search</em>: Click anywhere on the map to get both coordinates and place name.
+                            <ul>
+                                <li>You enable and disable this function by the checkbox <code>Click to Search</code>.</li>
+                                <li>When <code>Click to Search</code> is enabled, the cursor consists of a hand with an index finger, for the exact location of a place.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tip 1:</strong> Single-click a location for search. Double-click to zoom in.</li>
+                        <li><strong>Tip 2:</strong> Single-clicking adds a marker and fills the search fields with respective information.
+                            <ul>
+                                <li>Use the <code>Clear</code> button to remove both information and marker.</li>
+                                <li>Uncheck (and recheck) the <code>Click to Search</code> to remove only the marker.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tip 3:</strong> Uncheck <code>Click to Search</code> to disable marker placement, and use clicks for zooming only.</li>
+                        <li><strong>Tip 4:</strong>: Hold the <code>Shift Key</code> and draw a rectangle to zoom into a specific area — even when layers have been loaded on the map.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Map Areas</h4>
+                    <ul>
+                        <li>Load map area files with <b>Polygon Geomentry</b> from the <b>Map Areas</b> select options - or upload your own files.</li>
+                        <li>Supported formats: <code>.geojson</code>, <code>.topojson</code>, <code>.kml</code> and well-structured <code>.json</code>.</li>
+                        <li><b>For administrators:</b>
+                            <ul>
+                                <li>Upload your Map Areas files to the default folder <code>map_areas/</code> on the
+                                    server.</li>
+                                <li>Include a JSON file, <code>index.json</code>, listing the file names:
+                                    <pre>[
+    "world_100.geojson",
+    "world_200.geojson",
+    "..."
+]</pre>
+                                </li>
+                                <li>The select element <code>Map Areas</code> on the top of this page is then automatically updated to include those files as options.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tip:</strong> Choose the first option from the dropdown menu to remove all loaded map areas.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Map Places</h4>
+                    <ul>
+                        <li>Load files with <b>Point Geomentry</b> (Latitude and Longitude) from the <b>Map Places</b> select options - or upload your one files. Files can also contain <b>Line Geomentry</b></li>
+                        <li>Supports the following file formats: <code>.geojson</code>, <code>.topojson</code>,
+                            <code>.kml</code>, <code>.gpx</code>, <code>.csv</code>, and simple <code>.json</code>:
+                            <pre>Simple JSON File:
+[
+  {
+    "BookID" : "1.1.1",
+    "Place" : "Ἀθηναίοις",
+    "Links" : "...",
+    "Lat" : "37.971687",
+    "Lon" : "23.726464",
+    "Description" : "..."
+  },
+  {...}
+]
+</pre>
+                            <pre>CSV File:
+BookID,Place,Links,Lat,Lon,Type,Description
+1.1.1,Ἀθηναίοις,"...",37.971687,23.726464,"..."
+...
+</pre>.
+                        </li>
+                        <li>Detection of <b>Coordinate Field Names</b> is flexible and case insensitive. CSV and JSON files can contain any of the following alternatives:
+                            <ul>
+                                <li><code>lat/lon</code>, Lat/Lon or LAT/LON</li>
+                                <li><code>lat/lng</code>. Lat/Lng or LAT/LNG</li>
+                                <li><code>latitude/longitude</code>, Latitude/Longitude, or LATITUDE/LONGITUDE</li>
+                            </ul>
+                        </li>
+                        <li><b>For administrators:</b>
+                            <ul>
+                                <li>Upload files with Map Places to the default folder <code>map_places/</code> on the server.</li>
+                                <li>Include an <code>index.json</code> file listing chosen file names.</li>
+                                <li>The select element <code>Map Places</code> on the top of this page is then automatically updated to include those files as options.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Tip:</strong> Choose the first option from the dropdown menu to remove all loaded files with map places.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>User's Local File Loader</h4>
+                    <ul>
+                        <li>Use the folder icon
+                            <button class="button_svg">
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M3 1 q-2 0 -2 2 v4h16 l -6-6z M1 9 v20 q0 2 2 2 h26 q2 0 2 -2 v-18 q 0 -2 -2 -2 z">
+                                    </path>
+                                </svg>
+                            </button> to load local files directly from your device.
+                        </li>
+                        <li>Loacal Loader supports all file formats and structures mentioned above.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Search and export loaded files and filters</h4>
+                    <ul>
+                        <li>Every time you load a file, a Free Text search input will appear on the top of the page for searching and filtering it, together with buttons for downloading files or filters in GeoJson and CSV formats.</li>
+                        <li>If your file contains oner or more of the three predefined, case insensitive Field/Property names, Passages, Type and Region, or their predefined Aliases, search and filtering inputs will appear on the top of the page.
+                            <ul>
+                                <li>All unique values of existing Field/Property names will be displayed as options within select elements, together with a Free Text input.</li>
+                            </ul>
+                        </li>
+                        <li>Currently, these are the case insensitive Aliases of the three predefined Field/Property names:
+                            <pre>const key_Aliases = {
+    type: ['type', 'timePeriodsKeys', 'city', 'name', '2001deme'],
+    region: ['region', 'name_en', '2025demosen'],
+    passages: ['passages', 'bookid', 'identifier']
+};
+</pre>
+                        <li>Every serach on the loaded <b>Base File</b> generates a new, filtered map layer that is
+                            added under the Base File. Yoy can then zoom to its boundaries, toggle its vidibility,
+                            download it or delete it.</li>
+                        <li>If yoy check the <code>Stack</code> checkbox, you can load additional files over previous
+                            ones. In that case, searching is always pursued on the last laded file. You cannot go back
+                            searching previous files.</li>
+                        <li>Clicking on <code>GeoJson</code> and <cod>CSV</cod> downloads always the <b>first
+                                checked</b> file or filter, starting from the top of tha legend
+                            <code>Loaded Files & Filters</code>.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <h3>Some other Features and functions</h3>
+            <ul>
+                <li><strong>Zooming</strong>
+                    <ul>
+                        <li>The map is automatically zoomed to the boundaries (places or areas) of the <b>first</b>
+                            loaded file.</li>
+                        <li>Subsequent loading of files does not change zooming - to enable comparisons.</li>
+                        <li>To zoom the map to the bounderies of a file, click any time on the
+                            <button class="button_svg">
+                                <svg viewBox="0 0 32 32">
+                                    <path <path
+                                        d="M1 1 v12 l4-4 5 5 4-4 -5-5 4-4z M1 31 h12 l-4-4 5-5 -4-4 -5 5 -4-4z M31 31 v-12 l-4 4 -5-5 -4 4 5 5 -4 4z M31 1 h-12 l 4 4 -5 5 4 4 5-5 4 4z">
+                                    </path>
+                                </svg>
+                            </button> button at the right of its name, within the <code>Loaded Files & Filters</code>
+                            panel.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Stacking Areas and Places</strong>
+                    <ul>
+                        <li>Check the <code>Stack</code> checkbox to allow multiple map areas and places from
+                            different files, loaded from the server or from your local device, to overlay each other.
+                        </li>
+                        <li>You can see all loaded files in the <code>Loaded Files & Filters</code> panel.</li>
+                        <li>Clicking on their respective <b>checkbox</b> separately toggles their visibility and
+                            clicking on their
+                            <button class="button_svg" title="Show Guide">
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M1 1 v12 l4-4 5 5 4-4 -5-5 4-4z M1 31 h12 l-4-4 5-5 -4-4 -5 5 -4-4z M31 31 v-12 l-4 4 -5-5 -4 4 5 5 -4 4z M31 1 h-12 l 4 4 -5 5 4 4 5-5 4 4z">
+                                    </path>
+                                </svg>
+                            </button> zooms the map to their respective layer boundaries.
+                        </li>
+                        <li>You can search only the last loaded file.</li>
+                        <li>Click on the
+                            <button class="button_svg">
+                                <svg viewBox="0 0 32 32">
+                                    <path
+                                        d="M2 6 a1 1 0 0 1 4 -4 l10 10 10-10 a1 1 0 0 1 4 4 l-10 10 10 10 a1 1 0 0 1 -4 4 l-10 -10 -10 10 a1 1 0 0 1 -4-4 l10-10z">
+                                    </path>
+                                </svg>
+                            </button>
+                            button to instantly remove all loaded files from the map and reset zooming.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Information Popups</strong>
+                    <ul>
+                        <li>Clicking on map layers (place markers and areas) displays, if available, a popup with
+                            sanitized
+                            information, usually in
+                            terms of Key: Value.</li>
+                        <li>URLs in popups are automatically converted to links, which open in a new tab.</li>
+                        <li><strong>Tip:</strong> Check and uncheck any time <code>Hide Popups</code> to enable and
+                            disable
+                            popup
+                            information when clicking on map layers - clicking will then zoom instead.</li>
+                    </ul>
+                </li>
+                <li><b>Supported Geometry Types:</b>
+                    <ul>
+                        <li>Full support for geometry types: Point, MultiPoint, LineString, MultiLineString, Polygon and
+                            MultiPolygon</li>
+                        <li>Partial Support for <b>GeometryCollection:</b>
+                            <ul>
+                                <li>If all geometries are <b>Polygon</b>, they are merged into a single
+                                    <b>MultiPolygon</b>.
+                                </li>
+                                <li>Mixed geometry types are split into individual features with shared properties.</li>
+                            </ul>
+                        </li>
+                        <li><b>CSV</b> files can have the following structures:
+                            <ul>
+                                <li>Simple CSV with Point Geometry that include the above mentioned aliases of field names for Latitude and Longitude.</li>
+                                <li>Well Known Text (<b>WKT</b>) with all geometry types.</li>
+                                <li><b>Embedded GeoJson</b> with all geometry types.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>You can use each function independently, or use them together:</h3>
+            <ul>
+                <li><strong>Click to Search</strong> can be kept active in all occasions, both with Map Places and Map Areas.</li>
+                <li>You can load <strong>multiple</strong> Map Areas and Map Places, that is, files with different Geometry Types, both from select lists and from local files.</li>
+                <li>Where Map Places or Areas <strong>intersect</strong>, the last loaded layer gets priority regarding popups and hovering.</li>
+                <li>When <code>Hide Popups</code> is unchecked (Popups are enabled), <code>Click to Search</code> is automatically disabled within Map Areas. To re-enable Click Searching inside those areas, check <code>Hide Popups</code>.</li>
+            </ul>
+
+        </div>
+        <button onclick="toggle_PanelInformation()">Close</button>
+    </div>
+</div>

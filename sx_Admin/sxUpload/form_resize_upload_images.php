@@ -107,7 +107,7 @@ $arr_allowedImageTypes = ['jpg', 'jpeg', 'webp', 'png', 'svg'];
             <div class="container">
                 <fieldset style="width: 50%">
                     <p><b>Crop Position in Image</b>: <span style="color: #c00">Active</span> with Cropping
-                        <span class="tooltip jq_Tooltip" data-title="Cropping is applied on resized images. All images are by default cropped around their Center/Middle position (CM). You can change it by using the following table. If cropping starts from Top/Bottom or Left/Right, you can calibrate the cropping position with exact pixels."> [?] </span>
+                        <span class="tooltip jq_Tooltip" data-title="You can both Resize and Cropp images. All images are by default cropped around their Center/Middle position (CM). You can change it by using the following table. If cropping starts from Top/Bottom or Left/Right, you can calibrate the cropping position with exact pixels."> [?] </span>
                     </p>
                     <table style="text-align:center; vertical-align:middle">
                         <tr>
@@ -135,15 +135,15 @@ $arr_allowedImageTypes = ['jpg', 'jpeg', 'webp', 'png', 'svg'];
                         </tr>
                     </table>
 
-                    <p><b>Increase distans from Selected <span style="color: #c00">End</span> Positions</b></p>
+                    <p><b>Increase distance from Selected <span style="color: #c00">Start</span> Positions</b></p>
 
                     <div>
-                        <span>Distans from
+                        <span>Distance from
                             <code style="font-weight: bold; color: #c00" title="From LT, CT or RT">Top</code> or <code style="font-weight: bold; color: #c00" title="From LB, CB or RB">Bottom</code>:</span>
-                        <input style="width: 4.5rem" title="From Top or Bottom Crop in pixels" type="number" id="MoveTB" name="MoveTB" value="0" max="400" min="0" step="1" required /> pixels <span class="tooltip jq_Tooltip" data-title="Not valid for Middle Positions. Used for Horizontal Images, when original Ratio > Crop Ration. You move the cropped area vertically, from the Top or Bottom.">[?]</span><br>
-                        <span>Distans from
+                        <input style="width: 4.5rem" title="From Top or Bottom Crop in pixels" type="number" id="MoveTB" name="MoveTB" value="0" max="400" min="0" step="1" required /> pixels <span class="tooltip jq_Tooltip" data-title="Not valid for Center-Middle Positions (CM). Used to convert vertical images to horizontal format. You move the cropped area vertically, from the Top or Bottom, depending if you start from Bottom (LB/CB/RB) or Top (LT/CT/RT) respectively.">[?]</span><br>
+                        <span>Distance from
                             <code style="font-weight: bold; color: #c00" title="From LT, LM or LB">Left</code> or <code style="font-weight: bold; color: #c00" title="From RT, RM or RB">Right</code>:</span>
-                        <input style="width: 4.5rem" title="From Left or Right Crop in pixels" type="number" id="MoveLR" name="MoveLR" value="0" max="600" min="0" step="1" required /> pixels <span class="tooltip jq_Tooltip" data-title="Not valid for Center Positions. Used for Vertical Images, when original Ratio < Crop Ration. You move the cropped area horizontally, from the Left or Right">[?]</span>
+                        <input style="width: 4.5rem" title="From Left or Right Crop in pixels" type="number" id="MoveLR" name="MoveLR" value="0" max="600" min="0" step="1" required /> pixels <span class="tooltip jq_Tooltip" data-title="Not valid for Center-Middle Positions (CM). Used to convert horizontal images to vertical format. You move the cropped area horizontally, to Left or Right, depending if you start from Right (RT/RM/RB) or Left (LT/LM/LB) respectively">[?]</span>
                     </div>
                 </fieldset>
                 <fieldset style="width: 50%">
@@ -180,7 +180,7 @@ $arr_allowedImageTypes = ['jpg', 'jpeg', 'webp', 'png', 'svg'];
                         </p>
                     </div>
                     <p><b>Crop Images</b> by the following Height/Width Aspect Ratio:
-                        <span class="tooltip_left jq_Tooltip" data-title="<p>If the Cropping Aspect Ratio (H/W) is less than the initial H/W ratio of the original image, the cropped images will be <b>more Horizontal</b> (Wide) than the original one. The entire Width of the original image will then be resized to the above defined Max Width. The image will then be cropped along the vertical axis with the Height calculated by the cropping ratio.</p><p>If the Cropping Aspect Ratio (H/W) is greater then the initial H/W ratio of the original image, the cropped images will be <b>more Vertical</b> (Nerrow, Portrait) than the original one. The entire Height of the images will then be resized to the above defined Max Hight. The image will then be cropped along the horizontal axis with the Width calculated by the cropping ratio.</p><p>In both cases, the measure of cropping dimensions starts from the <b>center/middle</b> (CM) of the images. You can change that from the table on the left.</p>"> [?] </span><br>
+                        <span class="tooltip_left jq_Tooltip" data-title="<p>You can crop horizontal and vertical images to any of the following H/W ratios. You can also extract from a horizontal image an image with vertical format, and vice-versa.</p><p>In both cases, the measure of cropping dimensions starts from the <b>center/middle</b> (CM) of the images. You can change the <b>Start Position</b> of cropping from the table on the left. You can then calibrate the <b>Distance</b> from the start position with exact pixels.</p>"> [?] </span><br>
                         <input type="radio" name="CropRatio" value="0" checked /><span>None</span>
                         <input type="radio" name="CropRatio" value="2500" /><span><?= 5 / 20 ?></span>
                         <input type="radio" name="CropRatio" value="3400" /><span><?= 0.34 ?></span>

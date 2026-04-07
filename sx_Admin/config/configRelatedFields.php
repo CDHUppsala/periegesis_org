@@ -559,7 +559,7 @@ include PROJECT_ADMIN . "/configFunctions.php";
 									"SELECT DISTINCT ChapterName, SortingChapters
 									FROM reports
 									WHERE ProjectID = ?
-									ORDER BY ProjectID DESC, SortingChapters DESC"]
+									ORDER BY SortingChapters DESC, ChapterName"]
 								</code>
 							</div>
 						</td>
@@ -567,7 +567,7 @@ include PROJECT_ADMIN . "/configFunctions.php";
 							<div>Insert Relations of Type 30 as follows:</div>
 							<div style="background: #fff; padding: 8px 10px; margin-top: 16px; clear: both; max-width: 500px; overflow: auto;">
 								<code>
-									ProjectID;SortingChapters;SELECT DISTINCT ChapterName, SortingChapters FROM reports WHERE ProjectID = ? ORDER BY ProjectID DESC, SortingChapters DESC
+									ProjectID;SortingChapters;SELECT DISTINCT ChapterName, SortingChapters FROM reports WHERE ProjectID = ? ORDER BY SortingChapters DESC, ChapterName
 								</code>
 							</div>
 						</td>
@@ -581,7 +581,7 @@ include PROJECT_ADMIN . "/configFunctions.php";
 									"SELECT DISTINCT SubChapterName, SortingSubChapters
 									FROM reports
 									WHERE ProjectID = ? AND ChapterName = ?
-									ORDER BY SortingSubChapters DESC"]
+									ORDER BY SortingSubChapters DESC, SubChapterName"]
 								</code>
 							</div>
 						</td>
@@ -589,7 +589,7 @@ include PROJECT_ADMIN . "/configFunctions.php";
 							<div>Insert Relations of Type 300 as follows:</div>
 							<div style="background: #fff; padding: 8px 10px; margin-top: 16px; clear: both; max-width: 500px; overflow: auto;">
 								<code>
-									ProjectID; ChapterName; SortingSubChapters; SELECT DISTINCT SubChapterName, SortingSubChapters FROM reports WHERE ProjectID = ? AND ChapterName = ? ORDER BY SortingSubChapters DESC
+									ProjectID; ChapterName; SortingSubChapters; SELECT DISTINCT SubChapterName, SortingSubChapters FROM reports WHERE ProjectID = ? AND ChapterName = ? ORDER BY SortingSubChapters DESC, SubChapterName
 								</code>
 							</div>
 						</td>
