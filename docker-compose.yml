@@ -4,10 +4,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: ps_uu_periegesis
-      MYSQL_USER: ps_uu_DigitalPeriegesis
-      MYSQL_PASSWORD: ps_uu_V453-O821-D974
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
     volumes:
       - db_data:/var/lib/mysql
       # Initial database dump for initialization
@@ -25,12 +25,12 @@ services:
       - "8044:80"
     environment:
       - DB_HOST=db
-      - DB_NAME=ps_uu_periegesis
-      - DB_USER=ps_uu_DigitalPeriegesis
-      - DB_PASS=ps_uu_V453-O821-D974
+      - DB_NAME=
+      - DB_USER=
+      - DB_PASS=
       - DB_CHARSET=utf8mb4
       - SITE_SOCKET=http://
-      - SITE_URL=localhost:8080
+      - SITE_URL=
     depends_on:
       db:
         condition: service_healthy
