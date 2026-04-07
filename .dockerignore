@@ -1,0 +1,14 @@
+.git
+.gitignore
+.idea
+private/cache_data/*
+private/error_log/*
+private/sx_log/*
+sql/*
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+node_modules
+dist
+.env

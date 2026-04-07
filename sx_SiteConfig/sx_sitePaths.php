@@ -68,10 +68,15 @@ define("sx_radioValidIP", $sx_radioValidIP);
  * Check if the site is in Update Mode
  * and redirect the visitor to the update page.
  */
-$sql = "SELECT CachedData FROM data_caching WHERE CachingName = ?";
-$stmt = $conn->prepare($sql);
-$stmt->execute(['SiteMode']);
-$strCachedData = $stmt->fetchColumn();
+try {
+    $sql = "SELECT CachedData FROM data_caching WHERE CachingName = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute(['SiteMode']);
+    $strCachedData = $stmt->fetchColumn();
+} catch (PDOException $e) {
+    // If table doesn't exist, assume standard mode
+    $strCachedData = 'Live';
+}
 if($strCachedData === 'Update') {
     header('Location: update.php');
     exit();

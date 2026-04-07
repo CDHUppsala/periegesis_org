@@ -1,0 +1,39 @@
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ps_uu_periegesis
+      MYSQL_USER: ps_uu_DigitalPeriegesis
+      MYSQL_PASSWORD: ps_uu_V453-O821-D974
+    volumes:
+      - db_data:/var/lib/mysql
+      # Initial database dump for initialization
+      - ./sql/setup_ps_uu_periegesis.sql:/docker-entrypoint-initdb.d/setup_ps_uu_periegesis.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8044:80"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=ps_uu_periegesis
+      - DB_USER=ps_uu_DigitalPeriegesis
+      - DB_PASS=ps_uu_V453-O821-D974
+      - DB_CHARSET=utf8mb4
+      - SITE_SOCKET=http://
+      - SITE_URL=localhost:8080
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:

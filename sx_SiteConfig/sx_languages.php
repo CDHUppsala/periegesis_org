@@ -18,19 +18,17 @@ session_start([
  * - Blocks reverse‑proxy or mirror access
  * - Prevents accidental or malicious hostname variations
  */
-const sx_Socket = "https://";
-const sx_SiteURL = "www.periegesis.org";
-const sx_TrueSiteURL = 'https://www.periegesis.org';
+define('sx_Socket', getenv('SITE_SOCKET') ?: "https://");
+define('sx_SiteURL', getenv('SITE_URL') ?: "www.periegesis.org");
+define('sx_TrueSiteURL', sx_Socket . sx_SiteURL);
 
 /**
  * In production environment, set the value of the next constant to true
- * In local, development environment, set the value to false to avoid redirection to the above production URL
- * The check is pursued in sx_sitePaths.php
  */
-const sx_CheckTrueSiteURL = false;
+define('sx_CheckTrueSiteURL', getenv('CHECK_TRUE_SITE') === 'true');
 
-const sx_RadioMultiLang = false;
-const sx_DefaultSiteLang = "en";
+define('sx_RadioMultiLang', false);
+define('sx_DefaultSiteLang', "en");
 
 $langArr = [
     ["en","English",""],

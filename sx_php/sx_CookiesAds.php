@@ -7,7 +7,7 @@
 if (!isset($_COOKIE["dialog_ads"]) && sx_IncludeDialogAds) {
     $radioTemp = False;
     $sql = "SELECT AdvertiseID, Title, ImageURL, LinkURL, Notes
-        FROM advertises_logo
+        FROM ads_logo
         WHERE Publish = True AND PublishPlace = 'Dialog' 
         AND (StartDate <= '" . Date("Y-m-d") . "' OR StartDate IS NULL) 
         AND (EndDate >= '" . Date("Y-m-d") . "' OR EndDate IS NULL) " . str_LanguageAnd;
