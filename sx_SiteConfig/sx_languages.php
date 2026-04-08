@@ -19,7 +19,7 @@ session_start([
  * - Prevents accidental or malicious hostname variations
  */
 define('sx_Socket', getenv('SITE_SOCKET') ?: "https://");
-define('sx_SiteURL', getenv('SITE_URL') ?: "www.periegesis.org");
+define('sx_SiteURL', getenv('SITE_URL') ?: "periegesis.abm.uu.se");
 define('sx_TrueSiteURL', sx_Socket . sx_SiteURL);
 
 /**
