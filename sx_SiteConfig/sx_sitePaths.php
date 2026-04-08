@@ -15,7 +15,11 @@ require realpath(PROJECT_PATH . "/sx_Functions/apps.php");
 require realpath(PROJECT_PATH . "/sx_Functions/sxGaze.php");
 require realpath(PROJECT_PATH . "/sx_Functions/sxCleanText.php");
 
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$protocol = (
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+    ($_SERVER['SERVER_PORT'] == 443) ||
+    (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+) ? "https://" : "http://";
 
 define("sx_HOST", $_SERVER["HTTP_HOST"]);
 define("sx_ROOT_HOST", $protocol . sx_HOST);

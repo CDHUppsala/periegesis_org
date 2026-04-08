@@ -14,8 +14,12 @@ $sxSuffix = $strHost . "/sxAdmin/";
  */
 
 if (defined('sx_CheckTrueSiteURL') && sx_CheckTrueSiteURL === true) {
-	$currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https://' : 'http://')
-		. $_SERVER['HTTP_HOST'];
+	$currentProto = (
+		(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+		($_SERVER['SERVER_PORT'] == 443) ||
+		(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+	) ? 'https://' : 'http://';
+	$currentUrl = $currentProto . $_SERVER['HTTP_HOST'];
 
 	if (!str_starts_with($currentUrl, sx_TrueSiteURL)) {
 		sx_writeToLog('Login_Admin: Rong URL: ' . $currentUrl);

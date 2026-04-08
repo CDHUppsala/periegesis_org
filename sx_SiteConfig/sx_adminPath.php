@@ -1,6 +1,10 @@
 <?php
 
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$protocol = (
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+    ($_SERVER['SERVER_PORT'] == 443) ||
+    (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+) ? "https://" : "http://";
 
 define("sx_ROOT_HOST", $protocol . $_SERVER["HTTP_HOST"]);
 define("sx_ROOT_HOST_ADMIN", $protocol . $_SERVER["HTTP_HOST"] . '/dbAdmin/');
